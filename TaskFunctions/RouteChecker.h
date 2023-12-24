@@ -23,9 +23,6 @@ public:
     static std::vector<Path> getPaths(Graph*, Graph*, const std::unordered_set<Graph*>& );
     static std::vector<Path> getPaths(Graph*, Graph*);
 
-    static std::vector<Path> getTopThreePaths(Graph*, Graph*, const std::unordered_set<Graph*>&);
-    static std::vector<Path> getTopThreePaths(Graph*, Graph*);
-
     static bool canReturnToStart(Graph*);
 
     static bool hasHamiltonianPath(GraphContainer* container, Graph* start);

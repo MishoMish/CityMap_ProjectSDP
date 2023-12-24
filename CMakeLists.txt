@@ -11,4 +11,6 @@ add_executable(CityMap main.cpp
         TaskFunctions/RouteChecker.cpp
         TaskFunctions/RouteChecker.h
         Structure/Path.cpp
-        Structure/Path.h)
+        Structure/Path.h
+        Interfaces/TerminalProgram.cpp
+        Interfaces/TerminalProgram.h)

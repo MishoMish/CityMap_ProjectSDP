@@ -79,6 +79,12 @@ build CMakeFiles/CityMap.dir/Structure/Path.cpp.o: CXX_COMPILER__CityMap_unscann
   OBJECT_DIR = CMakeFiles/CityMap.dir
   OBJECT_FILE_DIR = CMakeFiles/CityMap.dir/Structure
 
+build CMakeFiles/CityMap.dir/Interfaces/TerminalProgram.cpp.o: CXX_COMPILER__CityMap_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMap/Interfaces/TerminalProgram.cpp || cmake_object_order_depends_target_CityMap
+  DEP_FILE = CMakeFiles/CityMap.dir/Interfaces/TerminalProgram.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/CityMap.dir
+  OBJECT_FILE_DIR = CMakeFiles/CityMap.dir/Interfaces
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target CityMap
@@ -87,7 +93,7 @@ build CMakeFiles/CityMap.dir/Structure/Path.cpp.o: CXX_COMPILER__CityMap_unscann
 #############################################
 # Link the executable CityMap
 
-build CityMap: CXX_EXECUTABLE_LINKER__CityMap_Debug CMakeFiles/CityMap.dir/main.cpp.o CMakeFiles/CityMap.dir/Structure/Graph.cpp.o CMakeFiles/CityMap.dir/Structure/GraphContainer.cpp.o CMakeFiles/CityMap.dir/TaskFunctions/RouteChecker.cpp.o CMakeFiles/CityMap.dir/Structure/Path.cpp.o
+build CityMap: CXX_EXECUTABLE_LINKER__CityMap_Debug CMakeFiles/CityMap.dir/main.cpp.o CMakeFiles/CityMap.dir/Structure/Graph.cpp.o CMakeFiles/CityMap.dir/Structure/GraphContainer.cpp.o CMakeFiles/CityMap.dir/TaskFunctions/RouteChecker.cpp.o CMakeFiles/CityMap.dir/Structure/Path.cpp.o CMakeFiles/CityMap.dir/Interfaces/TerminalProgram.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/CityMap.dir
   POST_BUILD = :

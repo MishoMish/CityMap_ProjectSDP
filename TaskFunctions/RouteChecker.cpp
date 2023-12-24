@@ -66,20 +66,6 @@ std::vector<Path> RouteChecker::getPaths(Graph* start, Graph* end) {
     return getPaths(start, end, emptySet);
 }
 
-std::vector<Path> RouteChecker::getTopThreePaths(Graph* start, Graph* end, const std::unordered_set<Graph*>& closed) {
-    std::vector<Path> paths = getPaths(start, end, closed);
-    std::vector<Path> topThree;
-    for(int i = 0; i < paths.size() && i < 3; i++){
-        topThree.push_back(paths[i]);
-    }
-    return topThree;
-}
-
-std::vector<Path> RouteChecker::getTopThreePaths(Graph* start, Graph* end) {
-    std::unordered_set<Graph*> emptySet;
-    return getTopThreePaths(start, end, emptySet);
-}
-
 bool RouteChecker::canReturnToStart(Graph* start) {
     std::unordered_set<Graph*> visited;
     return canReturnToStartHelper(start, start, visited);
