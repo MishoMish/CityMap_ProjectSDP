@@ -15,15 +15,8 @@ public:
     explicit Graph(std::string);
     void print();
     void addEdge(Graph*, double);
-    std::string getName();
-    bool getIsClosed();
-    void close();
-    void open();
-
-    std::unordered_map<Graph*, double> adjacencyList;
-private:
     std::string name;
-    bool closed = false;
+    std::unordered_map<Graph*, double> adjacencyList;
 };
 
 #endif //CITYMAP_GRAPH_H

@@ -6,7 +6,7 @@
 
 void Path::print() {
     for(auto item : nodes){
-        std::cout << item->getName() << " -> ";
+        std::cout << item->name << " -> ";
     }
     std::cout << cost << std::endl;
 }

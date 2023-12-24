@@ -19,20 +19,4 @@ void Graph::addEdge(Graph* toGraph, double distance){
     adjacencyList[toGraph] = distance;
 }
 
-std::string Graph::getName() {
-    return this->name;
-}
-
-bool Graph::getIsClosed() {
-    return closed;
-}
-
-void Graph::open() {
-    closed = false;
-}
-
-void Graph::close() {
-    closed = true;
-}
-
 
