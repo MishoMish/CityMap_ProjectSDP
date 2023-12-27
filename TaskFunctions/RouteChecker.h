@@ -25,10 +25,11 @@ public:
 
     static bool canReturnToStart(Graph*);
 
-    static bool hasHamiltonianPath(GraphContainer* container, Graph* start);
+    static Path* hasHamiltonianPath(GraphContainer* container);
+    static Path* hasHamiltonianPath(GraphContainer* container, Graph* start);
     static void hamiltonianPathUtil(GraphContainer* container, Graph* current, Graph* start, Path* path, std::set<std::pair<Graph*, Graph*> >& visitedEdges, bool& found);
 
-    static bool canReachAllNodes(GraphContainer *container, Graph *start);
+        static bool canReachAllNodes(GraphContainer *container, Graph *start);
 
     static std::vector<std::pair<Graph*, Graph*>> findAllDeadEnded(GraphContainer* container);
 

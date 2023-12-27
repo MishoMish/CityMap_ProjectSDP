@@ -9,7 +9,7 @@
 
 class Path {
 public:
-    double cost;
+    double cost = 0.0;
     std::vector<Graph*> nodes;
 
     void print();

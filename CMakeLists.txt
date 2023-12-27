@@ -13,4 +13,7 @@ add_executable(CityMap main.cpp
         Structure/Path.cpp
         Structure/Path.h
         Interfaces/TerminalProgram.cpp
-        Interfaces/TerminalProgram.h)
+        Interfaces/TerminalProgram.h
+        Interfaces/GraphvizController.cpp
+        Interfaces/GraphvizController.h
+)

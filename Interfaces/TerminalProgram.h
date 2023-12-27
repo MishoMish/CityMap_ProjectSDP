@@ -11,6 +11,8 @@
 class TerminalProgram {
     GraphContainer* map;
     Graph* current;
+
+    void printHelpCommand(const std::string& filePath);
     public:
     TerminalProgram(GraphContainer* map, Graph* start);
     ~TerminalProgram();

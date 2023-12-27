@@ -87,29 +87,31 @@ bool RouteChecker::canReturnToStartHelper(Graph* current, Graph* start, std::uno
     return false;
 }
 
-bool RouteChecker::hasHamiltonianPath(GraphContainer* container, Graph* start) {
+/*bool RouteChecker::makeFullTour(GraphContainer* container, Graph* start) {
     Path* path = new Path();
     path->cost = 0;
 
     std::set< std::pair<Graph*, Graph*> > visitedEdges;
     bool found = false;
 
-    hamiltonianPathUtil(container, start, start, path, visitedEdges, found);
+    makeFullTourHelper(container, start, start, path, visitedEdges, found);
 
     if (found) {
         path->print();
     } else {
-        std::cout << "No Hamiltonian Path found." << std::endl;
+        std::cout << "No full tour found!" << std::endl;
     }
 
     delete path;
     return found;
 }
 
-void RouteChecker::hamiltonianPathUtil(GraphContainer* container, Graph* current, Graph* start, Path* path, std::set<std::pair<Graph*, Graph*> >& visitedEdges, bool& found) {
+void RouteChecker::makeFullTourHelper(GraphContainer* container, Graph* current, Graph* start, Path* path, std::set<std::pair<Graph*, Graph*> >& visitedEdges, bool& found) {
     path->nodes.push_back(current);
 
-    if (path->nodes.size() == container->graphs.size()) {
+    std::set<Graph*> temp;
+    temp.insert(path->nodes.begin(), path->nodes.end());
+    if (temp.size() == container->graphs.size()) {
         found = true;
         return;
     }
@@ -120,12 +122,70 @@ void RouteChecker::hamiltonianPathUtil(GraphContainer* container, Graph* current
         if (!visitedEdges.contains({current, next})) {
             visitedEdges.insert({current, next});
             path->cost += neighbor.second;
-            hamiltonianPathUtil(container, next, start, path, visitedEdges, found);
+            makeFullTourHelper(container, next, start, path, visitedEdges, found);
 
             if (found) {
                 return;
             }
 
+            visitedEdges.erase({current, next});
+            path->cost -= neighbor.second;
+        }
+    }
+    path->nodes.pop_back()
+}*/
+
+Path* RouteChecker::hasHamiltonianPath(GraphContainer* container) {
+    Path* returnPath = nullptr;
+    for(auto temp : container->graphs){
+        returnPath = hasHamiltonianPath(container, temp.second);
+        if(returnPath != nullptr)
+            break;
+    }
+    return returnPath;
+}
+
+Path* RouteChecker::hasHamiltonianPath(GraphContainer* container, Graph* start) {
+    Path* path = new Path();
+    std::set< std::pair<Graph*, Graph*> > visitedEdges;
+    bool found = false;
+    hamiltonianPathUtil(container, start, start, path, visitedEdges, found);
+
+    if (found) {
+        return path;
+    } else {
+        delete path;
+        return nullptr;
+    }
+}
+
+void RouteChecker::hamiltonianPathUtil(GraphContainer* container, Graph* current, Graph* start, Path* path, std::set<std::pair<Graph*, Graph*> >& visitedEdges, bool& found) {
+    path->nodes.push_back(current);
+    if (std::all_of(container->graphs.begin(), container->graphs.end(), [&path](const auto& nodePair) {
+        return std::find(path->nodes.begin(), path->nodes.end(), nodePair.second) != path->nodes.end();
+    })) {
+        // if we need to end on start
+        /*for(auto next : current->adjacencyList){
+            if(next.first == start){
+                found = true;
+                return;
+            }
+        }*/
+
+        // if we just need to cover all nodes
+        found = true;
+        return;
+    }
+
+    for (const auto& neighbor : current->adjacencyList) {
+        Graph* next = neighbor.first;
+        if (!visitedEdges.contains({current, next})) {
+            visitedEdges.insert({current, next});
+            path->cost += neighbor.second;
+            hamiltonianPathUtil(container, next, start, path, visitedEdges, found);
+            if (found) {
+                return;
+            }
             visitedEdges.erase({current, next});
             path->cost -= neighbor.second;
         }
@@ -152,7 +212,7 @@ bool RouteChecker::canReachAllNodes(GraphContainer* container, Graph* start) {
         }
     }
 
-    return visited.size() == container->graphs.size();  // Check if all nodes were visited
+    return visited.size() == container->graphs.size();
 }
 
 std::vector<std::pair<Graph*, Graph*>> RouteChecker::findAllDeadEnded(GraphContainer* container){
