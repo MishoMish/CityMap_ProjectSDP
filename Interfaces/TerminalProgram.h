@@ -9,12 +9,14 @@
 #include "../Structure/GraphContainer.h"
 
 class TerminalProgram {
-    GraphContainer* map;
-    Graph* current;
+    GraphContainer *map;
+    Graph *current;
 
-    void printHelpCommand(const std::string& filePath);
-    public:
-    TerminalProgram(GraphContainer* map, Graph* start);
+    void printHelpCommand(const std::string &filePath);
+
+public:
+    TerminalProgram(GraphContainer *map, Graph *start);
+
     ~TerminalProgram();
 
     void run();

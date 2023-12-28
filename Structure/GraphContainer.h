@@ -13,14 +13,23 @@
 class GraphContainer {
 public:
     ~GraphContainer();
-    void parseFile(const std::string&);
-    bool containsKey(const std::string&);
-    void addGraph(const std::string&);
-    Graph* getGraph(const std::string&);
-    void addRoad(const std::string&, const std::string&, double);
+
+    void parseFile(const std::string &);
+
+    bool containsKey(const std::string &);
+
+    void addGraph(const std::string &);
+
+    Graph *getGraph(const std::string &) const;
+
+    const std::unordered_map<std::string, Graph *> &getGraphs() const;
+
+    void addRoad(const std::string &, const std::string &, double);
+
     void print();
 
-    std::unordered_map<std::string, Graph*> graphs;
+private:
+    std::unordered_map<std::string, Graph *> graphs;
 };
 
 #endif //CITYMAP_GRAPHCONTAINER_H

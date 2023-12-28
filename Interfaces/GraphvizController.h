@@ -15,7 +15,8 @@
 
 class GraphvizController {
 public:
-    static void generateDotFile(GraphContainer* graphContainer, Graph* current, std::unordered_set<Graph*> closed);
+    static void generateDotFile(GraphContainer *graphContainer, Graph *current, std::unordered_set<Graph *> closed);
+
     static void runGraphvizAndOpenImage();
 };
 

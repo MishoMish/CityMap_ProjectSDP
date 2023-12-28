@@ -9,14 +9,21 @@
 #include <vector>
 #include <unordered_map>
 
-class Graph
-{
+class Graph {
 public:
     explicit Graph(std::string);
+
     void print();
-    void addEdge(Graph*, double);
+
+    void addEdge(Graph *, double);
+
+    const std::unordered_map<Graph *, double> &getAdjacencyList() const;
+
+    const std::string &getName() const;
+
+private:
     std::string name;
-    std::unordered_map<Graph*, double> adjacencyList;
+    std::unordered_map<Graph *, double> adjacencyList;
 };
 
 #endif //CITYMAP_GRAPH_H

@@ -1,0 +1,50 @@
+{
+  "configurations": [
+    {
+      "directories": [
+        {
+          "build": ".",
+          "jsonFile": "directory-.-Debug-f5ebdc15457944623624.json",
+          "minimumCMakeVersion": {
+            "string": "3.27"
+          },
+          "projectIndex": 0,
+          "source": ".",
+          "targetIndexes": [
+            0
+          ]
+        }
+      ],
+      "name": "Debug",
+      "projects": [
+        {
+          "directoryIndexes": [
+            0
+          ],
+          "name": "CityMap",
+          "targetIndexes": [
+            0
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "directoryIndex": 0,
+          "id": "CityMap::@6890427a1f51a3e7e1df",
+          "jsonFile": "target-CityMap-Debug-c0bee3578bb4cdb5341f.json",
+          "name": "CityMap",
+          "projectIndex": 0
+        }
+      ]
+    }
+  ],
+  "kind": "codemodel",
+  "paths": {
+    "build": "/Users/mihaildobroslavski/CLionProjects/CityMap/cmake-build-debug-event-trace",
+    "source": "/Users/mihaildobroslavski/CLionProjects/CityMap"
+  },
+  "version": {
+    "major": 2,
+    "minor": 6
+  }
+}
