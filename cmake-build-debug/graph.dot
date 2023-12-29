@@ -1,16 +1,47 @@
 digraph G {
   graph [rankdir=LR];
   node [shape="box", color = "black", style="filled"];
-  "0x600001474280" [label="НДК", fillcolor="red"];
-  "0x600001474280" -> "0x6000014741c0" [label="800", color="red"];
-  "0x600001474240" [label="5Кьошета", fillcolor="green"];
-  "0x600001474240" -> "0x600001474280" [label="400", color="red"];
-  "0x600001474200" [label="БСФС", fillcolor="green"];
-  "0x600001474200" -> "0x6000014741c0" [label="150", color="green"];
-  "0x6000014741c0" [label="Попа", fillcolor="orange"];
-  "0x6000014741c0" -> "0x600001474240" [label="1000", color="green"];
-  "0x6000014741c0" -> "0x600001474200" [label="150", color="green"];
-rankdir=LR
+  "0x600000dec540" [label="15", fillcolor="green"];
+  "0x600000dec540" -> "0x600000dec4c0" [label="6", color="green"];
+  "0x600000dec4c0" [label="10", fillcolor="green"];
+  "0x600000dec4c0" -> "0x600000dec380" [label="4", color="green"];
+  "0x600000dec500" [label="13", fillcolor="green"];
+  "0x600000dec500" -> "0x600000dec440" [label="2", color="green"];
+  "0x600000dec500" -> "0x600000dec3c0" [label="4", color="green"];
+  "0x600000dec480" [label="12", fillcolor="green"];
+  "0x600000dec480" -> "0x600000dec380" [label="2", color="green"];
+  "0x600000dec200" [label="2", fillcolor="green"];
+  "0x600000dec200" -> "0x600000dec280" [label="4", color="green"];
+  "0x600000dec200" -> "0x600000dec1c0" [label="5", color="green"];
+  "0x600000dec380" [label="9", fillcolor="green"];
+  "0x600000dec380" -> "0x600000dec480" [label="2", color="green"];
+  "0x600000dec380" -> "0x600000dec400" [label="3", color="green"];
+  "0x600000dec440" [label="14", fillcolor="green"];
+  "0x600000dec440" -> "0x600000dec540" [label="7", color="green"];
+  "0x600000dec440" -> "0x600000dec500" [label="2", color="green"];
+  "0x600000dec400" [label="8", fillcolor="green"];
+  "0x600000dec400" -> "0x600000dec440" [label="6", color="green"];
+  "0x600000dec300" [label="4", fillcolor="green"];
+  "0x600000dec300" -> "0x600000dec340" [label="3", color="green"];
+  "0x600000dec3c0" [label="11", fillcolor="green"];
+  "0x600000dec3c0" -> "0x600000dec500" [label="4", color="green"];
+  "0x600000dec3c0" -> "0x600000dec240" [label="4", color="green"];
+  "0x600000dec2c0" [label="6", fillcolor="green"];
+  "0x600000dec2c0" -> "0x600000dec340" [label="4", color="green"];
+  "0x600000dec2c0" -> "0x600000dec280" [label="3", color="green"];
+  "0x600000dec280" [label="3", fillcolor="green"];
+  "0x600000dec280" -> "0x600000dec2c0" [label="3", color="green"];
+  "0x600000dec280" -> "0x600000dec200" [label="4", color="green"];
+  "0x600000dec1c0" [label="1", fillcolor="green"];
+  "0x600000dec1c0" -> "0x600000dec240" [label="5", color="green"];
+  "0x600000dec1c0" -> "0x600000dec200" [label="5", color="green"];
+  "0x600000dec340" [label="5", fillcolor="orange"];
+  "0x600000dec340" -> "0x600000dec380" [label="4", color="green"];
+  "0x600000dec340" -> "0x600000dec300" [label="3", color="green"];
+  "0x600000dec240" [label="7", fillcolor="green"];
+  "0x600000dec240" -> "0x600000dec3c0" [label="4", color="green"];
+  "0x600000dec240" -> "0x600000dec1c0" [label="5", color="green"];
+  rankdir=LR
   node [shape=plaintext]
   subgraph cluster_01 { 
     label = "Legend";

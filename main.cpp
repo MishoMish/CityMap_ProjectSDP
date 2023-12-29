@@ -1,6 +1,5 @@
 #include "Structure/Graph.h"
 #include "Structure/GraphContainer.h"
-#include "TaskFunctions/RouteChecker.h"
 #include "Interfaces/TerminalProgram.h"
 
 int main(int argc, char *argv[]) {
