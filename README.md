@@ -2,24 +2,24 @@
 
 ## Table of Contents
 
-1. [Introduction](#introduction)
-   1.1 [Project Overview](#project-overview)
-   1.2 [Project Purpose](#project-purpose)
-   1.3 [Benefits](#benefits)
-   1.4 [Development Timeline](#development-timeline)
+- [Introduction](#introduction)
+   - [Project Overview](#project-overview)
+   - [Project Purpose](#project-purpose)
+   - [Benefits](#benefits)
+   - [Development Timeline](#development-timeline)
 
-2. [Project Design](#project-design)
-   2.1 [Folder and Class Structure](#folder-and-class-structure)
-   2.2 [Key Classes and Functions](#key-classes-and-functions)
+- [Project Design](#project-design)
+   - [Folder and Class Structure](#folder-and-class-structure)
+   - [Key Classes and Functions](#key-classes-and-functions)
 
-3. [Upgrade Paths](#upgrade-paths)
-   3.1 [User Interface Improvement](#user-interface-improvement)
-   3.2 [Real-Time Data Integration](#real-time-data-integration)
-   3.3 [Advanced Algorithms](#advanced-algorithms)
-   3.4 [Geospatial Integration](#geospatial-integration)
-   3.5 [Mobile Application](#mobile-application)
+- [Upgrade Paths](#upgrade-paths)
+   - [User Interface Improvement](#user-interface-improvement)
+   - [Real-Time Data Integration](#real-time-data-integration)
+   - [Advanced Algorithms](#advanced-algorithms)
+   - [Geospatial Integration](#geospatial-integration)
+   - [Mobile Application](#mobile-application)
 
-4. [References](#references)
+- [References](#references)
 
 ---
 
@@ -57,7 +57,163 @@ The City Map Project has been developed over a period of 4-5 days, focusing on c
 - **Testing:** Conducting thorough testing to identify and rectify any bugs or issues, ensuring the reliability and stability of the project.
 - **Documentation:** Creating comprehensive documentation to aid users and developers in understanding the project structure, functionality, and usage.
 
-## 4. Implementation and Testing (Continued) <a name="implementation-and-testing"></a>
+---
+
+## 2. Project Design <a name="project-design"></a>
+
+### 2.1 Folder and Class Structure <a name="folder-and-class-structure"></a>
+
+The City Map Project is organized into several key folders, each serving a distinct purpose in structuring the codebase. The "Interfaces" folder encapsulates classes responsible for user interaction, featuring the GraphvizController for graph visualization and TerminalProgram for terminal-based program execution. The "Structure" folder houses essential graph-related components, including the Graph, GraphContainer, and Path classes. Additionally, the "TaskFunctions" folder contains the RouteChecker class, providing static methods for various route and connectivity analyses. The main program, residing in the root directory, utilizes these components to create an interactive tool for city map exploration. The project is thoughtfully structured to enhance modularity, code readability, and maintainability.
+
+### 2.2 Key Classes and Functions <a name="key-classes-and-functions"></a>
+
+#### 2.2.1 GraphvizController <a name="graphviz-controller"></a>
+
+The `GraphvizController` class is responsible for generating Dot files representing the city map and running Graphviz to produce visual representations.
+
+##### Methods:
+
+- `generateDotFile(GraphContainer *graphContainer, Graph *current, std::unordered_set<Graph *> closed)`: Generates a Dot file based on the given parameters.
+- `runGraphvizAndOpenImage()`: Executes Graphviz and opens the generated image.
+
+#### 2.2.2 TerminalProgram <a name="terminal-program"></a>
+
+The `TerminalProgram` class handles the execution of the program in a terminal-based environment.
+
+##### Constructor:
+
+- `TerminalProgram(GraphContainer *map, Graph *start)`: Initializes the program with a map and starting graph.
+
+##### Methods:
+
+- `printIntroduction()`: Prints the introduction message.
+- `printHelp()`: Prints the help message.
+- `printHelp2()`: Prints the help2 message.
+- `handleLocationCommand()`: Handles the location command.
+- ... (and so on for other methods)
+
+#### 2.2.3 Graph <a name="graph"></a>
+
+The `Graph` class represents a junction in the city map.
+
+##### Constructor:
+
+- `Graph(std::string)`: Initializes the graph with a name.
+
+##### Methods:
+
+- `print()`: Prints information about the graph.
+- `addEdge(Graph *, double)`: Adds an edge to the graph.
+- `getAdjacencyList()`: Returns the adjacency list.
+- `getName()`: Returns the name of the graph.
+
+#### 2.2.4 GraphContainer <a name="graph-container"></a>
+
+The `GraphContainer` class holds and manages multiple graphs in the city map.
+
+##### Methods:
+
+- `parseFile(const std::string &)`: Parses a file to populate the city map.
+- `containsKey(const std::string &)`: Checks if a graph with a given key exists.
+- `addGraph(const std::string &)`: Adds a graph to the map.
+- `getGraph(const std::string &)`: Returns a graph based on the key.
+- `getGraphs()`: Returns all graphs in the container.
+- `addRoad(const std::string &, const std::string &, double)`: Adds a road between two graphs.
+- `print()`: Prints information about the graphs.
+
+#### 2.2.5 Path <a name="path"></a>
+
+The `Path` class represents a path between junctions in the city map.
+
+##### Methods:
+
+- `print()`: Prints information about the path.
+
+#### 2.2.6 RouteChecker <a name="route-checker"></a>
+
+The `RouteChecker` class provides static methods for various route and connectivity analyses.
+
+##### Methods:
+
+- `exists(Graph *, Graph *)`: Checks if a path exists between two graphs.
+- `getPaths(Graph *, Graph *, const std::unordered_set<Graph *> &)`: Gets paths between two graphs considering closed intersections.
+- `canReturnToStart(Graph *)`: Checks if it's possible to return to the starting graph.
+- `hasHamiltonianPath(GraphContainer *)`: Finds a Hamiltonian path in the city map.
+- `canReachAllNodes(GraphContainer *, Graph *)`: Checks if it's possible to reach all nodes from a given starting graph.
+- `findAllDeadEnded(GraphContainer *)`: Finds all dead-ended streets in the city map.
+
+### 2.3 Upgrade Paths <a name="upgrade-paths"></a>
+
+As the City Map Project evolves, several upgrade paths can be considered to enhance its functionality and usability:
+
+#### 2.3.1 User Interface Improvement <a name="user-interface-improvement"></a>
+
+Develop a graphical user interface (GUI) to provide a more user-friendly experience for interacting with the city map.
+
+#### 2.3.2 Real-Time Data Integration <a name="real-time-data-integration"></a>
+
+Integrate real-time data sources to dynamically update the city map, reflecting changes in infrastructure or road conditions.
+
+#### 2.3.3 Advanced Algorithms <a name="advanced-algorithms"></a>
+
+Implement advanced graph algorithms for more sophisticated analysis, such as A* for pathfinding or algorithms for network flow analysis.
+
+#### 2.3.4 Geospatial Integration <a name="geospatial-integration"></a>
+
+Incorporate geospatial data to enhance the accuracy of the city map representation, allowing for more precise distance calculations and spatial analysis.
+
+#### 2.3.5 Mobile Application <a name="mobile-application"></a>
+
+Develop a mobile application to enable users to access and interact with the city map on the go, providing a portable solution for urban planning and navigation.
+
+
+## 3. Project Design (Continued) <a name="project-design-continued"></a>
+
+### 3.1 Design and Architecture <a name="design-and-architecture"></a>
+
+#### 3.1.1 Object-Oriented Design <a name="object-oriented-design"></a>
+
+The City Map Project adopts an object-oriented design (OOD) approach to ensure modularity, flexibility, and maintainability. Key principles include encapsulation, inheritance, and polymorphism.
+
+#### 3.1.2 Class Diagrams <a name="class-diagrams"></a>
+
+The class diagrams illustrate the relationships between classes, highlighting the essential attributes and methods. The diagrams provide a high-level view of the project's architecture.
+
+---
+
+## 4. Implementation and Testing <a name="implementation-and-testing"></a>
+
+### 4.1 Implementation of Classes <a name="implementation-of-classes"></a>
+
+The implementation of each class adheres to best coding practices, promoting readability, efficiency, and maintainability. Significant aspects of the implementation are outlined below.
+
+#### 4.1.1 GraphvizController <a name="implementation-of-graphviz-controller"></a>
+
+- The `generateDotFile` method constructs a Dot file by utilizing information from the provided `GraphContainer`, current graph, and a set of closed intersections.
+- The `runGraphvizAndOpenImage` method executes the Graphviz tool to generate a visual representation of the city map.
+
+#### 4.1.2 TerminalProgram <a name="implementation-of-terminal-program"></a>
+
+- The constructor initializes the program with a map and starting graph, facilitating seamless execution.
+- Methods like `handleLocationCommand`, `handleChangeCommand`, `handleNeighboursCommand`, and others handle various user commands, ensuring interactive program behavior.
+
+#### 4.1.3 Graph <a name="implementation-of-graph"></a>
+
+- The `print` method outputs relevant information about the graph, aiding in debugging and user understanding.
+- The `addEdge` method allows the addition of edges between graphs, contributing to the overall connectivity.
+
+#### 4.1.4 GraphContainer <a name="implementation-of-graph-container"></a>
+
+- The `parseFile` method reads a file to populate the city map with graphs and roads, promoting ease of data input.
+- The `addRoad` method facilitates the addition of roads between specified graphs, enhancing the overall connectivity.
+
+#### 4.1.5 Path <a name="implementation-of-path"></a>
+
+- The `print` method displays details about the path, contributing to user understanding and debugging.
+
+#### 4.1.6 RouteChecker <a name="implementation-of-route-checker"></a>
+
+- Static methods like `exists`, `getPaths`, `canReturnToStart`, `hasHamiltonianPath`, `canReachAllNodes`, and `findAllDeadEnded` implement various route and connectivity analyses.
 
 ### 4.2 Memory Management, Algorithms, and Optimizations <a name="memory-management-algorithms-and-optimizations"></a>
 
