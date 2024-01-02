@@ -12,12 +12,9 @@
    - [Folder and Class Structure](#folder-and-class-structure)
    - [Key Classes and Functions](#key-classes-and-functions)
 
-- [Upgrade Paths](#upgrade-paths)
-   - [User Interface Improvement](#user-interface-improvement)
-   - [Real-Time Data Integration](#real-time-data-integration)
-   - [Advanced Algorithms](#advanced-algorithms)
-   - [Geospatial Integration](#geospatial-integration)
-   - [Mobile Application](#mobile-application)
+- [Conclusion](#conclusion)
+   - [Initial Goals](#summary-of-initial-goals)
+   - [Upgrade Paths](#directions-for-future-development-and-improvement)
 
 - [References](#references)
 
@@ -67,7 +64,7 @@ The City Map Project is organized into several key folders, each serving a disti
 
 ### 2.2 Key Classes and Functions <a name="key-classes-and-functions"></a>
 
-#### 2.2.1 GraphvizController <a name="graphviz-controller"></a>
+#### 2.2.1 GraphvizController
 
 The `GraphvizController` class is responsible for generating Dot files representing the city map and running Graphviz to produce visual representations.
 
@@ -76,7 +73,7 @@ The `GraphvizController` class is responsible for generating Dot files represent
 - `generateDotFile(GraphContainer *graphContainer, Graph *current, std::unordered_set<Graph *> closed)`: Generates a Dot file based on the given parameters.
 - `runGraphvizAndOpenImage()`: Executes Graphviz and opens the generated image.
 
-#### 2.2.2 TerminalProgram <a name="terminal-program"></a>
+#### 2.2.2 TerminalProgram 
 
 The `TerminalProgram` class handles the execution of the program in a terminal-based environment.
 
@@ -92,7 +89,7 @@ The `TerminalProgram` class handles the execution of the program in a terminal-b
 - `handleLocationCommand()`: Handles the location command.
 - ... (and so on for other methods)
 
-#### 2.2.3 Graph <a name="graph"></a>
+#### 2.2.3 Graph
 
 The `Graph` class represents a junction in the city map.
 
@@ -107,7 +104,7 @@ The `Graph` class represents a junction in the city map.
 - `getAdjacencyList()`: Returns the adjacency list.
 - `getName()`: Returns the name of the graph.
 
-#### 2.2.4 GraphContainer <a name="graph-container"></a>
+#### 2.2.4 GraphContainer
 
 The `GraphContainer` class holds and manages multiple graphs in the city map.
 
@@ -121,7 +118,7 @@ The `GraphContainer` class holds and manages multiple graphs in the city map.
 - `addRoad(const std::string &, const std::string &, double)`: Adds a road between two graphs.
 - `print()`: Prints information about the graphs.
 
-#### 2.2.5 Path <a name="path"></a>
+#### 2.2.5 Path 
 
 The `Path` class represents a path between junctions in the city map.
 
@@ -129,7 +126,7 @@ The `Path` class represents a path between junctions in the city map.
 
 - `print()`: Prints information about the path.
 
-#### 2.2.6 RouteChecker <a name="route-checker"></a>
+#### 2.2.6 RouteChecker 
 
 The `RouteChecker` class provides static methods for various route and connectivity analyses.
 
@@ -142,51 +139,49 @@ The `RouteChecker` class provides static methods for various route and connectiv
 - `canReachAllNodes(GraphContainer *, Graph *)`: Checks if it's possible to reach all nodes from a given starting graph.
 - `findAllDeadEnded(GraphContainer *)`: Finds all dead-ended streets in the city map.
 
-## 2.3 Project Design (Continued) <a name="project-design-continued"></a>
-
-#### 2.3.1 Object-Oriented Design <a name="object-oriented-design"></a>
+## 2.3.1 Object-Oriented Project Design
 
 The City Map Project adopts an object-oriented design (OOD) approach to ensure modularity, flexibility, and maintainability. Key principles include encapsulation, inheritance, and polymorphism.
 
-## 3. Implementation and Testing <a name="implementation-and-testing"></a>
+## 3. Implementation and Testing 
 
-### 3.1 Implementation of Classes <a name="implementation-of-classes"></a>
+### 3.1 Implementation of Classes
 
 The implementation of each class adheres to best coding practices, promoting readability, efficiency, and maintainability. Significant aspects of the implementation are outlined below.
 
-#### 3.1.1 GraphvizController <a name="implementation-of-graphviz-controller"></a>
+#### 3.1.1 GraphvizController 
 
 - The `generateDotFile` method constructs a Dot file by utilizing information from the provided `GraphContainer`, current graph, and a set of closed intersections.
 - The `runGraphvizAndOpenImage` method executes the Graphviz tool to generate a visual representation of the city map.
 
-#### 3.1.2 TerminalProgram <a name="implementation-of-terminal-program"></a>
+#### 3.1.2 TerminalProgram 
 
 - The constructor initializes the program with a map and starting graph, facilitating seamless execution.
 - Methods like `handleLocationCommand`, `handleChangeCommand`, `handleNeighboursCommand`, and others handle various user commands, ensuring interactive program behavior.
 
-#### 3.1.3 Graph <a name="implementation-of-graph"></a>
+#### 3.1.3 Graph
 
 - The `print` method outputs relevant information about the graph, aiding in debugging and user understanding.
 - The `addEdge` method allows the addition of edges between graphs, contributing to the overall connectivity.
 
-#### 3.1.4 GraphContainer <a name="implementation-of-graph-container"></a>
+#### 3.1.4 GraphContainer 
 
 - The `parseFile` method reads a file to populate the city map with graphs and roads, promoting ease of data input.
 - The `addRoad` method facilitates the addition of roads between specified graphs, enhancing the overall connectivity.
 
-#### 3.1.5 Path <a name="implementation-of-path"></a>
+#### 3.1.5 Path 
 
 - The `print` method displays details about the path, contributing to user understanding and debugging.
 
-#### 3.1.6 RouteChecker <a name="implementation-of-route-checker"></a>
+#### 3.1.6 RouteChecker
 
 - Static methods like `exists`, `getPaths`, `canReturnToStart`, `hasHamiltonianPath`, `canReachAllNodes`, and `findAllDeadEnded` implement various route and connectivity analyses.
 
-### 3.2 Memory Management, Algorithms, and Optimizations <a name="memory-management-algorithms-and-optimizations"></a>
+### 3.2 Memory Management, Algorithms, and Optimizations 
 
 The project incorporates efficient memory management practices, algorithms for various functionalities, and optimizations to ensure optimal performance. The choice of data structures and algorithms is aligned with the principles of scalability and code efficiency.
 
-### 3.3 Test Scenario Planning and Execution <a name="test-scenario-planning-and-execution"></a>
+### 3.3 Test Scenario Planning and Execution 
 
 Thorough testing has been conducted to identify and rectify any bugs or issues. Test scenarios cover a range of functionalities, ensuring the reliability and stability of the project. This includes positive and negative test cases for route planning, connectivity analysis, and graph visualization.
 
