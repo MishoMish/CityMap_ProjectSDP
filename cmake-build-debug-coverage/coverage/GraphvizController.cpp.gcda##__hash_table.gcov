@@ -2394,40 +2394,40 @@ branch  1 taken 8
         8: 2311:        __next_pointer __nd = __bucket_list_[__chash];
         8: 2312:        if (__nd != nullptr)
         8: 2312-block  0
-branch  0 taken 1
-branch  1 taken 7
+branch  0 taken 0
+branch  1 taken 8
         -: 2313:        {
-       18: 2314:            for (__nd = __nd->__next_; __nd != nullptr &&
-        7: 2314-block  0
-       11: 2314-block  1
-branch  0 taken 4
-branch  1 taken 7
-       11: 2314-block  2
-branch  2 taken 7
-branch  3 taken 4
-        4: 2314-block  3
-        7: 2315:                (__nd->__hash() == __hash
-        7: 2316:                  || __constrain_hash(__nd->__hash(), __bc) == __chash);
-        7: 2316-block  0
+       21: 2314:            for (__nd = __nd->__next_; __nd != nullptr &&
+        8: 2314-block  0
+       13: 2314-block  1
+branch  0 taken 5
+branch  1 taken 8
+       13: 2314-block  2
+branch  2 taken 8
+branch  3 taken 5
+        5: 2314-block  3
+        8: 2315:                (__nd->__hash() == __hash
+        8: 2316:                  || __constrain_hash(__nd->__hash(), __bc) == __chash);
+        8: 2316-block  0
 branch  0 taken 3
-branch  1 taken 4
-        4: 2316-block  1
-        4: 2317:                                                           __nd = __nd->__next_)
+branch  1 taken 5
+        5: 2316-block  1
+        5: 2317:                                                           __nd = __nd->__next_)
         -: 2318:            {
-        7: 2319:                if ((__nd->__hash() == __hash)
+        8: 2319:                if ((__nd->__hash() == __hash)
         3: 2319-block  0
 branch  0 taken 3
 branch  1 taken 0
-        7: 2320:                    && key_eq()(__nd->__upcast()->__value_, __k))
-        7: 2320-block  0
+        8: 2320:                    && key_eq()(__nd->__upcast()->__value_, __k))
+        8: 2320-block  0
 branch  0 taken 3
-branch  1 taken 4
+branch  1 taken 5
         3: 2321:                    return iterator(__nd, this);
         3: 2321-block  0
-        4: 2322:            }
-        4: 2322-block  0
-        4: 2323:        }
-        4: 2323-block  0
+        5: 2322:            }
+        5: 2322-block  0
+        5: 2323:        }
+        5: 2323-block  0
         5: 2324:    }
         5: 2324-block  0
         5: 2325:    return end();

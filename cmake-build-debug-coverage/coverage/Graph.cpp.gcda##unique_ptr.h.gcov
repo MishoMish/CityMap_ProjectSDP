@@ -287,16 +287,16 @@ function _ZNSt3__110unique_ptrINS_11__hash_nodeINS_17__hash_value_typeIP5GraphdE
         -:  270:    return *__ptr_.first();
         -:  271:  }
         -:  272:  _LIBCPP_INLINE_VISIBILITY
-function _ZNKSt3__110unique_ptrINS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEENS_22__hash_node_destructorINS_9allocatorIS7_EEEEEptB6v15006Ev called 222 returned 100% blocks executed 100%
-      222:  273:  pointer operator->() const _NOEXCEPT {
-      222:  274:    return __ptr_.first();
-      222:  274-block  0
+function _ZNKSt3__110unique_ptrINS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEENS_22__hash_node_destructorINS_9allocatorIS7_EEEEEptB6v15006Ev called 238 returned 100% blocks executed 100%
+      238:  273:  pointer operator->() const _NOEXCEPT {
+      238:  274:    return __ptr_.first();
+      238:  274-block  0
         -:  275:  }
         -:  276:  _LIBCPP_INLINE_VISIBILITY
-function _ZNKSt3__110unique_ptrINS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEENS_22__hash_node_destructorINS_9allocatorIS7_EEEEE3getB6v15006Ev called 48 returned 100% blocks executed 100%
-       48:  277:  pointer get() const _NOEXCEPT {
-       48:  278:    return __ptr_.first();
-       48:  278-block  0
+function _ZNKSt3__110unique_ptrINS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEENS_22__hash_node_destructorINS_9allocatorIS7_EEEEE3getB6v15006Ev called 56 returned 100% blocks executed 100%
+       56:  277:  pointer get() const _NOEXCEPT {
+       56:  278:    return __ptr_.first();
+       56:  278-block  0
         -:  279:  }
         -:  280:  _LIBCPP_INLINE_VISIBILITY
 function _ZNSt3__110unique_ptrINS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEENS_22__hash_node_destructorINS_9allocatorIS7_EEEEE11get_deleterB6v15006Ev called 48 returned 100% blocks executed 100%
@@ -418,14 +418,14 @@ branch  1 taken 48
         -:  387:  template <bool _Dummy = true,
         -:  388:            class = _EnableIfDeleterDefaultConstructible<_Dummy> >
         -:  389:  _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEEENS_25__bucket_list_deallocatorINS_9allocatorISB_EEEEEC1B6v15006ILb1EvEEv called 66 returned 100% blocks executed 100%
-function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEEENS_25__bucket_list_deallocatorINS_9allocatorISB_EEEEEC2B6v15006ILb1EvEEv called 66 returned 100% blocks executed 66%
-      132:  390:  _LIBCPP_CONSTEXPR unique_ptr() _NOEXCEPT : __ptr_(__value_init_tag(), __value_init_tag()) {}
-       66:  390-block  0
-       66:  390-block  1
-branch  0 taken 66
+function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEEENS_25__bucket_list_deallocatorINS_9allocatorISB_EEEEEC1B6v15006ILb1EvEEv called 76 returned 100% blocks executed 100%
+function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEEENS_25__bucket_list_deallocatorINS_9allocatorISB_EEEEEC2B6v15006ILb1EvEEv called 76 returned 100% blocks executed 66%
+      152:  390:  _LIBCPP_CONSTEXPR unique_ptr() _NOEXCEPT : __ptr_(__value_init_tag(), __value_init_tag()) {}
+       76:  390-block  0
+       76:  390-block  1
+branch  0 taken 76
 branch  1 taken 0
-       66:  390-block  2
+       76:  390-block  2
     $$$$$:  390-block  3
         -:  391:
         -:  392:  template <bool _Dummy = true,
@@ -527,10 +527,10 @@ branch  1 taken 0
         -:  488:
         -:  489:  _LIBCPP_INLINE_VISIBILITY
         -:  490:  typename add_lvalue_reference<_Tp>::type
-function _ZNKSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEEENS_25__bucket_list_deallocatorINS_9allocatorISB_EEEEEixB6v15006Em called 156 returned 100% blocks executed 100%
-      156:  491:  operator[](size_t __i) const {
-      156:  492:    return __ptr_.first()[__i];
-      156:  492-block  0
+function _ZNKSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEEENS_25__bucket_list_deallocatorINS_9allocatorISB_EEEEEixB6v15006Em called 172 returned 100% blocks executed 100%
+      172:  491:  operator[](size_t __i) const {
+      172:  492:    return __ptr_.first()[__i];
+      172:  492-block  0
         -:  493:  }
         -:  494:  _LIBCPP_INLINE_VISIBILITY
         -:  495:  pointer get() const _NOEXCEPT {

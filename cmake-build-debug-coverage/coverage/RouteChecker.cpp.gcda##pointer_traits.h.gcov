@@ -154,19 +154,19 @@
 function _ZNSt3__114pointer_traitsIPNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEEE10pointer_toB6v15006ERS8_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__114pointer_traitsIPKNS_4pairIKP5GraphdEEE10pointer_toB6v15006ERS6_ called 16 returned 100% blocks executed 100%
 function _ZNSt3__114pointer_traitsIPKNS_17__hash_value_typeIP5GraphdEEE10pointer_toB6v15006ERS5_ called 55 returned 100% blocks executed 100%
-function _ZNSt3__114pointer_traitsIPNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEEEE10pointer_toB6v15006ERSA_ called 223 returned 100% blocks executed 100%
+function _ZNSt3__114pointer_traitsIPNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEEEE10pointer_toB6v15006ERSA_ called 239 returned 100% blocks executed 100%
 function _ZNSt3__114pointer_traitsIPKNS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEE10pointer_toB6v15006ERSB_ called 56 returned 100% blocks executed 100%
-function _ZNSt3__114pointer_traitsIPNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEEEEE10pointer_toB6v15006ERSG_ called 536 returned 100% blocks executed 100%
+function _ZNSt3__114pointer_traitsIPNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEEEEE10pointer_toB6v15006ERSG_ called 552 returned 100% blocks executed 100%
 function _ZNSt3__114pointer_traitsIPNS_15__tree_end_nodeIPNS_16__tree_node_baseIPvEEEEE10pointer_toB6v15006ERS6_ called 0 returned 0% blocks executed 0%
-      886:  149:    static pointer pointer_to(typename conditional<is_void<element_type>::value,
+      918:  149:    static pointer pointer_to(typename conditional<is_void<element_type>::value,
         -:  150:                                      __nat, element_type>::type& __r) _NOEXCEPT
-      886:  151:        {return _VSTD::addressof(__r);}
+      918:  151:        {return _VSTD::addressof(__r);}
     $$$$$:  151-block  0
        16:  151-block  1
        55:  151-block  2
-      223:  151-block  3
+      239:  151-block  3
        56:  151-block  4
-      536:  151-block  5
+      552:  151-block  5
     $$$$$:  151-block  6
         -:  152:};
         -:  153:

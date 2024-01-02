@@ -11,18 +11,18 @@ TEST_CASE("GraphvizController Test") {
     SUBCASE("Generate Dot File Test") {
         GraphContainer container;
 
-        container.addGraph("CityA");
-        container.addGraph("CityB");
-        container.addGraph("CityC");
-        container.addGraph("CityD");
+        container.addGraph("1");
+        container.addGraph("2");
+        container.addGraph("3");
+        container.addGraph("4");
 
-        container.addRoad("CityA", "CityB", 10.0);
-        container.addRoad("CityA", "CityC", 20.0);
-        container.addRoad("CityB", "CityC", 5.0);
-        container.addRoad("CityB", "CityD", 15.0);
+        container.addRoad("1", "2", 10.0);
+        container.addRoad("1", "3", 20.0);
+        container.addRoad("2", "3", 5.0);
+        container.addRoad("2", "4", 15.0);
 
-        Graph *currentGraph = container.getGraph("CityA");
-        std::unordered_set<Graph *> closedNodes = {container.getGraph("CityC")};
+        Graph *currentGraph = container.getGraph("1");
+        std::unordered_set<Graph *> closedNodes = {container.getGraph("3")};
 
         GraphvizController::generateDotFile(&container, currentGraph, closedNodes);
 

@@ -950,17 +950,17 @@ function _ZNSt3__122__cxx_atomic_base_implIbEC2Eb called 1 returned 100% blocks 
         -:  941:}
         -:  942:template<class _Tp>
         -:  943:_LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__118__cxx_atomic_storeB6v15006IbEEvPNS_22__cxx_atomic_base_implIT_EES2_NS_12memory_orderE called 5 returned 100% blocks executed 60%
+function _ZNSt3__118__cxx_atomic_storeB6v15006IbEEvPNS_22__cxx_atomic_base_implIT_EES2_NS_12memory_orderE called 10 returned 100% blocks executed 60%
 function _ZNSt3__118__cxx_atomic_storeB6v15006IiEEvPNS_22__cxx_atomic_base_implIT_EES2_NS_12memory_orderE called 64 returned 100% blocks executed 60%
-       69:  944:void __cxx_atomic_store(__cxx_atomic_base_impl<_Tp> * __a, _Tp __val, memory_order __order) _NOEXCEPT {
-       69:  945:    __c11_atomic_store(&__a->__a_value, __val, static_cast<__memory_order_underlying_t>(__order));
-        5:  945-block  0
-branch  0 taken 5
+       74:  944:void __cxx_atomic_store(__cxx_atomic_base_impl<_Tp> * __a, _Tp __val, memory_order __order) _NOEXCEPT {
+       74:  945:    __c11_atomic_store(&__a->__a_value, __val, static_cast<__memory_order_underlying_t>(__order));
+       10:  945-block  0
+branch  0 taken 10
 branch  1 taken 0
 branch  2 taken 0
     $$$$$:  945-block  1
     $$$$$:  945-block  2
-        5:  945-block  3
+       10:  945-block  3
        64:  945-block  4
 branch  3 taken 64
 branch  4 taken 0
@@ -968,8 +968,8 @@ branch  5 taken 0
     $$$$$:  945-block  5
     $$$$$:  945-block  6
        64:  945-block  7
-       69:  946:}
-        5:  946-block  0
+       74:  946:}
+       10:  946-block  0
        64:  946-block  1
         -:  947:
         -:  948:template<class _Tp>
@@ -1053,9 +1053,9 @@ branch  5 never executed
         -: 1006:template<class _Tp>
         -: 1007:_LIBCPP_INLINE_VISIBILITY
 function _ZNSt3__122__cxx_atomic_fetch_addB6v15006ImEET_PNS_22__cxx_atomic_base_implIS1_EES1_NS_12memory_orderE called 1 returned 100% blocks executed 37%
-function _ZNSt3__122__cxx_atomic_fetch_addB6v15006IiEET_PNS_22__cxx_atomic_base_implIS1_EES1_NS_12memory_orderE called 9 returned 100% blocks executed 37%
-       10: 1008:_Tp __cxx_atomic_fetch_add(__cxx_atomic_base_impl<_Tp> * __a, _Tp __delta, memory_order __order) _NOEXCEPT {
-       10: 1009:    return __c11_atomic_fetch_add(&__a->__a_value, __delta, static_cast<__memory_order_underlying_t>(__order));
+function _ZNSt3__122__cxx_atomic_fetch_addB6v15006IiEET_PNS_22__cxx_atomic_base_implIS1_EES1_NS_12memory_orderE called 17 returned 100% blocks executed 37%
+       18: 1008:_Tp __cxx_atomic_fetch_add(__cxx_atomic_base_impl<_Tp> * __a, _Tp __delta, memory_order __order) _NOEXCEPT {
+       18: 1009:    return __c11_atomic_fetch_add(&__a->__a_value, __delta, static_cast<__memory_order_underlying_t>(__order));
         1: 1009-block  0
 branch  0 taken 0
 branch  1 taken 0
@@ -1069,19 +1069,19 @@ branch  4 taken 0
     $$$$$: 1009-block  5
         1: 1009-block  6
         1: 1009-block  7
-        9: 1009-block  8
+       17: 1009-block  8
 branch  5 taken 0
 branch  6 taken 0
 branch  7 taken 0
-branch  8 taken 9
+branch  8 taken 17
 branch  9 taken 0
     $$$$$: 1009-block  9
     $$$$$: 1009-block 10
     $$$$$: 1009-block 11
     $$$$$: 1009-block 12
     $$$$$: 1009-block 13
-        9: 1009-block 14
-        9: 1009-block 15
+       17: 1009-block 14
+       17: 1009-block 15
         -: 1010:}
         -: 1011:
         -: 1012:template<class _Tp>
@@ -1630,12 +1630,12 @@ function _ZNSt3__117__cxx_atomic_implIbNS_22__cxx_atomic_base_implIbEEEC2B6v1500
         -: 1547:      _LIBCPP_CHECK_STORE_MEMORY_ORDER(__m)
         -: 1548:        {__cxx_atomic_store(&__a_, __d, __m);}
         -: 1549:    _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__113__atomic_baseIbLb0EE5storeB6v15006EbNS_12memory_orderE called 5 returned 100% blocks executed 100%
+function _ZNSt3__113__atomic_baseIbLb0EE5storeB6v15006EbNS_12memory_orderE called 10 returned 100% blocks executed 100%
 function _ZNSt3__113__atomic_baseIiLb0EE5storeB6v15006EiNS_12memory_orderE called 64 returned 100% blocks executed 100%
-       69: 1550:    void store(_Tp __d, memory_order __m = memory_order_seq_cst) _NOEXCEPT
+       74: 1550:    void store(_Tp __d, memory_order __m = memory_order_seq_cst) _NOEXCEPT
         -: 1551:      _LIBCPP_CHECK_STORE_MEMORY_ORDER(__m)
-       69: 1552:        {__cxx_atomic_store(&__a_, __d, __m);}
-        5: 1552-block  0
+       74: 1552:        {__cxx_atomic_store(&__a_, __d, __m);}
+       10: 1552-block  0
        64: 1552-block  1
         -: 1553:    _LIBCPP_INLINE_VISIBILITY
         -: 1554:    _Tp load(memory_order __m = memory_order_seq_cst) const volatile _NOEXCEPT
@@ -1754,11 +1754,11 @@ function _ZNSt3__113__atomic_baseIiLb1EEC2B6v15006Ev called 64 returned 100% blo
         -: 1655:    _Tp fetch_add(_Tp __op, memory_order __m = memory_order_seq_cst) volatile _NOEXCEPT
         -: 1656:        {return __cxx_atomic_fetch_add(&this->__a_, __op, __m);}
         -: 1657:    _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__113__atomic_baseIiLb1EE9fetch_addB6v15006EiNS_12memory_orderE called 9 returned 100% blocks executed 100%
+function _ZNSt3__113__atomic_baseIiLb1EE9fetch_addB6v15006EiNS_12memory_orderE called 17 returned 100% blocks executed 100%
 function _ZNSt3__113__atomic_baseImLb1EE9fetch_addB6v15006EmNS_12memory_orderE called 1 returned 100% blocks executed 100%
-       10: 1658:    _Tp fetch_add(_Tp __op, memory_order __m = memory_order_seq_cst) _NOEXCEPT
-       10: 1659:        {return __cxx_atomic_fetch_add(&this->__a_, __op, __m);}
-        9: 1659-block  0
+       18: 1658:    _Tp fetch_add(_Tp __op, memory_order __m = memory_order_seq_cst) _NOEXCEPT
+       18: 1659:        {return __cxx_atomic_fetch_add(&this->__a_, __op, __m);}
+       17: 1659-block  0
         1: 1659-block  1
         -: 1660:    _LIBCPP_INLINE_VISIBILITY
         -: 1661:    _Tp fetch_sub(_Tp __op, memory_order __m = memory_order_seq_cst) volatile _NOEXCEPT
@@ -1858,10 +1858,10 @@ function _ZNSt3__16atomicIbEC2B6v15006Ev called 1 returned 100% blocks executed 
         -: 1745:    _Tp operator=(_Tp __d) volatile _NOEXCEPT
         -: 1746:        {__base::store(__d); return __d;}
         -: 1747:    _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__16atomicIbEaSB6v15006Eb called 5 returned 100% blocks executed 100%
-        5: 1748:    _Tp operator=(_Tp __d) _NOEXCEPT
-        5: 1749:        {__base::store(__d); return __d;}
-        5: 1749-block  0
+function _ZNSt3__16atomicIbEaSB6v15006Eb called 10 returned 100% blocks executed 100%
+       10: 1748:    _Tp operator=(_Tp __d) _NOEXCEPT
+       10: 1749:        {__base::store(__d); return __d;}
+       10: 1749-block  0
         -: 1750:
         -: 1751:    atomic& operator=(const atomic&) = delete;
         -: 1752:    atomic& operator=(const atomic&) volatile = delete;

@@ -8,10 +8,10 @@
 #include "../Structure/Graph.h"
 
 TEST_CASE("Graph Test") {
-    Graph graph("CityA");
+    Graph graph("1");
 
     SUBCASE("Correct Creation Test") {
-        CHECK(graph.getName() == "CityA");
+        CHECK(graph.getName() == "1");
         REQUIRE(graph.getAdjacencyList().empty());
     }
 
@@ -20,23 +20,23 @@ TEST_CASE("Graph Test") {
     }
 
     SUBCASE("Print Test - contains element") {
-        Graph graph2("CityB");
+        Graph graph2("2");
         graph.addEdge(&graph2, 1);
         graph.print();
     }
 
     SUBCASE("Add Edge + Get Adjacency Test") {
-        Graph toGraph("CityB");
+        Graph toGraph("2");
         graph.addEdge(&toGraph, 50.0);
 
         const auto &adjList = graph.getAdjacencyList();
         REQUIRE(adjList.size() == 1);
-        REQUIRE(adjList.begin()->first->getName() == "CityB");
+        REQUIRE(adjList.begin()->first->getName() == "2");
         REQUIRE(adjList.begin()->second == 50.0);
     }
 
     SUBCASE("Get Name Test") {
-        CHECK(graph.getName() == "CityA");
+        CHECK(graph.getName() == "1");
     }
 }
 

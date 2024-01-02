@@ -1420,32 +1420,32 @@
         -: 1415:template <class _CharT, class _Traits>
         -: 1416:_LIBCPP_HIDDEN
         -: 1417:ostreambuf_iterator<_CharT, _Traits>
-function _ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_ called 42 returned 100% blocks executed 40%
-       42: 1418:__pad_and_output(ostreambuf_iterator<_CharT, _Traits> __s,
+function _ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_ called 142 returned 100% blocks executed 40%
+      142: 1418:__pad_and_output(ostreambuf_iterator<_CharT, _Traits> __s,
         -: 1419:                 const _CharT* __ob, const _CharT* __op, const _CharT* __oe,
         -: 1420:                 ios_base& __iob, _CharT __fl)
         -: 1421:{
-       42: 1422:    if (__s.__sbuf_ == nullptr)
-       42: 1422-block  0
-branch  0 taken 42
+      142: 1422:    if (__s.__sbuf_ == nullptr)
+      142: 1422-block  0
+branch  0 taken 142
 branch  1 taken 0
     #####: 1423:        return __s;
     $$$$$: 1423-block  0
-       42: 1424:    streamsize __sz = __oe - __ob;
-       42: 1425:    streamsize __ns = __iob.width();
-       42: 1426:    if (__ns > __sz)
-       42: 1426-block  0
+      142: 1424:    streamsize __sz = __oe - __ob;
+      142: 1425:    streamsize __ns = __iob.width();
+      142: 1426:    if (__ns > __sz)
+      142: 1426-block  0
 branch  0 taken 0
-branch  1 taken 42
+branch  1 taken 142
     #####: 1427:        __ns -= __sz;
     $$$$$: 1427-block  0
         -: 1428:    else
-       42: 1429:        __ns = 0;
-       42: 1429-block  0
-       42: 1430:    streamsize __np = __op - __ob;
-       42: 1431:    if (__np > 0)
-       42: 1431-block  0
-branch  0 taken 42
+      142: 1429:        __ns = 0;
+      142: 1429-block  0
+      142: 1430:    streamsize __np = __op - __ob;
+      142: 1431:    if (__np > 0)
+      142: 1431-block  0
+branch  0 taken 142
 branch  1 taken 0
         -: 1432:    {
     #####: 1433:        if (__s.__sbuf_->sputn(__ob, __np) != __np)
@@ -1459,9 +1459,9 @@ branch  1 never executed
         -: 1437:        }
     #####: 1438:    }
     $$$$$: 1438-block  0
-       42: 1439:    if (__ns > 0)
-       42: 1439-block  0
-branch  0 taken 42
+      142: 1439:    if (__ns > 0)
+      142: 1439-block  0
+branch  0 taken 142
 branch  1 taken 0
         -: 1440:    {
     #####: 1441:        basic_string<_CharT, _Traits> __sp(__ns, __fl);
@@ -1486,28 +1486,28 @@ branch  1 never executed
 branch  2 never executed
     $$$$$: 1447-block  3
     $$$$$: 1447-block  4
-       42: 1448:    __np = __oe - __op;
-       42: 1449:    if (__np > 0)
-       42: 1449-block  0
-branch  0 taken 0
-branch  1 taken 42
+      142: 1448:    __np = __oe - __op;
+      142: 1449:    if (__np > 0)
+      142: 1449-block  0
+branch  0 taken 2
+branch  1 taken 140
         -: 1450:    {
-       42: 1451:        if (__s.__sbuf_->sputn(__op, __np) != __np)
-       42: 1451-block  0
+      140: 1451:        if (__s.__sbuf_->sputn(__op, __np) != __np)
+      140: 1451-block  0
 branch  0 taken 0
-branch  1 taken 42
+branch  1 taken 140
         -: 1452:        {
     #####: 1453:            __s.__sbuf_ = nullptr;
     #####: 1454:            return __s;
     $$$$$: 1454-block  0
         -: 1455:        }
-       42: 1456:    }
-       42: 1456-block  0
-       42: 1457:    __iob.width(0);
-       42: 1458:    return __s;
-       42: 1458-block  0
-       42: 1459:}
-       42: 1459-block  0
+      140: 1456:    }
+      140: 1456-block  0
+      142: 1457:    __iob.width(0);
+      142: 1458:    return __s;
+      142: 1458-block  0
+      142: 1459:}
+      142: 1459-block  0
         -: 1460:
         -: 1461:template <class _CharT, class _OutputIterator>
         -: 1462:_OutputIterator

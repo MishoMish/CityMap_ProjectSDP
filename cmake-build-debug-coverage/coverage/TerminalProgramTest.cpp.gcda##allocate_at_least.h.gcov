@@ -56,7 +56,7 @@
         -:   51:template <class _Alloc>
         -:   52:_LIBCPP_NODISCARD _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR
 function _ZNSt3__119__allocate_at_leastB6v15006INS_9allocatorINS_4fposI11__mbstate_tEEEEEENS_19__allocation_resultINS_16allocator_traitsIT_E7pointerEEERS8_m called 0 returned 0% blocks executed 0%
-function _ZNSt3__119__allocate_at_leastB6v15006INS_9allocatorIN7doctest16SubcaseSignatureEEEEENS_19__allocation_resultINS_16allocator_traitsIT_E7pointerEEERS7_m called 3 returned 100% blocks executed 100%
+function _ZNSt3__119__allocate_at_leastB6v15006INS_9allocatorIN7doctest16SubcaseSignatureEEEEENS_19__allocation_resultINS_16allocator_traitsIT_E7pointerEEERS7_m called 6 returned 100% blocks executed 100%
 function _ZNSt3__119__allocate_at_leastB6v15006INS_9allocatorIPKN7doctest6detail20IExceptionTranslatorEEEEENS_19__allocation_resultINS_16allocator_traitsIT_E7pointerEEERSA_m called 0 returned 0% blocks executed 0%
 function _ZNSt3__119__allocate_at_leastB6v15006INS_9allocatorIPN7doctest13IContextScopeEEEEENS_19__allocation_resultINS_16allocator_traitsIT_E7pointerEEERS8_m called 0 returned 0% blocks executed 0%
 function _ZNSt3__119__allocate_at_leastB6v15006INS_9allocatorIN7doctest6StringEEEEENS_19__allocation_resultINS_16allocator_traitsIT_E7pointerEEERS7_m called 1 returned 100% blocks executed 100%
@@ -67,10 +67,10 @@ function _ZNSt3__119__allocate_at_leastB6v15006INS_9allocatorIPKN7doctest12TestC
 function _ZNSt3__119__allocate_at_leastB6v15006INS_9allocatorINS_12basic_stringIcNS_11char_traitsIcEENS1_IcEEEEEEEENS_19__allocation_resultINS_16allocator_traitsIT_E7pointerEEERSA_m called 0 returned 0% blocks executed 0%
 function _ZNSt3__119__allocate_at_leastB6v15006INS_9allocatorIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseEEEEENS_19__allocation_resultINS_16allocator_traitsIT_E7pointerEEERSA_m called 0 returned 0% blocks executed 0%
 function _ZNSt3__119__allocate_at_leastB6v15006INS_9allocatorIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEEEENS_19__allocation_resultINS_16allocator_traitsIT_E7pointerEEERSA_m called 0 returned 0% blocks executed 0%
-        7:   53:__allocation_result<typename allocator_traits<_Alloc>::pointer> __allocate_at_least(_Alloc& __alloc, size_t __n) {
-        7:   54:  return {__alloc.allocate(__n), __n};
+       10:   53:__allocation_result<typename allocator_traits<_Alloc>::pointer> __allocate_at_least(_Alloc& __alloc, size_t __n) {
+       10:   54:  return {__alloc.allocate(__n), __n};
     $$$$$:   54-block  0
-        3:   54-block  1
+        6:   54-block  1
     $$$$$:   54-block  2
     $$$$$:   54-block  3
         1:   54-block  4

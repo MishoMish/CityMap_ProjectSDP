@@ -940,12 +940,12 @@ branch  1 never executed
         -:  914:
         -:  915:template<class _Ptr>
         -:  916:inline _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__116__do_string_hashB6v15006IPKcEEmT_S3_ called 326 returned 100% blocks executed 100%
-      326:  917:size_t __do_string_hash(_Ptr __p, _Ptr __e)
+function _ZNSt3__116__do_string_hashB6v15006IPKcEEmT_S3_ called 361 returned 100% blocks executed 100%
+      361:  917:size_t __do_string_hash(_Ptr __p, _Ptr __e)
         -:  918:{
         -:  919:    typedef typename iterator_traits<_Ptr>::value_type value_type;
-      326:  920:    return __murmur2_or_cityhash<size_t>()(__p, (__e-__p)*sizeof(value_type));
-      326:  920-block  0
+      361:  920:    return __murmur2_or_cityhash<size_t>()(__p, (__e-__p)*sizeof(value_type));
+      361:  920-block  0
         -:  921:}
         -:  922:
         -:  923:_LIBCPP_END_NAMESPACE_STD

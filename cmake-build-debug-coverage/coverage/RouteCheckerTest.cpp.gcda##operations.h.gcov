@@ -317,11 +317,11 @@
         -:  312:{
         -:  313:    typedef bool __result_type;  // used by valarray
         -:  314:    _LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
-function _ZNKSt3__18equal_toIP5GraphEclB6v15006ERKS2_S5_ called 48 returned 100% blocks executed 100%
+function _ZNKSt3__18equal_toIP5GraphEclB6v15006ERKS2_S5_ called 28 returned 100% blocks executed 100%
 function _ZNKSt3__18equal_toIyEclB6v15006ERKyS3_ called 3 returned 100% blocks executed 100%
-       51:  315:    bool operator()(const _Tp& __x, const _Tp& __y) const
-       51:  316:        {return __x == __y;}
-       48:  316-block  0
+       31:  315:    bool operator()(const _Tp& __x, const _Tp& __y) const
+       31:  316:        {return __x == __y;}
+       28:  316-block  0
         3:  316-block  1
         -:  317:};
         -:  318:

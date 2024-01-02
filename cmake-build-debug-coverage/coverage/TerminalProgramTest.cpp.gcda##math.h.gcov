@@ -866,9 +866,9 @@ function _Z5isnanB6v15006e called 0 returned 0% blocks executed 0%
         -:  849:// ceil
         -:  850:
         -:  851:#    if !defined(__sun__)
-function _Z4ceilB6v15006f called 11 returned 100% blocks executed 100%
-       11:  852:inline _LIBCPP_INLINE_VISIBILITY float       ceil(float __lcpp_x) _NOEXCEPT       {return ::ceilf(__lcpp_x);}
-       11:  852-block  0
+function _Z4ceilB6v15006f called 17 returned 100% blocks executed 100%
+       17:  852:inline _LIBCPP_INLINE_VISIBILITY float       ceil(float __lcpp_x) _NOEXCEPT       {return ::ceilf(__lcpp_x);}
+       17:  852-block  0
         -:  853:inline _LIBCPP_INLINE_VISIBILITY long double ceil(long double __lcpp_x) _NOEXCEPT {return ::ceill(__lcpp_x);}
         -:  854:#    endif
         -:  855:

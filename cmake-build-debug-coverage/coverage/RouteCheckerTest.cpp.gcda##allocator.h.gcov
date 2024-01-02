@@ -93,14 +93,14 @@ function _ZNSt3__116__non_trivial_ifILb1ENS_9allocatorIPKN7doctest6detail8TestCa
 function _ZNSt3__116__non_trivial_ifILb1ENS_9allocatorIPKN7doctest12TestCaseDataEEEEC2B6v15006Ev called 1 returned 100% blocks executed 100%
 function _ZNSt3__116__non_trivial_ifILb1ENS_9allocatorIPNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS1_IcEEEEP5GraphEEPvEEEEEEEC2B6v15006Ev called 8 returned 100% blocks executed 100%
 function _ZNSt3__116__non_trivial_ifILb1ENS_9allocatorINS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS1_IcEEEEP5GraphEEPvEEEEEC2B6v15006Ev called 8 returned 100% blocks executed 100%
-function _ZNSt3__116__non_trivial_ifILb1ENS_9allocatorIPNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEEEEEC2B6v15006Ev called 12 returned 100% blocks executed 100%
-function _ZNSt3__116__non_trivial_ifILb1ENS_9allocatorINS_11__hash_nodeIP5GraphPvEEEEEC2B6v15006Ev called 12 returned 100% blocks executed 100%
+function _ZNSt3__116__non_trivial_ifILb1ENS_9allocatorIPNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEEEEEC2B6v15006Ev called 11 returned 100% blocks executed 100%
+function _ZNSt3__116__non_trivial_ifILb1ENS_9allocatorINS_11__hash_nodeIP5GraphPvEEEEEC2B6v15006Ev called 11 returned 100% blocks executed 100%
 function _ZNSt3__116__non_trivial_ifILb1ENS_9allocatorINS_11__tree_nodeIN7doctest6detail8TestCaseEPvEEEEEC2B6v15006Ev called 1 returned 100% blocks executed 100%
 function _ZNSt3__116__non_trivial_ifILb1ENS_9allocatorINS_12basic_stringIcNS_11char_traitsIcEENS1_IcEEEEEEEC2B6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__116__non_trivial_ifILb1ENS_9allocatorIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseEEEEC2B6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__116__non_trivial_ifILb1ENS_9allocatorIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEEEC2B6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__116__non_trivial_ifILb1ENS_9allocatorINS_11__tree_nodeIN7doctest6StringEPvEEEEEC2B6v15006Ev called 1 returned 100% blocks executed 100%
-      207:   78:    _LIBCPP_CONSTEXPR __non_trivial_if() _NOEXCEPT { }
+      205:   78:    _LIBCPP_CONSTEXPR __non_trivial_if() _NOEXCEPT { }
     $$$$$:   78-block  0
       144:   78-block  1
         1:   78-block  2
@@ -114,8 +114,8 @@ function _ZNSt3__116__non_trivial_ifILb1ENS_9allocatorINS_11__tree_nodeIN7doctes
         1:   78-block 10
         8:   78-block 11
         8:   78-block 12
-       12:   78-block 13
-       12:   78-block 14
+       11:   78-block 13
+       11:   78-block 14
         1:   78-block 15
     $$$$$:   78-block 16
     $$$$$:   78-block 17
@@ -154,14 +154,14 @@ function _ZNSt3__19allocatorIPKN7doctest6detail8TestCaseEEC2B6v15006Ev called 1 
 function _ZNSt3__19allocatorIPKN7doctest12TestCaseDataEEC2B6v15006Ev called 1 returned 100% blocks executed 100%
 function _ZNSt3__19allocatorIPNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS0_IcEEEEP5GraphEEPvEEEEEC2B6v15006Ev called 8 returned 100% blocks executed 100%
 function _ZNSt3__19allocatorINS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS0_IcEEEEP5GraphEEPvEEEC2B6v15006Ev called 8 returned 100% blocks executed 100%
-function _ZNSt3__19allocatorIPNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEEEC2B6v15006Ev called 12 returned 100% blocks executed 100%
-function _ZNSt3__19allocatorINS_11__hash_nodeIP5GraphPvEEEC2B6v15006Ev called 12 returned 100% blocks executed 100%
+function _ZNSt3__19allocatorIPNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEEEC2B6v15006Ev called 11 returned 100% blocks executed 100%
+function _ZNSt3__19allocatorINS_11__hash_nodeIP5GraphPvEEEC2B6v15006Ev called 11 returned 100% blocks executed 100%
 function _ZNSt3__19allocatorINS_11__tree_nodeIN7doctest6detail8TestCaseEPvEEEC2B6v15006Ev called 1 returned 100% blocks executed 100%
 function _ZNSt3__19allocatorINS_12basic_stringIcNS_11char_traitsIcEENS0_IcEEEEEC2B6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__19allocatorIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseEEC2B6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__19allocatorIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEC2B6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__19allocatorINS_11__tree_nodeIN7doctest6StringEPvEEEC2B6v15006Ev called 1 returned 100% blocks executed 100%
-      207:   99:    allocator() _NOEXCEPT = default;
+      205:   99:    allocator() _NOEXCEPT = default;
     $$$$$:   99-block  0
       144:   99-block  1
         1:   99-block  2
@@ -175,8 +175,8 @@ function _ZNSt3__19allocatorINS_11__tree_nodeIN7doctest6StringEPvEEEC2B6v15006Ev
         1:   99-block 10
         8:   99-block 11
         8:   99-block 12
-       12:   99-block 13
-       12:   99-block 14
+       11:   99-block 13
+       11:   99-block 14
         1:   99-block 15
     $$$$$:   99-block 16
     $$$$$:   99-block 17
@@ -197,8 +197,8 @@ function _ZNSt3__19allocatorINS_6vectorIN7doctest6StringENS0_IS3_EEEEE8allocateB
 function _ZNSt3__19allocatorIPN7doctest9IReporterEE8allocateB6v15006Em called 1 returned 100% blocks executed 66%
 function _ZNSt3__19allocatorIPKN7doctest6detail8TestCaseEE8allocateB6v15006Em called 1 returned 100% blocks executed 66%
 function _ZNSt3__19allocatorIPKN7doctest12TestCaseDataEE8allocateB6v15006Em called 0 returned 0% blocks executed 0%
-function _ZNSt3__19allocatorINS_11__hash_nodeIP5GraphPvEEE8allocateB6v15006Em called 34 returned 100% blocks executed 66%
-function _ZNSt3__19allocatorIPNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEEE8allocateB6v15006Em called 21 returned 100% blocks executed 66%
+function _ZNSt3__19allocatorINS_11__hash_nodeIP5GraphPvEEE8allocateB6v15006Em called 26 returned 100% blocks executed 66%
+function _ZNSt3__19allocatorIPNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEEE8allocateB6v15006Em called 15 returned 100% blocks executed 66%
 function _ZNSt3__19allocatorINS_11__hash_nodeIyPvEEE8allocateB6v15006Em called 8 returned 100% blocks executed 66%
 function _ZNSt3__19allocatorIPNS_16__hash_node_baseIPNS_11__hash_nodeIyPvEEEEE8allocateB6v15006Em called 3 returned 100% blocks executed 66%
 function _ZNSt3__19allocatorINS_11__tree_nodeIN7doctest6detail8TestCaseEPvEEE8allocateB6v15006Em called 1 returned 100% blocks executed 66%
@@ -207,8 +207,8 @@ function _ZNSt3__19allocatorIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCa
 function _ZNSt3__19allocatorIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEE8allocateB6v15006Em called 0 returned 0% blocks executed 0%
 function _ZNSt3__19allocatorINS_11__tree_nodeIN7doctest6StringEPvEEE8allocateB6v15006Em called 0 returned 0% blocks executed 0%
 function _ZNSt3__19allocatorINS_11__tree_nodeINS_12__value_typeINS_4pairIiN7doctest6StringEEEPFPNS4_9IReporterERKNS4_14ContextOptionsEEEEPvEEE8allocateB6v15006Em called 3 returned 100% blocks executed 66%
-       77:  106:    _Tp* allocate(size_t __n) {
-       77:  107:        if (__n > allocator_traits<allocator>::max_size(*this))
+       63:  106:    _Tp* allocate(size_t __n) {
+       63:  107:        if (__n > allocator_traits<allocator>::max_size(*this))
     $$$$$:  107-block  0
 branch  0 never executed
 branch  1 never executed
@@ -236,12 +236,12 @@ branch 15 taken 1
     $$$$$:  107-block  8
 branch 16 never executed
 branch 17 never executed
-       34:  107-block  9
+       26:  107-block  9
 branch 18 taken 0
-branch 19 taken 34
-       21:  107-block 10
+branch 19 taken 26
+       15:  107-block 10
 branch 20 taken 0
-branch 21 taken 21
+branch 21 taken 15
         8:  107-block 11
 branch 22 taken 0
 branch 23 taken 8
@@ -289,7 +289,7 @@ branch 37 taken 3
         -:  109:        if (__libcpp_is_constant_evaluated()) {
         -:  110:            return static_cast<_Tp*>(::operator new(__n * sizeof(_Tp)));
         -:  111:        } else {
-       77:  112:            return static_cast<_Tp*>(_VSTD::__libcpp_allocate(__n * sizeof(_Tp), _LIBCPP_ALIGNOF(_Tp)));
+       63:  112:            return static_cast<_Tp*>(_VSTD::__libcpp_allocate(__n * sizeof(_Tp), _LIBCPP_ALIGNOF(_Tp)));
     $$$$$:  112-block  0
         3:  112-block  1
     $$$$$:  112-block  2
@@ -299,8 +299,8 @@ branch 37 taken 3
         1:  112-block  6
         1:  112-block  7
     $$$$$:  112-block  8
-       34:  112-block  9
-       21:  112-block 10
+       26:  112-block  9
+       15:  112-block 10
         8:  112-block 11
         3:  112-block 12
         1:  112-block 13
@@ -332,8 +332,8 @@ function _ZNSt3__19allocatorINS_6vectorIN7doctest6StringENS0_IS3_EEEEE10dealloca
 function _ZNSt3__19allocatorINS_11__tree_nodeINS_12__value_typeINS_4pairIiN7doctest6StringEEEPFPNS4_9IReporterERKNS4_14ContextOptionsEEEEPvEEE10deallocateB6v15006EPSG_m called 0 returned 0% blocks executed 0%
 function _ZNSt3__19allocatorIPKN7doctest6detail8TestCaseEE10deallocateB6v15006EPS5_m called 1 returned 100% blocks executed 66%
 function _ZNSt3__19allocatorIPKN7doctest12TestCaseDataEE10deallocateB6v15006EPS4_m called 0 returned 0% blocks executed 0%
-function _ZNSt3__19allocatorIPNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEEE10deallocateB6v15006EPS9_m called 21 returned 100% blocks executed 66%
-function _ZNSt3__19allocatorINS_11__hash_nodeIP5GraphPvEEE10deallocateB6v15006EPS5_m called 34 returned 100% blocks executed 66%
+function _ZNSt3__19allocatorIPNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEEE10deallocateB6v15006EPS9_m called 15 returned 100% blocks executed 66%
+function _ZNSt3__19allocatorINS_11__hash_nodeIP5GraphPvEEE10deallocateB6v15006EPS5_m called 26 returned 100% blocks executed 66%
 function _ZNSt3__19allocatorIP5GraphE10deallocateB6v15006EPS2_m called 37 returned 100% blocks executed 66%
 function _ZNSt3__19allocatorI4PathE10deallocateB6v15006EPS1_m called 7 returned 100% blocks executed 66%
 function _ZNSt3__19allocatorINS_4pairIP5GraphS3_EEE10deallocateB6v15006EPS4_m called 1 returned 100% blocks executed 66%
@@ -343,11 +343,11 @@ function _ZNSt3__19allocatorIcE10deallocateB6v15006EPcm called 0 returned 0% blo
 function _ZNSt3__19allocatorIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEE10deallocateB6v15006EPS5_m called 0 returned 0% blocks executed 0%
 function _ZNSt3__19allocatorIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseEE10deallocateB6v15006EPS5_m called 0 returned 0% blocks executed 0%
 function _ZNSt3__19allocatorINS_11__tree_nodeIN7doctest6StringEPvEEE10deallocateB6v15006EPS5_m called 0 returned 0% blocks executed 0%
-      118:  124:    void deallocate(_Tp* __p, size_t __n) _NOEXCEPT {
+      104:  124:    void deallocate(_Tp* __p, size_t __n) _NOEXCEPT {
         -:  125:        if (__libcpp_is_constant_evaluated()) {
         -:  126:            ::operator delete(__p);
         -:  127:        } else {
-      118:  128:            _VSTD::__libcpp_deallocate((void*)__p, __n * sizeof(_Tp), _LIBCPP_ALIGNOF(_Tp));
+      104:  128:            _VSTD::__libcpp_deallocate((void*)__p, __n * sizeof(_Tp), _LIBCPP_ALIGNOF(_Tp));
     $$$$$:  128-block  0
 branch  0 never executed
 branch  1 never executed
@@ -396,12 +396,12 @@ branch 21 taken 0
 branch 22 never executed
 branch 23 never executed
     $$$$$:  128-block 23
-       21:  128-block 24
-branch 24 taken 21
+       15:  128-block 24
+branch 24 taken 15
 branch 25 taken 0
     $$$$$:  128-block 25
-       34:  128-block 26
-branch 26 taken 34
+       26:  128-block 26
+branch 26 taken 26
 branch 27 taken 0
     $$$$$:  128-block 27
        37:  128-block 28
@@ -441,7 +441,7 @@ branch 44 never executed
 branch 45 never executed
     $$$$$:  128-block 45
         -:  129:        }
-      118:  130:    }
+      104:  130:    }
     $$$$$:  130-block  0
         3:  130-block  1
     $$$$$:  130-block  2
@@ -454,8 +454,8 @@ branch 45 never executed
     $$$$$:  130-block  9
         1:  130-block 10
     $$$$$:  130-block 11
-       21:  130-block 12
-       34:  130-block 13
+       15:  130-block 12
+       26:  130-block 13
        37:  130-block 14
         7:  130-block 15
         1:  130-block 16

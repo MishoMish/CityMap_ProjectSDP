@@ -51,66 +51,52 @@ build cmake_object_order_depends_target_CityMapLibrary: phony || CMakeFiles/City
 
 build CMakeFiles/CityMapLibrary.dir/main.cpp.o: CXX_COMPILER__CityMapLibrary_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/main.cpp || cmake_object_order_depends_target_CityMapLibrary
   DEP_FILE = CMakeFiles/CityMapLibrary.dir/main.cpp.o.d
-  FLAGS = --coverage -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = --coverage -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/CityMapLibrary.dir
   OBJECT_FILE_DIR = CMakeFiles/CityMapLibrary.dir
-  TARGET_COMPILE_PDB = CMakeFiles/CityMapLibrary.dir/CityMapLibrary.pdb
-  TARGET_PDB = libCityMapLibrary.pdb
 
 build CMakeFiles/CityMapLibrary.dir/Structure/Graph.cpp.o: CXX_COMPILER__CityMapLibrary_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/Structure/Graph.cpp || cmake_object_order_depends_target_CityMapLibrary
   DEP_FILE = CMakeFiles/CityMapLibrary.dir/Structure/Graph.cpp.o.d
-  FLAGS = --coverage -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = --coverage -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/CityMapLibrary.dir
   OBJECT_FILE_DIR = CMakeFiles/CityMapLibrary.dir/Structure
-  TARGET_COMPILE_PDB = CMakeFiles/CityMapLibrary.dir/CityMapLibrary.pdb
-  TARGET_PDB = libCityMapLibrary.pdb
 
 build CMakeFiles/CityMapLibrary.dir/Structure/GraphContainer.cpp.o: CXX_COMPILER__CityMapLibrary_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/Structure/GraphContainer.cpp || cmake_object_order_depends_target_CityMapLibrary
   DEP_FILE = CMakeFiles/CityMapLibrary.dir/Structure/GraphContainer.cpp.o.d
-  FLAGS = --coverage -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = --coverage -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/CityMapLibrary.dir
   OBJECT_FILE_DIR = CMakeFiles/CityMapLibrary.dir/Structure
-  TARGET_COMPILE_PDB = CMakeFiles/CityMapLibrary.dir/CityMapLibrary.pdb
-  TARGET_PDB = libCityMapLibrary.pdb
 
 build CMakeFiles/CityMapLibrary.dir/TaskFunctions/RouteChecker.cpp.o: CXX_COMPILER__CityMapLibrary_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/TaskFunctions/RouteChecker.cpp || cmake_object_order_depends_target_CityMapLibrary
   DEP_FILE = CMakeFiles/CityMapLibrary.dir/TaskFunctions/RouteChecker.cpp.o.d
-  FLAGS = --coverage -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = --coverage -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/CityMapLibrary.dir
   OBJECT_FILE_DIR = CMakeFiles/CityMapLibrary.dir/TaskFunctions
-  TARGET_COMPILE_PDB = CMakeFiles/CityMapLibrary.dir/CityMapLibrary.pdb
-  TARGET_PDB = libCityMapLibrary.pdb
 
 build CMakeFiles/CityMapLibrary.dir/Structure/Path.cpp.o: CXX_COMPILER__CityMapLibrary_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/Structure/Path.cpp || cmake_object_order_depends_target_CityMapLibrary
   DEP_FILE = CMakeFiles/CityMapLibrary.dir/Structure/Path.cpp.o.d
-  FLAGS = --coverage -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = --coverage -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/CityMapLibrary.dir
   OBJECT_FILE_DIR = CMakeFiles/CityMapLibrary.dir/Structure
-  TARGET_COMPILE_PDB = CMakeFiles/CityMapLibrary.dir/CityMapLibrary.pdb
-  TARGET_PDB = libCityMapLibrary.pdb
 
 build CMakeFiles/CityMapLibrary.dir/Interfaces/TerminalProgram.cpp.o: CXX_COMPILER__CityMapLibrary_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/Interfaces/TerminalProgram.cpp || cmake_object_order_depends_target_CityMapLibrary
   DEP_FILE = CMakeFiles/CityMapLibrary.dir/Interfaces/TerminalProgram.cpp.o.d
-  FLAGS = --coverage -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = --coverage -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/CityMapLibrary.dir
   OBJECT_FILE_DIR = CMakeFiles/CityMapLibrary.dir/Interfaces
-  TARGET_COMPILE_PDB = CMakeFiles/CityMapLibrary.dir/CityMapLibrary.pdb
-  TARGET_PDB = libCityMapLibrary.pdb
 
 build CMakeFiles/CityMapLibrary.dir/Interfaces/GraphvizController.cpp.o: CXX_COMPILER__CityMapLibrary_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/Interfaces/GraphvizController.cpp || cmake_object_order_depends_target_CityMapLibrary
   DEP_FILE = CMakeFiles/CityMapLibrary.dir/Interfaces/GraphvizController.cpp.o.d
-  FLAGS = --coverage -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = --coverage -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/CityMapLibrary.dir
   OBJECT_FILE_DIR = CMakeFiles/CityMapLibrary.dir/Interfaces
-  TARGET_COMPILE_PDB = CMakeFiles/CityMapLibrary.dir/CityMapLibrary.pdb
-  TARGET_PDB = libCityMapLibrary.pdb
 
 
 # =============================================================================
@@ -122,13 +108,12 @@ build CMakeFiles/CityMapLibrary.dir/Interfaces/GraphvizController.cpp.o: CXX_COM
 
 build libCityMapLibrary.a: CXX_STATIC_LIBRARY_LINKER__CityMapLibrary_Debug CMakeFiles/CityMapLibrary.dir/main.cpp.o CMakeFiles/CityMapLibrary.dir/Structure/Graph.cpp.o CMakeFiles/CityMapLibrary.dir/Structure/GraphContainer.cpp.o CMakeFiles/CityMapLibrary.dir/TaskFunctions/RouteChecker.cpp.o CMakeFiles/CityMapLibrary.dir/Structure/Path.cpp.o CMakeFiles/CityMapLibrary.dir/Interfaces/TerminalProgram.cpp.o CMakeFiles/CityMapLibrary.dir/Interfaces/GraphvizController.cpp.o
   ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
-  LANGUAGE_COMPILE_FLAGS = --coverage -g
+  LANGUAGE_COMPILE_FLAGS = --coverage -g -O0 -g
   OBJECT_DIR = CMakeFiles/CityMapLibrary.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/CityMapLibrary.dir/CityMapLibrary.pdb
   TARGET_FILE = libCityMapLibrary.a
-  TARGET_PDB = libCityMapLibrary.pdb
+  TARGET_PDB = CityMapLibrary.a.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target CityMapProject
@@ -141,12 +126,10 @@ build cmake_object_order_depends_target_CityMapProject: phony || cmake_object_or
 
 build CMakeFiles/CityMapProject.dir/main.cpp.o: CXX_COMPILER__CityMapProject_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/main.cpp || cmake_object_order_depends_target_CityMapProject
   DEP_FILE = CMakeFiles/CityMapProject.dir/main.cpp.o.d
-  FLAGS = --coverage -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = --coverage -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/CityMapProject.dir
   OBJECT_FILE_DIR = CMakeFiles/CityMapProject.dir
-  TARGET_COMPILE_PDB = CMakeFiles/CityMapProject.dir/
-  TARGET_PDB = CityMapProject.pdb
 
 
 # =============================================================================
@@ -157,14 +140,13 @@ build CMakeFiles/CityMapProject.dir/main.cpp.o: CXX_COMPILER__CityMapProject_uns
 # Link the executable CityMapProject
 
 build CityMapProject: CXX_EXECUTABLE_LINKER__CityMapProject_Debug CMakeFiles/CityMapProject.dir/main.cpp.o | libCityMapLibrary.a || libCityMapLibrary.a
-  FLAGS = --coverage -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  FLAGS = --coverage -g -O0 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LINK_LIBRARIES = libCityMapLibrary.a
   OBJECT_DIR = CMakeFiles/CityMapProject.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/CityMapProject.dir/
   TARGET_FILE = CityMapProject
-  TARGET_PDB = CityMapProject.pdb
+  TARGET_PDB = CityMapProject.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target GraphContainerTest
@@ -177,12 +159,10 @@ build cmake_object_order_depends_target_GraphContainerTest: phony || cmake_objec
 
 build CMakeFiles/GraphContainerTest.dir/UnitTesting/GraphContainerTest.cpp.o: CXX_COMPILER__GraphContainerTest_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting/GraphContainerTest.cpp || cmake_object_order_depends_target_GraphContainerTest
   DEP_FILE = CMakeFiles/GraphContainerTest.dir/UnitTesting/GraphContainerTest.cpp.o.d
-  FLAGS = --coverage -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = --coverage -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/GraphContainerTest.dir
   OBJECT_FILE_DIR = CMakeFiles/GraphContainerTest.dir/UnitTesting
-  TARGET_COMPILE_PDB = CMakeFiles/GraphContainerTest.dir/
-  TARGET_PDB = GraphContainerTest.pdb
 
 
 # =============================================================================
@@ -193,14 +173,13 @@ build CMakeFiles/GraphContainerTest.dir/UnitTesting/GraphContainerTest.cpp.o: CX
 # Link the executable GraphContainerTest
 
 build GraphContainerTest: CXX_EXECUTABLE_LINKER__GraphContainerTest_Debug CMakeFiles/GraphContainerTest.dir/UnitTesting/GraphContainerTest.cpp.o | libCityMapLibrary.a || libCityMapLibrary.a
-  FLAGS = --coverage -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  FLAGS = --coverage -g -O0 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LINK_LIBRARIES = libCityMapLibrary.a
   OBJECT_DIR = CMakeFiles/GraphContainerTest.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/GraphContainerTest.dir/
   TARGET_FILE = GraphContainerTest
-  TARGET_PDB = GraphContainerTest.pdb
+  TARGET_PDB = GraphContainerTest.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target GraphTest
@@ -213,12 +192,10 @@ build cmake_object_order_depends_target_GraphTest: phony || cmake_object_order_d
 
 build CMakeFiles/GraphTest.dir/UnitTesting/GraphTest.cpp.o: CXX_COMPILER__GraphTest_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting/GraphTest.cpp || cmake_object_order_depends_target_GraphTest
   DEP_FILE = CMakeFiles/GraphTest.dir/UnitTesting/GraphTest.cpp.o.d
-  FLAGS = --coverage -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = --coverage -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/GraphTest.dir
   OBJECT_FILE_DIR = CMakeFiles/GraphTest.dir/UnitTesting
-  TARGET_COMPILE_PDB = CMakeFiles/GraphTest.dir/
-  TARGET_PDB = GraphTest.pdb
 
 
 # =============================================================================
@@ -229,14 +206,13 @@ build CMakeFiles/GraphTest.dir/UnitTesting/GraphTest.cpp.o: CXX_COMPILER__GraphT
 # Link the executable GraphTest
 
 build GraphTest: CXX_EXECUTABLE_LINKER__GraphTest_Debug CMakeFiles/GraphTest.dir/UnitTesting/GraphTest.cpp.o | libCityMapLibrary.a || libCityMapLibrary.a
-  FLAGS = --coverage -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  FLAGS = --coverage -g -O0 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LINK_LIBRARIES = libCityMapLibrary.a
   OBJECT_DIR = CMakeFiles/GraphTest.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/GraphTest.dir/
   TARGET_FILE = GraphTest
-  TARGET_PDB = GraphTest.pdb
+  TARGET_PDB = GraphTest.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target GraphvizControllerTest
@@ -249,12 +225,10 @@ build cmake_object_order_depends_target_GraphvizControllerTest: phony || cmake_o
 
 build CMakeFiles/GraphvizControllerTest.dir/UnitTesting/GraphvizControllerTest.cpp.o: CXX_COMPILER__GraphvizControllerTest_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting/GraphvizControllerTest.cpp || cmake_object_order_depends_target_GraphvizControllerTest
   DEP_FILE = CMakeFiles/GraphvizControllerTest.dir/UnitTesting/GraphvizControllerTest.cpp.o.d
-  FLAGS = --coverage -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = --coverage -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/GraphvizControllerTest.dir
   OBJECT_FILE_DIR = CMakeFiles/GraphvizControllerTest.dir/UnitTesting
-  TARGET_COMPILE_PDB = CMakeFiles/GraphvizControllerTest.dir/
-  TARGET_PDB = GraphvizControllerTest.pdb
 
 
 # =============================================================================
@@ -265,14 +239,13 @@ build CMakeFiles/GraphvizControllerTest.dir/UnitTesting/GraphvizControllerTest.c
 # Link the executable GraphvizControllerTest
 
 build GraphvizControllerTest: CXX_EXECUTABLE_LINKER__GraphvizControllerTest_Debug CMakeFiles/GraphvizControllerTest.dir/UnitTesting/GraphvizControllerTest.cpp.o | libCityMapLibrary.a || libCityMapLibrary.a
-  FLAGS = --coverage -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  FLAGS = --coverage -g -O0 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LINK_LIBRARIES = libCityMapLibrary.a
   OBJECT_DIR = CMakeFiles/GraphvizControllerTest.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/GraphvizControllerTest.dir/
   TARGET_FILE = GraphvizControllerTest
-  TARGET_PDB = GraphvizControllerTest.pdb
+  TARGET_PDB = GraphvizControllerTest.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target PathTest
@@ -285,12 +258,10 @@ build cmake_object_order_depends_target_PathTest: phony || cmake_object_order_de
 
 build CMakeFiles/PathTest.dir/UnitTesting/PathTest.cpp.o: CXX_COMPILER__PathTest_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting/PathTest.cpp || cmake_object_order_depends_target_PathTest
   DEP_FILE = CMakeFiles/PathTest.dir/UnitTesting/PathTest.cpp.o.d
-  FLAGS = --coverage -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = --coverage -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/PathTest.dir
   OBJECT_FILE_DIR = CMakeFiles/PathTest.dir/UnitTesting
-  TARGET_COMPILE_PDB = CMakeFiles/PathTest.dir/
-  TARGET_PDB = PathTest.pdb
 
 
 # =============================================================================
@@ -301,14 +272,13 @@ build CMakeFiles/PathTest.dir/UnitTesting/PathTest.cpp.o: CXX_COMPILER__PathTest
 # Link the executable PathTest
 
 build PathTest: CXX_EXECUTABLE_LINKER__PathTest_Debug CMakeFiles/PathTest.dir/UnitTesting/PathTest.cpp.o | libCityMapLibrary.a || libCityMapLibrary.a
-  FLAGS = --coverage -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  FLAGS = --coverage -g -O0 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LINK_LIBRARIES = libCityMapLibrary.a
   OBJECT_DIR = CMakeFiles/PathTest.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/PathTest.dir/
   TARGET_FILE = PathTest
-  TARGET_PDB = PathTest.pdb
+  TARGET_PDB = PathTest.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target RouteCheckerTest
@@ -321,12 +291,10 @@ build cmake_object_order_depends_target_RouteCheckerTest: phony || cmake_object_
 
 build CMakeFiles/RouteCheckerTest.dir/UnitTesting/RouteCheckerTest.cpp.o: CXX_COMPILER__RouteCheckerTest_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting/RouteCheckerTest.cpp || cmake_object_order_depends_target_RouteCheckerTest
   DEP_FILE = CMakeFiles/RouteCheckerTest.dir/UnitTesting/RouteCheckerTest.cpp.o.d
-  FLAGS = --coverage -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = --coverage -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/RouteCheckerTest.dir
   OBJECT_FILE_DIR = CMakeFiles/RouteCheckerTest.dir/UnitTesting
-  TARGET_COMPILE_PDB = CMakeFiles/RouteCheckerTest.dir/
-  TARGET_PDB = RouteCheckerTest.pdb
 
 
 # =============================================================================
@@ -337,14 +305,13 @@ build CMakeFiles/RouteCheckerTest.dir/UnitTesting/RouteCheckerTest.cpp.o: CXX_CO
 # Link the executable RouteCheckerTest
 
 build RouteCheckerTest: CXX_EXECUTABLE_LINKER__RouteCheckerTest_Debug CMakeFiles/RouteCheckerTest.dir/UnitTesting/RouteCheckerTest.cpp.o | libCityMapLibrary.a || libCityMapLibrary.a
-  FLAGS = --coverage -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  FLAGS = --coverage -g -O0 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LINK_LIBRARIES = libCityMapLibrary.a
   OBJECT_DIR = CMakeFiles/RouteCheckerTest.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/RouteCheckerTest.dir/
   TARGET_FILE = RouteCheckerTest
-  TARGET_PDB = RouteCheckerTest.pdb
+  TARGET_PDB = RouteCheckerTest.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target TerminalProgramTest
@@ -357,12 +324,10 @@ build cmake_object_order_depends_target_TerminalProgramTest: phony || cmake_obje
 
 build CMakeFiles/TerminalProgramTest.dir/UnitTesting/TerminalProgramTest.cpp.o: CXX_COMPILER__TerminalProgramTest_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting/TerminalProgramTest.cpp || cmake_object_order_depends_target_TerminalProgramTest
   DEP_FILE = CMakeFiles/TerminalProgramTest.dir/UnitTesting/TerminalProgramTest.cpp.o.d
-  FLAGS = --coverage -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = --coverage -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/TerminalProgramTest.dir
   OBJECT_FILE_DIR = CMakeFiles/TerminalProgramTest.dir/UnitTesting
-  TARGET_COMPILE_PDB = CMakeFiles/TerminalProgramTest.dir/
-  TARGET_PDB = TerminalProgramTest.pdb
 
 
 # =============================================================================
@@ -373,14 +338,13 @@ build CMakeFiles/TerminalProgramTest.dir/UnitTesting/TerminalProgramTest.cpp.o: 
 # Link the executable TerminalProgramTest
 
 build TerminalProgramTest: CXX_EXECUTABLE_LINKER__TerminalProgramTest_Debug CMakeFiles/TerminalProgramTest.dir/UnitTesting/TerminalProgramTest.cpp.o | libCityMapLibrary.a || libCityMapLibrary.a
-  FLAGS = --coverage -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  FLAGS = --coverage -g -O0 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LINK_LIBRARIES = libCityMapLibrary.a
   OBJECT_DIR = CMakeFiles/TerminalProgramTest.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/TerminalProgramTest.dir/
   TARGET_FILE = TerminalProgramTest
-  TARGET_PDB = TerminalProgramTest.pdb
+  TARGET_PDB = TerminalProgramTest.dbg
 
 
 #############################################
@@ -439,14 +403,14 @@ build all: phony libCityMapLibrary.a CityMapProject GraphContainerTest GraphTest
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCCompiler.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCCompilerABI.c /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCXXCompiler.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCompilerIdDetection.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineCCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineCompileFeatures.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeFindBinUtils.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeParseImplicitIncludeInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeParseImplicitLinkInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeParseLibraryArchitecture.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystem.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeTestCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeTestCompilerCommon.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/ADSP-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/ARMCC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/ARMClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Borland-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Clang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Cray-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/GHS-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/GNU-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/HP-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/IAR-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Intel-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/LCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/MSVC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/NVHPC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/PGI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/PathScale-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/SCO-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/TI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Tasking-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Watcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/XL-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/zOS-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Internal/FeatureTesting.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin-Determine-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake /Users/mihaildobroslavski/CLionProjects/CityMapProject/CMakeLists.txt CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake /Users/mihaildobroslavski/CLionProjects/CityMapProject/CMakeLists.txt CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCCompiler.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCCompilerABI.c /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCXXCompiler.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCompilerIdDetection.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineCCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineCompileFeatures.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeFindBinUtils.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeParseImplicitIncludeInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeParseImplicitLinkInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeParseLibraryArchitecture.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystem.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeTestCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeTestCompilerCommon.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/ADSP-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/ARMCC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/ARMClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Borland-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Clang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Cray-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/GHS-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/GNU-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/HP-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/IAR-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Intel-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/LCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/MSVC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/NVHPC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/PGI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/PathScale-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/SCO-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/TI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Tasking-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Watcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/XL-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/zOS-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Internal/FeatureTesting.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin-Determine-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake /Users/mihaildobroslavski/CLionProjects/CityMapProject/CMakeLists.txt CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake: phony
+build /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake /Users/mihaildobroslavski/CLionProjects/CityMapProject/CMakeLists.txt CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake: phony
 
 
 #############################################

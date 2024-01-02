@@ -92,10 +92,10 @@
         -:   87:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX14
 function _ZNSt3__116reverse_iteratorIPNS_4fposI11__mbstate_tEEEC1B6v15006ES4_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__116reverse_iteratorIPNS_4fposI11__mbstate_tEEEC2B6v15006ES4_ called 0 returned 0% blocks executed 0%
-function _ZNSt3__116reverse_iteratorIPN7doctest16SubcaseSignatureEEC1B6v15006ES3_ called 9 returned 100% blocks executed 100%
+function _ZNSt3__116reverse_iteratorIPN7doctest16SubcaseSignatureEEC1B6v15006ES3_ called 18 returned 100% blocks executed 100%
 function _ZNSt3__116reverse_iteratorINS0_IPN7doctest16SubcaseSignatureEEEEC1B6v15006ES4_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__116reverse_iteratorINS0_IPN7doctest16SubcaseSignatureEEEEC2B6v15006ES4_ called 0 returned 0% blocks executed 0%
-function _ZNSt3__116reverse_iteratorIPN7doctest16SubcaseSignatureEEC2B6v15006ES3_ called 9 returned 100% blocks executed 100%
+function _ZNSt3__116reverse_iteratorIPN7doctest16SubcaseSignatureEEC2B6v15006ES3_ called 18 returned 100% blocks executed 100%
 function _ZNSt3__116reverse_iteratorIPPKN7doctest6detail20IExceptionTranslatorEEC1B6v15006ES6_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__116reverse_iteratorIPPKN7doctest6detail20IExceptionTranslatorEEC2B6v15006ES6_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__116reverse_iteratorIPPN7doctest13IContextScopeEEC1B6v15006ES4_ called 0 returned 0% blocks executed 0%
@@ -122,13 +122,13 @@ function _ZNSt3__116reverse_iteratorIPN7doctest12_GLOBAL__N_113JUnitReporter17JU
 function _ZNSt3__116reverse_iteratorINS0_IPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEEEC1B6v15006ES7_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__116reverse_iteratorINS0_IPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEEEC2B6v15006ES7_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__116reverse_iteratorIPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEC2B6v15006ES6_ called 0 returned 0% blocks executed 0%
-       40:   88:    explicit reverse_iterator(_Iter __x) : __t(__x), current(__x) {}
+       58:   88:    explicit reverse_iterator(_Iter __x) : __t(__x), current(__x) {}
     $$$$$:   88-block  0
     $$$$$:   88-block  1
-        9:   88-block  2
+       18:   88-block  2
     $$$$$:   88-block  3
     $$$$$:   88-block  4
-        9:   88-block  5
+       18:   88-block  5
     $$$$$:   88-block  6
     $$$$$:   88-block  7
     $$$$$:   88-block  8
@@ -202,7 +202,7 @@ function _ZNSt3__116reverse_iteratorIPN7doctest12_GLOBAL__N_113JUnitReporter17JU
         -:  133:#endif
         -:  134:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX14
 function _ZNKSt3__116reverse_iteratorIPNS_4fposI11__mbstate_tEEE4baseB6v15006Ev called 0 returned 0% blocks executed 0%
-function _ZNKSt3__116reverse_iteratorIPN7doctest16SubcaseSignatureEE4baseB6v15006Ev called 9 returned 100% blocks executed 100%
+function _ZNKSt3__116reverse_iteratorIPN7doctest16SubcaseSignatureEE4baseB6v15006Ev called 24 returned 100% blocks executed 100%
 function _ZNKSt3__116reverse_iteratorINS0_IPN7doctest16SubcaseSignatureEEEE4baseB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__116reverse_iteratorIPPKN7doctest6detail20IExceptionTranslatorEE4baseB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__116reverse_iteratorIPPN7doctest13IContextScopeEE4baseB6v15006Ev called 0 returned 0% blocks executed 0%
@@ -217,9 +217,9 @@ function _ZNKSt3__116reverse_iteratorIPN7doctest12_GLOBAL__N_113JUnitReporter17J
 function _ZNKSt3__116reverse_iteratorINS0_IPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseEEEE4baseB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__116reverse_iteratorIPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEE4baseB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__116reverse_iteratorINS0_IPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEEE4baseB6v15006Ev called 0 returned 0% blocks executed 0%
-       22:  135:    _Iter base() const {return current;}
+       37:  135:    _Iter base() const {return current;}
     $$$$$:  135-block  0
-        9:  135-block  1
+       24:  135-block  1
     $$$$$:  135-block  2
     $$$$$:  135-block  3
     $$$$$:  135-block  4
@@ -235,13 +235,13 @@ function _ZNKSt3__116reverse_iteratorINS0_IPN7doctest12_GLOBAL__N_113JUnitReport
     $$$$$:  135-block 14
     $$$$$:  135-block 15
         -:  136:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX14
-function _ZNKSt3__116reverse_iteratorIPN7doctest16SubcaseSignatureEEdeB6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNKSt3__116reverse_iteratorIPN7doctest16SubcaseSignatureEEdeB6v15006Ev called 3 returned 100% blocks executed 100%
 function _ZNKSt3__116reverse_iteratorIPN7doctest6StringEEdeB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__116reverse_iteratorIPNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEdeB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__116reverse_iteratorIPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseEEdeB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__116reverse_iteratorIPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEdeB6v15006Ev called 0 returned 0% blocks executed 0%
-    #####:  137:    reference operator*() const {_Iter __tmp = current; return *--__tmp;}
-    $$$$$:  137-block  0
+        3:  137:    reference operator*() const {_Iter __tmp = current; return *--__tmp;}
+        3:  137-block  0
     $$$$$:  137-block  1
     $$$$$:  137-block  2
     $$$$$:  137-block  3
@@ -249,7 +249,7 @@ function _ZNKSt3__116reverse_iteratorIPN7doctest12_GLOBAL__N_113JUnitReporter17J
         -:  138:
         -:  139:#if _LIBCPP_STD_VER > 17
         -:  140:    _LIBCPP_INLINE_VISIBILITY
-function _ZNKSt3__116reverse_iteratorIPN7doctest16SubcaseSignatureEEptB6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNKSt3__116reverse_iteratorIPN7doctest16SubcaseSignatureEEptB6v15006Ev called 3 returned 100% blocks executed 100%
 function _ZNKSt3__116reverse_iteratorINS0_IPN7doctest16SubcaseSignatureEEEEptB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__116reverse_iteratorIPN7doctest6StringEEptB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__116reverse_iteratorINS0_IPN7doctest6StringEEEEptB6v15006Ev called 0 returned 0% blocks executed 0%
@@ -259,12 +259,12 @@ function _ZNKSt3__116reverse_iteratorIPN7doctest12_GLOBAL__N_113JUnitReporter17J
 function _ZNKSt3__116reverse_iteratorINS0_IPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseEEEEptB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__116reverse_iteratorIPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEptB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__116reverse_iteratorINS0_IPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEEEptB6v15006Ev called 0 returned 0% blocks executed 0%
-    #####:  141:    constexpr pointer operator->() const
+        3:  141:    constexpr pointer operator->() const
         -:  142:      requires is_pointer_v<_Iter> || requires(const _Iter __i) { __i.operator->(); }
         -:  143:    {
         -:  144:      if constexpr (is_pointer_v<_Iter>) {
-    #####:  145:        return std::prev(current);
-    $$$$$:  145-block  0
+        3:  145:        return std::prev(current);
+        3:  145-block  0
     $$$$$:  145-block  1
     $$$$$:  145-block  2
     $$$$$:  145-block  3
@@ -286,7 +286,7 @@ function _ZNKSt3__116reverse_iteratorINS0_IPN7doctest12_GLOBAL__N_113JUnitReport
         -:  155:#endif // _LIBCPP_STD_VER > 17
         -:  156:
         -:  157:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX14
-function _ZNSt3__116reverse_iteratorIPN7doctest16SubcaseSignatureEEppB6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNSt3__116reverse_iteratorIPN7doctest16SubcaseSignatureEEppB6v15006Ev called 6 returned 100% blocks executed 100%
 function _ZNSt3__116reverse_iteratorINS0_IPN7doctest16SubcaseSignatureEEEEppB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__116reverse_iteratorIPN7doctest6StringEEppB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__116reverse_iteratorINS0_IPN7doctest6StringEEEEppB6v15006Ev called 0 returned 0% blocks executed 0%
@@ -296,8 +296,8 @@ function _ZNSt3__116reverse_iteratorIPN7doctest12_GLOBAL__N_113JUnitReporter17JU
 function _ZNSt3__116reverse_iteratorINS0_IPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseEEEEppB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__116reverse_iteratorIPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEppB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__116reverse_iteratorINS0_IPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEEEppB6v15006Ev called 0 returned 0% blocks executed 0%
-    #####:  158:    reverse_iterator& operator++() {--current; return *this;}
-    $$$$$:  158-block  0
+        6:  158:    reverse_iterator& operator++() {--current; return *this;}
+        6:  158-block  0
     $$$$$:  158-block  1
     $$$$$:  158-block  2
     $$$$$:  158-block  3
@@ -401,7 +401,7 @@ function _ZNSt3__116reverse_iteratorIPN7doctest12_GLOBAL__N_113JUnitReporter17JU
         -:  230:template <class _Iter1, class _Iter2>
         -:  231:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX14
         -:  232:bool
-function _ZNSt3__1neB6v15006IPN7doctest16SubcaseSignatureES3_EEbRKNS_16reverse_iteratorIT_EERKNS4_IT0_EE called 3 returned 100% blocks executed 100%
+function _ZNSt3__1neB6v15006IPN7doctest16SubcaseSignatureES3_EEbRKNS_16reverse_iteratorIT_EERKNS4_IT0_EE called 9 returned 100% blocks executed 100%
 function _ZNSt3__1neB6v15006INS_16reverse_iteratorIPN7doctest16SubcaseSignatureEEES5_EEbRKNS1_IT_EERKNS1_IT0_EE called 0 returned 0% blocks executed 0%
 function _ZNSt3__1neB6v15006IPN7doctest6StringES3_EEbRKNS_16reverse_iteratorIT_EERKNS4_IT0_EE called 1 returned 100% blocks executed 100%
 function _ZNSt3__1neB6v15006INS_16reverse_iteratorIPN7doctest6StringEEES5_EEbRKNS1_IT_EERKNS1_IT0_EE called 0 returned 0% blocks executed 0%
@@ -411,15 +411,15 @@ function _ZNSt3__1neB6v15006IPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestC
 function _ZNSt3__1neB6v15006INS_16reverse_iteratorIPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseEEES8_EEbRKNS1_IT_EERKNS1_IT0_EE called 0 returned 0% blocks executed 0%
 function _ZNSt3__1neB6v15006IPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageES6_EEbRKNS_16reverse_iteratorIT_EERKNS7_IT0_EE called 0 returned 0% blocks executed 0%
 function _ZNSt3__1neB6v15006INS_16reverse_iteratorIPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEES8_EEbRKNS1_IT_EERKNS1_IT0_EE called 0 returned 0% blocks executed 0%
-        4:  233:operator!=(const reverse_iterator<_Iter1>& __x, const reverse_iterator<_Iter2>& __y)
+       10:  233:operator!=(const reverse_iterator<_Iter1>& __x, const reverse_iterator<_Iter2>& __y)
         -:  234:#if _LIBCPP_STD_VER > 17
         -:  235:    requires requires {
         -:  236:      { __x.base() != __y.base() } -> convertible_to<bool>;
         -:  237:    }
         -:  238:#endif // _LIBCPP_STD_VER > 17
         -:  239:{
-        4:  240:    return __x.base() != __y.base();
-        3:  240-block  0
+       10:  240:    return __x.base() != __y.base();
+        9:  240-block  0
     $$$$$:  240-block  1
         1:  240-block  2
     $$$$$:  240-block  3

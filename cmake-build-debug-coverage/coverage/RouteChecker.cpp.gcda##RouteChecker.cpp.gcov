@@ -9,530 +9,549 @@
         -:    4:
         -:    5:#include "RouteChecker.h"
         -:    6:
-function _ZN12RouteChecker6existsEP5GraphS1_ called 4 returned 100% blocks executed 42%
-        4:    7:bool RouteChecker::exists(Graph *startingGraph, Graph *endGraph) {
-        4:    8:    std::unordered_set<Graph *> alreadyChecked;
-        4:    9:    return existsHelper(startingGraph, endGraph, alreadyChecked);
+        -:    7:// Checks if there is a path from startingGraph to endGraph
+function _ZN12RouteChecker6existsEP5GraphS1_ called 4 returned 100% blocks executed 72%
+        4:    8:bool RouteChecker::exists(Graph *startingGraph, Graph *endGraph) {
+        4:    9:    if (startingGraph == endGraph) {
         4:    9-block  0
 branch  0 taken 4
 branch  1 taken 0
-        4:    9-block  1
-branch  2 taken 0
-branch  3 taken 4
-    $$$$$:    9-block  2
-        4:   10:}
-        4:   10-block  0
-    $$$$$:   10-block  1
-    $$$$$:   10-block  2
-    $$$$$:   10-block  3
-        -:   11:
-function _ZN12RouteChecker12existsHelperEP5GraphS1_NSt3__113unordered_setIS1_NS2_4hashIS1_EENS2_8equal_toIS1_EENS2_9allocatorIS1_EEEE called 10 returned 100% blocks executed 78%
-       10:   12:bool RouteChecker::existsHelper(Graph *current, Graph *end, std::unordered_set<Graph *> checked) {
-       10:   13:    checked.insert(current);
-       10:   14:    if (current == end) {
-       10:   14-block  0
-branch  0 taken 7
-branch  1 taken 3
-        3:   15:        return true;
-        3:   15-block  0
-        -:   16:    }
-        -:   17:
-        7:   18:    bool foundSolution = false;
-        7:   19:    auto &adjacencyList = current->getAdjacencyList(); // Access the adjacency list once
-        -:   20:
-       17:   21:    for (auto it = adjacencyList.begin(); it != adjacencyList.end(); ++it) {
-        7:   21-block  0
-       17:   21-block  1
-branch  0 taken 7
-branch  1 taken 10
-       10:   21-block  2
-       10:   22:        if (auto search = checked.find(it->first); search == checked.end()) {
-       10:   22-block  0
-branch  0 taken 2
-branch  1 taken 8
-        8:   23:            foundSolution = foundSolution || existsHelper(it->first, end, checked);
-        8:   23-block  0
-branch  0 taken 2
-branch  1 taken 6
-        6:   23-block  1
-branch  2 taken 6
-branch  3 taken 0
-        6:   23-block  2
-        8:   23-block  3
-branch  4 taken 2
-branch  5 taken 6
-        6:   23-block  4
-    $$$$$:   23-block  5
-branch  6 never executed
-branch  7 never executed
-    $$$$$:   23-block  6
-    $$$$$:   23-block  7
-    $$$$$:   23-block  8
-        8:   24:        }
-        8:   24-block  0
-       10:   25:    }
-       10:   25-block  0
-        -:   26:
-        7:   27:    return foundSolution;
-        7:   27-block  0
-       10:   28:}
-       10:   28-block  0
-        -:   29:
-function _ZN12RouteChecker8getPathsEP5GraphS1_RKNSt3__113unordered_setIS1_NS2_4hashIS1_EENS2_8equal_toIS1_EENS2_9allocatorIS1_EEEE called 2 returned 100% blocks executed 76%
-        2:   30:std::vector<Path> RouteChecker::getPaths(Graph *start, Graph *end, const std::unordered_set<Graph *> &closed) {
-        2:   31:    std::vector<Path> paths;
-        2:   32:    std::vector<Path> shortestPaths;
-        -:   33:
-        2:   34:    paths.push_back({0.0, {start}});
-        2:   34-block  0
-branch  0 taken 2
-branch  1 taken 0
-        2:   34-block  1
-branch  2 taken 2
-branch  3 taken 0
-    $$$$$:   34-block  2
-        -:   35:
-        9:   36:    while (!paths.empty() && shortestPaths.size() < 3) {
-        2:   36-block  0
-        9:   36-block  1
-branch  0 taken 2
-branch  1 taken 7
-        7:   36-block  2
-        9:   36-block  3
-branch  2 taken 2
-branch  3 taken 7
-        4:   36-block  4
-function _ZZN12RouteChecker8getPathsEP5GraphS1_RKNSt3__113unordered_setIS1_NS2_4hashIS1_EENS2_8equal_toIS1_EENS2_9allocatorIS1_EEEEENK3$_0clERK4PathSG_ called 5 returned 100% blocks executed 100%
-       12:   37:        std::sort(paths.begin(), paths.end(), [](const Path &a, const Path &b) {
-        7:   37-block  0
-branch  0 taken 7
-branch  1 taken 0
-        5:   38:            return a.cost > b.cost;
-        5:   38-block  0
-        -:   39:        });
-        -:   40:
-        7:   41:        Path currentPath = paths.back();
-        7:   41-block  0
-branch  0 taken 7
-branch  1 taken 0
-        7:   42:        paths.pop_back();
-        7:   42-block  0
-branch  0 taken 7
-branch  1 taken 0
-        -:   43:
-        7:   44:        const Graph *current = currentPath.nodes.back();
-        -:   45:
-        7:   46:        if (current == end) {
-        7:   46-block  0
-branch  0 taken 3
-branch  1 taken 4
-        3:   47:            shortestPaths.push_back(currentPath);
-        3:   47-block  0
-branch  0 taken 3
-branch  1 taken 0
-        3:   48:            continue;
-        3:   48-block  0
-        -:   49:        }
-       10:   50:        for (const auto &neighbor: current->getAdjacencyList()) {
-        4:   50-block  0
+    #####:   10:        return true;
+    $$$$$:   10-block  0
+        -:   11:    }
+        -:   12:
+        4:   13:    auto &adjacencyList = startingGraph->getAdjacencyList();
+        4:   14:    if (startingGraph == nullptr || endGraph == nullptr || adjacencyList.empty()) {
+        4:   14-block  0
 branch  0 taken 4
 branch  1 taken 0
-        4:   50-block  1
-       10:   50-block  2
+        4:   14-block  1
+branch  2 taken 4
+branch  3 taken 0
+        4:   14-block  2
+branch  4 taken 1
+branch  5 taken 3
+        1:   15:        return false;
+        1:   15-block  0
+        -:   16:    }
+        -:   17:
+        3:   18:    std::unordered_set<Graph *> alreadyChecked;
+        3:   19:    return existsHelper(startingGraph, endGraph, alreadyChecked);
+        3:   19-block  0
+branch  0 taken 3
+branch  1 taken 0
+        4:   20:}
+        3:   20-block  0
+    $$$$$:   20-block  1
+        4:   20-block  2
+    $$$$$:   20-block  3
+        -:   21:
+        -:   22:// Helper function for exists
+function _ZN12RouteChecker12existsHelperEP5GraphS1_RNSt3__113unordered_setIS1_NS2_4hashIS1_EENS2_8equal_toIS1_EENS2_9allocatorIS1_EEEE called 9 returned 100% blocks executed 100%
+        9:   23:bool RouteChecker::existsHelper(Graph *current, Graph *end, std::unordered_set<Graph *> &checked) {
+        9:   24:    checked.insert(current);
+        -:   25:
+        9:   26:    if (current == end) {
+        9:   26-block  0
+branch  0 taken 3
+branch  1 taken 6
+        3:   27:        return true;
+        3:   27-block  0
+        -:   28:    }
+        -:   29:
+        6:   30:    bool foundSolution = false;
+        6:   31:    auto &adjacencyList = current->getAdjacencyList(); // Access the adjacency list once
+        -:   32:
+       16:   33:    for (auto it = adjacencyList.begin(); it != adjacencyList.end(); ++it) {
+        6:   33-block  0
+       16:   33-block  1
+branch  0 taken 10
+branch  1 taken 6
+       10:   33-block  2
+       10:   34:        if (auto search = checked.find(it->first); search == checked.end()) {
+       10:   34-block  0
+branch  0 taken 3
+branch  1 taken 7
+        7:   35:            foundSolution = foundSolution || existsHelper(it->first, end, checked);
+        7:   35-block  0
+branch  0 taken 1
+branch  1 taken 6
+        6:   35-block  1
+        7:   36:        }
+        7:   36-block  0
+       10:   37:    }
+       10:   37-block  0
+        -:   38:
+        6:   39:    return foundSolution;
+        6:   39-block  0
+        9:   40:}
+        9:   40-block  0
+        -:   41:
+        -:   42:// Gets up to three shortest paths from start to end, considering closed junctions
+function _ZN12RouteChecker8getPathsEP5GraphS1_RKNSt3__113unordered_setIS1_NS2_4hashIS1_EENS2_8equal_toIS1_EENS2_9allocatorIS1_EEEE called 2 returned 100% blocks executed 76%
+        2:   43:std::vector<Path> RouteChecker::getPaths(Graph *start, Graph *end, const std::unordered_set<Graph *> &closed) {
+        2:   44:    std::vector<Path> paths;
+        2:   45:    std::vector<Path> shortestPaths;
+        -:   46:
+        2:   47:    paths.push_back({0.0, {start}});
+        2:   47-block  0
+branch  0 taken 2
+branch  1 taken 0
+        2:   47-block  1
+branch  2 taken 2
+branch  3 taken 0
+    $$$$$:   47-block  2
+        -:   48:
+        9:   49:    while (!paths.empty() && shortestPaths.size() < 3) {
+        2:   49-block  0
+        9:   49-block  1
+branch  0 taken 2
+branch  1 taken 7
+        7:   49-block  2
+        9:   49-block  3
+branch  2 taken 2
+branch  3 taken 7
+        4:   49-block  4
+function _ZZN12RouteChecker8getPathsEP5GraphS1_RKNSt3__113unordered_setIS1_NS2_4hashIS1_EENS2_8equal_toIS1_EENS2_9allocatorIS1_EEEEENK3$_0clERK4PathSG_ called 5 returned 100% blocks executed 100%
+       12:   50:        std::sort(paths.begin(), paths.end(), [](const Path &a, const Path &b) {
+        7:   50-block  0
+branch  0 taken 7
+branch  1 taken 0
+        5:   51:            return a.cost > b.cost;
+        5:   51-block  0
+        -:   52:        });
+        -:   53:
+        7:   54:        Path currentPath = paths.back();
+        7:   54-block  0
+branch  0 taken 7
+branch  1 taken 0
+        7:   55:        paths.pop_back();
+        7:   55-block  0
+branch  0 taken 7
+branch  1 taken 0
+        -:   56:
+        7:   57:        const Graph *current = currentPath.nodes.back();
+        -:   58:
+        7:   59:        if (current == end) {
+        7:   59-block  0
+branch  0 taken 3
+branch  1 taken 4
+        3:   60:            shortestPaths.push_back(currentPath);
+        3:   60-block  0
+branch  0 taken 3
+branch  1 taken 0
+        3:   61:            continue;
+        3:   61-block  0
+        -:   62:        }
+        -:   63:
+       10:   64:        for (const auto &neighbor: current->getAdjacencyList()) {
+        4:   64-block  0
+branch  0 taken 4
+branch  1 taken 0
+        4:   64-block  1
+       10:   64-block  2
 branch  2 taken 10
 branch  3 taken 0
-       10:   50-block  3
+       10:   64-block  3
 branch  4 taken 6
 branch  5 taken 4
-        6:   50-block  4
+        6:   64-block  4
 branch  6 taken 6
 branch  7 taken 0
-        5:   50-block  5
-        6:   50-block  6
+        5:   64-block  5
+        6:   64-block  6
 branch  8 taken 6
 branch  9 taken 0
-        6:   50-block  7
-        6:   51:            Graph *next = neighbor.first;
-        6:   52:            if (closed.contains(next))
-        6:   52-block  0
+        6:   64-block  7
+        6:   65:            Graph *next = neighbor.first;
+        6:   66:            if (closed.contains(next))
+        6:   66-block  0
 branch  0 taken 6
 branch  1 taken 0
-        6:   52-block  1
+        6:   66-block  1
 branch  2 taken 5
 branch  3 taken 1
-        1:   53:                continue;
-        1:   53-block  0
-        5:   54:            if (std::find(currentPath.nodes.begin(), currentPath.nodes.end(), next) != currentPath.nodes.end())
-        5:   54-block  0
+        1:   67:                continue;
+        1:   67-block  0
+        5:   68:            if (std::find(currentPath.nodes.begin(), currentPath.nodes.end(), next) != currentPath.nodes.end())
+        5:   68-block  0
 branch  0 taken 5
 branch  1 taken 0
-        5:   54-block  1
+        5:   68-block  1
 branch  2 taken 5
 branch  3 taken 0
-    #####:   55:                continue;
-    $$$$$:   55-block  0
-        -:   56:
-        5:   57:            double newCost = currentPath.cost + neighbor.second;
-        5:   58:            Path newPath = {newCost, currentPath.nodes};
-        5:   58-block  0
+    #####:   69:                continue;
+    $$$$$:   69-block  0
+        -:   70:
+        5:   71:            double newCost = currentPath.cost + neighbor.second;
+        5:   72:            Path newPath = {newCost, currentPath.nodes};
+        5:   72-block  0
 branch  0 taken 5
 branch  1 taken 0
-        5:   59:            newPath.nodes.push_back(next);
-        5:   59-block  0
+        5:   73:            newPath.nodes.push_back(next);
+        5:   73-block  0
 branch  0 taken 5
 branch  1 taken 0
-        5:   60:            paths.push_back(newPath);
-        5:   60-block  0
+        5:   74:            paths.push_back(newPath);
+        5:   74-block  0
 branch  0 taken 5
 branch  1 taken 0
-        5:   61:        }
-    $$$$$:   61-block  0
-        7:   62:    }
-        4:   62-block  0
-        7:   62-block  1
+        5:   75:        }
+    $$$$$:   75-block  0
+        7:   76:    }
+        4:   76-block  0
+        7:   76-block  1
 branch  0 taken 0
 branch  1 taken 3
 branch  2 taken 4
-    $$$$$:   62-block  2
-        2:   63:    return shortestPaths;
-        2:   64:}
-    $$$$$:   64-block  0
-    $$$$$:   64-block  1
-        2:   64-block  2
+    $$$$$:   76-block  2
+        2:   77:    return shortestPaths;
+        2:   78:}
+    $$$$$:   78-block  0
+    $$$$$:   78-block  1
+        2:   78-block  2
 branch  0 taken 2
 branch  1 taken 0
-    $$$$$:   64-block  3
-        2:   64-block  4
-    $$$$$:   64-block  5
-    $$$$$:   64-block  6
-        -:   65:
+    $$$$$:   78-block  3
+        2:   78-block  4
+    $$$$$:   78-block  5
+    $$$$$:   78-block  6
+        -:   79:
+        -:   80:// Gets up to three shortest paths from start to end
 function _ZN12RouteChecker8getPathsEP5GraphS1_ called 1 returned 100% blocks executed 50%
-        1:   66:std::vector<Path> RouteChecker::getPaths(Graph *start, Graph *end) {
-        1:   67:    std::unordered_set<Graph *> emptySet;
-        1:   68:    return getPaths(start, end, emptySet);
-        1:   68-block  0
+        1:   81:std::vector<Path> RouteChecker::getPaths(Graph *start, Graph *end) {
+        1:   82:    std::unordered_set<Graph *> emptySet;
+        1:   83:    return getPaths(start, end, emptySet);
+        1:   83-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   69:}
-        1:   69-block  0
-    $$$$$:   69-block  1
-    $$$$$:   69-block  2
-        -:   70:
-function _ZN12RouteChecker16canReturnToStartEP5Graph called 2 returned 100% blocks executed 50%
-        2:   71:bool RouteChecker::canReturnToStart(Graph *start) {
-        2:   72:    std::unordered_set<Graph *> visited;
-        2:   73:    return canReturnToStartHelper(start, start, visited);
-        2:   73-block  0
-branch  0 taken 2
-branch  1 taken 0
-        2:   74:}
-        2:   74-block  0
-    $$$$$:   74-block  1
-    $$$$$:   74-block  2
-        -:   75:
-function _ZN12RouteChecker22canReturnToStartHelperEP5GraphS1_RNSt3__113unordered_setIS1_NS2_4hashIS1_EENS2_8equal_toIS1_EENS2_9allocatorIS1_EEEE called 3 returned 100% blocks executed 75%
-        3:   76:bool RouteChecker::canReturnToStartHelper(Graph *current, Graph *start, std::unordered_set<Graph *> &visited) {
-        3:   77:    visited.insert(current);
-        -:   78:
-        3:   79:    for (const auto &neighbor: current->getAdjacencyList()) {
-        3:   79-block  0
-        3:   79-block  1
-branch  0 taken 2
-branch  1 taken 1
-    $$$$$:   79-block  2
-    $$$$$:   79-block  3
-        2:   80:        Graph *next = neighbor.first;
-        2:   81:        if (next == start)
-        2:   81-block  0
-branch  0 taken 1
-branch  1 taken 1
-        1:   82:            return true;
-        1:   82-block  0
-        -:   83:
-        1:   84:        if (!visited.contains(next))
+        1:   84:}
         1:   84-block  0
-branch  0 taken 0
-branch  1 taken 1
-        1:   85:            if (canReturnToStartHelper(next, start, visited))
-        1:   85-block  0
-branch  0 taken 0
-branch  1 taken 1
-    $$$$$:   85-block  1
-        1:   86:                return true;
-        1:   86-block  0
-        -:   87:    }
-        -:   88:
-        1:   89:    return false;
-        1:   89-block  0
-        3:   90:}
-        3:   90-block  0
+    $$$$$:   84-block  1
+    $$$$$:   84-block  2
+        -:   85:
+        -:   86:// Checks if there is a path from a node back to itself
+function _ZN12RouteChecker16canReturnToStartEP5Graph called 2 returned 100% blocks executed 50%
+        2:   87:bool RouteChecker::canReturnToStart(Graph *start) {
+        2:   88:    std::unordered_set<Graph *> visited;
+        2:   89:    return canReturnToStartHelper(start, start, visited);
+        2:   89-block  0
+branch  0 taken 2
+branch  1 taken 0
+        2:   90:}
+        2:   90-block  0
+    $$$$$:   90-block  1
+    $$$$$:   90-block  2
         -:   91:
+        -:   92:// Helper function for canReturnToStart
+function _ZN12RouteChecker22canReturnToStartHelperEP5GraphS1_RNSt3__113unordered_setIS1_NS2_4hashIS1_EENS2_8equal_toIS1_EENS2_9allocatorIS1_EEEE called 3 returned 100% blocks executed 75%
+        3:   93:bool RouteChecker::canReturnToStartHelper(Graph *current, Graph *start, std::unordered_set<Graph *> &visited) {
+        3:   94:    visited.insert(current);
+        -:   95:
+        3:   96:    for (const auto &neighbor: current->getAdjacencyList()) {
+        3:   96-block  0
+        3:   96-block  1
+branch  0 taken 2
+branch  1 taken 1
+    $$$$$:   96-block  2
+    $$$$$:   96-block  3
+        2:   97:        Graph *next = neighbor.first;
+        2:   98:        if (next == start)
+        2:   98-block  0
+branch  0 taken 1
+branch  1 taken 1
+        1:   99:            return true;
+        1:   99-block  0
+        -:  100:
+        1:  101:        if (!visited.contains(next))
+        1:  101-block  0
+branch  0 taken 0
+branch  1 taken 1
+        1:  102:            if (canReturnToStartHelper(next, start, visited))
+        1:  102-block  0
+branch  0 taken 0
+branch  1 taken 1
+    $$$$$:  102-block  1
+        1:  103:                return true;
+        1:  103-block  0
+        -:  104:    }
+        -:  105:
+        1:  106:    return false;
+        1:  106-block  0
+        3:  107:}
+        3:  107-block  0
+        -:  108:
+        -:  109:// Finds a Hamiltonian path in the given container, starting from any graph
 function _ZN12RouteChecker18hasHamiltonianPathEP14GraphContainer called 1 returned 100% blocks executed 76%
-        1:   92:Path *RouteChecker::hasHamiltonianPath(GraphContainer *container) {
-        1:   93:    Path *returnPath = nullptr;
-        2:   94:    for (auto temp: container->getGraphs()) {
-        1:   94-block  0
-        2:   94-block  1
+        1:  110:Path *RouteChecker::hasHamiltonianPath(GraphContainer *container) {
+        1:  111:    Path *returnPath = nullptr;
+        2:  112:    for (auto temp: container->getGraphs()) {
+        1:  112-block  0
+        2:  112-block  1
 branch  0 taken 0
 branch  1 taken 2
-        1:   94-block  2
-        1:   94-block  3
-        2:   95:        returnPath = hasHamiltonianPath(container, temp.second);
-        2:   95-block  0
+        1:  112-block  2
+        1:  112-block  3
+        2:  113:        returnPath = hasHamiltonianPath(container, temp.second);
+        2:  113-block  0
 branch  0 taken 2
 branch  1 taken 0
-        2:   96:        if (returnPath != nullptr)
-        2:   96-block  0
+        2:  114:        if (returnPath != nullptr)
+        2:  114-block  0
 branch  0 taken 1
 branch  1 taken 1
-        1:   97:            break;
-        1:   97-block  0
-        2:   98:    }
-    $$$$$:   98-block  0
-        1:   98-block  1
-        2:   98-block  2
+        1:  115:            break;
+        1:  115-block  0
+        2:  116:    }
+    $$$$$:  116-block  0
+        1:  116-block  1
+        2:  116-block  2
 branch  0 taken 0
 branch  1 taken 1
 branch  2 taken 1
-    $$$$$:   98-block  3
-        1:   99:    return returnPath;
-        1:   99-block  0
-    #####:  100:}
-        -:  101:
+    $$$$$:  116-block  3
+        1:  117:    return returnPath;
+        1:  117-block  0
+    #####:  118:}
+        -:  119:
+        -:  120:// Finds a Hamiltonian path starting from the specified graph
 function _ZN12RouteChecker18hasHamiltonianPathEP14GraphContainerP5Graph called 3 returned 100% blocks executed 77%
-        3:  102:Path *RouteChecker::hasHamiltonianPath(GraphContainer *container, Graph *start) {
-        3:  103:    Path *path = new Path();
-        3:  104:    std::set<std::pair<Graph *, Graph *> > visitedEdges;
-        3:  105:    bool found = false;
-        3:  106:    hamiltonianPathUtil(container, start, start, path, visitedEdges, found);
-        3:  106-block  0
+        3:  121:Path *RouteChecker::hasHamiltonianPath(GraphContainer *container, Graph *start) {
+        3:  122:    Path *path = new Path();
+        3:  123:    std::set < std::pair<Graph *, Graph *> > visitedEdges;
+        3:  124:    bool found = false;
+        3:  125:    hamiltonianPathUtil(container, start, start, path, visitedEdges, found);
+        3:  125-block  0
 branch  0 taken 3
 branch  1 taken 0
-        -:  107:
-        3:  108:    if (found) {
-        3:  108-block  0
+        -:  126:
+        3:  127:    if (found) {
+        3:  127-block  0
 branch  0 taken 2
 branch  1 taken 1
-        2:  109:        return path;
-        2:  109-block  0
-        -:  110:    } else {
-        1:  111:        delete path;
-        1:  111-block  0
+        2:  128:        return path;
+        2:  128-block  0
+        -:  129:    } else {
+        1:  130:        delete path;
+        1:  130-block  0
 branch  0 taken 0
 branch  1 taken 1
-        1:  111-block  1
-        1:  112:        return nullptr;
-        1:  112-block  0
-        -:  113:    }
-        3:  114:}
-    $$$$$:  114-block  0
-        3:  114-block  1
-    $$$$$:  114-block  2
-        -:  115:
+        1:  130-block  1
+        1:  131:        return nullptr;
+        1:  131-block  0
+        -:  132:    }
+        3:  133:}
+    $$$$$:  133-block  0
+        3:  133-block  1
+    $$$$$:  133-block  2
+        -:  134:
+        -:  135:// Helper function for finding Hamiltonian path
 function _ZN12RouteChecker19hamiltonianPathUtilEP14GraphContainerP5GraphS3_P4PathRNSt3__13setINS6_4pairIS3_S3_EENS6_4lessIS9_EENS6_9allocatorIS9_EEEERb called 11 returned 100% blocks executed 100%
-       11:  116:void RouteChecker::hamiltonianPathUtil(GraphContainer *container, Graph *current, Graph *start, Path *path,
-        -:  117:                                       std::set<std::pair<Graph *, Graph *> > &visitedEdges, bool &found) {
-       11:  118:    path->nodes.push_back(current);
+       11:  136:void RouteChecker::hamiltonianPathUtil(GraphContainer *container, Graph *current, Graph *start, Path *path,
+        -:  137:                                       std::set<std::pair<Graph *, Graph *> > &visitedEdges, bool &found) {
+       11:  138:    path->nodes.push_back(current);
 function _ZZN12RouteChecker19hamiltonianPathUtilEP14GraphContainerP5GraphS3_P4PathRNSt3__13setINS6_4pairIS3_S3_EENS6_4lessIS9_EENS6_9allocatorIS9_EEEERbENK3$_1clINS8_IKNS6_12basic_stringIcNS6_11char_traitsIcEENSC_IcEEEES3_EEEEDaRKT_ called 18 returned 100% blocks executed 100%
-       29:  119:    if (std::all_of(container->getGraphs().begin(), container->getGraphs().end(), [&path](const auto &nodePair) {
-       11:  119-block  0
+       29:  139:    if (std::all_of(container->getGraphs().begin(), container->getGraphs().end(), [&path](const auto &nodePair) {
+       11:  139-block  0
 branch  0 taken 2
 branch  1 taken 9
-       18:  120:        return std::find(path->nodes.begin(), path->nodes.end(), nodePair.second) != path->nodes.end();
-       18:  120-block  0
-        -:  121:    })) {
-        -:  122:        // if we need to end on start
-        -:  123:        /*for(auto next : current->adjacencyList){
-        -:  124:            if(next.first == start){
-        -:  125:                found = true;
-        -:  126:                return;
-        -:  127:            }
-        -:  128:        }*/
-        -:  129:
-        -:  130:        // if we just need to cover all nodes
-        2:  131:        found = true;
-        2:  132:        return;
-        2:  132-block  0
-        -:  133:    }
-        -:  134:
-       12:  135:    for (const auto &neighbor: current->getAdjacencyList()) {
-        9:  135-block  0
-       12:  135-block  1
+       18:  140:        return std::find(path->nodes.begin(), path->nodes.end(), nodePair.second) != path->nodes.end();
+       18:  140-block  0
+        -:  141:    })) {
+        -:  142:        // if we need to end on start
+        -:  143:        /*for(auto next : current->adjacencyList){
+        -:  144:            if(next.first == start){
+        -:  145:                found = true;
+        -:  146:                return;
+        -:  147:            }
+        -:  148:        }*/
+        -:  149:
+        -:  150:        // if we just need to cover all nodes
+        2:  151:        found = true;
+        2:  152:        return;
+        2:  152-block  0
+        -:  153:    }
+        -:  154:
+       12:  155:    for (const auto &neighbor: current->getAdjacencyList()) {
+        9:  155-block  0
+       12:  155-block  1
 branch  0 taken 10
 branch  1 taken 2
-        3:  135-block  2
-        3:  135-block  3
-       10:  136:        Graph *next = neighbor.first;
-       10:  137:        if (!visitedEdges.contains({current, next})) {
-       10:  137-block  0
+        3:  155-block  2
+        3:  155-block  3
+       10:  156:        Graph *next = neighbor.first;
+       10:  157:        if (!visitedEdges.contains({current, next})) {
+       10:  157-block  0
 branch  0 taken 2
 branch  1 taken 8
-        8:  138:            visitedEdges.insert({current, next});
-        8:  139:            path->cost += neighbor.second;
-        8:  140:            hamiltonianPathUtil(container, next, start, path, visitedEdges, found);
-        8:  141:            if (found) {
-        8:  141-block  0
+        8:  158:            visitedEdges.insert({current, next});
+        8:  159:            path->cost += neighbor.second;
+        8:  160:            hamiltonianPathUtil(container, next, start, path, visitedEdges, found);
+        8:  161:            if (found) {
+        8:  161-block  0
 branch  0 taken 7
 branch  1 taken 1
-        7:  142:                return;
-        7:  142-block  0
-        -:  143:            }
-        1:  144:            visitedEdges.erase({current, next});
-        1:  145:            path->cost -= neighbor.second;
-        1:  146:        }
-        1:  146-block  0
-        -:  147:    }
-        2:  148:    path->nodes.pop_back();
-       11:  149:}
-        2:  149-block  0
-       11:  149-block  1
-        -:  150:
+        7:  162:                return;
+        7:  162-block  0
+        -:  163:            }
+        1:  164:            visitedEdges.erase({current, next});
+        1:  165:            path->cost -= neighbor.second;
+        1:  166:        }
+        1:  166-block  0
+        -:  167:    }
+        2:  168:    path->nodes.pop_back();
+       11:  169:}
+        2:  169-block  0
+       11:  169-block  1
+        -:  170:
+        -:  171:// Checks if it is possible to reach all nodes from a given start node
 function _ZN12RouteChecker16canReachAllNodesEP14GraphContainerP5Graph called 4 returned 100% blocks executed 92%
-        4:  151:bool RouteChecker::canReachAllNodes(GraphContainer *container, Graph *start) {
-        4:  152:    std::unordered_set<Graph *> visited;
-        4:  153:    std::stack<Graph *> stack;
-        -:  154:
-        4:  155:    stack.push(start);
-        4:  155-block  0
+        4:  172:bool RouteChecker::canReachAllNodes(GraphContainer *container, Graph *start) {
+        4:  173:    std::unordered_set<Graph *> visited;
+        4:  174:    std::stack<Graph *> stack;
+        -:  175:
+        4:  176:    stack.push(start);
+        4:  176-block  0
 branch  0 taken 4
 branch  1 taken 0
-        -:  156:
-       18:  157:    while (!stack.empty()) {
-        4:  157-block  0
-       18:  157-block  1
+        -:  177:
+       18:  178:    while (!stack.empty()) {
+        4:  178-block  0
+       18:  178-block  1
 branch  0 taken 18
 branch  1 taken 0
-       18:  157-block  2
+       18:  178-block  2
 branch  2 taken 14
 branch  3 taken 4
-       14:  157-block  3
-       14:  158:        Graph *current = stack.top();
-       14:  158-block  0
+       14:  178-block  3
+       14:  179:        Graph *current = stack.top();
+       14:  179-block  0
 branch  0 taken 14
 branch  1 taken 0
-       14:  159:        stack.pop();
-       14:  159-block  0
+       14:  180:        stack.pop();
+       14:  180-block  0
 branch  0 taken 14
 branch  1 taken 0
-        -:  160:
-       14:  161:        visited.insert(current);
-       14:  161-block  0
+        -:  181:
+       14:  182:        visited.insert(current);
+       14:  182-block  0
 branch  0 taken 14
 branch  1 taken 0
-        -:  162:
-       30:  163:        for (std::pair<Graph *const, double> neighbor: current->getAdjacencyList()) {
-       14:  163-block  0
+        -:  183:
+       30:  184:        for (std::pair<Graph *const, double> neighbor: current->getAdjacencyList()) {
+       14:  184-block  0
 branch  0 taken 14
 branch  1 taken 0
-       14:  163-block  1
-       30:  163-block  2
+       14:  184-block  1
+       30:  184-block  2
 branch  2 taken 30
 branch  3 taken 0
-       30:  163-block  3
+       30:  184-block  3
 branch  4 taken 16
 branch  5 taken 14
-       16:  163-block  4
+       16:  184-block  4
 branch  6 taken 16
 branch  7 taken 0
-       16:  163-block  5
-       16:  163-block  6
+       16:  184-block  5
+       16:  184-block  6
 branch  8 taken 16
 branch  9 taken 0
-       16:  163-block  7
-       16:  164:            if (visited.find(neighbor.first) == visited.end()) {
-       16:  164-block  0
+       16:  184-block  7
+       16:  185:            if (visited.find(neighbor.first) == visited.end()) {
+       16:  185-block  0
 branch  0 taken 16
 branch  1 taken 0
-       16:  164-block  1
+       16:  185-block  1
 branch  2 taken 16
 branch  3 taken 0
-       16:  164-block  2
+       16:  185-block  2
 branch  4 taken 10
 branch  5 taken 6
-       10:  165:                stack.push(neighbor.first);
-       10:  165-block  0
+       10:  186:                stack.push(neighbor.first);
+       10:  186-block  0
 branch  0 taken 10
 branch  1 taken 0
-       10:  166:            }
-       10:  166-block  0
-        -:  167:        }
-        -:  168:    }
-        -:  169:
-        4:  170:    return visited.size() == container->getGraphs().size();
-        4:  170-block  0
+       10:  187:            }
+       10:  187-block  0
+        -:  188:        }
+        -:  189:    }
+        -:  190:
+        4:  191:    return visited.size() == container->getGraphs().size();
+        4:  191-block  0
 branch  0 taken 4
 branch  1 taken 0
-        4:  171:}
-    $$$$$:  171-block  0
-        4:  171-block  1
-    $$$$$:  171-block  2
-        -:  172:
+        4:  192:}
+    $$$$$:  192-block  0
+        4:  192-block  1
+    $$$$$:  192-block  2
+        -:  193:
+        -:  194:// Finds all dead-ended nodes in the container
 function _ZN12RouteChecker16findAllDeadEndedEP14GraphContainer called 1 returned 100% blocks executed 88%
-        1:  173:std::vector<std::pair<Graph *, Graph *>> RouteChecker::findAllDeadEnded(GraphContainer *container) {
-        1:  174:    std::vector<std::pair<Graph *, Graph *>> vectorDeadEnds;
-        -:  175:
-        5:  176:    for (const auto &graphPair: container->getGraphs()) {
-        1:  176-block  0
+        1:  195:std::vector<std::pair<Graph *, Graph *>> RouteChecker::findAllDeadEnded(GraphContainer *container) {
+        1:  196:    std::vector<std::pair<Graph *, Graph *>> vectorDeadEnds;
+        -:  197:
+        5:  198:    for (const auto &graphPair: container->getGraphs()) {
+        1:  198-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:  176-block  1
-        5:  176-block  2
+        1:  198-block  1
+        5:  198-block  2
 branch  2 taken 5
 branch  3 taken 0
-        5:  176-block  3
+        5:  198-block  3
 branch  4 taken 4
 branch  5 taken 1
-        4:  176-block  4
+        4:  198-block  4
 branch  6 taken 4
 branch  7 taken 0
-        4:  176-block  5
-        4:  176-block  6
+        4:  198-block  5
+        4:  198-block  6
 branch  8 taken 4
 branch  9 taken 0
-        4:  176-block  7
-        4:  177:        Graph *currentGraph = graphPair.second;
-        9:  178:        for (const auto &neighborPair: currentGraph->getAdjacencyList()) {
-        4:  178-block  0
+        4:  198-block  7
+        4:  199:        Graph *currentGraph = graphPair.second;
+        9:  200:        for (const auto &neighborPair: currentGraph->getAdjacencyList()) {
+        4:  200-block  0
 branch  0 taken 4
 branch  1 taken 0
-        4:  178-block  1
-        9:  178-block  2
+        4:  200-block  1
+        9:  200-block  2
 branch  2 taken 9
 branch  3 taken 0
-        9:  178-block  3
+        9:  200-block  3
 branch  4 taken 5
 branch  5 taken 4
-        5:  178-block  4
+        5:  200-block  4
 branch  6 taken 5
 branch  7 taken 0
-        5:  178-block  5
-        5:  178-block  6
+        5:  200-block  5
+        5:  200-block  6
 branch  8 taken 5
 branch  9 taken 0
-        5:  178-block  7
-        5:  179:            Graph *neighborGraph = neighborPair.first;
-        5:  180:            if (neighborGraph->getAdjacencyList().empty()) {
-        5:  180-block  0
+        5:  200-block  7
+        5:  201:            Graph *neighborGraph = neighborPair.first;
+        5:  202:            if (neighborGraph->getAdjacencyList().empty()) {
+        5:  202-block  0
 branch  0 taken 5
 branch  1 taken 0
-        5:  180-block  1
+        5:  202-block  1
 branch  2 taken 1
 branch  3 taken 4
-        1:  181:                vectorDeadEnds.push_back({currentGraph, neighborGraph});
-        1:  181-block  0
+        1:  203:                vectorDeadEnds.push_back({currentGraph, neighborGraph});
+        1:  203-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:  182:            }
-        1:  182-block  0
-        -:  183:        }
-        -:  184:    }
-        -:  185:
-        1:  186:    return vectorDeadEnds;
-        1:  187:}
-    $$$$$:  187-block  0
-        1:  187-block  1
+        1:  204:            }
+        1:  204-block  0
+        -:  205:        }
+        -:  206:    }
+        -:  207:
+        1:  208:    return vectorDeadEnds;
+        1:  209:}
+    $$$$$:  209-block  0
+        1:  209-block  1
 branch  0 taken 1
 branch  1 taken 0
-    $$$$$:  187-block  2
-        1:  187-block  3
-    $$$$$:  187-block  4
+    $$$$$:  209-block  2
+        1:  209-block  3
+    $$$$$:  209-block  4

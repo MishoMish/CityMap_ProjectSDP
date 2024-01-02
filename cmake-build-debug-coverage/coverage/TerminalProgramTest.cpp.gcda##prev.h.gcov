@@ -32,7 +32,7 @@
         -:   27:template <class _InputIter>
         -:   28:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX14
         -:   29:    typename enable_if<__is_cpp17_input_iterator<_InputIter>::value, _InputIter>::type
-function _ZNSt3__14prevB6v15006IPN7doctest16SubcaseSignatureEEENS_9enable_ifIXsr25__is_cpp17_input_iteratorIT_EE5valueES5_E4typeES5_NS_15iterator_traitsIS5_E15difference_typeE called 0 returned 0% blocks executed 0%
+function _ZNSt3__14prevB6v15006IPN7doctest16SubcaseSignatureEEENS_9enable_ifIXsr25__is_cpp17_input_iteratorIT_EE5valueES5_E4typeES5_NS_15iterator_traitsIS5_E15difference_typeE called 3 returned 100% blocks executed 100%
 function _ZNSt3__14prevB6v15006INS_16reverse_iteratorIPN7doctest16SubcaseSignatureEEEEENS_9enable_ifIXsr25__is_cpp17_input_iteratorIT_EE5valueES7_E4typeES7_NS_15iterator_traitsIS7_E15difference_typeE called 0 returned 0% blocks executed 0%
 function _ZNSt3__14prevB6v15006IPN7doctest6StringEEENS_9enable_ifIXsr25__is_cpp17_input_iteratorIT_EE5valueES5_E4typeES5_NS_15iterator_traitsIS5_E15difference_typeE called 0 returned 0% blocks executed 0%
 function _ZNSt3__14prevB6v15006INS_16reverse_iteratorIPN7doctest6StringEEEEENS_9enable_ifIXsr25__is_cpp17_input_iteratorIT_EE5valueES7_E4typeES7_NS_15iterator_traitsIS7_E15difference_typeE called 0 returned 0% blocks executed 0%
@@ -42,12 +42,12 @@ function _ZNSt3__14prevB6v15006IPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTe
 function _ZNSt3__14prevB6v15006INS_16reverse_iteratorIPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseEEEEENS_9enable_ifIXsr25__is_cpp17_input_iteratorIT_EE5valueESA_E4typeESA_NS_15iterator_traitsISA_E15difference_typeE called 0 returned 0% blocks executed 0%
 function _ZNSt3__14prevB6v15006IPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEENS_9enable_ifIXsr25__is_cpp17_input_iteratorIT_EE5valueES8_E4typeES8_NS_15iterator_traitsIS8_E15difference_typeE called 0 returned 0% blocks executed 0%
 function _ZNSt3__14prevB6v15006INS_16reverse_iteratorIPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEEEENS_9enable_ifIXsr25__is_cpp17_input_iteratorIT_EE5valueESA_E4typeESA_NS_15iterator_traitsISA_E15difference_typeE called 0 returned 0% blocks executed 0%
-    #####:   30:    prev(_InputIter __x, typename iterator_traits<_InputIter>::difference_type __n = 1) {
+        3:   30:    prev(_InputIter __x, typename iterator_traits<_InputIter>::difference_type __n = 1) {
         -:   31:  _LIBCPP_ASSERT(__n <= 0 || __is_cpp17_bidirectional_iterator<_InputIter>::value,
         -:   32:                 "Attempt to prev(it, n) with a positive n on a non-bidirectional iterator");
-    #####:   33:  _VSTD::advance(__x, -__n);
-    #####:   34:  return __x;
-    $$$$$:   34-block  0
+        3:   33:  _VSTD::advance(__x, -__n);
+        3:   34:  return __x;
+        3:   34-block  0
     $$$$$:   34-block  1
     $$$$$:   34-block  2
     $$$$$:   34-block  3

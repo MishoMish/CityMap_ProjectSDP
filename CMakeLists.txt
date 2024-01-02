@@ -26,6 +26,8 @@ add_library(CityMapLibrary ${PROJECT_SOURCES})
 # Create the main executable for your project
 add_executable(CityMapProject main.cpp)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0") # Ensure debug information is available
+
 # Link the main executable against the project library
 target_link_libraries(CityMapProject PRIVATE CityMapLibrary)
 

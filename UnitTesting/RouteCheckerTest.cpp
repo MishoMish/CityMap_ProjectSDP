@@ -12,23 +12,23 @@
 TEST_CASE("RouteChecker Test") {
     GraphContainer container;
 
-    container.addGraph("CityA");
-    container.addGraph("CityB");
-    container.addGraph("CityC");
-    container.addGraph("CityD");
+    container.addGraph("1");
+    container.addGraph("2");
+    container.addGraph("3");
+    container.addGraph("4");
 
-    container.addRoad("CityA", "CityB", 10.0);
-    container.addRoad("CityA", "CityC", 20.0);
-    container.addRoad("CityB", "CityC", 5.0);
-    container.addRoad("CityB", "CityD", 15.0);
-    container.addRoad("CityC", "CityA", 20.0);
+    container.addRoad("1", "2", 10.0);
+    container.addRoad("1", "3", 20.0);
+    container.addRoad("2", "3", 5.0);
+    container.addRoad("2", "4", 15.0);
+    container.addRoad("3", "1", 20.0);
 
 
     // Add some graphs to the container for testing
-    Graph *graphA = container.getGraph("CityA");
-    Graph *graphB = container.getGraph("CityB");
-    Graph *graphC = container.getGraph("CityC");
-    Graph *graphD = container.getGraph("CityD");
+    Graph *graphA = container.getGraph("1");
+    Graph *graphB = container.getGraph("2");
+    Graph *graphC = container.getGraph("3");
+    Graph *graphD = container.getGraph("4");
 
     SUBCASE("Exists Test") {
         CHECK(RouteChecker::exists(graphA, graphB));
@@ -44,8 +44,8 @@ TEST_CASE("RouteChecker Test") {
         REQUIRE(paths.size() == 1);
         CHECK(paths[0].cost == 20.0);
         CHECK(paths[0].nodes.size() == 2);
-        CHECK(paths[0].nodes[0]->getName() == "CityA");
-        CHECK(paths[0].nodes[1]->getName() == "CityC");
+        CHECK(paths[0].nodes[0]->getName() == "1");
+        CHECK(paths[0].nodes[1]->getName() == "3");
     }
 
     SUBCASE("Get Paths Test - NO closed junctions") {
@@ -82,8 +82,8 @@ TEST_CASE("RouteChecker Test") {
     SUBCASE("Find dead ends test") {
         std::vector<std::pair<Graph *, Graph *>> deadEnds = RouteChecker::findAllDeadEnded(&container);
         REQUIRE(deadEnds.size() == 1);
-        CHECK(deadEnds[0].first->getName() == "CityB");
-        CHECK(deadEnds[0].second->getName() == "CityD");
+        CHECK(deadEnds[0].first->getName() == "2");
+        CHECK(deadEnds[0].second->getName() == "4");
     }
 }
 

@@ -37,14 +37,14 @@
         -:   32:inline _LIBCPP_INLINE_VISIBILITY
         -:   33:_Size
 function _ZNSt3__110__loadwordB6v15006ImEET_PKv called 0 returned 0% blocks executed 0%
-function _ZNSt3__110__loadwordB6v15006IjEET_PKv called 728 returned 100% blocks executed 100%
-      728:   34:__loadword(const void* __p)
+function _ZNSt3__110__loadwordB6v15006IjEET_PKv called 200 returned 100% blocks executed 100%
+      200:   34:__loadword(const void* __p)
         -:   35:{
         -:   36:    _Size __r;
-      728:   37:    _VSTD::memcpy(&__r, __p, sizeof(__r));
-      728:   38:    return __r;
+      200:   37:    _VSTD::memcpy(&__r, __p, sizeof(__r));
+      200:   38:    return __r;
     $$$$$:   38-block  0
-      728:   38-block  1
+      200:   38-block  1
         -:   39:}
         -:   40:
         -:   41:// We use murmur2 when size_t is 32 bits, and cityhash64 when size_t
@@ -125,65 +125,65 @@ function _ZNSt3__121__murmur2_or_cityhashImLm64EE22__rotate_by_at_least_1Emi cal
     $$$$$:  107-block  0
         -:  108:  }
         -:  109:
-function _ZNSt3__121__murmur2_or_cityhashImLm64EE11__shift_mixEm called 0 returned 0% blocks executed 0%
-    #####:  110:  static _Size __shift_mix(_Size __val) {
-    #####:  111:    return __val ^ (__val >> 47);
-    $$$$$:  111-block  0
+function _ZNSt3__121__murmur2_or_cityhashImLm64EE11__shift_mixEm called 256 returned 100% blocks executed 100%
+      256:  110:  static _Size __shift_mix(_Size __val) {
+      256:  111:    return __val ^ (__val >> 47);
+      256:  111-block  0
         -:  112:  }
         -:  113:
-function _ZNSt3__121__murmur2_or_cityhashImLm64EE13__hash_len_16Emm called 364 returned 100% blocks executed 100%
-      364:  114:  static _Size __hash_len_16(_Size __u, _Size __v)
+function _ZNSt3__121__murmur2_or_cityhashImLm64EE13__hash_len_16Emm called 100 returned 100% blocks executed 100%
+      100:  114:  static _Size __hash_len_16(_Size __u, _Size __v)
         -:  115:     _LIBCPP_DISABLE_UBSAN_UNSIGNED_INTEGER_CHECK
         -:  116:  {
-      364:  117:    const _Size __mul = 0x9ddfea08eb382d69ULL;
-      364:  118:    _Size __a = (__u ^ __v) * __mul;
-      364:  119:    __a ^= (__a >> 47);
-      364:  120:    _Size __b = (__v ^ __a) * __mul;
-      364:  121:    __b ^= (__b >> 47);
-      364:  122:    __b *= __mul;
-      364:  123:    return __b;
-      364:  123-block  0
+      100:  117:    const _Size __mul = 0x9ddfea08eb382d69ULL;
+      100:  118:    _Size __a = (__u ^ __v) * __mul;
+      100:  119:    __a ^= (__a >> 47);
+      100:  120:    _Size __b = (__v ^ __a) * __mul;
+      100:  121:    __b ^= (__b >> 47);
+      100:  122:    __b *= __mul;
+      100:  123:    return __b;
+      100:  123-block  0
         -:  124:  }
         -:  125:
-function _ZNSt3__121__murmur2_or_cityhashImLm64EE18__hash_len_0_to_16EPKcm called 364 returned 100% blocks executed 50%
-      364:  126:  static _Size __hash_len_0_to_16(const char* __s, _Size __len)
+function _ZNSt3__121__murmur2_or_cityhashImLm64EE18__hash_len_0_to_16EPKcm called 356 returned 100% blocks executed 75%
+      356:  126:  static _Size __hash_len_0_to_16(const char* __s, _Size __len)
         -:  127:     _LIBCPP_DISABLE_UBSAN_UNSIGNED_INTEGER_CHECK
         -:  128:  {
-      364:  129:    if (__len > 8) {
-      364:  129-block  0
+      356:  129:    if (__len > 8) {
+      356:  129-block  0
 branch  0 taken 0
-branch  1 taken 364
+branch  1 taken 356
     #####:  130:      const _Size __a = __loadword<_Size>(__s);
     #####:  131:      const _Size __b = __loadword<_Size>(__s + __len - 8);
     #####:  132:      return __hash_len_16(__a, __rotate_by_at_least_1(__b + __len, __len)) ^ __b;
     $$$$$:  132-block  0
         -:  133:    }
-      364:  134:    if (__len >= 4) {
-      364:  134-block  0
-branch  0 taken 364
-branch  1 taken 0
-      364:  135:      const uint32_t __a = __loadword<uint32_t>(__s);
-      364:  136:      const uint32_t __b = __loadword<uint32_t>(__s + __len - 4);
-      364:  137:      return __hash_len_16(__len + (__a << 3), __b);
-      364:  137-block  0
+      356:  134:    if (__len >= 4) {
+      356:  134-block  0
+branch  0 taken 100
+branch  1 taken 256
+      100:  135:      const uint32_t __a = __loadword<uint32_t>(__s);
+      100:  136:      const uint32_t __b = __loadword<uint32_t>(__s + __len - 4);
+      100:  137:      return __hash_len_16(__len + (__a << 3), __b);
+      100:  137-block  0
         -:  138:    }
-    #####:  139:    if (__len > 0) {
-    $$$$$:  139-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:  140:      const unsigned char __a = static_cast<unsigned char>(__s[0]);
-    #####:  141:      const unsigned char __b = static_cast<unsigned char>(__s[__len >> 1]);
-    #####:  142:      const unsigned char __c = static_cast<unsigned char>(__s[__len - 1]);
-    #####:  143:      const uint32_t __y = static_cast<uint32_t>(__a) +
-    #####:  144:                           (static_cast<uint32_t>(__b) << 8);
-    #####:  145:      const uint32_t __z = __len + (static_cast<uint32_t>(__c) << 2);
-    #####:  146:      return __shift_mix(__y * __k2 ^ __z * __k3) * __k2;
-    $$$$$:  146-block  0
+      256:  139:    if (__len > 0) {
+      256:  139-block  0
+branch  0 taken 256
+branch  1 taken 0
+      256:  140:      const unsigned char __a = static_cast<unsigned char>(__s[0]);
+      256:  141:      const unsigned char __b = static_cast<unsigned char>(__s[__len >> 1]);
+      256:  142:      const unsigned char __c = static_cast<unsigned char>(__s[__len - 1]);
+      512:  143:      const uint32_t __y = static_cast<uint32_t>(__a) +
+      256:  144:                           (static_cast<uint32_t>(__b) << 8);
+      256:  145:      const uint32_t __z = __len + (static_cast<uint32_t>(__c) << 2);
+      256:  146:      return __shift_mix(__y * __k2 ^ __z * __k3) * __k2;
+      256:  146-block  0
         -:  147:    }
     #####:  148:    return __k2;
     $$$$$:  148-block  0
-      364:  149:  }
-      364:  149-block  0
+      356:  149:  }
+      356:  149-block  0
         -:  150:
 function _ZNSt3__121__murmur2_or_cityhashImLm64EE19__hash_len_17_to_32EPKcm called 0 returned 0% blocks executed 0%
     #####:  151:  static _Size __hash_len_17_to_32(const char *__s, _Size __len)
@@ -265,20 +265,20 @@ function _ZNSt3__121__murmur2_or_cityhashImLm64EE19__hash_len_33_to_64EPKcm call
         -:  218:// cityhash64
         -:  219:template <class _Size>
         -:  220:_Size
-function _ZNSt3__121__murmur2_or_cityhashImLm64EEclEPKvm called 364 returned 100% blocks executed 33%
-      364:  221:__murmur2_or_cityhash<_Size, 64>::operator()(const void* __key, _Size __len)
+function _ZNSt3__121__murmur2_or_cityhashImLm64EEclEPKvm called 356 returned 100% blocks executed 33%
+      356:  221:__murmur2_or_cityhash<_Size, 64>::operator()(const void* __key, _Size __len)
         -:  222:{
-      364:  223:  const char* __s = static_cast<const char*>(__key);
-      364:  224:  if (__len <= 32) {
-      364:  224-block  0
-branch  0 taken 364
+      356:  223:  const char* __s = static_cast<const char*>(__key);
+      356:  224:  if (__len <= 32) {
+      356:  224-block  0
+branch  0 taken 356
 branch  1 taken 0
-      364:  225:    if (__len <= 16) {
-      364:  225-block  0
-branch  0 taken 364
+      356:  225:    if (__len <= 16) {
+      356:  225-block  0
+branch  0 taken 356
 branch  1 taken 0
-      364:  226:      return __hash_len_0_to_16(__s, __len);
-      364:  226-block  0
+      356:  226:      return __hash_len_0_to_16(__s, __len);
+      356:  226-block  0
         -:  227:    } else {
     #####:  228:      return __hash_len_17_to_32(__s, __len);
     $$$$$:  228-block  0
@@ -326,8 +326,8 @@ branch  1 never executed
     $$$$$:  260-block  0
     #####:  261:      __hash_len_16(__v.first, __w.first) + __shift_mix(__y) * __k1 + __z,
     #####:  262:      __hash_len_16(__v.second, __w.second) + __x);
-      364:  263:}
-      364:  263-block  0
+      356:  263:}
+      356:  263-block  0
         -:  264:
         -:  265:template <class _Tp, size_t = sizeof(_Tp) / sizeof(size_t)>
         -:  266:struct __scalar_hash;
@@ -452,20 +452,20 @@ function _ZNKSt3__113__scalar_hashIyLm1EEclB6v15006Ey called 15 returned 100% bl
         -:  383:    : public __unary_function<_Tp*, size_t>
         -:  384:{
         -:  385:    _LIBCPP_INLINE_VISIBILITY
-function _ZNKSt3__14hashIP5GraphEclB6v15006ES2_ called 108 returned 100% blocks executed 66%
-      108:  386:    size_t operator()(_Tp* __v) const _NOEXCEPT
+function _ZNKSt3__14hashIP5GraphEclB6v15006ES2_ called 100 returned 100% blocks executed 66%
+      100:  386:    size_t operator()(_Tp* __v) const _NOEXCEPT
         -:  387:    {
         -:  388:        union
         -:  389:        {
         -:  390:            _Tp* __t;
         -:  391:            size_t __a;
         -:  392:        } __u;
-      108:  393:        __u.__t = __v;
-      108:  394:        return __murmur2_or_cityhash<size_t>()(&__u, sizeof(__u));
-      108:  394-block  0
-branch  0 taken 108
+      100:  393:        __u.__t = __v;
+      100:  394:        return __murmur2_or_cityhash<size_t>()(&__u, sizeof(__u));
+      100:  394-block  0
+branch  0 taken 100
 branch  1 taken 0
-      108:  394-block  1
+      100:  394-block  1
     $$$$$:  394-block  2
         -:  395:    }
         -:  396:};

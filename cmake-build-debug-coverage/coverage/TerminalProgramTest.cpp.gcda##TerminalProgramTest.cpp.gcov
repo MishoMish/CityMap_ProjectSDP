@@ -14,8 +14,8 @@
         -:    9:#include "../Structure/GraphContainer.h"
         -:   10:#include "../Structure/Graph.h"
         -:   11:
-function _ZL20DOCTEST_ANON_FUNC_14v called 5 returned 100% blocks executed 50%
-        6:   12:TEST_CASE("TerminalProgram Test") {
+function _ZL20DOCTEST_ANON_FUNC_14v called 10 returned 100% blocks executed 50%
+       11:   12:TEST_CASE("TerminalProgram Test") {
         1:   12-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -30,43 +30,43 @@ branch  5 taken 0
     $$$$$:   12-block  5
     $$$$$:   12-block  6
     $$$$$:   12-block  7
-        5:   13:    auto *container = new GraphContainer();
-        5:   14:    container->addGraph("CityA");
-        5:   14-block  0
-branch  0 taken 5
+       10:   13:    auto *container = new GraphContainer();
+       10:   14:    container->addGraph("1");
+       10:   14-block  0
+branch  0 taken 10
 branch  1 taken 0
     $$$$$:   14-block  1
     $$$$$:   14-block  2
-        5:   15:    Graph *cityA = container->getGraph("CityA");
-        5:   15-block  0
-branch  0 taken 5
+       10:   15:    Graph *cityA = container->getGraph("1");
+       10:   15-block  0
+branch  0 taken 10
 branch  1 taken 0
     $$$$$:   15-block  1
         -:   16:
-        5:   17:    container->addGraph("CityB");
-        5:   17-block  0
-branch  0 taken 5
+       10:   17:    container->addGraph("2");
+       10:   17-block  0
+branch  0 taken 10
 branch  1 taken 0
     $$$$$:   17-block  1
-        5:   18:    Graph *cityB = container->getGraph("CityB");
-        5:   18-block  0
-branch  0 taken 5
+       10:   18:    Graph *cityB = container->getGraph("2");
+       10:   18-block  0
+branch  0 taken 10
 branch  1 taken 0
     $$$$$:   18-block  1
         -:   19:
-        5:   20:    Graph *start = cityA;
+       10:   20:    Graph *start = cityA;
         -:   21:
-        5:   22:    TerminalProgram terminalProgram = TerminalProgram(container, start);
+       10:   22:    TerminalProgram terminalProgram = TerminalProgram(container, start);
         -:   23:
-        6:   24:    SUBCASE("Constructor Test") {
-        5:   24-block  0
-branch  0 taken 5
+       11:   24:    SUBCASE("Constructor Test") {
+       10:   24-block  0
+branch  0 taken 10
 branch  1 taken 0
-        5:   24-block  1
-branch  2 taken 5
+       10:   24-block  1
+branch  2 taken 10
 branch  3 taken 0
-        5:   24-block  2
-branch  4 taken 4
+       10:   24-block  2
+branch  4 taken 9
 branch  5 taken 1
     $$$$$:   24-block  3
     $$$$$:   24-block  4
@@ -226,35 +226,143 @@ branch 25 taken 0
         1:   28:    }
         1:   28-block  0
         -:   29:
-        6:   30:    SUBCASE("Location Test") {
-        5:   30-block  0
-branch  0 taken 5
+       11:   30:    SUBCASE("All Print Test") {
+       10:   30-block  0
+branch  0 taken 10
 branch  1 taken 0
-        5:   30-block  1
-branch  2 taken 5
+       10:   30-block  1
+branch  2 taken 10
 branch  3 taken 0
-        5:   30-block  2
-branch  4 taken 4
+       10:   30-block  2
+branch  4 taken 9
 branch  5 taken 1
     $$$$$:   30-block  3
     $$$$$:   30-block  4
-        1:   31:        std::stringstream buffer;
+        1:   31:        (terminalProgram.printIntroduction());
         1:   31-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   32:        std::streambuf *oldCout = std::cout.rdbuf(buffer.rdbuf());
+        1:   32:        CHECK_NOTHROW(terminalProgram.printIntroduction());
         1:   32-block  0
+        1:   32-block  1
 branch  0 taken 1
 branch  1 taken 0
-        1:   33:        terminalProgram.handleLocationCommand();
+        1:   32-block  2
+branch  2 taken 1
+branch  3 taken 0
+        1:   32-block  3
+branch  4 taken 1
+branch  5 taken 0
+        1:   32-block  4
+    $$$$$:   32-block  5
+    $$$$$:   32-block  6
+branch  6 never executed
+branch  7 never executed
+    $$$$$:   32-block  7
+branch  8 never executed
+branch  9 never executed
+    $$$$$:   32-block  8
+        1:   32-block  9
+branch 10 taken 1
+branch 11 taken 0
+        1:   32-block 10
+branch 12 taken 0
+branch 13 taken 1
+    $$$$$:   32-block 11
+branch 14 never executed
+branch 15 never executed
+    $$$$$:   32-block 12
+    $$$$$:   32-block 13
+branch 16 never executed
+branch 17 never executed
+    $$$$$:   32-block 14
+        1:   32-block 15
+branch 18 taken 1
+branch 19 taken 0
+        1:   32-block 16
+        1:   32-block 17
+    $$$$$:   32-block 18
+        1:   33:        CHECK_NOTHROW(terminalProgram.printHelp());
         1:   33-block  0
+        1:   33-block  1
 branch  0 taken 1
 branch  1 taken 0
-        1:   34:        std::cout.rdbuf(oldCout);
+        1:   33-block  2
+branch  2 taken 1
+branch  3 taken 0
+        1:   33-block  3
+branch  4 taken 1
+branch  5 taken 0
+        1:   33-block  4
+    $$$$$:   33-block  5
+    $$$$$:   33-block  6
+branch  6 never executed
+branch  7 never executed
+    $$$$$:   33-block  7
+branch  8 never executed
+branch  9 never executed
+    $$$$$:   33-block  8
+        1:   33-block  9
+branch 10 taken 1
+branch 11 taken 0
+        1:   33-block 10
+branch 12 taken 0
+branch 13 taken 1
+    $$$$$:   33-block 11
+branch 14 never executed
+branch 15 never executed
+    $$$$$:   33-block 12
+    $$$$$:   33-block 13
+branch 16 never executed
+branch 17 never executed
+    $$$$$:   33-block 14
+        1:   33-block 15
+branch 18 taken 1
+branch 19 taken 0
+        1:   33-block 16
+        1:   33-block 17
+    $$$$$:   33-block 18
+        1:   34:        CHECK_NOTHROW(terminalProgram.printHelp2());
         1:   34-block  0
+        1:   34-block  1
 branch  0 taken 1
 branch  1 taken 0
-        1:   35:        REQUIRE(buffer.str() == "Current location: CityA\n");
+        1:   34-block  2
+branch  2 taken 1
+branch  3 taken 0
+        1:   34-block  3
+branch  4 taken 1
+branch  5 taken 0
+        1:   34-block  4
+    $$$$$:   34-block  5
+    $$$$$:   34-block  6
+branch  6 never executed
+branch  7 never executed
+    $$$$$:   34-block  7
+branch  8 never executed
+branch  9 never executed
+    $$$$$:   34-block  8
+        1:   34-block  9
+branch 10 taken 1
+branch 11 taken 0
+        1:   34-block 10
+branch 12 taken 0
+branch 13 taken 1
+    $$$$$:   34-block 11
+branch 14 never executed
+branch 15 never executed
+    $$$$$:   34-block 12
+    $$$$$:   34-block 13
+branch 16 never executed
+branch 17 never executed
+    $$$$$:   34-block 14
+        1:   34-block 15
+branch 18 taken 1
+branch 19 taken 0
+        1:   34-block 16
+        1:   34-block 17
+    $$$$$:   34-block 18
+        1:   35:        CHECK_THROWS(terminalProgram.printHelpCommand("NoNameFolder/NoNameFile.txt"));
         1:   35-block  0
         1:   35-block  1
 branch  0 taken 1
@@ -269,607 +377,1112 @@ branch  5 taken 0
 branch  6 taken 1
 branch  7 taken 0
         1:   35-block  5
-branch  8 taken 1
-branch  9 taken 0
-        1:   35-block  6
-branch 10 taken 1
-branch 11 taken 0
-        1:   35-block  7
-    $$$$$:   35-block  8
-    $$$$$:   35-block  9
-    $$$$$:   35-block 10
-    $$$$$:   35-block 11
-    $$$$$:   35-block 12
-branch 12 never executed
-branch 13 never executed
-    $$$$$:   35-block 13
-branch 14 never executed
-branch 15 never executed
+branch  8 taken 0
+branch  9 taken 1
+    $$$$$:   35-block  6
+    $$$$$:   35-block  7
+        1:   35-block  8
+        1:   35-block  9
+branch 10 taken 0
+branch 11 taken 1
+        1:   35-block 10
+branch 12 taken 1
+branch 13 taken 0
+        1:   35-block 11
+        1:   35-block 12
+branch 14 taken 1
+branch 15 taken 0
+        1:   35-block 13
+branch 16 taken 0
+branch 17 taken 1
     $$$$$:   35-block 14
-        1:   35-block 15
-branch 16 taken 1
-branch 17 taken 0
-        1:   35-block 16
-branch 18 taken 0
-branch 19 taken 1
-    $$$$$:   35-block 17
+branch 18 never executed
+branch 19 never executed
+    $$$$$:   35-block 15
+    $$$$$:   35-block 16
 branch 20 never executed
 branch 21 never executed
-    $$$$$:   35-block 18
-    $$$$$:   35-block 19
-branch 22 never executed
-branch 23 never executed
+    $$$$$:   35-block 17
+        1:   35-block 18
+branch 22 taken 1
+branch 23 taken 0
+        1:   35-block 19
     $$$$$:   35-block 20
         1:   35-block 21
-branch 24 taken 1
-branch 25 taken 0
         1:   35-block 22
-        1:   35-block 23
-    $$$$$:   35-block 24
         1:   36:    }
         1:   36-block  0
-    $$$$$:   36-block  1
         -:   37:
-        -:   38:    // Add more SUBCASEs for other test scenarios
-        -:   39:
-        6:   40:    SUBCASE("Close Test") {
-        5:   40-block  0
-branch  0 taken 5
+        -:   38:
+       11:   39:    SUBCASE("Location Test") {
+       10:   39-block  0
+branch  0 taken 10
 branch  1 taken 0
-        5:   40-block  1
-branch  2 taken 5
+       10:   39-block  1
+branch  2 taken 10
 branch  3 taken 0
-        5:   40-block  2
-branch  4 taken 4
+       10:   39-block  2
+branch  4 taken 9
 branch  5 taken 1
-    $$$$$:   40-block  3
-    $$$$$:   40-block  4
-        -:   41:
-        1:   42:        std::stringstream outputBuffer;
+    $$$$$:   39-block  3
+    $$$$$:   39-block  4
+        1:   40:        std::stringstream buffer;
+        1:   40-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   41:        std::streambuf *oldCout = std::cout.rdbuf(buffer.rdbuf());
+        1:   41-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   42:        terminalProgram.handleLocationCommand();
         1:   42-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   43:        std::streambuf *oldCoutBuffer = std::cout.rdbuf(outputBuffer.rdbuf());
+        1:   43:        std::cout.rdbuf(oldCout);
         1:   43-block  0
 branch  0 taken 1
 branch  1 taken 0
-        -:   44:
-        -:   45:        // Close CityB
-        1:   46:        std::stringstream input("CityB");
-        1:   46-block  0
+        1:   44:        REQUIRE(buffer.str() == "Current location: 1\n");
+        1:   44-block  0
+        1:   44-block  1
 branch  0 taken 1
 branch  1 taken 0
-        1:   46-block  1
+        1:   44-block  2
 branch  2 taken 1
 branch  3 taken 0
-    $$$$$:   46-block  2
-        1:   47:        terminalProgram.handleCloseCommand(input);
-        1:   47-block  0
+        1:   44-block  3
+branch  4 taken 1
+branch  5 taken 0
+        1:   44-block  4
+branch  6 taken 1
+branch  7 taken 0
+        1:   44-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:   44-block  6
+branch 10 taken 1
+branch 11 taken 0
+        1:   44-block  7
+    $$$$$:   44-block  8
+    $$$$$:   44-block  9
+    $$$$$:   44-block 10
+    $$$$$:   44-block 11
+    $$$$$:   44-block 12
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   44-block 13
+branch 14 never executed
+branch 15 never executed
+    $$$$$:   44-block 14
+        1:   44-block 15
+branch 16 taken 1
+branch 17 taken 0
+        1:   44-block 16
+branch 18 taken 0
+branch 19 taken 1
+    $$$$$:   44-block 17
+branch 20 never executed
+branch 21 never executed
+    $$$$$:   44-block 18
+    $$$$$:   44-block 19
+branch 22 never executed
+branch 23 never executed
+    $$$$$:   44-block 20
+        1:   44-block 21
+branch 24 taken 1
+branch 25 taken 0
+        1:   44-block 22
+        1:   44-block 23
+    $$$$$:   44-block 24
+        1:   45:    }
+        1:   45-block  0
+    $$$$$:   45-block  1
+        -:   46:
+       12:   47:    SUBCASE("Test handleChangeCommand") {
+       10:   47-block  0
+branch  0 taken 10
+branch  1 taken 0
+       10:   47-block  1
+branch  2 taken 10
+branch  3 taken 0
+       10:   47-block  2
+branch  4 taken 8
+branch  5 taken 2
+    $$$$$:   47-block  3
+    $$$$$:   47-block  4
+        3:   48:        SUBCASE("Valid location") {
+        2:   48-block  0
+branch  0 taken 2
+branch  1 taken 0
+        2:   48-block  1
+branch  2 taken 2
+branch  3 taken 0
+        2:   48-block  2
+branch  4 taken 1
+branch  5 taken 1
+    $$$$$:   48-block  3
+    $$$$$:   48-block  4
+        1:   49:            std::stringstream ss("1");
+        1:   49-block  0
 branch  0 taken 1
 branch  1 taken 0
-        -:   48:
-        -:   49:        // Reset cout to the original buffer
-        1:   50:        std::cout.rdbuf(oldCoutBuffer);
+        1:   49-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:   49-block  2
+        1:   50:            terminalProgram.handleChangeCommand(ss);
         1:   50-block  0
 branch  0 taken 1
 branch  1 taken 0
-        -:   51:
-        -:   52:        // Verify the output
-        1:   53:        std::string expectedOutput = "Closed location: CityB\n";
-        1:   53-block  0
-branch  0 taken 1
+        1:   51:        }
+        1:   51-block  0
+    $$$$$:   51-block  1
+        -:   52:
+        3:   53:        SUBCASE("Invalid location") {
+        2:   53-block  0
+branch  0 taken 2
 branch  1 taken 0
-        1:   54:        REQUIRE(outputBuffer.str() == expectedOutput);
+        2:   53-block  1
+branch  2 taken 2
+branch  3 taken 0
+        2:   53-block  2
+branch  4 taken 1
+branch  5 taken 1
+    $$$$$:   53-block  3
+    $$$$$:   53-block  4
+        1:   54:            std::stringstream ss("InvalidLocation");
         1:   54-block  0
+branch  0 taken 1
+branch  1 taken 0
         1:   54-block  1
-branch  0 taken 1
-branch  1 taken 0
-        1:   54-block  2
 branch  2 taken 1
 branch  3 taken 0
-        1:   54-block  3
-branch  4 taken 1
-branch  5 taken 0
-        1:   54-block  4
-branch  6 taken 1
-branch  7 taken 0
-        1:   54-block  5
-branch  8 taken 1
-branch  9 taken 0
-        1:   54-block  6
-branch 10 taken 1
-branch 11 taken 0
-        1:   54-block  7
-    $$$$$:   54-block  8
-    $$$$$:   54-block  9
-    $$$$$:   54-block 10
-    $$$$$:   54-block 11
-    $$$$$:   54-block 12
-    $$$$$:   54-block 13
-branch 12 never executed
-branch 13 never executed
-    $$$$$:   54-block 14
-branch 14 never executed
-branch 15 never executed
-    $$$$$:   54-block 15
-        1:   54-block 16
-branch 16 taken 1
-branch 17 taken 0
-        1:   54-block 17
-branch 18 taken 0
-branch 19 taken 1
-    $$$$$:   54-block 18
-branch 20 never executed
-branch 21 never executed
-    $$$$$:   54-block 19
-    $$$$$:   54-block 20
-branch 22 never executed
-branch 23 never executed
-    $$$$$:   54-block 21
-        1:   54-block 22
-branch 24 taken 1
-branch 25 taken 0
-        1:   54-block 23
-        1:   54-block 24
-    $$$$$:   54-block 25
-        1:   55:        REQUIRE(terminalProgram.getClosedJunctions().count(container->getGraph("CityB")) == 1);
+    $$$$$:   54-block  2
+        1:   55:            terminalProgram.handleChangeCommand(ss);
         1:   55-block  0
-        1:   55-block  1
 branch  0 taken 1
 branch  1 taken 0
-        1:   55-block  2
-branch  2 taken 1
-branch  3 taken 0
-        1:   55-block  3
-branch  4 taken 1
-branch  5 taken 0
-        1:   55-block  4
-branch  6 taken 1
-branch  7 taken 0
-        1:   55-block  5
-branch  8 taken 1
-branch  9 taken 0
-        1:   55-block  6
-branch 10 taken 1
-branch 11 taken 0
-        1:   55-block  7
-branch 12 taken 1
-branch 13 taken 0
-        1:   55-block  8
-branch 14 taken 1
-branch 15 taken 0
-        1:   55-block  9
-branch 16 taken 1
-branch 17 taken 0
-        1:   55-block 10
-    $$$$$:   55-block 11
-    $$$$$:   55-block 12
-    $$$$$:   55-block 13
-    $$$$$:   55-block 14
-    $$$$$:   55-block 15
-branch 18 never executed
-branch 19 never executed
-    $$$$$:   55-block 16
-branch 20 never executed
-branch 21 never executed
-    $$$$$:   55-block 17
-        1:   55-block 18
-branch 22 taken 1
-branch 23 taken 0
-        1:   55-block 19
-branch 24 taken 0
-branch 25 taken 1
-    $$$$$:   55-block 20
-branch 26 never executed
-branch 27 never executed
-    $$$$$:   55-block 21
-    $$$$$:   55-block 22
-branch 28 never executed
-branch 29 never executed
-    $$$$$:   55-block 23
-        1:   55-block 24
-branch 30 taken 1
-branch 31 taken 0
-        1:   55-block 25
-        1:   55-block 26
-    $$$$$:   55-block 27
-        1:   56:    }
+        1:   56:        }
         1:   56-block  0
     $$$$$:   56-block  1
-    $$$$$:   56-block  2
-    $$$$$:   56-block  3
-        -:   57:
-        6:   58:    SUBCASE("Open Test") {
-        5:   58-block  0
-branch  0 taken 5
+        2:   57:    }
+        2:   57-block  0
+        -:   58:
+       12:   59:    SUBCASE("Close Test") {
+       10:   59-block  0
+branch  0 taken 10
 branch  1 taken 0
-        5:   58-block  1
-branch  2 taken 5
+       10:   59-block  1
+branch  2 taken 10
 branch  3 taken 0
-        5:   58-block  2
-branch  4 taken 4
+       10:   59-block  2
+branch  4 taken 8
+branch  5 taken 2
+    $$$$$:   59-block  3
+    $$$$$:   59-block  4
+        3:   60:        SUBCASE("Close Existing") {
+        2:   60-block  0
+branch  0 taken 2
+branch  1 taken 0
+        2:   60-block  1
+branch  2 taken 2
+branch  3 taken 0
+        2:   60-block  2
+branch  4 taken 1
 branch  5 taken 1
-    $$$$$:   58-block  3
-    $$$$$:   58-block  4
-        -:   59:
-        -:   60:        // Redirect cout to capture the output
-        1:   61:        std::stringstream outputBuffer;
+    $$$$$:   60-block  3
+    $$$$$:   60-block  4
+        1:   61:            std::stringstream outputBuffer;
         1:   61-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   62:        std::streambuf *oldCoutBuffer = std::cout.rdbuf(outputBuffer.rdbuf());
+        1:   62:            std::streambuf *oldCoutBuffer = std::cout.rdbuf(outputBuffer.rdbuf());
         1:   62-block  0
 branch  0 taken 1
 branch  1 taken 0
         -:   63:
-        -:   64:        // Close CityB first
-        1:   65:        terminalProgram.getClosedJunctions().insert(container->getGraph("CityB"));
+        1:   64:            std::stringstream input("2");
+        1:   64-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   64-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:   64-block  2
+        1:   65:            terminalProgram.handleCloseCommand(input);
         1:   65-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   65-block  1
-branch  2 taken 1
-branch  3 taken 0
-        1:   65-block  2
-branch  4 taken 1
-branch  5 taken 0
-        1:   65-block  3
-branch  6 taken 1
-branch  7 taken 0
-    $$$$$:   65-block  4
-    $$$$$:   65-block  5
         -:   66:
-        -:   67:        // Open CityB
-        1:   68:        std::stringstream input("CityB");
-        1:   68-block  0
+        1:   67:            std::cout.rdbuf(oldCoutBuffer);
+        1:   67-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   68-block  1
-branch  2 taken 1
-branch  3 taken 0
-    $$$$$:   68-block  2
-        1:   69:        terminalProgram.handleOpenCommand(input);
+        -:   68:
+        1:   69:            std::string expectedOutput = "Closed location: 2\n";
         1:   69-block  0
 branch  0 taken 1
 branch  1 taken 0
-        -:   70:
-        -:   71:        // Reset cout to the original buffer
-        1:   72:        std::cout.rdbuf(oldCoutBuffer);
-        1:   72-block  0
+        1:   70:            REQUIRE(outputBuffer.str() == expectedOutput);
+        1:   70-block  0
+        1:   70-block  1
 branch  0 taken 1
 branch  1 taken 0
+        1:   70-block  2
+branch  2 taken 1
+branch  3 taken 0
+        1:   70-block  3
+branch  4 taken 1
+branch  5 taken 0
+        1:   70-block  4
+branch  6 taken 1
+branch  7 taken 0
+        1:   70-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:   70-block  6
+branch 10 taken 1
+branch 11 taken 0
+        1:   70-block  7
+    $$$$$:   70-block  8
+    $$$$$:   70-block  9
+    $$$$$:   70-block 10
+    $$$$$:   70-block 11
+    $$$$$:   70-block 12
+    $$$$$:   70-block 13
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   70-block 14
+branch 14 never executed
+branch 15 never executed
+    $$$$$:   70-block 15
+        1:   70-block 16
+branch 16 taken 1
+branch 17 taken 0
+        1:   70-block 17
+branch 18 taken 0
+branch 19 taken 1
+    $$$$$:   70-block 18
+branch 20 never executed
+branch 21 never executed
+    $$$$$:   70-block 19
+    $$$$$:   70-block 20
+branch 22 never executed
+branch 23 never executed
+    $$$$$:   70-block 21
+        1:   70-block 22
+branch 24 taken 1
+branch 25 taken 0
+        1:   70-block 23
+        1:   70-block 24
+    $$$$$:   70-block 25
+        1:   71:            REQUIRE(terminalProgram.getClosedJunctions().count(container->getGraph("2")) == 1);
+        1:   71-block  0
+        1:   71-block  1
+branch  0 taken 1
+branch  1 taken 0
+        1:   71-block  2
+branch  2 taken 1
+branch  3 taken 0
+        1:   71-block  3
+branch  4 taken 1
+branch  5 taken 0
+        1:   71-block  4
+branch  6 taken 1
+branch  7 taken 0
+        1:   71-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:   71-block  6
+branch 10 taken 1
+branch 11 taken 0
+        1:   71-block  7
+branch 12 taken 1
+branch 13 taken 0
+        1:   71-block  8
+branch 14 taken 1
+branch 15 taken 0
+        1:   71-block  9
+branch 16 taken 1
+branch 17 taken 0
+        1:   71-block 10
+    $$$$$:   71-block 11
+    $$$$$:   71-block 12
+    $$$$$:   71-block 13
+    $$$$$:   71-block 14
+    $$$$$:   71-block 15
+branch 18 never executed
+branch 19 never executed
+    $$$$$:   71-block 16
+branch 20 never executed
+branch 21 never executed
+    $$$$$:   71-block 17
+        1:   71-block 18
+branch 22 taken 1
+branch 23 taken 0
+        1:   71-block 19
+branch 24 taken 0
+branch 25 taken 1
+    $$$$$:   71-block 20
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   71-block 21
+    $$$$$:   71-block 22
+branch 28 never executed
+branch 29 never executed
+    $$$$$:   71-block 23
+        1:   71-block 24
+branch 30 taken 1
+branch 31 taken 0
+        1:   71-block 25
+        1:   71-block 26
+    $$$$$:   71-block 27
+        1:   72:        }
+        1:   72-block  0
+    $$$$$:   72-block  1
+    $$$$$:   72-block  2
+    $$$$$:   72-block  3
         -:   73:
-        -:   74:        // Verify the output
-        1:   75:        std::string expectedOutput = "Opened location: CityB\n";
+        3:   74:        SUBCASE("Close non-Existing") {
+        2:   74-block  0
+branch  0 taken 2
+branch  1 taken 0
+        2:   74-block  1
+branch  2 taken 2
+branch  3 taken 0
+        2:   74-block  2
+branch  4 taken 1
+branch  5 taken 1
+    $$$$$:   74-block  3
+    $$$$$:   74-block  4
+        1:   75:            std::stringstream outputBuffer;
         1:   75-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   76:        REQUIRE(outputBuffer.str() == expectedOutput);
+        1:   76:            std::streambuf *oldCoutBuffer = std::cout.rdbuf(outputBuffer.rdbuf());
         1:   76-block  0
-        1:   76-block  1
 branch  0 taken 1
 branch  1 taken 0
-        1:   76-block  2
-branch  2 taken 1
-branch  3 taken 0
-        1:   76-block  3
-branch  4 taken 1
-branch  5 taken 0
-        1:   76-block  4
-branch  6 taken 1
-branch  7 taken 0
-        1:   76-block  5
-branch  8 taken 1
-branch  9 taken 0
-        1:   76-block  6
-branch 10 taken 1
-branch 11 taken 0
-        1:   76-block  7
-    $$$$$:   76-block  8
-    $$$$$:   76-block  9
-    $$$$$:   76-block 10
-    $$$$$:   76-block 11
-    $$$$$:   76-block 12
-    $$$$$:   76-block 13
-branch 12 never executed
-branch 13 never executed
-    $$$$$:   76-block 14
-branch 14 never executed
-branch 15 never executed
-    $$$$$:   76-block 15
-        1:   76-block 16
-branch 16 taken 1
-branch 17 taken 0
-        1:   76-block 17
-branch 18 taken 0
-branch 19 taken 1
-    $$$$$:   76-block 18
-branch 20 never executed
-branch 21 never executed
-    $$$$$:   76-block 19
-    $$$$$:   76-block 20
-branch 22 never executed
-branch 23 never executed
-    $$$$$:   76-block 21
-        1:   76-block 22
-branch 24 taken 1
-branch 25 taken 0
-        1:   76-block 23
-        1:   76-block 24
-    $$$$$:   76-block 25
-        1:   77:        REQUIRE(terminalProgram.getClosedJunctions().count(container->getGraph("CityB")) == 0);
-        1:   77-block  0
-        1:   77-block  1
-branch  0 taken 1
-branch  1 taken 0
-        1:   77-block  2
-branch  2 taken 1
-branch  3 taken 0
-        1:   77-block  3
-branch  4 taken 1
-branch  5 taken 0
-        1:   77-block  4
-branch  6 taken 1
-branch  7 taken 0
-        1:   77-block  5
-branch  8 taken 1
-branch  9 taken 0
-        1:   77-block  6
-branch 10 taken 1
-branch 11 taken 0
-        1:   77-block  7
-branch 12 taken 1
-branch 13 taken 0
-        1:   77-block  8
-branch 14 taken 1
-branch 15 taken 0
-        1:   77-block  9
-branch 16 taken 0
-branch 17 taken 1
-        1:   77-block 10
-    $$$$$:   77-block 11
-    $$$$$:   77-block 12
-    $$$$$:   77-block 13
-    $$$$$:   77-block 14
-    $$$$$:   77-block 15
-branch 18 never executed
-branch 19 never executed
-    $$$$$:   77-block 16
-branch 20 never executed
-branch 21 never executed
-    $$$$$:   77-block 17
-        1:   77-block 18
-branch 22 taken 1
-branch 23 taken 0
-        1:   77-block 19
-branch 24 taken 0
-branch 25 taken 1
-    $$$$$:   77-block 20
-branch 26 never executed
-branch 27 never executed
-    $$$$$:   77-block 21
-    $$$$$:   77-block 22
-branch 28 never executed
-branch 29 never executed
-    $$$$$:   77-block 23
-        1:   77-block 24
-branch 30 taken 1
-branch 31 taken 0
-        1:   77-block 25
-        1:   77-block 26
-    $$$$$:   77-block 27
-        1:   78:    }
+        -:   77:
+        1:   78:            std::stringstream input("1234567");
         1:   78-block  0
-    $$$$$:   78-block  1
-    $$$$$:   78-block  2
-    $$$$$:   78-block  3
-        -:   79:
-        6:   80:    SUBCASE("Closed (getClosed) Test") {
-        5:   80-block  0
-branch  0 taken 5
+branch  0 taken 1
 branch  1 taken 0
-        5:   80-block  1
-branch  2 taken 5
+        1:   78-block  1
+branch  2 taken 1
 branch  3 taken 0
-        5:   80-block  2
-branch  4 taken 4
-branch  5 taken 1
-    $$$$$:   80-block  3
-    $$$$$:   80-block  4
-        1:   81:        container->addGraph("CityC");
+    $$$$$:   78-block  2
+        1:   79:            terminalProgram.handleCloseCommand(input);
+        1:   79-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:   80:
+        1:   81:            std::cout.rdbuf(oldCoutBuffer);
         1:   81-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   81-block  1
-branch  2 taken 1
-branch  3 taken 0
-    $$$$$:   81-block  2
-        1:   82:        Graph *cityC = container->getGraph("CityC");
-        1:   82-block  0
+        -:   82:
+        1:   83:            std::string expectedOutput = "Invalid location: 1234567\n";
+        1:   83-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   82-block  1
-branch  2 taken 1
-branch  3 taken 0
-    $$$$$:   82-block  2
-        -:   83:
-        1:   84:        std::stringstream input("CityB CityC");
+        1:   84:            REQUIRE(outputBuffer.str() == expectedOutput);
         1:   84-block  0
+        1:   84-block  1
 branch  0 taken 1
 branch  1 taken 0
-        1:   84-block  1
+        1:   84-block  2
 branch  2 taken 1
 branch  3 taken 0
-    $$$$$:   84-block  2
-        1:   85:        terminalProgram.handleCloseCommand(input);
+        1:   84-block  3
+branch  4 taken 1
+branch  5 taken 0
+        1:   84-block  4
+branch  6 taken 1
+branch  7 taken 0
+        1:   84-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:   84-block  6
+branch 10 taken 1
+branch 11 taken 0
+        1:   84-block  7
+    $$$$$:   84-block  8
+    $$$$$:   84-block  9
+    $$$$$:   84-block 10
+    $$$$$:   84-block 11
+    $$$$$:   84-block 12
+    $$$$$:   84-block 13
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   84-block 14
+branch 14 never executed
+branch 15 never executed
+    $$$$$:   84-block 15
+        1:   84-block 16
+branch 16 taken 1
+branch 17 taken 0
+        1:   84-block 17
+branch 18 taken 0
+branch 19 taken 1
+    $$$$$:   84-block 18
+branch 20 never executed
+branch 21 never executed
+    $$$$$:   84-block 19
+    $$$$$:   84-block 20
+branch 22 never executed
+branch 23 never executed
+    $$$$$:   84-block 21
+        1:   84-block 22
+branch 24 taken 1
+branch 25 taken 0
+        1:   84-block 23
+        1:   84-block 24
+    $$$$$:   84-block 25
+        1:   85:            REQUIRE(terminalProgram.getClosedJunctions().size() == 0);
         1:   85-block  0
+        1:   85-block  1
 branch  0 taken 1
 branch  1 taken 0
-        1:   86:        terminalProgram.handleCloseCommand(input);
+        1:   85-block  2
+branch  2 taken 1
+branch  3 taken 0
+        1:   85-block  3
+branch  4 taken 1
+branch  5 taken 0
+        1:   85-block  4
+branch  6 taken 1
+branch  7 taken 0
+        1:   85-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:   85-block  6
+branch 10 taken 1
+branch 11 taken 0
+        1:   85-block  7
+    $$$$$:   85-block  8
+    $$$$$:   85-block  9
+    $$$$$:   85-block 10
+    $$$$$:   85-block 11
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   85-block 12
+branch 14 never executed
+branch 15 never executed
+    $$$$$:   85-block 13
+        1:   85-block 14
+branch 16 taken 1
+branch 17 taken 0
+        1:   85-block 15
+branch 18 taken 0
+branch 19 taken 1
+    $$$$$:   85-block 16
+branch 20 never executed
+branch 21 never executed
+    $$$$$:   85-block 17
+    $$$$$:   85-block 18
+branch 22 never executed
+branch 23 never executed
+    $$$$$:   85-block 19
+        1:   85-block 20
+branch 24 taken 1
+branch 25 taken 0
+        1:   85-block 21
+        1:   85-block 22
+    $$$$$:   85-block 23
+        1:   86:        }
         1:   86-block  0
-branch  0 taken 1
-branch  1 taken 0
+    $$$$$:   86-block  1
+    $$$$$:   86-block  2
+    $$$$$:   86-block  3
         -:   87:
-        1:   88:        std::stringstream outputBuffer;
-        1:   88-block  0
-branch  0 taken 1
+        2:   88:    }
+        2:   88-block  0
+       12:   89:    SUBCASE("Open Test") {
+       10:   89-block  0
+branch  0 taken 10
 branch  1 taken 0
-        1:   89:        std::streambuf *oldCoutBuffer = std::cout.rdbuf(outputBuffer.rdbuf());
-        1:   89-block  0
-branch  0 taken 1
+       10:   89-block  1
+branch  2 taken 10
+branch  3 taken 0
+       10:   89-block  2
+branch  4 taken 8
+branch  5 taken 2
+    $$$$$:   89-block  3
+    $$$$$:   89-block  4
+        3:   90:        SUBCASE("Open Existing") {
+        2:   90-block  0
+branch  0 taken 2
 branch  1 taken 0
-        -:   90:
-        1:   91:        terminalProgram.handleClosedCommand();
+        2:   90-block  1
+branch  2 taken 2
+branch  3 taken 0
+        2:   90-block  2
+branch  4 taken 1
+branch  5 taken 1
+    $$$$$:   90-block  3
+    $$$$$:   90-block  4
+        1:   91:            std::stringstream outputBuffer;
         1:   91-block  0
 branch  0 taken 1
 branch  1 taken 0
-        -:   92:
-        1:   93:        std::cout.rdbuf(oldCoutBuffer);
-        1:   93-block  0
+        1:   92:            std::streambuf *oldCoutBuffer = std::cout.rdbuf(outputBuffer.rdbuf());
+        1:   92-block  0
 branch  0 taken 1
 branch  1 taken 0
-        -:   94:
-        1:   95:        std::string expectedOutput1 = "Closed locations: CityB CityC \n";
-        1:   95-block  0
+        -:   93:
+        1:   94:            terminalProgram.getClosedJunctions().insert(container->getGraph("2"));
+        1:   94-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   96:        std::string expectedOutput2 = "Closed locations: CityC CityB \n";
+        1:   94-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   94-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:   94-block  3
+branch  6 taken 1
+branch  7 taken 0
+    $$$$$:   94-block  4
+    $$$$$:   94-block  5
+        -:   95:
+        1:   96:            std::stringstream input("2");
         1:   96-block  0
 branch  0 taken 1
 branch  1 taken 0
-        -:   97:
-        1:   98:        REQUIRE((outputBuffer.str() == expectedOutput1 || outputBuffer.str() == expectedOutput2));
-        1:   98-block  0
-        1:   98-block  1
-branch  0 taken 1
-branch  1 taken 0
-        1:   98-block  2
+        1:   96-block  1
 branch  2 taken 1
 branch  3 taken 0
-        1:   98-block  3
-branch  4 taken 1
-branch  5 taken 0
-        1:   98-block  4
-branch  6 taken 0
-branch  7 taken 1
-        1:   98-block  5
-branch  8 taken 1
-branch  9 taken 0
-        1:   98-block  6
-        1:   98-block  7
-branch 10 taken 1
-branch 11 taken 0
-        1:   98-block  8
-branch 12 taken 1
-branch 13 taken 0
-        1:   98-block  9
-branch 14 taken 1
-branch 15 taken 0
-        1:   98-block 10
-branch 16 taken 0
-branch 17 taken 1
-        1:   98-block 11
-        1:   98-block 12
-    $$$$$:   98-block 13
-    $$$$$:   98-block 14
-    $$$$$:   98-block 15
-    $$$$$:   98-block 16
-branch 18 never executed
-branch 19 never executed
-    $$$$$:   98-block 17
-    $$$$$:   98-block 18
-    $$$$$:   98-block 19
-    $$$$$:   98-block 20
-branch 20 never executed
-branch 21 never executed
-    $$$$$:   98-block 21
-branch 22 never executed
-branch 23 never executed
-    $$$$$:   98-block 22
-        1:   98-block 23
-branch 24 taken 1
-branch 25 taken 0
-        1:   98-block 24
-branch 26 taken 0
-branch 27 taken 1
-    $$$$$:   98-block 25
-branch 28 never executed
-branch 29 never executed
-    $$$$$:   98-block 26
-    $$$$$:   98-block 27
-branch 30 never executed
-branch 31 never executed
-    $$$$$:   98-block 28
-        1:   98-block 29
-branch 32 taken 1
-branch 33 taken 0
-        1:   98-block 30
-        1:   98-block 31
-    $$$$$:   98-block 32
-        1:   99:    }
-        1:   99-block  0
-    $$$$$:   99-block  1
-    $$$$$:   99-block  2
-    $$$$$:   99-block  3
-    $$$$$:   99-block  4
-        5:  100:}
-    $$$$$:  100-block  0
-    $$$$$:  100-block  1
-    $$$$$:  100-block  2
-    $$$$$:  100-block  3
-    $$$$$:  100-block  4
-    $$$$$:  100-block  5
-    $$$$$:  100-block  6
-    $$$$$:  100-block  7
-    $$$$$:  100-block  8
-    $$$$$:  100-block  9
-    $$$$$:  100-block 10
-    $$$$$:  100-block 11
-    $$$$$:  100-block 12
-    $$$$$:  100-block 13
-    $$$$$:  100-block 14
-    $$$$$:  100-block 15
-    $$$$$:  100-block 16
-    $$$$$:  100-block 17
-    $$$$$:  100-block 18
-    $$$$$:  100-block 19
-    $$$$$:  100-block 20
-    $$$$$:  100-block 21
-    $$$$$:  100-block 22
-    $$$$$:  100-block 23
-    $$$$$:  100-block 24
-    $$$$$:  100-block 25
-    $$$$$:  100-block 26
-    $$$$$:  100-block 27
-    $$$$$:  100-block 28
-    $$$$$:  100-block 29
-    $$$$$:  100-block 30
-    $$$$$:  100-block 31
-    $$$$$:  100-block 32
-    $$$$$:  100-block 33
-    $$$$$:  100-block 34
-    $$$$$:  100-block 35
-    $$$$$:  100-block 36
-    $$$$$:  100-block 37
-    $$$$$:  100-block 38
-    $$$$$:  100-block 39
-    $$$$$:  100-block 40
-    $$$$$:  100-block 41
-    $$$$$:  100-block 42
-    $$$$$:  100-block 43
-    $$$$$:  100-block 44
-        5:  100-block 45
-    $$$$$:  100-block 46
-        -:  101:
-        -:  102:
-function main called 1 returned 100% blocks executed 50%
-        1:  103:int main(int argc, char *argv[]) {
-        1:  104:    doctest::Context context(argc, argv);
-        1:  105:    return context.run();
-        1:  105-block  0
+    $$$$$:   96-block  2
+        1:   97:            terminalProgram.handleOpenCommand(input);
+        1:   97-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:  106:}
+        -:   98:
+        1:   99:            std::cout.rdbuf(oldCoutBuffer);
+        1:   99-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:  100:
+        1:  101:            std::string expectedOutput = "Opened location: 2\n";
+        1:  101-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  102:            REQUIRE(outputBuffer.str() == expectedOutput);
+        1:  102-block  0
+        1:  102-block  1
+branch  0 taken 1
+branch  1 taken 0
+        1:  102-block  2
+branch  2 taken 1
+branch  3 taken 0
+        1:  102-block  3
+branch  4 taken 1
+branch  5 taken 0
+        1:  102-block  4
+branch  6 taken 1
+branch  7 taken 0
+        1:  102-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:  102-block  6
+branch 10 taken 1
+branch 11 taken 0
+        1:  102-block  7
+    $$$$$:  102-block  8
+    $$$$$:  102-block  9
+    $$$$$:  102-block 10
+    $$$$$:  102-block 11
+    $$$$$:  102-block 12
+    $$$$$:  102-block 13
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  102-block 14
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  102-block 15
+        1:  102-block 16
+branch 16 taken 1
+branch 17 taken 0
+        1:  102-block 17
+branch 18 taken 0
+branch 19 taken 1
+    $$$$$:  102-block 18
+branch 20 never executed
+branch 21 never executed
+    $$$$$:  102-block 19
+    $$$$$:  102-block 20
+branch 22 never executed
+branch 23 never executed
+    $$$$$:  102-block 21
+        1:  102-block 22
+branch 24 taken 1
+branch 25 taken 0
+        1:  102-block 23
+        1:  102-block 24
+    $$$$$:  102-block 25
+        1:  103:            REQUIRE(terminalProgram.getClosedJunctions().count(container->getGraph("2")) == 0);
+        1:  103-block  0
+        1:  103-block  1
+branch  0 taken 1
+branch  1 taken 0
+        1:  103-block  2
+branch  2 taken 1
+branch  3 taken 0
+        1:  103-block  3
+branch  4 taken 1
+branch  5 taken 0
+        1:  103-block  4
+branch  6 taken 1
+branch  7 taken 0
+        1:  103-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:  103-block  6
+branch 10 taken 1
+branch 11 taken 0
+        1:  103-block  7
+branch 12 taken 1
+branch 13 taken 0
+        1:  103-block  8
+branch 14 taken 1
+branch 15 taken 0
+        1:  103-block  9
+branch 16 taken 1
+branch 17 taken 0
+        1:  103-block 10
+    $$$$$:  103-block 11
+    $$$$$:  103-block 12
+    $$$$$:  103-block 13
+    $$$$$:  103-block 14
+    $$$$$:  103-block 15
+branch 18 never executed
+branch 19 never executed
+    $$$$$:  103-block 16
+branch 20 never executed
+branch 21 never executed
+    $$$$$:  103-block 17
+        1:  103-block 18
+branch 22 taken 1
+branch 23 taken 0
+        1:  103-block 19
+branch 24 taken 0
+branch 25 taken 1
+    $$$$$:  103-block 20
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  103-block 21
+    $$$$$:  103-block 22
+branch 28 never executed
+branch 29 never executed
+    $$$$$:  103-block 23
+        1:  103-block 24
+branch 30 taken 1
+branch 31 taken 0
+        1:  103-block 25
+        1:  103-block 26
+    $$$$$:  103-block 27
+        1:  104:        }
+        1:  104-block  0
+    $$$$$:  104-block  1
+    $$$$$:  104-block  2
+    $$$$$:  104-block  3
+        3:  105:        SUBCASE("Open non-Existing") {
+        2:  105-block  0
+branch  0 taken 2
+branch  1 taken 0
+        2:  105-block  1
+branch  2 taken 2
+branch  3 taken 0
+        2:  105-block  2
+branch  4 taken 1
+branch  5 taken 1
+    $$$$$:  105-block  3
+    $$$$$:  105-block  4
+        1:  106:            std::stringstream outputBuffer;
         1:  106-block  0
-    $$$$$:  106-block  1
-    $$$$$:  106-block  2
+branch  0 taken 1
+branch  1 taken 0
+        1:  107:            std::streambuf *oldCoutBuffer = std::cout.rdbuf(outputBuffer.rdbuf());
+        1:  107-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:  108:
+        1:  109:            std::stringstream input("1234567");
+        1:  109-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  109-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:  109-block  2
+        1:  110:            terminalProgram.handleCloseCommand(input);
+        1:  110-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:  111:
+        1:  112:            std::cout.rdbuf(oldCoutBuffer);
+        1:  112-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:  113:
+        1:  114:            std::string expectedOutput = "Invalid location: 1234567\n";
+        1:  114-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  115:            REQUIRE(outputBuffer.str() == expectedOutput);
+        1:  115-block  0
+        1:  115-block  1
+branch  0 taken 1
+branch  1 taken 0
+        1:  115-block  2
+branch  2 taken 1
+branch  3 taken 0
+        1:  115-block  3
+branch  4 taken 1
+branch  5 taken 0
+        1:  115-block  4
+branch  6 taken 1
+branch  7 taken 0
+        1:  115-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:  115-block  6
+branch 10 taken 1
+branch 11 taken 0
+        1:  115-block  7
+    $$$$$:  115-block  8
+    $$$$$:  115-block  9
+    $$$$$:  115-block 10
+    $$$$$:  115-block 11
+    $$$$$:  115-block 12
+    $$$$$:  115-block 13
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  115-block 14
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  115-block 15
+        1:  115-block 16
+branch 16 taken 1
+branch 17 taken 0
+        1:  115-block 17
+branch 18 taken 0
+branch 19 taken 1
+    $$$$$:  115-block 18
+branch 20 never executed
+branch 21 never executed
+    $$$$$:  115-block 19
+    $$$$$:  115-block 20
+branch 22 never executed
+branch 23 never executed
+    $$$$$:  115-block 21
+        1:  115-block 22
+branch 24 taken 1
+branch 25 taken 0
+        1:  115-block 23
+        1:  115-block 24
+    $$$$$:  115-block 25
+        1:  116:            REQUIRE(terminalProgram.getClosedJunctions().size() == 0);
+        1:  116-block  0
+        1:  116-block  1
+branch  0 taken 1
+branch  1 taken 0
+        1:  116-block  2
+branch  2 taken 1
+branch  3 taken 0
+        1:  116-block  3
+branch  4 taken 1
+branch  5 taken 0
+        1:  116-block  4
+branch  6 taken 1
+branch  7 taken 0
+        1:  116-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:  116-block  6
+branch 10 taken 1
+branch 11 taken 0
+        1:  116-block  7
+    $$$$$:  116-block  8
+    $$$$$:  116-block  9
+    $$$$$:  116-block 10
+    $$$$$:  116-block 11
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  116-block 12
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  116-block 13
+        1:  116-block 14
+branch 16 taken 1
+branch 17 taken 0
+        1:  116-block 15
+branch 18 taken 0
+branch 19 taken 1
+    $$$$$:  116-block 16
+branch 20 never executed
+branch 21 never executed
+    $$$$$:  116-block 17
+    $$$$$:  116-block 18
+branch 22 never executed
+branch 23 never executed
+    $$$$$:  116-block 19
+        1:  116-block 20
+branch 24 taken 1
+branch 25 taken 0
+        1:  116-block 21
+        1:  116-block 22
+    $$$$$:  116-block 23
+        1:  117:        }
+        1:  117-block  0
+    $$$$$:  117-block  1
+    $$$$$:  117-block  2
+    $$$$$:  117-block  3
+        2:  118:    }
+        2:  118-block  0
+        -:  119:
+       11:  120:    SUBCASE("Closed (getClosed) Test") {
+       10:  120-block  0
+branch  0 taken 10
+branch  1 taken 0
+       10:  120-block  1
+branch  2 taken 10
+branch  3 taken 0
+       10:  120-block  2
+branch  4 taken 9
+branch  5 taken 1
+    $$$$$:  120-block  3
+    $$$$$:  120-block  4
+        1:  121:        container->addGraph("3");
+        1:  121-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  121-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:  121-block  2
+        1:  122:        Graph *cityC = container->getGraph("CityC");
+        1:  122-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  122-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:  122-block  2
+        -:  123:
+        1:  124:        std::stringstream input("2 3");
+        1:  124-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  124-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:  124-block  2
+        1:  125:        terminalProgram.handleCloseCommand(input);
+        1:  125-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  126:        terminalProgram.handleCloseCommand(input);
+        1:  126-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:  127:
+        1:  128:        std::stringstream outputBuffer;
+        1:  128-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  129:        std::streambuf *oldCoutBuffer = std::cout.rdbuf(outputBuffer.rdbuf());
+        1:  129-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:  130:
+        1:  131:        terminalProgram.handleClosedCommand();
+        1:  131-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:  132:
+        1:  133:        std::cout.rdbuf(oldCoutBuffer);
+        1:  133-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:  134:
+        1:  135:        std::string expectedOutput1 = "Closed locations: 2 3 \n";
+        1:  135-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  136:        std::string expectedOutput2 = "Closed locations: 3 2 \n";
+        1:  136-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:  137:
+        1:  138:        REQUIRE((outputBuffer.str() == expectedOutput1 || outputBuffer.str() == expectedOutput2));
+        1:  138-block  0
+        1:  138-block  1
+branch  0 taken 1
+branch  1 taken 0
+        1:  138-block  2
+branch  2 taken 1
+branch  3 taken 0
+        1:  138-block  3
+branch  4 taken 1
+branch  5 taken 0
+        1:  138-block  4
+branch  6 taken 0
+branch  7 taken 1
+        1:  138-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:  138-block  6
+        1:  138-block  7
+branch 10 taken 1
+branch 11 taken 0
+        1:  138-block  8
+branch 12 taken 1
+branch 13 taken 0
+        1:  138-block  9
+branch 14 taken 1
+branch 15 taken 0
+        1:  138-block 10
+branch 16 taken 0
+branch 17 taken 1
+        1:  138-block 11
+        1:  138-block 12
+    $$$$$:  138-block 13
+    $$$$$:  138-block 14
+    $$$$$:  138-block 15
+    $$$$$:  138-block 16
+branch 18 never executed
+branch 19 never executed
+    $$$$$:  138-block 17
+    $$$$$:  138-block 18
+    $$$$$:  138-block 19
+    $$$$$:  138-block 20
+branch 20 never executed
+branch 21 never executed
+    $$$$$:  138-block 21
+branch 22 never executed
+branch 23 never executed
+    $$$$$:  138-block 22
+        1:  138-block 23
+branch 24 taken 1
+branch 25 taken 0
+        1:  138-block 24
+branch 26 taken 0
+branch 27 taken 1
+    $$$$$:  138-block 25
+branch 28 never executed
+branch 29 never executed
+    $$$$$:  138-block 26
+    $$$$$:  138-block 27
+branch 30 never executed
+branch 31 never executed
+    $$$$$:  138-block 28
+        1:  138-block 29
+branch 32 taken 1
+branch 33 taken 0
+        1:  138-block 30
+        1:  138-block 31
+    $$$$$:  138-block 32
+        1:  139:    }
+        1:  139-block  0
+    $$$$$:  139-block  1
+    $$$$$:  139-block  2
+    $$$$$:  139-block  3
+    $$$$$:  139-block  4
+       11:  140:}
+    $$$$$:  140-block  0
+    $$$$$:  140-block  1
+    $$$$$:  140-block  2
+    $$$$$:  140-block  3
+    $$$$$:  140-block  4
+    $$$$$:  140-block  5
+    $$$$$:  140-block  6
+    $$$$$:  140-block  7
+    $$$$$:  140-block  8
+    $$$$$:  140-block  9
+    $$$$$:  140-block 10
+    $$$$$:  140-block 11
+    $$$$$:  140-block 12
+    $$$$$:  140-block 13
+    $$$$$:  140-block 14
+    $$$$$:  140-block 15
+    $$$$$:  140-block 16
+    $$$$$:  140-block 17
+    $$$$$:  140-block 18
+    $$$$$:  140-block 19
+    $$$$$:  140-block 20
+    $$$$$:  140-block 21
+    $$$$$:  140-block 22
+    $$$$$:  140-block 23
+    $$$$$:  140-block 24
+    $$$$$:  140-block 25
+    $$$$$:  140-block 26
+    $$$$$:  140-block 27
+    $$$$$:  140-block 28
+    $$$$$:  140-block 29
+    $$$$$:  140-block 30
+    $$$$$:  140-block 31
+    $$$$$:  140-block 32
+    $$$$$:  140-block 33
+    $$$$$:  140-block 34
+    $$$$$:  140-block 35
+    $$$$$:  140-block 36
+    $$$$$:  140-block 37
+    $$$$$:  140-block 38
+    $$$$$:  140-block 39
+    $$$$$:  140-block 40
+    $$$$$:  140-block 41
+    $$$$$:  140-block 42
+    $$$$$:  140-block 43
+    $$$$$:  140-block 44
+    $$$$$:  140-block 45
+    $$$$$:  140-block 46
+    $$$$$:  140-block 47
+    $$$$$:  140-block 48
+    $$$$$:  140-block 49
+    $$$$$:  140-block 50
+    $$$$$:  140-block 51
+    $$$$$:  140-block 52
+    $$$$$:  140-block 53
+    $$$$$:  140-block 54
+    $$$$$:  140-block 55
+    $$$$$:  140-block 56
+    $$$$$:  140-block 57
+    $$$$$:  140-block 58
+    $$$$$:  140-block 59
+    $$$$$:  140-block 60
+    $$$$$:  140-block 61
+    $$$$$:  140-block 62
+    $$$$$:  140-block 63
+    $$$$$:  140-block 64
+    $$$$$:  140-block 65
+    $$$$$:  140-block 66
+    $$$$$:  140-block 67
+    $$$$$:  140-block 68
+    $$$$$:  140-block 69
+    $$$$$:  140-block 70
+    $$$$$:  140-block 71
+    $$$$$:  140-block 72
+    $$$$$:  140-block 73
+    $$$$$:  140-block 74
+    $$$$$:  140-block 75
+    $$$$$:  140-block 76
+    $$$$$:  140-block 77
+    $$$$$:  140-block 78
+       10:  140-block 79
+    $$$$$:  140-block 80
+        -:  141:
+        -:  142:
+function main called 1 returned 100% blocks executed 50%
+        1:  143:int main(int argc, char *argv[]) {
+        1:  144:    doctest::Context context(argc, argv);
+        1:  145:    return context.run();
+        1:  145-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  146:}
+        1:  146-block  0
+    $$$$$:  146-block  1
+    $$$$$:  146-block  2

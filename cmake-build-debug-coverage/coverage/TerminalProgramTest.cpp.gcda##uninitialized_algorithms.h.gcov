@@ -632,37 +632,37 @@ function _ZNKSt3__129_AllocatorDestroyRangeReverseINS_9allocatorIN7doctest12_GLO
         -:  529:// already copied elements are destroyed in reverse order of their construction.
         -:  530:template <class _Alloc, class _Iter1, class _Sent1, class _Iter2>
         -:  531:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17 _Iter2
-function _ZNSt3__130__uninitialized_allocator_copyB6v15006INS_9allocatorIN7doctest16SubcaseSignatureEEENS_11__wrap_iterIPS3_EES7_S6_EET2_RT_T0_T1_S8_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__130__uninitialized_allocator_copyB6v15006INS_9allocatorIN7doctest16SubcaseSignatureEEENS_11__wrap_iterIPS3_EES7_S6_EET2_RT_T0_T1_S8_ called 3 returned 100% blocks executed 40%
 function _ZNSt3__130__uninitialized_allocator_copyB6v15006INS_9allocatorIN7doctest6StringEEEPS3_S5_S5_EET2_RT_T0_T1_S6_ called 0 returned 0% blocks executed 0%
-    #####:  532:__uninitialized_allocator_copy(_Alloc& __alloc, _Iter1 __first1, _Sent1 __last1, _Iter2 __first2) {
+        3:  532:__uninitialized_allocator_copy(_Alloc& __alloc, _Iter1 __first1, _Sent1 __last1, _Iter2 __first2) {
         -:  533:#ifndef _LIBCPP_NO_EXCEPTIONS
-    #####:  534:  auto __destruct_first = __first2;
+        3:  534:  auto __destruct_first = __first2;
         -:  535:  try {
         -:  536:#endif
-    #####:  537:  while (__first1 != __last1) {
-    $$$$$:  537-block  0
-    $$$$$:  537-block  1
-branch  0 never executed
-branch  1 never executed
-    $$$$$:  537-block  2
+        6:  537:  while (__first1 != __last1) {
+        3:  537-block  0
+        6:  537-block  1
+branch  0 taken 3
+branch  1 taken 3
+        3:  537-block  2
     $$$$$:  537-block  3
     $$$$$:  537-block  4
 branch  2 never executed
 branch  3 never executed
     $$$$$:  537-block  5
-    #####:  538:    allocator_traits<_Alloc>::construct(__alloc, std::__to_address(__first2), *__first1);
-    $$$$$:  538-block  0
-branch  0 never executed
-branch  1 never executed
+        3:  538:    allocator_traits<_Alloc>::construct(__alloc, std::__to_address(__first2), *__first1);
+        3:  538-block  0
+branch  0 taken 3
+branch  1 taken 0
     $$$$$:  538-block  1
 branch  2 never executed
 branch  3 never executed
-    #####:  539:    ++__first1;
-    #####:  540:    ++__first2;
+        3:  539:    ++__first1;
+        3:  540:    ++__first2;
         -:  541:  }
         -:  542:#ifndef _LIBCPP_NO_EXCEPTIONS
-    #####:  543:  } catch (...) {
-    $$$$$:  543-block  0
+        3:  543:  } catch (...) {
+        3:  543-block  0
     $$$$$:  543-block  1
     #####:  544:    _AllocatorDestroyRangeReverse<_Alloc, _Iter2>(__alloc, __destruct_first, __first2)();
     $$$$$:  544-block  0
@@ -698,8 +698,8 @@ branch  3 never executed
     $$$$$:  546-block  6
     $$$$$:  546-block  7
         -:  547:#endif
-    #####:  548:  return __first2;
-    $$$$$:  548-block  0
+        3:  548:  return __first2;
+        3:  548-block  0
     $$$$$:  548-block  1
     #####:  549:}
     $$$$$:  549-block  0
@@ -739,29 +739,29 @@ branch  3 never executed
         -:  582:// Otherwise try to copy all elements. If an exception is thrown the already copied
         -:  583:// elements are destroyed in reverse order of their construction.
         -:  584:template <class _Alloc, class _Iter1, class _Sent1, class _Iter2>
-function _ZNSt3__142__uninitialized_allocator_move_if_noexceptB6v15006INS_9allocatorIN7doctest16SubcaseSignatureEEENS_16reverse_iteratorIPS3_EES7_S7_EET2_RT_T0_T1_S8_ called 3 returned 100% blocks executed 26%
+function _ZNSt3__142__uninitialized_allocator_move_if_noexceptB6v15006INS_9allocatorIN7doctest16SubcaseSignatureEEENS_16reverse_iteratorIPS3_EES7_S7_EET2_RT_T0_T1_S8_ called 6 returned 100% blocks executed 52%
 function _ZNSt3__142__uninitialized_allocator_move_if_noexceptB6v15006INS_9allocatorIN7doctest16SubcaseSignatureEEEPS3_S5_S5_EET2_RT_T0_T1_S6_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__142__uninitialized_allocator_move_if_noexceptB6v15006INS_9allocatorIN7doctest6StringEEENS_16reverse_iteratorIPS3_EES7_S7_EET2_RT_T0_T1_S8_ called 1 returned 100% blocks executed 26%
 function _ZNSt3__142__uninitialized_allocator_move_if_noexceptB6v15006INS_9allocatorINS_12basic_stringIcNS_11char_traitsIcEENS1_IcEEEEEENS_16reverse_iteratorIPS6_EESA_SA_EET2_RT_T0_T1_SB_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__142__uninitialized_allocator_move_if_noexceptB6v15006INS_9allocatorIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseEEENS_16reverse_iteratorIPS6_EESA_SA_EET2_RT_T0_T1_SB_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__142__uninitialized_allocator_move_if_noexceptB6v15006INS_9allocatorIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEENS_16reverse_iteratorIPS6_EESA_SA_EET2_RT_T0_T1_SB_ called 0 returned 0% blocks executed 0%
-        4:  585:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17 _Iter2 __uninitialized_allocator_move_if_noexcept(
+        7:  585:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17 _Iter2 __uninitialized_allocator_move_if_noexcept(
         -:  586:    _Alloc& __alloc, _Iter1 __first1, _Sent1 __last1, _Iter2 __first2) {
         -:  587:  static_assert(__is_cpp17_move_insertable<_Alloc>::value,
         -:  588:                "The specified type does not meet the requirements of Cpp17MoveInsertable");
         -:  589:#ifndef _LIBCPP_NO_EXCEPTIONS
-        4:  590:  auto __destruct_first = __first2;
+        7:  590:  auto __destruct_first = __first2;
         -:  591:  try {
         -:  592:#endif
-        4:  593:  while (__first1 != __last1) {
-        3:  593-block  0
-        3:  593-block  1
-branch  0 taken 3
+       10:  593:  while (__first1 != __last1) {
+        6:  593-block  0
+        9:  593-block  1
+branch  0 taken 9
 branch  1 taken 0
-        3:  593-block  2
-branch  2 taken 0
-branch  3 taken 3
-    $$$$$:  593-block  3
+        9:  593-block  2
+branch  2 taken 3
+branch  3 taken 6
+        3:  593-block  3
     $$$$$:  593-block  4
     $$$$$:  593-block  5
 branch  4 never executed
@@ -800,13 +800,13 @@ branch 20 never executed
 branch 21 never executed
     $$$$$:  593-block 22
         -:  594:#ifndef _LIBCPP_NO_EXCEPTIONS
-    #####:  595:    allocator_traits<_Alloc>::construct(__alloc, std::__to_address(__first2), std::move_if_noexcept(*__first1));
-    $$$$$:  595-block  0
-branch  0 never executed
-branch  1 never executed
-    $$$$$:  595-block  1
-branch  2 never executed
-branch  3 never executed
+        3:  595:    allocator_traits<_Alloc>::construct(__alloc, std::__to_address(__first2), std::move_if_noexcept(*__first1));
+        3:  595-block  0
+branch  0 taken 3
+branch  1 taken 0
+        3:  595-block  1
+branch  2 taken 3
+branch  3 taken 0
     $$$$$:  595-block  2
 branch  4 never executed
 branch  5 never executed
@@ -837,10 +837,10 @@ branch 21 never executed
         -:  596:#else
         -:  597:    allocator_traits<_Alloc>::construct(__alloc, std::__to_address(__first2), std::move(*__first1));
         -:  598:#endif
-    #####:  599:    ++__first1;
-    $$$$$:  599-block  0
-branch  0 never executed
-branch  1 never executed
+        3:  599:    ++__first1;
+        3:  599-block  0
+branch  0 taken 3
+branch  1 taken 0
     $$$$$:  599-block  1
 branch  2 never executed
 branch  3 never executed
@@ -853,10 +853,10 @@ branch  7 never executed
     $$$$$:  599-block  4
 branch  8 never executed
 branch  9 never executed
-    #####:  600:    ++__first2;
-    $$$$$:  600-block  0
-branch  0 never executed
-branch  1 never executed
+        3:  600:    ++__first2;
+        3:  600-block  0
+branch  0 taken 3
+branch  1 taken 0
     $$$$$:  600-block  1
 branch  2 never executed
 branch  3 never executed
@@ -871,8 +871,8 @@ branch  8 never executed
 branch  9 never executed
         -:  601:  }
         -:  602:#ifndef _LIBCPP_NO_EXCEPTIONS
-        4:  603:  } catch (...) {
-        3:  603-block  0
+        7:  603:  } catch (...) {
+        6:  603-block  0
     $$$$$:  603-block  1
         1:  603-block  2
     $$$$$:  603-block  3
@@ -972,8 +972,8 @@ branch 11 never executed
     $$$$$:  606-block 22
     $$$$$:  606-block 23
         -:  607:#endif
-        4:  608:  return __first2;
-        3:  608-block  0
+        7:  608:  return __first2;
+        6:  608-block  0
     $$$$$:  608-block  1
         1:  608-block  2
     $$$$$:  608-block  3

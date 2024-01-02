@@ -590,9 +590,11 @@ function _ZNSt3__18ios_base8setstateB6v15006Ej called 0 returned 0% blocks execu
         -:  566:
         -:  567:inline _LIBCPP_INLINE_VISIBILITY
         -:  568:bool
-        -:  569:ios_base::eof() const
+function _ZNKSt3__18ios_base3eofB6v15006Ev called 12 returned 100% blocks executed 100%
+       12:  569:ios_base::eof() const
         -:  570:{
-        -:  571:    return (__rdstate_ & eofbit) != 0;
+       12:  571:    return (__rdstate_ & eofbit) != 0;
+       12:  571-block  0
         -:  572:}
         -:  573:
         -:  574:inline _LIBCPP_INLINE_VISIBILITY
@@ -663,7 +665,9 @@ function _ZNSt3__19basic_iosIcNS_11char_traitsIcEEE8setstateB6v15006Ej called 0 
     #####:  632:    _LIBCPP_INLINE_VISIBILITY void setstate(iostate __state) {ios_base::setstate(__state);}
     $$$$$:  632-block  0
         -:  633:    _LIBCPP_INLINE_VISIBILITY bool good() const {return ios_base::good();}
-        -:  634:    _LIBCPP_INLINE_VISIBILITY bool eof() const  {return ios_base::eof();}
+function _ZNKSt3__19basic_iosIcNS_11char_traitsIcEEE3eofB6v15006Ev called 12 returned 100% blocks executed 100%
+       12:  634:    _LIBCPP_INLINE_VISIBILITY bool eof() const  {return ios_base::eof();}
+       12:  634-block  0
 function _ZNKSt3__19basic_iosIcNS_11char_traitsIcEEE4failB6v15006Ev called 0 returned 0% blocks executed 0%
     #####:  635:    _LIBCPP_INLINE_VISIBILITY bool fail() const {return ios_base::fail();}
     $$$$$:  635-block  0

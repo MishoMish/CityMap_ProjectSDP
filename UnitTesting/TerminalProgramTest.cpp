@@ -11,11 +11,11 @@
 
 TEST_CASE("TerminalProgram Test") {
     auto *container = new GraphContainer();
-    container->addGraph("CityA");
-    Graph *cityA = container->getGraph("CityA");
+    container->addGraph("1");
+    Graph *cityA = container->getGraph("1");
 
-    container->addGraph("CityB");
-    Graph *cityB = container->getGraph("CityB");
+    container->addGraph("2");
+    Graph *cityB = container->getGraph("2");
 
     Graph *start = cityA;
 
@@ -27,61 +27,101 @@ TEST_CASE("TerminalProgram Test") {
         REQUIRE(terminalProgram.getClosedJunctions().empty());
     }
 
+    SUBCASE("All Print Test") {
+        (terminalProgram.printIntroduction());
+        CHECK_NOTHROW(terminalProgram.printIntroduction());
+        CHECK_NOTHROW(terminalProgram.printHelp());
+        CHECK_NOTHROW(terminalProgram.printHelp2());
+        CHECK_THROWS(terminalProgram.printHelpCommand("NoNameFolder/NoNameFile.txt"));
+    }
+
+
     SUBCASE("Location Test") {
         std::stringstream buffer;
         std::streambuf *oldCout = std::cout.rdbuf(buffer.rdbuf());
         terminalProgram.handleLocationCommand();
         std::cout.rdbuf(oldCout);
-        REQUIRE(buffer.str() == "Current location: CityA\n");
+        REQUIRE(buffer.str() == "Current location: 1\n");
     }
 
-    // Add more SUBCASEs for other test scenarios
+    SUBCASE("Test handleChangeCommand") {
+        SUBCASE("Valid location") {
+            std::stringstream ss("1");
+            terminalProgram.handleChangeCommand(ss);
+        }
+
+        SUBCASE("Invalid location") {
+            std::stringstream ss("InvalidLocation");
+            terminalProgram.handleChangeCommand(ss);
+        }
+    }
 
     SUBCASE("Close Test") {
+        SUBCASE("Close Existing") {
+            std::stringstream outputBuffer;
+            std::streambuf *oldCoutBuffer = std::cout.rdbuf(outputBuffer.rdbuf());
 
-        std::stringstream outputBuffer;
-        std::streambuf *oldCoutBuffer = std::cout.rdbuf(outputBuffer.rdbuf());
+            std::stringstream input("2");
+            terminalProgram.handleCloseCommand(input);
 
-        // Close CityB
-        std::stringstream input("CityB");
-        terminalProgram.handleCloseCommand(input);
+            std::cout.rdbuf(oldCoutBuffer);
 
-        // Reset cout to the original buffer
-        std::cout.rdbuf(oldCoutBuffer);
+            std::string expectedOutput = "Closed location: 2\n";
+            REQUIRE(outputBuffer.str() == expectedOutput);
+            REQUIRE(terminalProgram.getClosedJunctions().count(container->getGraph("2")) == 1);
+        }
 
-        // Verify the output
-        std::string expectedOutput = "Closed location: CityB\n";
-        REQUIRE(outputBuffer.str() == expectedOutput);
-        REQUIRE(terminalProgram.getClosedJunctions().count(container->getGraph("CityB")) == 1);
+        SUBCASE("Close non-Existing") {
+            std::stringstream outputBuffer;
+            std::streambuf *oldCoutBuffer = std::cout.rdbuf(outputBuffer.rdbuf());
+
+            std::stringstream input("1234567");
+            terminalProgram.handleCloseCommand(input);
+
+            std::cout.rdbuf(oldCoutBuffer);
+
+            std::string expectedOutput = "Invalid location: 1234567\n";
+            REQUIRE(outputBuffer.str() == expectedOutput);
+            REQUIRE(terminalProgram.getClosedJunctions().size() == 0);
+        }
+
     }
-
     SUBCASE("Open Test") {
+        SUBCASE("Open Existing") {
+            std::stringstream outputBuffer;
+            std::streambuf *oldCoutBuffer = std::cout.rdbuf(outputBuffer.rdbuf());
 
-        // Redirect cout to capture the output
-        std::stringstream outputBuffer;
-        std::streambuf *oldCoutBuffer = std::cout.rdbuf(outputBuffer.rdbuf());
+            terminalProgram.getClosedJunctions().insert(container->getGraph("2"));
 
-        // Close CityB first
-        terminalProgram.getClosedJunctions().insert(container->getGraph("CityB"));
+            std::stringstream input("2");
+            terminalProgram.handleOpenCommand(input);
 
-        // Open CityB
-        std::stringstream input("CityB");
-        terminalProgram.handleOpenCommand(input);
+            std::cout.rdbuf(oldCoutBuffer);
 
-        // Reset cout to the original buffer
-        std::cout.rdbuf(oldCoutBuffer);
+            std::string expectedOutput = "Opened location: 2\n";
+            REQUIRE(outputBuffer.str() == expectedOutput);
+            REQUIRE(terminalProgram.getClosedJunctions().count(container->getGraph("2")) == 0);
+        }
+        SUBCASE("Open non-Existing") {
+            std::stringstream outputBuffer;
+            std::streambuf *oldCoutBuffer = std::cout.rdbuf(outputBuffer.rdbuf());
 
-        // Verify the output
-        std::string expectedOutput = "Opened location: CityB\n";
-        REQUIRE(outputBuffer.str() == expectedOutput);
-        REQUIRE(terminalProgram.getClosedJunctions().count(container->getGraph("CityB")) == 0);
+            std::stringstream input("1234567");
+            terminalProgram.handleCloseCommand(input);
+
+            std::cout.rdbuf(oldCoutBuffer);
+
+            std::string expectedOutput = "Invalid location: 1234567\n";
+            REQUIRE(outputBuffer.str() == expectedOutput);
+            REQUIRE(terminalProgram.getClosedJunctions().size() == 0);
+        }
     }
 
     SUBCASE("Closed (getClosed) Test") {
-        container->addGraph("CityC");
+        container->addGraph("3");
         Graph *cityC = container->getGraph("CityC");
 
-        std::stringstream input("CityB CityC");
+        std::stringstream input("2 3");
         terminalProgram.handleCloseCommand(input);
         terminalProgram.handleCloseCommand(input);
 
@@ -92,8 +132,8 @@ TEST_CASE("TerminalProgram Test") {
 
         std::cout.rdbuf(oldCoutBuffer);
 
-        std::string expectedOutput1 = "Closed locations: CityB CityC \n";
-        std::string expectedOutput2 = "Closed locations: CityC CityB \n";
+        std::string expectedOutput1 = "Closed locations: 2 3 \n";
+        std::string expectedOutput2 = "Closed locations: 3 2 \n";
 
         REQUIRE((outputBuffer.str() == expectedOutput1 || outputBuffer.str() == expectedOutput2));
     }

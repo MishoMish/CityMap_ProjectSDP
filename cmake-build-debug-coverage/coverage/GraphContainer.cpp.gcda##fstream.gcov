@@ -704,11 +704,11 @@ function _ZNKSt3__113basic_filebufIcNS_11char_traitsIcEEE7is_openEv called 0 ret
         -:  697:template <class _CharT, class _Traits>
         -:  698:inline
         -:  699:basic_filebuf<_CharT, _Traits>*
-function _ZNSt3__113basic_filebufIcNS_11char_traitsIcEEE4openERKNS_12basic_stringIcS2_NS_9allocatorIcEEEEj called 2 returned 100% blocks executed 100%
-        2:  700:basic_filebuf<_CharT, _Traits>::open(const string& __s, ios_base::openmode __mode)
+function _ZNSt3__113basic_filebufIcNS_11char_traitsIcEEE4openERKNS_12basic_stringIcS2_NS_9allocatorIcEEEEj called 7 returned 100% blocks executed 100%
+        7:  700:basic_filebuf<_CharT, _Traits>::open(const string& __s, ios_base::openmode __mode)
         -:  701:{
-        2:  702:    return open(__s.c_str(), __mode);
-        2:  702-block  0
+        7:  702:    return open(__s.c_str(), __mode);
+        7:  702-block  0
         -:  703:}
         -:  704:
         -:  705:template <class _CharT, class _Traits>
@@ -1172,10 +1172,10 @@ function _ZNSt3__113basic_filebufIcNS_11char_traitsIcEEE4openERKNS_12basic_strin
         -: 1163:    explicit basic_ifstream(const wchar_t* __s, ios_base::openmode __mode = ios_base::in);
         -: 1164:#endif
         -: 1165:    _LIBCPP_INLINE_VISIBILITY
-        2: 1166:    explicit basic_ifstream(const string& __s, ios_base::openmode __mode = ios_base::in);
-        2: 1166-block  0
+        7: 1166:    explicit basic_ifstream(const string& __s, ios_base::openmode __mode = ios_base::in);
+        7: 1166-block  0
 branch  0 taken 0
-branch  1 taken 2
+branch  1 taken 7
         -: 1167:#if _LIBCPP_STD_VER >= 17 && !defined(_LIBCPP_HAS_NO_FILESYSTEM_LIBRARY)
         -: 1168:    _LIBCPP_AVAILABILITY_FILESYSTEM _LIBCPP_INLINE_VISIBILITY
         -: 1169:    explicit basic_ifstream(const filesystem::path& __p, ios_base::openmode __mode = ios_base::in)
@@ -1243,30 +1243,30 @@ branch  1 taken 2
         -: 1231:
         -: 1232:template <class _CharT, class _Traits>
         -: 1233:inline
-function _ZNSt3__114basic_ifstreamIcNS_11char_traitsIcEEEC1ERKNS_12basic_stringIcS2_NS_9allocatorIcEEEEj called 2 returned 100% blocks executed 53%
-        2: 1234:basic_ifstream<_CharT, _Traits>::basic_ifstream(const string& __s, ios_base::openmode __mode)
-        2: 1235:    : basic_istream<char_type, traits_type>(&__sb_)
-        2: 1235-block  0
+function _ZNSt3__114basic_ifstreamIcNS_11char_traitsIcEEEC1ERKNS_12basic_stringIcS2_NS_9allocatorIcEEEEj called 7 returned 100% blocks executed 53%
+        7: 1234:basic_ifstream<_CharT, _Traits>::basic_ifstream(const string& __s, ios_base::openmode __mode)
+        7: 1235:    : basic_istream<char_type, traits_type>(&__sb_)
+        7: 1235-block  0
+branch  0 taken 7
+branch  1 taken 0
+       14: 1236:{
+        7: 1237:    if (__sb_.open(__s, __mode | ios_base::in) == nullptr)
+        7: 1237-block  0
+branch  0 taken 7
+branch  1 taken 0
+        7: 1237-block  1
+branch  2 taken 2
+branch  3 taken 5
+        2: 1238:        this->setstate(ios_base::failbit);
+        2: 1238-block  0
 branch  0 taken 2
 branch  1 taken 0
-        4: 1236:{
-        2: 1237:    if (__sb_.open(__s, __mode | ios_base::in) == nullptr)
-        2: 1237-block  0
-branch  0 taken 2
-branch  1 taken 0
-        2: 1237-block  1
-branch  2 taken 1
-branch  3 taken 1
-        1: 1238:        this->setstate(ios_base::failbit);
-        1: 1238-block  0
-branch  0 taken 1
-branch  1 taken 0
-        1: 1238-block  1
-        2: 1239:}
+        2: 1238-block  1
+        7: 1239:}
     $$$$$: 1239-block  0
     $$$$$: 1239-block  1
     $$$$$: 1239-block  2
-        2: 1239-block  3
+        7: 1239-block  3
     $$$$$: 1239-block  4
     $$$$$: 1239-block  5
     $$$$$: 1239-block  6
@@ -1318,11 +1318,11 @@ branch  1 taken 0
         -: 1285:template <class _CharT, class _Traits>
         -: 1286:inline
         -: 1287:bool
-function _ZNKSt3__114basic_ifstreamIcNS_11char_traitsIcEEE7is_openEv called 2 returned 100% blocks executed 100%
-        2: 1288:basic_ifstream<_CharT, _Traits>::is_open() const
+function _ZNKSt3__114basic_ifstreamIcNS_11char_traitsIcEEE7is_openEv called 7 returned 100% blocks executed 100%
+        7: 1288:basic_ifstream<_CharT, _Traits>::is_open() const
         -: 1289:{
-        2: 1290:    return __sb_.is_open();
-        2: 1290-block  0
+        7: 1290:    return __sb_.is_open();
+        7: 1290-block  0
         -: 1291:}
         -: 1292:
         -: 1293:template <class _CharT, class _Traits>
@@ -1370,17 +1370,17 @@ function _ZNKSt3__114basic_ifstreamIcNS_11char_traitsIcEEE7is_openEv called 2 re
         -: 1335:template <class _CharT, class _Traits>
         -: 1336:inline
         -: 1337:void
-function _ZNSt3__114basic_ifstreamIcNS_11char_traitsIcEEE5closeEv called 1 returned 100% blocks executed 66%
-        1: 1338:basic_ifstream<_CharT, _Traits>::close()
+function _ZNSt3__114basic_ifstreamIcNS_11char_traitsIcEEE5closeEv called 5 returned 100% blocks executed 66%
+        5: 1338:basic_ifstream<_CharT, _Traits>::close()
         -: 1339:{
-        1: 1340:    if (__sb_.close() == 0)
-        1: 1340-block  0
+        5: 1340:    if (__sb_.close() == 0)
+        5: 1340-block  0
 branch  0 taken 0
-branch  1 taken 1
+branch  1 taken 5
     #####: 1341:        this->setstate(ios_base::failbit);
     $$$$$: 1341-block  0
-        1: 1342:}
-        1: 1342-block  0
+        5: 1342:}
+        5: 1342-block  0
         -: 1343:
         -: 1344:// basic_ofstream
         -: 1345:

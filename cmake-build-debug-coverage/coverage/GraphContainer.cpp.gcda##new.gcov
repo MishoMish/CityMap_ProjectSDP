@@ -382,30 +382,30 @@ branch  1 never executed
         -:  347:template <class _Tp>
         -:  348:_LIBCPP_NODISCARD_AFTER_CXX17 inline _LIBCPP_HIDE_FROM_ABI
 function _ZNSt3__19__launderB6v15006INS_4pairIKP5GraphdEEEEPT_S7_ called 138 returned 100% blocks executed 100%
-function _ZNSt3__19__launderB6v15006INS_4pairIKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEEEPT_SD_ called 313 returned 100% blocks executed 100%
-function _ZNSt3__19__launderB6v15006IKNS_4pairIKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEEEPT_SE_ called 69 returned 100% blocks executed 100%
-      520:  349:_LIBCPP_CONSTEXPR _Tp* __launder(_Tp* __p) _NOEXCEPT
+function _ZNSt3__19__launderB6v15006INS_4pairIKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEEEPT_SD_ called 353 returned 100% blocks executed 100%
+function _ZNSt3__19__launderB6v15006IKNS_4pairIKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEEEPT_SE_ called 106 returned 100% blocks executed 100%
+      597:  349:_LIBCPP_CONSTEXPR _Tp* __launder(_Tp* __p) _NOEXCEPT
         -:  350:{
         -:  351:    static_assert (!(is_function<_Tp>::value), "can't launder functions" );
         -:  352:    static_assert (!(is_same<void, typename remove_cv<_Tp>::type>::value), "can't launder cv-void" );
-      520:  353:    return __builtin_launder(__p);
+      597:  353:    return __builtin_launder(__p);
       138:  353-block  0
-      313:  353-block  1
-       69:  353-block  2
+      353:  353-block  1
+      106:  353-block  2
         -:  354:}
         -:  355:
         -:  356:#if _LIBCPP_STD_VER > 14
         -:  357:template <class _Tp>
         -:  358:_LIBCPP_NODISCARD_AFTER_CXX17 inline _LIBCPP_HIDE_FROM_ABI
 function _ZNSt3__17launderB6v15006INS_4pairIKP5GraphdEEEEPT_S7_ called 138 returned 100% blocks executed 100%
-function _ZNSt3__17launderB6v15006INS_4pairIKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEEEPT_SD_ called 313 returned 100% blocks executed 100%
-function _ZNSt3__17launderB6v15006IKNS_4pairIKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEEEPT_SE_ called 69 returned 100% blocks executed 100%
-      520:  359:constexpr _Tp* launder(_Tp* __p) noexcept
+function _ZNSt3__17launderB6v15006INS_4pairIKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEEEPT_SD_ called 353 returned 100% blocks executed 100%
+function _ZNSt3__17launderB6v15006IKNS_4pairIKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEEEPT_SE_ called 106 returned 100% blocks executed 100%
+      597:  359:constexpr _Tp* launder(_Tp* __p) noexcept
         -:  360:{
-      520:  361:    return _VSTD::__launder(__p);
+      597:  361:    return _VSTD::__launder(__p);
       138:  361-block  0
-      313:  361-block  1
-       69:  361-block  2
+      353:  361-block  1
+      106:  361-block  2
         -:  362:}
         -:  363:#endif
         -:  364:

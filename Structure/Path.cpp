@@ -4,8 +4,10 @@
 
 #include "Path.h"
 
+// Print method to display the nodes in the path and its total cost
 void Path::print() {
-    if (this == nullptr || nodes.empty()) {
+
+    if (this == nullptr || nodes.empty() || nodes[0] == nullptr) {
         std::cout << "No items in path" << std::endl;
         return;
     }
@@ -16,4 +18,3 @@ void Path::print() {
 
     std::cout << " length = " << cost << std::endl;
 }
-

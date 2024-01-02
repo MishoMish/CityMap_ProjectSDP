@@ -46,7 +46,7 @@ function _ZNSt3__112construct_atB6v15006INS_6vectorIN7doctest6StringENS_9allocat
 function _ZNSt3__112construct_atB6v15006IPN7doctest9IReporterEJS3_EPS3_EEPT_S6_DpOT0_ called 1 returned 100% blocks executed 100%
 function _ZNSt3__112construct_atB6v15006IPKN7doctest6detail8TestCaseEJS5_EPS5_EEPT_S8_DpOT0_ called 1 returned 100% blocks executed 100%
 function _ZNSt3__112construct_atB6v15006IPKN7doctest12TestCaseDataEJS4_EPS4_EEPT_S7_DpOT0_ called 0 returned 0% blocks executed 0%
-function _ZNSt3__112construct_atB6v15006IP5GraphJRKS2_EPS2_EEPT_S7_DpOT0_ called 64 returned 100% blocks executed 100%
+function _ZNSt3__112construct_atB6v15006IP5GraphJRKS2_EPS2_EEPT_S7_DpOT0_ called 56 returned 100% blocks executed 100%
 function _ZNSt3__112construct_atB6v15006IyJyEPyEEPT_S3_DpOT0_ called 8 returned 100% blocks executed 100%
 function _ZNSt3__112construct_atB6v15006IN7doctest6detail8TestCaseEJRKS3_EPS3_EEPT_S8_DpOT0_ called 1 returned 100% blocks executed 100%
 function _ZNSt3__112construct_atB6v15006INS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEJRKS6_EPS6_EEPT_SB_DpOT0_ called 0 returned 0% blocks executed 0%
@@ -59,9 +59,9 @@ function _ZNSt3__112construct_atB6v15006IN7doctest12_GLOBAL__N_113JUnitReporter1
 function _ZNSt3__112construct_atB6v15006IN7doctest6StringEJRKS2_EPS2_EEPT_S7_DpOT0_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__112construct_atB6v15006IN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEJRKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEESD_SD_EPS5_EEPT_SG_DpOT0_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__112construct_atB6v15006INS_4pairIKNS1_IiN7doctest6StringEEEPFPNS2_9IReporterERKNS2_14ContextOptionsEEEEJSD_EPSD_EEPT_SG_DpOT0_ called 3 returned 100% blocks executed 100%
-      111:   33:_LIBCPP_HIDE_FROM_ABI constexpr _Tp* construct_at(_Tp* __location, _Args&&... __args) {
+      103:   33:_LIBCPP_HIDE_FROM_ABI constexpr _Tp* construct_at(_Tp* __location, _Args&&... __args) {
         -:   34:  _LIBCPP_ASSERT(__location != nullptr, "null pointer given to construct_at");
-      111:   35:  return ::new (_VSTD::__voidify(*__location)) _Tp(_VSTD::forward<_Args>(__args)...);
+      103:   35:  return ::new (_VSTD::__voidify(*__location)) _Tp(_VSTD::forward<_Args>(__args)...);
     $$$$$:   35-block  0
        23:   35-block  1
     $$$$$:   35-block  2
@@ -73,7 +73,7 @@ function _ZNSt3__112construct_atB6v15006INS_4pairIKNS1_IiN7doctest6StringEEEPFPN
         1:   35-block  8
         1:   35-block  9
     $$$$$:   35-block 10
-       64:   35-block 11
+       56:   35-block 11
         8:   35-block 12
         1:   35-block 13
     $$$$$:   35-block 14
@@ -122,17 +122,17 @@ function _ZNSt3__112__destroy_atB6v15006INS_6vectorIN7doctest6StringENS_9allocat
 function _ZNSt3__112__destroy_atB6v15006INS_4pairIKNS1_IiN7doctest6StringEEEPFPNS2_9IReporterERKNS2_14ContextOptionsEEEELi0EEEvPT_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__112__destroy_atB6v15006IPKN7doctest6detail8TestCaseELi0EEEvPT_ called 1 returned 100% blocks executed 100%
 function _ZNSt3__112__destroy_atB6v15006IPKN7doctest12TestCaseDataELi0EEEvPT_ called 0 returned 0% blocks executed 0%
-function _ZNSt3__112__destroy_atB6v15006IP5GraphLi0EEEvPT_ called 114 returned 100% blocks executed 100%
+function _ZNSt3__112__destroy_atB6v15006IP5GraphLi0EEEvPT_ called 106 returned 100% blocks executed 100%
 function _ZNSt3__112__destroy_atB6v15006I4PathLi0EEEvPT_ called 14 returned 100% blocks executed 100%
 function _ZNSt3__112__destroy_atB6v15006INS_4pairIP5GraphS3_EELi0EEEvPT_ called 9 returned 100% blocks executed 100%
 function _ZNSt3__112__destroy_atB6v15006IN7doctest6detail8TestCaseELi0EEEvPT_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__112__destroy_atB6v15006INS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEELi0EEEvPT_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__112__destroy_atB6v15006IN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseELi0EEEvPT_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__112__destroy_atB6v15006IN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageELi0EEEvPT_ called 0 returned 0% blocks executed 0%
-      180:   61:void __destroy_at(_Tp* __loc) {
+      172:   61:void __destroy_at(_Tp* __loc) {
         -:   62:    _LIBCPP_ASSERT(__loc != nullptr, "null pointer given to destroy_at");
-      180:   63:    __loc->~_Tp();
-      180:   64:}
+      172:   63:    __loc->~_Tp();
+      172:   64:}
     $$$$$:   64-block  0
        23:   64-block  1
     $$$$$:   64-block  2
@@ -144,7 +144,7 @@ function _ZNSt3__112__destroy_atB6v15006IN7doctest12_GLOBAL__N_113JUnitReporter1
     $$$$$:   64-block  8
         1:   64-block  9
     $$$$$:   64-block 10
-      114:   64-block 11
+      106:   64-block 11
        14:   64-block 12
         9:   64-block 13
     $$$$$:   64-block 14
@@ -184,16 +184,16 @@ function _ZNSt3__110destroy_atB6v15006INS_6vectorIN7doctest6StringENS_9allocator
 function _ZNSt3__110destroy_atB6v15006INS_4pairIKNS1_IiN7doctest6StringEEEPFPNS2_9IReporterERKNS2_14ContextOptionsEEEELi0EEEvPT_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__110destroy_atB6v15006IPKN7doctest6detail8TestCaseELi0EEEvPT_ called 1 returned 100% blocks executed 100%
 function _ZNSt3__110destroy_atB6v15006IPKN7doctest12TestCaseDataELi0EEEvPT_ called 0 returned 0% blocks executed 0%
-function _ZNSt3__110destroy_atB6v15006IP5GraphLi0EEEvPT_ called 114 returned 100% blocks executed 100%
+function _ZNSt3__110destroy_atB6v15006IP5GraphLi0EEEvPT_ called 106 returned 100% blocks executed 100%
 function _ZNSt3__110destroy_atB6v15006I4PathLi0EEEvPT_ called 14 returned 100% blocks executed 100%
 function _ZNSt3__110destroy_atB6v15006INS_4pairIP5GraphS3_EELi0EEEvPT_ called 9 returned 100% blocks executed 100%
 function _ZNSt3__110destroy_atB6v15006IN7doctest6detail8TestCaseELi0EEEvPT_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__110destroy_atB6v15006INS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEELi0EEEvPT_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__110destroy_atB6v15006IN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseELi0EEEvPT_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__110destroy_atB6v15006IN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageELi0EEEvPT_ called 0 returned 0% blocks executed 0%
-      180:   87:void destroy_at(_Tp* __loc) {
-      180:   88:    _VSTD::__destroy_at(__loc);
-      180:   89:}
+      172:   87:void destroy_at(_Tp* __loc) {
+      172:   88:    _VSTD::__destroy_at(__loc);
+      172:   89:}
     $$$$$:   89-block  0
        23:   89-block  1
     $$$$$:   89-block  2
@@ -205,7 +205,7 @@ function _ZNSt3__110destroy_atB6v15006IN7doctest12_GLOBAL__N_113JUnitReporter17J
     $$$$$:   89-block  8
         1:   89-block  9
     $$$$$:   89-block 10
-      114:   89-block 11
+      106:   89-block 11
        14:   89-block 12
         9:   89-block 13
     $$$$$:   89-block 14

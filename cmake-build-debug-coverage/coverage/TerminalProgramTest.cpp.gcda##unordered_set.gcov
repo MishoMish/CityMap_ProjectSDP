@@ -625,15 +625,15 @@ branch  1 taken 0
         -:  612:    _LIBCPP_INLINE_VISIBILITY
 function _ZNSt3__113unordered_setIyNS_4hashIyEENS_8equal_toIyEENS_9allocatorIyEEED1B6v15006Ev called 1 returned 100% blocks executed 100%
 function _ZNSt3__113unordered_setIyNS_4hashIyEENS_8equal_toIyEENS_9allocatorIyEEED2B6v15006Ev called 1 returned 100% blocks executed 100%
-function _ZNSt3__113unordered_setIP5GraphNS_4hashIS2_EENS_8equal_toIS2_EENS_9allocatorIS2_EEED1B6v15006Ev called 9 returned 100% blocks executed 100%
-function _ZNSt3__113unordered_setIP5GraphNS_4hashIS2_EENS_8equal_toIS2_EENS_9allocatorIS2_EEED2B6v15006Ev called 9 returned 100% blocks executed 100%
-       20:  613:    ~unordered_set() {
+function _ZNSt3__113unordered_setIP5GraphNS_4hashIS2_EENS_8equal_toIS2_EENS_9allocatorIS2_EEED1B6v15006Ev called 16 returned 100% blocks executed 100%
+function _ZNSt3__113unordered_setIP5GraphNS_4hashIS2_EENS_8equal_toIS2_EENS_9allocatorIS2_EEED2B6v15006Ev called 16 returned 100% blocks executed 100%
+       34:  613:    ~unordered_set() {
         -:  614:        static_assert(sizeof(__diagnose_unordered_container_requirements<_Value, _Hash, _Pred>(0)), "");
-       20:  615:    }
+       34:  615:    }
         1:  615-block  0
         1:  615-block  1
-        9:  615-block  2
-        9:  615-block  3
+       16:  615-block  2
+       16:  615-block  3
         -:  616:
         -:  617:    _LIBCPP_INLINE_VISIBILITY
         -:  618:    unordered_set& operator=(const unordered_set& __u)
@@ -658,16 +658,18 @@ function _ZNKSt3__113unordered_setIP5GraphNS_4hashIS2_EENS_8equal_toIS2_EENS_9al
         1:  636:    bool      empty() const _NOEXCEPT {return __table_.size() == 0;}
         1:  636-block  0
         -:  637:    _LIBCPP_INLINE_VISIBILITY
-        -:  638:    size_type size() const _NOEXCEPT  {return __table_.size();}
+function _ZNKSt3__113unordered_setIP5GraphNS_4hashIS2_EENS_8equal_toIS2_EENS_9allocatorIS2_EEE4sizeB6v15006Ev called 2 returned 100% blocks executed 100%
+        2:  638:    size_type size() const _NOEXCEPT  {return __table_.size();}
+        2:  638-block  0
         -:  639:    _LIBCPP_INLINE_VISIBILITY
         -:  640:    size_type max_size() const _NOEXCEPT {return __table_.max_size();}
         -:  641:
         -:  642:    _LIBCPP_INLINE_VISIBILITY
         -:  643:    iterator       begin() _NOEXCEPT        {return __table_.begin();}
         -:  644:    _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__113unordered_setIyNS_4hashIyEENS_8equal_toIyEENS_9allocatorIyEEE3endB6v15006Ev called 4 returned 100% blocks executed 100%
-        4:  645:    iterator       end() _NOEXCEPT          {return __table_.end();}
-        4:  645-block  0
+function _ZNSt3__113unordered_setIyNS_4hashIyEENS_8equal_toIyEENS_9allocatorIyEEE3endB6v15006Ev called 9 returned 100% blocks executed 100%
+        9:  645:    iterator       end() _NOEXCEPT          {return __table_.end();}
+        9:  645-block  0
         -:  646:    _LIBCPP_INLINE_VISIBILITY
         -:  647:    const_iterator begin()  const _NOEXCEPT {return __table_.begin();}
         -:  648:    _LIBCPP_INLINE_VISIBILITY
@@ -693,11 +695,11 @@ function _ZNSt3__113unordered_setIyNS_4hashIyEENS_8equal_toIyEENS_9allocatorIyEE
         -:  668:    }
         -:  669:
         -:  670:    _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__113unordered_setIyNS_4hashIyEENS_8equal_toIyEENS_9allocatorIyEEE6insertB6v15006EOy called 5 returned 100% blocks executed 100%
+function _ZNSt3__113unordered_setIyNS_4hashIyEENS_8equal_toIyEENS_9allocatorIyEEE6insertB6v15006EOy called 13 returned 100% blocks executed 100%
 function _ZNSt3__113unordered_setIP5GraphNS_4hashIS2_EENS_8equal_toIS2_EENS_9allocatorIS2_EEE6insertB6v15006EOS2_ called 4 returned 100% blocks executed 100%
-        9:  671:    pair<iterator, bool> insert(value_type&& __x)
-        9:  672:        {return __table_.__insert_unique(_VSTD::move(__x));}
-        5:  672-block  0
+       17:  671:    pair<iterator, bool> insert(value_type&& __x)
+       17:  672:        {return __table_.__insert_unique(_VSTD::move(__x));}
+       13:  672-block  0
         4:  672-block  1
         -:  673:    _LIBCPP_INLINE_VISIBILITY
         -:  674:    iterator insert(const_iterator __p, value_type&& __x) {
@@ -813,9 +815,9 @@ function _ZNSt3__113unordered_setIyNS_4hashIyEENS_8equal_toIyEENS_9allocatorIyEE
         -:  782:    key_equal key_eq() const {return __table_.key_eq();}
         -:  783:
         -:  784:    _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__113unordered_setIyNS_4hashIyEENS_8equal_toIyEENS_9allocatorIyEEE4findB6v15006ERKy called 4 returned 100% blocks executed 100%
-        4:  785:    iterator       find(const key_type& __k)       {return __table_.find(__k);}
-        4:  785-block  0
+function _ZNSt3__113unordered_setIyNS_4hashIyEENS_8equal_toIyEENS_9allocatorIyEEE4findB6v15006ERKy called 9 returned 100% blocks executed 100%
+        9:  785:    iterator       find(const key_type& __k)       {return __table_.find(__k);}
+        9:  785-block  0
         -:  786:    _LIBCPP_INLINE_VISIBILITY
         -:  787:    const_iterator find(const key_type& __k) const {return __table_.find(__k);}
         -:  788:#if _LIBCPP_STD_VER > 17

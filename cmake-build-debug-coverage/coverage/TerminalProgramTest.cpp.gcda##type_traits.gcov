@@ -742,9 +742,9 @@
         -:  737:unsigned __convert_to_integral(unsigned __val) { return __val; }
         -:  738:
         -:  739:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
-function _ZNSt3__121__convert_to_integralB6v15006El called 0 returned 0% blocks executed 0%
-    #####:  740:long __convert_to_integral(long __val) { return __val; }
-    $$$$$:  740-block  0
+function _ZNSt3__121__convert_to_integralB6v15006El called 6 returned 100% blocks executed 100%
+        6:  740:long __convert_to_integral(long __val) { return __val; }
+        6:  740-block  0
         -:  741:
         -:  742:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
         -:  743:unsigned long __convert_to_integral(unsigned long __val) { return __val; }

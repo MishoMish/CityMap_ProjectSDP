@@ -191,19 +191,19 @@
         -:  186:  template <bool _Dummy = true,
         -:  187:            class = _EnableIfDeleterConstructible<_GoodRValRefType<_Dummy> > >
         -:  188:  _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__110unique_ptrINS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEENS_22__hash_node_destructorINS6_ISD_EEEEEC1B6v15006ILb1EvEEPSD_NS_16__dependent_typeINS_27__unique_ptr_deleter_sfinaeISG_EEXT_EE20__good_rval_ref_typeE called 55 returned 100% blocks executed 100%
-function _ZNSt3__110unique_ptrINS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEENS_22__hash_node_destructorINS6_ISD_EEEEEC2B6v15006ILb1EvEEPSD_NS_16__dependent_typeINS_27__unique_ptr_deleter_sfinaeISG_EEXT_EE20__good_rval_ref_typeE called 55 returned 100% blocks executed 66%
-      110:  189:  unique_ptr(pointer __p, _GoodRValRefType<_Dummy> __d) _NOEXCEPT
-      110:  190:      : __ptr_(__p, _VSTD::move(__d)) {
-       55:  190-block  0
-branch  0 taken 55
+function _ZNSt3__110unique_ptrINS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEENS_22__hash_node_destructorINS6_ISD_EEEEEC1B6v15006ILb1EvEEPSD_NS_16__dependent_typeINS_27__unique_ptr_deleter_sfinaeISG_EEXT_EE20__good_rval_ref_typeE called 65 returned 100% blocks executed 100%
+function _ZNSt3__110unique_ptrINS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEENS_22__hash_node_destructorINS6_ISD_EEEEEC2B6v15006ILb1EvEEPSD_NS_16__dependent_typeINS_27__unique_ptr_deleter_sfinaeISG_EEXT_EE20__good_rval_ref_typeE called 65 returned 100% blocks executed 66%
+      130:  189:  unique_ptr(pointer __p, _GoodRValRefType<_Dummy> __d) _NOEXCEPT
+      130:  190:      : __ptr_(__p, _VSTD::move(__d)) {
+       65:  190-block  0
+branch  0 taken 65
 branch  1 taken 0
     $$$$$:  190-block  1
         -:  191:    static_assert(!is_reference<deleter_type>::value,
         -:  192:                  "rvalue deleter bound to reference");
-      110:  193:  }
-       55:  193-block  0
-       55:  193-block  1
+      130:  193:  }
+       65:  193-block  0
+       65:  193-block  1
         -:  194:
         -:  195:  template <bool _Dummy = true,
         -:  196:            class = _EnableIfDeleterConstructible<_BadRValRefType<_Dummy> > >
@@ -269,11 +269,11 @@ branch  1 taken 0
         -:  256:#endif
         -:  257:
         -:  258:  _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__110unique_ptrINS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEENS_22__hash_node_destructorINS6_ISD_EEEEED1B6v15006Ev called 55 returned 100% blocks executed 100%
-function _ZNSt3__110unique_ptrINS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEENS_22__hash_node_destructorINS6_ISD_EEEEED2B6v15006Ev called 55 returned 100% blocks executed 100%
-      110:  259:  ~unique_ptr() { reset(); }
-       55:  259-block  0
-       55:  259-block  1
+function _ZNSt3__110unique_ptrINS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEENS_22__hash_node_destructorINS6_ISD_EEEEED1B6v15006Ev called 65 returned 100% blocks executed 100%
+function _ZNSt3__110unique_ptrINS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEENS_22__hash_node_destructorINS6_ISD_EEEEED2B6v15006Ev called 65 returned 100% blocks executed 100%
+      130:  259:  ~unique_ptr() { reset(); }
+       65:  259-block  0
+       65:  259-block  1
         -:  260:
         -:  261:  _LIBCPP_INLINE_VISIBILITY
         -:  262:  unique_ptr& operator=(nullptr_t) _NOEXCEPT {
@@ -287,22 +287,22 @@ function _ZNSt3__110unique_ptrINS_11__hash_nodeINS_17__hash_value_typeINS_12basi
         -:  270:    return *__ptr_.first();
         -:  271:  }
         -:  272:  _LIBCPP_INLINE_VISIBILITY
-function _ZNKSt3__110unique_ptrINS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEENS_22__hash_node_destructorINS6_ISD_EEEEEptB6v15006Ev called 285 returned 100% blocks executed 100%
-      285:  273:  pointer operator->() const _NOEXCEPT {
-      285:  274:    return __ptr_.first();
-      285:  274-block  0
+function _ZNKSt3__110unique_ptrINS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEENS_22__hash_node_destructorINS6_ISD_EEEEEptB6v15006Ev called 284 returned 100% blocks executed 100%
+      284:  273:  pointer operator->() const _NOEXCEPT {
+      284:  274:    return __ptr_.first();
+      284:  274-block  0
         -:  275:  }
         -:  276:  _LIBCPP_INLINE_VISIBILITY
-function _ZNKSt3__110unique_ptrINS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEENS_22__hash_node_destructorINS6_ISD_EEEEE3getB6v15006Ev called 78 returned 100% blocks executed 100%
-       78:  277:  pointer get() const _NOEXCEPT {
-       78:  278:    return __ptr_.first();
-       78:  278-block  0
+function _ZNKSt3__110unique_ptrINS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEENS_22__hash_node_destructorINS6_ISD_EEEEE3getB6v15006Ev called 65 returned 100% blocks executed 100%
+       65:  277:  pointer get() const _NOEXCEPT {
+       65:  278:    return __ptr_.first();
+       65:  278-block  0
         -:  279:  }
         -:  280:  _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__110unique_ptrINS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEENS_22__hash_node_destructorINS6_ISD_EEEEE11get_deleterB6v15006Ev called 55 returned 100% blocks executed 100%
-       55:  281:  deleter_type& get_deleter() _NOEXCEPT {
-       55:  282:    return __ptr_.second();
-       55:  282-block  0
+function _ZNSt3__110unique_ptrINS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEENS_22__hash_node_destructorINS6_ISD_EEEEE11get_deleterB6v15006Ev called 65 returned 100% blocks executed 100%
+       65:  281:  deleter_type& get_deleter() _NOEXCEPT {
+       65:  282:    return __ptr_.second();
+       65:  282-block  0
         -:  283:  }
         -:  284:  _LIBCPP_INLINE_VISIBILITY
         -:  285:  const deleter_type& get_deleter() const _NOEXCEPT {
@@ -314,27 +314,27 @@ function _ZNSt3__110unique_ptrINS_11__hash_nodeINS_17__hash_value_typeINS_12basi
         -:  291:  }
         -:  292:
         -:  293:  _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__110unique_ptrINS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEENS_22__hash_node_destructorINS6_ISD_EEEEE7releaseB6v15006Ev called 55 returned 100% blocks executed 100%
-       55:  294:  pointer release() _NOEXCEPT {
-       55:  295:    pointer __t = __ptr_.first();
-       55:  296:    __ptr_.first() = pointer();
-       55:  297:    return __t;
-       55:  297-block  0
+function _ZNSt3__110unique_ptrINS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEENS_22__hash_node_destructorINS6_ISD_EEEEE7releaseB6v15006Ev called 65 returned 100% blocks executed 100%
+       65:  294:  pointer release() _NOEXCEPT {
+       65:  295:    pointer __t = __ptr_.first();
+       65:  296:    __ptr_.first() = pointer();
+       65:  297:    return __t;
+       65:  297-block  0
         -:  298:  }
         -:  299:
         -:  300:  _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__110unique_ptrINS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEENS_22__hash_node_destructorINS6_ISD_EEEEE5resetB6v15006EPSD_ called 55 returned 100% blocks executed 66%
-       55:  301:  void reset(pointer __p = pointer()) _NOEXCEPT {
-       55:  302:    pointer __tmp = __ptr_.first();
-       55:  303:    __ptr_.first() = __p;
-       55:  304:    if (__tmp)
-       55:  304-block  0
+function _ZNSt3__110unique_ptrINS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEENS_22__hash_node_destructorINS6_ISD_EEEEE5resetB6v15006EPSD_ called 65 returned 100% blocks executed 66%
+       65:  301:  void reset(pointer __p = pointer()) _NOEXCEPT {
+       65:  302:    pointer __tmp = __ptr_.first();
+       65:  303:    __ptr_.first() = __p;
+       65:  304:    if (__tmp)
+       65:  304-block  0
 branch  0 taken 0
-branch  1 taken 55
+branch  1 taken 65
     #####:  305:      __ptr_.second()(__tmp);
     $$$$$:  305-block  0
-       55:  306:  }
-       55:  306-block  0
+       65:  306:  }
+       65:  306-block  0
         -:  307:
         -:  308:  _LIBCPP_INLINE_VISIBILITY
         -:  309:  void swap(unique_ptr& __u) _NOEXCEPT {
@@ -509,15 +509,15 @@ branch  1 taken 55
         -:  478:#endif
         -:  479:public:
         -:  480:  _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEEENS_25__bucket_list_deallocatorINS_9allocatorISB_EEEEED1B6v15006Ev called 55 returned 100% blocks executed 100%
-function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEEENS_25__bucket_list_deallocatorINS_9allocatorISB_EEEEED2B6v15006Ev called 55 returned 100% blocks executed 100%
-function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEEEENS_25__bucket_list_deallocatorINS7_ISH_EEEEED1B6v15006Ev called 22 returned 100% blocks executed 100%
-function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEEEENS_25__bucket_list_deallocatorINS7_ISH_EEEEED2B6v15006Ev called 22 returned 100% blocks executed 100%
-      154:  481:  ~unique_ptr() { reset(); }
-       55:  481-block  0
-       55:  481-block  1
-       22:  481-block  2
-       22:  481-block  3
+function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEEENS_25__bucket_list_deallocatorINS_9allocatorISB_EEEEED1B6v15006Ev called 65 returned 100% blocks executed 100%
+function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEEENS_25__bucket_list_deallocatorINS_9allocatorISB_EEEEED2B6v15006Ev called 65 returned 100% blocks executed 100%
+function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEEEENS_25__bucket_list_deallocatorINS7_ISH_EEEEED1B6v15006Ev called 27 returned 100% blocks executed 100%
+function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEEEENS_25__bucket_list_deallocatorINS7_ISH_EEEEED2B6v15006Ev called 27 returned 100% blocks executed 100%
+      184:  481:  ~unique_ptr() { reset(); }
+       65:  481-block  0
+       65:  481-block  1
+       27:  481-block  2
+       27:  481-block  3
         -:  482:
         -:  483:  _LIBCPP_INLINE_VISIBILITY
         -:  484:  unique_ptr& operator=(nullptr_t) _NOEXCEPT {
@@ -527,10 +527,10 @@ function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17_
         -:  488:
         -:  489:  _LIBCPP_INLINE_VISIBILITY
         -:  490:  typename add_lvalue_reference<_Tp>::type
-function _ZNKSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEEEENS_25__bucket_list_deallocatorINS7_ISH_EEEEEixB6v15006Em called 513 returned 100% blocks executed 100%
-      513:  491:  operator[](size_t __i) const {
-      513:  492:    return __ptr_.first()[__i];
-      513:  492-block  0
+function _ZNKSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEEEENS_25__bucket_list_deallocatorINS7_ISH_EEEEEixB6v15006Em called 517 returned 100% blocks executed 100%
+      517:  491:  operator[](size_t __i) const {
+      517:  492:    return __ptr_.first()[__i];
+      517:  492-block  0
         -:  493:  }
         -:  494:  _LIBCPP_INLINE_VISIBILITY
         -:  495:  pointer get() const _NOEXCEPT {
@@ -538,17 +538,17 @@ function _ZNKSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17
         -:  497:  }
         -:  498:
         -:  499:  _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEEEENS_25__bucket_list_deallocatorINS7_ISH_EEEEE11get_deleterB6v15006Ev called 58 returned 100% blocks executed 100%
-       58:  500:  deleter_type& get_deleter() _NOEXCEPT {
-       58:  501:    return __ptr_.second();
-       58:  501-block  0
+function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEEEENS_25__bucket_list_deallocatorINS7_ISH_EEEEE11get_deleterB6v15006Ev called 68 returned 100% blocks executed 100%
+       68:  500:  deleter_type& get_deleter() _NOEXCEPT {
+       68:  501:    return __ptr_.second();
+       68:  501-block  0
         -:  502:  }
         -:  503:
         -:  504:  _LIBCPP_INLINE_VISIBILITY
-function _ZNKSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEEEENS_25__bucket_list_deallocatorINS7_ISH_EEEEE11get_deleterB6v15006Ev called 374 returned 100% blocks executed 100%
-      374:  505:  const deleter_type& get_deleter() const _NOEXCEPT {
-      374:  506:    return __ptr_.second();
-      374:  506-block  0
+function _ZNKSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEEEENS_25__bucket_list_deallocatorINS7_ISH_EEEEE11get_deleterB6v15006Ev called 419 returned 100% blocks executed 100%
+      419:  505:  const deleter_type& get_deleter() const _NOEXCEPT {
+      419:  506:    return __ptr_.second();
+      419:  506-block  0
         -:  507:  }
         -:  508:  _LIBCPP_INLINE_VISIBILITY
         -:  509:  explicit operator bool() const _NOEXCEPT {
@@ -567,38 +567,38 @@ function _ZNKSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17
         -:  522:  typename enable_if<
         -:  523:      _CheckArrayPointerConversion<_Pp>::value
         -:  524:  >::type
-function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEEEENS_25__bucket_list_deallocatorINS7_ISH_EEEEE5resetB6v15006IPSH_EENS_9enable_ifIXsr28_CheckArrayPointerConversionIT_EE5valueEvE4typeESQ_ called 29 returned 100% blocks executed 100%
-       29:  525:  reset(_Pp __p) _NOEXCEPT {
-       29:  526:    pointer __tmp = __ptr_.first();
-       29:  527:    __ptr_.first() = __p;
-       29:  528:    if (__tmp)
-       29:  528-block  0
+function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEEEENS_25__bucket_list_deallocatorINS7_ISH_EEEEE5resetB6v15006IPSH_EENS_9enable_ifIXsr28_CheckArrayPointerConversionIT_EE5valueEvE4typeESQ_ called 34 returned 100% blocks executed 100%
+       34:  525:  reset(_Pp __p) _NOEXCEPT {
+       34:  526:    pointer __tmp = __ptr_.first();
+       34:  527:    __ptr_.first() = __p;
+       34:  528:    if (__tmp)
+       34:  528-block  0
 branch  0 taken 10
-branch  1 taken 19
+branch  1 taken 24
        10:  529:      __ptr_.second()(__tmp);
        10:  529-block  0
-       29:  530:  }
-       29:  530-block  0
+       34:  530:  }
+       34:  530-block  0
         -:  531:
         -:  532:  _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEEENS_25__bucket_list_deallocatorINS_9allocatorISB_EEEEE5resetB6v15006EDn called 55 returned 100% blocks executed 100%
-function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEEEENS_25__bucket_list_deallocatorINS7_ISH_EEEEE5resetB6v15006EDn called 22 returned 100% blocks executed 100%
-       77:  533:  void reset(nullptr_t = nullptr) _NOEXCEPT {
-       77:  534:    pointer __tmp = __ptr_.first();
-       77:  535:    __ptr_.first() = nullptr;
-       77:  536:    if (__tmp)
-       55:  536-block  0
+function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEEENS_25__bucket_list_deallocatorINS_9allocatorISB_EEEEE5resetB6v15006EDn called 65 returned 100% blocks executed 100%
+function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEEEENS_25__bucket_list_deallocatorINS7_ISH_EEEEE5resetB6v15006EDn called 27 returned 100% blocks executed 100%
+       92:  533:  void reset(nullptr_t = nullptr) _NOEXCEPT {
+       92:  534:    pointer __tmp = __ptr_.first();
+       92:  535:    __ptr_.first() = nullptr;
+       92:  536:    if (__tmp)
+       65:  536-block  0
 branch  0 taken 28
-branch  1 taken 27
-       22:  536-block  1
-branch  2 taken 19
+branch  1 taken 37
+       27:  536-block  1
+branch  2 taken 24
 branch  3 taken 3
-       47:  537:      __ptr_.second()(__tmp);
+       52:  537:      __ptr_.second()(__tmp);
        28:  537-block  0
-       19:  537-block  1
-       77:  538:  }
-       55:  538-block  0
-       22:  538-block  1
+       24:  537-block  1
+       92:  538:  }
+       65:  538-block  0
+       27:  538-block  1
         -:  539:
         -:  540:  _LIBCPP_INLINE_VISIBILITY
         -:  541:  void swap(unique_ptr& __u) _NOEXCEPT {

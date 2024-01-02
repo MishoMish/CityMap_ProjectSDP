@@ -418,14 +418,14 @@ branch  1 never executed
         -:  387:  template <bool _Dummy = true,
         -:  388:            class = _EnableIfDeleterDefaultConstructible<_Dummy> >
         -:  389:  _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEENS_25__bucket_list_deallocatorINS_9allocatorIS9_EEEEEC1B6v15006ILb1EvEEv called 5 returned 100% blocks executed 100%
-function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEENS_25__bucket_list_deallocatorINS_9allocatorIS9_EEEEEC2B6v15006ILb1EvEEv called 5 returned 100% blocks executed 66%
-       10:  390:  _LIBCPP_CONSTEXPR unique_ptr() _NOEXCEPT : __ptr_(__value_init_tag(), __value_init_tag()) {}
-        5:  390-block  0
-        5:  390-block  1
-branch  0 taken 5
+function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEENS_25__bucket_list_deallocatorINS_9allocatorIS9_EEEEEC1B6v15006ILb1EvEEv called 10 returned 100% blocks executed 100%
+function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEENS_25__bucket_list_deallocatorINS_9allocatorIS9_EEEEEC2B6v15006ILb1EvEEv called 10 returned 100% blocks executed 66%
+       20:  390:  _LIBCPP_CONSTEXPR unique_ptr() _NOEXCEPT : __ptr_(__value_init_tag(), __value_init_tag()) {}
+       10:  390-block  0
+       10:  390-block  1
+branch  0 taken 10
 branch  1 taken 0
-        5:  390-block  2
+       10:  390-block  2
     $$$$$:  390-block  3
         -:  391:
         -:  392:  template <bool _Dummy = true,
@@ -466,19 +466,19 @@ branch  1 taken 0
         -:  427:  template <bool _Dummy = true,
         -:  428:            class = _EnableIfDeleterConstructible<_GoodRValRefType<_Dummy> > >
         -:  429:  _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEENS_25__bucket_list_deallocatorINS_9allocatorIS9_EEEEEC1B6v15006ILb1EvEEDnNS_16__dependent_typeINS_27__unique_ptr_deleter_sfinaeISE_EEXT_EE20__good_rval_ref_typeE called 4 returned 100% blocks executed 100%
-function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEENS_25__bucket_list_deallocatorINS_9allocatorIS9_EEEEEC2B6v15006ILb1EvEEDnNS_16__dependent_typeINS_27__unique_ptr_deleter_sfinaeISE_EEXT_EE20__good_rval_ref_typeE called 4 returned 100% blocks executed 66%
-        8:  430:  unique_ptr(nullptr_t, _GoodRValRefType<_Dummy> __d) _NOEXCEPT
-        8:  431:      : __ptr_(nullptr, _VSTD::move(__d)) {
-        4:  431-block  0
-branch  0 taken 4
+function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEENS_25__bucket_list_deallocatorINS_9allocatorIS9_EEEEEC1B6v15006ILb1EvEEDnNS_16__dependent_typeINS_27__unique_ptr_deleter_sfinaeISE_EEXT_EE20__good_rval_ref_typeE called 6 returned 100% blocks executed 100%
+function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEENS_25__bucket_list_deallocatorINS_9allocatorIS9_EEEEEC2B6v15006ILb1EvEEDnNS_16__dependent_typeINS_27__unique_ptr_deleter_sfinaeISE_EEXT_EE20__good_rval_ref_typeE called 6 returned 100% blocks executed 66%
+       12:  430:  unique_ptr(nullptr_t, _GoodRValRefType<_Dummy> __d) _NOEXCEPT
+       12:  431:      : __ptr_(nullptr, _VSTD::move(__d)) {
+        6:  431-block  0
+branch  0 taken 6
 branch  1 taken 0
     $$$$$:  431-block  1
         -:  432:    static_assert(!is_reference<deleter_type>::value,
         -:  433:                  "rvalue deleter bound to reference");
-        8:  434:  }
-        4:  434-block  0
-        4:  434-block  1
+       12:  434:  }
+        6:  434-block  0
+        6:  434-block  1
         -:  435:
         -:  436:  template <class _Pp, bool _Dummy = true,
         -:  437:            class = _EnableIfDeleterConstructible<_BadRValRefType<_Dummy> >,

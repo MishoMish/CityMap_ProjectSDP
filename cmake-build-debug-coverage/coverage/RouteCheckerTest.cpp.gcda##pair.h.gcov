@@ -256,10 +256,10 @@ function _ZNSt3__14pairINS_16reverse_iteratorIPPKN7doctest12TestCaseDataEEES7_EC
 function _ZNSt3__14pairINS_16reverse_iteratorIPPKN7doctest12TestCaseDataEEES7_EC2B6v15006IS7_S7_LPv0EEEOT_OT0_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__14pairIiN7doctest6StringEEC2B6v15006IRiRPKcLPv0EEEOT_OT0_ called 3 returned 100% blocks executed 100%
 function _ZNSt3__14pairIKNS0_IiN7doctest6StringEEEPFPNS1_9IReporterERKNS1_14ContextOptionsEEEC2B6v15006IS3_RSB_LPv0EEEOT_OT0_ called 3 returned 100% blocks executed 100%
-function _ZNSt3__14pairINS_15__hash_iteratorIPNS_11__hash_nodeIP5GraphPvEEEEbEC1B6v15006IS8_RbLS5_0EEEOT_OT0_ called 35 returned 100% blocks executed 100%
+function _ZNSt3__14pairINS_15__hash_iteratorIPNS_11__hash_nodeIP5GraphPvEEEEbEC1B6v15006IS8_RbLS5_0EEEOT_OT0_ called 27 returned 100% blocks executed 100%
 function _ZNSt3__14pairImmEC1B6v15006ImmLPv0EEEOT_OT0_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__14pairImmEC2B6v15006ImmLPv0EEEOT_OT0_ called 0 returned 0% blocks executed 0%
-function _ZNSt3__14pairINS_15__hash_iteratorIPNS_11__hash_nodeIP5GraphPvEEEEbEC2B6v15006IS8_RbLS5_0EEEOT_OT0_ called 35 returned 100% blocks executed 100%
+function _ZNSt3__14pairINS_15__hash_iteratorIPNS_11__hash_nodeIP5GraphPvEEEEbEC2B6v15006IS8_RbLS5_0EEEOT_OT0_ called 27 returned 100% blocks executed 100%
 function _ZNSt3__14pairINS_15__hash_iteratorIPNS_11__hash_nodeIyPvEEEEbEC1B6v15006IS6_RbLS3_0EEEOT_OT0_ called 8 returned 100% blocks executed 100%
 function _ZNSt3__14pairINS_15__hash_iteratorIPNS_11__hash_nodeIyPvEEEEbEC2B6v15006IS6_RbLS3_0EEEOT_OT0_ called 8 returned 100% blocks executed 100%
 function _ZNSt3__14pairINS_15__tree_iteratorIN7doctest6detail8TestCaseEPNS_11__tree_nodeIS4_PvEElEEbEC1B6v15006IS9_RbLS6_0EEEOT_OT0_ called 1 returned 100% blocks executed 100%
@@ -268,10 +268,10 @@ function _ZNSt3__14pairINS_15__tree_iteratorIN7doctest6StringEPNS_11__tree_nodeI
 function _ZNSt3__14pairINS_15__tree_iteratorIN7doctest6StringEPNS_11__tree_nodeIS3_PvEElEEbEC2B6v15006IS8_RbLS5_0EEEOT_OT0_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__14pairINS_15__tree_iteratorINS_12__value_typeINS0_IiN7doctest6StringEEEPFPNS3_9IReporterERKNS3_14ContextOptionsEEEEPNS_11__tree_nodeISD_PvEElEEbEC1B6v15006ISI_RbLSF_0EEEOT_OT0_ called 3 returned 100% blocks executed 100%
 function _ZNSt3__14pairINS_15__tree_iteratorINS_12__value_typeINS0_IiN7doctest6StringEEEPFPNS3_9IReporterERKNS3_14ContextOptionsEEEEPNS_11__tree_nodeISD_PvEElEEbEC2B6v15006ISI_RbLSF_0EEEOT_OT0_ called 3 returned 100% blocks executed 100%
-      118:  194:    pair(_U1&& __u1, _U2&& __u2)
+      102:  194:    pair(_U1&& __u1, _U2&& __u2)
         -:  195:        _NOEXCEPT_((is_nothrow_constructible<first_type, _U1>::value &&
         -:  196:                    is_nothrow_constructible<second_type, _U2>::value))
-      118:  197:        : first(_VSTD::forward<_U1>(__u1)), second(_VSTD::forward<_U2>(__u2)) {}
+      102:  197:        : first(_VSTD::forward<_U1>(__u1)), second(_VSTD::forward<_U2>(__u2)) {}
         3:  197-block  0
         3:  197-block  1
     $$$$$:  197-block  2
@@ -316,10 +316,10 @@ function _ZNSt3__14pairINS_15__tree_iteratorINS_12__value_typeINS0_IiN7doctest6S
     $$$$$:  197-block 41
         3:  197-block 42
         3:  197-block 43
-       35:  197-block 44
+       27:  197-block 44
     $$$$$:  197-block 45
     $$$$$:  197-block 46
-       35:  197-block 47
+       27:  197-block 47
         8:  197-block 48
         8:  197-block 49
         1:  197-block 50

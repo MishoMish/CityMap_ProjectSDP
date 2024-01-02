@@ -4,24 +4,31 @@
 
 #include "GraphvizController.h"
 
+// Function to generate a DOT file for Graphviz visualization
 void GraphvizController::generateDotFile(GraphContainer *graphContainer, Graph *current,
                                          std::unordered_set<Graph *> closed) {
+    // Open the DOT file for writing
     std::ofstream dotFile("graph.dot");
     if (!dotFile.is_open()) {
         std::cerr << "Error opening DOT file for writing." << std::endl;
         return;
     }
 
+    // Write DOT file header
     dotFile << "digraph G {\n";
     dotFile << "  graph [rankdir=LR];\n";
     dotFile << "  node [shape=\"box\", color = \"black\", style=\"filled\"];\n";
+
+    // Iterate through each graph in the container
     for (const auto &graphPair: graphContainer->getGraphs()) {
         Graph *graph = graphPair.second;
         bool graphtIsClosed = (closed.find(graph) != closed.end());
 
+        // Write DOT node for each graph
         dotFile << "  \"" << graph << "\" [label=\"" << graph->getName() << "\", fillcolor=\""
                 << (current == graph ? "orange" : (graphtIsClosed ? "red" : "green")) << "\"];\n";
 
+        // Write DOT edges for each neighbor of the current graph
         for (const auto &neighborPair: graph->getAdjacencyList()) {
             Graph *neighbor = neighborPair.first;
             double weight = neighborPair.second;
@@ -31,6 +38,8 @@ void GraphvizController::generateDotFile(GraphContainer *graphContainer, Graph *
                     << (graphtIsClosed || neighbourIsClosed ? "red" : "green") << "\"];\n";
         }
     }
+
+    // Write DOT legend for graph visualization
     dotFile << "  rankdir=LR\n"
                "  node [shape=plaintext]\n"
                "  subgraph cluster_01 { \n"
@@ -51,19 +60,26 @@ void GraphvizController::generateDotFile(GraphContainer *graphContainer, Graph *
                "  }\n";
     dotFile << "}\n";
 
+    // Close the DOT file
     dotFile.close();
 }
 
+// Function to run Graphviz and open the generated image
 void GraphvizController::runGraphvizAndOpenImage() {
     try {
+        // Define Graphviz command to generate PNG image from DOT file
         std::string graphvizCommand = "dot -Tpng -o graph.png graph.dot";
+        // Execute Graphviz command
         int commandResult = std::system(graphvizCommand.c_str());
 
+        // Check if Graphviz command was successful
         if (commandResult == 0) {
+            // Define command to open the generated image
             std::string openCommand = "open graph.png 2>/dev/null";
-            // >/dev/null because it produces a XPC eror that is not important when opening the image (it works... just produces an error)
+            // >/dev/null to suppress XPC error (not critical when opening the image)
             int openResult = std::system(openCommand.c_str());
 
+            // Check if image opening command was successful
             if (openResult != 0) {
                 std::cerr << "Error opening the generated image." << std::endl;
             }
@@ -75,5 +91,4 @@ void GraphvizController::runGraphvizAndOpenImage() {
     } catch (...) {
         std::cerr << "An unexpected error occurred." << std::endl;
     }
-
 }

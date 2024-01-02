@@ -260,18 +260,18 @@ function _ZNSt3__14pairImmEC1B6v15006ImmLPv0EEEOT_OT0_ called 0 returned 0% bloc
 function _ZNSt3__14pairImmEC2B6v15006ImmLPv0EEEOT_OT0_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__14pairINS_15__hash_iteratorIPNS_11__hash_nodeIP5GraphPvEEEEbEC1B6v15006IS8_RbLS5_0EEEOT_OT0_ called 5 returned 100% blocks executed 100%
 function _ZNSt3__14pairINS_15__hash_iteratorIPNS_11__hash_nodeIP5GraphPvEEEEbEC2B6v15006IS8_RbLS5_0EEEOT_OT0_ called 5 returned 100% blocks executed 100%
-function _ZNSt3__14pairINS_15__hash_iteratorIPNS_11__hash_nodeIyPvEEEEbEC1B6v15006IS6_RbLS3_0EEEOT_OT0_ called 5 returned 100% blocks executed 100%
-function _ZNSt3__14pairINS_15__hash_iteratorIPNS_11__hash_nodeIyPvEEEEbEC2B6v15006IS6_RbLS3_0EEEOT_OT0_ called 5 returned 100% blocks executed 100%
+function _ZNSt3__14pairINS_15__hash_iteratorIPNS_11__hash_nodeIyPvEEEEbEC1B6v15006IS6_RbLS3_0EEEOT_OT0_ called 13 returned 100% blocks executed 100%
+function _ZNSt3__14pairINS_15__hash_iteratorIPNS_11__hash_nodeIyPvEEEEbEC2B6v15006IS6_RbLS3_0EEEOT_OT0_ called 13 returned 100% blocks executed 100%
 function _ZNSt3__14pairINS_15__tree_iteratorIN7doctest6detail8TestCaseEPNS_11__tree_nodeIS4_PvEElEEbEC1B6v15006IS9_RbLS6_0EEEOT_OT0_ called 1 returned 100% blocks executed 100%
 function _ZNSt3__14pairINS_15__tree_iteratorIN7doctest6detail8TestCaseEPNS_11__tree_nodeIS4_PvEElEEbEC2B6v15006IS9_RbLS6_0EEEOT_OT0_ called 1 returned 100% blocks executed 100%
 function _ZNSt3__14pairINS_15__tree_iteratorIN7doctest6StringEPNS_11__tree_nodeIS3_PvEElEEbEC1B6v15006IS8_RbLS5_0EEEOT_OT0_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__14pairINS_15__tree_iteratorIN7doctest6StringEPNS_11__tree_nodeIS3_PvEElEEbEC2B6v15006IS8_RbLS5_0EEEOT_OT0_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__14pairINS_15__tree_iteratorINS_12__value_typeINS0_IiN7doctest6StringEEEPFPNS3_9IReporterERKNS3_14ContextOptionsEEEEPNS_11__tree_nodeISD_PvEElEEbEC1B6v15006ISI_RbLSF_0EEEOT_OT0_ called 3 returned 100% blocks executed 100%
 function _ZNSt3__14pairINS_15__tree_iteratorINS_12__value_typeINS0_IiN7doctest6StringEEEPFPNS3_9IReporterERKNS3_14ContextOptionsEEEEPNS_11__tree_nodeISD_PvEElEEbEC2B6v15006ISI_RbLSF_0EEEOT_OT0_ called 3 returned 100% blocks executed 100%
-       52:  194:    pair(_U1&& __u1, _U2&& __u2)
+       68:  194:    pair(_U1&& __u1, _U2&& __u2)
         -:  195:        _NOEXCEPT_((is_nothrow_constructible<first_type, _U1>::value &&
         -:  196:                    is_nothrow_constructible<second_type, _U2>::value))
-       52:  197:        : first(_VSTD::forward<_U1>(__u1)), second(_VSTD::forward<_U2>(__u2)) {}
+       68:  197:        : first(_VSTD::forward<_U1>(__u1)), second(_VSTD::forward<_U2>(__u2)) {}
         3:  197-block  0
         3:  197-block  1
     $$$$$:  197-block  2
@@ -320,8 +320,8 @@ function _ZNSt3__14pairINS_15__tree_iteratorINS_12__value_typeINS0_IiN7doctest6S
     $$$$$:  197-block 45
         5:  197-block 46
         5:  197-block 47
-        5:  197-block 48
-        5:  197-block 49
+       13:  197-block 48
+       13:  197-block 49
         1:  197-block 50
         1:  197-block 51
     $$$$$:  197-block 52
@@ -362,22 +362,22 @@ function _ZNSt3__14pairINS_15__tree_iteratorINS_12__value_typeINS0_IiN7doctest6S
         -:  229:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
 function _ZNSt3__14pairINS_21__hash_const_iteratorIPNS_11__hash_nodeIP5GraphPvEEEEbEC1B6v15006INS_15__hash_iteratorIS7_EEbLS5_0EEEONS0_IT_T0_EE called 4 returned 100% blocks executed 100%
 function _ZNSt3__14pairINS_21__hash_const_iteratorIPNS_11__hash_nodeIP5GraphPvEEEEbEC2B6v15006INS_15__hash_iteratorIS7_EEbLS5_0EEEONS0_IT_T0_EE called 4 returned 100% blocks executed 100%
-function _ZNSt3__14pairINS_21__hash_const_iteratorIPNS_11__hash_nodeIyPvEEEEbEC1B6v15006INS_15__hash_iteratorIS5_EEbLS3_0EEEONS0_IT_T0_EE called 5 returned 100% blocks executed 100%
-function _ZNSt3__14pairINS_21__hash_const_iteratorIPNS_11__hash_nodeIyPvEEEEbEC2B6v15006INS_15__hash_iteratorIS5_EEbLS3_0EEEONS0_IT_T0_EE called 5 returned 100% blocks executed 100%
+function _ZNSt3__14pairINS_21__hash_const_iteratorIPNS_11__hash_nodeIyPvEEEEbEC1B6v15006INS_15__hash_iteratorIS5_EEbLS3_0EEEONS0_IT_T0_EE called 13 returned 100% blocks executed 100%
+function _ZNSt3__14pairINS_21__hash_const_iteratorIPNS_11__hash_nodeIyPvEEEEbEC2B6v15006INS_15__hash_iteratorIS5_EEbLS3_0EEEONS0_IT_T0_EE called 13 returned 100% blocks executed 100%
 function _ZNSt3__14pairINS_21__tree_const_iteratorIN7doctest6detail8TestCaseEPNS_11__tree_nodeIS4_PvEElEEbEC1B6v15006INS_15__tree_iteratorIS4_S8_lEEbLS6_0EEEONS0_IT_T0_EE called 1 returned 100% blocks executed 100%
 function _ZNSt3__14pairINS_21__tree_const_iteratorIN7doctest6detail8TestCaseEPNS_11__tree_nodeIS4_PvEElEEbEC2B6v15006INS_15__tree_iteratorIS4_S8_lEEbLS6_0EEEONS0_IT_T0_EE called 1 returned 100% blocks executed 100%
 function _ZNSt3__14pairINS_21__tree_const_iteratorIN7doctest6StringEPNS_11__tree_nodeIS3_PvEElEEbEC1B6v15006INS_15__tree_iteratorIS3_S7_lEEbLS5_0EEEONS0_IT_T0_EE called 0 returned 0% blocks executed 0%
 function _ZNSt3__14pairINS_21__tree_const_iteratorIN7doctest6StringEPNS_11__tree_nodeIS3_PvEElEEbEC2B6v15006INS_15__tree_iteratorIS3_S7_lEEbLS5_0EEEONS0_IT_T0_EE called 0 returned 0% blocks executed 0%
 function _ZNSt3__14pairINS_14__map_iteratorINS_15__tree_iteratorINS_12__value_typeINS0_IiN7doctest6StringEEEPFPNS4_9IReporterERKNS4_14ContextOptionsEEEEPNS_11__tree_nodeISE_PvEElEEEEbEC1B6v15006ISJ_bLSG_0EEEONS0_IT_T0_EE called 3 returned 100% blocks executed 100%
 function _ZNSt3__14pairINS_14__map_iteratorINS_15__tree_iteratorINS_12__value_typeINS0_IiN7doctest6StringEEEPFPNS4_9IReporterERKNS4_14ContextOptionsEEEEPNS_11__tree_nodeISE_PvEElEEEEbEC2B6v15006ISJ_bLSG_0EEEONS0_IT_T0_EE called 3 returned 100% blocks executed 100%
-       26:  230:    pair(pair<_U1, _U2>&& __p)
+       42:  230:    pair(pair<_U1, _U2>&& __p)
         -:  231:        _NOEXCEPT_((is_nothrow_constructible<first_type, _U1&&>::value &&
         -:  232:                    is_nothrow_constructible<second_type, _U2&&>::value))
-       26:  233:        : first(_VSTD::forward<_U1>(__p.first)), second(_VSTD::forward<_U2>(__p.second)) {}
+       42:  233:        : first(_VSTD::forward<_U1>(__p.first)), second(_VSTD::forward<_U2>(__p.second)) {}
         4:  233-block  0
         4:  233-block  1
-        5:  233-block  2
-        5:  233-block  3
+       13:  233-block  2
+       13:  233-block  3
         1:  233-block  4
         1:  233-block  5
     $$$$$:  233-block  6

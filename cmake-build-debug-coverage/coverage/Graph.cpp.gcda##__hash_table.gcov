@@ -78,11 +78,11 @@
         -:   73:    __next_pointer    __next_;
         -:   74:
         -:   75:    _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__116__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEE5__ptrB6v15006Ev called 90 returned 100% blocks executed 100%
-       90:   76:    __next_pointer __ptr() _NOEXCEPT {
-       90:   77:        return static_cast<__next_pointer>(
-       90:   77-block  0
-       90:   78:            pointer_traits<__node_base_pointer>::pointer_to(*this));
+function _ZNSt3__116__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEE5__ptrB6v15006Ev called 114 returned 100% blocks executed 100%
+      114:   76:    __next_pointer __ptr() _NOEXCEPT {
+      114:   77:        return static_cast<__next_pointer>(
+      114:   77-block  0
+      114:   78:            pointer_traits<__node_base_pointer>::pointer_to(*this));
         -:   79:    }
         -:   80:
         -:   81:    _LIBCPP_INLINE_VISIBILITY
@@ -94,17 +94,17 @@ function _ZNSt3__116__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5
         -:   85:    }
         -:   86:
         -:   87:    _LIBCPP_INLINE_VISIBILITY
-function _ZNKSt3__116__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEE6__hashB6v15006Ev called 36 returned 100% blocks executed 100%
-       36:   88:    size_t __hash() const _NOEXCEPT {
-       36:   89:        return static_cast<__node_type const&>(*this).__hash_;
-       36:   89-block  0
+function _ZNKSt3__116__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEE6__hashB6v15006Ev called 28 returned 100% blocks executed 100%
+       28:   88:    size_t __hash() const _NOEXCEPT {
+       28:   89:        return static_cast<__node_type const&>(*this).__hash_;
+       28:   89-block  0
         -:   90:    }
         -:   91:
-function _ZNSt3__116__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEEC1B6v15006Ev called 66 returned 100% blocks executed 100%
-function _ZNSt3__116__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEEC2B6v15006Ev called 66 returned 100% blocks executed 100%
-      132:   92:    _LIBCPP_INLINE_VISIBILITY __hash_node_base() _NOEXCEPT : __next_(nullptr) {}
-       66:   92-block  0
-       66:   92-block  1
+function _ZNSt3__116__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEEC1B6v15006Ev called 76 returned 100% blocks executed 100%
+function _ZNSt3__116__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEEC2B6v15006Ev called 76 returned 100% blocks executed 100%
+      152:   92:    _LIBCPP_INLINE_VISIBILITY __hash_node_base() _NOEXCEPT : __next_(nullptr) {}
+       76:   92-block  0
+       76:   92-block  1
         -:   93:};
         -:   94:
         -:   95:template <class _Tp, class _VoidPtr>
@@ -807,16 +807,16 @@ function _ZNSt3__115__hash_iteratorIPNS_11__hash_nodeINS_17__hash_value_typeIP5G
         -:  745:    typedef typename __alloc_traits::pointer pointer;
         -:  746:
         -:  747:    _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__125__bucket_list_deallocatorINS_9allocatorIPNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEEEEEEC1B6v15006Ev called 66 returned 100% blocks executed 100%
-function _ZNSt3__125__bucket_list_deallocatorINS_9allocatorIPNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEEEEEEC2B6v15006Ev called 66 returned 100% blocks executed 66%
-      132:  748:    __bucket_list_deallocator()
+function _ZNSt3__125__bucket_list_deallocatorINS_9allocatorIPNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEEEEEEC1B6v15006Ev called 76 returned 100% blocks executed 100%
+function _ZNSt3__125__bucket_list_deallocatorINS_9allocatorIPNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEEEEEEC2B6v15006Ev called 76 returned 100% blocks executed 66%
+      152:  748:    __bucket_list_deallocator()
         -:  749:        _NOEXCEPT_(is_nothrow_default_constructible<allocator_type>::value)
-      132:  750:        : __data_(0, __default_init_tag()) {}
-       66:  750-block  0
-       66:  750-block  1
-branch  0 taken 66
+      152:  750:        : __data_(0, __default_init_tag()) {}
+       76:  750-block  0
+       76:  750-block  1
+branch  0 taken 76
 branch  1 taken 0
-       66:  750-block  2
+       76:  750-block  2
     $$$$$:  750-block  3
         -:  751:
         -:  752:    _LIBCPP_INLINE_VISIBILITY
@@ -1047,9 +1047,9 @@ function _ZNSt3__112__hash_tableINS_17__hash_value_typeIP5GraphdEENS_22__unorder
         -:  945:    float  max_load_factor() const _NOEXCEPT {return __p3_.first();}
         -:  946:
         -:  947:    _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__112__hash_tableINS_17__hash_value_typeIP5GraphdEENS_22__unordered_map_hasherIS3_S4_NS_4hashIS3_EENS_8equal_toIS3_EELb1EEENS_21__unordered_map_equalIS3_S4_S9_S7_Lb1EEENS_9allocatorIS4_EEE6key_eqB6v15006Ev called 18 returned 100% blocks executed 100%
-       18:  948:    key_equal& key_eq() _NOEXCEPT {return __p3_.second();}
-       18:  948-block  0
+function _ZNSt3__112__hash_tableINS_17__hash_value_typeIP5GraphdEENS_22__unordered_map_hasherIS3_S4_NS_4hashIS3_EENS_8equal_toIS3_EELb1EEENS_21__unordered_map_equalIS3_S4_S9_S7_Lb1EEENS_9allocatorIS4_EEE6key_eqB6v15006Ev called 10 returned 100% blocks executed 100%
+       10:  948:    key_equal& key_eq() _NOEXCEPT {return __p3_.second();}
+       10:  948-block  0
         -:  949:    _LIBCPP_INLINE_VISIBILITY
         -:  950:    const key_equal& key_eq() const _NOEXCEPT {return __p3_.second();}
         -:  951:
@@ -1068,9 +1068,9 @@ function _ZNSt3__112__hash_tableINS_17__hash_value_typeIP5GraphdEENS_22__unorder
         -:  962:    typedef __hash_const_local_iterator<__node_pointer>       const_local_iterator;
         -:  963:
         -:  964:    _LIBCPP_INLINE_VISIBILITY
-       66:  965:    __hash_table()
-       66:  965-block  0
-branch  0 taken 66
+       76:  965:    __hash_table()
+       76:  965-block  0
+branch  0 taken 76
 branch  1 taken 0
     $$$$$:  965-block  1
         -:  966:        _NOEXCEPT_(
@@ -1461,27 +1461,27 @@ function _ZNKSt3__112__hash_tableINS_17__hash_value_typeIP5GraphdEENS_22__unorde
         -: 1347:
         -: 1348:template <class _Tp, class _Hash, class _Equal, class _Alloc>
         -: 1349:inline
-function _ZNSt3__112__hash_tableINS_17__hash_value_typeIP5GraphdEENS_22__unordered_map_hasherIS3_S4_NS_4hashIS3_EENS_8equal_toIS3_EELb1EEENS_21__unordered_map_equalIS3_S4_S9_S7_Lb1EEENS_9allocatorIS4_EEEC1Ev called 66 returned 100% blocks executed 100%
-function _ZNSt3__112__hash_tableINS_17__hash_value_typeIP5GraphdEENS_22__unordered_map_hasherIS3_S4_NS_4hashIS3_EENS_8equal_toIS3_EELb1EEENS_21__unordered_map_equalIS3_S4_S9_S7_Lb1EEENS_9allocatorIS4_EEEC2Ev called 66 returned 100% blocks executed 80%
-      132: 1350:__hash_table<_Tp, _Hash, _Equal, _Alloc>::__hash_table()
+function _ZNSt3__112__hash_tableINS_17__hash_value_typeIP5GraphdEENS_22__unordered_map_hasherIS3_S4_NS_4hashIS3_EENS_8equal_toIS3_EELb1EEENS_21__unordered_map_equalIS3_S4_S9_S7_Lb1EEENS_9allocatorIS4_EEEC1Ev called 76 returned 100% blocks executed 100%
+function _ZNSt3__112__hash_tableINS_17__hash_value_typeIP5GraphdEENS_22__unordered_map_hasherIS3_S4_NS_4hashIS3_EENS_8equal_toIS3_EELb1EEENS_21__unordered_map_equalIS3_S4_S9_S7_Lb1EEENS_9allocatorIS4_EEEC2Ev called 76 returned 100% blocks executed 80%
+      152: 1350:__hash_table<_Tp, _Hash, _Equal, _Alloc>::__hash_table()
         -: 1351:    _NOEXCEPT_(
         -: 1352:        is_nothrow_default_constructible<__bucket_list>::value &&
         -: 1353:        is_nothrow_default_constructible<__first_node>::value &&
         -: 1354:        is_nothrow_default_constructible<__node_allocator>::value &&
         -: 1355:        is_nothrow_default_constructible<hasher>::value &&
         -: 1356:        is_nothrow_default_constructible<key_equal>::value)
-       66: 1357:    : __p2_(0, __default_init_tag()),
-       66: 1357-block  0
-branch  0 taken 66
+       76: 1357:    : __p2_(0, __default_init_tag()),
+       76: 1357-block  0
+branch  0 taken 76
 branch  1 taken 0
-       66: 1358:      __p3_(1.0f, __default_init_tag())
-       66: 1358-block  0
-branch  0 taken 66
+       76: 1358:      __p3_(1.0f, __default_init_tag())
+       76: 1358-block  0
+branch  0 taken 76
 branch  1 taken 0
-       66: 1359:{
-      132: 1360:}
-       66: 1360-block  0
-       66: 1360-block  1
+       76: 1359:{
+      152: 1360:}
+       76: 1360-block  0
+       76: 1360-block  1
         -: 1361:
         -: 1362:template <class _Tp, class _Hash, class _Equal, class _Alloc>
         -: 1363:inline
@@ -2114,7 +2114,7 @@ function _ZNSt3__112__hash_tableINS_17__hash_value_typeIP5GraphdEENS_22__unorder
         -: 1986:template <class _Tp, class _Hash, class _Equal, class _Alloc>
         -: 1987:template <class _Key, class ..._Args>
         -: 1988:pair<typename __hash_table<_Tp, _Hash, _Equal, _Alloc>::iterator, bool>
-function _ZNSt3__112__hash_tableINS_17__hash_value_typeIP5GraphdEENS_22__unordered_map_hasherIS3_S4_NS_4hashIS3_EENS_8equal_toIS3_EELb1EEENS_21__unordered_map_equalIS3_S4_S9_S7_Lb1EEENS_9allocatorIS4_EEE25__emplace_unique_key_argsIS3_JRKNS_21piecewise_construct_tENS_5tupleIJRKS3_EEENSK_IJEEEEEENS_4pairINS_15__hash_iteratorIPNS_11__hash_nodeIS4_PvEEEEbEERKT_DpOT0_ called 48 returned 100% blocks executed 80%
+function _ZNSt3__112__hash_tableINS_17__hash_value_typeIP5GraphdEENS_22__unordered_map_hasherIS3_S4_NS_4hashIS3_EENS_8equal_toIS3_EELb1EEENS_21__unordered_map_equalIS3_S4_S9_S7_Lb1EEENS_9allocatorIS4_EEE25__emplace_unique_key_argsIS3_JRKNS_21piecewise_construct_tENS_5tupleIJRKS3_EEENSK_IJEEEEEENS_4pairINS_15__hash_iteratorIPNS_11__hash_nodeIS4_PvEEEEbEERKT_DpOT0_ called 48 returned 100% blocks executed 88%
        48: 1989:__hash_table<_Tp, _Hash, _Equal, _Alloc>::__emplace_unique_key_args(_Key const& __k, _Args&&... __args)
         -: 1990:{
         -: 1991:
@@ -2132,35 +2132,35 @@ branch  1 taken 18
        18: 2000:        __nd = __bucket_list_[__chash];
        18: 2001:        if (__nd != nullptr)
        18: 2001-block  0
-branch  0 taken 0
-branch  1 taken 18
+branch  0 taken 8
+branch  1 taken 10
         -: 2002:        {
-       54: 2003:            for (__nd = __nd->__next_; __nd != nullptr &&
-       18: 2003-block  0
-       36: 2003-block  1
-branch  0 taken 18
-branch  1 taken 18
-       36: 2003-block  2
-branch  2 taken 18
-branch  3 taken 18
-       18: 2003-block  3
-       18: 2004:                (__nd->__hash() == __hash || __constrain_hash(__nd->__hash(), __bc) == __chash);
-       18: 2004-block  0
+       30: 2003:            for (__nd = __nd->__next_; __nd != nullptr &&
+       10: 2003-block  0
+       20: 2003-block  1
+branch  0 taken 10
+branch  1 taken 10
+       20: 2003-block  2
+branch  2 taken 10
+branch  3 taken 10
+       10: 2003-block  3
+       10: 2004:                (__nd->__hash() == __hash || __constrain_hash(__nd->__hash(), __bc) == __chash);
+       10: 2004-block  0
 branch  0 taken 0
-branch  1 taken 18
-       18: 2004-block  1
-       18: 2005:                                                           __nd = __nd->__next_)
+branch  1 taken 10
+       10: 2004-block  1
+       10: 2005:                                                           __nd = __nd->__next_)
         -: 2006:            {
-       18: 2007:                if (key_eq()(__nd->__upcast()->__value_, __k))
-       18: 2007-block  0
-branch  0 taken 18
+       10: 2007:                if (key_eq()(__nd->__upcast()->__value_, __k))
+       10: 2007-block  0
+branch  0 taken 10
 branch  1 taken 0
     #####: 2008:                    goto __done;
     $$$$$: 2008-block  0
-       18: 2009:            }
-       18: 2009-block  0
-       18: 2010:        }
-       18: 2010-block  0
+       10: 2009:            }
+       10: 2009-block  0
+       10: 2010:        }
+       10: 2010-block  0
        18: 2011:    }
        18: 2011-block  0
         -: 2012:    {
@@ -2200,37 +2200,37 @@ branch  0 taken 48
 branch  1 taken 0
        48: 2023:        if (__pn == nullptr)
        48: 2023-block  0
-branch  0 taken 30
-branch  1 taken 18
+branch  0 taken 38
+branch  1 taken 10
         -: 2024:        {
-       30: 2025:            __pn = __p1_.first().__ptr();
-       30: 2026:            __h->__next_ = __pn->__next_;
-       30: 2027:            __pn->__next_ = __h.get()->__ptr();
+       38: 2025:            __pn = __p1_.first().__ptr();
+       38: 2026:            __h->__next_ = __pn->__next_;
+       38: 2027:            __pn->__next_ = __h.get()->__ptr();
         -: 2028:            // fix up __bucket_list_
-       30: 2029:            __bucket_list_[__chash] = __pn;
-       30: 2029-block  0
-branch  0 taken 30
+       38: 2029:            __bucket_list_[__chash] = __pn;
+       38: 2029-block  0
+branch  0 taken 38
 branch  1 taken 0
-       30: 2030:            if (__h->__next_ != nullptr)
-       30: 2030-block  0
-branch  0 taken 0
+       38: 2030:            if (__h->__next_ != nullptr)
+       38: 2030-block  0
+branch  0 taken 8
 branch  1 taken 30
-    #####: 2031:                __bucket_list_[__constrain_hash(__h->__next_->__hash(), __bc)]
-    $$$$$: 2031-block  0
-branch  0 never executed
-branch  1 never executed
-    $$$$$: 2031-block  1
-branch  2 never executed
-branch  3 never executed
-    $$$$$: 2031-block  2
-    #####: 2032:                    = __h.get()->__ptr();
-       30: 2033:        }
-       30: 2033-block  0
+        8: 2031:                __bucket_list_[__constrain_hash(__h->__next_->__hash(), __bc)]
+        8: 2031-block  0
+branch  0 taken 8
+branch  1 taken 0
+        8: 2031-block  1
+branch  2 taken 8
+branch  3 taken 0
+        8: 2031-block  2
+       16: 2032:                    = __h.get()->__ptr();
+       38: 2033:        }
+       38: 2033-block  0
         -: 2034:        else
         -: 2035:        {
-       18: 2036:            __h->__next_ = __pn->__next_;
-       18: 2037:            __pn->__next_ = static_cast<__next_pointer>(__h.get());
-       18: 2037-block  0
+       10: 2036:            __h->__next_ = __pn->__next_;
+       10: 2037:            __pn->__next_ = static_cast<__next_pointer>(__h.get());
+       10: 2037-block  0
         -: 2038:        }
        48: 2039:        __nd = static_cast<__next_pointer>(__h.release());
         -: 2040:        // increment size

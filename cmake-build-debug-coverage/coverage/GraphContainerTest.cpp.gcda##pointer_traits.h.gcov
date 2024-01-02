@@ -151,7 +151,7 @@
         -:  146:    struct __nat {};
         -:  147:public:
         -:  148:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
-function _ZNSt3__114pointer_traitsIPcE10pointer_toB6v15006ERc called 6 returned 100% blocks executed 100%
+function _ZNSt3__114pointer_traitsIPcE10pointer_toB6v15006ERc called 8 returned 100% blocks executed 100%
 function _ZNSt3__114pointer_traitsIPKcE10pointer_toB6v15006ERS1_ called 119 returned 100% blocks executed 100%
 function _ZNSt3__114pointer_traitsIPNS_16__hash_node_baseIPNS_11__hash_nodeIyPvEEEEE10pointer_toB6v15006ERS6_ called 32 returned 100% blocks executed 100%
 function _ZNSt3__114pointer_traitsIPNS_15__tree_end_nodeIPNS_16__tree_node_baseIPvEEEEE10pointer_toB6v15006ERS6_ called 23 returned 100% blocks executed 100%
@@ -161,10 +161,10 @@ function _ZNSt3__114pointer_traitsIPNS_16__hash_node_baseIPNS_11__hash_nodeINS_1
 function _ZNSt3__114pointer_traitsIPNS_16__hash_node_baseIPNS_11__hash_nodeINS_17__hash_value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphEEPvEEEEE10pointer_toB6v15006ERSG_ called 72 returned 100% blocks executed 100%
 function _ZNSt3__114pointer_traitsIPNS_12__value_typeINS_4pairIiN7doctest6StringEEEPFPNS3_9IReporterERKNS3_14ContextOptionsEEEEE10pointer_toB6v15006ERSD_ called 3 returned 100% blocks executed 100%
 function _ZNSt3__114pointer_traitsIPKNS_12__value_typeINS_4pairIiN7doctest6StringEEEPFPNS3_9IReporterERKNS3_14ContextOptionsEEEEE10pointer_toB6v15006ERSE_ called 0 returned 0% blocks executed 0%
-      277:  149:    static pointer pointer_to(typename conditional<is_void<element_type>::value,
+      279:  149:    static pointer pointer_to(typename conditional<is_void<element_type>::value,
         -:  150:                                      __nat, element_type>::type& __r) _NOEXCEPT
-      277:  151:        {return _VSTD::addressof(__r);}
-        6:  151-block  0
+      279:  151:        {return _VSTD::addressof(__r);}
+        8:  151-block  0
       119:  151-block  1
        32:  151-block  2
        23:  151-block  3

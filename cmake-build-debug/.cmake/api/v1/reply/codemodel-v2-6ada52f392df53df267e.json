@@ -1,0 +1,123 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "CityMapProject",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "CityMapLibrary::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CityMapLibrary-Debug-a22005ab5b535479f13a.json",
+					"name" : "CityMapLibrary",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CityMapProject::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CityMapProject-Debug-fc73a98bc4c069ab1471.json",
+					"name" : "CityMapProject",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "GraphContainerTest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-GraphContainerTest-Debug-7eaa2da15b97cc73bdc9.json",
+					"name" : "GraphContainerTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "GraphTest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-GraphTest-Debug-010a3bf80b1ef16ae185.json",
+					"name" : "GraphTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "GraphvizControllerTest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-GraphvizControllerTest-Debug-8104d29e1e078051750d.json",
+					"name" : "GraphvizControllerTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "PathTest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-PathTest-Debug-d8d1fbfe91296982d9d2.json",
+					"name" : "PathTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "RouteCheckerTest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-RouteCheckerTest-Debug-346f1a600d6a38e7139f.json",
+					"name" : "RouteCheckerTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "TerminalProgramTest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TerminalProgramTest-Debug-d0576ceda05ffbe97a12.json",
+					"name" : "TerminalProgramTest",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug",
+		"source" : "/Users/mihaildobroslavski/CLionProjects/CityMapProject"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

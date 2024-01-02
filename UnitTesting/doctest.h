@@ -3804,8 +3804,7 @@ namespace doctest {
         if (isOnStack()) {
             buf[sz] = '\0';
             setLast(last - sz);
-        }
-        else {
+        } else {
             data.ptr[sz] = '\0';
             data.size = sz;
         }
@@ -5060,9 +5059,9 @@ namespace doctest {
             int id;
             const char *name;
         };
-        SignalDefs signalDefs[] = {{SIGINT, "SIGINT - Terminal interrupt signal"},
-                                   {SIGILL, "SIGILL - Illegal instruction signal"},
-                                   {SIGFPE, "SIGFPE - Floating point error signal"},
+        SignalDefs signalDefs[] = {{SIGINT,  "SIGINT - Terminal interrupt signal"},
+                                   {SIGILL,  "SIGILL - Illegal instruction signal"},
+                                   {SIGFPE,  "SIGFPE - Floating point error signal"},
                                    {SIGSEGV, "SIGSEGV - Segmentation violation signal"},
                                    {SIGTERM, "SIGTERM - Termination request signal"},
                                    {SIGABRT, "SIGABRT - Abort (abnormal termination) signal"}};
@@ -7229,7 +7228,7 @@ namespace doctest {
             }
         }
 
-        std::set<String> testSuitesPassingFilt;
+        std::set < String > testSuitesPassingFilt;
 
         bool query_mode = p->count || p->list_test_cases || p->list_test_suites;
         std::vector<const TestCaseData *> queryResults;

@@ -200,21 +200,21 @@
         -:  195:    typedef mbstate_t state_type;
         -:  196:
         -:  197:    static inline _LIBCPP_CONSTEXPR_AFTER_CXX14
-function _ZNSt3__111char_traitsIcE6assignERcRKc called 4 returned 100% blocks executed 100%
-        4:  198:    void assign(char_type& __c1, const char_type& __c2) _NOEXCEPT {__c1 = __c2;}
-        4:  198-block  0
-function _ZNSt3__111char_traitsIcE2eqEcc called 0 returned 0% blocks executed 0%
-    #####:  199:    static inline _LIBCPP_CONSTEXPR bool eq(char_type __c1, char_type __c2) _NOEXCEPT
-    #####:  200:            {return __c1 == __c2;}
-    $$$$$:  200-block  0
+function _ZNSt3__111char_traitsIcE6assignERcRKc called 100 returned 100% blocks executed 100%
+      100:  198:    void assign(char_type& __c1, const char_type& __c2) _NOEXCEPT {__c1 = __c2;}
+      100:  198-block  0
+function _ZNSt3__111char_traitsIcE2eqEcc called 9891 returned 100% blocks executed 100%
+     9891:  199:    static inline _LIBCPP_CONSTEXPR bool eq(char_type __c1, char_type __c2) _NOEXCEPT
+     9891:  200:            {return __c1 == __c2;}
+     9891:  200-block  0
         -:  201:    static inline _LIBCPP_CONSTEXPR bool lt(char_type __c1, char_type __c2) _NOEXCEPT
         -:  202:        {return (unsigned char)__c1 < (unsigned char)__c2;}
         -:  203:
         -:  204:    static _LIBCPP_CONSTEXPR_AFTER_CXX14
         -:  205:    int compare(const char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT;
         -:  206:
-function _ZNSt3__111char_traitsIcE6lengthEPKc called 68 returned 100% blocks executed 100%
-       68:  207:    static inline size_t _LIBCPP_CONSTEXPR_AFTER_CXX14 length(const char_type* __s)  _NOEXCEPT {
+function _ZNSt3__111char_traitsIcE6lengthEPKc called 103 returned 100% blocks executed 100%
+      103:  207:    static inline size_t _LIBCPP_CONSTEXPR_AFTER_CXX14 length(const char_type* __s)  _NOEXCEPT {
         -:  208:      // GCC currently does not support __builtin_strlen during constant evaluation.
         -:  209:      // https://gcc.gnu.org/bugzilla/show_bug.cgi?id=70816
         -:  210:#ifdef _LIBCPP_COMPILER_GCC
@@ -225,8 +225,8 @@ function _ZNSt3__111char_traitsIcE6lengthEPKc called 68 returned 100% blocks exe
         -:  215:        return __i;
         -:  216:      }
         -:  217:#endif
-       68:  218:      return __builtin_strlen(__s);
-       68:  218-block  0
+      103:  218:      return __builtin_strlen(__s);
+      103:  218-block  0
         -:  219:    }
         -:  220:
         -:  221:    static _LIBCPP_CONSTEXPR_AFTER_CXX14
@@ -260,22 +260,22 @@ branch  1 never executed
     $$$$$:  244-block  1
     $$$$$:  244-block  2
     $$$$$:  244-block  3
-function _ZNSt3__111char_traitsIcE12to_char_typeEi called 21 returned 100% blocks executed 100%
-       21:  245:    static inline _LIBCPP_CONSTEXPR char_type to_char_type(int_type __c) _NOEXCEPT
-       21:  246:        {return char_type(__c);}
-       21:  246-block  0
-function _ZNSt3__111char_traitsIcE11to_int_typeEc called 41 returned 100% blocks executed 100%
-       41:  247:    static inline _LIBCPP_CONSTEXPR int_type to_int_type(char_type __c) _NOEXCEPT
-       41:  248:        {return int_type((unsigned char)__c);}
-       41:  248-block  0
-function _ZNSt3__111char_traitsIcE11eq_int_typeEii called 66 returned 100% blocks executed 100%
-       66:  249:    static inline _LIBCPP_CONSTEXPR bool eq_int_type(int_type __c1, int_type __c2) _NOEXCEPT
-       66:  250:        {return __c1 == __c2;}
-       66:  250-block  0
-function _ZNSt3__111char_traitsIcE3eofEv called 75 returned 100% blocks executed 100%
-       75:  251:    static inline _LIBCPP_CONSTEXPR int_type  eof() _NOEXCEPT
-       75:  252:        {return int_type(EOF);}
-       75:  252-block  0
+function _ZNSt3__111char_traitsIcE12to_char_typeEi called 9926 returned 100% blocks executed 100%
+     9926:  245:    static inline _LIBCPP_CONSTEXPR char_type to_char_type(int_type __c) _NOEXCEPT
+     9926:  246:        {return char_type(__c);}
+     9926:  246-block  0
+function _ZNSt3__111char_traitsIcE11to_int_typeEc called 9956 returned 100% blocks executed 100%
+     9956:  247:    static inline _LIBCPP_CONSTEXPR int_type to_int_type(char_type __c) _NOEXCEPT
+     9956:  248:        {return int_type((unsigned char)__c);}
+     9956:  248-block  0
+function _ZNSt3__111char_traitsIcE11eq_int_typeEii called 10079 returned 100% blocks executed 100%
+    10079:  249:    static inline _LIBCPP_CONSTEXPR bool eq_int_type(int_type __c1, int_type __c2) _NOEXCEPT
+    10079:  250:        {return __c1 == __c2;}
+    10079:  250-block  0
+function _ZNSt3__111char_traitsIcE3eofEv called 10099 returned 100% blocks executed 100%
+    10099:  251:    static inline _LIBCPP_CONSTEXPR int_type  eof() _NOEXCEPT
+    10099:  252:        {return int_type(EOF);}
+    10099:  252-block  0
         -:  253:};
         -:  254:
         -:  255:inline _LIBCPP_CONSTEXPR_AFTER_CXX14

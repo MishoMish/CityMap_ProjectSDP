@@ -38,7 +38,7 @@ private:
     static void hamiltonianPathUtil(GraphContainer *container, Graph *current, Graph *start, Path *path,
                                     std::set<std::pair<Graph *, Graph *> > &visitedEdges, bool &found);
 
-    static bool existsHelper(Graph *current, Graph *end, std::unordered_set<Graph *> checked);
+    static bool existsHelper(Graph *current, Graph *end, std::unordered_set<Graph *> &checked);
 
     static bool canReturnToStartHelper(Graph *current, Graph *start, std::unordered_set<Graph *> &visited);
 };

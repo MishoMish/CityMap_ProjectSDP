@@ -213,8 +213,8 @@ function _ZNSt3__111char_traitsIcE2eqEcc called 8 returned 100% blocks executed 
         -:  204:    static _LIBCPP_CONSTEXPR_AFTER_CXX14
         -:  205:    int compare(const char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT;
         -:  206:
-function _ZNSt3__111char_traitsIcE6lengthEPKc called 55 returned 100% blocks executed 100%
-       55:  207:    static inline size_t _LIBCPP_CONSTEXPR_AFTER_CXX14 length(const char_type* __s)  _NOEXCEPT {
+function _ZNSt3__111char_traitsIcE6lengthEPKc called 57 returned 100% blocks executed 100%
+       57:  207:    static inline size_t _LIBCPP_CONSTEXPR_AFTER_CXX14 length(const char_type* __s)  _NOEXCEPT {
         -:  208:      // GCC currently does not support __builtin_strlen during constant evaluation.
         -:  209:      // https://gcc.gnu.org/bugzilla/show_bug.cgi?id=70816
         -:  210:#ifdef _LIBCPP_COMPILER_GCC
@@ -225,8 +225,8 @@ function _ZNSt3__111char_traitsIcE6lengthEPKc called 55 returned 100% blocks exe
         -:  215:        return __i;
         -:  216:      }
         -:  217:#endif
-       55:  218:      return __builtin_strlen(__s);
-       55:  218-block  0
+       57:  218:      return __builtin_strlen(__s);
+       57:  218-block  0
         -:  219:    }
         -:  220:
         -:  221:    static _LIBCPP_CONSTEXPR_AFTER_CXX14

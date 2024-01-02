@@ -53,15 +53,15 @@
         -:   48:private:
         -:   49:    streambuf_type* __sbuf_;
         -:   50:public:
-function _ZNSt3__119ostreambuf_iteratorIcNS_11char_traitsIcEEEC1B6v15006ERNS_13basic_ostreamIcS2_EE called 42 returned 100% blocks executed 100%
-function _ZNSt3__119ostreambuf_iteratorIcNS_11char_traitsIcEEEC2B6v15006ERNS_13basic_ostreamIcS2_EE called 42 returned 100% blocks executed 66%
-       84:   51:    _LIBCPP_INLINE_VISIBILITY ostreambuf_iterator(ostream_type& __s) _NOEXCEPT
-       84:   52:        : __sbuf_(__s.rdbuf()) {}
-       42:   52-block  0
-       42:   52-block  1
-branch  0 taken 42
+function _ZNSt3__119ostreambuf_iteratorIcNS_11char_traitsIcEEEC1B6v15006ERNS_13basic_ostreamIcS2_EE called 142 returned 100% blocks executed 100%
+function _ZNSt3__119ostreambuf_iteratorIcNS_11char_traitsIcEEEC2B6v15006ERNS_13basic_ostreamIcS2_EE called 142 returned 100% blocks executed 66%
+      284:   51:    _LIBCPP_INLINE_VISIBILITY ostreambuf_iterator(ostream_type& __s) _NOEXCEPT
+      284:   52:        : __sbuf_(__s.rdbuf()) {}
+      142:   52-block  0
+      142:   52-block  1
+branch  0 taken 142
 branch  1 taken 0
-       42:   52-block  2
+      142:   52-block  2
     $$$$$:   52-block  3
         -:   53:    _LIBCPP_INLINE_VISIBILITY ostreambuf_iterator(streambuf_type* __s) _NOEXCEPT
         -:   54:        : __sbuf_(__s) {}
@@ -74,9 +74,9 @@ branch  1 taken 0
         -:   61:    _LIBCPP_INLINE_VISIBILITY ostreambuf_iterator& operator*()     {return *this;}
         -:   62:    _LIBCPP_INLINE_VISIBILITY ostreambuf_iterator& operator++()    {return *this;}
         -:   63:    _LIBCPP_INLINE_VISIBILITY ostreambuf_iterator& operator++(int) {return *this;}
-function _ZNKSt3__119ostreambuf_iteratorIcNS_11char_traitsIcEEE6failedB6v15006Ev called 42 returned 100% blocks executed 100%
-       42:   64:    _LIBCPP_INLINE_VISIBILITY bool failed() const _NOEXCEPT {return __sbuf_ == nullptr;}
-       42:   64-block  0
+function _ZNKSt3__119ostreambuf_iteratorIcNS_11char_traitsIcEEE6failedB6v15006Ev called 142 returned 100% blocks executed 100%
+      142:   64:    _LIBCPP_INLINE_VISIBILITY bool failed() const _NOEXCEPT {return __sbuf_ == nullptr;}
+      142:   64-block  0
         -:   65:
         -:   66:    template <class _Ch, class _Tr>
         -:   67:    friend

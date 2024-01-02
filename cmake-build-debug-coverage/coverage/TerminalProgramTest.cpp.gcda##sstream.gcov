@@ -232,29 +232,29 @@
         -:  227:        : __hm_(nullptr), __mode_(ios_base::in | ios_base::out) {}
         -:  228:
         -:  229:    _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B6v15006Ej called 4 returned 100% blocks executed 100%
-function _ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B6v15006Ej called 4 returned 100% blocks executed 100%
-       16:  230:    explicit basic_stringbuf(ios_base::openmode __wch)
-       16:  231:        : __hm_(nullptr), __mode_(__wch) {}
-        4:  231-block  0
-        4:  231-block  1
-        4:  231-block  2
-        4:  231-block  3
+function _ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B6v15006Ej called 6 returned 100% blocks executed 100%
+function _ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B6v15006Ej called 6 returned 100% blocks executed 100%
+       24:  230:    explicit basic_stringbuf(ios_base::openmode __wch)
+       24:  231:        : __hm_(nullptr), __mode_(__wch) {}
+        6:  231-block  0
+        6:  231-block  1
+        6:  231-block  2
+        6:  231-block  3
         -:  232:
         -:  233:    _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B6v15006ERKNS_12basic_stringIcS2_S4_EEj called 3 returned 100% blocks executed 100%
-function _ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B6v15006ERKNS_12basic_stringIcS2_S4_EEj called 3 returned 100% blocks executed 50%
-        9:  234:    explicit basic_stringbuf(const string_type& __s,
+function _ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B6v15006ERKNS_12basic_stringIcS2_S4_EEj called 7 returned 100% blocks executed 100%
+function _ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B6v15006ERKNS_12basic_stringIcS2_S4_EEj called 7 returned 100% blocks executed 50%
+       21:  234:    explicit basic_stringbuf(const string_type& __s,
         -:  235:                             ios_base::openmode __wch = ios_base::in | ios_base::out)
-        3:  236:        : __str_(__s.get_allocator()), __hm_(nullptr), __mode_(__wch)
-        9:  237:    {
-        3:  238:        str(__s);
-        3:  238-block  0
-branch  0 taken 3
+        7:  236:        : __str_(__s.get_allocator()), __hm_(nullptr), __mode_(__wch)
+       21:  237:    {
+        7:  238:        str(__s);
+        7:  238-block  0
+branch  0 taken 7
 branch  1 taken 0
-        6:  239:    }
-        3:  239-block  0
-        3:  239-block  1
+       14:  239:    }
+        7:  239-block  0
+        7:  239-block  1
     $$$$$:  239-block  2
     $$$$$:  239-block  3
         -:  240:
@@ -841,19 +841,19 @@ function _ZNSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEE3
         -:  802:public:
         -:  803:    // 30.8.5.1 [stringstream.cons], constructors
         -:  804:    _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B6v15006Ev called 4 returned 100% blocks executed 42%
-        8:  805:    basic_stringstream()
-        8:  806:        : basic_iostream<_CharT, _Traits>(&__sb_), __sb_(ios_base::in | ios_base::out) {}
-        4:  806-block  0
-branch  0 taken 4
+function _ZNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B6v15006Ev called 6 returned 100% blocks executed 42%
+       12:  805:    basic_stringstream()
+       12:  806:        : basic_iostream<_CharT, _Traits>(&__sb_), __sb_(ios_base::in | ios_base::out) {}
+        6:  806-block  0
+branch  0 taken 6
 branch  1 taken 0
-        4:  806-block  1
-branch  2 taken 4
+        6:  806-block  1
+branch  2 taken 6
 branch  3 taken 0
-        4:  806-block  2
+        6:  806-block  2
 branch  4 taken 0
-branch  5 taken 4
-        4:  806-block  3
+branch  5 taken 6
+        6:  806-block  3
     $$$$$:  806-block  4
     $$$$$:  806-block  5
     $$$$$:  806-block  6
@@ -864,19 +864,19 @@ branch  5 taken 4
         -:  810:        : basic_iostream<_CharT, _Traits>(&__sb_), __sb_(__wch) {}
         -:  811:
         -:  812:    _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B6v15006ERKNS_12basic_stringIcS2_S4_EEj called 3 returned 100% blocks executed 42%
-        6:  813:    explicit basic_stringstream(const string_type& __s,
+function _ZNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B6v15006ERKNS_12basic_stringIcS2_S4_EEj called 7 returned 100% blocks executed 42%
+       14:  813:    explicit basic_stringstream(const string_type& __s,
         -:  814:                                ios_base::openmode __wch = ios_base::in | ios_base::out)
-        3:  815:        : basic_iostream<_CharT, _Traits>(&__sb_)
-        3:  815-block  0
-branch  0 taken 3
+        7:  815:        : basic_iostream<_CharT, _Traits>(&__sb_)
+        7:  815-block  0
+branch  0 taken 7
 branch  1 taken 0
-        3:  816:        , __sb_(__s, __wch)
-        3:  816-block  0
+        7:  816:        , __sb_(__s, __wch)
+        7:  816-block  0
 branch  0 taken 0
-branch  1 taken 3
-        6:  817:    { }
-        3:  817-block  0
+branch  1 taken 7
+       14:  817:    { }
+        7:  817-block  0
     $$$$$:  817-block  1
     $$$$$:  817-block  2
     $$$$$:  817-block  3
@@ -904,16 +904,16 @@ branch  1 taken 3
         -:  838:
         -:  839:    // 27.8.2.3 Members:
         -:  840:    _LIBCPP_INLINE_VISIBILITY
-function _ZNKSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEE5rdbufB6v15006Ev called 4 returned 100% blocks executed 100%
-        4:  841:    basic_stringbuf<char_type, traits_type, allocator_type>* rdbuf() const {
-        4:  842:        return const_cast<basic_stringbuf<char_type, traits_type, allocator_type>*>(&__sb_);
-        4:  842-block  0
+function _ZNKSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEE5rdbufB6v15006Ev called 6 returned 100% blocks executed 100%
+        6:  841:    basic_stringbuf<char_type, traits_type, allocator_type>* rdbuf() const {
+        6:  842:        return const_cast<basic_stringbuf<char_type, traits_type, allocator_type>*>(&__sb_);
+        6:  842-block  0
         -:  843:    }
         -:  844:    _LIBCPP_INLINE_VISIBILITY
-function _ZNKSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEE3strB6v15006Ev called 5 returned 100% blocks executed 100%
-        5:  845:    string_type str() const {
-        5:  846:        return __sb_.str();
-        5:  846-block  0
+function _ZNKSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEE3strB6v15006Ev called 7 returned 100% blocks executed 100%
+        7:  845:    string_type str() const {
+        7:  846:        return __sb_.str();
+        7:  846-block  0
         -:  847:    }
         -:  848:    _LIBCPP_INLINE_VISIBILITY
 function _ZNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEE3strB6v15006ERKNS_12basic_stringIcS2_S4_EE called 0 returned 0% blocks executed 0%

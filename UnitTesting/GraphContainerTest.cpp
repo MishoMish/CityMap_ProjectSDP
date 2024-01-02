@@ -11,7 +11,7 @@ TEST_CASE("GraphContainer Test") {
     GraphContainer graphContainer;
 
     SUBCASE("Parse File Test") {
-        const std::string filePath = "/Users/mihaildobroslavski/CLionProjects/CityMap/cmake-build-debug/test_input.txt";
+        const std::string filePath = "InLineDatabase/test_input.txt";
         graphContainer.parseFile(filePath);
 
         REQUIRE(graphContainer.containsKey("1"));
@@ -80,7 +80,7 @@ TEST_CASE("GraphContainer Test") {
     }
 
     SUBCASE("Print Test") {
-        graphContainer.addGraph("CityA");
+        graphContainer.addGraph("1");
         graphContainer.print();
     }
 }

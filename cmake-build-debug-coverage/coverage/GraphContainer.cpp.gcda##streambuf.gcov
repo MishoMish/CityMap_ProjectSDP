@@ -205,18 +205,18 @@ branch  1 never executed
     $$$$$:  193-block  0
         -:  194:
         -:  195:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
-function _ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE5sgetcB6v15006Ev called 33 returned 100% blocks executed 100%
-       33:  196:    int_type sgetc() {
-       33:  197:        if (__ninp_ == __einp_)
-       33:  197-block  0
-branch  0 taken 5
-branch  1 taken 28
-        5:  198:            return underflow();
-        5:  198-block  0
-       28:  199:        return traits_type::to_int_type(*__ninp_);
-       28:  199-block  0
-       33:  200:    }
-       33:  200-block  0
+function _ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE5sgetcB6v15006Ev called 51 returned 100% blocks executed 100%
+       51:  196:    int_type sgetc() {
+       51:  197:        if (__ninp_ == __einp_)
+       51:  197-block  0
+branch  0 taken 9
+branch  1 taken 42
+        9:  198:            return underflow();
+        9:  198-block  0
+       42:  199:        return traits_type::to_int_type(*__ninp_);
+       42:  199-block  0
+       51:  200:    }
+       51:  200-block  0
         -:  201:
         -:  202:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
         -:  203:    streamsize sgetn(char_type* __s, streamsize __n)

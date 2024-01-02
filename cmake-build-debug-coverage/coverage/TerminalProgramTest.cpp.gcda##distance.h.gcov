@@ -44,24 +44,24 @@
         -:   39:template <class _RandIter>
         -:   40:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX14
         -:   41:typename iterator_traits<_RandIter>::difference_type
-function _ZNSt3__110__distanceB6v15006INS_11__wrap_iterIPN7doctest16SubcaseSignatureEEEEENS_15iterator_traitsIT_E15difference_typeES7_S7_NS_26random_access_iterator_tagE called 4 returned 100% blocks executed 100%
+function _ZNSt3__110__distanceB6v15006INS_11__wrap_iterIPN7doctest16SubcaseSignatureEEEEENS_15iterator_traitsIT_E15difference_typeES7_S7_NS_26random_access_iterator_tagE called 9 returned 100% blocks executed 100%
 function _ZNSt3__110__distanceB6v15006INS_13move_iteratorIPPN7doctest9IReporterEEEEENS_15iterator_traitsIT_E15difference_typeES8_S8_NS_26random_access_iterator_tagE called 0 returned 0% blocks executed 0%
-        4:   42:__distance(_RandIter __first, _RandIter __last, random_access_iterator_tag)
+        9:   42:__distance(_RandIter __first, _RandIter __last, random_access_iterator_tag)
         -:   43:{
-        4:   44:    return __last - __first;
-        4:   44-block  0
+        9:   44:    return __last - __first;
+        9:   44-block  0
     $$$$$:   44-block  1
         -:   45:}
         -:   46:
         -:   47:template <class _InputIter>
         -:   48:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX14
         -:   49:typename iterator_traits<_InputIter>::difference_type
-function _ZNSt3__18distanceB6v15006INS_11__wrap_iterIPN7doctest16SubcaseSignatureEEEEENS_15iterator_traitsIT_E15difference_typeES7_S7_ called 4 returned 100% blocks executed 100%
+function _ZNSt3__18distanceB6v15006INS_11__wrap_iterIPN7doctest16SubcaseSignatureEEEEENS_15iterator_traitsIT_E15difference_typeES7_S7_ called 9 returned 100% blocks executed 100%
 function _ZNSt3__18distanceB6v15006INS_13move_iteratorIPPN7doctest9IReporterEEEEENS_15iterator_traitsIT_E15difference_typeES8_S8_ called 0 returned 0% blocks executed 0%
-        4:   50:distance(_InputIter __first, _InputIter __last)
+        9:   50:distance(_InputIter __first, _InputIter __last)
         -:   51:{
-        4:   52:    return _VSTD::__distance(__first, __last, typename iterator_traits<_InputIter>::iterator_category());
-        4:   52-block  0
+        9:   52:    return _VSTD::__distance(__first, __last, typename iterator_traits<_InputIter>::iterator_category());
+        9:   52-block  0
     $$$$$:   52-block  1
         -:   53:}
         -:   54:

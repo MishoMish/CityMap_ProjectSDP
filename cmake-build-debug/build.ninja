@@ -51,49 +51,49 @@ build cmake_object_order_depends_target_CityMapLibrary: phony || CMakeFiles/City
 
 build CMakeFiles/CityMapLibrary.dir/main.cpp.o: CXX_COMPILER__CityMapLibrary_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/main.cpp || cmake_object_order_depends_target_CityMapLibrary
   DEP_FILE = CMakeFiles/CityMapLibrary.dir/main.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/CityMapLibrary.dir
   OBJECT_FILE_DIR = CMakeFiles/CityMapLibrary.dir
 
 build CMakeFiles/CityMapLibrary.dir/Structure/Graph.cpp.o: CXX_COMPILER__CityMapLibrary_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/Structure/Graph.cpp || cmake_object_order_depends_target_CityMapLibrary
   DEP_FILE = CMakeFiles/CityMapLibrary.dir/Structure/Graph.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/CityMapLibrary.dir
   OBJECT_FILE_DIR = CMakeFiles/CityMapLibrary.dir/Structure
 
 build CMakeFiles/CityMapLibrary.dir/Structure/GraphContainer.cpp.o: CXX_COMPILER__CityMapLibrary_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/Structure/GraphContainer.cpp || cmake_object_order_depends_target_CityMapLibrary
   DEP_FILE = CMakeFiles/CityMapLibrary.dir/Structure/GraphContainer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/CityMapLibrary.dir
   OBJECT_FILE_DIR = CMakeFiles/CityMapLibrary.dir/Structure
 
 build CMakeFiles/CityMapLibrary.dir/TaskFunctions/RouteChecker.cpp.o: CXX_COMPILER__CityMapLibrary_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/TaskFunctions/RouteChecker.cpp || cmake_object_order_depends_target_CityMapLibrary
   DEP_FILE = CMakeFiles/CityMapLibrary.dir/TaskFunctions/RouteChecker.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/CityMapLibrary.dir
   OBJECT_FILE_DIR = CMakeFiles/CityMapLibrary.dir/TaskFunctions
 
 build CMakeFiles/CityMapLibrary.dir/Structure/Path.cpp.o: CXX_COMPILER__CityMapLibrary_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/Structure/Path.cpp || cmake_object_order_depends_target_CityMapLibrary
   DEP_FILE = CMakeFiles/CityMapLibrary.dir/Structure/Path.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/CityMapLibrary.dir
   OBJECT_FILE_DIR = CMakeFiles/CityMapLibrary.dir/Structure
 
 build CMakeFiles/CityMapLibrary.dir/Interfaces/TerminalProgram.cpp.o: CXX_COMPILER__CityMapLibrary_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/Interfaces/TerminalProgram.cpp || cmake_object_order_depends_target_CityMapLibrary
   DEP_FILE = CMakeFiles/CityMapLibrary.dir/Interfaces/TerminalProgram.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/CityMapLibrary.dir
   OBJECT_FILE_DIR = CMakeFiles/CityMapLibrary.dir/Interfaces
 
 build CMakeFiles/CityMapLibrary.dir/Interfaces/GraphvizController.cpp.o: CXX_COMPILER__CityMapLibrary_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/Interfaces/GraphvizController.cpp || cmake_object_order_depends_target_CityMapLibrary
   DEP_FILE = CMakeFiles/CityMapLibrary.dir/Interfaces/GraphvizController.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/CityMapLibrary.dir
   OBJECT_FILE_DIR = CMakeFiles/CityMapLibrary.dir/Interfaces
@@ -108,7 +108,7 @@ build CMakeFiles/CityMapLibrary.dir/Interfaces/GraphvizController.cpp.o: CXX_COM
 
 build libCityMapLibrary.a: CXX_STATIC_LIBRARY_LINKER__CityMapLibrary_Debug CMakeFiles/CityMapLibrary.dir/main.cpp.o CMakeFiles/CityMapLibrary.dir/Structure/Graph.cpp.o CMakeFiles/CityMapLibrary.dir/Structure/GraphContainer.cpp.o CMakeFiles/CityMapLibrary.dir/TaskFunctions/RouteChecker.cpp.o CMakeFiles/CityMapLibrary.dir/Structure/Path.cpp.o CMakeFiles/CityMapLibrary.dir/Interfaces/TerminalProgram.cpp.o CMakeFiles/CityMapLibrary.dir/Interfaces/GraphvizController.cpp.o
   ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
-  LANGUAGE_COMPILE_FLAGS = -g
+  LANGUAGE_COMPILE_FLAGS = -g -O0 -g
   OBJECT_DIR = CMakeFiles/CityMapLibrary.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -126,7 +126,7 @@ build cmake_object_order_depends_target_CityMapProject: phony || cmake_object_or
 
 build CMakeFiles/CityMapProject.dir/main.cpp.o: CXX_COMPILER__CityMapProject_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/main.cpp || cmake_object_order_depends_target_CityMapProject
   DEP_FILE = CMakeFiles/CityMapProject.dir/main.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/CityMapProject.dir
   OBJECT_FILE_DIR = CMakeFiles/CityMapProject.dir
@@ -140,7 +140,7 @@ build CMakeFiles/CityMapProject.dir/main.cpp.o: CXX_COMPILER__CityMapProject_uns
 # Link the executable CityMapProject
 
 build CityMapProject: CXX_EXECUTABLE_LINKER__CityMapProject_Debug CMakeFiles/CityMapProject.dir/main.cpp.o | libCityMapLibrary.a || libCityMapLibrary.a
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  FLAGS = -g -O0 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LINK_LIBRARIES = libCityMapLibrary.a
   OBJECT_DIR = CMakeFiles/CityMapProject.dir
   POST_BUILD = :
@@ -159,7 +159,7 @@ build cmake_object_order_depends_target_GraphContainerTest: phony || cmake_objec
 
 build CMakeFiles/GraphContainerTest.dir/UnitTesting/GraphContainerTest.cpp.o: CXX_COMPILER__GraphContainerTest_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting/GraphContainerTest.cpp || cmake_object_order_depends_target_GraphContainerTest
   DEP_FILE = CMakeFiles/GraphContainerTest.dir/UnitTesting/GraphContainerTest.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/GraphContainerTest.dir
   OBJECT_FILE_DIR = CMakeFiles/GraphContainerTest.dir/UnitTesting
@@ -173,7 +173,7 @@ build CMakeFiles/GraphContainerTest.dir/UnitTesting/GraphContainerTest.cpp.o: CX
 # Link the executable GraphContainerTest
 
 build GraphContainerTest: CXX_EXECUTABLE_LINKER__GraphContainerTest_Debug CMakeFiles/GraphContainerTest.dir/UnitTesting/GraphContainerTest.cpp.o | libCityMapLibrary.a || libCityMapLibrary.a
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  FLAGS = -g -O0 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LINK_LIBRARIES = libCityMapLibrary.a
   OBJECT_DIR = CMakeFiles/GraphContainerTest.dir
   POST_BUILD = :
@@ -192,7 +192,7 @@ build cmake_object_order_depends_target_GraphTest: phony || cmake_object_order_d
 
 build CMakeFiles/GraphTest.dir/UnitTesting/GraphTest.cpp.o: CXX_COMPILER__GraphTest_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting/GraphTest.cpp || cmake_object_order_depends_target_GraphTest
   DEP_FILE = CMakeFiles/GraphTest.dir/UnitTesting/GraphTest.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/GraphTest.dir
   OBJECT_FILE_DIR = CMakeFiles/GraphTest.dir/UnitTesting
@@ -206,7 +206,7 @@ build CMakeFiles/GraphTest.dir/UnitTesting/GraphTest.cpp.o: CXX_COMPILER__GraphT
 # Link the executable GraphTest
 
 build GraphTest: CXX_EXECUTABLE_LINKER__GraphTest_Debug CMakeFiles/GraphTest.dir/UnitTesting/GraphTest.cpp.o | libCityMapLibrary.a || libCityMapLibrary.a
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  FLAGS = -g -O0 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LINK_LIBRARIES = libCityMapLibrary.a
   OBJECT_DIR = CMakeFiles/GraphTest.dir
   POST_BUILD = :
@@ -225,7 +225,7 @@ build cmake_object_order_depends_target_GraphvizControllerTest: phony || cmake_o
 
 build CMakeFiles/GraphvizControllerTest.dir/UnitTesting/GraphvizControllerTest.cpp.o: CXX_COMPILER__GraphvizControllerTest_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting/GraphvizControllerTest.cpp || cmake_object_order_depends_target_GraphvizControllerTest
   DEP_FILE = CMakeFiles/GraphvizControllerTest.dir/UnitTesting/GraphvizControllerTest.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/GraphvizControllerTest.dir
   OBJECT_FILE_DIR = CMakeFiles/GraphvizControllerTest.dir/UnitTesting
@@ -239,7 +239,7 @@ build CMakeFiles/GraphvizControllerTest.dir/UnitTesting/GraphvizControllerTest.c
 # Link the executable GraphvizControllerTest
 
 build GraphvizControllerTest: CXX_EXECUTABLE_LINKER__GraphvizControllerTest_Debug CMakeFiles/GraphvizControllerTest.dir/UnitTesting/GraphvizControllerTest.cpp.o | libCityMapLibrary.a || libCityMapLibrary.a
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  FLAGS = -g -O0 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LINK_LIBRARIES = libCityMapLibrary.a
   OBJECT_DIR = CMakeFiles/GraphvizControllerTest.dir
   POST_BUILD = :
@@ -258,7 +258,7 @@ build cmake_object_order_depends_target_PathTest: phony || cmake_object_order_de
 
 build CMakeFiles/PathTest.dir/UnitTesting/PathTest.cpp.o: CXX_COMPILER__PathTest_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting/PathTest.cpp || cmake_object_order_depends_target_PathTest
   DEP_FILE = CMakeFiles/PathTest.dir/UnitTesting/PathTest.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/PathTest.dir
   OBJECT_FILE_DIR = CMakeFiles/PathTest.dir/UnitTesting
@@ -272,7 +272,7 @@ build CMakeFiles/PathTest.dir/UnitTesting/PathTest.cpp.o: CXX_COMPILER__PathTest
 # Link the executable PathTest
 
 build PathTest: CXX_EXECUTABLE_LINKER__PathTest_Debug CMakeFiles/PathTest.dir/UnitTesting/PathTest.cpp.o | libCityMapLibrary.a || libCityMapLibrary.a
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  FLAGS = -g -O0 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LINK_LIBRARIES = libCityMapLibrary.a
   OBJECT_DIR = CMakeFiles/PathTest.dir
   POST_BUILD = :
@@ -291,7 +291,7 @@ build cmake_object_order_depends_target_RouteCheckerTest: phony || cmake_object_
 
 build CMakeFiles/RouteCheckerTest.dir/UnitTesting/RouteCheckerTest.cpp.o: CXX_COMPILER__RouteCheckerTest_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting/RouteCheckerTest.cpp || cmake_object_order_depends_target_RouteCheckerTest
   DEP_FILE = CMakeFiles/RouteCheckerTest.dir/UnitTesting/RouteCheckerTest.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/RouteCheckerTest.dir
   OBJECT_FILE_DIR = CMakeFiles/RouteCheckerTest.dir/UnitTesting
@@ -305,7 +305,7 @@ build CMakeFiles/RouteCheckerTest.dir/UnitTesting/RouteCheckerTest.cpp.o: CXX_CO
 # Link the executable RouteCheckerTest
 
 build RouteCheckerTest: CXX_EXECUTABLE_LINKER__RouteCheckerTest_Debug CMakeFiles/RouteCheckerTest.dir/UnitTesting/RouteCheckerTest.cpp.o | libCityMapLibrary.a || libCityMapLibrary.a
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  FLAGS = -g -O0 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LINK_LIBRARIES = libCityMapLibrary.a
   OBJECT_DIR = CMakeFiles/RouteCheckerTest.dir
   POST_BUILD = :
@@ -324,7 +324,7 @@ build cmake_object_order_depends_target_TerminalProgramTest: phony || cmake_obje
 
 build CMakeFiles/TerminalProgramTest.dir/UnitTesting/TerminalProgramTest.cpp.o: CXX_COMPILER__TerminalProgramTest_unscanned_Debug /Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting/TerminalProgramTest.cpp || cmake_object_order_depends_target_TerminalProgramTest
   DEP_FILE = CMakeFiles/TerminalProgramTest.dir/UnitTesting/TerminalProgramTest.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -O0 -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting
   OBJECT_DIR = CMakeFiles/TerminalProgramTest.dir
   OBJECT_FILE_DIR = CMakeFiles/TerminalProgramTest.dir/UnitTesting
@@ -338,7 +338,7 @@ build CMakeFiles/TerminalProgramTest.dir/UnitTesting/TerminalProgramTest.cpp.o: 
 # Link the executable TerminalProgramTest
 
 build TerminalProgramTest: CXX_EXECUTABLE_LINKER__TerminalProgramTest_Debug CMakeFiles/TerminalProgramTest.dir/UnitTesting/TerminalProgramTest.cpp.o | libCityMapLibrary.a || libCityMapLibrary.a
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  FLAGS = -g -O0 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LINK_LIBRARIES = libCityMapLibrary.a
   OBJECT_DIR = CMakeFiles/TerminalProgramTest.dir
   POST_BUILD = :

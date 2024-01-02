@@ -42,7 +42,7 @@ branch  4 taken 7
 branch  5 taken 1
     $$$$$:   13-block  3
     $$$$$:   13-block  4
-        1:   14:        const std::string filePath = "/Users/mihaildobroslavski/CLionProjects/CityMap/cmake-build-debug/test_input.txt";
+        1:   14:        const std::string filePath = "InLineDatabase/test_input.txt";
         1:   14-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -1424,7 +1424,7 @@ branch  4 taken 7
 branch  5 taken 1
     $$$$$:   82-block  3
     $$$$$:   82-block  4
-        1:   83:        graphContainer.addGraph("CityA");
+        1:   83:        graphContainer.addGraph("1");
         1:   83-block  0
 branch  0 taken 1
 branch  1 taken 0

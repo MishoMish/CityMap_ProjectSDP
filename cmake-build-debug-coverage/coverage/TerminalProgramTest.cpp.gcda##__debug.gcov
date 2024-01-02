@@ -218,7 +218,7 @@
         -:  213:
         -:  214:template <class _Tp>
 function _ZNSt3__119__debug_db_insert_cB6v15006INS_6vectorINS_4fposI11__mbstate_tEENS_9allocatorIS4_EEEEEEvPT_ called 0 returned 0% blocks executed 0%
-function _ZNSt3__119__debug_db_insert_cB6v15006INS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEvPT_ called 57 returned 100% blocks executed 100%
+function _ZNSt3__119__debug_db_insert_cB6v15006INS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEvPT_ called 114 returned 100% blocks executed 100%
 function _ZNSt3__119__debug_db_insert_cB6v15006INS_6vectorINS1_IN7doctest6StringENS_9allocatorIS3_EEEENS4_IS6_EEEEEEvPT_ called 1 returned 100% blocks executed 100%
 function _ZNSt3__119__debug_db_insert_cB6v15006INS_6vectorIPN7doctest9IReporterENS_9allocatorIS4_EEEEEEvPT_ called 1 returned 100% blocks executed 100%
 function _ZNSt3__119__debug_db_insert_cB6v15006INS_6vectorIN7doctest6StringENS_9allocatorIS3_EEEEEEvPT_ called 10 returned 100% blocks executed 100%
@@ -226,20 +226,20 @@ function _ZNSt3__119__debug_db_insert_cB6v15006INS_6vectorIN7doctest16SubcaseSig
 function _ZNSt3__119__debug_db_insert_cB6v15006INS_13unordered_setIyNS_4hashIyEENS_8equal_toIyEENS_9allocatorIyEEEEEEvPT_ called 1 returned 100% blocks executed 100%
 function _ZNSt3__119__debug_db_insert_cB6v15006INS_6vectorIPKN7doctest6detail8TestCaseENS_9allocatorIS6_EEEEEEvPT_ called 1 returned 100% blocks executed 100%
 function _ZNSt3__119__debug_db_insert_cB6v15006INS_6vectorIPKN7doctest12TestCaseDataENS_9allocatorIS5_EEEEEEvPT_ called 1 returned 100% blocks executed 100%
-function _ZNSt3__119__debug_db_insert_cB6v15006INS_13unordered_mapINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphNS_4hashIS7_EENS_8equal_toIS7_EENS5_INS_4pairIKS7_S9_EEEEEEEEvPT_ called 5 returned 100% blocks executed 100%
+function _ZNSt3__119__debug_db_insert_cB6v15006INS_13unordered_mapINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP5GraphNS_4hashIS7_EENS_8equal_toIS7_EENS5_INS_4pairIKS7_S9_EEEEEEEEvPT_ called 10 returned 100% blocks executed 100%
 function _ZNSt3__119__debug_db_insert_cB6v15006INS_6vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS5_IS7_EEEEEEvPT_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__119__debug_db_insert_cB6v15006INS_6vectorIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseENS_9allocatorIS6_EEEEEEvPT_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__119__debug_db_insert_cB6v15006INS_6vectorIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageENS_9allocatorIS6_EEEEEEvPT_ called 0 returned 0% blocks executed 0%
-       80:  215:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 inline void __debug_db_insert_c(_Tp* __c) {
+      142:  215:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 inline void __debug_db_insert_c(_Tp* __c) {
         -:  216:#ifdef _LIBCPP_ENABLE_DEBUG_MODE
         -:  217:    if (!__libcpp_is_constant_evaluated())
         -:  218:        __get_db()->__insert_c(__c);
         -:  219:#else
         -:  220:    (void)(__c);
         -:  221:#endif
-       80:  222:}
+      142:  222:}
     $$$$$:  222-block  0
-       57:  222-block  1
+      114:  222-block  1
         1:  222-block  2
         1:  222-block  3
        10:  222-block  4
@@ -247,7 +247,7 @@ function _ZNSt3__119__debug_db_insert_cB6v15006INS_6vectorIN7doctest12_GLOBAL__N
         1:  222-block  6
         1:  222-block  7
         1:  222-block  8
-        5:  222-block  9
+       10:  222-block  9
     $$$$$:  222-block 10
     $$$$$:  222-block 11
     $$$$$:  222-block 12
@@ -264,7 +264,7 @@ function _ZNSt3__119__debug_db_insert_cB6v15006INS_6vectorIN7doctest12_GLOBAL__N
         -:  233:
         -:  234:template <class _Tp>
 function _ZNSt3__118__debug_db_erase_cB6v15006INS_6vectorINS_4fposI11__mbstate_tEENS_9allocatorIS4_EEEEEEvPT_ called 0 returned 0% blocks executed 0%
-function _ZNSt3__118__debug_db_erase_cB6v15006INS_6vectorIPKN7doctest6detail20IExceptionTranslatorENS_9allocatorIS6_EEEEEEvPT_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__118__debug_db_erase_cB6v15006INS_6vectorIPKN7doctest6detail20IExceptionTranslatorENS_9allocatorIS6_EEEEEEvPT_ called 1 returned 100% blocks executed 100%
 function _ZNSt3__118__debug_db_erase_cB6v15006INS_6vectorIPN7doctest13IContextScopeENS_9allocatorIS4_EEEEEEvPT_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__118__debug_db_erase_cB6v15006INS_12__hash_tableIyNS_4hashIyEENS_8equal_toIyEENS_9allocatorIyEEEEEEvPT_ called 1 returned 100% blocks executed 100%
 function _ZNSt3__118__debug_db_erase_cB6v15006INS_6vectorIN7doctest16SubcaseSignatureENS_9allocatorIS3_EEEEEEvPT_ called 3 returned 100% blocks executed 100%
@@ -273,20 +273,20 @@ function _ZNSt3__118__debug_db_erase_cB6v15006INS_6vectorIPN7doctest9IReporterEN
 function _ZNSt3__118__debug_db_erase_cB6v15006INS_6vectorINS1_IN7doctest6StringENS_9allocatorIS3_EEEENS4_IS6_EEEEEEvPT_ called 1 returned 100% blocks executed 100%
 function _ZNSt3__118__debug_db_erase_cB6v15006INS_6vectorIPKN7doctest12TestCaseDataENS_9allocatorIS5_EEEEEEvPT_ called 1 returned 100% blocks executed 100%
 function _ZNSt3__118__debug_db_erase_cB6v15006INS_6vectorIPKN7doctest6detail8TestCaseENS_9allocatorIS6_EEEEEEvPT_ called 1 returned 100% blocks executed 100%
-function _ZNSt3__118__debug_db_erase_cB6v15006INS_12__hash_tableIP5GraphNS_4hashIS3_EENS_8equal_toIS3_EENS_9allocatorIS3_EEEEEEvPT_ called 9 returned 100% blocks executed 100%
+function _ZNSt3__118__debug_db_erase_cB6v15006INS_12__hash_tableIP5GraphNS_4hashIS3_EENS_8equal_toIS3_EENS_9allocatorIS3_EEEEEEvPT_ called 16 returned 100% blocks executed 100%
 function _ZNSt3__118__debug_db_erase_cB6v15006INS_6vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS5_IS7_EEEEEEvPT_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__118__debug_db_erase_cB6v15006INS_6vectorIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageENS_9allocatorIS6_EEEEEEvPT_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__118__debug_db_erase_cB6v15006INS_6vectorIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseENS_9allocatorIS6_EEEEEEvPT_ called 0 returned 0% blocks executed 0%
-       27:  235:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 inline void __debug_db_erase_c(_Tp* __c) {
+       35:  235:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 inline void __debug_db_erase_c(_Tp* __c) {
         -:  236:#ifdef _LIBCPP_ENABLE_DEBUG_MODE
         -:  237:    if (!__libcpp_is_constant_evaluated())
         -:  238:        __get_db()->__erase_c(__c);
         -:  239:#else
         -:  240:    (void)(__c);
         -:  241:#endif
-       27:  242:}
+       35:  242:}
     $$$$$:  242-block  0
-    $$$$$:  242-block  1
+        1:  242-block  1
     $$$$$:  242-block  2
         1:  242-block  3
         3:  242-block  4
@@ -295,15 +295,15 @@ function _ZNSt3__118__debug_db_erase_cB6v15006INS_6vectorIN7doctest12_GLOBAL__N_
         1:  242-block  7
         1:  242-block  8
         1:  242-block  9
-        9:  242-block 10
+       16:  242-block 10
     $$$$$:  242-block 11
     $$$$$:  242-block 12
     $$$$$:  242-block 13
         -:  243:
         -:  244:template <class _Tp>
-function _ZNSt3__115__debug_db_swapB6v15006INS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEvPT_S8_ called 3 returned 100% blocks executed 100%
+function _ZNSt3__115__debug_db_swapB6v15006INS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEvPT_S8_ called 2 returned 100% blocks executed 100%
 function _ZNSt3__115__debug_db_swapB6v15006INS_6vectorIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageENS_9allocatorIS6_EEEEEEvPT_SB_ called 0 returned 0% blocks executed 0%
-        3:  245:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 inline void __debug_db_swap(_Tp* __lhs, _Tp* __rhs) {
+        2:  245:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 inline void __debug_db_swap(_Tp* __lhs, _Tp* __rhs) {
         -:  246:#ifdef _LIBCPP_ENABLE_DEBUG_MODE
         -:  247:    if (!__libcpp_is_constant_evaluated())
         -:  248:        __get_db()->swap(__lhs, __rhs);
@@ -311,44 +311,44 @@ function _ZNSt3__115__debug_db_swapB6v15006INS_6vectorIN7doctest12_GLOBAL__N_113
         -:  250:    (void)(__lhs);
         -:  251:    (void)(__rhs);
         -:  252:#endif
-        3:  253:}
-        3:  253-block  0
+        2:  253:}
+        2:  253-block  0
     $$$$$:  253-block  1
         -:  254:
         -:  255:template <class _Tp>
 function _ZNSt3__125__debug_db_invalidate_allB6v15006INS_6vectorINS_4fposI11__mbstate_tEENS_9allocatorIS4_EEEEEEvPT_ called 0 returned 0% blocks executed 0%
-function _ZNSt3__125__debug_db_invalidate_allB6v15006INS_6vectorIN7doctest16SubcaseSignatureENS_9allocatorIS3_EEEEEEvPT_ called 22 returned 100% blocks executed 100%
+function _ZNSt3__125__debug_db_invalidate_allB6v15006INS_6vectorIN7doctest16SubcaseSignatureENS_9allocatorIS3_EEEEEEvPT_ called 45 returned 100% blocks executed 100%
 function _ZNSt3__125__debug_db_invalidate_allB6v15006INS_6vectorIPKN7doctest6detail20IExceptionTranslatorENS_9allocatorIS6_EEEEEEvPT_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__125__debug_db_invalidate_allB6v15006INS_6vectorIPN7doctest13IContextScopeENS_9allocatorIS4_EEEEEEvPT_ called 0 returned 0% blocks executed 0%
-function _ZNSt3__125__debug_db_invalidate_allB6v15006INS_6vectorIN7doctest6StringENS_9allocatorIS3_EEEEEEvPT_ called 6 returned 100% blocks executed 100%
+function _ZNSt3__125__debug_db_invalidate_allB6v15006INS_6vectorIN7doctest6StringENS_9allocatorIS3_EEEEEEvPT_ called 11 returned 100% blocks executed 100%
 function _ZNSt3__125__debug_db_invalidate_allB6v15006INS_6vectorIPN7doctest9IReporterENS_9allocatorIS4_EEEEEEvPT_ called 2 returned 100% blocks executed 100%
 function _ZNSt3__125__debug_db_invalidate_allB6v15006INS_6vectorIPKN7doctest6detail8TestCaseENS_9allocatorIS6_EEEEEEvPT_ called 1 returned 100% blocks executed 100%
 function _ZNSt3__125__debug_db_invalidate_allB6v15006INS_6vectorIPKN7doctest12TestCaseDataENS_9allocatorIS5_EEEEEEvPT_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__125__debug_db_invalidate_allB6v15006INS_12__hash_tableIP5GraphNS_4hashIS3_EENS_8equal_toIS3_EENS_9allocatorIS3_EEEEEEvPT_ called 4 returned 100% blocks executed 100%
-function _ZNSt3__125__debug_db_invalidate_allB6v15006INS_12__hash_tableIyNS_4hashIyEENS_8equal_toIyEENS_9allocatorIyEEEEEEvPT_ called 2 returned 100% blocks executed 100%
-function _ZNSt3__125__debug_db_invalidate_allB6v15006INS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEvPT_ called 4 returned 100% blocks executed 100%
+function _ZNSt3__125__debug_db_invalidate_allB6v15006INS_12__hash_tableIyNS_4hashIyEENS_8equal_toIyEENS_9allocatorIyEEEEEEvPT_ called 3 returned 100% blocks executed 100%
+function _ZNSt3__125__debug_db_invalidate_allB6v15006INS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEvPT_ called 100 returned 100% blocks executed 100%
 function _ZNSt3__125__debug_db_invalidate_allB6v15006INS_6vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS5_IS7_EEEEEEvPT_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__125__debug_db_invalidate_allB6v15006INS_6vectorIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseENS_9allocatorIS6_EEEEEEvPT_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__125__debug_db_invalidate_allB6v15006INS_6vectorIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageENS_9allocatorIS6_EEEEEEvPT_ called 0 returned 0% blocks executed 0%
-       41:  256:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 inline void __debug_db_invalidate_all(_Tp* __c) {
+      166:  256:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 inline void __debug_db_invalidate_all(_Tp* __c) {
         -:  257:#ifdef _LIBCPP_ENABLE_DEBUG_MODE
         -:  258:    if (!__libcpp_is_constant_evaluated())
         -:  259:        __get_db()->__invalidate_all(__c);
         -:  260:#else
         -:  261:    (void)(__c);
         -:  262:#endif
-       41:  263:}
+      166:  263:}
     $$$$$:  263-block  0
-       22:  263-block  1
+       45:  263-block  1
     $$$$$:  263-block  2
     $$$$$:  263-block  3
-        6:  263-block  4
+       11:  263-block  4
         2:  263-block  5
         1:  263-block  6
     $$$$$:  263-block  7
         4:  263-block  8
-        2:  263-block  9
-        4:  263-block 10
+        3:  263-block  9
+      100:  263-block 10
     $$$$$:  263-block 11
     $$$$$:  263-block 12
     $$$$$:  263-block 13

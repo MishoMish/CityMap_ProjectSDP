@@ -9,212 +9,249 @@
         -:    4:
         -:    5:#include "GraphContainer.h"
         -:    6:
-function _ZN14GraphContainerD2Ev called 22 returned 100% blocks executed 90%
-function _ZN14GraphContainerD1Ev called 22 returned 100% blocks executed 100%
-       44:    7:GraphContainer::~GraphContainer() {
-       77:    8:    for (auto it = graphs.begin(); it != graphs.end(); it++) {
-       22:    8-block  0
-       77:    8-block  1
-branch  0 taken 77
+        -:    7:// Destructor to free allocated memory for graphs
+function _ZN14GraphContainerD2Ev called 27 returned 100% blocks executed 90%
+function _ZN14GraphContainerD1Ev called 27 returned 100% blocks executed 100%
+       54:    8:GraphContainer::~GraphContainer() {
+       92:    9:    for (auto it = graphs.begin(); it != graphs.end(); it++) {
+       27:    9-block  0
+       92:    9-block  1
+branch  0 taken 92
 branch  1 taken 0
-       77:    8-block  2
-branch  2 taken 55
-branch  3 taken 22
-       55:    8-block  3
-branch  4 taken 55
+       92:    9-block  2
+branch  2 taken 65
+branch  3 taken 27
+       65:    9-block  3
+branch  4 taken 65
 branch  5 taken 0
-       55:    8-block  4
-    $$$$$:    8-block  5
-       55:    9:        delete it->second;
-       55:    9-block  0
-branch  0 taken 55
+       65:    9-block  4
+    $$$$$:    9-block  5
+       65:   10:        delete it->second;
+       65:   10-block  0
+branch  0 taken 65
 branch  1 taken 0
-       55:    9-block  1
+       65:   10-block  1
 branch  2 taken 0
-branch  3 taken 55
-       55:    9-block  2
-       55:   10:    }
-       55:   10-block  0
-       44:   11:}
-       22:   11-block  0
-       22:   11-block  1
-        -:   12:
-function _ZN14GraphContainer9parseFileERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE called 2 returned 100% blocks executed 81%
-        2:   13:void GraphContainer::parseFile(const std::string &filePath) {
-        2:   14:    std::ifstream inputFile(filePath);
-        -:   15:
-        2:   16:    if (!inputFile.is_open()) {
-        2:   16-block  0
+branch  3 taken 65
+       65:   10-block  2
+       65:   11:    }
+       65:   11-block  0
+       54:   12:}
+       27:   12-block  0
+       27:   12-block  1
+        -:   13:
+        -:   14:// Method to parse a file containing graph information
+function _ZN14GraphContainer9parseFileERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE called 2 returned 100% blocks executed 79%
+        2:   15:void GraphContainer::parseFile(const std::string &filePath) {
+        2:   16:    std::ifstream inputFile(filePath);
+        -:   17:
+        2:   18:    if (!inputFile.is_open()) {
+        2:   18-block  0
 branch  0 taken 2
 branch  1 taken 0
-        2:   16-block  1
+        2:   18-block  1
 branch  2 taken 1
 branch  3 taken 1
-        1:   17:        throw std::runtime_error("Error opening file: " + filePath);
-        1:   17-block  0
+        1:   19:        throw std::runtime_error("Error opening file: " + filePath);
+        1:   19-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   17-block  1
+        1:   19-block  1
 branch  2 taken 1
 branch  3 taken 0
-        1:   17-block  2
+        1:   19-block  2
 branch  4 taken 0
 branch  5 taken 1
-        1:   17-block  3
-        1:   17-block  4
+        1:   19-block  3
+        1:   19-block  4
 branch  6 taken 1
 branch  7 taken 0
-    $$$$$:   17-block  5
-        1:   17-block  6
-        -:   18:    }
-        -:   19:
-        1:   20:    std::string line;
-        3:   21:    while (std::getline(inputFile, line)) {
-        1:   21-block  0
-        3:   21-block  1
+    $$$$$:   19-block  5
+        1:   19-block  6
+        -:   20:    }
+        -:   21:
+        1:   22:    std::string line;
+        3:   23:    while (std::getline(inputFile, line)) {
+        1:   23-block  0
+        3:   23-block  1
 branch  0 taken 3
 branch  1 taken 0
-        3:   21-block  2
+        3:   23-block  2
 branch  2 taken 3
 branch  3 taken 0
-        3:   21-block  3
+        3:   23-block  3
 branch  4 taken 2
 branch  5 taken 1
-        2:   21-block  4
-        2:   22:        std::stringstream ss(line);
-        2:   22-block  0
+        2:   23-block  4
+        2:   24:        while (line[0] == ' ')
+        2:   24-block  0
+        2:   24-block  1
+branch  0 taken 0
+branch  1 taken 2
+    $$$$$:   24-block  2
+    #####:   25:            line = line.substr(1);
+    $$$$$:   25-block  0
+branch  0 never executed
+branch  1 never executed
+        -:   26:
+        2:   27:        if (line.empty() || line.substr(0, 2) == "//")
+        2:   27-block  0
 branch  0 taken 2
 branch  1 taken 0
-        2:   23:        std::vector<std::string> elements;
-        -:   24:
-        2:   25:        std::string element;
-        6:   26:        while (ss >> element) {
-        2:   26-block  0
-        6:   26-block  1
-branch  0 taken 6
-branch  1 taken 0
-        6:   26-block  2
-branch  2 taken 6
+        2:   27-block  1
+branch  2 taken 2
 branch  3 taken 0
-        6:   26-block  3
-branch  4 taken 4
+        2:   27-block  2
+        2:   27-block  3
+branch  4 taken 0
 branch  5 taken 2
-        4:   26-block  4
-        4:   27:            elements.push_back(element);
-        4:   27-block  0
-branch  0 taken 4
-branch  1 taken 0
-        -:   28:        }
+        2:   27-block  4
+        2:   27-block  5
+branch  6 taken 2
+branch  7 taken 0
+    #####:   28:            continue;
+    $$$$$:   28-block  0
         -:   29:
-        2:   30:        addGraph(elements[0]);
+        2:   30:        std::stringstream ss(line);
         2:   30-block  0
 branch  0 taken 2
 branch  1 taken 0
-        3:   31:        for (std::size_t i = 1; i < elements.size(); i += 2) {
-        2:   31-block  0
-        3:   31-block  1
+        2:   31:        std::vector<std::string> elements;
+        -:   32:
+        2:   33:        std::string element;
+        6:   34:        while (ss >> element) {
+        2:   34-block  0
+        6:   34-block  1
+branch  0 taken 6
+branch  1 taken 0
+        6:   34-block  2
+branch  2 taken 6
+branch  3 taken 0
+        6:   34-block  3
+branch  4 taken 4
+branch  5 taken 2
+        4:   34-block  4
+        4:   35:            elements.push_back(element);
+        4:   35-block  0
+branch  0 taken 4
+branch  1 taken 0
+        -:   36:        }
+        -:   37:
+        2:   38:        addGraph(elements[0]);
+        2:   38-block  0
+branch  0 taken 2
+branch  1 taken 0
+        3:   39:        for (std::size_t i = 1; i < elements.size(); i += 2) {
+        2:   39-block  0
+        3:   39-block  1
 branch  0 taken 2
 branch  1 taken 1
-        1:   31-block  2
-        1:   32:            addRoad(elements[0], elements[i], std::stod(elements[i + 1]));
-        1:   32-block  0
+        1:   39-block  2
+        1:   40:            addRoad(elements[0], elements[i], std::stod(elements[i + 1]));
+        1:   40-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   32-block  1
+        1:   40-block  1
 branch  2 taken 1
 branch  3 taken 0
-        1:   33:        }
-        1:   33-block  0
-        2:   34:    }
-    $$$$$:   34-block  0
-        -:   35:
-        1:   36:    inputFile.close();
-        1:   36-block  0
+        1:   41:        }
+        1:   41-block  0
+        2:   42:    }
+    $$$$$:   42-block  0
+        -:   43:
+        1:   44:    inputFile.close();
+        1:   44-block  0
 branch  0 taken 1
 branch  1 taken 0
-        3:   37:}
-    $$$$$:   37-block  0
-    $$$$$:   37-block  1
-    $$$$$:   37-block  2
-        1:   37-block  3
-    $$$$$:   37-block  4
-        1:   37-block  5
-        1:   37-block  6
-        -:   38:
-function _ZN14GraphContainer11containsKeyERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE called 155 returned 100% blocks executed 100%
-      155:   39:bool GraphContainer::containsKey(const std::string &graphName) {
-      155:   40:    return graphs.find(graphName) != graphs.end();
-      155:   40-block  0
-        -:   41:}
-        -:   42:
-function _ZN14GraphContainer8addGraphERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE called 145 returned 100% blocks executed 45%
-      145:   43:void GraphContainer::addGraph(const std::string &graphName) {
-      145:   44:    if (!containsKey(graphName)) {
-      145:   44-block  0
-branch  0 taken 90
-branch  1 taken 55
-       55:   45:        auto *temp = new Graph(graphName);
-       55:   45-block  0
-branch  0 taken 55
-branch  1 taken 0
-       55:   45-block  1
-branch  2 taken 0
-branch  3 taken 55
+        3:   45:}
+    $$$$$:   45-block  0
+    $$$$$:   45-block  1
     $$$$$:   45-block  2
-    $$$$$:   45-block  3
+        1:   45-block  3
+    $$$$$:   45-block  4
+        1:   45-block  5
+        1:   45-block  6
+        -:   46:
+        -:   47:// Check if the graph container contains a graph with the given name
+function _ZN14GraphContainer11containsKeyERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE called 169 returned 100% blocks executed 100%
+      169:   48:bool GraphContainer::containsKey(const std::string &graphName) {
+      169:   49:    return graphs.find(graphName) != graphs.end();
+      169:   49-block  0
+        -:   50:}
+        -:   51:
+        -:   52:// Add a graph to the container
+function _ZN14GraphContainer8addGraphERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE called 155 returned 100% blocks executed 45%
+      155:   53:void GraphContainer::addGraph(const std::string &graphName) {
+      155:   54:    if (!containsKey(graphName)) {
+      155:   54-block  0
+branch  0 taken 90
+branch  1 taken 65
+       65:   55:        auto *temp = new Graph(graphName);
+       65:   55-block  0
+branch  0 taken 65
+branch  1 taken 0
+       65:   55-block  1
+branch  2 taken 0
+branch  3 taken 65
+    $$$$$:   55-block  2
+    $$$$$:   55-block  3
 branch  4 never executed
 branch  5 never executed
-    $$$$$:   45-block  4
-    $$$$$:   45-block  5
-    $$$$$:   45-block  6
-       55:   46:        graphs[graphName] = temp;
-       55:   47:    }
-       55:   47-block  0
-      145:   48:}
-    $$$$$:   48-block  0
-      145:   48-block  1
-        -:   49:
+    $$$$$:   55-block  4
+    $$$$$:   55-block  5
+    $$$$$:   55-block  6
+       65:   56:        graphs[graphName] = temp;
+       65:   57:    }
+       65:   57-block  0
+      155:   58:}
+    $$$$$:   58-block  0
+      155:   58-block  1
+        -:   59:
+        -:   60:// Add a road (edge) between two graphs with the given distance
 function _ZN14GraphContainer7addRoadERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEES8_d called 46 returned 100% blocks executed 100%
-       46:   50:void GraphContainer::addRoad(const std::string &graph1, const std::string &graph2, double distance) {
-       46:   51:    addGraph(graph1);
-       46:   52:    addGraph(graph2);
-        -:   53:
-       46:   54:    graphs[graph1]->addEdge(graphs[graph2], distance);
-       46:   55:}
-       46:   55-block  0
-        -:   56:
+       46:   61:void GraphContainer::addRoad(const std::string &graph1, const std::string &graph2, double distance) {
+       46:   62:    addGraph(graph1);
+       46:   63:    addGraph(graph2);
+        -:   64:
+       46:   65:    graphs[graph1]->addEdge(graphs[graph2], distance);
+       46:   66:}
+       46:   66-block  0
+        -:   67:
+        -:   68:// Print method to display information about all graphs in the container
 function _ZN14GraphContainer5printEv called 1 returned 100% blocks executed 100%
-        1:   57:void GraphContainer::print() {
-        1:   58:    std::cout << "--- --- --- --- ---\n";
-        2:   59:    for (const auto &it: graphs) {
-        1:   59-block  0
-        2:   59-block  1
+        1:   69:void GraphContainer::print() {
+        1:   70:    std::cout << "--- --- --- --- ---\n";
+        2:   71:    for (const auto &it: graphs) {
+        1:   71-block  0
+        2:   71-block  1
 branch  0 taken 1
 branch  1 taken 1
-        1:   59-block  2
-        1:   59-block  3
-        1:   59-block  4
-        1:   60:        std::cout << it.first << " " << it.second << " : " << std::endl;
-        1:   61:        it.second->print();
-        1:   62:        std::cout << " --- \n";
-        -:   63:    }
-        1:   64:}
-        1:   64-block  0
-        -:   65:
-function _ZNK14GraphContainer8getGraphERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE called 58 returned 100% blocks executed 100%
-       58:   66:Graph *GraphContainer::getGraph(const std::string &name) const {
-       58:   67:    auto it = graphs.find(name);
-       58:   68:    return it != graphs.end() ? it->second : nullptr;
-       58:   68-block  0
-branch  0 taken 57
-branch  1 taken 1
-       57:   68-block  1
-        1:   68-block  2
-       58:   68-block  3
-        -:   69:}
-        -:   70:
+        1:   71-block  2
+        1:   71-block  3
+        1:   71-block  4
+        1:   72:        std::cout << it.first << " " << it.second << " : " << std::endl;
+        1:   73:        it.second->print();
+        1:   74:        std::cout << " --- \n";
+        -:   75:    }
+        1:   76:}
+        1:   76-block  0
+        -:   77:
+        -:   78:// Get a graph from the container by name
+function _ZNK14GraphContainer8getGraphERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE called 69 returned 100% blocks executed 100%
+       69:   79:Graph *GraphContainer::getGraph(const std::string &name) const {
+       69:   80:    auto it = graphs.find(name);
+       69:   81:    return it != graphs.end() ? it->second : nullptr;
+       69:   81-block  0
+branch  0 taken 67
+branch  1 taken 2
+       67:   81-block  1
+        2:   81-block  2
+       69:   81-block  3
+        -:   82:}
+        -:   83:
+        -:   84:// Getter method to retrieve all graphs in the container
 function _ZNK14GraphContainer9getGraphsEv called 31 returned 100% blocks executed 100%
-       31:   71:const std::unordered_map<std::string, Graph *> &GraphContainer::getGraphs() const {
-       31:   72:    return graphs;
-       31:   72-block  0
-        -:   73:}
+       31:   85:const std::unordered_map<std::string, Graph *> &GraphContainer::getGraphs() const {
+       31:   86:    return graphs;
+       31:   86-block  0
+        -:   87:}

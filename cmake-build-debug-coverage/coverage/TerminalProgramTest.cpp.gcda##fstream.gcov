@@ -519,11 +519,11 @@
         -:  514:template <class _CharT, class _Traits>
         -:  515:inline
         -:  516:bool
-function _ZNKSt3__113basic_filebufIcNS_11char_traitsIcEEE7is_openEv called 1 returned 100% blocks executed 100%
-        1:  517:basic_filebuf<_CharT, _Traits>::is_open() const
+function _ZNKSt3__113basic_filebufIcNS_11char_traitsIcEEE7is_openEv called 6 returned 100% blocks executed 100%
+        6:  517:basic_filebuf<_CharT, _Traits>::is_open() const
         -:  518:{
-        1:  519:    return __file_ != nullptr;
-        1:  519-block  0
+        6:  519:    return __file_ != nullptr;
+        6:  519-block  0
         -:  520:}
         -:  521:
         -:  522:template <class _CharT, class _Traits>

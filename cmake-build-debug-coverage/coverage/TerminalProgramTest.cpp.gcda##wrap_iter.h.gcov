@@ -51,22 +51,22 @@
         -:   46:        _VSTD::__debug_db_insert_i(this);
         -:   47:    }
         -:   48:    template <class _Up> _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11
-function _ZNSt3__111__wrap_iterIPKN7doctest16SubcaseSignatureEEC1B6v15006IPS2_EERKNS0_IT_EEPNS_9enable_ifIXsr14is_convertibleIS8_S4_EE5valueEvE4typeE called 4 returned 100% blocks executed 100%
+function _ZNSt3__111__wrap_iterIPKN7doctest16SubcaseSignatureEEC1B6v15006IPS2_EERKNS0_IT_EEPNS_9enable_ifIXsr14is_convertibleIS8_S4_EE5valueEvE4typeE called 9 returned 100% blocks executed 100%
 function _ZNSt3__111__wrap_iterIPKPN7doctest9IReporterEEC1B6v15006IPS3_EERKNS0_IT_EEPNS_9enable_ifIXsr14is_convertibleIS9_S5_EE5valueEvE4typeE called 0 returned 0% blocks executed 0%
-function _ZNSt3__111__wrap_iterIPKN7doctest16SubcaseSignatureEEC2B6v15006IPS2_EERKNS0_IT_EEPNS_9enable_ifIXsr14is_convertibleIS8_S4_EE5valueEvE4typeE called 4 returned 100% blocks executed 100%
+function _ZNSt3__111__wrap_iterIPKN7doctest16SubcaseSignatureEEC2B6v15006IPS2_EERKNS0_IT_EEPNS_9enable_ifIXsr14is_convertibleIS8_S4_EE5valueEvE4typeE called 9 returned 100% blocks executed 100%
 function _ZNSt3__111__wrap_iterIPKPN7doctest9IReporterEEC2B6v15006IPS3_EERKNS0_IT_EEPNS_9enable_ifIXsr14is_convertibleIS9_S5_EE5valueEvE4typeE called 0 returned 0% blocks executed 0%
-        8:   49:        __wrap_iter(const __wrap_iter<_Up>& __u,
+       18:   49:        __wrap_iter(const __wrap_iter<_Up>& __u,
         -:   50:            typename enable_if<is_convertible<_Up, iterator_type>::value>::type* = nullptr) _NOEXCEPT
-        4:   51:            : __i(__u.base())
-        4:   52:    {
+        9:   51:            : __i(__u.base())
+        9:   52:    {
         -:   53:#ifdef _LIBCPP_ENABLE_DEBUG_MODE
         -:   54:      if (!__libcpp_is_constant_evaluated())
         -:   55:        __get_db()->__iterator_copy(this, _VSTD::addressof(__u));
         -:   56:#endif
-        8:   57:    }
-        4:   57-block  0
+       18:   57:    }
+        9:   57-block  0
     $$$$$:   57-block  1
-        4:   57-block  2
+        9:   57-block  2
     $$$$$:   57-block  3
         -:   58:#ifdef _LIBCPP_ENABLE_DEBUG_MODE
         -:   59:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11
@@ -94,27 +94,27 @@ function _ZNSt3__111__wrap_iterIPKPN7doctest9IReporterEEC2B6v15006IPS3_EERKNS0_I
         -:   81:        __get_db()->__erase_i(this);
         -:   82:    }
         -:   83:#endif
-function _ZNKSt3__111__wrap_iterIPPN7doctest9IReporterEEdeB6v15006Ev called 28 returned 100% blocks executed 100%
+function _ZNKSt3__111__wrap_iterIPPN7doctest9IReporterEEdeB6v15006Ev called 63 returned 100% blocks executed 100%
 function _ZNKSt3__111__wrap_iterIPNS_6vectorIN7doctest6StringENS_9allocatorIS3_EEEEEdeB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__111__wrap_iterIPPKN7doctest6detail8TestCaseEEdeB6v15006Ev called 1 returned 100% blocks executed 100%
 function _ZNKSt3__111__wrap_iterIPKN7doctest6StringEEdeB6v15006Ev called 3 returned 100% blocks executed 100%
-function _ZNKSt3__111__wrap_iterIPKN7doctest16SubcaseSignatureEEdeB6v15006Ev called 5 returned 100% blocks executed 100%
-function _ZNKSt3__111__wrap_iterIPN7doctest16SubcaseSignatureEEdeB6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNKSt3__111__wrap_iterIPKN7doctest16SubcaseSignatureEEdeB6v15006Ev called 25 returned 100% blocks executed 100%
+function _ZNKSt3__111__wrap_iterIPN7doctest16SubcaseSignatureEEdeB6v15006Ev called 3 returned 100% blocks executed 100%
 function _ZNKSt3__111__wrap_iterIPPKN7doctest6detail20IExceptionTranslatorEEdeB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__111__wrap_iterIPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseEEdeB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__111__wrap_iterIPKN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEdeB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__111__wrap_iterIPN7doctest6StringEEdeB6v15006Ev called 0 returned 0% blocks executed 0%
-       37:   84:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 reference operator*() const _NOEXCEPT
+       95:   84:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 reference operator*() const _NOEXCEPT
         -:   85:    {
         -:   86:        _LIBCPP_DEBUG_ASSERT(__get_const_db()->__dereferenceable(this),
         -:   87:                             "Attempted to dereference a non-dereferenceable iterator");
-       37:   88:        return *__i;
-       28:   88-block  0
+       95:   88:        return *__i;
+       63:   88-block  0
     $$$$$:   88-block  1
         1:   88-block  2
         3:   88-block  3
-        5:   88-block  4
-    $$$$$:   88-block  5
+       25:   88-block  4
+        3:   88-block  5
     $$$$$:   88-block  6
     $$$$$:   88-block  7
     $$$$$:   88-block  8
@@ -126,37 +126,37 @@ function _ZNKSt3__111__wrap_iterIPN7doctest6StringEEdeB6v15006Ev called 0 return
         -:   93:                             "Attempted to dereference a non-dereferenceable iterator");
         -:   94:        return _VSTD::__to_address(__i);
         -:   95:    }
-function _ZNSt3__111__wrap_iterIPPN7doctest9IReporterEEppB6v15006Ev called 28 returned 100% blocks executed 100%
+function _ZNSt3__111__wrap_iterIPPN7doctest9IReporterEEppB6v15006Ev called 63 returned 100% blocks executed 100%
 function _ZNSt3__111__wrap_iterIPNS_6vectorIN7doctest6StringENS_9allocatorIS3_EEEEEppB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__111__wrap_iterIPPKN7doctest6detail8TestCaseEEppB6v15006Ev called 1 returned 100% blocks executed 100%
 function _ZNSt3__111__wrap_iterIPKN7doctest6StringEEppB6v15006Ev called 2 returned 100% blocks executed 100%
-function _ZNSt3__111__wrap_iterIPKN7doctest16SubcaseSignatureEEppB6v15006Ev called 5 returned 100% blocks executed 100%
-function _ZNSt3__111__wrap_iterIPN7doctest16SubcaseSignatureEEppB6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNSt3__111__wrap_iterIPKN7doctest16SubcaseSignatureEEppB6v15006Ev called 25 returned 100% blocks executed 100%
+function _ZNSt3__111__wrap_iterIPN7doctest16SubcaseSignatureEEppB6v15006Ev called 3 returned 100% blocks executed 100%
 function _ZNSt3__111__wrap_iterIPPKN7doctest6detail20IExceptionTranslatorEEppB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__111__wrap_iterIPKN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEppB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__111__wrap_iterIPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseEEppB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__111__wrap_iterIPN7doctest6StringEEppB6v15006Ev called 0 returned 0% blocks executed 0%
-       36:   96:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 __wrap_iter& operator++() _NOEXCEPT
+       94:   96:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 __wrap_iter& operator++() _NOEXCEPT
         -:   97:    {
         -:   98:        _LIBCPP_DEBUG_ASSERT(__get_const_db()->__dereferenceable(this),
         -:   99:                             "Attempted to increment a non-incrementable iterator");
-       36:  100:        ++__i;
-       36:  101:        return *this;
-       28:  101-block  0
+       94:  100:        ++__i;
+       94:  101:        return *this;
+       63:  101-block  0
     $$$$$:  101-block  1
         1:  101-block  2
         2:  101-block  3
-        5:  101-block  4
-    $$$$$:  101-block  5
+       25:  101-block  4
+        3:  101-block  5
     $$$$$:  101-block  6
     $$$$$:  101-block  7
     $$$$$:  101-block  8
     $$$$$:  101-block  9
         -:  102:    }
-function _ZNSt3__111__wrap_iterIPKN7doctest16SubcaseSignatureEEppB6v15006Ei called 0 returned 0% blocks executed 0%
-    #####:  103:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 __wrap_iter  operator++(int) _NOEXCEPT
-    #####:  104:        {__wrap_iter __tmp(*this); ++(*this); return __tmp;}
-    $$$$$:  104-block  0
+function _ZNSt3__111__wrap_iterIPKN7doctest16SubcaseSignatureEEppB6v15006Ei called 3 returned 100% blocks executed 100%
+        3:  103:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 __wrap_iter  operator++(int) _NOEXCEPT
+        3:  104:        {__wrap_iter __tmp(*this); ++(*this); return __tmp;}
+        3:  104-block  0
         -:  105:
         -:  106:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 __wrap_iter& operator--() _NOEXCEPT
         -:  107:    {
@@ -167,22 +167,22 @@ function _ZNSt3__111__wrap_iterIPKN7doctest16SubcaseSignatureEEppB6v15006Ei call
         -:  112:    }
         -:  113:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 __wrap_iter  operator--(int) _NOEXCEPT
         -:  114:        {__wrap_iter __tmp(*this); --(*this); return __tmp;}
-function _ZNKSt3__111__wrap_iterIPN7doctest16SubcaseSignatureEEplB6v15006El called 4 returned 100% blocks executed 100%
-function _ZNKSt3__111__wrap_iterIPKN7doctest16SubcaseSignatureEEplB6v15006El called 4 returned 100% blocks executed 100%
-        8:  115:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 __wrap_iter  operator+ (difference_type __n) const _NOEXCEPT
-        8:  116:        {__wrap_iter __w(*this); __w += __n; return __w;}
-        4:  116-block  0
-        4:  116-block  1
-function _ZNSt3__111__wrap_iterIPKN7doctest16SubcaseSignatureEEpLB6v15006El called 4 returned 100% blocks executed 100%
-function _ZNSt3__111__wrap_iterIPN7doctest16SubcaseSignatureEEpLB6v15006El called 4 returned 100% blocks executed 100%
-        8:  117:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 __wrap_iter& operator+=(difference_type __n) _NOEXCEPT
+function _ZNKSt3__111__wrap_iterIPN7doctest16SubcaseSignatureEEplB6v15006El called 9 returned 100% blocks executed 100%
+function _ZNKSt3__111__wrap_iterIPKN7doctest16SubcaseSignatureEEplB6v15006El called 9 returned 100% blocks executed 100%
+       18:  115:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 __wrap_iter  operator+ (difference_type __n) const _NOEXCEPT
+       18:  116:        {__wrap_iter __w(*this); __w += __n; return __w;}
+        9:  116-block  0
+        9:  116-block  1
+function _ZNSt3__111__wrap_iterIPKN7doctest16SubcaseSignatureEEpLB6v15006El called 9 returned 100% blocks executed 100%
+function _ZNSt3__111__wrap_iterIPN7doctest16SubcaseSignatureEEpLB6v15006El called 12 returned 100% blocks executed 100%
+       21:  117:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 __wrap_iter& operator+=(difference_type __n) _NOEXCEPT
         -:  118:    {
         -:  119:        _LIBCPP_DEBUG_ASSERT(__get_const_db()->__addable(this, __n),
         -:  120:                             "Attempted to add/subtract an iterator outside its valid range");
-        8:  121:        __i += __n;
-        8:  122:        return *this;
-        4:  122-block  0
-        4:  122-block  1
+       21:  121:        __i += __n;
+       21:  122:        return *this;
+        9:  122-block  0
+       12:  122-block  1
         -:  123:    }
         -:  124:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 __wrap_iter  operator- (difference_type __n) const _NOEXCEPT
         -:  125:        {return *this + (-__n);}
@@ -195,23 +195,23 @@ function _ZNSt3__111__wrap_iterIPN7doctest16SubcaseSignatureEEpLB6v15006El calle
         -:  132:        return __i[__n];
         -:  133:    }
         -:  134:
-function _ZNKSt3__111__wrap_iterIPKN7doctest6StringEE4baseB6v15006Ev called 34 returned 100% blocks executed 100%
-function _ZNKSt3__111__wrap_iterIPPN7doctest9IReporterEE4baseB6v15006Ev called 112 returned 100% blocks executed 100%
-function _ZNKSt3__111__wrap_iterIPKN7doctest16SubcaseSignatureEE4baseB6v15006Ev called 32 returned 100% blocks executed 100%
-function _ZNKSt3__111__wrap_iterIPN7doctest16SubcaseSignatureEE4baseB6v15006Ev called 16 returned 100% blocks executed 100%
-function _ZNKSt3__111__wrap_iterIPPKN7doctest6detail20IExceptionTranslatorEE4baseB6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNKSt3__111__wrap_iterIPKN7doctest6StringEE4baseB6v15006Ev called 66 returned 100% blocks executed 100%
+function _ZNKSt3__111__wrap_iterIPPN7doctest9IReporterEE4baseB6v15006Ev called 252 returned 100% blocks executed 100%
+function _ZNKSt3__111__wrap_iterIPKN7doctest16SubcaseSignatureEE4baseB6v15006Ev called 103 returned 100% blocks executed 100%
+function _ZNKSt3__111__wrap_iterIPN7doctest16SubcaseSignatureEE4baseB6v15006Ev called 48 returned 100% blocks executed 100%
+function _ZNKSt3__111__wrap_iterIPPKN7doctest6detail20IExceptionTranslatorEE4baseB6v15006Ev called 2 returned 100% blocks executed 100%
 function _ZNKSt3__111__wrap_iterIPNS_6vectorIN7doctest6StringENS_9allocatorIS3_EEEEE4baseB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__111__wrap_iterIPKPN7doctest9IReporterEE4baseB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__111__wrap_iterIPPKN7doctest6detail8TestCaseEE4baseB6v15006Ev called 6 returned 100% blocks executed 100%
 function _ZNKSt3__111__wrap_iterIPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseEE4baseB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__111__wrap_iterIPKN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEE4baseB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__111__wrap_iterIPN7doctest6StringEE4baseB6v15006Ev called 0 returned 0% blocks executed 0%
-      200:  135:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 iterator_type base() const _NOEXCEPT {return __i;}
-       34:  135-block  0
-      112:  135-block  1
-       32:  135-block  2
-       16:  135-block  3
-    $$$$$:  135-block  4
+      477:  135:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 iterator_type base() const _NOEXCEPT {return __i;}
+       66:  135-block  0
+      252:  135-block  1
+      103:  135-block  2
+       48:  135-block  3
+        2:  135-block  4
     $$$$$:  135-block  5
     $$$$$:  135-block  6
         6:  135-block  7
@@ -221,16 +221,16 @@ function _ZNKSt3__111__wrap_iterIPN7doctest6StringEE4baseB6v15006Ev called 0 ret
         -:  136:
         -:  137:private:
         -:  138:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11
-function _ZNSt3__111__wrap_iterIPKN7doctest6StringEEC1B6v15006EPKvS4_ called 30 returned 100% blocks executed 100%
-function _ZNSt3__111__wrap_iterIPKN7doctest6StringEEC2B6v15006EPKvS4_ called 30 returned 100% blocks executed 100%
-function _ZNSt3__111__wrap_iterIPPN7doctest9IReporterEEC1B6v15006EPKvS4_ called 56 returned 100% blocks executed 100%
-function _ZNSt3__111__wrap_iterIPPN7doctest9IReporterEEC2B6v15006EPKvS4_ called 56 returned 100% blocks executed 100%
-function _ZNSt3__111__wrap_iterIPKN7doctest16SubcaseSignatureEEC1B6v15006EPKvS4_ called 18 returned 100% blocks executed 100%
-function _ZNSt3__111__wrap_iterIPKN7doctest16SubcaseSignatureEEC2B6v15006EPKvS4_ called 18 returned 100% blocks executed 100%
-function _ZNSt3__111__wrap_iterIPN7doctest16SubcaseSignatureEEC1B6v15006EPKvS3_ called 20 returned 100% blocks executed 100%
-function _ZNSt3__111__wrap_iterIPN7doctest16SubcaseSignatureEEC2B6v15006EPKvS3_ called 20 returned 100% blocks executed 100%
-function _ZNSt3__111__wrap_iterIPPKN7doctest6detail20IExceptionTranslatorEEC1B6v15006EPKvS6_ called 0 returned 0% blocks executed 0%
-function _ZNSt3__111__wrap_iterIPPKN7doctest6detail20IExceptionTranslatorEEC2B6v15006EPKvS6_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__111__wrap_iterIPKN7doctest6StringEEC1B6v15006EPKvS4_ called 62 returned 100% blocks executed 100%
+function _ZNSt3__111__wrap_iterIPKN7doctest6StringEEC2B6v15006EPKvS4_ called 62 returned 100% blocks executed 100%
+function _ZNSt3__111__wrap_iterIPPN7doctest9IReporterEEC1B6v15006EPKvS4_ called 126 returned 100% blocks executed 100%
+function _ZNSt3__111__wrap_iterIPPN7doctest9IReporterEEC2B6v15006EPKvS4_ called 126 returned 100% blocks executed 100%
+function _ZNSt3__111__wrap_iterIPKN7doctest16SubcaseSignatureEEC1B6v15006EPKvS4_ called 44 returned 100% blocks executed 100%
+function _ZNSt3__111__wrap_iterIPKN7doctest16SubcaseSignatureEEC2B6v15006EPKvS4_ called 44 returned 100% blocks executed 100%
+function _ZNSt3__111__wrap_iterIPN7doctest16SubcaseSignatureEEC1B6v15006EPKvS3_ called 45 returned 100% blocks executed 100%
+function _ZNSt3__111__wrap_iterIPN7doctest16SubcaseSignatureEEC2B6v15006EPKvS3_ called 45 returned 100% blocks executed 100%
+function _ZNSt3__111__wrap_iterIPPKN7doctest6detail20IExceptionTranslatorEEC1B6v15006EPKvS6_ called 2 returned 100% blocks executed 100%
+function _ZNSt3__111__wrap_iterIPPKN7doctest6detail20IExceptionTranslatorEEC2B6v15006EPKvS6_ called 2 returned 100% blocks executed 100%
 function _ZNSt3__111__wrap_iterIPNS_6vectorIN7doctest6StringENS_9allocatorIS3_EEEEEC1B6v15006EPKvS7_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__111__wrap_iterIPNS_6vectorIN7doctest6StringENS_9allocatorIS3_EEEEEC2B6v15006EPKvS7_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__111__wrap_iterIPPKN7doctest6detail8TestCaseEEC1B6v15006EPKvS6_ called 4 returned 100% blocks executed 100%
@@ -241,24 +241,24 @@ function _ZNSt3__111__wrap_iterIPKN7doctest12_GLOBAL__N_113JUnitReporter17JUnitT
 function _ZNSt3__111__wrap_iterIPKN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEC2B6v15006EPKvS7_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__111__wrap_iterIPN7doctest6StringEEC1B6v15006EPKvS3_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__111__wrap_iterIPN7doctest6StringEEC2B6v15006EPKvS3_ called 0 returned 0% blocks executed 0%
-      256:  139:    explicit __wrap_iter(const void* __p, iterator_type __x) _NOEXCEPT : __i(__x)
-      128:  140:    {
+      566:  139:    explicit __wrap_iter(const void* __p, iterator_type __x) _NOEXCEPT : __i(__x)
+      283:  140:    {
         -:  141:        (void)__p;
         -:  142:#ifdef _LIBCPP_ENABLE_DEBUG_MODE
         -:  143:      if (!__libcpp_is_constant_evaluated())
         -:  144:        __get_db()->__insert_ic(this, __p);
         -:  145:#endif
-      256:  146:    }
-       30:  146-block  0
-       30:  146-block  1
-       56:  146-block  2
-       56:  146-block  3
-       18:  146-block  4
-       18:  146-block  5
-       20:  146-block  6
-       20:  146-block  7
-    $$$$$:  146-block  8
-    $$$$$:  146-block  9
+      566:  146:    }
+       62:  146-block  0
+       62:  146-block  1
+      126:  146-block  2
+      126:  146-block  3
+       44:  146-block  4
+       44:  146-block  5
+       45:  146-block  6
+       45:  146-block  7
+        2:  146-block  8
+        2:  146-block  9
     $$$$$:  146-block 10
     $$$$$:  146-block 11
         4:  146-block 12
@@ -278,24 +278,24 @@ function _ZNSt3__111__wrap_iterIPN7doctest6StringEEC2B6v15006EPKvS3_ called 0 re
         -:  153:
         -:  154:template <class _Iter1>
         -:  155:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR
-function _ZNSt3__1eqB6v15006IPPKN7doctest6detail20IExceptionTranslatorEEEbRKNS_11__wrap_iterIT_EESB_ called 0 returned 0% blocks executed 0%
-function _ZNSt3__1eqB6v15006IPKN7doctest6StringEEEbRKNS_11__wrap_iterIT_EES9_ called 17 returned 100% blocks executed 100%
-function _ZNSt3__1eqB6v15006IPPN7doctest9IReporterEEEbRKNS_11__wrap_iterIT_EES9_ called 56 returned 100% blocks executed 100%
-function _ZNSt3__1eqB6v15006IPKN7doctest16SubcaseSignatureEEEbRKNS_11__wrap_iterIT_EES9_ called 14 returned 100% blocks executed 100%
-function _ZNSt3__1eqB6v15006IPN7doctest16SubcaseSignatureEEEbRKNS_11__wrap_iterIT_EES8_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__1eqB6v15006IPPKN7doctest6detail20IExceptionTranslatorEEEbRKNS_11__wrap_iterIT_EESB_ called 1 returned 100% blocks executed 100%
+function _ZNSt3__1eqB6v15006IPKN7doctest6StringEEEbRKNS_11__wrap_iterIT_EES9_ called 33 returned 100% blocks executed 100%
+function _ZNSt3__1eqB6v15006IPPN7doctest9IReporterEEEbRKNS_11__wrap_iterIT_EES9_ called 126 returned 100% blocks executed 100%
+function _ZNSt3__1eqB6v15006IPKN7doctest16SubcaseSignatureEEEbRKNS_11__wrap_iterIT_EES9_ called 47 returned 100% blocks executed 100%
+function _ZNSt3__1eqB6v15006IPN7doctest16SubcaseSignatureEEEbRKNS_11__wrap_iterIT_EES8_ called 6 returned 100% blocks executed 100%
 function _ZNSt3__1eqB6v15006IPNS_6vectorIN7doctest6StringENS_9allocatorIS3_EEEEEEbRKNS_11__wrap_iterIT_EESC_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__1eqB6v15006IPPKN7doctest6detail8TestCaseEEEbRKNS_11__wrap_iterIT_EESB_ called 2 returned 100% blocks executed 100%
 function _ZNSt3__1eqB6v15006IPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseEEEbRKNS_11__wrap_iterIT_EESB_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__1eqB6v15006IPKN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEEbRKNS_11__wrap_iterIT_EESC_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__1eqB6v15006IPN7doctest6StringEEEbRKNS_11__wrap_iterIT_EES8_ called 0 returned 0% blocks executed 0%
-       89:  156:bool operator==(const __wrap_iter<_Iter1>& __x, const __wrap_iter<_Iter1>& __y) _NOEXCEPT
+      215:  156:bool operator==(const __wrap_iter<_Iter1>& __x, const __wrap_iter<_Iter1>& __y) _NOEXCEPT
         -:  157:{
-       89:  158:    return __x.base() == __y.base();
-    $$$$$:  158-block  0
-       17:  158-block  1
-       56:  158-block  2
-       14:  158-block  3
-    $$$$$:  158-block  4
+      215:  158:    return __x.base() == __y.base();
+        1:  158-block  0
+       33:  158-block  1
+      126:  158-block  2
+       47:  158-block  3
+        6:  158-block  4
     $$$$$:  158-block  5
         2:  158-block  6
     $$$$$:  158-block  7
@@ -330,26 +330,26 @@ function _ZNSt3__1eqB6v15006IPN7doctest6StringEEEbRKNS_11__wrap_iterIT_EES8_ cal
         -:  185:
         -:  186:template <class _Iter1>
         -:  187:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR
-function _ZNSt3__1neB6v15006IPPN7doctest9IReporterEEEbRKNS_11__wrap_iterIT_EES9_ called 56 returned 100% blocks executed 100%
+function _ZNSt3__1neB6v15006IPPN7doctest9IReporterEEEbRKNS_11__wrap_iterIT_EES9_ called 126 returned 100% blocks executed 100%
 function _ZNSt3__1neB6v15006IPNS_6vectorIN7doctest6StringENS_9allocatorIS3_EEEEEEbRKNS_11__wrap_iterIT_EESC_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__1neB6v15006IPPKN7doctest6detail8TestCaseEEEbRKNS_11__wrap_iterIT_EESB_ called 2 returned 100% blocks executed 100%
-function _ZNSt3__1neB6v15006IPKN7doctest6StringEEEbRKNS_11__wrap_iterIT_EES9_ called 17 returned 100% blocks executed 100%
-function _ZNSt3__1neB6v15006IPKN7doctest16SubcaseSignatureEEEbRKNS_11__wrap_iterIT_EES9_ called 14 returned 100% blocks executed 100%
-function _ZNSt3__1neB6v15006IPN7doctest16SubcaseSignatureEEEbRKNS_11__wrap_iterIT_EES8_ called 0 returned 0% blocks executed 0%
-function _ZNSt3__1neB6v15006IPPKN7doctest6detail20IExceptionTranslatorEEEbRKNS_11__wrap_iterIT_EESB_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__1neB6v15006IPKN7doctest6StringEEEbRKNS_11__wrap_iterIT_EES9_ called 33 returned 100% blocks executed 100%
+function _ZNSt3__1neB6v15006IPKN7doctest16SubcaseSignatureEEEbRKNS_11__wrap_iterIT_EES9_ called 47 returned 100% blocks executed 100%
+function _ZNSt3__1neB6v15006IPN7doctest16SubcaseSignatureEEEbRKNS_11__wrap_iterIT_EES8_ called 6 returned 100% blocks executed 100%
+function _ZNSt3__1neB6v15006IPPKN7doctest6detail20IExceptionTranslatorEEEbRKNS_11__wrap_iterIT_EESB_ called 1 returned 100% blocks executed 100%
 function _ZNSt3__1neB6v15006IPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseEEEbRKNS_11__wrap_iterIT_EESB_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__1neB6v15006IPKN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEEbRKNS_11__wrap_iterIT_EESC_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__1neB6v15006IPN7doctest6StringEEEbRKNS_11__wrap_iterIT_EES8_ called 0 returned 0% blocks executed 0%
-       89:  188:bool operator!=(const __wrap_iter<_Iter1>& __x, const __wrap_iter<_Iter1>& __y) _NOEXCEPT
+      215:  188:bool operator!=(const __wrap_iter<_Iter1>& __x, const __wrap_iter<_Iter1>& __y) _NOEXCEPT
         -:  189:{
-       89:  190:    return !(__x == __y);
-       56:  190-block  0
+      215:  190:    return !(__x == __y);
+      126:  190-block  0
     $$$$$:  190-block  1
         2:  190-block  2
-       17:  190-block  3
-       14:  190-block  4
-    $$$$$:  190-block  5
-    $$$$$:  190-block  6
+       33:  190-block  3
+       47:  190-block  4
+        6:  190-block  5
+        1:  190-block  6
     $$$$$:  190-block  7
     $$$$$:  190-block  8
     $$$$$:  190-block  9
@@ -407,10 +407,10 @@ function _ZNSt3__1neB6v15006IPN7doctest6StringEEEbRKNS_11__wrap_iterIT_EES8_ cal
         -:  242:template <class _Iter1, class _Iter2>
         -:  243:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11
         -:  244:#ifndef _LIBCPP_CXX03_LANG
-function _ZNSt3__1miB6v15006IPKN7doctest16SubcaseSignatureEPS2_EEDTmicldtfp_4baseEcldtfp0_4baseEERKNS_11__wrap_iterIT_EERKNS7_IT0_EE called 4 returned 100% blocks executed 100%
-function _ZNSt3__1miB6v15006IPN7doctest16SubcaseSignatureES3_EEDTmicldtfp_4baseEcldtfp0_4baseEERKNS_11__wrap_iterIT_EERKNS5_IT0_EE called 4 returned 100% blocks executed 100%
+function _ZNSt3__1miB6v15006IPKN7doctest16SubcaseSignatureEPS2_EEDTmicldtfp_4baseEcldtfp0_4baseEERKNS_11__wrap_iterIT_EERKNS7_IT0_EE called 9 returned 100% blocks executed 100%
+function _ZNSt3__1miB6v15006IPN7doctest16SubcaseSignatureES3_EEDTmicldtfp_4baseEcldtfp0_4baseEERKNS_11__wrap_iterIT_EERKNS5_IT0_EE called 9 returned 100% blocks executed 100%
 function _ZNSt3__1miB6v15006IPKPN7doctest9IReporterEPS3_EEDTmicldtfp_4baseEcldtfp0_4baseEERKNS_11__wrap_iterIT_EERKNS8_IT0_EE called 0 returned 0% blocks executed 0%
-        8:  245:auto operator-(const __wrap_iter<_Iter1>& __x, const __wrap_iter<_Iter2>& __y) _NOEXCEPT
+       18:  245:auto operator-(const __wrap_iter<_Iter1>& __x, const __wrap_iter<_Iter2>& __y) _NOEXCEPT
         -:  246:    -> decltype(__x.base() - __y.base())
         -:  247:#else
         -:  248:typename __wrap_iter<_Iter1>::difference_type
@@ -419,9 +419,9 @@ function _ZNSt3__1miB6v15006IPKPN7doctest9IReporterEPS3_EEDTmicldtfp_4baseEcldtf
         -:  251:{
         -:  252:    _LIBCPP_DEBUG_ASSERT(__get_const_db()->__less_than_comparable(_VSTD::addressof(__x), _VSTD::addressof(__y)),
         -:  253:                         "Attempted to subtract incompatible iterators");
-        8:  254:    return __x.base() - __y.base();
-        4:  254-block  0
-        4:  254-block  1
+       18:  254:    return __x.base() - __y.base();
+        9:  254-block  0
+        9:  254-block  1
     $$$$$:  254-block  2
         -:  255:}
         -:  256:

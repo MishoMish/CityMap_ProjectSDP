@@ -195,11 +195,11 @@
         -:  190:
         -:  191:    // 27.7.1.1.1 Constructor/destructor:
         -:  192:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
-function _ZNSt3__113basic_istreamIcNS_11char_traitsIcEEEC2B6v15006EPNS_15basic_streambufIcS2_EE called 8 returned 100% blocks executed 100%
-       16:  193:    explicit basic_istream(basic_streambuf<char_type, traits_type>* __sb) : __gc_(0)
-       16:  194:    { this->init(__sb); }
-        8:  194-block  0
-        8:  194-block  1
+function _ZNSt3__113basic_istreamIcNS_11char_traitsIcEEEC2B6v15006EPNS_15basic_streambufIcS2_EE called 19 returned 100% blocks executed 100%
+       38:  193:    explicit basic_istream(basic_streambuf<char_type, traits_type>* __sb) : __gc_(0)
+       38:  194:    { this->init(__sb); }
+       19:  194-block  0
+       19:  194-block  1
         -:  195:    virtual ~basic_istream();
         -:  196:protected:
         -:  197:    inline _LIBCPP_INLINE_VISIBILITY
@@ -306,9 +306,9 @@ function _ZNSt3__113basic_istreamIcNS_11char_traitsIcEEEC2B6v15006EPNS_15basic_s
         -:  298://    ~sentry() = default;
         -:  299:
         -:  300:    _LIBCPP_INLINE_VISIBILITY
-function _ZNKSt3__113basic_istreamIcNS_11char_traitsIcEEE6sentrycvbB6v15006Ev called 4 returned 100% blocks executed 100%
-        4:  301:    explicit operator bool() const {return __ok_;}
-        4:  301-block  0
+function _ZNKSt3__113basic_istreamIcNS_11char_traitsIcEEE6sentrycvbB6v15006Ev called 104 returned 100% blocks executed 100%
+      104:  301:    explicit operator bool() const {return __ok_;}
+      104:  301-block  0
         -:  302:
         -:  303:    sentry(const sentry&) = delete;
         -:  304:    sentry& operator=(const sentry&) = delete;
@@ -1414,17 +1414,17 @@ function _ZNKSt3__113basic_istreamIcNS_11char_traitsIcEEE6sentrycvbB6v15006Ev ca
         -: 1404:
         -: 1405:    // constructor/destructor
         -: 1406:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
-function _ZNSt3__114basic_iostreamIcNS_11char_traitsIcEEEC2B6v15006EPNS_15basic_streambufIcS2_EE called 8 returned 100% blocks executed 50%
-       16: 1407:    explicit basic_iostream(basic_streambuf<char_type, traits_type>* __sb)
-        8: 1407-block  0
-branch  0 taken 8
+function _ZNSt3__114basic_iostreamIcNS_11char_traitsIcEEEC2B6v15006EPNS_15basic_streambufIcS2_EE called 14 returned 100% blocks executed 50%
+       28: 1407:    explicit basic_iostream(basic_streambuf<char_type, traits_type>* __sb)
+       14: 1407-block  0
+branch  0 taken 14
 branch  1 taken 0
-        8: 1407-block  1
-branch  2 taken 8
+       14: 1407-block  1
+branch  2 taken 14
 branch  3 taken 0
-        8: 1408:      : basic_istream<_CharT, _Traits>(__sb)
-       16: 1409:    {}
-        8: 1409-block  0
+       14: 1408:      : basic_istream<_CharT, _Traits>(__sb)
+       28: 1409:    {}
+       14: 1409-block  0
     $$$$$: 1409-block  1
     $$$$$: 1409-block  2
         -: 1410:
@@ -1519,75 +1519,75 @@ branch  3 taken 0
         -: 1499:
         -: 1500:template<class _CharT, class _Traits, class _Allocator>
         -: 1501:basic_istream<_CharT, _Traits>&
-function _ZNSt3__17getlineIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_istreamIT_T0_EES9_RNS_12basic_stringIS6_S7_T1_EES6_ called 0 returned 0% blocks executed 0%
-    #####: 1502:getline(basic_istream<_CharT, _Traits>& __is,
+function _ZNSt3__17getlineIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_istreamIT_T0_EES9_RNS_12basic_stringIS6_S7_T1_EES6_ called 96 returned 100% blocks executed 55%
+       96: 1502:getline(basic_istream<_CharT, _Traits>& __is,
         -: 1503:        basic_string<_CharT, _Traits, _Allocator>& __str, _CharT __dlm)
         -: 1504:{
-    #####: 1505:    ios_base::iostate __state = ios_base::goodbit;
-    #####: 1506:    typename basic_istream<_CharT, _Traits>::sentry __sen(__is, true);
-    #####: 1507:    if (__sen)
-    $$$$$: 1507-block  0
-branch  0 never executed
-branch  1 never executed
+       96: 1505:    ios_base::iostate __state = ios_base::goodbit;
+       96: 1506:    typename basic_istream<_CharT, _Traits>::sentry __sen(__is, true);
+       96: 1507:    if (__sen)
+       96: 1507-block  0
+branch  0 taken 4
+branch  1 taken 92
         -: 1508:    {
         -: 1509:#ifndef _LIBCPP_NO_EXCEPTIONS
         -: 1510:        try
         -: 1511:        {
         -: 1512:#endif
-    #####: 1513:            __str.clear();
-    #####: 1514:            streamsize __extr = 0;
-    #####: 1515:            while (true)
-    $$$$$: 1515-block  0
-    $$$$$: 1515-block  1
-    $$$$$: 1515-block  2
+       92: 1513:            __str.clear();
+       92: 1514:            streamsize __extr = 0;
+     9895: 1515:            while (true)
+       92: 1515-block  0
+     9895: 1515-block  1
+     9803: 1515-block  2
         -: 1516:            {
-    #####: 1517:                typename _Traits::int_type __i = __is.rdbuf()->sbumpc();
-    $$$$$: 1517-block  0
-branch  0 never executed
-branch  1 never executed
-    $$$$$: 1517-block  1
-branch  2 never executed
-branch  3 never executed
-    #####: 1518:                if (_Traits::eq_int_type(__i, _Traits::eof()))
-    $$$$$: 1518-block  0
-branch  0 never executed
-branch  1 never executed
+     9895: 1517:                typename _Traits::int_type __i = __is.rdbuf()->sbumpc();
+     9895: 1517-block  0
+branch  0 taken 9895
+branch  1 taken 0
+     9895: 1517-block  1
+branch  2 taken 9895
+branch  3 taken 0
+     9895: 1518:                if (_Traits::eq_int_type(__i, _Traits::eof()))
+     9895: 1518-block  0
+branch  0 taken 9891
+branch  1 taken 4
         -: 1519:                {
-    #####: 1520:                   __state |= ios_base::eofbit;
-    #####: 1521:                   break;
-    $$$$$: 1521-block  0
+        4: 1520:                   __state |= ios_base::eofbit;
+        4: 1521:                   break;
+        4: 1521-block  0
         -: 1522:                }
-    #####: 1523:                ++__extr;
-    #####: 1524:                _CharT __ch = _Traits::to_char_type(__i);
-    #####: 1525:                if (_Traits::eq(__ch, __dlm))
-    $$$$$: 1525-block  0
-branch  0 never executed
-branch  1 never executed
-    #####: 1526:                    break;
-    $$$$$: 1526-block  0
-    #####: 1527:                __str.push_back(__ch);
-    $$$$$: 1527-block  0
-branch  0 never executed
-branch  1 never executed
-    #####: 1528:                if (__str.size() == __str.max_size())
-    $$$$$: 1528-block  0
-branch  0 never executed
-branch  1 never executed
+     9891: 1523:                ++__extr;
+     9891: 1524:                _CharT __ch = _Traits::to_char_type(__i);
+     9891: 1525:                if (_Traits::eq(__ch, __dlm))
+     9891: 1525-block  0
+branch  0 taken 9803
+branch  1 taken 88
+       88: 1526:                    break;
+       88: 1526-block  0
+     9803: 1527:                __str.push_back(__ch);
+     9803: 1527-block  0
+branch  0 taken 9803
+branch  1 taken 0
+     9803: 1528:                if (__str.size() == __str.max_size())
+     9803: 1528-block  0
+branch  0 taken 9803
+branch  1 taken 0
         -: 1529:                {
     #####: 1530:                    __state |= ios_base::failbit;
     #####: 1531:                    break;
     $$$$$: 1531-block  0
         -: 1532:                }
         -: 1533:            }
-    #####: 1534:            if (__extr == 0)
-    $$$$$: 1534-block  0
-branch  0 never executed
-branch  1 never executed
+       92: 1534:            if (__extr == 0)
+       92: 1534-block  0
+branch  0 taken 0
+branch  1 taken 92
     #####: 1535:               __state |= ios_base::failbit;
     $$$$$: 1535-block  0
         -: 1536:#ifndef _LIBCPP_NO_EXCEPTIONS
-    #####: 1537:        }
-    $$$$$: 1537-block  0
+       92: 1537:        }
+       92: 1537-block  0
         -: 1538:        catch (...)
         -: 1539:        {
     #####: 1540:            __state |= ios_base::badbit;
@@ -1617,23 +1617,23 @@ branch  1 never executed
     $$$$$: 1546-block  3
     $$$$$: 1546-block  4
         -: 1547:#endif
-    #####: 1548:        __is.setstate(__state);
-    #####: 1549:    }
-    $$$$$: 1549-block  0
-    #####: 1550:    return __is;
-    $$$$$: 1550-block  0
+       92: 1548:        __is.setstate(__state);
+       92: 1549:    }
+       92: 1549-block  0
+       96: 1550:    return __is;
+       96: 1550-block  0
     #####: 1551:}
     $$$$$: 1551-block  0
         -: 1552:
         -: 1553:template<class _CharT, class _Traits, class _Allocator>
         -: 1554:inline _LIBCPP_INLINE_VISIBILITY
         -: 1555:basic_istream<_CharT, _Traits>&
-function _ZNSt3__17getlineB6v15006IcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_istreamIT_T0_EES9_RNS_12basic_stringIS6_S7_T1_EE called 0 returned 0% blocks executed 0%
-    #####: 1556:getline(basic_istream<_CharT, _Traits>& __is,
+function _ZNSt3__17getlineB6v15006IcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_istreamIT_T0_EES9_RNS_12basic_stringIS6_S7_T1_EE called 96 returned 100% blocks executed 100%
+       96: 1556:getline(basic_istream<_CharT, _Traits>& __is,
         -: 1557:        basic_string<_CharT, _Traits, _Allocator>& __str)
         -: 1558:{
-    #####: 1559:    return getline(__is, __str, __is.widen('\n'));
-    $$$$$: 1559-block  0
+       96: 1559:    return getline(__is, __str, __is.widen('\n'));
+       96: 1559-block  0
         -: 1560:}
         -: 1561:
         -: 1562:template<class _CharT, class _Traits, class _Allocator>

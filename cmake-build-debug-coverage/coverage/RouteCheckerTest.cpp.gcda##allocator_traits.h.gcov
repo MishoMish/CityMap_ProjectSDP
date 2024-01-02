@@ -263,17 +263,17 @@
         -:  258:#endif // _LIBCPP_CXX03_LANG
         -:  259:
         -:  260:    _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
-function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__hash_nodeIP5GraphPvEEEEE8allocateB6v15006ERS7_m called 34 returned 100% blocks executed 100%
-function _ZNSt3__116allocator_traitsINS_9allocatorIPNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEEEEE8allocateB6v15006ERSB_m called 21 returned 100% blocks executed 100%
+function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__hash_nodeIP5GraphPvEEEEE8allocateB6v15006ERS7_m called 26 returned 100% blocks executed 100%
+function _ZNSt3__116allocator_traitsINS_9allocatorIPNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEEEEE8allocateB6v15006ERSB_m called 15 returned 100% blocks executed 100%
 function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__hash_nodeIyPvEEEEE8allocateB6v15006ERS5_m called 8 returned 100% blocks executed 100%
 function _ZNSt3__116allocator_traitsINS_9allocatorIPNS_16__hash_node_baseIPNS_11__hash_nodeIyPvEEEEEEE8allocateB6v15006ERS9_m called 3 returned 100% blocks executed 100%
 function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__tree_nodeIN7doctest6detail8TestCaseEPvEEEEE8allocateB6v15006ERS8_m called 1 returned 100% blocks executed 100%
 function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__tree_nodeIN7doctest6StringEPvEEEEE8allocateB6v15006ERS7_m called 0 returned 0% blocks executed 0%
 function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__tree_nodeINS_12__value_typeINS_4pairIiN7doctest6StringEEEPFPNS5_9IReporterERKNS5_14ContextOptionsEEEEPvEEEEE8allocateB6v15006ERSI_m called 3 returned 100% blocks executed 100%
-       70:  261:    static pointer allocate(allocator_type& __a, size_type __n) {
-       70:  262:        return __a.allocate(__n);
-       34:  262-block  0
-       21:  262-block  1
+       56:  261:    static pointer allocate(allocator_type& __a, size_type __n) {
+       56:  262:        return __a.allocate(__n);
+       26:  262-block  0
+       15:  262-block  1
         8:  262-block  2
         3:  262-block  3
         1:  262-block  4
@@ -309,8 +309,8 @@ function _ZNSt3__116allocator_traitsINS_9allocatorINS_6vectorIN7doctest6StringEN
 function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__tree_nodeINS_12__value_typeINS_4pairIiN7doctest6StringEEEPFPNS5_9IReporterERKNS5_14ContextOptionsEEEEPvEEEEE10deallocateB6v15006ERSI_PSH_m called 0 returned 0% blocks executed 0%
 function _ZNSt3__116allocator_traitsINS_9allocatorIPKN7doctest6detail8TestCaseEEEE10deallocateB6v15006ERS7_PS6_m called 1 returned 100% blocks executed 100%
 function _ZNSt3__116allocator_traitsINS_9allocatorIPKN7doctest12TestCaseDataEEEE10deallocateB6v15006ERS6_PS5_m called 0 returned 0% blocks executed 0%
-function _ZNSt3__116allocator_traitsINS_9allocatorIPNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEEEEE10deallocateB6v15006ERSB_PSA_m called 21 returned 100% blocks executed 100%
-function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__hash_nodeIP5GraphPvEEEEE10deallocateB6v15006ERS7_PS6_m called 34 returned 100% blocks executed 100%
+function _ZNSt3__116allocator_traitsINS_9allocatorIPNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEEEEE10deallocateB6v15006ERSB_PSA_m called 15 returned 100% blocks executed 100%
+function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__hash_nodeIP5GraphPvEEEEE10deallocateB6v15006ERS7_PS6_m called 26 returned 100% blocks executed 100%
 function _ZNSt3__116allocator_traitsINS_9allocatorI4PathEEE10deallocateB6v15006ERS3_PS2_m called 7 returned 100% blocks executed 100%
 function _ZNSt3__116allocator_traitsINS_9allocatorIP5GraphEEE10deallocateB6v15006ERS4_PS3_m called 37 returned 100% blocks executed 100%
 function _ZNSt3__116allocator_traitsINS_9allocatorINS_4pairIP5GraphS4_EEEEE10deallocateB6v15006ERS6_PS5_m called 1 returned 100% blocks executed 100%
@@ -320,9 +320,9 @@ function _ZNSt3__116allocator_traitsINS_9allocatorIcEEE10deallocateB6v15006ERS2_
 function _ZNSt3__116allocator_traitsINS_9allocatorIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEEE10deallocateB6v15006ERS7_PS6_m called 0 returned 0% blocks executed 0%
 function _ZNSt3__116allocator_traitsINS_9allocatorIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseEEEE10deallocateB6v15006ERS7_PS6_m called 0 returned 0% blocks executed 0%
 function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__tree_nodeIN7doctest6StringEPvEEEEE10deallocateB6v15006ERS7_PS6_m called 0 returned 0% blocks executed 0%
-      118:  281:    static void deallocate(allocator_type& __a, pointer __p, size_type __n) _NOEXCEPT {
-      118:  282:        __a.deallocate(__p, __n);
-      118:  283:    }
+      104:  281:    static void deallocate(allocator_type& __a, pointer __p, size_type __n) _NOEXCEPT {
+      104:  282:        __a.deallocate(__p, __n);
+      104:  283:    }
     $$$$$:  283-block  0
         3:  283-block  1
     $$$$$:  283-block  2
@@ -335,8 +335,8 @@ function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__tree_nodeIN7doctest6St
     $$$$$:  283-block  9
         1:  283-block 10
     $$$$$:  283-block 11
-       21:  283-block 12
-       34:  283-block 13
+       15:  283-block 12
+       26:  283-block 13
         7:  283-block 14
        37:  283-block 15
         1:  283-block 16
@@ -369,7 +369,7 @@ function _ZNSt3__116allocator_traitsINS_9allocatorINS_6vectorIN7doctest6StringEN
 function _ZNSt3__116allocator_traitsINS_9allocatorIPN7doctest9IReporterEEEE9constructB6v15006IS4_JS4_EvvEEvRS5_PT_DpOT0_ called 1 returned 100% blocks executed 100%
 function _ZNSt3__116allocator_traitsINS_9allocatorIPKN7doctest6detail8TestCaseEEEE9constructB6v15006IS6_JS6_EvvEEvRS7_PT_DpOT0_ called 1 returned 100% blocks executed 100%
 function _ZNSt3__116allocator_traitsINS_9allocatorIPKN7doctest12TestCaseDataEEEE9constructB6v15006IS5_JS5_EvvEEvRS6_PT_DpOT0_ called 0 returned 0% blocks executed 0%
-function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__hash_nodeIP5GraphPvEEEEE9constructB6v15006IS4_JRKS4_EvvEEvRS7_PT_DpOT0_ called 34 returned 100% blocks executed 100%
+function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__hash_nodeIP5GraphPvEEEEE9constructB6v15006IS4_JRKS4_EvvEEvRS7_PT_DpOT0_ called 26 returned 100% blocks executed 100%
 function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__hash_nodeIyPvEEEEE9constructB6v15006IyJyEvvEEvRS5_PT_DpOT0_ called 8 returned 100% blocks executed 100%
 function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__tree_nodeIN7doctest6detail8TestCaseEPvEEEEE9constructB6v15006IS5_JRKS5_EvvEEvRS8_PT_DpOT0_ called 1 returned 100% blocks executed 100%
 function _ZNSt3__116allocator_traitsINS_9allocatorINS_12basic_stringIcNS_11char_traitsIcEENS1_IcEEEEEEE9constructB6v15006IS6_JRKS6_EvvEEvRS7_PT_DpOT0_ called 0 returned 0% blocks executed 0%
@@ -383,13 +383,13 @@ function _ZNSt3__116allocator_traitsINS_9allocatorIN7doctest6StringEEEE9construc
 function _ZNSt3__116allocator_traitsINS_9allocatorIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEEE9constructB6v15006IS6_JRKNS_12basic_stringIcNS_11char_traitsIcEENS1_IcEEEESG_SG_EvvEEvRS7_PT_DpOT0_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__tree_nodeIN7doctest6StringEPvEEEEE9constructB6v15006IS4_JS4_EvvEEvRS7_PT_DpOT0_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__tree_nodeINS_12__value_typeINS_4pairIiN7doctest6StringEEEPFPNS5_9IReporterERKNS5_14ContextOptionsEEEEPvEEEEE9constructB6v15006INS4_IKS7_SE_EEJSM_EvvEEvRSI_PT_DpOT0_ called 3 returned 100% blocks executed 100%
-       81:  296:    static void construct(allocator_type&, _Tp* __p, _Args&&... __args) {
+       73:  296:    static void construct(allocator_type&, _Tp* __p, _Args&&... __args) {
         -:  297:#if _LIBCPP_STD_VER > 17
-       81:  298:        _VSTD::construct_at(__p, _VSTD::forward<_Args>(__args)...);
+       73:  298:        _VSTD::construct_at(__p, _VSTD::forward<_Args>(__args)...);
         -:  299:#else
         -:  300:        ::new ((void*)__p) _Tp(_VSTD::forward<_Args>(__args)...);
         -:  301:#endif
-       81:  302:    }
+       73:  302:    }
     $$$$$:  302-block  0
        23:  302-block  1
     $$$$$:  302-block  2
@@ -401,7 +401,7 @@ function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__tree_nodeINS_12__value
         1:  302-block  8
         1:  302-block  9
     $$$$$:  302-block 10
-       34:  302-block 11
+       26:  302-block 11
         8:  302-block 12
         1:  302-block 13
     $$$$$:  302-block 14
@@ -438,7 +438,7 @@ function _ZNSt3__116allocator_traitsINS_9allocatorINS_6vectorIN7doctest6StringEN
 function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__tree_nodeINS_12__value_typeINS_4pairIiN7doctest6StringEEEPFPNS5_9IReporterERKNS5_14ContextOptionsEEEEPvEEEEE7destroyB6v15006INS4_IKS7_SE_EEvvEEvRSI_PT_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__116allocator_traitsINS_9allocatorIPKN7doctest6detail8TestCaseEEEE7destroyB6v15006IS6_vvEEvRS7_PT_ called 1 returned 100% blocks executed 100%
 function _ZNSt3__116allocator_traitsINS_9allocatorIPKN7doctest12TestCaseDataEEEE7destroyB6v15006IS5_vvEEvRS6_PT_ called 0 returned 0% blocks executed 0%
-function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__hash_nodeIP5GraphPvEEEEE7destroyB6v15006IS4_vvEEvRS7_PT_ called 34 returned 100% blocks executed 100%
+function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__hash_nodeIP5GraphPvEEEEE7destroyB6v15006IS4_vvEEvRS7_PT_ called 26 returned 100% blocks executed 100%
 function _ZNSt3__116allocator_traitsINS_9allocatorI4PathEEE7destroyB6v15006IS2_vvEEvRS3_PT_ called 14 returned 100% blocks executed 100%
 function _ZNSt3__116allocator_traitsINS_9allocatorIP5GraphEEE7destroyB6v15006IS3_vvEEvRS4_PT_ called 80 returned 100% blocks executed 100%
 function _ZNSt3__116allocator_traitsINS_9allocatorINS_4pairIP5GraphS4_EEEEE7destroyB6v15006IS5_vvEEvRS6_PT_ called 1 returned 100% blocks executed 100%
@@ -447,13 +447,13 @@ function _ZNSt3__116allocator_traitsINS_9allocatorINS_12basic_stringIcNS_11char_
 function _ZNSt3__116allocator_traitsINS_9allocatorIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseEEEE7destroyB6v15006IS6_vvEEvRS7_PT_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__116allocator_traitsINS_9allocatorIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEEE7destroyB6v15006IS6_vvEEvRS7_PT_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__tree_nodeIN7doctest6StringEPvEEEEE7destroyB6v15006IS4_vvEEvRS7_PT_ called 0 returned 0% blocks executed 0%
-      172:  315:    static void destroy(allocator_type&, _Tp* __p) {
+      164:  315:    static void destroy(allocator_type&, _Tp* __p) {
         -:  316:#if _LIBCPP_STD_VER > 17
-      172:  317:        _VSTD::destroy_at(__p);
+      164:  317:        _VSTD::destroy_at(__p);
         -:  318:#else
         -:  319:        __p->~_Tp();
         -:  320:#endif
-      172:  321:    }
+      164:  321:    }
     $$$$$:  321-block  0
        23:  321-block  1
     $$$$$:  321-block  2
@@ -465,7 +465,7 @@ function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__tree_nodeIN7doctest6St
     $$$$$:  321-block  8
         1:  321-block  9
     $$$$$:  321-block 10
-       34:  321-block 11
+       26:  321-block 11
        14:  321-block 12
        80:  321-block 13
         1:  321-block 14
@@ -495,8 +495,8 @@ function _ZNSt3__116allocator_traitsINS_9allocatorINS_6vectorIN7doctest6StringEN
 function _ZNSt3__116allocator_traitsINS_9allocatorIPN7doctest9IReporterEEEE8max_sizeB6v15006IS5_vvEEmRKS5_ called 2 returned 100% blocks executed 100%
 function _ZNSt3__116allocator_traitsINS_9allocatorIPKN7doctest6detail8TestCaseEEEE8max_sizeB6v15006IS7_vvEEmRKS7_ called 2 returned 100% blocks executed 100%
 function _ZNSt3__116allocator_traitsINS_9allocatorIPKN7doctest12TestCaseDataEEEE8max_sizeB6v15006IS6_vvEEmRKS6_ called 0 returned 0% blocks executed 0%
-function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__hash_nodeIP5GraphPvEEEEE8max_sizeB6v15006IS7_vvEEmRKS7_ called 34 returned 100% blocks executed 100%
-function _ZNSt3__116allocator_traitsINS_9allocatorIPNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEEEEE8max_sizeB6v15006ISB_vvEEmRKSB_ called 21 returned 100% blocks executed 100%
+function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__hash_nodeIP5GraphPvEEEEE8max_sizeB6v15006IS7_vvEEmRKS7_ called 26 returned 100% blocks executed 100%
+function _ZNSt3__116allocator_traitsINS_9allocatorIPNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEEEEE8max_sizeB6v15006ISB_vvEEmRKSB_ called 15 returned 100% blocks executed 100%
 function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__hash_nodeIyPvEEEEE8max_sizeB6v15006IS5_vvEEmRKS5_ called 8 returned 100% blocks executed 100%
 function _ZNSt3__116allocator_traitsINS_9allocatorIPNS_16__hash_node_baseIPNS_11__hash_nodeIyPvEEEEEEE8max_sizeB6v15006IS9_vvEEmRKS9_ called 3 returned 100% blocks executed 100%
 function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__tree_nodeIN7doctest6detail8TestCaseEPvEEEEE8max_sizeB6v15006IS8_vvEEmRKS8_ called 1 returned 100% blocks executed 100%
@@ -506,8 +506,8 @@ function _ZNSt3__116allocator_traitsINS_9allocatorIN7doctest12_GLOBAL__N_113JUni
 function _ZNSt3__116allocator_traitsINS_9allocatorIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEEE8max_sizeB6v15006IS7_vvEEmRKS7_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__tree_nodeIN7doctest6StringEPvEEEEE8max_sizeB6v15006IS7_vvEEmRKS7_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__tree_nodeINS_12__value_typeINS_4pairIiN7doctest6StringEEEPFPNS5_9IReporterERKNS5_14ContextOptionsEEEEPvEEEEE8max_sizeB6v15006ISI_vvEEmRKSI_ called 3 returned 100% blocks executed 100%
-       84:  334:    static size_type max_size(const allocator_type&) _NOEXCEPT {
-       84:  335:        return numeric_limits<size_type>::max() / sizeof(value_type);
+       70:  334:    static size_type max_size(const allocator_type&) _NOEXCEPT {
+       70:  335:        return numeric_limits<size_type>::max() / sizeof(value_type);
     $$$$$:  335-block  0
         6:  335-block  1
     $$$$$:  335-block  2
@@ -517,8 +517,8 @@ function _ZNSt3__116allocator_traitsINS_9allocatorINS_11__tree_nodeINS_12__value
         2:  335-block  6
         2:  335-block  7
     $$$$$:  335-block  8
-       34:  335-block  9
-       21:  335-block 10
+       26:  335-block  9
+       15:  335-block 10
         8:  335-block 11
         3:  335-block 12
         1:  335-block 13

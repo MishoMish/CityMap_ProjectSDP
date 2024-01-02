@@ -152,20 +152,20 @@
         -:  147:public:
         -:  148:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
 function _ZNSt3__114pointer_traitsIPcE10pointer_toB6v15006ERc called 0 returned 0% blocks executed 0%
-function _ZNSt3__114pointer_traitsIPKcE10pointer_toB6v15006ERS1_ called 960 returned 100% blocks executed 100%
+function _ZNSt3__114pointer_traitsIPKcE10pointer_toB6v15006ERS1_ called 1088 returned 100% blocks executed 100%
 function _ZNSt3__114pointer_traitsIPNS_16__hash_node_baseIPNS_11__hash_nodeIyPvEEEEE10pointer_toB6v15006ERS6_ called 34 returned 100% blocks executed 100%
 function _ZNSt3__114pointer_traitsIPNS_15__tree_end_nodeIPNS_16__tree_node_baseIPvEEEEE10pointer_toB6v15006ERS6_ called 108 returned 100% blocks executed 100%
-function _ZNSt3__114pointer_traitsIPNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEEE10pointer_toB6v15006ERS8_ called 134 returned 100% blocks executed 100%
+function _ZNSt3__114pointer_traitsIPNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEEE10pointer_toB6v15006ERS8_ called 114 returned 100% blocks executed 100%
 function _ZNSt3__114pointer_traitsIPNS_12__value_typeINS_4pairIiN7doctest6StringEEEPFPNS3_9IReporterERKNS3_14ContextOptionsEEEEE10pointer_toB6v15006ERSD_ called 3 returned 100% blocks executed 100%
 function _ZNSt3__114pointer_traitsIPKNS_12__value_typeINS_4pairIiN7doctest6StringEEEPFPNS3_9IReporterERKNS3_14ContextOptionsEEEEE10pointer_toB6v15006ERSE_ called 0 returned 0% blocks executed 0%
-     1239:  149:    static pointer pointer_to(typename conditional<is_void<element_type>::value,
+     1347:  149:    static pointer pointer_to(typename conditional<is_void<element_type>::value,
         -:  150:                                      __nat, element_type>::type& __r) _NOEXCEPT
-     1239:  151:        {return _VSTD::addressof(__r);}
+     1347:  151:        {return _VSTD::addressof(__r);}
     $$$$$:  151-block  0
-      960:  151-block  1
+     1088:  151-block  1
        34:  151-block  2
       108:  151-block  3
-      134:  151-block  4
+      114:  151-block  4
         3:  151-block  5
     $$$$$:  151-block  6
         -:  152:};
@@ -191,7 +191,7 @@ function _ZNSt3__112__to_addressB6v15006IN7doctest16SubcaseSignatureEEEPT_S4_ ca
 function _ZNSt3__112__to_addressB6v15006IPKN7doctest6detail20IExceptionTranslatorEEEPT_S7_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__112__to_addressB6v15006IPN7doctest13IContextScopeEEEPT_S5_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__112__to_addressB6v15006IN7doctest6StringEEEPT_S4_ called 82 returned 100% blocks executed 100%
-function _ZNSt3__112__to_addressB6v15006IKcEEPT_S3_ called 960 returned 100% blocks executed 100%
+function _ZNSt3__112__to_addressB6v15006IKcEEPT_S3_ called 1088 returned 100% blocks executed 100%
 function _ZNSt3__112__to_addressB6v15006INS_6vectorIN7doctest6StringENS_9allocatorIS3_EEEEEEPT_S8_ called 26 returned 100% blocks executed 100%
 function _ZNSt3__112__to_addressB6v15006IPN7doctest9IReporterEEEPT_S5_ called 22 returned 100% blocks executed 100%
 function _ZNSt3__112__to_addressB6v15006IPKN7doctest6detail8TestCaseEEEPT_S7_ called 20 returned 100% blocks executed 100%
@@ -203,15 +203,15 @@ function _ZNSt3__112__to_addressB6v15006INS_4pairIP5GraphS3_EEEEPT_S6_ called 14
 function _ZNSt3__112__to_addressB6v15006INS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEPT_S8_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__112__to_addressB6v15006IN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseEEEPT_S7_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__112__to_addressB6v15006IN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEEPT_S7_ called 0 returned 0% blocks executed 0%
-     1988:  170:_Tp* __to_address(_Tp* __p) _NOEXCEPT {
+     2116:  170:_Tp* __to_address(_Tp* __p) _NOEXCEPT {
         -:  171:    static_assert(!is_function<_Tp>::value, "_Tp is a function type");
-     1988:  172:    return __p;
+     2116:  172:    return __p;
     $$$$$:  172-block  0
       206:  172-block  1
     $$$$$:  172-block  2
     $$$$$:  172-block  3
        82:  172-block  4
-      960:  172-block  5
+     1088:  172-block  5
        26:  172-block  6
        22:  172-block  7
        20:  172-block  8

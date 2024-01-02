@@ -973,15 +973,15 @@ function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B6v150
         -:  964:    const_reverse_iterator crend() const _NOEXCEPT
         -:  965:        {return rend();}
         -:  966:
-function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE4sizeB6v15006Ev called 708 returned 100% blocks executed 75%
-      708:  967:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17 size_type size() const _NOEXCEPT
-      708:  968:        {return __is_long() ? __get_long_size() : __get_short_size();}
-      708:  968-block  0
+function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE4sizeB6v15006Ev called 836 returned 100% blocks executed 75%
+      836:  967:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17 size_type size() const _NOEXCEPT
+      836:  968:        {return __is_long() ? __get_long_size() : __get_short_size();}
+      836:  968-block  0
 branch  0 taken 0
-branch  1 taken 708
+branch  1 taken 836
     $$$$$:  968-block  1
-      708:  968-block  2
-      708:  968-block  3
+      836:  968-block  2
+      836:  968-block  3
 function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6lengthB6v15006Ev called 0 returned 0% blocks executed 0%
     #####:  969:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17 size_type length() const _NOEXCEPT {return size();}
     $$$$$:  969-block  0
@@ -1302,9 +1302,9 @@ function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE5c_strB
     #####: 1277:    const value_type* c_str() const _NOEXCEPT {return data();}
     $$$$$: 1277-block  0
         -: 1278:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17
-function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE4dataB6v15006Ev called 960 returned 100% blocks executed 100%
-      960: 1279:    const value_type* data() const _NOEXCEPT  {return std::__to_address(__get_pointer());}
-      960: 1279-block  0
+function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE4dataB6v15006Ev called 1088 returned 100% blocks executed 100%
+     1088: 1279:    const value_type* data() const _NOEXCEPT  {return std::__to_address(__get_pointer());}
+     1088: 1279-block  0
         -: 1280:#if _LIBCPP_STD_VER > 14 || defined(_LIBCPP_BUILDING_LIBRARY)
         -: 1281:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17
 function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE4dataB6v15006Ev called 0 returned 0% blocks executed 0%
@@ -1523,12 +1523,12 @@ function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE4dataB6v
         -: 1493:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17 void __shrink_or_extend(size_type __target_capacity);
         -: 1494:
         -: 1495:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17
-function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE9__is_longB6v15006Ev called 1924 returned 100% blocks executed 100%
-     1924: 1496:    bool __is_long() const _NOEXCEPT {
+function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE9__is_longB6v15006Ev called 2244 returned 100% blocks executed 100%
+     2244: 1496:    bool __is_long() const _NOEXCEPT {
         -: 1497:        if (__libcpp_is_constant_evaluated())
         -: 1498:            return true;
-     1924: 1499:        return __r_.first().__s.__is_long_;
-     1924: 1499-block  0
+     2244: 1499:        return __r_.first().__s.__is_long_;
+     2244: 1499-block  0
         -: 1500:    }
         -: 1501:
         -: 1502:    static _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17 void __begin_lifetime(pointer __begin, size_type __n) {
@@ -1611,11 +1611,11 @@ function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE16__set_
     $$$$$: 1571-block  0
         -: 1572:
         -: 1573:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17
-function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE16__get_short_sizeB6v15006Ev called 708 returned 100% blocks executed 100%
-      708: 1574:    size_type __get_short_size() const _NOEXCEPT {
+function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE16__get_short_sizeB6v15006Ev called 836 returned 100% blocks executed 100%
+      836: 1574:    size_type __get_short_size() const _NOEXCEPT {
         -: 1575:        _LIBCPP_ASSERT(!__r_.first().__s.__is_long_, "String has to be short when trying to get the short size");
-      708: 1576:        return __r_.first().__s.__size_;
-      708: 1576-block  0
+      836: 1576:        return __r_.first().__s.__size_;
+      836: 1576-block  0
         -: 1577:    }
         -: 1578:
         -: 1579:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17
@@ -1664,10 +1664,10 @@ function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE19__get_
     #####: 1611:        {return pointer_traits<pointer>::pointer_to(__r_.first().__s.__data_[0]);}
     $$$$$: 1611-block  0
         -: 1612:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17
-function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE19__get_short_pointerB6v15006Ev called 960 returned 100% blocks executed 100%
-      960: 1613:    const_pointer __get_short_pointer() const _NOEXCEPT
-      960: 1614:        {return pointer_traits<const_pointer>::pointer_to(__r_.first().__s.__data_[0]);}
-      960: 1614-block  0
+function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE19__get_short_pointerB6v15006Ev called 1088 returned 100% blocks executed 100%
+     1088: 1613:    const_pointer __get_short_pointer() const _NOEXCEPT
+     1088: 1614:        {return pointer_traits<const_pointer>::pointer_to(__r_.first().__s.__data_[0]);}
+     1088: 1614-block  0
         -: 1615:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17
 function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE13__get_pointerB6v15006Ev called 0 returned 0% blocks executed 0%
     #####: 1616:    pointer __get_pointer() _NOEXCEPT
@@ -1679,15 +1679,15 @@ branch  1 never executed
     $$$$$: 1617-block  2
     $$$$$: 1617-block  3
         -: 1618:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17
-function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE13__get_pointerB6v15006Ev called 960 returned 100% blocks executed 75%
-      960: 1619:    const_pointer __get_pointer() const _NOEXCEPT
-      960: 1620:        {return __is_long() ? __get_long_pointer() : __get_short_pointer();}
-      960: 1620-block  0
+function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE13__get_pointerB6v15006Ev called 1088 returned 100% blocks executed 75%
+     1088: 1619:    const_pointer __get_pointer() const _NOEXCEPT
+     1088: 1620:        {return __is_long() ? __get_long_pointer() : __get_short_pointer();}
+     1088: 1620-block  0
 branch  0 taken 0
-branch  1 taken 960
+branch  1 taken 1088
     $$$$$: 1620-block  1
-      960: 1620-block  2
-      960: 1620-block  3
+     1088: 1620-block  2
+     1088: 1620-block  3
         -: 1621:
         -: 1622:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17
 function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6__zeroB6v15006Ev called 32 returned 100% blocks executed 100%

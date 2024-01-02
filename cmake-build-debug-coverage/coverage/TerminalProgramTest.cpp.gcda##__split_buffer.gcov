@@ -68,7 +68,7 @@
         -:   63:    typedef typename add_lvalue_reference<allocator_type>::type __alloc_const_ref;
         -:   64:
 function _ZNSt3__114__split_bufferINS_4fposI11__mbstate_tEERNS_9allocatorIS3_EEE7__allocB6v15006Ev called 0 returned 0% blocks executed 0%
-function _ZNSt3__114__split_bufferIN7doctest16SubcaseSignatureERNS_9allocatorIS2_EEE7__allocB6v15006Ev called 3 returned 100% blocks executed 100%
+function _ZNSt3__114__split_bufferIN7doctest16SubcaseSignatureERNS_9allocatorIS2_EEE7__allocB6v15006Ev called 12 returned 100% blocks executed 100%
 function _ZNSt3__114__split_bufferIPKN7doctest6detail20IExceptionTranslatorERNS_9allocatorIS5_EEE7__allocB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIPN7doctest13IContextScopeERNS_9allocatorIS3_EEE7__allocB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIN7doctest6StringERNS_9allocatorIS2_EEE7__allocB6v15006Ev called 1 returned 100% blocks executed 100%
@@ -78,9 +78,9 @@ function _ZNSt3__114__split_bufferIPKN7doctest12TestCaseDataERNS_9allocatorIS4_E
 function _ZNSt3__114__split_bufferINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS4_IS6_EEE7__allocB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseERNS_9allocatorIS5_EEE7__allocB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageERNS_9allocatorIS5_EEE7__allocB6v15006Ev called 0 returned 0% blocks executed 0%
-        6:   65:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY __alloc_rr&           __alloc() _NOEXCEPT         {return __end_cap_.second();}
+       15:   65:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY __alloc_rr&           __alloc() _NOEXCEPT         {return __end_cap_.second();}
     $$$$$:   65-block  0
-        3:   65-block  1
+       12:   65-block  1
     $$$$$:   65-block  2
     $$$$$:   65-block  3
         1:   65-block  4
@@ -92,7 +92,7 @@ function _ZNSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUnit
     $$$$$:   65-block 10
         -:   66:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY const __alloc_rr&     __alloc() const _NOEXCEPT   {return __end_cap_.second();}
 function _ZNSt3__114__split_bufferINS_4fposI11__mbstate_tEERNS_9allocatorIS3_EEE9__end_capB6v15006Ev called 0 returned 0% blocks executed 0%
-function _ZNSt3__114__split_bufferIN7doctest16SubcaseSignatureERNS_9allocatorIS2_EEE9__end_capB6v15006Ev called 6 returned 100% blocks executed 100%
+function _ZNSt3__114__split_bufferIN7doctest16SubcaseSignatureERNS_9allocatorIS2_EEE9__end_capB6v15006Ev called 12 returned 100% blocks executed 100%
 function _ZNSt3__114__split_bufferIPKN7doctest6detail20IExceptionTranslatorERNS_9allocatorIS5_EEE9__end_capB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIPN7doctest13IContextScopeERNS_9allocatorIS3_EEE9__end_capB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIN7doctest6StringERNS_9allocatorIS2_EEE9__end_capB6v15006Ev called 2 returned 100% blocks executed 100%
@@ -102,9 +102,9 @@ function _ZNSt3__114__split_bufferIPKN7doctest12TestCaseDataERNS_9allocatorIS4_E
 function _ZNSt3__114__split_bufferINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS4_IS6_EEE9__end_capB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseERNS_9allocatorIS5_EEE9__end_capB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageERNS_9allocatorIS5_EEE9__end_capB6v15006Ev called 0 returned 0% blocks executed 0%
-       12:   67:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY pointer&              __end_cap() _NOEXCEPT       {return __end_cap_.first();}
+       18:   67:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY pointer&              __end_cap() _NOEXCEPT       {return __end_cap_.first();}
     $$$$$:   67-block  0
-        6:   67-block  1
+       12:   67-block  1
     $$$$$:   67-block  2
     $$$$$:   67-block  3
         2:   67-block  4
@@ -115,7 +115,7 @@ function _ZNSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUnit
     $$$$$:   67-block  9
     $$$$$:   67-block 10
 function _ZNKSt3__114__split_bufferINS_4fposI11__mbstate_tEERNS_9allocatorIS3_EEE9__end_capB6v15006Ev called 0 returned 0% blocks executed 0%
-function _ZNKSt3__114__split_bufferIN7doctest16SubcaseSignatureERNS_9allocatorIS2_EEE9__end_capB6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNKSt3__114__split_bufferIN7doctest16SubcaseSignatureERNS_9allocatorIS2_EEE9__end_capB6v15006Ev called 3 returned 100% blocks executed 100%
 function _ZNKSt3__114__split_bufferIPKN7doctest6detail20IExceptionTranslatorERNS_9allocatorIS5_EEE9__end_capB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__114__split_bufferIPN7doctest13IContextScopeERNS_9allocatorIS3_EEE9__end_capB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__114__split_bufferIN7doctest6StringERNS_9allocatorIS2_EEE9__end_capB6v15006Ev called 0 returned 0% blocks executed 0%
@@ -125,9 +125,9 @@ function _ZNKSt3__114__split_bufferIPKN7doctest12TestCaseDataERNS_9allocatorIS4_
 function _ZNKSt3__114__split_bufferINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS4_IS6_EEE9__end_capB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseERNS_9allocatorIS5_EEE9__end_capB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageERNS_9allocatorIS5_EEE9__end_capB6v15006Ev called 0 returned 0% blocks executed 0%
-    #####:   68:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY const pointer&        __end_cap() const _NOEXCEPT {return __end_cap_.first();}
+        3:   68:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY const pointer&        __end_cap() const _NOEXCEPT {return __end_cap_.first();}
     $$$$$:   68-block  0
-    $$$$$:   68-block  1
+        3:   68-block  1
     $$$$$:   68-block  2
     $$$$$:   68-block  3
     $$$$$:   68-block  4
@@ -163,7 +163,7 @@ function _ZNKSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUni
         -:   92:
         -:   93:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
 function _ZNSt3__114__split_bufferINS_4fposI11__mbstate_tEERNS_9allocatorIS3_EEE5clearB6v15006Ev called 0 returned 0% blocks executed 0%
-function _ZNSt3__114__split_bufferIN7doctest16SubcaseSignatureERNS_9allocatorIS2_EEE5clearB6v15006Ev called 3 returned 100% blocks executed 100%
+function _ZNSt3__114__split_bufferIN7doctest16SubcaseSignatureERNS_9allocatorIS2_EEE5clearB6v15006Ev called 6 returned 100% blocks executed 100%
 function _ZNSt3__114__split_bufferIPKN7doctest6detail20IExceptionTranslatorERNS_9allocatorIS5_EEE5clearB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIPN7doctest13IContextScopeERNS_9allocatorIS3_EEE5clearB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIN7doctest6StringERNS_9allocatorIS2_EEE5clearB6v15006Ev called 1 returned 100% blocks executed 100%
@@ -173,10 +173,10 @@ function _ZNSt3__114__split_bufferIPKN7doctest12TestCaseDataERNS_9allocatorIS4_E
 function _ZNSt3__114__split_bufferINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS4_IS6_EEE5clearB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseERNS_9allocatorIS5_EEE5clearB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageERNS_9allocatorIS5_EEE5clearB6v15006Ev called 0 returned 0% blocks executed 0%
-        6:   94:    void clear() _NOEXCEPT
-        6:   95:        {__destruct_at_end(__begin_);}
+        9:   94:    void clear() _NOEXCEPT
+        9:   95:        {__destruct_at_end(__begin_);}
     $$$$$:   95-block  0
-        3:   95-block  1
+        6:   95-block  1
     $$$$$:   95-block  2
     $$$$$:   95-block  3
         1:   95-block  4
@@ -189,7 +189,7 @@ function _ZNSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUnit
         -:   96:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY size_type size() const {return static_cast<size_type>(__end_ - __begin_);}
         -:   97:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY bool empty()     const {return __end_ == __begin_;}
 function _ZNKSt3__114__split_bufferINS_4fposI11__mbstate_tEERNS_9allocatorIS3_EEE8capacityB6v15006Ev called 0 returned 0% blocks executed 0%
-function _ZNKSt3__114__split_bufferIN7doctest16SubcaseSignatureERNS_9allocatorIS2_EEE8capacityB6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNKSt3__114__split_bufferIN7doctest16SubcaseSignatureERNS_9allocatorIS2_EEE8capacityB6v15006Ev called 3 returned 100% blocks executed 100%
 function _ZNKSt3__114__split_bufferIPKN7doctest6detail20IExceptionTranslatorERNS_9allocatorIS5_EEE8capacityB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__114__split_bufferIPN7doctest13IContextScopeERNS_9allocatorIS3_EEE8capacityB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__114__split_bufferIN7doctest6StringERNS_9allocatorIS2_EEE8capacityB6v15006Ev called 0 returned 0% blocks executed 0%
@@ -199,9 +199,9 @@ function _ZNKSt3__114__split_bufferIPKN7doctest12TestCaseDataERNS_9allocatorIS4_
 function _ZNKSt3__114__split_bufferINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS4_IS6_EEE8capacityB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseERNS_9allocatorIS5_EEE8capacityB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageERNS_9allocatorIS5_EEE8capacityB6v15006Ev called 0 returned 0% blocks executed 0%
-    #####:   98:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY size_type capacity() const {return static_cast<size_type>(__end_cap() - __first_);}
+        3:   98:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY size_type capacity() const {return static_cast<size_type>(__end_cap() - __first_);}
     $$$$$:   98-block  0
-    $$$$$:   98-block  1
+        3:   98-block  1
     $$$$$:   98-block  2
     $$$$$:   98-block  3
     $$$$$:   98-block  4
@@ -249,7 +249,7 @@ function _ZNKSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUni
         -:  134:
         -:  135:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
 function _ZNSt3__114__split_bufferINS_4fposI11__mbstate_tEERNS_9allocatorIS3_EEE17__destruct_at_endB6v15006EPS3_ called 0 returned 0% blocks executed 0%
-function _ZNSt3__114__split_bufferIN7doctest16SubcaseSignatureERNS_9allocatorIS2_EEE17__destruct_at_endB6v15006EPS2_ called 3 returned 100% blocks executed 100%
+function _ZNSt3__114__split_bufferIN7doctest16SubcaseSignatureERNS_9allocatorIS2_EEE17__destruct_at_endB6v15006EPS2_ called 6 returned 100% blocks executed 100%
 function _ZNSt3__114__split_bufferIPKN7doctest6detail20IExceptionTranslatorERNS_9allocatorIS5_EEE17__destruct_at_endB6v15006EPS5_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIPN7doctest13IContextScopeERNS_9allocatorIS3_EEE17__destruct_at_endB6v15006EPS3_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIN7doctest6StringERNS_9allocatorIS2_EEE17__destruct_at_endB6v15006EPS2_ called 1 returned 100% blocks executed 100%
@@ -259,10 +259,10 @@ function _ZNSt3__114__split_bufferIPKN7doctest12TestCaseDataERNS_9allocatorIS4_E
 function _ZNSt3__114__split_bufferINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS4_IS6_EEE17__destruct_at_endB6v15006EPS6_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseERNS_9allocatorIS5_EEE17__destruct_at_endB6v15006EPS5_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageERNS_9allocatorIS5_EEE17__destruct_at_endB6v15006EPS5_ called 0 returned 0% blocks executed 0%
-        6:  136:    void __destruct_at_end(pointer __new_last) _NOEXCEPT
-        6:  137:        {__destruct_at_end(__new_last, false_type());}
+        9:  136:    void __destruct_at_end(pointer __new_last) _NOEXCEPT
+        9:  137:        {__destruct_at_end(__new_last, false_type());}
     $$$$$:  137-block  0
-        3:  137-block  1
+        6:  137-block  1
     $$$$$:  137-block  2
     $$$$$:  137-block  3
         1:  137-block  4
@@ -479,7 +479,7 @@ branch  1 never executed
         -:  291:inline _LIBCPP_INLINE_VISIBILITY
         -:  292:void
 function _ZNSt3__114__split_bufferINS_4fposI11__mbstate_tEERNS_9allocatorIS3_EEE17__destruct_at_endB6v15006EPS3_NS_17integral_constantIbLb0EEE called 0 returned 0% blocks executed 0%
-function _ZNSt3__114__split_bufferIN7doctest16SubcaseSignatureERNS_9allocatorIS2_EEE17__destruct_at_endB6v15006EPS2_NS_17integral_constantIbLb0EEE called 3 returned 100% blocks executed 50%
+function _ZNSt3__114__split_bufferIN7doctest16SubcaseSignatureERNS_9allocatorIS2_EEE17__destruct_at_endB6v15006EPS2_NS_17integral_constantIbLb0EEE called 6 returned 100% blocks executed 83%
 function _ZNSt3__114__split_bufferIPKN7doctest6detail20IExceptionTranslatorERNS_9allocatorIS5_EEE17__destruct_at_endB6v15006EPS5_NS_17integral_constantIbLb0EEE called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIPN7doctest13IContextScopeERNS_9allocatorIS3_EEE17__destruct_at_endB6v15006EPS3_NS_17integral_constantIbLb0EEE called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIN7doctest6StringERNS_9allocatorIS2_EEE17__destruct_at_endB6v15006EPS2_NS_17integral_constantIbLb0EEE called 1 returned 100% blocks executed 50%
@@ -489,19 +489,19 @@ function _ZNSt3__114__split_bufferIPKN7doctest12TestCaseDataERNS_9allocatorIS4_E
 function _ZNSt3__114__split_bufferINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS4_IS6_EEE17__destruct_at_endB6v15006EPS6_NS_17integral_constantIbLb0EEE called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseERNS_9allocatorIS5_EEE17__destruct_at_endB6v15006EPS5_NS_17integral_constantIbLb0EEE called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageERNS_9allocatorIS5_EEE17__destruct_at_endB6v15006EPS5_NS_17integral_constantIbLb0EEE called 0 returned 0% blocks executed 0%
-        6:  293:__split_buffer<_Tp, _Allocator>::__destruct_at_end(pointer __new_last, false_type) _NOEXCEPT
+        9:  293:__split_buffer<_Tp, _Allocator>::__destruct_at_end(pointer __new_last, false_type) _NOEXCEPT
         -:  294:{
-        6:  295:    while (__new_last != __end_)
+       12:  295:    while (__new_last != __end_)
     $$$$$:  295-block  0
     $$$$$:  295-block  1
 branch  0 never executed
 branch  1 never executed
     $$$$$:  295-block  2
-        3:  295-block  3
-        3:  295-block  4
-branch  2 taken 0
-branch  3 taken 3
-    $$$$$:  295-block  5
+        6:  295-block  3
+        9:  295-block  4
+branch  2 taken 3
+branch  3 taken 6
+        3:  295-block  5
     $$$$$:  295-block  6
     $$$$$:  295-block  7
 branch  4 never executed
@@ -547,14 +547,14 @@ branch 19 never executed
 branch 20 never executed
 branch 21 never executed
     $$$$$:  295-block 32
-    #####:  296:        __alloc_traits::destroy(__alloc(), _VSTD::__to_address(--__end_));
+        3:  296:        __alloc_traits::destroy(__alloc(), _VSTD::__to_address(--__end_));
     $$$$$:  296-block  0
 branch  0 never executed
 branch  1 never executed
     $$$$$:  296-block  1
-    $$$$$:  296-block  2
-branch  2 never executed
-branch  3 never executed
+        3:  296-block  2
+branch  2 taken 3
+branch  3 taken 0
     $$$$$:  296-block  3
     $$$$$:  296-block  4
 branch  4 never executed
@@ -592,9 +592,9 @@ branch 19 never executed
 branch 20 never executed
 branch 21 never executed
     $$$$$:  296-block 21
-        6:  297:}
+        9:  297:}
     $$$$$:  297-block  0
-        3:  297-block  1
+        6:  297-block  1
     $$$$$:  297-block  2
     $$$$$:  297-block  3
         1:  297-block  4
@@ -618,8 +618,8 @@ branch 21 never executed
         -:  309:_LIBCPP_CONSTEXPR_AFTER_CXX17
 function _ZNSt3__114__split_bufferINS_4fposI11__mbstate_tEERNS_9allocatorIS3_EEEC1EmmS6_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferINS_4fposI11__mbstate_tEERNS_9allocatorIS3_EEEC2EmmS6_ called 0 returned 0% blocks executed 0%
-function _ZNSt3__114__split_bufferIN7doctest16SubcaseSignatureERNS_9allocatorIS2_EEEC1EmmS5_ called 3 returned 100% blocks executed 100%
-function _ZNSt3__114__split_bufferIN7doctest16SubcaseSignatureERNS_9allocatorIS2_EEEC2EmmS5_ called 3 returned 100% blocks executed 75%
+function _ZNSt3__114__split_bufferIN7doctest16SubcaseSignatureERNS_9allocatorIS2_EEEC1EmmS5_ called 6 returned 100% blocks executed 100%
+function _ZNSt3__114__split_bufferIN7doctest16SubcaseSignatureERNS_9allocatorIS2_EEEC2EmmS5_ called 6 returned 100% blocks executed 75%
 function _ZNSt3__114__split_bufferIPKN7doctest6detail20IExceptionTranslatorERNS_9allocatorIS5_EEEC1EmmS8_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIPKN7doctest6detail20IExceptionTranslatorERNS_9allocatorIS5_EEEC2EmmS8_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIPN7doctest13IContextScopeERNS_9allocatorIS3_EEEC1EmmS6_ called 0 returned 0% blocks executed 0%
@@ -638,16 +638,16 @@ function _ZNSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUnit
 function _ZNSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseERNS_9allocatorIS5_EEEC2EmmS8_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageERNS_9allocatorIS5_EEEC1EmmS8_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageERNS_9allocatorIS5_EEEC2EmmS8_ called 0 returned 0% blocks executed 0%
-       12:  310:__split_buffer<_Tp, _Allocator>::__split_buffer(size_type __cap, size_type __start, __alloc_rr& __a)
-        6:  311:    : __end_cap_(nullptr, __a)
-        6:  312:{
-        6:  313:    if (__cap == 0) {
+       18:  310:__split_buffer<_Tp, _Allocator>::__split_buffer(size_type __cap, size_type __start, __alloc_rr& __a)
+        9:  311:    : __end_cap_(nullptr, __a)
+        9:  312:{
+        9:  313:    if (__cap == 0) {
     $$$$$:  313-block  0
 branch  0 never executed
 branch  1 never executed
-        3:  313-block  1
+        6:  313-block  1
 branch  2 taken 0
-branch  3 taken 3
+branch  3 taken 6
     $$$$$:  313-block  2
 branch  4 never executed
 branch  5 never executed
@@ -688,11 +688,11 @@ branch 21 never executed
     $$$$$:  315-block  8
     $$$$$:  315-block  9
     $$$$$:  315-block 10
-        6:  316:        auto __allocation = std::__allocate_at_least(__alloc(), __cap);
-        6:  317:        __first_ = __allocation.ptr;
-        6:  318:        __cap = __allocation.count;
+        9:  316:        auto __allocation = std::__allocate_at_least(__alloc(), __cap);
+        9:  317:        __first_ = __allocation.ptr;
+        9:  318:        __cap = __allocation.count;
     $$$$$:  318-block  0
-        3:  318-block  1
+        6:  318-block  1
     $$$$$:  318-block  2
     $$$$$:  318-block  3
         1:  318-block  4
@@ -703,13 +703,13 @@ branch 21 never executed
     $$$$$:  318-block  9
     $$$$$:  318-block 10
         -:  319:    }
-        6:  320:    __begin_ = __end_ = __first_ + __start;
-        6:  321:    __end_cap() = __first_ + __cap;
-       12:  322:}
+        9:  320:    __begin_ = __end_ = __first_ + __start;
+        9:  321:    __end_cap() = __first_ + __cap;
+       18:  322:}
     $$$$$:  322-block  0
     $$$$$:  322-block  1
-        3:  322-block  2
-        3:  322-block  3
+        6:  322-block  2
+        6:  322-block  3
     $$$$$:  322-block  4
     $$$$$:  322-block  5
     $$$$$:  322-block  6
@@ -758,8 +758,8 @@ branch 21 never executed
         -:  350:_LIBCPP_CONSTEXPR_AFTER_CXX17
 function _ZNSt3__114__split_bufferINS_4fposI11__mbstate_tEERNS_9allocatorIS3_EEED1Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferINS_4fposI11__mbstate_tEERNS_9allocatorIS3_EEED2Ev called 0 returned 0% blocks executed 0%
-function _ZNSt3__114__split_bufferIN7doctest16SubcaseSignatureERNS_9allocatorIS2_EEED1Ev called 3 returned 100% blocks executed 100%
-function _ZNSt3__114__split_bufferIN7doctest16SubcaseSignatureERNS_9allocatorIS2_EEED2Ev called 3 returned 100% blocks executed 40%
+function _ZNSt3__114__split_bufferIN7doctest16SubcaseSignatureERNS_9allocatorIS2_EEED1Ev called 6 returned 100% blocks executed 100%
+function _ZNSt3__114__split_bufferIN7doctest16SubcaseSignatureERNS_9allocatorIS2_EEED2Ev called 6 returned 100% blocks executed 80%
 function _ZNSt3__114__split_bufferIPKN7doctest6detail20IExceptionTranslatorERNS_9allocatorIS5_EEED1Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIPKN7doctest6detail20IExceptionTranslatorERNS_9allocatorIS5_EEED2Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIPN7doctest13IContextScopeERNS_9allocatorIS3_EEED1Ev called 0 returned 0% blocks executed 0%
@@ -778,16 +778,16 @@ function _ZNSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUnit
 function _ZNSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseERNS_9allocatorIS5_EEED2Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageERNS_9allocatorIS5_EEED1Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__114__split_bufferIN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageERNS_9allocatorIS5_EEED2Ev called 0 returned 0% blocks executed 0%
-       12:  351:__split_buffer<_Tp, _Allocator>::~__split_buffer()
-        6:  352:{
-        6:  353:    clear();
-        6:  354:    if (__first_)
+       18:  351:__split_buffer<_Tp, _Allocator>::~__split_buffer()
+        9:  352:{
+        9:  353:    clear();
+        9:  354:    if (__first_)
     $$$$$:  354-block  0
 branch  0 never executed
 branch  1 never executed
-        3:  354-block  1
+        6:  354-block  1
 branch  2 taken 3
-branch  3 taken 0
+branch  3 taken 3
     $$$$$:  354-block  2
 branch  4 never executed
 branch  5 never executed
@@ -815,16 +815,16 @@ branch 19 never executed
     $$$$$:  354-block 10
 branch 20 never executed
 branch 21 never executed
-    #####:  355:        __alloc_traits::deallocate(__alloc(), __first_, capacity());
+        3:  355:        __alloc_traits::deallocate(__alloc(), __first_, capacity());
     $$$$$:  355-block  0
 branch  0 never executed
 branch  1 never executed
     $$$$$:  355-block  1
     $$$$$:  355-block  2
-    $$$$$:  355-block  3
-branch  2 never executed
-branch  3 never executed
-    $$$$$:  355-block  4
+        3:  355-block  3
+branch  2 taken 3
+branch  3 taken 0
+        3:  355-block  4
     $$$$$:  355-block  5
     $$$$$:  355-block  6
 branch  4 never executed
@@ -871,11 +871,11 @@ branch 20 never executed
 branch 21 never executed
     $$$$$:  355-block 31
     $$$$$:  355-block 32
-       12:  356:}
+       18:  356:}
     $$$$$:  356-block  0
     $$$$$:  356-block  1
-        3:  356-block  2
-        3:  356-block  3
+        6:  356-block  2
+        6:  356-block  3
     $$$$$:  356-block  4
     $$$$$:  356-block  5
     $$$$$:  356-block  6

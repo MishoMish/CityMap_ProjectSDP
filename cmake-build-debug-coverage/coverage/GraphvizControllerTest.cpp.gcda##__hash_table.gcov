@@ -98,11 +98,11 @@ function _ZNSt3__116__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEE8__upcastB6v1
         -:   85:    }
         -:   86:
         -:   87:    _LIBCPP_INLINE_VISIBILITY
-function _ZNKSt3__116__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEE6__hashB6v15006Ev called 18 returned 100% blocks executed 100%
+function _ZNKSt3__116__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEE6__hashB6v15006Ev called 21 returned 100% blocks executed 100%
 function _ZNKSt3__116__hash_node_baseIPNS_11__hash_nodeIyPvEEE6__hashB6v15006Ev called 1 returned 100% blocks executed 100%
-       19:   88:    size_t __hash() const _NOEXCEPT {
-       19:   89:        return static_cast<__node_type const&>(*this).__hash_;
-       18:   89-block  0
+       22:   88:    size_t __hash() const _NOEXCEPT {
+       22:   89:        return static_cast<__node_type const&>(*this).__hash_;
+       21:   89-block  0
         1:   89-block  1
         -:   90:    }
         -:   91:
@@ -149,22 +149,22 @@ branch  1 taken 0
         -:  114:
         -:  115:inline _LIBCPP_INLINE_VISIBILITY
         -:  116:size_t
-function _ZNSt3__116__constrain_hashB6v15006Emm called 64 returned 100% blocks executed 85%
-       64:  117:__constrain_hash(size_t __h, size_t __bc)
+function _ZNSt3__116__constrain_hashB6v15006Emm called 78 returned 100% blocks executed 85%
+       78:  117:__constrain_hash(size_t __h, size_t __bc)
         -:  118:{
-       94:  119:    return !(__bc & (__bc - 1)) ? __h & (__bc - 1) :
-       64:  119-block  0
-branch  0 taken 30
-branch  1 taken 34
-       34:  119-block  1
-       30:  119-block  2
-       64:  119-block  3
-       30:  120:        (__h < __bc ? __h : __h % __bc);
-       30:  120-block  0
+      124:  119:    return !(__bc & (__bc - 1)) ? __h & (__bc - 1) :
+       78:  119-block  0
+branch  0 taken 46
+branch  1 taken 32
+       32:  119-block  1
+       46:  119-block  2
+       78:  119-block  3
+       46:  120:        (__h < __bc ? __h : __h % __bc);
+       46:  120-block  0
 branch  0 taken 0
-branch  1 taken 30
+branch  1 taken 46
     $$$$$:  120-block  1
-       30:  120-block  2
+       46:  120-block  2
         -:  121:}
         -:  122:
         -:  123:inline _LIBCPP_INLINE_VISIBILITY

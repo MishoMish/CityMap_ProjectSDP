@@ -151,21 +151,21 @@
         -:  146:    struct __nat {};
         -:  147:public:
         -:  148:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
-function _ZNSt3__114pointer_traitsIPcE10pointer_toB6v15006ERc called 4 returned 100% blocks executed 100%
-function _ZNSt3__114pointer_traitsIPKcE10pointer_toB6v15006ERS1_ called 141 returned 100% blocks executed 100%
-function _ZNSt3__114pointer_traitsIPNS_16__hash_node_baseIPNS_11__hash_nodeIyPvEEEEE10pointer_toB6v15006ERS6_ called 19 returned 100% blocks executed 100%
+function _ZNSt3__114pointer_traitsIPcE10pointer_toB6v15006ERc called 12 returned 100% blocks executed 100%
+function _ZNSt3__114pointer_traitsIPKcE10pointer_toB6v15006ERS1_ called 259 returned 100% blocks executed 100%
+function _ZNSt3__114pointer_traitsIPNS_16__hash_node_baseIPNS_11__hash_nodeIyPvEEEEE10pointer_toB6v15006ERS6_ called 35 returned 100% blocks executed 100%
 function _ZNSt3__114pointer_traitsIPNS_15__tree_end_nodeIPNS_16__tree_node_baseIPvEEEEE10pointer_toB6v15006ERS6_ called 23 returned 100% blocks executed 100%
-function _ZNSt3__114pointer_traitsIPNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEEE10pointer_toB6v15006ERS8_ called 24 returned 100% blocks executed 100%
+function _ZNSt3__114pointer_traitsIPNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEEE10pointer_toB6v15006ERS8_ called 22 returned 100% blocks executed 100%
 function _ZNSt3__114pointer_traitsIPNS_12__value_typeINS_4pairIiN7doctest6StringEEEPFPNS3_9IReporterERKNS3_14ContextOptionsEEEEE10pointer_toB6v15006ERSD_ called 3 returned 100% blocks executed 100%
 function _ZNSt3__114pointer_traitsIPKNS_12__value_typeINS_4pairIiN7doctest6StringEEEPFPNS3_9IReporterERKNS3_14ContextOptionsEEEEE10pointer_toB6v15006ERSE_ called 0 returned 0% blocks executed 0%
-      214:  149:    static pointer pointer_to(typename conditional<is_void<element_type>::value,
+      354:  149:    static pointer pointer_to(typename conditional<is_void<element_type>::value,
         -:  150:                                      __nat, element_type>::type& __r) _NOEXCEPT
-      214:  151:        {return _VSTD::addressof(__r);}
-        4:  151-block  0
-      141:  151-block  1
-       19:  151-block  2
+      354:  151:        {return _VSTD::addressof(__r);}
+       12:  151-block  0
+      259:  151-block  1
+       35:  151-block  2
        23:  151-block  3
-       24:  151-block  4
+       22:  151-block  4
         3:  151-block  5
     $$$$$:  151-block  6
         -:  152:};
@@ -187,11 +187,11 @@ function _ZNSt3__114pointer_traitsIPKNS_12__value_typeINS_4pairIiN7doctest6Strin
         -:  168:template <class _Tp>
         -:  169:_LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
 function _ZNSt3__112__to_addressB6v15006INS_4fposI11__mbstate_tEEEEPT_S5_ called 0 returned 0% blocks executed 0%
-function _ZNSt3__112__to_addressB6v15006IN7doctest16SubcaseSignatureEEEPT_S4_ called 140 returned 100% blocks executed 100%
-function _ZNSt3__112__to_addressB6v15006IPKN7doctest6detail20IExceptionTranslatorEEEPT_S7_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__112__to_addressB6v15006IN7doctest16SubcaseSignatureEEEPT_S4_ called 310 returned 100% blocks executed 100%
+function _ZNSt3__112__to_addressB6v15006IPKN7doctest6detail20IExceptionTranslatorEEEPT_S7_ called 4 returned 100% blocks executed 100%
 function _ZNSt3__112__to_addressB6v15006IPN7doctest13IContextScopeEEEPT_S5_ called 0 returned 0% blocks executed 0%
-function _ZNSt3__112__to_addressB6v15006IN7doctest6StringEEEPT_S4_ called 70 returned 100% blocks executed 100%
-function _ZNSt3__112__to_addressB6v15006IKcEEPT_S3_ called 149 returned 100% blocks executed 100%
+function _ZNSt3__112__to_addressB6v15006IN7doctest6StringEEEPT_S4_ called 90 returned 100% blocks executed 100%
+function _ZNSt3__112__to_addressB6v15006IKcEEPT_S3_ called 364 returned 100% blocks executed 100%
 function _ZNSt3__112__to_addressB6v15006INS_6vectorIN7doctest6StringENS_9allocatorIS3_EEEEEEPT_S8_ called 26 returned 100% blocks executed 100%
 function _ZNSt3__112__to_addressB6v15006IPN7doctest9IReporterEEEPT_S5_ called 22 returned 100% blocks executed 100%
 function _ZNSt3__112__to_addressB6v15006IPKN7doctest6detail8TestCaseEEEPT_S7_ called 20 returned 100% blocks executed 100%
@@ -200,15 +200,15 @@ function _ZNSt3__112__to_addressB6v15006IcEEPT_S2_ called 0 returned 0% blocks e
 function _ZNSt3__112__to_addressB6v15006INS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEPT_S8_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__112__to_addressB6v15006IN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseEEEPT_S7_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__112__to_addressB6v15006IN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEEPT_S7_ called 0 returned 0% blocks executed 0%
-      431:  170:_Tp* __to_address(_Tp* __p) _NOEXCEPT {
+      840:  170:_Tp* __to_address(_Tp* __p) _NOEXCEPT {
         -:  171:    static_assert(!is_function<_Tp>::value, "_Tp is a function type");
-      431:  172:    return __p;
+      840:  172:    return __p;
     $$$$$:  172-block  0
-      140:  172-block  1
-    $$$$$:  172-block  2
+      310:  172-block  1
+        4:  172-block  2
     $$$$$:  172-block  3
-       70:  172-block  4
-      149:  172-block  5
+       90:  172-block  4
+      364:  172-block  5
        26:  172-block  6
        22:  172-block  7
        20:  172-block  8
@@ -246,7 +246,7 @@ function _ZNSt3__112__to_addressB6v15006IN7doctest12_GLOBAL__N_113JUnitReporter1
         -:  199:> >
         -:  200:_LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
         -:  201:typename decay<decltype(__to_address_helper<_Pointer>::__call(declval<const _Pointer&>()))>::type
-function _ZNSt3__112__to_addressB6v15006INS_16reverse_iteratorIPN7doctest16SubcaseSignatureEEEvEENS_5decayIDTclsr19__to_address_helperIT_EE6__callcl7declvalIRKS7_EEEEE4typeES9_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__112__to_addressB6v15006INS_16reverse_iteratorIPN7doctest16SubcaseSignatureEEEvEENS_5decayIDTclsr19__to_address_helperIT_EE6__callcl7declvalIRKS7_EEEEE4typeES9_ called 3 returned 100% blocks executed 100%
 function _ZNSt3__112__to_addressB6v15006INS_16reverse_iteratorINS1_IPN7doctest16SubcaseSignatureEEEEEvEENS_5decayIDTclsr19__to_address_helperIT_EE6__callcl7declvalIRKS8_EEEEE4typeESA_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__112__to_addressB6v15006INS_11__wrap_iterIPN7doctest16SubcaseSignatureEEEvEENS_5decayIDTclsr19__to_address_helperIT_EE6__callcl7declvalIRKS7_EEEEE4typeES9_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__112__to_addressB6v15006INS_16reverse_iteratorIPN7doctest6StringEEEvEENS_5decayIDTclsr19__to_address_helperIT_EE6__callcl7declvalIRKS7_EEEEE4typeES9_ called 0 returned 0% blocks executed 0%
@@ -258,9 +258,9 @@ function _ZNSt3__112__to_addressB6v15006INS_16reverse_iteratorIPN7doctest12_GLOB
 function _ZNSt3__112__to_addressB6v15006INS_16reverse_iteratorINS1_IPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseEEEEEvEENS_5decayIDTclsr19__to_address_helperIT_EE6__callcl7declvalIRKSB_EEEEE4typeESD_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__112__to_addressB6v15006INS_16reverse_iteratorIPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEEvEENS_5decayIDTclsr19__to_address_helperIT_EE6__callcl7declvalIRKSA_EEEEE4typeESC_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__112__to_addressB6v15006INS_16reverse_iteratorINS1_IPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEEEEvEENS_5decayIDTclsr19__to_address_helperIT_EE6__callcl7declvalIRKSB_EEEEE4typeESD_ called 0 returned 0% blocks executed 0%
-        2:  202:__to_address(const _Pointer& __p) _NOEXCEPT {
-        2:  203:    return __to_address_helper<_Pointer>::__call(__p);
-    $$$$$:  203-block  0
+        5:  202:__to_address(const _Pointer& __p) _NOEXCEPT {
+        5:  203:    return __to_address_helper<_Pointer>::__call(__p);
+        3:  203-block  0
     $$$$$:  203-block  1
     $$$$$:  203-block  2
     $$$$$:  203-block  3
@@ -278,7 +278,7 @@ function _ZNSt3__112__to_addressB6v15006INS_16reverse_iteratorINS1_IPN7doctest12
         -:  207:struct __to_address_helper {
         -:  208:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
         -:  209:    static decltype(_VSTD::__to_address(declval<const _Pointer&>().operator->()))
-function _ZNSt3__119__to_address_helperINS_16reverse_iteratorIPN7doctest16SubcaseSignatureEEEvE6__callB6v15006ERKS5_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__119__to_address_helperINS_16reverse_iteratorIPN7doctest16SubcaseSignatureEEEvE6__callB6v15006ERKS5_ called 3 returned 100% blocks executed 66%
 function _ZNSt3__119__to_address_helperINS_16reverse_iteratorINS1_IPN7doctest16SubcaseSignatureEEEEEvE6__callB6v15006ERKS6_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__119__to_address_helperINS_16reverse_iteratorIPN7doctest6StringEEEvE6__callB6v15006ERKS5_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__119__to_address_helperINS_16reverse_iteratorINS1_IPN7doctest6StringEEEEEvE6__callB6v15006ERKS6_ called 0 returned 0% blocks executed 0%
@@ -288,12 +288,12 @@ function _ZNSt3__119__to_address_helperINS_16reverse_iteratorIPN7doctest12_GLOBA
 function _ZNSt3__119__to_address_helperINS_16reverse_iteratorINS1_IPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseEEEEEvE6__callB6v15006ERKS9_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__119__to_address_helperINS_16reverse_iteratorIPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEEvE6__callB6v15006ERKS8_ called 0 returned 0% blocks executed 0%
 function _ZNSt3__119__to_address_helperINS_16reverse_iteratorINS1_IPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEEEEEvE6__callB6v15006ERKS9_ called 0 returned 0% blocks executed 0%
-    #####:  210:    __call(const _Pointer& __p) _NOEXCEPT {
-    #####:  211:        return _VSTD::__to_address(__p.operator->());
-    $$$$$:  211-block  0
-branch  0 never executed
-branch  1 never executed
-    $$$$$:  211-block  1
+        3:  210:    __call(const _Pointer& __p) _NOEXCEPT {
+        3:  211:        return _VSTD::__to_address(__p.operator->());
+        3:  211-block  0
+branch  0 taken 3
+branch  1 taken 0
+        3:  211-block  1
     $$$$$:  211-block  2
     $$$$$:  211-block  3
 branch  2 never executed

@@ -240,7 +240,7 @@ function _ZNSt3__122__compressed_pair_elemIPNS_11__tree_nodeINS_12__value_typeIN
        12:   49-block 42
 function _ZNKSt3__122__compressed_pair_elemIPNS_4fposI11__mbstate_tEELi0ELb0EE5__getB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__122__compressed_pair_elemIPN7doctest16SubcaseSignatureELi0ELb0EE5__getB6v15006Ev called 31 returned 100% blocks executed 100%
-function _ZNKSt3__122__compressed_pair_elemINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE5__repELi0ELb0EE5__getB6v15006Ev called 378 returned 100% blocks executed 100%
+function _ZNKSt3__122__compressed_pair_elemINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE5__repELi0ELb0EE5__getB6v15006Ev called 441 returned 100% blocks executed 100%
 function _ZNKSt3__122__compressed_pair_elemIPPKN7doctest6detail20IExceptionTranslatorELi0ELb0EE5__getB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__122__compressed_pair_elemIPPN7doctest13IContextScopeELi0ELb0EE5__getB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__122__compressed_pair_elemIPN7doctest6StringELi0ELb0EE5__getB6v15006Ev called 28 returned 100% blocks executed 100%
@@ -263,10 +263,10 @@ function _ZNKSt3__122__compressed_pair_elemIPN7doctest12_GLOBAL__N_113JUnitRepor
 function _ZNKSt3__122__compressed_pair_elemIPN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageELi0ELb0EE5__getB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__122__compressed_pair_elemIPNS_11__tree_nodeIN7doctest6StringEPvEELi0ELb0EE5__getB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__122__compressed_pair_elemIPNS_11__tree_nodeINS_12__value_typeINS_4pairIiN7doctest6StringEEEPFPNS4_9IReporterERKNS4_14ContextOptionsEEEEPvEELi0ELb0EE5__getB6v15006Ev called 6 returned 100% blocks executed 100%
-      609:   50:  _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR const_reference __get() const _NOEXCEPT { return __value_; }
+      672:   50:  _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR const_reference __get() const _NOEXCEPT { return __value_; }
     $$$$$:   50-block  0
        31:   50-block  1
-      378:   50-block  2
+      441:   50-block  2
     $$$$$:   50-block  3
     $$$$$:   50-block  4
        28:   50-block  5
@@ -829,7 +829,7 @@ function _ZNKSt3__117__compressed_pairIPNS_4fposI11__mbstate_tEENS_9allocatorIS3
 function _ZNKSt3__117__compressed_pairIPNS_4fposI11__mbstate_tEERNS_9allocatorIS3_EEE5firstB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__117__compressed_pairIPN7doctest16SubcaseSignatureENS_9allocatorIS2_EEE5firstB6v15006Ev called 31 returned 100% blocks executed 100%
 function _ZNKSt3__117__compressed_pairIPN7doctest16SubcaseSignatureERNS_9allocatorIS2_EEE5firstB6v15006Ev called 0 returned 0% blocks executed 0%
-function _ZNKSt3__117__compressed_pairINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE5__repES5_E5firstB6v15006Ev called 378 returned 100% blocks executed 100%
+function _ZNKSt3__117__compressed_pairINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE5__repES5_E5firstB6v15006Ev called 441 returned 100% blocks executed 100%
 function _ZNKSt3__117__compressed_pairIPPKN7doctest6detail20IExceptionTranslatorENS_9allocatorIS5_EEE5firstB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__117__compressed_pairIPPKN7doctest6detail20IExceptionTranslatorERNS_9allocatorIS5_EEE5firstB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__117__compressed_pairIPPN7doctest13IContextScopeENS_9allocatorIS3_EEE5firstB6v15006Ev called 0 returned 0% blocks executed 0%
@@ -863,13 +863,13 @@ function _ZNKSt3__117__compressed_pairImNS_19__map_value_compareINS_4pairIiN7doc
 function _ZNKSt3__117__compressed_pairINS_15__tree_end_nodeIPNS_16__tree_node_baseIPvEEEENS_9allocatorINS_11__tree_nodeIN7doctest6StringES3_EEEEE5firstB6v15006Ev called 1 returned 100% blocks executed 100%
 function _ZNKSt3__117__compressed_pairIPNS_11__tree_nodeIN7doctest6StringEPvEENS_22__tree_node_destructorINS_9allocatorIS5_EEEEE5firstB6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNKSt3__117__compressed_pairIPNS_11__tree_nodeINS_12__value_typeINS_4pairIiN7doctest6StringEEEPFPNS4_9IReporterERKNS4_14ContextOptionsEEEEPvEENS_22__tree_node_destructorINS_9allocatorISG_EEEEE5firstB6v15006Ev called 6 returned 100% blocks executed 100%
-      551:  125:  typename _Base1::const_reference first() const _NOEXCEPT {
-      551:  126:    return static_cast<_Base1 const&>(*this).__get();
+      614:  125:  typename _Base1::const_reference first() const _NOEXCEPT {
+      614:  126:    return static_cast<_Base1 const&>(*this).__get();
     $$$$$:  126-block  0
     $$$$$:  126-block  1
        31:  126-block  2
     $$$$$:  126-block  3
-      378:  126-block  4
+      441:  126-block  4
     $$$$$:  126-block  5
     $$$$$:  126-block  6
     $$$$$:  126-block  7

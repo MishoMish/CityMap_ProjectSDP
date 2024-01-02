@@ -137,11 +137,11 @@
         -:  132:__END_DECLS
         -:  133:
         -:  134:__DARWIN_CTYPE_TOP_inline int
-function _Z7isasciii called 28 returned 100% blocks executed 100%
-       28:  135:isascii(int _c)
+function _Z7isasciii called 42 returned 100% blocks executed 100%
+       42:  135:isascii(int _c)
         -:  136:{
-       28:  137:	return ((_c & ~0x7F) == 0);
-       28:  137-block  0
+       42:  137:	return ((_c & ~0x7F) == 0);
+       42:  137-block  0
         -:  138:}
         -:  139:
         -:  140:#ifdef USE_ASCII

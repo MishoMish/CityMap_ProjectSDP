@@ -195,18 +195,18 @@ function _ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE10pubseekposB6v15006EN
         -:  186:    }
         -:  187:
         -:  188:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
-function _ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE6sbumpcB6v15006Ev called 20 returned 100% blocks executed 75%
-       20:  189:    int_type sbumpc() {
-       20:  190:        if (__ninp_ == __einp_)
-       20:  190-block  0
-branch  0 taken 0
-branch  1 taken 20
-    #####:  191:            return uflow();
-    $$$$$:  191-block  0
-       20:  192:        return traits_type::to_int_type(*__ninp_++);
-       20:  192-block  0
-       20:  193:    }
-       20:  193-block  0
+function _ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE6sbumpcB6v15006Ev called 9929 returned 100% blocks executed 100%
+     9929:  189:    int_type sbumpc() {
+     9929:  190:        if (__ninp_ == __einp_)
+     9929:  190-block  0
+branch  0 taken 8
+branch  1 taken 9921
+        8:  191:            return uflow();
+        8:  191-block  0
+     9921:  192:        return traits_type::to_int_type(*__ninp_++);
+     9921:  192-block  0
+     9929:  193:    }
+     9929:  193-block  0
         -:  194:
         -:  195:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
         -:  196:    int_type sgetc() {
@@ -244,10 +244,10 @@ branch  1 taken 20
         -:  228:    }
         -:  229:
         -:  230:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
-function _ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE5sputnB6v15006EPKcl called 42 returned 100% blocks executed 100%
-       42:  231:    streamsize sputn(const char_type* __s, streamsize __n)
-       42:  232:    { return xsputn(__s, __n); }
-       42:  232-block  0
+function _ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE5sputnB6v15006EPKcl called 140 returned 100% blocks executed 100%
+      140:  231:    streamsize sputn(const char_type* __s, streamsize __n)
+      140:  232:    { return xsputn(__s, __n); }
+      140:  232-block  0
         -:  233:
         -:  234:protected:
         -:  235:    basic_streambuf();

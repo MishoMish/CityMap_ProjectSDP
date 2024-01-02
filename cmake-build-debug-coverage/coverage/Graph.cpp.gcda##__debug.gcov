@@ -218,17 +218,17 @@
         -:  213:
         -:  214:template <class _Tp>
 function _ZNSt3__119__debug_db_insert_cB6v15006INS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEvPT_ called 0 returned 0% blocks executed 0%
-function _ZNSt3__119__debug_db_insert_cB6v15006INS_13unordered_mapIP5GraphdNS_4hashIS3_EENS_8equal_toIS3_EENS_9allocatorINS_4pairIKS3_dEEEEEEEEvPT_ called 66 returned 100% blocks executed 100%
-       66:  215:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 inline void __debug_db_insert_c(_Tp* __c) {
+function _ZNSt3__119__debug_db_insert_cB6v15006INS_13unordered_mapIP5GraphdNS_4hashIS3_EENS_8equal_toIS3_EENS_9allocatorINS_4pairIKS3_dEEEEEEEEvPT_ called 76 returned 100% blocks executed 100%
+       76:  215:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 inline void __debug_db_insert_c(_Tp* __c) {
         -:  216:#ifdef _LIBCPP_ENABLE_DEBUG_MODE
         -:  217:    if (!__libcpp_is_constant_evaluated())
         -:  218:        __get_db()->__insert_c(__c);
         -:  219:#else
         -:  220:    (void)(__c);
         -:  221:#endif
-       66:  222:}
+       76:  222:}
     $$$$$:  222-block  0
-       66:  222-block  1
+       76:  222-block  1
         -:  223:
         -:  224:template <class _Tp>
 function _ZNSt3__119__debug_db_insert_iB6v15006INS_15__hash_iteratorIPNS_11__hash_nodeINS_17__hash_value_typeIP5GraphdEEPvEEEEEEvPT_ called 3 returned 100% blocks executed 100%

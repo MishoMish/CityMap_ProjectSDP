@@ -1462,10 +1462,12 @@ function _ZNSt3__16vectorIP5GraphNS_9allocatorIS2_EEE3endB6v15006Ev called 1 ret
         -: 1451:_LIBCPP_CONSTEXPR_AFTER_CXX17
         -: 1452:inline _LIBCPP_INLINE_VISIBILITY
         -: 1453:typename vector<_Tp, _Allocator>::reference
-        -: 1454:vector<_Tp, _Allocator>::operator[](size_type __n) _NOEXCEPT
+function _ZNSt3__16vectorIP5GraphNS_9allocatorIS2_EEEixB6v15006Em called 0 returned 0% blocks executed 0%
+    #####: 1454:vector<_Tp, _Allocator>::operator[](size_type __n) _NOEXCEPT
         -: 1455:{
         -: 1456:    _LIBCPP_ASSERT(__n < size(), "vector[] index out of bounds");
-        -: 1457:    return this->__begin_[__n];
+    #####: 1457:    return this->__begin_[__n];
+    $$$$$: 1457-block  0
         -: 1458:}
         -: 1459:
         -: 1460:template <class _Tp, class _Allocator>

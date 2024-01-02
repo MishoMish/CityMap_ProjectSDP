@@ -75,11 +75,11 @@
         -:   70:struct __less<_T1, _T1>
         -:   71:{
         -:   72:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
-function _ZNKSt3__16__lessImmEclB6v15006ERKmS3_ called 24 returned 100% blocks executed 100%
+function _ZNKSt3__16__lessImmEclB6v15006ERKmS3_ called 36 returned 100% blocks executed 100%
 function _ZNKSt3__16__lessIjjEclB6v15006ERKjS3_ called 3 returned 100% blocks executed 100%
 function _ZNKSt3__16__lessIddEclB6v15006ERKdS3_ called 1 returned 100% blocks executed 100%
-       28:   73:    bool operator()(const _T1& __x, const _T1& __y) const {return __x < __y;}
-       24:   73-block  0
+       40:   73:    bool operator()(const _T1& __x, const _T1& __y) const {return __x < __y;}
+       36:   73-block  0
         3:   73-block  1
         1:   73-block  2
         -:   74:};

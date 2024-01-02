@@ -9,851 +9,908 @@
         -:    4:
         -:    5:#include "TerminalProgram.h"
         -:    6:
-function _ZN15TerminalProgramC2EP14GraphContainerP5Graph called 5 returned 100% blocks executed 100%
-function _ZN15TerminalProgramC1EP14GraphContainerP5Graph called 5 returned 100% blocks executed 100%
-       10:    7:TerminalProgram::TerminalProgram(GraphContainer *_map, Graph *_start) {
-        5:    8:    map = _map;
-        5:    9:    current = _start;
-       10:   10:}
-        5:   10-block  0
-        5:   10-block  1
-        -:   11:
-function _ZN15TerminalProgramD2Ev called 5 returned 100% blocks executed 100%
-function _ZN15TerminalProgramD1Ev called 5 returned 100% blocks executed 100%
-       10:   12:TerminalProgram::~TerminalProgram() {
-        5:   13:    delete map;
-        5:   13-block  0
+        -:    7:// Constructor for TerminalProgram
+function _ZN15TerminalProgramC2EP14GraphContainerP5Graph called 10 returned 100% blocks executed 100%
+function _ZN15TerminalProgramC1EP14GraphContainerP5Graph called 10 returned 100% blocks executed 100%
+       20:    8:TerminalProgram::TerminalProgram(GraphContainer *_map, Graph *_start) {
+       10:    9:    map = _map;
+       10:   10:    current = _start;
+       20:   11:}
+       10:   11-block  0
+       10:   11-block  1
+        -:   12:
+        -:   13:// Destructor for TerminalProgram
+function _ZN15TerminalProgramD2Ev called 10 returned 100% blocks executed 100%
+function _ZN15TerminalProgramD1Ev called 10 returned 100% blocks executed 100%
+       20:   14:TerminalProgram::~TerminalProgram() {
+       10:   15:    delete map;
+       10:   15-block  0
+branch  0 taken 10
+branch  1 taken 0
+       10:   15-block  1
+       20:   16:}
+       10:   16-block  0
+       10:   16-block  1
+        -:   17:
+        -:   18:// Function to print the contents of a help file
+function _ZN15TerminalProgram16printHelpCommandERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE called 5 returned 100% blocks executed 85%
+        5:   19:void TerminalProgram::printHelpCommand(const std::string &path) {
+        5:   20:    std::ifstream inputFile(path);
+        5:   21:    if (inputFile.is_open()) {
+        5:   21-block  0
 branch  0 taken 5
 branch  1 taken 0
-        5:   13-block  1
-       10:   14:}
-        5:   14-block  0
-        5:   14-block  1
-        -:   15:
-function _ZN15TerminalProgram16printHelpCommandERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE called 0 returned 0% blocks executed 0%
-    #####:   16:void TerminalProgram::printHelpCommand(const std::string &path) {
-    #####:   17:    std::ifstream inputFile(path);
-    #####:   18:    if (inputFile.is_open()) {
-    $$$$$:   18-block  0
-branch  0 never executed
-branch  1 never executed
-    $$$$$:   18-block  1
-branch  2 never executed
-branch  3 never executed
-    #####:   19:        std::string line;
-    #####:   20:        while (getline(inputFile, line)) {
-    $$$$$:   20-block  0
-    $$$$$:   20-block  1
-branch  0 never executed
-branch  1 never executed
-    $$$$$:   20-block  2
-branch  2 never executed
-branch  3 never executed
-    $$$$$:   20-block  3
-branch  4 never executed
-branch  5 never executed
-    $$$$$:   20-block  4
-    #####:   21:            std::cout << line << std::endl;
-    $$$$$:   21-block  0
-branch  0 never executed
-branch  1 never executed
-    $$$$$:   21-block  1
-branch  2 never executed
-branch  3 never executed
-        -:   22:        }
-    #####:   23:        inputFile.close();
-    $$$$$:   23-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:   24:    } else {
-    $$$$$:   24-block  0
-    $$$$$:   24-block  1
-    #####:   25:        std::cerr << "Can't open help file! Check program setup!" << path << std::endl;
-    $$$$$:   25-block  0
-branch  0 never executed
-branch  1 never executed
-    $$$$$:   25-block  1
-branch  2 never executed
-branch  3 never executed
-    $$$$$:   25-block  2
-branch  4 never executed
-branch  5 never executed
-        -:   26:    }
-    #####:   27:}
-    $$$$$:   27-block  0
-    $$$$$:   27-block  1
-    $$$$$:   27-block  2
-    $$$$$:   27-block  3
-        -:   28:
-function _ZN15TerminalProgram17printIntroductionEv called 0 returned 0% blocks executed 0%
-    #####:   29:void TerminalProgram::printIntroduction() {
-    #####:   30:    printHelpCommand("/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug/InLineDatabase/intro.txt");
-    $$$$$:   30-block  0
-branch  0 never executed
-branch  1 never executed
-    $$$$$:   30-block  1
-    $$$$$:   30-block  2
-    #####:   31:}
-    $$$$$:   31-block  0
+        5:   21-block  1
+branch  2 taken 4
+branch  3 taken 1
+        4:   22:        std::string line;
+        -:   23:        // Print each line of the help file
+       96:   24:        while (getline(inputFile, line)) {
+        4:   24-block  0
+       96:   24-block  1
+branch  0 taken 96
+branch  1 taken 0
+       96:   24-block  2
+branch  2 taken 96
+branch  3 taken 0
+       96:   24-block  3
+branch  4 taken 92
+branch  5 taken 4
+       92:   24-block  4
+       92:   25:            std::cout << line << std::endl;
+       92:   25-block  0
+branch  0 taken 92
+branch  1 taken 0
+       92:   25-block  1
+branch  2 taken 92
+branch  3 taken 0
+        -:   26:        }
+        4:   27:        inputFile.close();
+        4:   27-block  0
+branch  0 taken 4
+branch  1 taken 0
+        4:   28:    } else {
+    $$$$$:   28-block  0
+        4:   28-block  1
+        1:   29:        throw std::invalid_argument("Can't open help file! Check program setup!");
+        1:   29-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   29-block  1
+branch  2 taken 0
+branch  3 taken 1
+    $$$$$:   29-block  2
+        -:   30:    }
+        5:   31:}
+        1:   31-block  0
+        4:   31-block  1
+        1:   31-block  2
+        1:   31-block  3
         -:   32:
-function _ZN15TerminalProgram9printHelpEv called 0 returned 0% blocks executed 0%
-    #####:   33:void TerminalProgram::printHelp() {
-    #####:   34:    printHelpCommand("/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug/InLineDatabase/commandHelp.txt");
-    $$$$$:   34-block  0
-branch  0 never executed
-branch  1 never executed
-    $$$$$:   34-block  1
-    $$$$$:   34-block  2
-    #####:   35:}
-    $$$$$:   35-block  0
-        -:   36:
-function _ZN15TerminalProgram10printHelp2Ev called 0 returned 0% blocks executed 0%
-    #####:   37:void TerminalProgram::printHelp2() {
-    #####:   38:    printHelpCommand("/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug/InLineDatabase/commandHelp2.txt");
-    $$$$$:   38-block  0
-branch  0 never executed
-branch  1 never executed
-    $$$$$:   38-block  1
-    $$$$$:   38-block  2
-    #####:   39:}
-    $$$$$:   39-block  0
-        -:   40:
+        -:   33:// Function to print the introduction using a help file
+function _ZN15TerminalProgram17printIntroductionEv called 2 returned 100% blocks executed 50%
+        2:   34:void TerminalProgram::printIntroduction() {
+        2:   35:    printHelpCommand("InLineDatabase/intro.txt");
+        2:   35-block  0
+branch  0 taken 2
+branch  1 taken 0
+    $$$$$:   35-block  1
+    $$$$$:   35-block  2
+        2:   36:}
+        2:   36-block  0
+        -:   37:
+        -:   38:// Function to print general help using a help file
+function _ZN15TerminalProgram9printHelpEv called 1 returned 100% blocks executed 50%
+        1:   39:void TerminalProgram::printHelp() {
+        1:   40:    printHelpCommand("InLineDatabase/commandHelp.txt");
+        1:   40-block  0
+branch  0 taken 1
+branch  1 taken 0
+    $$$$$:   40-block  1
+    $$$$$:   40-block  2
+        1:   41:}
+        1:   41-block  0
+        -:   42:
+        -:   43:// Function to print additional help using a second help file
+function _ZN15TerminalProgram10printHelp2Ev called 1 returned 100% blocks executed 50%
+        1:   44:void TerminalProgram::printHelp2() {
+        1:   45:    printHelpCommand("InLineDatabase/commandHelp2.txt");
+        1:   45-block  0
+branch  0 taken 1
+branch  1 taken 0
+    $$$$$:   45-block  1
+    $$$$$:   45-block  2
+        1:   46:}
+        1:   46-block  0
+        -:   47:
+        -:   48:// Function to handle the "location" command
 function _ZN15TerminalProgram21handleLocationCommandEv called 1 returned 100% blocks executed 100%
-        1:   41:void TerminalProgram::handleLocationCommand() {
-        1:   42:    std::cout << "Current location: " << current->getName() << std::endl;
-        1:   43:}
-        1:   43-block  0
-        -:   44:
-function _ZN15TerminalProgram19handleChangeCommandERNSt3__118basic_stringstreamIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE called 0 returned 0% blocks executed 0%
-    #####:   45:void TerminalProgram::handleChangeCommand(std::stringstream &ss) {
-    #####:   46:    std::string newLocation;
-    #####:   47:    ss >> newLocation;
-    $$$$$:   47-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:   48:    if (map->containsKey(newLocation)) {
-    $$$$$:   48-block  0
-branch  0 never executed
-branch  1 never executed
-    $$$$$:   48-block  1
-branch  2 never executed
-branch  3 never executed
-    #####:   49:        current = map->getGraph(newLocation);
-    $$$$$:   49-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:   50:        std::cout << "Location changed to: " << current->getName() << std::endl;
-    $$$$$:   50-block  0
-branch  0 never executed
-branch  1 never executed
-    $$$$$:   50-block  1
-branch  2 never executed
-branch  3 never executed
-    $$$$$:   50-block  2
-branch  4 never executed
-branch  5 never executed
-    $$$$$:   50-block  3
-branch  6 never executed
-branch  7 never executed
-    #####:   51:    } else {
-    $$$$$:   51-block  0
-    #####:   52:        std::cout << "Invalid location: " << newLocation << std::endl;
-    $$$$$:   52-block  0
-branch  0 never executed
-branch  1 never executed
-    $$$$$:   52-block  1
-branch  2 never executed
-branch  3 never executed
-    $$$$$:   52-block  2
-branch  4 never executed
-branch  5 never executed
-        -:   53:    }
-    #####:   54:}
-    $$$$$:   54-block  0
-    $$$$$:   54-block  1
-    $$$$$:   54-block  2
-        -:   55:
+        1:   49:void TerminalProgram::handleLocationCommand() {
+        1:   50:    std::cout << "Current location: " << current->getName() << std::endl;
+        1:   51:}
+        1:   51-block  0
+        -:   52:
+        -:   53:// Function to handle the "change" command
+function _ZN15TerminalProgram19handleChangeCommandERNSt3__118basic_stringstreamIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE called 2 returned 100% blocks executed 87%
+        2:   54:void TerminalProgram::handleChangeCommand(std::stringstream &ss) {
+        2:   55:    std::string newLocation;
+        2:   56:    ss >> newLocation;
+        2:   56-block  0
+branch  0 taken 2
+branch  1 taken 0
+        -:   57:    // Change location if valid, otherwise print an error message
+        2:   58:    if (map->containsKey(newLocation)) {
+        2:   58-block  0
+branch  0 taken 2
+branch  1 taken 0
+        2:   58-block  1
+branch  2 taken 1
+branch  3 taken 1
+        1:   59:        current = map->getGraph(newLocation);
+        1:   59-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   60:        std::cout << "Location changed to: " << current->getName() << std::endl;
+        1:   60-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   60-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   60-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:   60-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:   61:    } else {
+        1:   61-block  0
+        1:   62:        std::cout << "Invalid location: " << newLocation << std::endl;
+        1:   62-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   62-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   62-block  2
+branch  4 taken 1
+branch  5 taken 0
+        -:   63:    }
+        2:   64:}
+    $$$$$:   64-block  0
+        2:   64-block  1
+    $$$$$:   64-block  2
+        -:   65:
+        -:   66:// Function to handle the "neighbours" command
 function _ZN15TerminalProgram23handleNeighboursCommandEv called 0 returned 0% blocks executed 0%
-    #####:   56:void TerminalProgram::handleNeighboursCommand() {
-    #####:   57:    std::cout << "Neighbours of " << current->getName() << ": ";
-    #####:   58:    for (std::pair<Graph *const, double> neighbor: current->getAdjacencyList()) {
-    $$$$$:   58-block  0
-    $$$$$:   58-block  1
-branch  0 never executed
-branch  1 never executed
-    $$$$$:   58-block  2
-    $$$$$:   58-block  3
-    $$$$$:   58-block  4
-    #####:   59:        std::cout << neighbor.first->getName() << " ";
-        -:   60:    }
-    #####:   61:    std::cout << std::endl;
-    #####:   62:}
-    $$$$$:   62-block  0
-        -:   63:
-function _ZN15TerminalProgram17handleMoveCommandERNSt3__118basic_stringstreamIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE called 0 returned 0% blocks executed 0%
-    #####:   64:void TerminalProgram::handleMoveCommand(std::stringstream &ss) {
-    #####:   65:    std::string destination;
-    #####:   66:    ss >> destination;
-    $$$$$:   66-block  0
-branch  0 never executed
-branch  1 never executed
-        -:   67:
-    #####:   68:    if (!map->containsKey(destination)) {
-    $$$$$:   68-block  0
-branch  0 never executed
-branch  1 never executed
-    $$$$$:   68-block  1
-branch  2 never executed
-branch  3 never executed
-    #####:   69:        std::cout << "Not a valid destination!!!" << std::endl;
-    $$$$$:   69-block  0
-branch  0 never executed
-branch  1 never executed
-    $$$$$:   69-block  1
-branch  2 never executed
-branch  3 never executed
-    #####:   70:        return;
+    #####:   67:void TerminalProgram::handleNeighboursCommand() {
+    #####:   68:    std::cout << "Neighbours of " << current->getName() << ": ";
+        -:   69:    // Print the names of neighboring graphs
+    #####:   70:    for (std::pair<Graph *const, double> neighbor: current->getAdjacencyList()) {
     $$$$$:   70-block  0
-        -:   71:    }
-        -:   72:
-    #####:   73:    Graph *end = map->getGraph(destination);
-    $$$$$:   73-block  0
+    $$$$$:   70-block  1
 branch  0 never executed
 branch  1 never executed
-        -:   74:
-    #####:   75:    std::vector<Path> paths = RouteChecker::getPaths(current, end, closedJunctions);
-    $$$$$:   75-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:   76:    if (paths.size() == 0) {
-    $$$$$:   76-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:   77:        std::cout << "No route available. Can't apply move command!" << std::endl;
-    $$$$$:   77-block  0
-branch  0 never executed
-branch  1 never executed
-    $$$$$:   77-block  1
-branch  2 never executed
-branch  3 never executed
-    #####:   78:    } else {
-    $$$$$:   78-block  0
-    #####:   79:        paths[0].print();
+    $$$$$:   70-block  2
+    $$$$$:   70-block  3
+    $$$$$:   70-block  4
+    #####:   71:        std::cout << neighbor.first->getName() << " ";
+        -:   72:    }
+    #####:   73:    std::cout << std::endl;
+    #####:   74:}
+    $$$$$:   74-block  0
+        -:   75:
+        -:   76:// Function to handle the "move" command
+function _ZN15TerminalProgram17handleMoveCommandERNSt3__118basic_stringstreamIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE called 0 returned 0% blocks executed 0%
+    #####:   77:void TerminalProgram::handleMoveCommand(std::stringstream &ss) {
+    #####:   78:    std::string destination;
+    #####:   79:    ss >> destination;
     $$$$$:   79-block  0
 branch  0 never executed
 branch  1 never executed
-    #####:   80:        current = end;
-    #####:   81:        std::cout << "Success!" << std::endl;
+        -:   80:
+    #####:   81:    if (!map->containsKey(destination)) {
     $$$$$:   81-block  0
 branch  0 never executed
 branch  1 never executed
     $$$$$:   81-block  1
 branch  2 never executed
 branch  3 never executed
-        -:   82:    }
-    #####:   83:}
-    $$$$$:   83-block  0
-    $$$$$:   83-block  1
-    $$$$$:   83-block  2
-    $$$$$:   83-block  3
+    #####:   82:        std::cout << "Not a valid destination!!!" << std::endl;
+    $$$$$:   82-block  0
 branch  0 never executed
 branch  1 never executed
-    $$$$$:   83-block  4
-    $$$$$:   83-block  5
-    $$$$$:   83-block  6
-        -:   84:
-function _ZN15TerminalProgram18handleCloseCommandERNSt3__118basic_stringstreamIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE called 3 returned 100% blocks executed 62%
-        3:   85:void TerminalProgram::handleCloseCommand(std::stringstream &ss) {
-        3:   86:    std::string closedLocation;
-        3:   87:    ss >> closedLocation;
-        3:   87-block  0
-branch  0 taken 3
-branch  1 taken 0
-        3:   88:    if (map->containsKey(closedLocation)) {
-        3:   88-block  0
-branch  0 taken 3
-branch  1 taken 0
-        3:   88-block  1
-branch  2 taken 3
-branch  3 taken 0
-        3:   89:        closedJunctions.insert(map->getGraph(closedLocation));
-        3:   89-block  0
-branch  0 taken 3
-branch  1 taken 0
-        3:   89-block  1
-branch  2 taken 3
-branch  3 taken 0
-        3:   90:        std::cout << "Closed location: " << closedLocation << std::endl;
-        3:   90-block  0
-branch  0 taken 3
-branch  1 taken 0
-        3:   90-block  1
-branch  2 taken 3
-branch  3 taken 0
-        3:   90-block  2
-branch  4 taken 3
-branch  5 taken 0
-        3:   91:    } else {
-        3:   91-block  0
-    #####:   92:        std::cout << "Invalid location: " << closedLocation << std::endl;
+    $$$$$:   82-block  1
+branch  2 never executed
+branch  3 never executed
+    #####:   83:        return;
+    $$$$$:   83-block  0
+        -:   84:    }
+        -:   85:
+    #####:   86:    Graph *end = map->getGraph(destination);
+    $$$$$:   86-block  0
+branch  0 never executed
+branch  1 never executed
+        -:   87:
+    #####:   88:    std::vector<Path> paths = RouteChecker::getPaths(current, end, closedJunctions);
+    $$$$$:   88-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   89:    if (paths.size() == 0) {
+    $$$$$:   89-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   90:        std::cout << "No route available. Can't apply move command!" << std::endl;
+    $$$$$:   90-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   90-block  1
+branch  2 never executed
+branch  3 never executed
+    #####:   91:    } else {
+    $$$$$:   91-block  0
+    #####:   92:        paths[0].print();
     $$$$$:   92-block  0
 branch  0 never executed
 branch  1 never executed
-    $$$$$:   92-block  1
+    #####:   93:        current = end;
+    #####:   94:        std::cout << "Success!" << std::endl;
+    $$$$$:   94-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   94-block  1
 branch  2 never executed
 branch  3 never executed
-    $$$$$:   92-block  2
-branch  4 never executed
-branch  5 never executed
-        -:   93:    }
-        3:   94:}
-    $$$$$:   94-block  0
-        3:   94-block  1
-    $$$$$:   94-block  2
-        -:   95:
-function _ZN15TerminalProgram17handleOpenCommandERNSt3__118basic_stringstreamIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE called 1 returned 100% blocks executed 62%
-        1:   96:void TerminalProgram::handleOpenCommand(std::stringstream &ss) {
-        1:   97:    std::string openLocation;
-        1:   98:    ss >> openLocation;
-        1:   98-block  0
+        -:   95:    }
+    #####:   96:}
+    $$$$$:   96-block  0
+    $$$$$:   96-block  1
+    $$$$$:   96-block  2
+    $$$$$:   96-block  3
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   96-block  4
+    $$$$$:   96-block  5
+    $$$$$:   96-block  6
+        -:   97:
+        -:   98:// Function to handle the "close" command
+function _ZN15TerminalProgram18handleCloseCommandERNSt3__118basic_stringstreamIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE called 5 returned 100% blocks executed 90%
+        5:   99:void TerminalProgram::handleCloseCommand(std::stringstream &ss) {
+       10:  100:    while (!ss.eof() && ss.peek() != EOF) {
+        5:  100-block  0
+       10:  100-block  1
+branch  0 taken 5
+branch  1 taken 5
+        5:  100-block  2
+       10:  100-block  3
+branch  2 taken 5
+branch  3 taken 5
+        5:  100-block  4
+        5:  101:        std::string closedLocation;
+        5:  102:        ss >> closedLocation;
+        5:  102-block  0
+branch  0 taken 5
+branch  1 taken 0
+        -:  103:        // Close the specified location if valid, otherwise print an error message
+        5:  104:        if (map->containsKey(closedLocation)) {
+        5:  104-block  0
+branch  0 taken 5
+branch  1 taken 0
+        5:  104-block  1
+branch  2 taken 3
+branch  3 taken 2
+        3:  105:            closedJunctions.insert(map->getGraph(closedLocation));
+        3:  105-block  0
+branch  0 taken 3
+branch  1 taken 0
+        3:  105-block  1
+branch  2 taken 3
+branch  3 taken 0
+        3:  106:            std::cout << "Closed location: " << closedLocation << std::endl;
+        3:  106-block  0
+branch  0 taken 3
+branch  1 taken 0
+        3:  106-block  1
+branch  2 taken 3
+branch  3 taken 0
+        3:  106-block  2
+branch  4 taken 3
+branch  5 taken 0
+        3:  107:        } else {
+        3:  107-block  0
+        2:  108:            std::cout << "Invalid location: " << closedLocation << std::endl;
+        2:  108-block  0
+branch  0 taken 2
+branch  1 taken 0
+        2:  108-block  1
+branch  2 taken 2
+branch  3 taken 0
+        2:  108-block  2
+branch  4 taken 2
+branch  5 taken 0
+        -:  109:        }
+        5:  110:    }
+    $$$$$:  110-block  0
+    $$$$$:  110-block  1
+        5:  111:}
+        5:  111-block  0
+        -:  112:
+        -:  113:// Function to handle the "open" command
+function _ZN15TerminalProgram17handleOpenCommandERNSt3__118basic_stringstreamIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE called 1 returned 100% blocks executed 71%
+        1:  114:void TerminalProgram::handleOpenCommand(std::stringstream &ss) {
+        2:  115:    while (!ss.eof() && ss.peek() != EOF) {
+        1:  115-block  0
+        2:  115-block  1
+branch  0 taken 1
+branch  1 taken 1
+        1:  115-block  2
+        2:  115-block  3
+branch  2 taken 1
+branch  3 taken 1
+        1:  115-block  4
+        1:  116:        std::string openLocation;
+        1:  117:        ss >> openLocation;
+        1:  117-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   99:    if (map->containsKey(openLocation)) {
-        1:   99-block  0
+        -:  118:        // Open the specified location if valid, otherwise print an error message
+        1:  119:        if (map->containsKey(openLocation)) {
+        1:  119-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   99-block  1
+        1:  119-block  1
 branch  2 taken 1
 branch  3 taken 0
-        1:  100:        closedJunctions.erase(map->getGraph(openLocation));
-        1:  100-block  0
+        1:  120:            closedJunctions.erase(map->getGraph(openLocation));
+        1:  120-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:  100-block  1
+        1:  120-block  1
 branch  2 taken 1
 branch  3 taken 0
-        1:  101:        std::cout << "Opened location: " << openLocation << std::endl;
-        1:  101-block  0
+        1:  121:            std::cout << "Opened location: " << openLocation << std::endl;
+        1:  121-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:  101-block  1
+        1:  121-block  1
 branch  2 taken 1
 branch  3 taken 0
-        1:  101-block  2
+        1:  121-block  2
 branch  4 taken 1
 branch  5 taken 0
-        1:  102:    } else {
-        1:  102-block  0
-    #####:  103:        std::cout << "Invalid location: " << openLocation << std::endl;
-    $$$$$:  103-block  0
+        1:  122:        } else {
+        1:  122-block  0
+    #####:  123:            std::cout << "Invalid location: " << openLocation << std::endl;
+    $$$$$:  123-block  0
 branch  0 never executed
 branch  1 never executed
-    $$$$$:  103-block  1
+    $$$$$:  123-block  1
 branch  2 never executed
 branch  3 never executed
-    $$$$$:  103-block  2
+    $$$$$:  123-block  2
 branch  4 never executed
 branch  5 never executed
-        -:  104:    }
-        1:  105:}
-    $$$$$:  105-block  0
-        1:  105-block  1
-    $$$$$:  105-block  2
-        -:  106:
+        -:  124:        }
+        1:  125:    }
+    $$$$$:  125-block  0
+    $$$$$:  125-block  1
+        1:  126:}
+        1:  126-block  0
+        -:  127:
+        -:  128:// Function to handle the "closed" command
 function _ZN15TerminalProgram19handleClosedCommandEv called 1 returned 100% blocks executed 100%
-        1:  107:void TerminalProgram::handleClosedCommand() {
-        1:  108:    std::cout << "Closed locations: ";
-        3:  109:    for (Graph *closed: closedJunctions) {
-        1:  109-block  0
-        3:  109-block  1
+        1:  129:void TerminalProgram::handleClosedCommand() {
+        1:  130:    std::cout << "Closed locations: ";
+        -:  131:    // Print the names of closed locations
+        3:  132:    for (Graph *closed: closedJunctions) {
+        1:  132-block  0
+        3:  132-block  1
 branch  0 taken 2
 branch  1 taken 1
-        2:  109-block  2
-        2:  109-block  3
-        2:  109-block  4
-        2:  110:        std::cout << closed->getName() << " ";
-        -:  111:    }
-        1:  112:    std::cout << std::endl;
-        1:  113:}
-        1:  113-block  0
-        -:  114:
+        2:  132-block  2
+        2:  132-block  3
+        2:  132-block  4
+        2:  133:        std::cout << closed->getName() << " ";
+        -:  134:    }
+        1:  135:    std::cout << std::endl;
+        1:  136:}
+        1:  136-block  0
+        -:  137:
+        -:  138:// Function to handle the "tour" command
 function _ZN15TerminalProgram17handleTourCommandEv called 0 returned 0% blocks executed 0%
-    #####:  115:void TerminalProgram::handleTourCommand() {
-    #####:  116:    Path *tourPath = RouteChecker::hasHamiltonianPath(map);
-    #####:  117:    std::cout << "An example tour (Hamiltonian road): ";
-    #####:  118:    tourPath->print();
-        -:  119:
-    #####:  120:    if (tourPath != nullptr)
-    $$$$$:  120-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:  121:        delete tourPath;
-    $$$$$:  121-block  0
-branch  0 never executed
-branch  1 never executed
-    $$$$$:  121-block  1
-    $$$$$:  121-block  2
-    #####:  122:}
-    $$$$$:  122-block  0
-        -:  123:
-function _ZN15TerminalProgram19handleExistsCommandERNSt3__118basic_stringstreamIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE called 0 returned 0% blocks executed 0%
-    #####:  124:void TerminalProgram::handleExistsCommand(std::stringstream &ss) {
-        -:  125:    // doesn't look for closed roads
-    #####:  126:    std::string start, end;
-    #####:  127:    ss >> start >> end;
-    $$$$$:  127-block  0
-branch  0 never executed
-branch  1 never executed
-    $$$$$:  127-block  1
-branch  2 never executed
-branch  3 never executed
-    #####:  128:    Graph *startGraph = map->getGraph(start);
-    $$$$$:  128-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:  129:    Graph *endGraph = map->getGraph(end);
-    $$$$$:  129-block  0
-branch  0 never executed
-branch  1 never executed
-        -:  130:
-    #####:  131:    bool pathExists = RouteChecker::exists(startGraph, endGraph);
-    $$$$$:  131-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:  132:    std::cout << "Path exists between " << start << " and " << end << ": " << (pathExists ? "Yes" : "No")
-    $$$$$:  132-block  0
-branch  0 never executed
-branch  1 never executed
-    $$$$$:  132-block  1
-branch  2 never executed
-branch  3 never executed
-    $$$$$:  132-block  2
-branch  4 never executed
-branch  5 never executed
-    $$$$$:  132-block  3
-branch  6 never executed
-branch  7 never executed
-    $$$$$:  132-block  4
-branch  8 never executed
-branch  9 never executed
-    $$$$$:  132-block  5
-branch 10 never executed
-branch 11 never executed
-    #####:  133:              << std::endl;
-    $$$$$:  133-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:  134:}
-    $$$$$:  134-block  0
-    $$$$$:  134-block  1
-    $$$$$:  134-block  2
-        -:  135:
-function _ZN15TerminalProgram18handlePathsCommandERNSt3__118basic_stringstreamIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE called 0 returned 0% blocks executed 0%
-    #####:  136:void TerminalProgram::handlePathsCommand(std::stringstream &ss) {
-    #####:  137:    std::string start, end;
-    #####:  138:    ss >> start >> end;
-    $$$$$:  138-block  0
-branch  0 never executed
-branch  1 never executed
-    $$$$$:  138-block  1
-branch  2 never executed
-branch  3 never executed
-        -:  139:
-    #####:  140:    Graph *startGraph = map->getGraph(start);
-    $$$$$:  140-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:  141:    Graph *endGraph = map->getGraph(end);
-    $$$$$:  141-block  0
-branch  0 never executed
-branch  1 never executed
-        -:  142:
-    #####:  143:    std::vector<Path> paths = RouteChecker::getPaths(startGraph, endGraph, closedJunctions);
-    $$$$$:  143-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:  144:    if (paths.size() == 0) {
+    #####:  139:void TerminalProgram::handleTourCommand() {
+    #####:  140:    Path *tourPath = RouteChecker::hasHamiltonianPath(map);
+    #####:  141:    std::cout << "An example tour (Hamiltonian road): ";
+    #####:  142:    tourPath->print();
+        -:  143:
+    #####:  144:    if (tourPath != nullptr)
     $$$$$:  144-block  0
 branch  0 never executed
 branch  1 never executed
-    #####:  145:        if (RouteChecker::exists(startGraph, endGraph)) {
+    #####:  145:        delete tourPath;
     $$$$$:  145-block  0
 branch  0 never executed
 branch  1 never executed
     $$$$$:  145-block  1
-branch  2 never executed
-branch  3 never executed
-    #####:  146:            std::cout << "Something is closed ;( ";
+    $$$$$:  145-block  2
+    #####:  146:}
     $$$$$:  146-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:  147:        }
-    $$$$$:  147-block  0
-    #####:  148:        std::cout << "No paths found!" << std::endl;
-    $$$$$:  148-block  0
-branch  0 never executed
-branch  1 never executed
-    $$$$$:  148-block  1
-branch  2 never executed
-branch  3 never executed
-    #####:  149:    }
-    $$$$$:  149-block  0
-    #####:  150:    for (Path path: paths) {
-    $$$$$:  150-block  0
-    $$$$$:  150-block  1
-branch  0 never executed
-branch  1 never executed
-    $$$$$:  150-block  2
-branch  2 never executed
-branch  3 never executed
-    $$$$$:  150-block  3
-    $$$$$:  150-block  4
-    #####:  151:        path.print();
-    $$$$$:  151-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:  152:    }
+        -:  147:
+        -:  148:// Function to handle the "exists" command
+function _ZN15TerminalProgram19handleExistsCommandERNSt3__118basic_stringstreamIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE called 0 returned 0% blocks executed 0%
+    #####:  149:void TerminalProgram::handleExistsCommand(std::stringstream &ss) {
+        -:  150:    // doesn't look for closed roads
+    #####:  151:    std::string start, end;
+    #####:  152:    ss >> start >> end;
     $$$$$:  152-block  0
-    #####:  153:}
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  152-block  1
+branch  2 never executed
+branch  3 never executed
+    #####:  153:    Graph *startGraph = map->getGraph(start);
     $$$$$:  153-block  0
-    $$$$$:  153-block  1
-    $$$$$:  153-block  2
-    $$$$$:  153-block  3
-    $$$$$:  153-block  4
-    $$$$$:  153-block  5
-        -:  154:
-function _ZN15TerminalProgram24handleCanReturnToCommandEv called 0 returned 0% blocks executed 0%
-    #####:  155:void TerminalProgram::handleCanReturnToCommand() {
-    #####:  156:    if (RouteChecker::canReturnToStart(current)) {
+branch  0 never executed
+branch  1 never executed
+    #####:  154:    Graph *endGraph = map->getGraph(end);
+    $$$$$:  154-block  0
+branch  0 never executed
+branch  1 never executed
+        -:  155:
+    #####:  156:    bool pathExists = RouteChecker::exists(startGraph, endGraph);
     $$$$$:  156-block  0
 branch  0 never executed
 branch  1 never executed
-    #####:  157:        std::cout << "We can return to start after exiting \"" << current->getName() << "\".\n";
-    #####:  158:    } else {
-    $$$$$:  158-block  0
-    #####:  159:        std::cout << "Once out, we can't return to \"" << current->getName() << "\".\n";
-    $$$$$:  159-block  0
-        -:  160:    }
-    #####:  161:}
-    $$$$$:  161-block  0
-        -:  162:
-function _ZN15TerminalProgram28handleHamiltonianPathCommandEv called 0 returned 0% blocks executed 0%
-    #####:  163:void TerminalProgram::handleHamiltonianPathCommand() {
-    #####:  164:    Path *tourPath = RouteChecker::hasHamiltonianPath(map, current);
-    #####:  165:    std::cout << "An example tour (Hamiltonian road): ";
-    #####:  166:    tourPath->print();
-        -:  167:
-    #####:  168:    if (tourPath != nullptr)
-    $$$$$:  168-block  0
+    #####:  157:    std::cout << "Path exists between " << start << " and " << end << ": " << (pathExists ? "Yes" : "No")
+    $$$$$:  157-block  0
 branch  0 never executed
 branch  1 never executed
-    #####:  169:        delete tourPath;
+    $$$$$:  157-block  1
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  157-block  2
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  157-block  3
+branch  6 never executed
+branch  7 never executed
+    $$$$$:  157-block  4
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  157-block  5
+branch 10 never executed
+branch 11 never executed
+    #####:  158:              << std::endl;
+    $$$$$:  158-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  159:}
+    $$$$$:  159-block  0
+    $$$$$:  159-block  1
+    $$$$$:  159-block  2
+        -:  160:
+        -:  161:// Function to handle the "paths" command
+function _ZN15TerminalProgram18handlePathsCommandERNSt3__118basic_stringstreamIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE called 0 returned 0% blocks executed 0%
+    #####:  162:void TerminalProgram::handlePathsCommand(std::stringstream &ss) {
+    #####:  163:    std::string start, end;
+    #####:  164:    ss >> start >> end;
+    $$$$$:  164-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  164-block  1
+branch  2 never executed
+branch  3 never executed
+        -:  165:
+    #####:  166:    Graph *startGraph = map->getGraph(start);
+    $$$$$:  166-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  167:    Graph *endGraph = map->getGraph(end);
+    $$$$$:  167-block  0
+branch  0 never executed
+branch  1 never executed
+        -:  168:
+    #####:  169:    std::vector<Path> paths = RouteChecker::getPaths(startGraph, endGraph, closedJunctions);
     $$$$$:  169-block  0
 branch  0 never executed
 branch  1 never executed
-    $$$$$:  169-block  1
-    $$$$$:  169-block  2
-    #####:  170:}
+    #####:  170:    if (paths.size() == 0) {
     $$$$$:  170-block  0
-        -:  171:
-function _ZN15TerminalProgram29handleCanReachAllNodesCommandEv called 0 returned 0% blocks executed 0%
-    #####:  172:void TerminalProgram::handleCanReachAllNodesCommand() {
-    #####:  173:    if (RouteChecker::canReachAllNodes(map, current)) {
+branch  0 never executed
+branch  1 never executed
+    #####:  171:        if (RouteChecker::exists(startGraph, endGraph)) {
+    $$$$$:  171-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  171-block  1
+branch  2 never executed
+branch  3 never executed
+    #####:  172:            std::cout << "Something is closed ;( ";
+    $$$$$:  172-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  173:        }
     $$$$$:  173-block  0
+    #####:  174:        std::cout << "No paths found!" << std::endl;
+    $$$$$:  174-block  0
 branch  0 never executed
 branch  1 never executed
-    #####:  174:        std::cout << "Can reach them all from \"" << current->getName() << "\".\n";
-    #####:  175:    } else {
+    $$$$$:  174-block  1
+branch  2 never executed
+branch  3 never executed
+    #####:  175:    }
     $$$$$:  175-block  0
-    #####:  176:        std::cout << "Can't reach them all from \"" << current->getName() << "\".\n";
+    #####:  176:    for (Path path: paths) {
     $$$$$:  176-block  0
-        -:  177:    }
-    #####:  178:}
-    $$$$$:  178-block  0
-        -:  179:
-function _ZN15TerminalProgram21handleDeadEndsCommandEv called 0 returned 0% blocks executed 0%
-    #####:  180:void TerminalProgram::handleDeadEndsCommand() {
-    #####:  181:    std::vector<std::pair<Graph *, Graph *>> deadEnds = RouteChecker::findAllDeadEnded(map);
-    #####:  182:    if (deadEnds.size() == 0) {
-    $$$$$:  182-block  0
+    $$$$$:  176-block  1
 branch  0 never executed
 branch  1 never executed
-    #####:  183:        std::cout << "No dead ends found!\n";
+    $$$$$:  176-block  2
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  176-block  3
+    $$$$$:  176-block  4
+    #####:  177:        path.print();
+    $$$$$:  177-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  178:    }
+    $$$$$:  178-block  0
+    #####:  179:}
+    $$$$$:  179-block  0
+    $$$$$:  179-block  1
+    $$$$$:  179-block  2
+    $$$$$:  179-block  3
+    $$$$$:  179-block  4
+    $$$$$:  179-block  5
+        -:  180:
+        -:  181:// Function to handle the "canReturnTo" command
+function _ZN15TerminalProgram24handleCanReturnToCommandEv called 0 returned 0% blocks executed 0%
+    #####:  182:void TerminalProgram::handleCanReturnToCommand() {
+    #####:  183:    if (RouteChecker::canReturnToStart(current)) {
     $$$$$:  183-block  0
 branch  0 never executed
 branch  1 never executed
-    #####:  184:    } else {
-    $$$$$:  184-block  0
-    #####:  185:        std::cout << "Dead ends are:\n";
+    #####:  184:        std::cout << "We can return to start after exiting \"" << current->getName() << "\".\n";
+    #####:  185:    } else {
     $$$$$:  185-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:  186:        for (std::pair<Graph *, Graph *> deadEnd: deadEnds) {
+    #####:  186:        std::cout << "Once out, we can't return to \"" << current->getName() << "\".\n";
     $$$$$:  186-block  0
-    $$$$$:  186-block  1
+        -:  187:    }
+    #####:  188:}
+    $$$$$:  188-block  0
+        -:  189:
+        -:  190:// Function to handle the "hamiltonianPath" command
+function _ZN15TerminalProgram28handleHamiltonianPathCommandEv called 0 returned 0% blocks executed 0%
+    #####:  191:void TerminalProgram::handleHamiltonianPathCommand() {
+    #####:  192:    Path *tourPath = RouteChecker::hasHamiltonianPath(map, current);
+    #####:  193:    std::cout << "An example tour (Hamiltonian road): ";
+    #####:  194:    tourPath->print();
+        -:  195:
+    #####:  196:    if (tourPath != nullptr)
+    $$$$$:  196-block  0
 branch  0 never executed
 branch  1 never executed
-    $$$$$:  186-block  2
-    $$$$$:  186-block  3
-    #####:  187:            std::cout << deadEnd.first << "->" << deadEnd.second << "\n";
-    $$$$$:  187-block  0
+    #####:  197:        delete tourPath;
+    $$$$$:  197-block  0
 branch  0 never executed
 branch  1 never executed
-    $$$$$:  187-block  1
-branch  2 never executed
-branch  3 never executed
-    $$$$$:  187-block  2
-branch  4 never executed
-branch  5 never executed
-    $$$$$:  187-block  3
-branch  6 never executed
-branch  7 never executed
-        -:  188:        }
-        -:  189:    }
-    #####:  190:}
-    $$$$$:  190-block  0
-    $$$$$:  190-block  1
-    $$$$$:  190-block  2
-        -:  191:
-function _ZN15TerminalProgram19handleVisualCommandEv called 0 returned 0% blocks executed 0%
-    #####:  192:void TerminalProgram::handleVisualCommand() {
-    #####:  193:    GraphvizController::generateDotFile(map, current, closedJunctions);
-    $$$$$:  193-block  0
+    $$$$$:  197-block  1
+    $$$$$:  197-block  2
+    #####:  198:}
+    $$$$$:  198-block  0
+        -:  199:
+        -:  200:// Function to handle the "canReachAllNodes" command
+function _ZN15TerminalProgram29handleCanReachAllNodesCommandEv called 0 returned 0% blocks executed 0%
+    #####:  201:void TerminalProgram::handleCanReachAllNodesCommand() {
+    #####:  202:    if (RouteChecker::canReachAllNodes(map, current)) {
+    $$$$$:  202-block  0
 branch  0 never executed
 branch  1 never executed
-    $$$$$:  193-block  1
-    $$$$$:  193-block  2
-    #####:  194:    GraphvizController::runGraphvizAndOpenImage();
-    #####:  195:}
-    $$$$$:  195-block  0
-        -:  196:
-        -:  197:
-function _ZN15TerminalProgram3runEv called 0 returned 0% blocks executed 0%
-    #####:  198:void TerminalProgram::run() {
-    #####:  199:    printIntroduction();
-        -:  200:
-    #####:  201:    while (true) {
-    $$$$$:  201-block  0
-    $$$$$:  201-block  1
-    #####:  202:        std::cout << "Enter command: ";
-    #####:  203:        std::string input;
-    #####:  204:        std::getline(std::cin, input);
+    #####:  203:        std::cout << "Can reach them all from \"" << current->getName() << "\".\n";
+    #####:  204:    } else {
     $$$$$:  204-block  0
-branch  0 never executed
-branch  1 never executed
-        -:  205:
-    #####:  206:        std::stringstream ss(input);
-    $$$$$:  206-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:  207:        std::string command;
-    #####:  208:        ss >> command;
-    $$$$$:  208-block  0
-branch  0 never executed
-branch  1 never executed
-        -:  209:
-    #####:  210:        if (command == "location") {
-    $$$$$:  210-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:  211:            handleLocationCommand();
-    $$$$$:  211-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:  212:        } else if (command == "change") {
+    #####:  205:        std::cout << "Can't reach them all from \"" << current->getName() << "\".\n";
+    $$$$$:  205-block  0
+        -:  206:    }
+    #####:  207:}
+    $$$$$:  207-block  0
+        -:  208:
+        -:  209:// Function to handle the "deadEnds" command
+function _ZN15TerminalProgram21handleDeadEndsCommandEv called 0 returned 0% blocks executed 0%
+    #####:  210:void TerminalProgram::handleDeadEndsCommand() {
+    #####:  211:    std::vector<std::pair<Graph *, Graph *>> deadEnds = RouteChecker::findAllDeadEnded(map);
+    #####:  212:    if (deadEnds.size() == 0) {
     $$$$$:  212-block  0
-    $$$$$:  212-block  1
 branch  0 never executed
 branch  1 never executed
-    #####:  213:            handleChangeCommand(ss);
+    #####:  213:        std::cout << "No dead ends found!\n";
     $$$$$:  213-block  0
 branch  0 never executed
 branch  1 never executed
-    #####:  214:        } else if (command == "neighbours") {
+    #####:  214:    } else {
     $$$$$:  214-block  0
-    $$$$$:  214-block  1
-branch  0 never executed
-branch  1 never executed
-    #####:  215:            handleNeighboursCommand();
+    #####:  215:        std::cout << "Dead ends are:\n";
     $$$$$:  215-block  0
 branch  0 never executed
 branch  1 never executed
-    #####:  216:        } else if (command == "move") {
+    #####:  216:        for (std::pair<Graph *, Graph *> deadEnd: deadEnds) {
     $$$$$:  216-block  0
     $$$$$:  216-block  1
 branch  0 never executed
 branch  1 never executed
-    #####:  217:            handleMoveCommand(ss);
+    $$$$$:  216-block  2
+    $$$$$:  216-block  3
+    #####:  217:            std::cout << deadEnd.first->getName() << "->" << deadEnd.second->getName() << "\n";
     $$$$$:  217-block  0
 branch  0 never executed
 branch  1 never executed
-    #####:  218:        } else if (command == "close") {
-    $$$$$:  218-block  0
-    $$$$$:  218-block  1
-branch  0 never executed
-branch  1 never executed
-    #####:  219:            handleCloseCommand(ss);
-    $$$$$:  219-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:  220:        } else if (command == "open") {
+    $$$$$:  217-block  1
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  217-block  2
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  217-block  3
+branch  6 never executed
+branch  7 never executed
+    $$$$$:  217-block  4
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  217-block  5
+branch 10 never executed
+branch 11 never executed
+        -:  218:        }
+        -:  219:    }
+    #####:  220:}
     $$$$$:  220-block  0
     $$$$$:  220-block  1
-branch  0 never executed
-branch  1 never executed
-    #####:  221:            handleOpenCommand(ss);
-    $$$$$:  221-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:  222:        } else if (command == "closed") {
-    $$$$$:  222-block  0
-    $$$$$:  222-block  1
-branch  0 never executed
-branch  1 never executed
-    #####:  223:            handleClosedCommand();
-    $$$$$:  223-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:  224:        } else if (command == "tour") {
+    $$$$$:  220-block  2
+        -:  221:
+        -:  222:// Function to handle the "visual" command
+function _ZN15TerminalProgram19handleVisualCommandEv called 0 returned 0% blocks executed 0%
+    #####:  223:void TerminalProgram::handleVisualCommand() {
+    #####:  224:    GraphvizController::generateDotFile(map, current, closedJunctions);
     $$$$$:  224-block  0
+branch  0 never executed
+branch  1 never executed
     $$$$$:  224-block  1
-branch  0 never executed
-branch  1 never executed
-    #####:  225:            handleTourCommand();
-    $$$$$:  225-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:  226:        } else if (command == "exists") {
+    $$$$$:  224-block  2
+    #####:  225:    GraphvizController::runGraphvizAndOpenImage();
+    #####:  226:}
     $$$$$:  226-block  0
-    $$$$$:  226-block  1
-branch  0 never executed
-branch  1 never executed
-    #####:  227:            handleExistsCommand(ss);
-    $$$$$:  227-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:  228:        } else if (command == "paths") {
-    $$$$$:  228-block  0
-    $$$$$:  228-block  1
-branch  0 never executed
-branch  1 never executed
-    #####:  229:            handlePathsCommand(ss);
-    $$$$$:  229-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:  230:        } else if (command == "canReturnTo") {
-    $$$$$:  230-block  0
-    $$$$$:  230-block  1
-branch  0 never executed
-branch  1 never executed
-    #####:  231:            handleCanReturnToCommand();
-    $$$$$:  231-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:  232:        } else if (command == "hamiltonianPath") {
+        -:  227:
+        -:  228:// Main function to run the TerminalProgram
+function _ZN15TerminalProgram3runEv called 0 returned 0% blocks executed 0%
+    #####:  229:void TerminalProgram::run() {
+    #####:  230:    printIntroduction();
+        -:  231:
+    #####:  232:    while (true) {
     $$$$$:  232-block  0
     $$$$$:  232-block  1
-branch  0 never executed
-branch  1 never executed
-    #####:  233:            handleHamiltonianPathCommand();
-    $$$$$:  233-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:  234:        } else if (command == "canReachAllNodes") {
-    $$$$$:  234-block  0
-    $$$$$:  234-block  1
-branch  0 never executed
-branch  1 never executed
-    #####:  235:            handleCanReachAllNodesCommand();
+    #####:  233:        std::cout << "Enter command: ";
+    #####:  234:        std::string input;
+    #####:  235:        std::getline(std::cin, input);
     $$$$$:  235-block  0
 branch  0 never executed
 branch  1 never executed
-    #####:  236:        } else if (command == "deadEnds") {
-    $$$$$:  236-block  0
-    $$$$$:  236-block  1
-branch  0 never executed
-branch  1 never executed
-    #####:  237:            handleDeadEndsCommand();
+        -:  236:
+    #####:  237:        std::stringstream ss(input);
     $$$$$:  237-block  0
 branch  0 never executed
 branch  1 never executed
-    #####:  238:        } else if (command == "visual") {
-    $$$$$:  238-block  0
-    $$$$$:  238-block  1
-branch  0 never executed
-branch  1 never executed
-    #####:  239:            handleVisualCommand();
+    #####:  238:        std::string command;
+    #####:  239:        ss >> command;
     $$$$$:  239-block  0
 branch  0 never executed
 branch  1 never executed
-    #####:  240:        } else if (command == "help") {
-    $$$$$:  240-block  0
-    $$$$$:  240-block  1
-branch  0 never executed
-branch  1 never executed
-    #####:  241:            printHelp();
-    $$$$$:  241-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:  242:        } else if (command == "help2") {
+        -:  240:
+        -:  241:        // Command handling logic
+    #####:  242:        if (command == "location") {
     $$$$$:  242-block  0
-    $$$$$:  242-block  1
 branch  0 never executed
 branch  1 never executed
-    #####:  243:            printHelp2();
+    #####:  243:            handleLocationCommand();
     $$$$$:  243-block  0
 branch  0 never executed
 branch  1 never executed
-    #####:  244:        } else if (command == "exit") {
+    #####:  244:        } else if (command == "change") {
     $$$$$:  244-block  0
     $$$$$:  244-block  1
 branch  0 never executed
 branch  1 never executed
-    #####:  245:            break;
+    #####:  245:            handleChangeCommand(ss);
     $$$$$:  245-block  0
-        -:  246:        } else {
-    #####:  247:            std::cout << "Invalid command." << std::endl;
+branch  0 never executed
+branch  1 never executed
+    #####:  246:        } else if (command == "neighbours") {
+    $$$$$:  246-block  0
+    $$$$$:  246-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:  247:            handleNeighboursCommand();
     $$$$$:  247-block  0
 branch  0 never executed
 branch  1 never executed
-    $$$$$:  247-block  1
-branch  2 never executed
-branch  3 never executed
-        -:  248:        }
-        -:  249:
-        -:  250:        std::cout
-    #####:  251:                << "===========================================================================================================\n";
+    #####:  248:        } else if (command == "move") {
+    $$$$$:  248-block  0
+    $$$$$:  248-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:  249:            handleMoveCommand(ss);
+    $$$$$:  249-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  250:        } else if (command == "close") {
+    $$$$$:  250-block  0
+    $$$$$:  250-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:  251:            handleCloseCommand(ss);
     $$$$$:  251-block  0
 branch  0 never executed
 branch  1 never executed
-    #####:  252:    }
+    #####:  252:        } else if (command == "open") {
     $$$$$:  252-block  0
     $$$$$:  252-block  1
-    $$$$$:  252-block  2
+branch  0 never executed
+branch  1 never executed
+    #####:  253:            handleOpenCommand(ss);
+    $$$$$:  253-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  254:        } else if (command == "closed") {
+    $$$$$:  254-block  0
+    $$$$$:  254-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:  255:            handleClosedCommand();
+    $$$$$:  255-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  256:        } else if (command == "tour") {
+    $$$$$:  256-block  0
+    $$$$$:  256-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:  257:            handleTourCommand();
+    $$$$$:  257-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  258:        } else if (command == "exists") {
+    $$$$$:  258-block  0
+    $$$$$:  258-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:  259:            handleExistsCommand(ss);
+    $$$$$:  259-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  260:        } else if (command == "paths") {
+    $$$$$:  260-block  0
+    $$$$$:  260-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:  261:            handlePathsCommand(ss);
+    $$$$$:  261-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  262:        } else if (command == "canReturnTo") {
+    $$$$$:  262-block  0
+    $$$$$:  262-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:  263:            handleCanReturnToCommand();
+    $$$$$:  263-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  264:        } else if (command == "hamiltonianPath") {
+    $$$$$:  264-block  0
+    $$$$$:  264-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:  265:            handleHamiltonianPathCommand();
+    $$$$$:  265-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  266:        } else if (command == "canReachAllNodes") {
+    $$$$$:  266-block  0
+    $$$$$:  266-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:  267:            handleCanReachAllNodesCommand();
+    $$$$$:  267-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  268:        } else if (command == "deadEnds") {
+    $$$$$:  268-block  0
+    $$$$$:  268-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:  269:            handleDeadEndsCommand();
+    $$$$$:  269-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  270:        } else if (command == "visual") {
+    $$$$$:  270-block  0
+    $$$$$:  270-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:  271:            handleVisualCommand();
+    $$$$$:  271-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  272:        } else if (command == "help") {
+    $$$$$:  272-block  0
+    $$$$$:  272-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:  273:            printHelp();
+    $$$$$:  273-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  274:        } else if (command == "help2") {
+    $$$$$:  274-block  0
+    $$$$$:  274-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:  275:            printHelp2();
+    $$$$$:  275-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  276:        } else if (command == "exit") {
+    $$$$$:  276-block  0
+    $$$$$:  276-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:  277:            break;
+    $$$$$:  277-block  0
+        -:  278:        } else {
+    #####:  279:            std::cout << "Invalid command." << std::endl;
+    $$$$$:  279-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  279-block  1
+branch  2 never executed
+branch  3 never executed
+        -:  280:        }
+        -:  281:
+        -:  282:        // Divider for better readability
+        -:  283:        std::cout
+    #####:  284:                << "===========================================================================================================\n";
+    $$$$$:  284-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  285:    }
+    $$$$$:  285-block  0
+    $$$$$:  285-block  1
+    $$$$$:  285-block  2
 branch  0 never executed
 branch  1 never executed
 branch  2 never executed
-    $$$$$:  252-block  3
-    $$$$$:  252-block  4
-        -:  253:
-    #####:  254:}
-    $$$$$:  254-block  0
-    $$$$$:  254-block  1
-        -:  255:
+    $$$$$:  285-block  3
+    $$$$$:  285-block  4
+    #####:  286:}
+    $$$$$:  286-block  0
+    $$$$$:  286-block  1
+        -:  287:
+        -:  288:// Getter for map
 function _ZN15TerminalProgram6getMapEv called 1 returned 100% blocks executed 100%
-        1:  256:GraphContainer *TerminalProgram::getMap() {
-        1:  257:    return map;
-        1:  257-block  0
-        -:  258:}
-        -:  259:
+        1:  289:GraphContainer *TerminalProgram::getMap() {
+        1:  290:    return map;
+        1:  290-block  0
+        -:  291:}
+        -:  292:
+        -:  293:// Getter for current
 function _ZN15TerminalProgram10getCurrentEv called 1 returned 100% blocks executed 100%
-        1:  260:Graph *TerminalProgram::getCurrent() {
-        1:  261:    return current;
-        1:  261-block  0
-        -:  262:}
-        -:  263:
-function _ZN15TerminalProgram18getClosedJunctionsEv called 4 returned 100% blocks executed 100%
-        4:  264:std::unordered_set<Graph *> TerminalProgram::getClosedJunctions() {
-        4:  265:    return closedJunctions;
-        4:  265-block  0
-        -:  266:}
+        1:  294:Graph *TerminalProgram::getCurrent() {
+        1:  295:    return current;
+        1:  295-block  0
+        -:  296:}
+        -:  297:
+        -:  298:// Getter for closedJunctions
+function _ZN15TerminalProgram18getClosedJunctionsEv called 6 returned 100% blocks executed 100%
+        6:  299:std::unordered_set<Graph *> TerminalProgram::getClosedJunctions() {
+        6:  300:    return closedJunctions;
+        6:  300-block  0
+        -:  301:}

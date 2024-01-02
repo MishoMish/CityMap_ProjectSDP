@@ -2873,17 +2873,17 @@ function _ZNSt3__16vectorIN7doctest16SubcaseSignatureENS_9allocatorIS2_EEEixB6v1
 function _ZNSt3__16vectorIPKN7doctest6detail8TestCaseENS_9allocatorIS5_EEEixB6v15006Em called 0 returned 0% blocks executed 0%
 function _ZNSt3__16vectorIPN7doctest13IContextScopeENS_9allocatorIS3_EEEixB6v15006Em called 0 returned 0% blocks executed 0%
 function _ZNSt3__16vectorIN7doctest6StringENS_9allocatorIS2_EEEixB6v15006Em called 0 returned 0% blocks executed 0%
-function _ZNSt3__16vectorIP5GraphNS_9allocatorIS2_EEEixB6v15006Em called 2 returned 100% blocks executed 100%
-      132: 1454:vector<_Tp, _Allocator>::operator[](size_type __n) _NOEXCEPT
+function _ZNSt3__16vectorIP5GraphNS_9allocatorIS2_EEEixB6v15006Em called 3 returned 100% blocks executed 100%
+      133: 1454:vector<_Tp, _Allocator>::operator[](size_type __n) _NOEXCEPT
         -: 1455:{
         -: 1456:    _LIBCPP_ASSERT(__n < size(), "vector[] index out of bounds");
-      132: 1457:    return this->__begin_[__n];
+      133: 1457:    return this->__begin_[__n];
       115: 1457-block  0
        15: 1457-block  1
     $$$$$: 1457-block  2
     $$$$$: 1457-block  3
     $$$$$: 1457-block  4
-        2: 1457-block  5
+        3: 1457-block  5
         -: 1458:}
         -: 1459:
         -: 1460:template <class _Tp, class _Allocator>

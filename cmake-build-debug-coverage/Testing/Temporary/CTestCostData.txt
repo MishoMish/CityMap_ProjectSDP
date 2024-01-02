@@ -1,7 +1,7 @@
-GraphContainerTest 10 0.000842275
-GraphTest 10 0.000685212
-GraphvizControllerTest 10 0.0549544
-PathTest 10 0.000997129
-RouteCheckerTest 10 0.00163812
-TerminalProgramTest 10 0.0010641
+GraphContainerTest 34 8.23713e-05
+GraphTest 33 6.3678e-05
+GraphvizControllerTest 34 0.00658072
+PathTest 33 8.54924e-05
+RouteCheckerTest 34 0.000100278
+TerminalProgramTest 32 9.89883e-05
 ---

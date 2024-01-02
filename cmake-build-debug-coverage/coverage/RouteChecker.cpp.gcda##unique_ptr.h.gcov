@@ -514,19 +514,11 @@ branch  1 never executed
         -:  427:  template <bool _Dummy = true,
         -:  428:            class = _EnableIfDeleterConstructible<_GoodRValRefType<_Dummy> > >
         -:  429:  _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEENS_25__bucket_list_deallocatorINS_9allocatorIS9_EEEEEC1B6v15006ILb1EvEEDnNS_16__dependent_typeINS_27__unique_ptr_deleter_sfinaeISE_EEXT_EE20__good_rval_ref_typeE called 10 returned 100% blocks executed 100%
-function _ZNSt3__110unique_ptrIA_PNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEENS_25__bucket_list_deallocatorINS_9allocatorIS9_EEEEEC2B6v15006ILb1EvEEDnNS_16__dependent_typeINS_27__unique_ptr_deleter_sfinaeISE_EEXT_EE20__good_rval_ref_typeE called 10 returned 100% blocks executed 66%
-       20:  430:  unique_ptr(nullptr_t, _GoodRValRefType<_Dummy> __d) _NOEXCEPT
-       20:  431:      : __ptr_(nullptr, _VSTD::move(__d)) {
-       10:  431-block  0
-branch  0 taken 10
-branch  1 taken 0
-    $$$$$:  431-block  1
+        -:  430:  unique_ptr(nullptr_t, _GoodRValRefType<_Dummy> __d) _NOEXCEPT
+        -:  431:      : __ptr_(nullptr, _VSTD::move(__d)) {
         -:  432:    static_assert(!is_reference<deleter_type>::value,
         -:  433:                  "rvalue deleter bound to reference");
-       20:  434:  }
-       10:  434-block  0
-       10:  434-block  1
+        -:  434:  }
         -:  435:
         -:  436:  template <class _Pp, bool _Dummy = true,
         -:  437:            class = _EnableIfDeleterConstructible<_BadRValRefType<_Dummy> >,

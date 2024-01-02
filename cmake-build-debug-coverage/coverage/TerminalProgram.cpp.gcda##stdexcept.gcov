@@ -143,7 +143,11 @@
         -:  138:{
         -:  139:public:
         -:  140:    _LIBCPP_INLINE_VISIBILITY explicit invalid_argument(const string& __s) : logic_error(__s) {}
-        -:  141:    _LIBCPP_INLINE_VISIBILITY explicit invalid_argument(const char* __s)   : logic_error(__s) {}
+function _ZNSt16invalid_argumentC1B6v15006EPKc called 1 returned 100% blocks executed 100%
+function _ZNSt16invalid_argumentC2B6v15006EPKc called 1 returned 100% blocks executed 100%
+        2:  141:    _LIBCPP_INLINE_VISIBILITY explicit invalid_argument(const char* __s)   : logic_error(__s) {}
+        1:  141-block  0
+        1:  141-block  1
         -:  142:
         -:  143:#ifndef _LIBCPP_ABI_VCRUNTIME
         -:  144:    invalid_argument(const invalid_argument&) _NOEXCEPT = default;

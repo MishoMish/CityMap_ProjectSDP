@@ -139,8 +139,8 @@ function _ZNSt3__19allocatorIPP5GraphEC2B6v15006Ev called 4 returned 100% blocks
 function _ZNSt3__19allocatorI4PathE8allocateB6v15006Em called 7 returned 100% blocks executed 66%
 function _ZNSt3__19allocatorIP5GraphE8allocateB6v15006Em called 39 returned 100% blocks executed 66%
 function _ZNSt3__19allocatorINS_4pairIP5GraphS3_EEE8allocateB6v15006Em called 1 returned 100% blocks executed 66%
-function _ZNSt3__19allocatorIPNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEEE8allocateB6v15006Em called 0 returned 0% blocks executed 0%
 function _ZNSt3__19allocatorINS_11__hash_nodeIP5GraphPvEEE8allocateB6v15006Em called 0 returned 0% blocks executed 0%
+function _ZNSt3__19allocatorIPNS_16__hash_node_baseIPNS_11__hash_nodeIP5GraphPvEEEEE8allocateB6v15006Em called 0 returned 0% blocks executed 0%
 function _ZNSt3__19allocatorINS_11__tree_nodeINS_4pairIP5GraphS4_EEPvEEE8allocateB6v15006Em called 8 returned 100% blocks executed 66%
 function _ZNSt3__19allocatorIPP5GraphE8allocateB6v15006Em called 4 returned 100% blocks executed 66%
        59:  106:    _Tp* allocate(size_t __n) {
