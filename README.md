@@ -203,8 +203,11 @@ As the City Map Project evolves, several paths for improvement are considered:
 
 ## 5. References <a name="references"></a>
 
-All references to external sources, literature, and frameworks used during the development of the City Map Project are listed here.
-
+All references to external sources, literature, tools and frameworks used during the development of the City Map Project are listed here.
+- [Tool for intro text display](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20)
+- [Tool used for table generation](https://ozh.github.io/ascii-tables/)
+- In my opinion the best IDE for C++ in the moment - [CLion](https://www.jetbrains.com/clion/)
+- Thank you for keeping me sane - [Spotify](https://open.spotify.com/?)
 ---
 
 For the detailed code structure, class methods, and their functionalities, please refer to the source code in the respective folders and files within the project repository.
