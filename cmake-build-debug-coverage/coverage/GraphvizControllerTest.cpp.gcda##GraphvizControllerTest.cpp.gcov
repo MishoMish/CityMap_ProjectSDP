@@ -1,0 +1,318 @@
+        -:    0:Source:/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting/GraphvizControllerTest.cpp
+        -:    0:Graph:/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/GraphvizControllerTest.dir/UnitTesting/GraphvizControllerTest.cpp.gcno
+        -:    0:Data:/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/GraphvizControllerTest.dir/UnitTesting/GraphvizControllerTest.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://
+        -:    2:// Created by Mihail Dobroslavski on 30.12.23.
+        -:    3://
+        -:    4:
+        -:    5:#define DOCTEST_CONFIG_IMPLEMENT
+        -:    6:
+        -:    7:#include "doctest.h"
+        -:    8:#include "../Interfaces/GraphvizController.h"
+        -:    9:
+function _ZL20DOCTEST_ANON_FUNC_14v called 2 returned 100% blocks executed 53%
+        3:   10:TEST_CASE("GraphvizController Test") {
+        1:   10-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   10-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   10-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:   10-block  3
+    $$$$$:   10-block  4
+    $$$$$:   10-block  5
+    $$$$$:   10-block  6
+    $$$$$:   10-block  7
+        3:   11:    SUBCASE("Generate Dot File Test") {
+        2:   11-block  0
+branch  0 taken 2
+branch  1 taken 0
+        2:   11-block  1
+branch  2 taken 1
+branch  3 taken 1
+    $$$$$:   11-block  2
+    $$$$$:   11-block  3
+    $$$$$:   11-block  4
+        1:   12:        GraphContainer container;
+        -:   13:
+        1:   14:        container.addGraph("CityA");
+        1:   14-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   14-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:   14-block  2
+        1:   15:        container.addGraph("CityB");
+        1:   15-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   15-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:   15-block  2
+        1:   16:        container.addGraph("CityC");
+        1:   16-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   16-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:   16-block  2
+        1:   17:        container.addGraph("CityD");
+        1:   17-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   17-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:   17-block  2
+        -:   18:
+        1:   19:        container.addRoad("CityA", "CityB", 10.0);
+        1:   19-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   19-block  1
+branch  2 taken 0
+branch  3 taken 1
+        1:   19-block  2
+branch  4 taken 1
+branch  5 taken 0
+    $$$$$:   19-block  3
+    $$$$$:   19-block  4
+        1:   20:        container.addRoad("CityA", "CityC", 20.0);
+        1:   20-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   20-block  1
+branch  2 taken 0
+branch  3 taken 1
+        1:   20-block  2
+branch  4 taken 1
+branch  5 taken 0
+    $$$$$:   20-block  3
+    $$$$$:   20-block  4
+        1:   21:        container.addRoad("CityB", "CityC", 5.0);
+        1:   21-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   21-block  1
+branch  2 taken 0
+branch  3 taken 1
+        1:   21-block  2
+branch  4 taken 1
+branch  5 taken 0
+    $$$$$:   21-block  3
+    $$$$$:   21-block  4
+        1:   22:        container.addRoad("CityB", "CityD", 15.0);
+        1:   22-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   22-block  1
+branch  2 taken 0
+branch  3 taken 1
+        1:   22-block  2
+branch  4 taken 1
+branch  5 taken 0
+    $$$$$:   22-block  3
+    $$$$$:   22-block  4
+        -:   23:
+        1:   24:        Graph *currentGraph = container.getGraph("CityA");
+        1:   24-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   24-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:   24-block  2
+        1:   25:        std::unordered_set<Graph *> closedNodes = {container.getGraph("CityC")};
+        1:   25-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   25-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   25-block  2
+branch  4 taken 1
+branch  5 taken 0
+    $$$$$:   25-block  3
+        -:   26:
+        1:   27:        GraphvizController::generateDotFile(&container, currentGraph, closedNodes);
+        1:   27-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   27-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:   27-block  2
+        -:   28:
+        1:   29:        std::ifstream dotFile("graph.dot");
+        1:   29-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   30:        REQUIRE(dotFile.is_open());
+        1:   30-block  0
+        1:   30-block  1
+branch  0 taken 1
+branch  1 taken 0
+        1:   30-block  2
+branch  2 taken 0
+branch  3 taken 1
+        1:   30-block  3
+branch  4 taken 1
+branch  5 taken 0
+        1:   30-block  4
+branch  6 taken 1
+branch  7 taken 0
+        1:   30-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:   30-block  6
+branch 10 taken 0
+branch 11 taken 1
+        1:   30-block  7
+    $$$$$:   30-block  8
+    $$$$$:   30-block  9
+    $$$$$:   30-block 10
+    $$$$$:   30-block 11
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   30-block 12
+branch 14 never executed
+branch 15 never executed
+    $$$$$:   30-block 13
+        1:   30-block 14
+branch 16 taken 1
+branch 17 taken 0
+        1:   30-block 15
+branch 18 taken 0
+branch 19 taken 1
+    $$$$$:   30-block 16
+branch 20 never executed
+branch 21 never executed
+    $$$$$:   30-block 17
+    $$$$$:   30-block 18
+branch 22 never executed
+branch 23 never executed
+    $$$$$:   30-block 19
+        1:   30-block 20
+branch 24 taken 1
+branch 25 taken 0
+        1:   30-block 21
+        1:   30-block 22
+    $$$$$:   30-block 23
+    $$$$$:   30-block 24
+        1:   31:        dotFile.close();
+        1:   31-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   32:    }
+        1:   32-block  0
+    $$$$$:   32-block  1
+    $$$$$:   32-block  2
+        -:   33:
+        3:   34:    SUBCASE("Run Graphviz and Open Image Test") {
+        2:   34-block  0
+branch  0 taken 0
+branch  1 taken 2
+        2:   34-block  1
+branch  2 taken 1
+branch  3 taken 1
+    $$$$$:   34-block  2
+    $$$$$:   34-block  3
+        1:   35:        GraphvizController::runGraphvizAndOpenImage();
+        1:   35-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   36:        std::ifstream imageFile("graph.png");
+        1:   36-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   37:        REQUIRE(imageFile.is_open());
+        1:   37-block  0
+        1:   37-block  1
+branch  0 taken 1
+branch  1 taken 0
+        1:   37-block  2
+branch  2 taken 0
+branch  3 taken 1
+        1:   37-block  3
+branch  4 taken 1
+branch  5 taken 0
+        1:   37-block  4
+branch  6 taken 1
+branch  7 taken 0
+        1:   37-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:   37-block  6
+branch 10 taken 0
+branch 11 taken 1
+        1:   37-block  7
+    $$$$$:   37-block  8
+    $$$$$:   37-block  9
+    $$$$$:   37-block 10
+    $$$$$:   37-block 11
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   37-block 12
+branch 14 never executed
+branch 15 never executed
+    $$$$$:   37-block 13
+        1:   37-block 14
+branch 16 taken 1
+branch 17 taken 0
+        1:   37-block 15
+branch 18 taken 0
+branch 19 taken 1
+    $$$$$:   37-block 16
+branch 20 never executed
+branch 21 never executed
+    $$$$$:   37-block 17
+    $$$$$:   37-block 18
+branch 22 never executed
+branch 23 never executed
+    $$$$$:   37-block 19
+        1:   37-block 20
+branch 24 taken 1
+branch 25 taken 0
+        1:   37-block 21
+        1:   37-block 22
+    $$$$$:   37-block 23
+        1:   38:        imageFile.close();
+        1:   38-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   39:    }
+        1:   39-block  0
+    $$$$$:   39-block  1
+        2:   40:}
+    $$$$$:   40-block  0
+    $$$$$:   40-block  1
+    $$$$$:   40-block  2
+    $$$$$:   40-block  3
+    $$$$$:   40-block  4
+    $$$$$:   40-block  5
+    $$$$$:   40-block  6
+    $$$$$:   40-block  7
+    $$$$$:   40-block  8
+    $$$$$:   40-block  9
+    $$$$$:   40-block 10
+        2:   40-block 11
+        -:   41:
+function main called 1 returned 100% blocks executed 50%
+        1:   42:int main(int argc, char *argv[]) {
+        1:   43:    doctest::Context context(argc, argv);
+        1:   44:    return context.run();
+        1:   44-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   45:}
+        1:   45-block  0
+    $$$$$:   45-block  1
+    $$$$$:   45-block  2

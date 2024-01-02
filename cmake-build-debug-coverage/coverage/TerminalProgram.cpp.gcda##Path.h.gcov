@@ -1,0 +1,26 @@
+        -:    0:Source:/Users/mihaildobroslavski/CLionProjects/CityMapProject/Interfaces/../TaskFunctions/../Structure/Path.h
+        -:    0:Graph:/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/CityMapLibrary.dir/Interfaces/TerminalProgram.cpp.gcno
+        -:    0:Data:/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/CityMapLibrary.dir/Interfaces/TerminalProgram.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://
+        -:    2:// Created by Mihail Dobroslavski on 24.12.23.
+        -:    3://
+        -:    4:
+        -:    5:#ifndef CITYMAP_PATH_H
+        -:    6:#define CITYMAP_PATH_H
+        -:    7:
+        -:    8:#include <iostream>
+        -:    9:#include <vector>
+        -:   10:#include "Graph.h"
+        -:   11:
+        -:   12:class Path {
+        -:   13:public:
+        -:   14:    double cost = 0.0;
+        -:   15:    std::vector<Graph *> nodes;
+        -:   16:
+        -:   17:    void print();
+        -:   18:};
+        -:   19:
+        -:   20:
+        -:   21:#endif //CITYMAP_PATH_H

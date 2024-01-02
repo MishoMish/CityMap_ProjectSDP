@@ -1,0 +1,11 @@
+/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/CityMapLibrary.dir
+/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/CityMapProject.dir
+/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/GraphContainerTest.dir
+/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/GraphTest.dir
+/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/GraphvizControllerTest.dir
+/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/PathTest.dir
+/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/RouteCheckerTest.dir
+/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/TerminalProgramTest.dir
+/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/test.dir
+/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/edit_cache.dir
+/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/rebuild_cache.dir

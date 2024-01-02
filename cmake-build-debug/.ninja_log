@@ -1,0 +1,24 @@
+# ninja log v5
+1181	2386	1704196120506996370	CMakeFiles/CityMapLibrary.dir/Interfaces/GraphvizController.cpp.o	667cd0cecab87206
+1762	4601	1704196122714815778	CMakeFiles/GraphvizControllerTest.dir/UnitTesting/GraphvizControllerTest.cpp.o	ade9dd839f2310d8
+1	1176	1704196119296356974	CMakeFiles/CityMapLibrary.dir/Structure/Path.cpp.o	3e25757ad2c82927
+1	1294	1704196119415618265	CMakeFiles/CityMapLibrary.dir/Structure/Graph.cpp.o	a56ce16fcfdfbc16
+0	1496	1704196119616852450	CMakeFiles/CityMapLibrary.dir/main.cpp.o	3523ab54119ab273
+1629	4367	1704196122488424602	CMakeFiles/GraphTest.dir/UnitTesting/GraphTest.cpp.o	98691bd68f79a313
+2057	4829	1704196122949504894	CMakeFiles/PathTest.dir/UnitTesting/PathTest.cpp.o	666974289687aa46
+1	1628	1704196119745310985	CMakeFiles/CityMapLibrary.dir/Structure/GraphContainer.cpp.o	6b7385939ab50589
+1	78	1704196578711715910	build.ninja	20f773dda1d82036
+1	2056	1704196120177274317	CMakeFiles/CityMapLibrary.dir/TaskFunctions/RouteChecker.cpp.o	59d73a878a9aa95f
+1294	2557	1704196120679555183	CMakeFiles/CityMapProject.dir/main.cpp.o	94be183409f7c273
+759	810	1704196355419972000	libCityMapLibrary.a	fd7c4ee02f233f48
+11	106	1704196396136860731	TerminalProgramTest	1d1d9eb8257cc16f
+5	1454	1704196532831531559	CMakeFiles/GraphContainerTest.dir/UnitTesting/GraphContainerTest.cpp.o	fe43b045a940cc3c
+2666	5225	1704196123349116808	CMakeFiles/TerminalProgramTest.dir/UnitTesting/TerminalProgramTest.cpp.o	d2210790bdfa7493
+10	106	1704196396135265043	GraphvizControllerTest	b00be83216b57a5c
+810	857	1704196355466198789	CityMapProject	414ff42296cf2c26
+1454	1506	1704196532887935996	GraphContainerTest	91b8f44eed827a92
+4	759	1704196355365237359	CMakeFiles/CityMapLibrary.dir/Interfaces/TerminalProgram.cpp.o	b497d47e955f04b2
+11	106	1704196396133978360	PathTest	61391211b163657f
+11	106	1704196396136989149	RouteCheckerTest	96c0e6f6981eea27
+10	106	1704196396133346310	GraphTest	97ce64ae958b9dbb
+2478	5149	1704196123273011575	CMakeFiles/RouteCheckerTest.dir/UnitTesting/RouteCheckerTest.cpp.o	20f62ea0d43dcc77

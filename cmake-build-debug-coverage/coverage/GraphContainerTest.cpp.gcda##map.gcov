@@ -1,0 +1,2395 @@
+        -:    0:Source:/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/map
+        -:    0:Graph:/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/GraphContainerTest.dir/UnitTesting/GraphContainerTest.cpp.gcno
+        -:    0:Data:/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/GraphContainerTest.dir/UnitTesting/GraphContainerTest.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:// -*- C++ -*-
+        -:    2://===----------------------------------------------------------------------===//
+        -:    3://
+        -:    4:// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
+        -:    5:// See https://llvm.org/LICENSE.txt for license information.
+        -:    6:// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+        -:    7://
+        -:    8://===----------------------------------------------------------------------===//
+        -:    9:
+        -:   10:#ifndef _LIBCPP_MAP
+        -:   11:#define _LIBCPP_MAP
+        -:   12:
+        -:   13:/*
+        -:   14:
+        -:   15:    map synopsis
+        -:   16:
+        -:   17:namespace std
+        -:   18:{
+        -:   19:
+        -:   20:template <class Key, class T, class Compare = less<Key>,
+        -:   21:          class Allocator = allocator<pair<const Key, T>>>
+        -:   22:class map
+        -:   23:{
+        -:   24:public:
+        -:   25:    // types:
+        -:   26:    typedef Key                                      key_type;
+        -:   27:    typedef T                                        mapped_type;
+        -:   28:    typedef pair<const key_type, mapped_type>        value_type;
+        -:   29:    typedef Compare                                  key_compare;
+        -:   30:    typedef Allocator                                allocator_type;
+        -:   31:    typedef typename allocator_type::reference       reference;
+        -:   32:    typedef typename allocator_type::const_reference const_reference;
+        -:   33:    typedef typename allocator_type::pointer         pointer;
+        -:   34:    typedef typename allocator_type::const_pointer   const_pointer;
+        -:   35:    typedef typename allocator_type::size_type       size_type;
+        -:   36:    typedef typename allocator_type::difference_type difference_type;
+        -:   37:
+        -:   38:    typedef implementation-defined                   iterator;
+        -:   39:    typedef implementation-defined                   const_iterator;
+        -:   40:    typedef std::reverse_iterator<iterator>          reverse_iterator;
+        -:   41:    typedef std::reverse_iterator<const_iterator>    const_reverse_iterator;
+        -:   42:    typedef unspecified                              node_type;              // C++17
+        -:   43:    typedef INSERT_RETURN_TYPE<iterator, node_type>  insert_return_type;     // C++17
+        -:   44:
+        -:   45:    class value_compare
+        -:   46:    {
+        -:   47:        friend class map;
+        -:   48:    protected:
+        -:   49:        key_compare comp;
+        -:   50:
+        -:   51:        value_compare(key_compare c);
+        -:   52:    public:
+        -:   53:        typedef bool result_type;  // deprecated in C++17, removed in C++20
+        -:   54:        typedef value_type first_argument_type;  // deprecated in C++17, removed in C++20
+        -:   55:        typedef value_type second_argument_type;  // deprecated in C++17, removed in C++20
+        -:   56:        bool operator()(const value_type& x, const value_type& y) const;
+        -:   57:    };
+        -:   58:
+        -:   59:    // construct/copy/destroy:
+        -:   60:    map()
+        -:   61:        noexcept(
+        -:   62:            is_nothrow_default_constructible<allocator_type>::value &&
+        -:   63:            is_nothrow_default_constructible<key_compare>::value &&
+        -:   64:            is_nothrow_copy_constructible<key_compare>::value);
+        -:   65:    explicit map(const key_compare& comp);
+        -:   66:    map(const key_compare& comp, const allocator_type& a);
+        -:   67:    template <class InputIterator>
+        -:   68:        map(InputIterator first, InputIterator last,
+        -:   69:            const key_compare& comp = key_compare());
+        -:   70:    template <class InputIterator>
+        -:   71:        map(InputIterator first, InputIterator last,
+        -:   72:            const key_compare& comp, const allocator_type& a);
+        -:   73:    map(const map& m);
+        -:   74:    map(map&& m)
+        -:   75:        noexcept(
+        -:   76:            is_nothrow_move_constructible<allocator_type>::value &&
+        -:   77:            is_nothrow_move_constructible<key_compare>::value);
+        -:   78:    explicit map(const allocator_type& a);
+        -:   79:    map(const map& m, const allocator_type& a);
+        -:   80:    map(map&& m, const allocator_type& a);
+        -:   81:    map(initializer_list<value_type> il, const key_compare& comp = key_compare());
+        -:   82:    map(initializer_list<value_type> il, const key_compare& comp, const allocator_type& a);
+        -:   83:    template <class InputIterator>
+        -:   84:        map(InputIterator first, InputIterator last, const allocator_type& a)
+        -:   85:            : map(first, last, Compare(), a) {}  // C++14
+        -:   86:    map(initializer_list<value_type> il, const allocator_type& a)
+        -:   87:        : map(il, Compare(), a) {}  // C++14
+        -:   88:   ~map();
+        -:   89:
+        -:   90:    map& operator=(const map& m);
+        -:   91:    map& operator=(map&& m)
+        -:   92:        noexcept(
+        -:   93:            allocator_type::propagate_on_container_move_assignment::value &&
+        -:   94:            is_nothrow_move_assignable<allocator_type>::value &&
+        -:   95:            is_nothrow_move_assignable<key_compare>::value);
+        -:   96:    map& operator=(initializer_list<value_type> il);
+        -:   97:
+        -:   98:    // iterators:
+        -:   99:          iterator begin() noexcept;
+        -:  100:    const_iterator begin() const noexcept;
+        -:  101:          iterator end() noexcept;
+        -:  102:    const_iterator end()   const noexcept;
+        -:  103:
+        -:  104:          reverse_iterator rbegin() noexcept;
+        -:  105:    const_reverse_iterator rbegin() const noexcept;
+        -:  106:          reverse_iterator rend() noexcept;
+        -:  107:    const_reverse_iterator rend()   const noexcept;
+        -:  108:
+        -:  109:    const_iterator         cbegin()  const noexcept;
+        -:  110:    const_iterator         cend()    const noexcept;
+        -:  111:    const_reverse_iterator crbegin() const noexcept;
+        -:  112:    const_reverse_iterator crend()   const noexcept;
+        -:  113:
+        -:  114:    // capacity:
+        -:  115:    bool      empty()    const noexcept;
+        -:  116:    size_type size()     const noexcept;
+        -:  117:    size_type max_size() const noexcept;
+        -:  118:
+        -:  119:    // element access:
+        -:  120:    mapped_type& operator[](const key_type& k);
+        -:  121:    mapped_type& operator[](key_type&& k);
+        -:  122:
+        -:  123:          mapped_type& at(const key_type& k);
+        -:  124:    const mapped_type& at(const key_type& k) const;
+        -:  125:
+        -:  126:    // modifiers:
+        -:  127:    template <class... Args>
+        -:  128:        pair<iterator, bool> emplace(Args&&... args);
+        -:  129:    template <class... Args>
+        -:  130:        iterator emplace_hint(const_iterator position, Args&&... args);
+        -:  131:    pair<iterator, bool> insert(const value_type& v);
+        -:  132:    pair<iterator, bool> insert(      value_type&& v);                                // C++17
+        -:  133:    template <class P>
+        -:  134:        pair<iterator, bool> insert(P&& p);
+        -:  135:    iterator insert(const_iterator position, const value_type& v);
+        -:  136:    iterator insert(const_iterator position,       value_type&& v);                   // C++17
+        -:  137:    template <class P>
+        -:  138:        iterator insert(const_iterator position, P&& p);
+        -:  139:    template <class InputIterator>
+        -:  140:        void insert(InputIterator first, InputIterator last);
+        -:  141:    void insert(initializer_list<value_type> il);
+        -:  142:
+        -:  143:    node_type extract(const_iterator position);                                       // C++17
+        -:  144:    node_type extract(const key_type& x);                                             // C++17
+        -:  145:    insert_return_type insert(node_type&& nh);                                        // C++17
+        -:  146:    iterator insert(const_iterator hint, node_type&& nh);                             // C++17
+        -:  147:
+        -:  148:    template <class... Args>
+        -:  149:        pair<iterator, bool> try_emplace(const key_type& k, Args&&... args);          // C++17
+        -:  150:    template <class... Args>
+        -:  151:        pair<iterator, bool> try_emplace(key_type&& k, Args&&... args);               // C++17
+        -:  152:    template <class... Args>
+        -:  153:        iterator try_emplace(const_iterator hint, const key_type& k, Args&&... args); // C++17
+        -:  154:    template <class... Args>
+        -:  155:        iterator try_emplace(const_iterator hint, key_type&& k, Args&&... args);      // C++17
+        -:  156:    template <class M>
+        -:  157:        pair<iterator, bool> insert_or_assign(const key_type& k, M&& obj);            // C++17
+        -:  158:    template <class M>
+        -:  159:        pair<iterator, bool> insert_or_assign(key_type&& k, M&& obj);                 // C++17
+        -:  160:    template <class M>
+        -:  161:        iterator insert_or_assign(const_iterator hint, const key_type& k, M&& obj);   // C++17
+        -:  162:    template <class M>
+        -:  163:        iterator insert_or_assign(const_iterator hint, key_type&& k, M&& obj);        // C++17
+        -:  164:
+        -:  165:    iterator  erase(const_iterator position);
+        -:  166:    iterator  erase(iterator position); // C++14
+        -:  167:    size_type erase(const key_type& k);
+        -:  168:    iterator  erase(const_iterator first, const_iterator last);
+        -:  169:    void clear() noexcept;
+        -:  170:
+        -:  171:    template<class C2>
+        -:  172:      void merge(map<Key, T, C2, Allocator>& source);         // C++17
+        -:  173:    template<class C2>
+        -:  174:      void merge(map<Key, T, C2, Allocator>&& source);        // C++17
+        -:  175:    template<class C2>
+        -:  176:      void merge(multimap<Key, T, C2, Allocator>& source);    // C++17
+        -:  177:    template<class C2>
+        -:  178:      void merge(multimap<Key, T, C2, Allocator>&& source);   // C++17
+        -:  179:
+        -:  180:    void swap(map& m)
+        -:  181:        noexcept(allocator_traits<allocator_type>::is_always_equal::value &&
+        -:  182:            is_nothrow_swappable<key_compare>::value); // C++17
+        -:  183:
+        -:  184:    // observers:
+        -:  185:    allocator_type get_allocator() const noexcept;
+        -:  186:    key_compare    key_comp()      const;
+        -:  187:    value_compare  value_comp()    const;
+        -:  188:
+        -:  189:    // map operations:
+        -:  190:          iterator find(const key_type& k);
+        -:  191:    const_iterator find(const key_type& k) const;
+        -:  192:    template<typename K>
+        -:  193:        iterator find(const K& x);              // C++14
+        -:  194:    template<typename K>
+        -:  195:        const_iterator find(const K& x) const;  // C++14
+        -:  196:
+        -:  197:    template<typename K>
+        -:  198:      size_type count(const K& x) const;        // C++14
+        -:  199:    size_type      count(const key_type& k) const;
+        -:  200:
+        -:  201:    bool           contains(const key_type& x) const;  // C++20
+        -:  202:    template<class K> bool contains(const K& x) const; // C++20
+        -:  203:
+        -:  204:          iterator lower_bound(const key_type& k);
+        -:  205:    const_iterator lower_bound(const key_type& k) const;
+        -:  206:    template<typename K>
+        -:  207:        iterator lower_bound(const K& x);              // C++14
+        -:  208:    template<typename K>
+        -:  209:        const_iterator lower_bound(const K& x) const;  // C++14
+        -:  210:
+        -:  211:          iterator upper_bound(const key_type& k);
+        -:  212:    const_iterator upper_bound(const key_type& k) const;
+        -:  213:    template<typename K>
+        -:  214:        iterator upper_bound(const K& x);              // C++14
+        -:  215:    template<typename K>
+        -:  216:        const_iterator upper_bound(const K& x) const;  // C++14
+        -:  217:
+        -:  218:    pair<iterator,iterator>             equal_range(const key_type& k);
+        -:  219:    pair<const_iterator,const_iterator> equal_range(const key_type& k) const;
+        -:  220:    template<typename K>
+        -:  221:        pair<iterator,iterator>             equal_range(const K& x);        // C++14
+        -:  222:    template<typename K>
+        -:  223:        pair<const_iterator,const_iterator> equal_range(const K& x) const;  // C++14
+        -:  224:};
+        -:  225:
+        -:  226:template <class InputIterator,
+        -:  227:      class Compare = less<iter_key_t<InputIterator>>,
+        -:  228:      class Allocator = allocator<iter_to_alloc_t<InputIterator>>>
+        -:  229:map(InputIterator, InputIterator, Compare = Compare(), Allocator = Allocator())
+        -:  230:  -> map<iter_key_t<InputIterator>, iter_val_t<InputIterator>, Compare, Allocator>; // C++17
+        -:  231:
+        -:  232:template<class Key, class T, class Compare = less<Key>,
+        -:  233:    class Allocator = allocator<pair<const Key, T>>>
+        -:  234:map(initializer_list<pair<const Key, T>>, Compare = Compare(), Allocator = Allocator())
+        -:  235:  -> map<Key, T, Compare, Allocator>; // C++17
+        -:  236:
+        -:  237:template <class InputIterator, class Allocator>
+        -:  238:map(InputIterator, InputIterator, Allocator)
+        -:  239:  -> map<iter_key_t<InputIterator>, iter_val_t<InputIterator>, less<iter_key_t<InputIterator>>,
+        -:  240:    Allocator>; // C++17
+        -:  241:
+        -:  242:template<class Key, class T, class Allocator>
+        -:  243:map(initializer_list<pair<const Key, T>>, Allocator) -> map<Key, T, less<Key>, Allocator>; // C++17
+        -:  244:
+        -:  245:template <class Key, class T, class Compare, class Allocator>
+        -:  246:bool
+        -:  247:operator==(const map<Key, T, Compare, Allocator>& x,
+        -:  248:           const map<Key, T, Compare, Allocator>& y);
+        -:  249:
+        -:  250:template <class Key, class T, class Compare, class Allocator>
+        -:  251:bool
+        -:  252:operator< (const map<Key, T, Compare, Allocator>& x,
+        -:  253:           const map<Key, T, Compare, Allocator>& y);
+        -:  254:
+        -:  255:template <class Key, class T, class Compare, class Allocator>
+        -:  256:bool
+        -:  257:operator!=(const map<Key, T, Compare, Allocator>& x,
+        -:  258:           const map<Key, T, Compare, Allocator>& y);
+        -:  259:
+        -:  260:template <class Key, class T, class Compare, class Allocator>
+        -:  261:bool
+        -:  262:operator> (const map<Key, T, Compare, Allocator>& x,
+        -:  263:           const map<Key, T, Compare, Allocator>& y);
+        -:  264:
+        -:  265:template <class Key, class T, class Compare, class Allocator>
+        -:  266:bool
+        -:  267:operator>=(const map<Key, T, Compare, Allocator>& x,
+        -:  268:           const map<Key, T, Compare, Allocator>& y);
+        -:  269:
+        -:  270:template <class Key, class T, class Compare, class Allocator>
+        -:  271:bool
+        -:  272:operator<=(const map<Key, T, Compare, Allocator>& x,
+        -:  273:           const map<Key, T, Compare, Allocator>& y);
+        -:  274:
+        -:  275:// specialized algorithms:
+        -:  276:template <class Key, class T, class Compare, class Allocator>
+        -:  277:void
+        -:  278:swap(map<Key, T, Compare, Allocator>& x, map<Key, T, Compare, Allocator>& y)
+        -:  279:    noexcept(noexcept(x.swap(y)));
+        -:  280:
+        -:  281:template <class Key, class T, class Compare, class Allocator, class Predicate>
+        -:  282:typename map<Key, T, Compare, Allocator>::size_type
+        -:  283:erase_if(map<Key, T, Compare, Allocator>& c, Predicate pred);  // C++20
+        -:  284:
+        -:  285:
+        -:  286:template <class Key, class T, class Compare = less<Key>,
+        -:  287:          class Allocator = allocator<pair<const Key, T>>>
+        -:  288:class multimap
+        -:  289:{
+        -:  290:public:
+        -:  291:    // types:
+        -:  292:    typedef Key                                      key_type;
+        -:  293:    typedef T                                        mapped_type;
+        -:  294:    typedef pair<const key_type,mapped_type>         value_type;
+        -:  295:    typedef Compare                                  key_compare;
+        -:  296:    typedef Allocator                                allocator_type;
+        -:  297:    typedef typename allocator_type::reference       reference;
+        -:  298:    typedef typename allocator_type::const_reference const_reference;
+        -:  299:    typedef typename allocator_type::size_type       size_type;
+        -:  300:    typedef typename allocator_type::difference_type difference_type;
+        -:  301:    typedef typename allocator_type::pointer         pointer;
+        -:  302:    typedef typename allocator_type::const_pointer   const_pointer;
+        -:  303:
+        -:  304:    typedef implementation-defined                   iterator;
+        -:  305:    typedef implementation-defined                   const_iterator;
+        -:  306:    typedef std::reverse_iterator<iterator>          reverse_iterator;
+        -:  307:    typedef std::reverse_iterator<const_iterator>    const_reverse_iterator;
+        -:  308:    typedef unspecified                              node_type;              // C++17
+        -:  309:
+        -:  310:    class value_compare
+        -:  311:    {
+        -:  312:        friend class multimap;
+        -:  313:    protected:
+        -:  314:        key_compare comp;
+        -:  315:        value_compare(key_compare c);
+        -:  316:    public:
+        -:  317:        typedef bool result_type;  // deprecated in C++17, removed in C++20
+        -:  318:        typedef value_type first_argument_type;  // deprecated in C++17, removed in C++20
+        -:  319:        typedef value_type second_argument_type;  // deprecated in C++17, removed in C++20
+        -:  320:        bool operator()(const value_type& x, const value_type& y) const;
+        -:  321:    };
+        -:  322:
+        -:  323:    // construct/copy/destroy:
+        -:  324:    multimap()
+        -:  325:        noexcept(
+        -:  326:            is_nothrow_default_constructible<allocator_type>::value &&
+        -:  327:            is_nothrow_default_constructible<key_compare>::value &&
+        -:  328:            is_nothrow_copy_constructible<key_compare>::value);
+        -:  329:    explicit multimap(const key_compare& comp);
+        -:  330:    multimap(const key_compare& comp, const allocator_type& a);
+        -:  331:    template <class InputIterator>
+        -:  332:        multimap(InputIterator first, InputIterator last, const key_compare& comp);
+        -:  333:    template <class InputIterator>
+        -:  334:        multimap(InputIterator first, InputIterator last, const key_compare& comp,
+        -:  335:                 const allocator_type& a);
+        -:  336:    multimap(const multimap& m);
+        -:  337:    multimap(multimap&& m)
+        -:  338:        noexcept(
+        -:  339:            is_nothrow_move_constructible<allocator_type>::value &&
+        -:  340:            is_nothrow_move_constructible<key_compare>::value);
+        -:  341:    explicit multimap(const allocator_type& a);
+        -:  342:    multimap(const multimap& m, const allocator_type& a);
+        -:  343:    multimap(multimap&& m, const allocator_type& a);
+        -:  344:    multimap(initializer_list<value_type> il, const key_compare& comp = key_compare());
+        -:  345:    multimap(initializer_list<value_type> il, const key_compare& comp,
+        -:  346:             const allocator_type& a);
+        -:  347:    template <class InputIterator>
+        -:  348:        multimap(InputIterator first, InputIterator last, const allocator_type& a)
+        -:  349:            : multimap(first, last, Compare(), a) {} // C++14
+        -:  350:    multimap(initializer_list<value_type> il, const allocator_type& a)
+        -:  351:        : multimap(il, Compare(), a) {} // C++14
+        -:  352:    ~multimap();
+        -:  353:
+        -:  354:    multimap& operator=(const multimap& m);
+        -:  355:    multimap& operator=(multimap&& m)
+        -:  356:        noexcept(
+        -:  357:            allocator_type::propagate_on_container_move_assignment::value &&
+        -:  358:            is_nothrow_move_assignable<allocator_type>::value &&
+        -:  359:            is_nothrow_move_assignable<key_compare>::value);
+        -:  360:    multimap& operator=(initializer_list<value_type> il);
+        -:  361:
+        -:  362:    // iterators:
+        -:  363:          iterator begin() noexcept;
+        -:  364:    const_iterator begin() const noexcept;
+        -:  365:          iterator end() noexcept;
+        -:  366:    const_iterator end()   const noexcept;
+        -:  367:
+        -:  368:          reverse_iterator rbegin() noexcept;
+        -:  369:    const_reverse_iterator rbegin() const noexcept;
+        -:  370:          reverse_iterator rend() noexcept;
+        -:  371:    const_reverse_iterator rend()   const noexcept;
+        -:  372:
+        -:  373:    const_iterator         cbegin()  const noexcept;
+        -:  374:    const_iterator         cend()    const noexcept;
+        -:  375:    const_reverse_iterator crbegin() const noexcept;
+        -:  376:    const_reverse_iterator crend()   const noexcept;
+        -:  377:
+        -:  378:    // capacity:
+        -:  379:    bool      empty()    const noexcept;
+        -:  380:    size_type size()     const noexcept;
+        -:  381:    size_type max_size() const noexcept;
+        -:  382:
+        -:  383:    // modifiers:
+        -:  384:    template <class... Args>
+        -:  385:        iterator emplace(Args&&... args);
+        -:  386:    template <class... Args>
+        -:  387:        iterator emplace_hint(const_iterator position, Args&&... args);
+        -:  388:    iterator insert(const value_type& v);
+        -:  389:    iterator insert(      value_type&& v);                                            // C++17
+        -:  390:    template <class P>
+        -:  391:        iterator insert(P&& p);
+        -:  392:    iterator insert(const_iterator position, const value_type& v);
+        -:  393:    iterator insert(const_iterator position,       value_type&& v);                   // C++17
+        -:  394:    template <class P>
+        -:  395:        iterator insert(const_iterator position, P&& p);
+        -:  396:    template <class InputIterator>
+        -:  397:        void insert(InputIterator first, InputIterator last);
+        -:  398:    void insert(initializer_list<value_type> il);
+        -:  399:
+        -:  400:    node_type extract(const_iterator position);                                       // C++17
+        -:  401:    node_type extract(const key_type& x);                                             // C++17
+        -:  402:    iterator insert(node_type&& nh);                                                  // C++17
+        -:  403:    iterator insert(const_iterator hint, node_type&& nh);                             // C++17
+        -:  404:
+        -:  405:    iterator  erase(const_iterator position);
+        -:  406:    iterator  erase(iterator position); // C++14
+        -:  407:    size_type erase(const key_type& k);
+        -:  408:    iterator  erase(const_iterator first, const_iterator last);
+        -:  409:    void clear() noexcept;
+        -:  410:
+        -:  411:    template<class C2>
+        -:  412:      void merge(multimap<Key, T, C2, Allocator>& source);    // C++17
+        -:  413:    template<class C2>
+        -:  414:      void merge(multimap<Key, T, C2, Allocator>&& source);   // C++17
+        -:  415:    template<class C2>
+        -:  416:      void merge(map<Key, T, C2, Allocator>& source);         // C++17
+        -:  417:    template<class C2>
+        -:  418:      void merge(map<Key, T, C2, Allocator>&& source);        // C++17
+        -:  419:
+        -:  420:    void swap(multimap& m)
+        -:  421:        noexcept(allocator_traits<allocator_type>::is_always_equal::value &&
+        -:  422:            is_nothrow_swappable<key_compare>::value); // C++17
+        -:  423:
+        -:  424:    // observers:
+        -:  425:    allocator_type get_allocator() const noexcept;
+        -:  426:    key_compare    key_comp()      const;
+        -:  427:    value_compare  value_comp()    const;
+        -:  428:
+        -:  429:    // map operations:
+        -:  430:          iterator find(const key_type& k);
+        -:  431:    const_iterator find(const key_type& k) const;
+        -:  432:    template<typename K>
+        -:  433:        iterator find(const K& x);              // C++14
+        -:  434:    template<typename K>
+        -:  435:        const_iterator find(const K& x) const;  // C++14
+        -:  436:
+        -:  437:    template<typename K>
+        -:  438:      size_type count(const K& x) const;        // C++14
+        -:  439:    size_type      count(const key_type& k) const;
+        -:  440:
+        -:  441:    bool           contains(const key_type& x) const;  // C++20
+        -:  442:    template<class K> bool contains(const K& x) const; // C++20
+        -:  443:
+        -:  444:          iterator lower_bound(const key_type& k);
+        -:  445:    const_iterator lower_bound(const key_type& k) const;
+        -:  446:    template<typename K>
+        -:  447:        iterator lower_bound(const K& x);              // C++14
+        -:  448:    template<typename K>
+        -:  449:        const_iterator lower_bound(const K& x) const;  // C++14
+        -:  450:
+        -:  451:          iterator upper_bound(const key_type& k);
+        -:  452:    const_iterator upper_bound(const key_type& k) const;
+        -:  453:    template<typename K>
+        -:  454:        iterator upper_bound(const K& x);              // C++14
+        -:  455:    template<typename K>
+        -:  456:        const_iterator upper_bound(const K& x) const;  // C++14
+        -:  457:
+        -:  458:    pair<iterator,iterator>             equal_range(const key_type& k);
+        -:  459:    pair<const_iterator,const_iterator> equal_range(const key_type& k) const;
+        -:  460:    template<typename K>
+        -:  461:        pair<iterator,iterator>             equal_range(const K& x);        // C++14
+        -:  462:    template<typename K>
+        -:  463:        pair<const_iterator,const_iterator> equal_range(const K& x) const;  // C++14
+        -:  464:};
+        -:  465:
+        -:  466:template <class InputIterator,
+        -:  467:      class Compare = less<iter_key_t<InputIterator>>,
+        -:  468:      class Allocator = allocator<iter_to_alloc_t<InputIterator>>>
+        -:  469:multimap(InputIterator, InputIterator, Compare = Compare(), Allocator = Allocator())
+        -:  470:  -> multimap<iter_key_t<InputIterator>, iter_val_t<InputIterator>, Compare, Allocator>; // C++17
+        -:  471:
+        -:  472:template<class Key, class T, class Compare = less<Key>,
+        -:  473:    class Allocator = allocator<pair<const Key, T>>>
+        -:  474:multimap(initializer_list<pair<const Key, T>>, Compare = Compare(), Allocator = Allocator())
+        -:  475:  -> multimap<Key, T, Compare, Allocator>; // C++17
+        -:  476:
+        -:  477:template <class InputIterator, class Allocator>
+        -:  478:multimap(InputIterator, InputIterator, Allocator)
+        -:  479:  -> multimap<iter_key_t<InputIterator>, iter_val_t<InputIterator>,
+        -:  480:    less<iter_key_t<InputIterator>>, Allocator>; // C++17
+        -:  481:
+        -:  482:template<class Key, class T, class Allocator>
+        -:  483:multimap(initializer_list<pair<const Key, T>>, Allocator)
+        -:  484:  -> multimap<Key, T, less<Key>, Allocator>; // C++17
+        -:  485:
+        -:  486:template <class Key, class T, class Compare, class Allocator>
+        -:  487:bool
+        -:  488:operator==(const multimap<Key, T, Compare, Allocator>& x,
+        -:  489:           const multimap<Key, T, Compare, Allocator>& y);
+        -:  490:
+        -:  491:template <class Key, class T, class Compare, class Allocator>
+        -:  492:bool
+        -:  493:operator< (const multimap<Key, T, Compare, Allocator>& x,
+        -:  494:           const multimap<Key, T, Compare, Allocator>& y);
+        -:  495:
+        -:  496:template <class Key, class T, class Compare, class Allocator>
+        -:  497:bool
+        -:  498:operator!=(const multimap<Key, T, Compare, Allocator>& x,
+        -:  499:           const multimap<Key, T, Compare, Allocator>& y);
+        -:  500:
+        -:  501:template <class Key, class T, class Compare, class Allocator>
+        -:  502:bool
+        -:  503:operator> (const multimap<Key, T, Compare, Allocator>& x,
+        -:  504:           const multimap<Key, T, Compare, Allocator>& y);
+        -:  505:
+        -:  506:template <class Key, class T, class Compare, class Allocator>
+        -:  507:bool
+        -:  508:operator>=(const multimap<Key, T, Compare, Allocator>& x,
+        -:  509:           const multimap<Key, T, Compare, Allocator>& y);
+        -:  510:
+        -:  511:template <class Key, class T, class Compare, class Allocator>
+        -:  512:bool
+        -:  513:operator<=(const multimap<Key, T, Compare, Allocator>& x,
+        -:  514:           const multimap<Key, T, Compare, Allocator>& y);
+        -:  515:
+        -:  516:// specialized algorithms:
+        -:  517:template <class Key, class T, class Compare, class Allocator>
+        -:  518:void
+        -:  519:swap(multimap<Key, T, Compare, Allocator>& x,
+        -:  520:     multimap<Key, T, Compare, Allocator>& y)
+        -:  521:    noexcept(noexcept(x.swap(y)));
+        -:  522:
+        -:  523:template <class Key, class T, class Compare, class Allocator, class Predicate>
+        -:  524:typename multimap<Key, T, Compare, Allocator>::size_type
+        -:  525:erase_if(multimap<Key, T, Compare, Allocator>& c, Predicate pred);  // C++20
+        -:  526:
+        -:  527:}  // std
+        -:  528:
+        -:  529:*/
+        -:  530:
+        -:  531:#include <__algorithm/equal.h>
+        -:  532:#include <__algorithm/lexicographical_compare.h>
+        -:  533:#include <__assert> // all public C++ headers provide the assertion handler
+        -:  534:#include <__config>
+        -:  535:#include <__functional/binary_function.h>
+        -:  536:#include <__functional/is_transparent.h>
+        -:  537:#include <__functional/operations.h>
+        -:  538:#include <__iterator/erase_if_container.h>
+        -:  539:#include <__iterator/iterator_traits.h>
+        -:  540:#include <__iterator/reverse_iterator.h>
+        -:  541:#include <__node_handle>
+        -:  542:#include <__tree>
+        -:  543:#include <__utility/forward.h>
+        -:  544:#include <__utility/swap.h>
+        -:  545:#include <memory>
+        -:  546:#include <type_traits>
+        -:  547:#include <version>
+        -:  548:
+        -:  549:#ifndef _LIBCPP_REMOVE_TRANSITIVE_INCLUDES
+        -:  550:#  include <functional>
+        -:  551:#  include <iterator>
+        -:  552:#  include <utility>
+        -:  553:#endif
+        -:  554:
+        -:  555:// standard-mandated includes
+        -:  556:
+        -:  557:// [iterator.range]
+        -:  558:#include <__iterator/access.h>
+        -:  559:#include <__iterator/data.h>
+        -:  560:#include <__iterator/empty.h>
+        -:  561:#include <__iterator/reverse_access.h>
+        -:  562:#include <__iterator/size.h>
+        -:  563:
+        -:  564:// [associative.map.syn]
+        -:  565:#include <compare>
+        -:  566:#include <initializer_list>
+        -:  567:
+        -:  568:#if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
+        -:  569:#  pragma GCC system_header
+        -:  570:#endif
+        -:  571:
+        -:  572:_LIBCPP_BEGIN_NAMESPACE_STD
+        -:  573:
+        -:  574:template <class _Key, class _CP, class _Compare,
+        -:  575:          bool = is_empty<_Compare>::value && !__libcpp_is_final<_Compare>::value>
+        -:  576:class __map_value_compare
+        -:  577:    : private _Compare
+        -:  578:{
+        -:  579:public:
+        -:  580:    _LIBCPP_INLINE_VISIBILITY
+        -:  581:    __map_value_compare()
+        -:  582:        _NOEXCEPT_(is_nothrow_default_constructible<_Compare>::value)
+        -:  583:        : _Compare() {}
+        -:  584:    _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__119__map_value_compareINS_4pairIiN7doctest6StringEEENS_12__value_typeIS4_PFPNS2_9IReporterERKNS2_14ContextOptionsEEEENS_4lessIS4_EELb1EEC1B6v15006ESF_ called 2 returned 100% blocks executed 100%
+function _ZNSt3__119__map_value_compareINS_4pairIiN7doctest6StringEEENS_12__value_typeIS4_PFPNS2_9IReporterERKNS2_14ContextOptionsEEEENS_4lessIS4_EELb1EEC2B6v15006ESF_ called 2 returned 100% blocks executed 100%
+        4:  585:    __map_value_compare(_Compare __c)
+        -:  586:        _NOEXCEPT_(is_nothrow_copy_constructible<_Compare>::value)
+        4:  587:        : _Compare(__c) {}
+        2:  587-block  0
+        2:  587-block  1
+        -:  588:    _LIBCPP_INLINE_VISIBILITY
+        -:  589:    const _Compare& key_comp() const _NOEXCEPT {return *this;}
+        -:  590:    _LIBCPP_INLINE_VISIBILITY
+        -:  591:    bool operator()(const _CP& __x, const _CP& __y) const
+        -:  592:        {return static_cast<const _Compare&>(*this)(__x.__get_value().first, __y.__get_value().first);}
+        -:  593:    _LIBCPP_INLINE_VISIBILITY
+function _ZNKSt3__119__map_value_compareINS_4pairIiN7doctest6StringEEENS_12__value_typeIS4_PFPNS2_9IReporterERKNS2_14ContextOptionsEEEENS_4lessIS4_EELb1EEclB6v15006ERKSD_RKS4_ called 0 returned 0% blocks executed 0%
+    #####:  594:    bool operator()(const _CP& __x, const _Key& __y) const
+    #####:  595:        {return static_cast<const _Compare&>(*this)(__x.__get_value().first, __y);}
+    $$$$$:  595-block  0
+        -:  596:    _LIBCPP_INLINE_VISIBILITY
+function _ZNKSt3__119__map_value_compareINS_4pairIiN7doctest6StringEEENS_12__value_typeIS4_PFPNS2_9IReporterERKNS2_14ContextOptionsEEEENS_4lessIS4_EELb1EEclB6v15006ERKS4_RKSD_ called 3 returned 100% blocks executed 100%
+        3:  597:    bool operator()(const _Key& __x, const _CP& __y) const
+        3:  598:        {return static_cast<const _Compare&>(*this)(__x, __y.__get_value().first);}
+        3:  598-block  0
+        -:  599:    void swap(__map_value_compare& __y)
+        -:  600:        _NOEXCEPT_(__is_nothrow_swappable<_Compare>::value)
+        -:  601:    {
+        -:  602:      using _VSTD::swap;
+        -:  603:      swap(static_cast<_Compare&>(*this), static_cast<_Compare&>(__y));
+        -:  604:    }
+        -:  605:
+        -:  606:#if _LIBCPP_STD_VER > 11
+        -:  607:    template <typename _K2>
+        -:  608:    _LIBCPP_INLINE_VISIBILITY
+        -:  609:    bool operator()(const _K2& __x, const _CP& __y) const
+        -:  610:        {return static_cast<const _Compare&>(*this)(__x, __y.__get_value().first);}
+        -:  611:
+        -:  612:    template <typename _K2>
+        -:  613:    _LIBCPP_INLINE_VISIBILITY
+        -:  614:    bool operator()(const _CP& __x, const _K2& __y) const
+        -:  615:        {return static_cast<const _Compare&>(*this)(__x.__get_value().first, __y);}
+        -:  616:#endif
+        -:  617:};
+        -:  618:
+        -:  619:template <class _Key, class _CP, class _Compare>
+        -:  620:class __map_value_compare<_Key, _CP, _Compare, false>
+        -:  621:{
+        -:  622:    _Compare comp;
+        -:  623:
+        -:  624:public:
+        -:  625:    _LIBCPP_INLINE_VISIBILITY
+        -:  626:    __map_value_compare()
+        -:  627:        _NOEXCEPT_(is_nothrow_default_constructible<_Compare>::value)
+        -:  628:        : comp() {}
+        -:  629:    _LIBCPP_INLINE_VISIBILITY
+        -:  630:    __map_value_compare(_Compare __c)
+        -:  631:        _NOEXCEPT_(is_nothrow_copy_constructible<_Compare>::value)
+        -:  632:        : comp(__c) {}
+        -:  633:    _LIBCPP_INLINE_VISIBILITY
+        -:  634:    const _Compare& key_comp() const _NOEXCEPT {return comp;}
+        -:  635:
+        -:  636:    _LIBCPP_INLINE_VISIBILITY
+        -:  637:    bool operator()(const _CP& __x, const _CP& __y) const
+        -:  638:        {return comp(__x.__get_value().first, __y.__get_value().first);}
+        -:  639:    _LIBCPP_INLINE_VISIBILITY
+        -:  640:    bool operator()(const _CP& __x, const _Key& __y) const
+        -:  641:        {return comp(__x.__get_value().first, __y);}
+        -:  642:    _LIBCPP_INLINE_VISIBILITY
+        -:  643:    bool operator()(const _Key& __x, const _CP& __y) const
+        -:  644:        {return comp(__x, __y.__get_value().first);}
+        -:  645:    void swap(__map_value_compare& __y)
+        -:  646:        _NOEXCEPT_(__is_nothrow_swappable<_Compare>::value)
+        -:  647:    {
+        -:  648:        using _VSTD::swap;
+        -:  649:        swap(comp, __y.comp);
+        -:  650:    }
+        -:  651:
+        -:  652:#if _LIBCPP_STD_VER > 11
+        -:  653:    template <typename _K2>
+        -:  654:    _LIBCPP_INLINE_VISIBILITY
+        -:  655:    bool operator()(const _K2& __x, const _CP& __y) const
+        -:  656:        {return comp(__x, __y.__get_value().first);}
+        -:  657:
+        -:  658:    template <typename _K2>
+        -:  659:    _LIBCPP_INLINE_VISIBILITY
+        -:  660:    bool operator()(const _CP& __x, const _K2& __y) const
+        -:  661:        {return comp(__x.__get_value().first, __y);}
+        -:  662:#endif
+        -:  663:};
+        -:  664:
+        -:  665:template <class _Key, class _CP, class _Compare, bool __b>
+        -:  666:inline _LIBCPP_INLINE_VISIBILITY
+        -:  667:void
+        -:  668:swap(__map_value_compare<_Key, _CP, _Compare, __b>& __x,
+        -:  669:     __map_value_compare<_Key, _CP, _Compare, __b>& __y)
+        -:  670:    _NOEXCEPT_(_NOEXCEPT_(__x.swap(__y)))
+        -:  671:{
+        -:  672:    __x.swap(__y);
+        -:  673:}
+        -:  674:
+        -:  675:template <class _Allocator>
+        -:  676:class __map_node_destructor
+        -:  677:{
+        -:  678:    typedef _Allocator                          allocator_type;
+        -:  679:    typedef allocator_traits<allocator_type>    __alloc_traits;
+        -:  680:
+        -:  681:public:
+        -:  682:    typedef typename __alloc_traits::pointer    pointer;
+        -:  683:
+        -:  684:private:
+        -:  685:    allocator_type& __na_;
+        -:  686:
+        -:  687:    __map_node_destructor& operator=(const __map_node_destructor&);
+        -:  688:
+        -:  689:public:
+        -:  690:    bool __first_constructed;
+        -:  691:    bool __second_constructed;
+        -:  692:
+        -:  693:    _LIBCPP_INLINE_VISIBILITY
+        -:  694:    explicit __map_node_destructor(allocator_type& __na) _NOEXCEPT
+        -:  695:        : __na_(__na),
+        -:  696:          __first_constructed(false),
+        -:  697:          __second_constructed(false)
+        -:  698:        {}
+        -:  699:
+        -:  700:#ifndef _LIBCPP_CXX03_LANG
+        -:  701:    _LIBCPP_INLINE_VISIBILITY
+        -:  702:    __map_node_destructor(__tree_node_destructor<allocator_type>&& __x) _NOEXCEPT
+        -:  703:        : __na_(__x.__na_),
+        -:  704:          __first_constructed(__x.__value_constructed),
+        -:  705:          __second_constructed(__x.__value_constructed)
+        -:  706:        {
+        -:  707:            __x.__value_constructed = false;
+        -:  708:        }
+        -:  709:#endif // _LIBCPP_CXX03_LANG
+        -:  710:
+        -:  711:    _LIBCPP_INLINE_VISIBILITY
+        -:  712:    void operator()(pointer __p) _NOEXCEPT
+        -:  713:    {
+        -:  714:        if (__second_constructed)
+        -:  715:            __alloc_traits::destroy(__na_, _VSTD::addressof(__p->__value_.__get_value().second));
+        -:  716:        if (__first_constructed)
+        -:  717:            __alloc_traits::destroy(__na_, _VSTD::addressof(__p->__value_.__get_value().first));
+        -:  718:        if (__p)
+        -:  719:            __alloc_traits::deallocate(__na_, __p, 1);
+        -:  720:    }
+        -:  721:};
+        -:  722:
+        -:  723:template <class _Key, class _Tp, class _Compare, class _Allocator>
+        -:  724:    class map;
+        -:  725:template <class _Key, class _Tp, class _Compare, class _Allocator>
+        -:  726:    class multimap;
+        -:  727:template <class _TreeIterator> class __map_const_iterator;
+        -:  728:
+        -:  729:#ifndef _LIBCPP_CXX03_LANG
+        -:  730:
+        -:  731:template <class _Key, class _Tp>
+        -:  732:struct _LIBCPP_STANDALONE_DEBUG __value_type
+        -:  733:{
+        -:  734:    typedef _Key                                     key_type;
+        -:  735:    typedef _Tp                                      mapped_type;
+        -:  736:    typedef pair<const key_type, mapped_type>        value_type;
+        -:  737:    typedef pair<key_type&, mapped_type&>            __nc_ref_pair_type;
+        -:  738:    typedef pair<key_type&&, mapped_type&&>          __nc_rref_pair_type;
+        -:  739:
+        -:  740:private:
+        -:  741:    value_type __cc;
+        -:  742:
+        -:  743:public:
+        -:  744:    _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__112__value_typeINS_4pairIiN7doctest6StringEEEPFPNS2_9IReporterERKNS2_14ContextOptionsEEE11__get_valueB6v15006Ev called 6 returned 100% blocks executed 100%
+        6:  745:    value_type& __get_value()
+        -:  746:    {
+        -:  747:#if _LIBCPP_STD_VER > 14
+        6:  748:        return *_VSTD::launder(_VSTD::addressof(__cc));
+        6:  748-block  0
+        -:  749:#else
+        -:  750:        return __cc;
+        -:  751:#endif
+        -:  752:    }
+        -:  753:
+        -:  754:    _LIBCPP_INLINE_VISIBILITY
+function _ZNKSt3__112__value_typeINS_4pairIiN7doctest6StringEEEPFPNS2_9IReporterERKNS2_14ContextOptionsEEE11__get_valueB6v15006Ev called 3 returned 100% blocks executed 100%
+        3:  755:    const value_type& __get_value() const
+        -:  756:    {
+        -:  757:#if _LIBCPP_STD_VER > 14
+        3:  758:        return *_VSTD::launder(_VSTD::addressof(__cc));
+        3:  758-block  0
+        -:  759:#else
+        -:  760:        return __cc;
+        -:  761:#endif
+        -:  762:    }
+        -:  763:
+        -:  764:    _LIBCPP_INLINE_VISIBILITY
+        -:  765:    __nc_ref_pair_type __ref()
+        -:  766:    {
+        -:  767:        value_type& __v = __get_value();
+        -:  768:        return __nc_ref_pair_type(const_cast<key_type&>(__v.first), __v.second);
+        -:  769:    }
+        -:  770:
+        -:  771:    _LIBCPP_INLINE_VISIBILITY
+        -:  772:    __nc_rref_pair_type __move()
+        -:  773:    {
+        -:  774:        value_type& __v = __get_value();
+        -:  775:        return __nc_rref_pair_type(
+        -:  776:            _VSTD::move(const_cast<key_type&>(__v.first)),
+        -:  777:            _VSTD::move(__v.second));
+        -:  778:    }
+        -:  779:
+        -:  780:    _LIBCPP_INLINE_VISIBILITY
+        -:  781:    __value_type& operator=(const __value_type& __v)
+        -:  782:    {
+        -:  783:        __ref() = __v.__get_value();
+        -:  784:        return *this;
+        -:  785:    }
+        -:  786:
+        -:  787:    _LIBCPP_INLINE_VISIBILITY
+        -:  788:    __value_type& operator=(__value_type&& __v)
+        -:  789:    {
+        -:  790:        __ref() = __v.__move();
+        -:  791:        return *this;
+        -:  792:    }
+        -:  793:
+        -:  794:    template <class _ValueTp,
+        -:  795:              class = __enable_if_t<__is_same_uncvref<_ValueTp, value_type>::value>
+        -:  796:             >
+        -:  797:    _LIBCPP_INLINE_VISIBILITY
+        -:  798:    __value_type& operator=(_ValueTp&& __v)
+        -:  799:    {
+        -:  800:        __ref() = _VSTD::forward<_ValueTp>(__v);
+        -:  801:        return *this;
+        -:  802:    }
+        -:  803:
+        -:  804:private:
+        -:  805:    __value_type() = delete;
+        -:  806:    ~__value_type() = delete;
+        -:  807:    __value_type(const __value_type&) = delete;
+        -:  808:    __value_type(__value_type&&) = delete;
+        -:  809:};
+        -:  810:
+        -:  811:#else
+        -:  812:
+        -:  813:template <class _Key, class _Tp>
+        -:  814:struct __value_type
+        -:  815:{
+        -:  816:    typedef _Key                                     key_type;
+        -:  817:    typedef _Tp                                      mapped_type;
+        -:  818:    typedef pair<const key_type, mapped_type>        value_type;
+        -:  819:
+        -:  820:private:
+        -:  821:    value_type __cc;
+        -:  822:
+        -:  823:public:
+        -:  824:    _LIBCPP_INLINE_VISIBILITY
+        -:  825:    value_type& __get_value() { return __cc; }
+        -:  826:    _LIBCPP_INLINE_VISIBILITY
+        -:  827:    const value_type& __get_value() const { return __cc; }
+        -:  828:
+        -:  829:private:
+        -:  830:   __value_type();
+        -:  831:   __value_type(__value_type const&);
+        -:  832:   __value_type& operator=(__value_type const&);
+        -:  833:   ~__value_type();
+        -:  834:};
+        -:  835:
+        -:  836:#endif // _LIBCPP_CXX03_LANG
+        -:  837:
+        -:  838:template <class _Tp>
+        -:  839:struct __extract_key_value_types;
+        -:  840:
+        -:  841:template <class _Key, class _Tp>
+        -:  842:struct __extract_key_value_types<__value_type<_Key, _Tp> >
+        -:  843:{
+        -:  844:  typedef _Key const __key_type;
+        -:  845:  typedef _Tp        __mapped_type;
+        -:  846:};
+        -:  847:
+        -:  848:template <class _TreeIterator>
+        -:  849:class _LIBCPP_TEMPLATE_VIS __map_iterator
+        -:  850:{
+        -:  851:    typedef typename _TreeIterator::_NodeTypes                   _NodeTypes;
+        -:  852:    typedef typename _TreeIterator::__pointer_traits             __pointer_traits;
+        -:  853:
+        -:  854:    _TreeIterator __i_;
+        -:  855:
+        -:  856:public:
+        -:  857:    typedef bidirectional_iterator_tag                           iterator_category;
+        -:  858:    typedef typename _NodeTypes::__map_value_type                value_type;
+        -:  859:    typedef typename _TreeIterator::difference_type              difference_type;
+        -:  860:    typedef value_type&                                          reference;
+        -:  861:    typedef typename _NodeTypes::__map_value_type_pointer        pointer;
+        -:  862:
+        -:  863:    _LIBCPP_INLINE_VISIBILITY
+        -:  864:    __map_iterator() _NOEXCEPT {}
+        -:  865:
+        -:  866:    _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__114__map_iteratorINS_15__tree_iteratorINS_12__value_typeINS_4pairIiN7doctest6StringEEEPFPNS4_9IReporterERKNS4_14ContextOptionsEEEEPNS_11__tree_nodeISE_PvEElEEEC1B6v15006ESJ_ called 7 returned 100% blocks executed 100%
+function _ZNSt3__114__map_iteratorINS_15__tree_iteratorINS_12__value_typeINS_4pairIiN7doctest6StringEEEPFPNS4_9IReporterERKNS4_14ContextOptionsEEEEPNS_11__tree_nodeISE_PvEElEEEC2B6v15006ESJ_ called 7 returned 100% blocks executed 100%
+       14:  867:    __map_iterator(_TreeIterator __i) _NOEXCEPT : __i_(__i) {}
+        7:  867-block  0
+        7:  867-block  1
+        -:  868:
+        -:  869:    _LIBCPP_INLINE_VISIBILITY
+function _ZNKSt3__114__map_iteratorINS_15__tree_iteratorINS_12__value_typeINS_4pairIiN7doctest6StringEEEPFPNS4_9IReporterERKNS4_14ContextOptionsEEEEPNS_11__tree_nodeISE_PvEElEEEdeB6v15006Ev called 3 returned 100% blocks executed 100%
+        3:  870:    reference operator*() const {return __i_->__get_value();}
+        3:  870-block  0
+        -:  871:    _LIBCPP_INLINE_VISIBILITY
+        -:  872:    pointer operator->() const {return pointer_traits<pointer>::pointer_to(__i_->__get_value());}
+        -:  873:
+        -:  874:    _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__114__map_iteratorINS_15__tree_iteratorINS_12__value_typeINS_4pairIiN7doctest6StringEEEPFPNS4_9IReporterERKNS4_14ContextOptionsEEEEPNS_11__tree_nodeISE_PvEElEEEppB6v15006Ev called 3 returned 100% blocks executed 100%
+        3:  875:    __map_iterator& operator++() {++__i_; return *this;}
+        3:  875-block  0
+        -:  876:    _LIBCPP_INLINE_VISIBILITY
+        -:  877:    __map_iterator operator++(int)
+        -:  878:    {
+        -:  879:        __map_iterator __t(*this);
+        -:  880:        ++(*this);
+        -:  881:        return __t;
+        -:  882:    }
+        -:  883:
+        -:  884:    _LIBCPP_INLINE_VISIBILITY
+        -:  885:    __map_iterator& operator--() {--__i_; return *this;}
+        -:  886:    _LIBCPP_INLINE_VISIBILITY
+        -:  887:    __map_iterator operator--(int)
+        -:  888:    {
+        -:  889:        __map_iterator __t(*this);
+        -:  890:        --(*this);
+        -:  891:        return __t;
+        -:  892:    }
+        -:  893:
+        -:  894:    friend _LIBCPP_INLINE_VISIBILITY
+        -:  895:    bool operator==(const __map_iterator& __x, const __map_iterator& __y)
+        -:  896:        {return __x.__i_ == __y.__i_;}
+        -:  897:    friend
+        -:  898:    _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__1neB6v15006ERKNS_14__map_iteratorINS_15__tree_iteratorINS_12__value_typeINS_4pairIiN7doctest6StringEEEPFPNS4_9IReporterERKNS4_14ContextOptionsEEEEPNS_11__tree_nodeISE_PvEElEEEESM_ called 5 returned 100% blocks executed 100%
+        5:  899:    bool operator!=(const __map_iterator& __x, const __map_iterator& __y)
+        5:  900:        {return __x.__i_ != __y.__i_;}
+        5:  900-block  0
+        -:  901:
+        -:  902:    template <class, class, class, class> friend class _LIBCPP_TEMPLATE_VIS map;
+        -:  903:    template <class, class, class, class> friend class _LIBCPP_TEMPLATE_VIS multimap;
+        -:  904:    template <class> friend class _LIBCPP_TEMPLATE_VIS __map_const_iterator;
+        -:  905:};
+        -:  906:
+        -:  907:template <class _TreeIterator>
+        -:  908:class _LIBCPP_TEMPLATE_VIS __map_const_iterator
+        -:  909:{
+        -:  910:    typedef typename _TreeIterator::_NodeTypes                   _NodeTypes;
+        -:  911:    typedef typename _TreeIterator::__pointer_traits             __pointer_traits;
+        -:  912:
+        -:  913:    _TreeIterator __i_;
+        -:  914:
+        -:  915:public:
+        -:  916:    typedef bidirectional_iterator_tag                           iterator_category;
+        -:  917:    typedef typename _NodeTypes::__map_value_type                value_type;
+        -:  918:    typedef typename _TreeIterator::difference_type              difference_type;
+        -:  919:    typedef const value_type&                                    reference;
+        -:  920:    typedef typename _NodeTypes::__const_map_value_type_pointer  pointer;
+        -:  921:
+        -:  922:    _LIBCPP_INLINE_VISIBILITY
+        -:  923:    __map_const_iterator() _NOEXCEPT {}
+        -:  924:
+        -:  925:    _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__120__map_const_iteratorINS_21__tree_const_iteratorINS_12__value_typeINS_4pairIiN7doctest6StringEEEPFPNS4_9IReporterERKNS4_14ContextOptionsEEEEPNS_11__tree_nodeISE_PvEElEEEC1B6v15006ESJ_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__120__map_const_iteratorINS_21__tree_const_iteratorINS_12__value_typeINS_4pairIiN7doctest6StringEEEPFPNS4_9IReporterERKNS4_14ContextOptionsEEEEPNS_11__tree_nodeISE_PvEElEEEC2B6v15006ESJ_ called 0 returned 0% blocks executed 0%
+    #####:  926:    __map_const_iterator(_TreeIterator __i) _NOEXCEPT : __i_(__i) {}
+    $$$$$:  926-block  0
+    $$$$$:  926-block  1
+        -:  927:    _LIBCPP_INLINE_VISIBILITY
+        -:  928:    __map_const_iterator(__map_iterator<
+        -:  929:        typename _TreeIterator::__non_const_iterator> __i) _NOEXCEPT
+        -:  930:        : __i_(__i.__i_) {}
+        -:  931:
+        -:  932:    _LIBCPP_INLINE_VISIBILITY
+function _ZNKSt3__120__map_const_iteratorINS_21__tree_const_iteratorINS_12__value_typeINS_4pairIiN7doctest6StringEEEPFPNS4_9IReporterERKNS4_14ContextOptionsEEEEPNS_11__tree_nodeISE_PvEElEEEdeB6v15006Ev called 0 returned 0% blocks executed 0%
+    #####:  933:    reference operator*() const {return __i_->__get_value();}
+    $$$$$:  933-block  0
+        -:  934:    _LIBCPP_INLINE_VISIBILITY
+        -:  935:    pointer operator->() const {return pointer_traits<pointer>::pointer_to(__i_->__get_value());}
+        -:  936:
+        -:  937:    _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__120__map_const_iteratorINS_21__tree_const_iteratorINS_12__value_typeINS_4pairIiN7doctest6StringEEEPFPNS4_9IReporterERKNS4_14ContextOptionsEEEEPNS_11__tree_nodeISE_PvEElEEEppB6v15006Ev called 0 returned 0% blocks executed 0%
+    #####:  938:    __map_const_iterator& operator++() {++__i_; return *this;}
+    $$$$$:  938-block  0
+        -:  939:    _LIBCPP_INLINE_VISIBILITY
+        -:  940:    __map_const_iterator operator++(int)
+        -:  941:    {
+        -:  942:        __map_const_iterator __t(*this);
+        -:  943:        ++(*this);
+        -:  944:        return __t;
+        -:  945:    }
+        -:  946:
+        -:  947:    _LIBCPP_INLINE_VISIBILITY
+        -:  948:    __map_const_iterator& operator--() {--__i_; return *this;}
+        -:  949:    _LIBCPP_INLINE_VISIBILITY
+        -:  950:    __map_const_iterator operator--(int)
+        -:  951:    {
+        -:  952:        __map_const_iterator __t(*this);
+        -:  953:        --(*this);
+        -:  954:        return __t;
+        -:  955:    }
+        -:  956:
+        -:  957:    friend _LIBCPP_INLINE_VISIBILITY
+        -:  958:    bool operator==(const __map_const_iterator& __x, const __map_const_iterator& __y)
+        -:  959:        {return __x.__i_ == __y.__i_;}
+        -:  960:    friend _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__1neB6v15006ERKNS_20__map_const_iteratorINS_21__tree_const_iteratorINS_12__value_typeINS_4pairIiN7doctest6StringEEEPFPNS4_9IReporterERKNS4_14ContextOptionsEEEEPNS_11__tree_nodeISE_PvEElEEEESM_ called 0 returned 0% blocks executed 0%
+    #####:  961:    bool operator!=(const __map_const_iterator& __x, const __map_const_iterator& __y)
+    #####:  962:        {return __x.__i_ != __y.__i_;}
+    $$$$$:  962-block  0
+        -:  963:
+        -:  964:    template <class, class, class, class> friend class _LIBCPP_TEMPLATE_VIS map;
+        -:  965:    template <class, class, class, class> friend class _LIBCPP_TEMPLATE_VIS multimap;
+        -:  966:    template <class, class, class> friend class _LIBCPP_TEMPLATE_VIS __tree_const_iterator;
+        -:  967:};
+        -:  968:
+        -:  969:template <class _Key, class _Tp, class _Compare = less<_Key>,
+        -:  970:          class _Allocator = allocator<pair<const _Key, _Tp> > >
+        -:  971:class _LIBCPP_TEMPLATE_VIS map
+        -:  972:{
+        -:  973:public:
+        -:  974:    // types:
+        -:  975:    typedef _Key                                     key_type;
+        -:  976:    typedef _Tp                                      mapped_type;
+        -:  977:    typedef pair<const key_type, mapped_type>        value_type;
+        -:  978:    typedef __type_identity_t<_Compare>              key_compare;
+        -:  979:    typedef __type_identity_t<_Allocator>            allocator_type;
+        -:  980:    typedef value_type&                              reference;
+        -:  981:    typedef const value_type&                        const_reference;
+        -:  982:
+        -:  983:    static_assert((is_same<typename allocator_type::value_type, value_type>::value),
+        -:  984:                  "Allocator::value_type must be same type as value_type");
+        -:  985:
+        -:  986:    class _LIBCPP_TEMPLATE_VIS value_compare
+        -:  987:        : public __binary_function<value_type, value_type, bool>
+        -:  988:    {
+        -:  989:        friend class map;
+        -:  990:    protected:
+        -:  991:        key_compare comp;
+        -:  992:
+        -:  993:        _LIBCPP_INLINE_VISIBILITY value_compare(key_compare __c) : comp(__c) {}
+        -:  994:    public:
+        -:  995:        _LIBCPP_INLINE_VISIBILITY
+        -:  996:        bool operator()(const value_type& __x, const value_type& __y) const
+        -:  997:            {return comp(__x.first, __y.first);}
+        -:  998:    };
+        -:  999:
+        -: 1000:private:
+        -: 1001:
+        -: 1002:    typedef _VSTD::__value_type<key_type, mapped_type>             __value_type;
+        -: 1003:    typedef __map_value_compare<key_type, __value_type, key_compare> __vc;
+        -: 1004:    typedef typename __rebind_alloc_helper<allocator_traits<allocator_type>,
+        -: 1005:                                                 __value_type>::type __allocator_type;
+        -: 1006:    typedef __tree<__value_type, __vc, __allocator_type>   __base;
+        -: 1007:    typedef typename __base::__node_traits                 __node_traits;
+        -: 1008:    typedef allocator_traits<allocator_type>               __alloc_traits;
+        -: 1009:
+        -: 1010:    __base __tree_;
+        -: 1011:
+        -: 1012:public:
+        -: 1013:    typedef typename __alloc_traits::pointer               pointer;
+        -: 1014:    typedef typename __alloc_traits::const_pointer         const_pointer;
+        -: 1015:    typedef typename __alloc_traits::size_type             size_type;
+        -: 1016:    typedef typename __alloc_traits::difference_type       difference_type;
+        -: 1017:    typedef __map_iterator<typename __base::iterator>             iterator;
+        -: 1018:    typedef __map_const_iterator<typename __base::const_iterator> const_iterator;
+        -: 1019:    typedef _VSTD::reverse_iterator<iterator>               reverse_iterator;
+        -: 1020:    typedef _VSTD::reverse_iterator<const_iterator>         const_reverse_iterator;
+        -: 1021:
+        -: 1022:#if _LIBCPP_STD_VER > 14
+        -: 1023:    typedef __map_node_handle<typename __base::__node, allocator_type> node_type;
+        -: 1024:    typedef __insert_return_type<iterator, node_type> insert_return_type;
+        -: 1025:#endif
+        -: 1026:
+        -: 1027:    template <class _Key2, class _Value2, class _Comp2, class _Alloc2>
+        -: 1028:        friend class _LIBCPP_TEMPLATE_VIS map;
+        -: 1029:    template <class _Key2, class _Value2, class _Comp2, class _Alloc2>
+        -: 1030:        friend class _LIBCPP_TEMPLATE_VIS multimap;
+        -: 1031:
+        -: 1032:    _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__13mapINS_4pairIiN7doctest6StringEEEPFPNS2_9IReporterERKNS2_14ContextOptionsEENS_4lessIS4_EENS_9allocatorINS1_IKS4_SB_EEEEEC1B6v15006Ev called 2 returned 100% blocks executed 100%
+function _ZNSt3__13mapINS_4pairIiN7doctest6StringEEEPFPNS2_9IReporterERKNS2_14ContextOptionsEENS_4lessIS4_EENS_9allocatorINS1_IKS4_SB_EEEEEC2B6v15006Ev called 2 returned 100% blocks executed 100%
+        4: 1033:    map()
+        -: 1034:        _NOEXCEPT_(
+        -: 1035:            is_nothrow_default_constructible<allocator_type>::value &&
+        -: 1036:            is_nothrow_default_constructible<key_compare>::value &&
+        -: 1037:            is_nothrow_copy_constructible<key_compare>::value)
+        4: 1038:        : __tree_(__vc(key_compare())) {}
+        2: 1038-block  0
+        2: 1038-block  1
+        -: 1039:
+        -: 1040:    _LIBCPP_INLINE_VISIBILITY
+        -: 1041:    explicit map(const key_compare& __comp)
+        -: 1042:        _NOEXCEPT_(
+        -: 1043:            is_nothrow_default_constructible<allocator_type>::value &&
+        -: 1044:            is_nothrow_copy_constructible<key_compare>::value)
+        -: 1045:        : __tree_(__vc(__comp)) {}
+        -: 1046:
+        -: 1047:    _LIBCPP_INLINE_VISIBILITY
+        -: 1048:    explicit map(const key_compare& __comp, const allocator_type& __a)
+        -: 1049:        : __tree_(__vc(__comp), typename __base::allocator_type(__a)) {}
+        -: 1050:
+        -: 1051:    template <class _InputIterator>
+        -: 1052:    _LIBCPP_INLINE_VISIBILITY
+        -: 1053:        map(_InputIterator __f, _InputIterator __l,
+        -: 1054:            const key_compare& __comp = key_compare())
+        -: 1055:        : __tree_(__vc(__comp))
+        -: 1056:        {
+        -: 1057:            insert(__f, __l);
+        -: 1058:        }
+        -: 1059:
+        -: 1060:    template <class _InputIterator>
+        -: 1061:    _LIBCPP_INLINE_VISIBILITY
+        -: 1062:        map(_InputIterator __f, _InputIterator __l,
+        -: 1063:            const key_compare& __comp, const allocator_type& __a)
+        -: 1064:        : __tree_(__vc(__comp), typename __base::allocator_type(__a))
+        -: 1065:        {
+        -: 1066:            insert(__f, __l);
+        -: 1067:        }
+        -: 1068:
+        -: 1069:#if _LIBCPP_STD_VER > 11
+        -: 1070:    template <class _InputIterator>
+        -: 1071:    _LIBCPP_INLINE_VISIBILITY
+        -: 1072:    map(_InputIterator __f, _InputIterator __l, const allocator_type& __a)
+        -: 1073:        : map(__f, __l, key_compare(), __a) {}
+        -: 1074:#endif
+        -: 1075:
+        -: 1076:    _LIBCPP_INLINE_VISIBILITY
+        -: 1077:    map(const map& __m)
+        -: 1078:        : __tree_(__m.__tree_)
+        -: 1079:        {
+        -: 1080:            insert(__m.begin(), __m.end());
+        -: 1081:        }
+        -: 1082:
+        -: 1083:    _LIBCPP_INLINE_VISIBILITY
+        -: 1084:    map& operator=(const map& __m)
+        -: 1085:        {
+        -: 1086:#ifndef _LIBCPP_CXX03_LANG
+        -: 1087:            __tree_ = __m.__tree_;
+        -: 1088:#else
+        -: 1089:            if (this != _VSTD::addressof(__m)) {
+        -: 1090:                __tree_.clear();
+        -: 1091:                __tree_.value_comp() = __m.__tree_.value_comp();
+        -: 1092:                __tree_.__copy_assign_alloc(__m.__tree_);
+        -: 1093:                insert(__m.begin(), __m.end());
+        -: 1094:            }
+        -: 1095:#endif
+        -: 1096:            return *this;
+        -: 1097:        }
+        -: 1098:
+        -: 1099:#ifndef _LIBCPP_CXX03_LANG
+        -: 1100:
+        -: 1101:    _LIBCPP_INLINE_VISIBILITY
+        -: 1102:    map(map&& __m)
+        -: 1103:        _NOEXCEPT_(is_nothrow_move_constructible<__base>::value)
+        -: 1104:        : __tree_(_VSTD::move(__m.__tree_))
+        -: 1105:        {
+        -: 1106:        }
+        -: 1107:
+        -: 1108:    map(map&& __m, const allocator_type& __a);
+        -: 1109:
+        -: 1110:    _LIBCPP_INLINE_VISIBILITY
+        -: 1111:    map& operator=(map&& __m)
+        -: 1112:        _NOEXCEPT_(is_nothrow_move_assignable<__base>::value)
+        -: 1113:        {
+        -: 1114:            __tree_ = _VSTD::move(__m.__tree_);
+        -: 1115:            return *this;
+        -: 1116:        }
+        -: 1117:
+        -: 1118:    _LIBCPP_INLINE_VISIBILITY
+        -: 1119:    map(initializer_list<value_type> __il, const key_compare& __comp = key_compare())
+        -: 1120:        : __tree_(__vc(__comp))
+        -: 1121:        {
+        -: 1122:            insert(__il.begin(), __il.end());
+        -: 1123:        }
+        -: 1124:
+        -: 1125:    _LIBCPP_INLINE_VISIBILITY
+        -: 1126:    map(initializer_list<value_type> __il, const key_compare& __comp, const allocator_type& __a)
+        -: 1127:        : __tree_(__vc(__comp), typename __base::allocator_type(__a))
+        -: 1128:        {
+        -: 1129:            insert(__il.begin(), __il.end());
+        -: 1130:        }
+        -: 1131:
+        -: 1132:#if _LIBCPP_STD_VER > 11
+        -: 1133:    _LIBCPP_INLINE_VISIBILITY
+        -: 1134:    map(initializer_list<value_type> __il, const allocator_type& __a)
+        -: 1135:        : map(__il, key_compare(), __a) {}
+        -: 1136:#endif
+        -: 1137:
+        -: 1138:    _LIBCPP_INLINE_VISIBILITY
+        -: 1139:    map& operator=(initializer_list<value_type> __il)
+        -: 1140:        {
+        -: 1141:            __tree_.__assign_unique(__il.begin(), __il.end());
+        -: 1142:            return *this;
+        -: 1143:        }
+        -: 1144:
+        -: 1145:#endif // _LIBCPP_CXX03_LANG
+        -: 1146:
+        -: 1147:    _LIBCPP_INLINE_VISIBILITY
+        -: 1148:    explicit map(const allocator_type& __a)
+        -: 1149:        : __tree_(typename __base::allocator_type(__a))
+        -: 1150:        {
+        -: 1151:        }
+        -: 1152:
+        -: 1153:    _LIBCPP_INLINE_VISIBILITY
+        -: 1154:    map(const map& __m, const allocator_type& __a)
+        -: 1155:        : __tree_(__m.__tree_.value_comp(), typename __base::allocator_type(__a))
+        -: 1156:        {
+        -: 1157:            insert(__m.begin(), __m.end());
+        -: 1158:        }
+        -: 1159:
+        -: 1160:    _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__13mapINS_4pairIiN7doctest6StringEEEPFPNS2_9IReporterERKNS2_14ContextOptionsEENS_4lessIS4_EENS_9allocatorINS1_IKS4_SB_EEEEED1B6v15006Ev called 1 returned 100% blocks executed 100%
+function _ZNSt3__13mapINS_4pairIiN7doctest6StringEEEPFPNS2_9IReporterERKNS2_14ContextOptionsEENS_4lessIS4_EENS_9allocatorINS1_IKS4_SB_EEEEED2B6v15006Ev called 1 returned 100% blocks executed 100%
+        2: 1161:    ~map() {
+        -: 1162:        static_assert(sizeof(__diagnose_non_const_comparator<_Key, _Compare>()), "");
+        2: 1163:    }
+        1: 1163-block  0
+        1: 1163-block  1
+        -: 1164:
+        -: 1165:    _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__13mapINS_4pairIiN7doctest6StringEEEPFPNS2_9IReporterERKNS2_14ContextOptionsEENS_4lessIS4_EENS_9allocatorINS1_IKS4_SB_EEEEE5beginB6v15006Ev called 2 returned 100% blocks executed 100%
+        2: 1166:          iterator begin() _NOEXCEPT {return __tree_.begin();}
+        2: 1166-block  0
+        -: 1167:    _LIBCPP_INLINE_VISIBILITY
+function _ZNKSt3__13mapINS_4pairIiN7doctest6StringEEEPFPNS2_9IReporterERKNS2_14ContextOptionsEENS_4lessIS4_EENS_9allocatorINS1_IKS4_SB_EEEEE5beginB6v15006Ev called 0 returned 0% blocks executed 0%
+    #####: 1168:    const_iterator begin() const _NOEXCEPT {return __tree_.begin();}
+    $$$$$: 1168-block  0
+        -: 1169:    _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__13mapINS_4pairIiN7doctest6StringEEEPFPNS2_9IReporterERKNS2_14ContextOptionsEENS_4lessIS4_EENS_9allocatorINS1_IKS4_SB_EEEEE3endB6v15006Ev called 2 returned 100% blocks executed 100%
+        2: 1170:          iterator end() _NOEXCEPT {return __tree_.end();}
+        2: 1170-block  0
+        -: 1171:    _LIBCPP_INLINE_VISIBILITY
+function _ZNKSt3__13mapINS_4pairIiN7doctest6StringEEEPFPNS2_9IReporterERKNS2_14ContextOptionsEENS_4lessIS4_EENS_9allocatorINS1_IKS4_SB_EEEEE3endB6v15006Ev called 0 returned 0% blocks executed 0%
+    #####: 1172:    const_iterator end() const _NOEXCEPT {return __tree_.end();}
+    $$$$$: 1172-block  0
+        -: 1173:
+        -: 1174:    _LIBCPP_INLINE_VISIBILITY
+        -: 1175:          reverse_iterator rbegin() _NOEXCEPT {return reverse_iterator(end());}
+        -: 1176:    _LIBCPP_INLINE_VISIBILITY
+        -: 1177:    const_reverse_iterator rbegin() const _NOEXCEPT
+        -: 1178:        {return const_reverse_iterator(end());}
+        -: 1179:    _LIBCPP_INLINE_VISIBILITY
+        -: 1180:          reverse_iterator rend() _NOEXCEPT
+        -: 1181:            {return       reverse_iterator(begin());}
+        -: 1182:    _LIBCPP_INLINE_VISIBILITY
+        -: 1183:    const_reverse_iterator rend() const _NOEXCEPT
+        -: 1184:        {return const_reverse_iterator(begin());}
+        -: 1185:
+        -: 1186:    _LIBCPP_INLINE_VISIBILITY
+        -: 1187:    const_iterator cbegin() const _NOEXCEPT {return begin();}
+        -: 1188:    _LIBCPP_INLINE_VISIBILITY
+        -: 1189:    const_iterator cend() const _NOEXCEPT {return end();}
+        -: 1190:    _LIBCPP_INLINE_VISIBILITY
+        -: 1191:    const_reverse_iterator crbegin() const _NOEXCEPT {return rbegin();}
+        -: 1192:    _LIBCPP_INLINE_VISIBILITY
+        -: 1193:    const_reverse_iterator crend() const _NOEXCEPT {return rend();}
+        -: 1194:
+        -: 1195:    _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -: 1196:    bool      empty() const _NOEXCEPT {return __tree_.size() == 0;}
+        -: 1197:    _LIBCPP_INLINE_VISIBILITY
+function _ZNKSt3__13mapINS_4pairIiN7doctest6StringEEEPFPNS2_9IReporterERKNS2_14ContextOptionsEENS_4lessIS4_EENS_9allocatorINS1_IKS4_SB_EEEEE4sizeB6v15006Ev called 0 returned 0% blocks executed 0%
+    #####: 1198:    size_type size() const _NOEXCEPT {return __tree_.size();}
+    $$$$$: 1198-block  0
+        -: 1199:    _LIBCPP_INLINE_VISIBILITY
+        -: 1200:    size_type max_size() const _NOEXCEPT {return __tree_.max_size();}
+        -: 1201:
+        -: 1202:    mapped_type& operator[](const key_type& __k);
+        -: 1203:#ifndef _LIBCPP_CXX03_LANG
+        -: 1204:    mapped_type& operator[](key_type&& __k);
+        -: 1205:#endif
+        -: 1206:
+        -: 1207:          mapped_type& at(const key_type& __k);
+        -: 1208:    const mapped_type& at(const key_type& __k) const;
+        -: 1209:
+        -: 1210:    _LIBCPP_INLINE_VISIBILITY
+        -: 1211:    allocator_type get_allocator() const _NOEXCEPT {return allocator_type(__tree_.__alloc());}
+        -: 1212:    _LIBCPP_INLINE_VISIBILITY
+        -: 1213:    key_compare    key_comp()      const {return __tree_.value_comp().key_comp();}
+        -: 1214:    _LIBCPP_INLINE_VISIBILITY
+        -: 1215:    value_compare  value_comp()    const {return value_compare(__tree_.value_comp().key_comp());}
+        -: 1216:
+        -: 1217:#ifndef _LIBCPP_CXX03_LANG
+        -: 1218:    template <class ..._Args>
+        -: 1219:    _LIBCPP_INLINE_VISIBILITY
+        -: 1220:    pair<iterator, bool> emplace(_Args&& ...__args) {
+        -: 1221:        return __tree_.__emplace_unique(_VSTD::forward<_Args>(__args)...);
+        -: 1222:    }
+        -: 1223:
+        -: 1224:    template <class ..._Args>
+        -: 1225:    _LIBCPP_INLINE_VISIBILITY
+        -: 1226:    iterator emplace_hint(const_iterator __p, _Args&& ...__args) {
+        -: 1227:        return __tree_.__emplace_hint_unique(__p.__i_, _VSTD::forward<_Args>(__args)...);
+        -: 1228:    }
+        -: 1229:
+        -: 1230:    template <class _Pp,
+        -: 1231:              class = __enable_if_t<is_constructible<value_type, _Pp>::value> >
+        -: 1232:        _LIBCPP_INLINE_VISIBILITY
+        -: 1233:        pair<iterator, bool> insert(_Pp&& __p)
+        -: 1234:            {return __tree_.__insert_unique(_VSTD::forward<_Pp>(__p));}
+        -: 1235:
+        -: 1236:    template <class _Pp,
+        -: 1237:              class = __enable_if_t<is_constructible<value_type, _Pp>::value> >
+        -: 1238:        _LIBCPP_INLINE_VISIBILITY
+        -: 1239:        iterator insert(const_iterator __pos, _Pp&& __p)
+        -: 1240:            {return __tree_.__insert_unique(__pos.__i_, _VSTD::forward<_Pp>(__p));}
+        -: 1241:
+        -: 1242:#endif // _LIBCPP_CXX03_LANG
+        -: 1243:
+        -: 1244:    _LIBCPP_INLINE_VISIBILITY
+        -: 1245:    pair<iterator, bool>
+        -: 1246:        insert(const value_type& __v) {return __tree_.__insert_unique(__v);}
+        -: 1247:
+        -: 1248:    _LIBCPP_INLINE_VISIBILITY
+        -: 1249:    iterator
+        -: 1250:        insert(const_iterator __p, const value_type& __v)
+        -: 1251:            {return __tree_.__insert_unique(__p.__i_, __v);}
+        -: 1252:
+        -: 1253:#ifndef _LIBCPP_CXX03_LANG
+        -: 1254:    _LIBCPP_INLINE_VISIBILITY
+        -: 1255:    pair<iterator, bool>
+function _ZNSt3__13mapINS_4pairIiN7doctest6StringEEEPFPNS2_9IReporterERKNS2_14ContextOptionsEENS_4lessIS4_EENS_9allocatorINS1_IKS4_SB_EEEEE6insertB6v15006EOSG_ called 3 returned 100% blocks executed 100%
+        3: 1256:    insert(value_type&& __v) {return __tree_.__insert_unique(_VSTD::move(__v));}
+        3: 1256-block  0
+        -: 1257:
+        -: 1258:    _LIBCPP_INLINE_VISIBILITY
+        -: 1259:    iterator insert(const_iterator __p,  value_type&& __v)
+        -: 1260:    {return __tree_.__insert_unique(__p.__i_, _VSTD::move(__v));}
+        -: 1261:
+        -: 1262:    _LIBCPP_INLINE_VISIBILITY
+        -: 1263:    void insert(initializer_list<value_type> __il)
+        -: 1264:        {insert(__il.begin(), __il.end());}
+        -: 1265:#endif
+        -: 1266:
+        -: 1267:    template <class _InputIterator>
+        -: 1268:        _LIBCPP_INLINE_VISIBILITY
+        -: 1269:        void insert(_InputIterator __f, _InputIterator __l)
+        -: 1270:        {
+        -: 1271:            for (const_iterator __e = cend(); __f != __l; ++__f)
+        -: 1272:                insert(__e.__i_, *__f);
+        -: 1273:        }
+        -: 1274:
+        -: 1275:#if _LIBCPP_STD_VER > 14
+        -: 1276:
+        -: 1277:    template <class... _Args>
+        -: 1278:        _LIBCPP_INLINE_VISIBILITY
+        -: 1279:        pair<iterator, bool> try_emplace(const key_type& __k, _Args&&... __args)
+        -: 1280:    {
+        -: 1281:        return __tree_.__emplace_unique_key_args(__k,
+        -: 1282:            _VSTD::piecewise_construct,
+        -: 1283:            _VSTD::forward_as_tuple(__k),
+        -: 1284:            _VSTD::forward_as_tuple(_VSTD::forward<_Args>(__args)...));
+        -: 1285:    }
+        -: 1286:
+        -: 1287:    template <class... _Args>
+        -: 1288:        _LIBCPP_INLINE_VISIBILITY
+        -: 1289:        pair<iterator, bool> try_emplace(key_type&& __k, _Args&&... __args)
+        -: 1290:    {
+        -: 1291:        return __tree_.__emplace_unique_key_args(__k,
+        -: 1292:            _VSTD::piecewise_construct,
+        -: 1293:            _VSTD::forward_as_tuple(_VSTD::move(__k)),
+        -: 1294:            _VSTD::forward_as_tuple(_VSTD::forward<_Args>(__args)...));
+        -: 1295:    }
+        -: 1296:
+        -: 1297:    template <class... _Args>
+        -: 1298:        _LIBCPP_INLINE_VISIBILITY
+        -: 1299:        iterator try_emplace(const_iterator __h, const key_type& __k, _Args&&... __args)
+        -: 1300:    {
+        -: 1301:        return __tree_.__emplace_hint_unique_key_args(__h.__i_, __k,
+        -: 1302:            _VSTD::piecewise_construct,
+        -: 1303:            _VSTD::forward_as_tuple(__k),
+        -: 1304:            _VSTD::forward_as_tuple(_VSTD::forward<_Args>(__args)...)).first;
+        -: 1305:    }
+        -: 1306:
+        -: 1307:    template <class... _Args>
+        -: 1308:        _LIBCPP_INLINE_VISIBILITY
+        -: 1309:        iterator try_emplace(const_iterator __h, key_type&& __k, _Args&&... __args)
+        -: 1310:    {
+        -: 1311:        return __tree_.__emplace_hint_unique_key_args(__h.__i_, __k,
+        -: 1312:            _VSTD::piecewise_construct,
+        -: 1313:            _VSTD::forward_as_tuple(_VSTD::move(__k)),
+        -: 1314:            _VSTD::forward_as_tuple(_VSTD::forward<_Args>(__args)...)).first;
+        -: 1315:    }
+        -: 1316:
+        -: 1317:    template <class _Vp>
+        -: 1318:        _LIBCPP_INLINE_VISIBILITY
+        -: 1319:        pair<iterator, bool> insert_or_assign(const key_type& __k, _Vp&& __v)
+        -: 1320:    {
+        -: 1321:        iterator __p = lower_bound(__k);
+        -: 1322:        if ( __p != end() && !key_comp()(__k, __p->first))
+        -: 1323:        {
+        -: 1324:            __p->second = _VSTD::forward<_Vp>(__v);
+        -: 1325:            return _VSTD::make_pair(__p, false);
+        -: 1326:        }
+        -: 1327:        return _VSTD::make_pair(emplace_hint(__p, __k, _VSTD::forward<_Vp>(__v)), true);
+        -: 1328:    }
+        -: 1329:
+        -: 1330:    template <class _Vp>
+        -: 1331:        _LIBCPP_INLINE_VISIBILITY
+        -: 1332:        pair<iterator, bool> insert_or_assign(key_type&& __k, _Vp&& __v)
+        -: 1333:    {
+        -: 1334:        iterator __p = lower_bound(__k);
+        -: 1335:        if ( __p != end() && !key_comp()(__k, __p->first))
+        -: 1336:        {
+        -: 1337:            __p->second = _VSTD::forward<_Vp>(__v);
+        -: 1338:            return _VSTD::make_pair(__p, false);
+        -: 1339:        }
+        -: 1340:        return _VSTD::make_pair(emplace_hint(__p, _VSTD::move(__k), _VSTD::forward<_Vp>(__v)), true);
+        -: 1341:    }
+        -: 1342:
+        -: 1343:    template <class _Vp>
+        -: 1344:    _LIBCPP_INLINE_VISIBILITY iterator insert_or_assign(const_iterator __h,
+        -: 1345:                                                        const key_type& __k,
+        -: 1346:                                                        _Vp&& __v) {
+        -: 1347:      auto [__r, __inserted] = __tree_.__emplace_hint_unique_key_args(
+        -: 1348:          __h.__i_, __k, __k, _VSTD::forward<_Vp>(__v));
+        -: 1349:
+        -: 1350:      if (!__inserted)
+        -: 1351:        __r->__get_value().second = _VSTD::forward<_Vp>(__v);
+        -: 1352:
+        -: 1353:      return __r;
+        -: 1354:    }
+        -: 1355:
+        -: 1356:    template <class _Vp>
+        -: 1357:    _LIBCPP_INLINE_VISIBILITY iterator insert_or_assign(const_iterator __h,
+        -: 1358:                                                        key_type&& __k,
+        -: 1359:                                                        _Vp&& __v) {
+        -: 1360:      auto [__r, __inserted] = __tree_.__emplace_hint_unique_key_args(
+        -: 1361:          __h.__i_, __k, _VSTD::move(__k), _VSTD::forward<_Vp>(__v));
+        -: 1362:
+        -: 1363:      if (!__inserted)
+        -: 1364:        __r->__get_value().second = _VSTD::forward<_Vp>(__v);
+        -: 1365:
+        -: 1366:      return __r;
+        -: 1367:    }
+        -: 1368:
+        -: 1369:#endif // _LIBCPP_STD_VER > 14
+        -: 1370:
+        -: 1371:    _LIBCPP_INLINE_VISIBILITY
+        -: 1372:    iterator erase(const_iterator __p) {return __tree_.erase(__p.__i_);}
+        -: 1373:    _LIBCPP_INLINE_VISIBILITY
+        -: 1374:    iterator erase(iterator __p)       {return __tree_.erase(__p.__i_);}
+        -: 1375:    _LIBCPP_INLINE_VISIBILITY
+        -: 1376:    size_type erase(const key_type& __k)
+        -: 1377:        {return __tree_.__erase_unique(__k);}
+        -: 1378:    _LIBCPP_INLINE_VISIBILITY
+        -: 1379:    iterator  erase(const_iterator __f, const_iterator __l)
+        -: 1380:        {return __tree_.erase(__f.__i_, __l.__i_);}
+        -: 1381:    _LIBCPP_INLINE_VISIBILITY
+        -: 1382:    void clear() _NOEXCEPT {__tree_.clear();}
+        -: 1383:
+        -: 1384:#if _LIBCPP_STD_VER > 14
+        -: 1385:    _LIBCPP_INLINE_VISIBILITY
+        -: 1386:    insert_return_type insert(node_type&& __nh)
+        -: 1387:    {
+        -: 1388:        _LIBCPP_ASSERT(__nh.empty() || __nh.get_allocator() == get_allocator(),
+        -: 1389:            "node_type with incompatible allocator passed to map::insert()");
+        -: 1390:        return __tree_.template __node_handle_insert_unique<
+        -: 1391:            node_type, insert_return_type>(_VSTD::move(__nh));
+        -: 1392:    }
+        -: 1393:    _LIBCPP_INLINE_VISIBILITY
+        -: 1394:    iterator insert(const_iterator __hint, node_type&& __nh)
+        -: 1395:    {
+        -: 1396:        _LIBCPP_ASSERT(__nh.empty() || __nh.get_allocator() == get_allocator(),
+        -: 1397:            "node_type with incompatible allocator passed to map::insert()");
+        -: 1398:        return __tree_.template __node_handle_insert_unique<node_type>(
+        -: 1399:            __hint.__i_, _VSTD::move(__nh));
+        -: 1400:    }
+        -: 1401:    _LIBCPP_INLINE_VISIBILITY
+        -: 1402:    node_type extract(key_type const& __key)
+        -: 1403:    {
+        -: 1404:        return __tree_.template __node_handle_extract<node_type>(__key);
+        -: 1405:    }
+        -: 1406:    _LIBCPP_INLINE_VISIBILITY
+        -: 1407:    node_type extract(const_iterator __it)
+        -: 1408:    {
+        -: 1409:        return __tree_.template __node_handle_extract<node_type>(__it.__i_);
+        -: 1410:    }
+        -: 1411:    template <class _Compare2>
+        -: 1412:    _LIBCPP_INLINE_VISIBILITY
+        -: 1413:    void merge(map<key_type, mapped_type, _Compare2, allocator_type>& __source)
+        -: 1414:    {
+        -: 1415:        _LIBCPP_ASSERT(__source.get_allocator() == get_allocator(),
+        -: 1416:                       "merging container with incompatible allocator");
+        -: 1417:        __tree_.__node_handle_merge_unique(__source.__tree_);
+        -: 1418:    }
+        -: 1419:    template <class _Compare2>
+        -: 1420:    _LIBCPP_INLINE_VISIBILITY
+        -: 1421:    void merge(map<key_type, mapped_type, _Compare2, allocator_type>&& __source)
+        -: 1422:    {
+        -: 1423:        _LIBCPP_ASSERT(__source.get_allocator() == get_allocator(),
+        -: 1424:                       "merging container with incompatible allocator");
+        -: 1425:        __tree_.__node_handle_merge_unique(__source.__tree_);
+        -: 1426:    }
+        -: 1427:    template <class _Compare2>
+        -: 1428:    _LIBCPP_INLINE_VISIBILITY
+        -: 1429:    void merge(multimap<key_type, mapped_type, _Compare2, allocator_type>& __source)
+        -: 1430:    {
+        -: 1431:        _LIBCPP_ASSERT(__source.get_allocator() == get_allocator(),
+        -: 1432:                       "merging container with incompatible allocator");
+        -: 1433:        __tree_.__node_handle_merge_unique(__source.__tree_);
+        -: 1434:    }
+        -: 1435:    template <class _Compare2>
+        -: 1436:    _LIBCPP_INLINE_VISIBILITY
+        -: 1437:    void merge(multimap<key_type, mapped_type, _Compare2, allocator_type>&& __source)
+        -: 1438:    {
+        -: 1439:        _LIBCPP_ASSERT(__source.get_allocator() == get_allocator(),
+        -: 1440:                       "merging container with incompatible allocator");
+        -: 1441:        __tree_.__node_handle_merge_unique(__source.__tree_);
+        -: 1442:    }
+        -: 1443:#endif
+        -: 1444:
+        -: 1445:    _LIBCPP_INLINE_VISIBILITY
+        -: 1446:    void swap(map& __m)
+        -: 1447:        _NOEXCEPT_(__is_nothrow_swappable<__base>::value)
+        -: 1448:        {__tree_.swap(__m.__tree_);}
+        -: 1449:
+        -: 1450:    _LIBCPP_INLINE_VISIBILITY
+        -: 1451:    iterator find(const key_type& __k)             {return __tree_.find(__k);}
+        -: 1452:    _LIBCPP_INLINE_VISIBILITY
+        -: 1453:    const_iterator find(const key_type& __k) const {return __tree_.find(__k);}
+        -: 1454:#if _LIBCPP_STD_VER > 11
+        -: 1455:    template <typename _K2>
+        -: 1456:    _LIBCPP_INLINE_VISIBILITY
+        -: 1457:    __enable_if_t<__is_transparent<_Compare, _K2>::value, iterator>
+        -: 1458:    find(const _K2& __k)                           {return __tree_.find(__k);}
+        -: 1459:    template <typename _K2>
+        -: 1460:    _LIBCPP_INLINE_VISIBILITY
+        -: 1461:    __enable_if_t<__is_transparent<_Compare, _K2>::value, const_iterator>
+        -: 1462:    find(const _K2& __k) const                     {return __tree_.find(__k);}
+        -: 1463:#endif
+        -: 1464:
+        -: 1465:    _LIBCPP_INLINE_VISIBILITY
+        -: 1466:    size_type      count(const key_type& __k) const
+        -: 1467:        {return __tree_.__count_unique(__k);}
+        -: 1468:#if _LIBCPP_STD_VER > 11
+        -: 1469:    template <typename _K2>
+        -: 1470:    _LIBCPP_INLINE_VISIBILITY
+        -: 1471:    __enable_if_t<__is_transparent<_Compare, _K2>::value, size_type>
+        -: 1472:    count(const _K2& __k) const {return __tree_.__count_multi(__k);}
+        -: 1473:#endif
+        -: 1474:
+        -: 1475:#if _LIBCPP_STD_VER > 17
+        -: 1476:    _LIBCPP_INLINE_VISIBILITY
+        -: 1477:    bool contains(const key_type& __k) const {return find(__k) != end();}
+        -: 1478:    template <typename _K2>
+        -: 1479:    _LIBCPP_INLINE_VISIBILITY
+        -: 1480:    __enable_if_t<__is_transparent<_Compare, _K2>::value, bool>
+        -: 1481:    contains(const _K2& __k) const { return find(__k) != end(); }
+        -: 1482:#endif // _LIBCPP_STD_VER > 17
+        -: 1483:
+        -: 1484:    _LIBCPP_INLINE_VISIBILITY
+        -: 1485:    iterator lower_bound(const key_type& __k)
+        -: 1486:        {return __tree_.lower_bound(__k);}
+        -: 1487:    _LIBCPP_INLINE_VISIBILITY
+        -: 1488:    const_iterator lower_bound(const key_type& __k) const
+        -: 1489:        {return __tree_.lower_bound(__k);}
+        -: 1490:#if _LIBCPP_STD_VER > 11
+        -: 1491:    template <typename _K2>
+        -: 1492:    _LIBCPP_INLINE_VISIBILITY
+        -: 1493:    __enable_if_t<__is_transparent<_Compare, _K2>::value, iterator>
+        -: 1494:    lower_bound(const _K2& __k)       {return __tree_.lower_bound(__k);}
+        -: 1495:
+        -: 1496:    template <typename _K2>
+        -: 1497:    _LIBCPP_INLINE_VISIBILITY
+        -: 1498:    __enable_if_t<__is_transparent<_Compare, _K2>::value, const_iterator>
+        -: 1499:    lower_bound(const _K2& __k) const {return __tree_.lower_bound(__k);}
+        -: 1500:#endif
+        -: 1501:
+        -: 1502:    _LIBCPP_INLINE_VISIBILITY
+        -: 1503:    iterator upper_bound(const key_type& __k)
+        -: 1504:        {return __tree_.upper_bound(__k);}
+        -: 1505:    _LIBCPP_INLINE_VISIBILITY
+        -: 1506:    const_iterator upper_bound(const key_type& __k) const
+        -: 1507:        {return __tree_.upper_bound(__k);}
+        -: 1508:#if _LIBCPP_STD_VER > 11
+        -: 1509:    template <typename _K2>
+        -: 1510:    _LIBCPP_INLINE_VISIBILITY
+        -: 1511:    __enable_if_t<__is_transparent<_Compare, _K2>::value, iterator>
+        -: 1512:    upper_bound(const _K2& __k)       {return __tree_.upper_bound(__k);}
+        -: 1513:    template <typename _K2>
+        -: 1514:    _LIBCPP_INLINE_VISIBILITY
+        -: 1515:    __enable_if_t<__is_transparent<_Compare, _K2>::value, const_iterator>
+        -: 1516:    upper_bound(const _K2& __k) const {return __tree_.upper_bound(__k);}
+        -: 1517:#endif
+        -: 1518:
+        -: 1519:    _LIBCPP_INLINE_VISIBILITY
+        -: 1520:    pair<iterator,iterator> equal_range(const key_type& __k)
+        -: 1521:        {return __tree_.__equal_range_unique(__k);}
+        -: 1522:    _LIBCPP_INLINE_VISIBILITY
+        -: 1523:    pair<const_iterator,const_iterator> equal_range(const key_type& __k) const
+        -: 1524:        {return __tree_.__equal_range_unique(__k);}
+        -: 1525:#if _LIBCPP_STD_VER > 11
+        -: 1526:    template <typename _K2>
+        -: 1527:    _LIBCPP_INLINE_VISIBILITY
+        -: 1528:    __enable_if_t<__is_transparent<_Compare, _K2>::value, pair<iterator,iterator>>
+        -: 1529:    equal_range(const _K2& __k)       {return __tree_.__equal_range_multi(__k);}
+        -: 1530:    template <typename _K2>
+        -: 1531:    _LIBCPP_INLINE_VISIBILITY
+        -: 1532:    __enable_if_t<__is_transparent<_Compare, _K2>::value, pair<const_iterator,const_iterator>>
+        -: 1533:    equal_range(const _K2& __k) const {return __tree_.__equal_range_multi(__k);}
+        -: 1534:#endif
+        -: 1535:
+        -: 1536:private:
+        -: 1537:    typedef typename __base::__node                    __node;
+        -: 1538:    typedef typename __base::__node_allocator          __node_allocator;
+        -: 1539:    typedef typename __base::__node_pointer            __node_pointer;
+        -: 1540:    typedef typename __base::__node_base_pointer       __node_base_pointer;
+        -: 1541:    typedef typename __base::__parent_pointer          __parent_pointer;
+        -: 1542:
+        -: 1543:    typedef __map_node_destructor<__node_allocator> _Dp;
+        -: 1544:    typedef unique_ptr<__node, _Dp> __node_holder;
+        -: 1545:
+        -: 1546:#ifdef _LIBCPP_CXX03_LANG
+        -: 1547:    __node_holder __construct_node_with_key(const key_type& __k);
+        -: 1548:#endif
+        -: 1549:};
+        -: 1550:
+        -: 1551:#if _LIBCPP_STD_VER >= 17
+        -: 1552:template<class _InputIterator, class _Compare = less<__iter_key_type<_InputIterator>>,
+        -: 1553:         class _Allocator = allocator<__iter_to_alloc_type<_InputIterator>>,
+        -: 1554:         class = enable_if_t<__is_cpp17_input_iterator<_InputIterator>::value, void>,
+        -: 1555:         class = enable_if_t<!__is_allocator<_Compare>::value, void>,
+        -: 1556:         class = enable_if_t<__is_allocator<_Allocator>::value, void>>
+        -: 1557:map(_InputIterator, _InputIterator, _Compare = _Compare(), _Allocator = _Allocator())
+        -: 1558:  -> map<__iter_key_type<_InputIterator>, __iter_mapped_type<_InputIterator>, _Compare, _Allocator>;
+        -: 1559:
+        -: 1560:template<class _Key, class _Tp, class _Compare = less<remove_const_t<_Key>>,
+        -: 1561:         class _Allocator = allocator<pair<const _Key, _Tp>>,
+        -: 1562:         class = enable_if_t<!__is_allocator<_Compare>::value, void>,
+        -: 1563:         class = enable_if_t<__is_allocator<_Allocator>::value, void>>
+        -: 1564:map(initializer_list<pair<_Key, _Tp>>, _Compare = _Compare(), _Allocator = _Allocator())
+        -: 1565:  -> map<remove_const_t<_Key>, _Tp, _Compare, _Allocator>;
+        -: 1566:
+        -: 1567:template<class _InputIterator, class _Allocator,
+        -: 1568:         class = enable_if_t<__is_cpp17_input_iterator<_InputIterator>::value, void>,
+        -: 1569:         class = enable_if_t<__is_allocator<_Allocator>::value, void>>
+        -: 1570:map(_InputIterator, _InputIterator, _Allocator)
+        -: 1571:  -> map<__iter_key_type<_InputIterator>, __iter_mapped_type<_InputIterator>,
+        -: 1572:         less<__iter_key_type<_InputIterator>>, _Allocator>;
+        -: 1573:
+        -: 1574:template<class _Key, class _Tp, class _Allocator,
+        -: 1575:         class = enable_if_t<__is_allocator<_Allocator>::value, void>>
+        -: 1576:map(initializer_list<pair<_Key, _Tp>>, _Allocator)
+        -: 1577:  -> map<remove_const_t<_Key>, _Tp, less<remove_const_t<_Key>>, _Allocator>;
+        -: 1578:#endif
+        -: 1579:
+        -: 1580:#ifndef _LIBCPP_CXX03_LANG
+        -: 1581:template <class _Key, class _Tp, class _Compare, class _Allocator>
+        -: 1582:map<_Key, _Tp, _Compare, _Allocator>::map(map&& __m, const allocator_type& __a)
+        -: 1583:    : __tree_(_VSTD::move(__m.__tree_), typename __base::allocator_type(__a))
+        -: 1584:{
+        -: 1585:    if (__a != __m.get_allocator())
+        -: 1586:    {
+        -: 1587:        const_iterator __e = cend();
+        -: 1588:        while (!__m.empty())
+        -: 1589:            __tree_.__insert_unique(__e.__i_,
+        -: 1590:                    __m.__tree_.remove(__m.begin().__i_)->__value_.__move());
+        -: 1591:    }
+        -: 1592:}
+        -: 1593:
+        -: 1594:template <class _Key, class _Tp, class _Compare, class _Allocator>
+        -: 1595:_Tp&
+        -: 1596:map<_Key, _Tp, _Compare, _Allocator>::operator[](const key_type& __k)
+        -: 1597:{
+        -: 1598:    return __tree_.__emplace_unique_key_args(__k,
+        -: 1599:        _VSTD::piecewise_construct,
+        -: 1600:        _VSTD::forward_as_tuple(__k),
+        -: 1601:        _VSTD::forward_as_tuple()).first->__get_value().second;
+        -: 1602:}
+        -: 1603:
+        -: 1604:template <class _Key, class _Tp, class _Compare, class _Allocator>
+        -: 1605:_Tp&
+        -: 1606:map<_Key, _Tp, _Compare, _Allocator>::operator[](key_type&& __k)
+        -: 1607:{
+        -: 1608:    return __tree_.__emplace_unique_key_args(__k,
+        -: 1609:        _VSTD::piecewise_construct,
+        -: 1610:        _VSTD::forward_as_tuple(_VSTD::move(__k)),
+        -: 1611:        _VSTD::forward_as_tuple()).first->__get_value().second;
+        -: 1612:}
+        -: 1613:
+        -: 1614:#else // _LIBCPP_CXX03_LANG
+        -: 1615:
+        -: 1616:template <class _Key, class _Tp, class _Compare, class _Allocator>
+        -: 1617:typename map<_Key, _Tp, _Compare, _Allocator>::__node_holder
+        -: 1618:map<_Key, _Tp, _Compare, _Allocator>::__construct_node_with_key(const key_type& __k)
+        -: 1619:{
+        -: 1620:    __node_allocator& __na = __tree_.__node_alloc();
+        -: 1621:    __node_holder __h(__node_traits::allocate(__na, 1), _Dp(__na));
+        -: 1622:    __node_traits::construct(__na, _VSTD::addressof(__h->__value_.__get_value().first), __k);
+        -: 1623:    __h.get_deleter().__first_constructed = true;
+        -: 1624:    __node_traits::construct(__na, _VSTD::addressof(__h->__value_.__get_value().second));
+        -: 1625:    __h.get_deleter().__second_constructed = true;
+        -: 1626:    return __h;
+        -: 1627:}
+        -: 1628:
+        -: 1629:template <class _Key, class _Tp, class _Compare, class _Allocator>
+        -: 1630:_Tp&
+        -: 1631:map<_Key, _Tp, _Compare, _Allocator>::operator[](const key_type& __k)
+        -: 1632:{
+        -: 1633:    __parent_pointer __parent;
+        -: 1634:    __node_base_pointer& __child = __tree_.__find_equal(__parent, __k);
+        -: 1635:    __node_pointer __r = static_cast<__node_pointer>(__child);
+        -: 1636:    if (__child == nullptr)
+        -: 1637:    {
+        -: 1638:        __node_holder __h = __construct_node_with_key(__k);
+        -: 1639:        __tree_.__insert_node_at(__parent, __child, static_cast<__node_base_pointer>(__h.get()));
+        -: 1640:        __r = __h.release();
+        -: 1641:    }
+        -: 1642:    return __r->__value_.__get_value().second;
+        -: 1643:}
+        -: 1644:
+        -: 1645:#endif // _LIBCPP_CXX03_LANG
+        -: 1646:
+        -: 1647:template <class _Key, class _Tp, class _Compare, class _Allocator>
+        -: 1648:_Tp&
+        -: 1649:map<_Key, _Tp, _Compare, _Allocator>::at(const key_type& __k)
+        -: 1650:{
+        -: 1651:    __parent_pointer __parent;
+        -: 1652:    __node_base_pointer& __child = __tree_.__find_equal(__parent, __k);
+        -: 1653:    if (__child == nullptr)
+        -: 1654:        __throw_out_of_range("map::at:  key not found");
+        -: 1655:    return static_cast<__node_pointer>(__child)->__value_.__get_value().second;
+        -: 1656:}
+        -: 1657:
+        -: 1658:template <class _Key, class _Tp, class _Compare, class _Allocator>
+        -: 1659:const _Tp&
+        -: 1660:map<_Key, _Tp, _Compare, _Allocator>::at(const key_type& __k) const
+        -: 1661:{
+        -: 1662:    __parent_pointer __parent;
+        -: 1663:    __node_base_pointer __child = __tree_.__find_equal(__parent, __k);
+        -: 1664:    if (__child == nullptr)
+        -: 1665:        __throw_out_of_range("map::at:  key not found");
+        -: 1666:    return static_cast<__node_pointer>(__child)->__value_.__get_value().second;
+        -: 1667:}
+        -: 1668:
+        -: 1669:
+        -: 1670:template <class _Key, class _Tp, class _Compare, class _Allocator>
+        -: 1671:inline _LIBCPP_INLINE_VISIBILITY
+        -: 1672:bool
+        -: 1673:operator==(const map<_Key, _Tp, _Compare, _Allocator>& __x,
+        -: 1674:           const map<_Key, _Tp, _Compare, _Allocator>& __y)
+        -: 1675:{
+        -: 1676:    return __x.size() == __y.size() && _VSTD::equal(__x.begin(), __x.end(), __y.begin());
+        -: 1677:}
+        -: 1678:
+        -: 1679:template <class _Key, class _Tp, class _Compare, class _Allocator>
+        -: 1680:inline _LIBCPP_INLINE_VISIBILITY
+        -: 1681:bool
+        -: 1682:operator< (const map<_Key, _Tp, _Compare, _Allocator>& __x,
+        -: 1683:           const map<_Key, _Tp, _Compare, _Allocator>& __y)
+        -: 1684:{
+        -: 1685:    return _VSTD::lexicographical_compare(__x.begin(), __x.end(), __y.begin(), __y.end());
+        -: 1686:}
+        -: 1687:
+        -: 1688:template <class _Key, class _Tp, class _Compare, class _Allocator>
+        -: 1689:inline _LIBCPP_INLINE_VISIBILITY
+        -: 1690:bool
+        -: 1691:operator!=(const map<_Key, _Tp, _Compare, _Allocator>& __x,
+        -: 1692:           const map<_Key, _Tp, _Compare, _Allocator>& __y)
+        -: 1693:{
+        -: 1694:    return !(__x == __y);
+        -: 1695:}
+        -: 1696:
+        -: 1697:template <class _Key, class _Tp, class _Compare, class _Allocator>
+        -: 1698:inline _LIBCPP_INLINE_VISIBILITY
+        -: 1699:bool
+        -: 1700:operator> (const map<_Key, _Tp, _Compare, _Allocator>& __x,
+        -: 1701:           const map<_Key, _Tp, _Compare, _Allocator>& __y)
+        -: 1702:{
+        -: 1703:    return __y < __x;
+        -: 1704:}
+        -: 1705:
+        -: 1706:template <class _Key, class _Tp, class _Compare, class _Allocator>
+        -: 1707:inline _LIBCPP_INLINE_VISIBILITY
+        -: 1708:bool
+        -: 1709:operator>=(const map<_Key, _Tp, _Compare, _Allocator>& __x,
+        -: 1710:           const map<_Key, _Tp, _Compare, _Allocator>& __y)
+        -: 1711:{
+        -: 1712:    return !(__x < __y);
+        -: 1713:}
+        -: 1714:
+        -: 1715:template <class _Key, class _Tp, class _Compare, class _Allocator>
+        -: 1716:inline _LIBCPP_INLINE_VISIBILITY
+        -: 1717:bool
+        -: 1718:operator<=(const map<_Key, _Tp, _Compare, _Allocator>& __x,
+        -: 1719:           const map<_Key, _Tp, _Compare, _Allocator>& __y)
+        -: 1720:{
+        -: 1721:    return !(__y < __x);
+        -: 1722:}
+        -: 1723:
+        -: 1724:template <class _Key, class _Tp, class _Compare, class _Allocator>
+        -: 1725:inline _LIBCPP_INLINE_VISIBILITY
+        -: 1726:void
+        -: 1727:swap(map<_Key, _Tp, _Compare, _Allocator>& __x,
+        -: 1728:     map<_Key, _Tp, _Compare, _Allocator>& __y)
+        -: 1729:    _NOEXCEPT_(_NOEXCEPT_(__x.swap(__y)))
+        -: 1730:{
+        -: 1731:    __x.swap(__y);
+        -: 1732:}
+        -: 1733:
+        -: 1734:#if _LIBCPP_STD_VER > 17
+        -: 1735:template <class _Key, class _Tp, class _Compare, class _Allocator,
+        -: 1736:          class _Predicate>
+        -: 1737:inline _LIBCPP_INLINE_VISIBILITY
+        -: 1738:    typename map<_Key, _Tp, _Compare, _Allocator>::size_type
+        -: 1739:    erase_if(map<_Key, _Tp, _Compare, _Allocator>& __c, _Predicate __pred) {
+        -: 1740:  return _VSTD::__libcpp_erase_if_container(__c, __pred);
+        -: 1741:}
+        -: 1742:#endif
+        -: 1743:
+        -: 1744:
+        -: 1745:template <class _Key, class _Tp, class _Compare = less<_Key>,
+        -: 1746:          class _Allocator = allocator<pair<const _Key, _Tp> > >
+        -: 1747:class _LIBCPP_TEMPLATE_VIS multimap
+        -: 1748:{
+        -: 1749:public:
+        -: 1750:    // types:
+        -: 1751:    typedef _Key                                     key_type;
+        -: 1752:    typedef _Tp                                      mapped_type;
+        -: 1753:    typedef pair<const key_type, mapped_type>        value_type;
+        -: 1754:    typedef __type_identity_t<_Compare>              key_compare;
+        -: 1755:    typedef __type_identity_t<_Allocator>            allocator_type;
+        -: 1756:    typedef value_type&                              reference;
+        -: 1757:    typedef const value_type&                        const_reference;
+        -: 1758:
+        -: 1759:    static_assert((is_same<typename allocator_type::value_type, value_type>::value),
+        -: 1760:                  "Allocator::value_type must be same type as value_type");
+        -: 1761:
+        -: 1762:    class _LIBCPP_TEMPLATE_VIS value_compare
+        -: 1763:        : public __binary_function<value_type, value_type, bool>
+        -: 1764:    {
+        -: 1765:        friend class multimap;
+        -: 1766:    protected:
+        -: 1767:        key_compare comp;
+        -: 1768:
+        -: 1769:        _LIBCPP_INLINE_VISIBILITY
+        -: 1770:        value_compare(key_compare __c) : comp(__c) {}
+        -: 1771:    public:
+        -: 1772:        _LIBCPP_INLINE_VISIBILITY
+        -: 1773:        bool operator()(const value_type& __x, const value_type& __y) const
+        -: 1774:            {return comp(__x.first, __y.first);}
+        -: 1775:    };
+        -: 1776:
+        -: 1777:private:
+        -: 1778:
+        -: 1779:    typedef _VSTD::__value_type<key_type, mapped_type>             __value_type;
+        -: 1780:    typedef __map_value_compare<key_type, __value_type, key_compare> __vc;
+        -: 1781:    typedef typename __rebind_alloc_helper<allocator_traits<allocator_type>,
+        -: 1782:                                                 __value_type>::type __allocator_type;
+        -: 1783:    typedef __tree<__value_type, __vc, __allocator_type>            __base;
+        -: 1784:    typedef typename __base::__node_traits                          __node_traits;
+        -: 1785:    typedef allocator_traits<allocator_type>                        __alloc_traits;
+        -: 1786:
+        -: 1787:    __base __tree_;
+        -: 1788:
+        -: 1789:public:
+        -: 1790:    typedef typename __alloc_traits::pointer               pointer;
+        -: 1791:    typedef typename __alloc_traits::const_pointer         const_pointer;
+        -: 1792:    typedef typename __alloc_traits::size_type             size_type;
+        -: 1793:    typedef typename __alloc_traits::difference_type       difference_type;
+        -: 1794:    typedef __map_iterator<typename __base::iterator>      iterator;
+        -: 1795:    typedef __map_const_iterator<typename __base::const_iterator> const_iterator;
+        -: 1796:    typedef _VSTD::reverse_iterator<iterator>               reverse_iterator;
+        -: 1797:    typedef _VSTD::reverse_iterator<const_iterator>         const_reverse_iterator;
+        -: 1798:
+        -: 1799:#if _LIBCPP_STD_VER > 14
+        -: 1800:    typedef __map_node_handle<typename __base::__node, allocator_type> node_type;
+        -: 1801:#endif
+        -: 1802:
+        -: 1803:    template <class _Key2, class _Value2, class _Comp2, class _Alloc2>
+        -: 1804:        friend class _LIBCPP_TEMPLATE_VIS map;
+        -: 1805:    template <class _Key2, class _Value2, class _Comp2, class _Alloc2>
+        -: 1806:        friend class _LIBCPP_TEMPLATE_VIS multimap;
+        -: 1807:
+        -: 1808:    _LIBCPP_INLINE_VISIBILITY
+        -: 1809:    multimap()
+        -: 1810:        _NOEXCEPT_(
+        -: 1811:            is_nothrow_default_constructible<allocator_type>::value &&
+        -: 1812:            is_nothrow_default_constructible<key_compare>::value &&
+        -: 1813:            is_nothrow_copy_constructible<key_compare>::value)
+        -: 1814:        : __tree_(__vc(key_compare())) {}
+        -: 1815:
+        -: 1816:    _LIBCPP_INLINE_VISIBILITY
+        -: 1817:    explicit multimap(const key_compare& __comp)
+        -: 1818:        _NOEXCEPT_(
+        -: 1819:            is_nothrow_default_constructible<allocator_type>::value &&
+        -: 1820:            is_nothrow_copy_constructible<key_compare>::value)
+        -: 1821:        : __tree_(__vc(__comp)) {}
+        -: 1822:
+        -: 1823:    _LIBCPP_INLINE_VISIBILITY
+        -: 1824:    explicit multimap(const key_compare& __comp, const allocator_type& __a)
+        -: 1825:        : __tree_(__vc(__comp), typename __base::allocator_type(__a)) {}
+        -: 1826:
+        -: 1827:    template <class _InputIterator>
+        -: 1828:        _LIBCPP_INLINE_VISIBILITY
+        -: 1829:        multimap(_InputIterator __f, _InputIterator __l,
+        -: 1830:            const key_compare& __comp = key_compare())
+        -: 1831:        : __tree_(__vc(__comp))
+        -: 1832:        {
+        -: 1833:            insert(__f, __l);
+        -: 1834:        }
+        -: 1835:
+        -: 1836:    template <class _InputIterator>
+        -: 1837:        _LIBCPP_INLINE_VISIBILITY
+        -: 1838:        multimap(_InputIterator __f, _InputIterator __l,
+        -: 1839:            const key_compare& __comp, const allocator_type& __a)
+        -: 1840:        : __tree_(__vc(__comp), typename __base::allocator_type(__a))
+        -: 1841:        {
+        -: 1842:            insert(__f, __l);
+        -: 1843:        }
+        -: 1844:
+        -: 1845:#if _LIBCPP_STD_VER > 11
+        -: 1846:    template <class _InputIterator>
+        -: 1847:    _LIBCPP_INLINE_VISIBILITY
+        -: 1848:    multimap(_InputIterator __f, _InputIterator __l, const allocator_type& __a)
+        -: 1849:        : multimap(__f, __l, key_compare(), __a) {}
+        -: 1850:#endif
+        -: 1851:
+        -: 1852:    _LIBCPP_INLINE_VISIBILITY
+        -: 1853:    multimap(const multimap& __m)
+        -: 1854:        : __tree_(__m.__tree_.value_comp(),
+        -: 1855:          __alloc_traits::select_on_container_copy_construction(__m.__tree_.__alloc()))
+        -: 1856:        {
+        -: 1857:            insert(__m.begin(), __m.end());
+        -: 1858:        }
+        -: 1859:
+        -: 1860:    _LIBCPP_INLINE_VISIBILITY
+        -: 1861:    multimap& operator=(const multimap& __m)
+        -: 1862:        {
+        -: 1863:#ifndef _LIBCPP_CXX03_LANG
+        -: 1864:            __tree_ = __m.__tree_;
+        -: 1865:#else
+        -: 1866:            if (this != _VSTD::addressof(__m)) {
+        -: 1867:                __tree_.clear();
+        -: 1868:                __tree_.value_comp() = __m.__tree_.value_comp();
+        -: 1869:                __tree_.__copy_assign_alloc(__m.__tree_);
+        -: 1870:                insert(__m.begin(), __m.end());
+        -: 1871:            }
+        -: 1872:#endif
+        -: 1873:            return *this;
+        -: 1874:        }
+        -: 1875:
+        -: 1876:#ifndef _LIBCPP_CXX03_LANG
+        -: 1877:
+        -: 1878:    _LIBCPP_INLINE_VISIBILITY
+        -: 1879:    multimap(multimap&& __m)
+        -: 1880:        _NOEXCEPT_(is_nothrow_move_constructible<__base>::value)
+        -: 1881:        : __tree_(_VSTD::move(__m.__tree_))
+        -: 1882:        {
+        -: 1883:        }
+        -: 1884:
+        -: 1885:    multimap(multimap&& __m, const allocator_type& __a);
+        -: 1886:
+        -: 1887:    _LIBCPP_INLINE_VISIBILITY
+        -: 1888:    multimap& operator=(multimap&& __m)
+        -: 1889:        _NOEXCEPT_(is_nothrow_move_assignable<__base>::value)
+        -: 1890:        {
+        -: 1891:            __tree_ = _VSTD::move(__m.__tree_);
+        -: 1892:            return *this;
+        -: 1893:        }
+        -: 1894:
+        -: 1895:    _LIBCPP_INLINE_VISIBILITY
+        -: 1896:    multimap(initializer_list<value_type> __il, const key_compare& __comp = key_compare())
+        -: 1897:        : __tree_(__vc(__comp))
+        -: 1898:        {
+        -: 1899:            insert(__il.begin(), __il.end());
+        -: 1900:        }
+        -: 1901:
+        -: 1902:    _LIBCPP_INLINE_VISIBILITY
+        -: 1903:    multimap(initializer_list<value_type> __il, const key_compare& __comp, const allocator_type& __a)
+        -: 1904:        : __tree_(__vc(__comp), typename __base::allocator_type(__a))
+        -: 1905:        {
+        -: 1906:            insert(__il.begin(), __il.end());
+        -: 1907:        }
+        -: 1908:
+        -: 1909:#if _LIBCPP_STD_VER > 11
+        -: 1910:    _LIBCPP_INLINE_VISIBILITY
+        -: 1911:    multimap(initializer_list<value_type> __il, const allocator_type& __a)
+        -: 1912:        : multimap(__il, key_compare(), __a) {}
+        -: 1913:#endif
+        -: 1914:
+        -: 1915:    _LIBCPP_INLINE_VISIBILITY
+        -: 1916:    multimap& operator=(initializer_list<value_type> __il)
+        -: 1917:        {
+        -: 1918:            __tree_.__assign_multi(__il.begin(), __il.end());
+        -: 1919:            return *this;
+        -: 1920:        }
+        -: 1921:
+        -: 1922:#endif // _LIBCPP_CXX03_LANG
+        -: 1923:
+        -: 1924:    _LIBCPP_INLINE_VISIBILITY
+        -: 1925:    explicit multimap(const allocator_type& __a)
+        -: 1926:        : __tree_(typename __base::allocator_type(__a))
+        -: 1927:        {
+        -: 1928:        }
+        -: 1929:
+        -: 1930:    _LIBCPP_INLINE_VISIBILITY
+        -: 1931:    multimap(const multimap& __m, const allocator_type& __a)
+        -: 1932:        : __tree_(__m.__tree_.value_comp(), typename __base::allocator_type(__a))
+        -: 1933:        {
+        -: 1934:            insert(__m.begin(), __m.end());
+        -: 1935:        }
+        -: 1936:
+        -: 1937:    _LIBCPP_INLINE_VISIBILITY
+        -: 1938:    ~multimap() {
+        -: 1939:        static_assert(sizeof(__diagnose_non_const_comparator<_Key, _Compare>()), "");
+        -: 1940:    }
+        -: 1941:
+        -: 1942:    _LIBCPP_INLINE_VISIBILITY
+        -: 1943:          iterator begin() _NOEXCEPT {return __tree_.begin();}
+        -: 1944:    _LIBCPP_INLINE_VISIBILITY
+        -: 1945:    const_iterator begin() const _NOEXCEPT {return __tree_.begin();}
+        -: 1946:    _LIBCPP_INLINE_VISIBILITY
+        -: 1947:          iterator end() _NOEXCEPT {return __tree_.end();}
+        -: 1948:    _LIBCPP_INLINE_VISIBILITY
+        -: 1949:    const_iterator end() const _NOEXCEPT {return __tree_.end();}
+        -: 1950:
+        -: 1951:    _LIBCPP_INLINE_VISIBILITY
+        -: 1952:          reverse_iterator rbegin() _NOEXCEPT {return reverse_iterator(end());}
+        -: 1953:    _LIBCPP_INLINE_VISIBILITY
+        -: 1954:    const_reverse_iterator rbegin() const _NOEXCEPT
+        -: 1955:        {return const_reverse_iterator(end());}
+        -: 1956:    _LIBCPP_INLINE_VISIBILITY
+        -: 1957:          reverse_iterator rend() _NOEXCEPT {return reverse_iterator(begin());}
+        -: 1958:    _LIBCPP_INLINE_VISIBILITY
+        -: 1959:    const_reverse_iterator rend() const _NOEXCEPT
+        -: 1960:        {return const_reverse_iterator(begin());}
+        -: 1961:
+        -: 1962:    _LIBCPP_INLINE_VISIBILITY
+        -: 1963:    const_iterator cbegin()  const _NOEXCEPT {return begin();}
+        -: 1964:    _LIBCPP_INLINE_VISIBILITY
+        -: 1965:    const_iterator cend() const _NOEXCEPT {return end();}
+        -: 1966:    _LIBCPP_INLINE_VISIBILITY
+        -: 1967:    const_reverse_iterator crbegin() const _NOEXCEPT {return rbegin();}
+        -: 1968:    _LIBCPP_INLINE_VISIBILITY
+        -: 1969:    const_reverse_iterator crend() const _NOEXCEPT {return rend();}
+        -: 1970:
+        -: 1971:    _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -: 1972:    bool empty() const _NOEXCEPT {return __tree_.size() == 0;}
+        -: 1973:    _LIBCPP_INLINE_VISIBILITY
+        -: 1974:    size_type size() const _NOEXCEPT {return __tree_.size();}
+        -: 1975:    _LIBCPP_INLINE_VISIBILITY
+        -: 1976:    size_type max_size() const _NOEXCEPT {return __tree_.max_size();}
+        -: 1977:
+        -: 1978:    _LIBCPP_INLINE_VISIBILITY
+        -: 1979:    allocator_type get_allocator() const _NOEXCEPT {return allocator_type(__tree_.__alloc());}
+        -: 1980:    _LIBCPP_INLINE_VISIBILITY
+        -: 1981:    key_compare    key_comp() const {return __tree_.value_comp().key_comp();}
+        -: 1982:    _LIBCPP_INLINE_VISIBILITY
+        -: 1983:    value_compare  value_comp() const
+        -: 1984:        {return value_compare(__tree_.value_comp().key_comp());}
+        -: 1985:
+        -: 1986:#ifndef _LIBCPP_CXX03_LANG
+        -: 1987:
+        -: 1988:    template <class ..._Args>
+        -: 1989:    _LIBCPP_INLINE_VISIBILITY
+        -: 1990:    iterator emplace(_Args&& ...__args) {
+        -: 1991:        return __tree_.__emplace_multi(_VSTD::forward<_Args>(__args)...);
+        -: 1992:    }
+        -: 1993:
+        -: 1994:    template <class ..._Args>
+        -: 1995:    _LIBCPP_INLINE_VISIBILITY
+        -: 1996:    iterator emplace_hint(const_iterator __p, _Args&& ...__args) {
+        -: 1997:        return __tree_.__emplace_hint_multi(__p.__i_, _VSTD::forward<_Args>(__args)...);
+        -: 1998:    }
+        -: 1999:
+        -: 2000:    template <class _Pp,
+        -: 2001:              class = __enable_if_t<is_constructible<value_type, _Pp>::value>>
+        -: 2002:        _LIBCPP_INLINE_VISIBILITY
+        -: 2003:        iterator insert(_Pp&& __p)
+        -: 2004:            {return __tree_.__insert_multi(_VSTD::forward<_Pp>(__p));}
+        -: 2005:
+        -: 2006:    template <class _Pp,
+        -: 2007:              class = __enable_if_t<is_constructible<value_type, _Pp>::value>>
+        -: 2008:        _LIBCPP_INLINE_VISIBILITY
+        -: 2009:        iterator insert(const_iterator __pos, _Pp&& __p)
+        -: 2010:            {return __tree_.__insert_multi(__pos.__i_, _VSTD::forward<_Pp>(__p));}
+        -: 2011:
+        -: 2012:    _LIBCPP_INLINE_VISIBILITY
+        -: 2013:    iterator insert(value_type&& __v)
+        -: 2014:        {return __tree_.__insert_multi(_VSTD::move(__v));}
+        -: 2015:
+        -: 2016:    _LIBCPP_INLINE_VISIBILITY
+        -: 2017:    iterator insert(const_iterator __p, value_type&& __v)
+        -: 2018:        {return __tree_.__insert_multi(__p.__i_, _VSTD::move(__v));}
+        -: 2019:
+        -: 2020:
+        -: 2021:    _LIBCPP_INLINE_VISIBILITY
+        -: 2022:    void insert(initializer_list<value_type> __il)
+        -: 2023:        {insert(__il.begin(), __il.end());}
+        -: 2024:
+        -: 2025:#endif // _LIBCPP_CXX03_LANG
+        -: 2026:
+        -: 2027:    _LIBCPP_INLINE_VISIBILITY
+        -: 2028:    iterator insert(const value_type& __v) {return __tree_.__insert_multi(__v);}
+        -: 2029:
+        -: 2030:    _LIBCPP_INLINE_VISIBILITY
+        -: 2031:    iterator insert(const_iterator __p, const value_type& __v)
+        -: 2032:            {return __tree_.__insert_multi(__p.__i_, __v);}
+        -: 2033:
+        -: 2034:    template <class _InputIterator>
+        -: 2035:        _LIBCPP_INLINE_VISIBILITY
+        -: 2036:        void insert(_InputIterator __f, _InputIterator __l)
+        -: 2037:        {
+        -: 2038:            for (const_iterator __e = cend(); __f != __l; ++__f)
+        -: 2039:                __tree_.__insert_multi(__e.__i_, *__f);
+        -: 2040:        }
+        -: 2041:
+        -: 2042:    _LIBCPP_INLINE_VISIBILITY
+        -: 2043:    iterator erase(const_iterator __p) {return __tree_.erase(__p.__i_);}
+        -: 2044:    _LIBCPP_INLINE_VISIBILITY
+        -: 2045:    iterator erase(iterator __p)       {return __tree_.erase(__p.__i_);}
+        -: 2046:    _LIBCPP_INLINE_VISIBILITY
+        -: 2047:    size_type erase(const key_type& __k) {return __tree_.__erase_multi(__k);}
+        -: 2048:    _LIBCPP_INLINE_VISIBILITY
+        -: 2049:    iterator  erase(const_iterator __f, const_iterator __l)
+        -: 2050:        {return __tree_.erase(__f.__i_, __l.__i_);}
+        -: 2051:
+        -: 2052:#if _LIBCPP_STD_VER > 14
+        -: 2053:    _LIBCPP_INLINE_VISIBILITY
+        -: 2054:    iterator insert(node_type&& __nh)
+        -: 2055:    {
+        -: 2056:        _LIBCPP_ASSERT(__nh.empty() || __nh.get_allocator() == get_allocator(),
+        -: 2057:            "node_type with incompatible allocator passed to multimap::insert()");
+        -: 2058:        return __tree_.template __node_handle_insert_multi<node_type>(
+        -: 2059:            _VSTD::move(__nh));
+        -: 2060:    }
+        -: 2061:    _LIBCPP_INLINE_VISIBILITY
+        -: 2062:    iterator insert(const_iterator __hint, node_type&& __nh)
+        -: 2063:    {
+        -: 2064:        _LIBCPP_ASSERT(__nh.empty() || __nh.get_allocator() == get_allocator(),
+        -: 2065:            "node_type with incompatible allocator passed to multimap::insert()");
+        -: 2066:        return __tree_.template __node_handle_insert_multi<node_type>(
+        -: 2067:            __hint.__i_, _VSTD::move(__nh));
+        -: 2068:    }
+        -: 2069:    _LIBCPP_INLINE_VISIBILITY
+        -: 2070:    node_type extract(key_type const& __key)
+        -: 2071:    {
+        -: 2072:        return __tree_.template __node_handle_extract<node_type>(__key);
+        -: 2073:    }
+        -: 2074:    _LIBCPP_INLINE_VISIBILITY
+        -: 2075:    node_type extract(const_iterator __it)
+        -: 2076:    {
+        -: 2077:        return __tree_.template __node_handle_extract<node_type>(
+        -: 2078:            __it.__i_);
+        -: 2079:    }
+        -: 2080:    template <class _Compare2>
+        -: 2081:    _LIBCPP_INLINE_VISIBILITY
+        -: 2082:    void merge(multimap<key_type, mapped_type, _Compare2, allocator_type>& __source)
+        -: 2083:    {
+        -: 2084:        _LIBCPP_ASSERT(__source.get_allocator() == get_allocator(),
+        -: 2085:                       "merging container with incompatible allocator");
+        -: 2086:        return __tree_.__node_handle_merge_multi(__source.__tree_);
+        -: 2087:    }
+        -: 2088:    template <class _Compare2>
+        -: 2089:    _LIBCPP_INLINE_VISIBILITY
+        -: 2090:    void merge(multimap<key_type, mapped_type, _Compare2, allocator_type>&& __source)
+        -: 2091:    {
+        -: 2092:        _LIBCPP_ASSERT(__source.get_allocator() == get_allocator(),
+        -: 2093:                       "merging container with incompatible allocator");
+        -: 2094:        return __tree_.__node_handle_merge_multi(__source.__tree_);
+        -: 2095:    }
+        -: 2096:    template <class _Compare2>
+        -: 2097:    _LIBCPP_INLINE_VISIBILITY
+        -: 2098:    void merge(map<key_type, mapped_type, _Compare2, allocator_type>& __source)
+        -: 2099:    {
+        -: 2100:        _LIBCPP_ASSERT(__source.get_allocator() == get_allocator(),
+        -: 2101:                       "merging container with incompatible allocator");
+        -: 2102:        return __tree_.__node_handle_merge_multi(__source.__tree_);
+        -: 2103:    }
+        -: 2104:    template <class _Compare2>
+        -: 2105:    _LIBCPP_INLINE_VISIBILITY
+        -: 2106:    void merge(map<key_type, mapped_type, _Compare2, allocator_type>&& __source)
+        -: 2107:    {
+        -: 2108:        _LIBCPP_ASSERT(__source.get_allocator() == get_allocator(),
+        -: 2109:                       "merging container with incompatible allocator");
+        -: 2110:        return __tree_.__node_handle_merge_multi(__source.__tree_);
+        -: 2111:    }
+        -: 2112:#endif
+        -: 2113:
+        -: 2114:    _LIBCPP_INLINE_VISIBILITY
+        -: 2115:    void clear() _NOEXCEPT {__tree_.clear();}
+        -: 2116:
+        -: 2117:    _LIBCPP_INLINE_VISIBILITY
+        -: 2118:    void swap(multimap& __m)
+        -: 2119:        _NOEXCEPT_(__is_nothrow_swappable<__base>::value)
+        -: 2120:        {__tree_.swap(__m.__tree_);}
+        -: 2121:
+        -: 2122:    _LIBCPP_INLINE_VISIBILITY
+        -: 2123:    iterator find(const key_type& __k)             {return __tree_.find(__k);}
+        -: 2124:    _LIBCPP_INLINE_VISIBILITY
+        -: 2125:    const_iterator find(const key_type& __k) const {return __tree_.find(__k);}
+        -: 2126:#if _LIBCPP_STD_VER > 11
+        -: 2127:    template <typename _K2>
+        -: 2128:    _LIBCPP_INLINE_VISIBILITY
+        -: 2129:    __enable_if_t<__is_transparent<_Compare, _K2>::value, iterator>
+        -: 2130:    find(const _K2& __k)                           {return __tree_.find(__k);}
+        -: 2131:    template <typename _K2>
+        -: 2132:    _LIBCPP_INLINE_VISIBILITY
+        -: 2133:    __enable_if_t<__is_transparent<_Compare, _K2>::value, const_iterator>
+        -: 2134:    find(const _K2& __k) const                     {return __tree_.find(__k);}
+        -: 2135:#endif
+        -: 2136:
+        -: 2137:    _LIBCPP_INLINE_VISIBILITY
+        -: 2138:    size_type      count(const key_type& __k) const
+        -: 2139:        {return __tree_.__count_multi(__k);}
+        -: 2140:#if _LIBCPP_STD_VER > 11
+        -: 2141:    template <typename _K2>
+        -: 2142:    _LIBCPP_INLINE_VISIBILITY
+        -: 2143:    __enable_if_t<__is_transparent<_Compare, _K2>::value, size_type>
+        -: 2144:    count(const _K2& __k) const {return __tree_.__count_multi(__k);}
+        -: 2145:#endif
+        -: 2146:
+        -: 2147:#if _LIBCPP_STD_VER > 17
+        -: 2148:    _LIBCPP_INLINE_VISIBILITY
+        -: 2149:    bool contains(const key_type& __k) const {return find(__k) != end();}
+        -: 2150:    template <typename _K2>
+        -: 2151:    _LIBCPP_INLINE_VISIBILITY
+        -: 2152:    __enable_if_t<__is_transparent<_Compare, _K2>::value, bool>
+        -: 2153:    contains(const _K2& __k) const { return find(__k) != end(); }
+        -: 2154:#endif // _LIBCPP_STD_VER > 17
+        -: 2155:
+        -: 2156:    _LIBCPP_INLINE_VISIBILITY
+        -: 2157:    iterator lower_bound(const key_type& __k)
+        -: 2158:        {return __tree_.lower_bound(__k);}
+        -: 2159:    _LIBCPP_INLINE_VISIBILITY
+        -: 2160:    const_iterator lower_bound(const key_type& __k) const
+        -: 2161:            {return __tree_.lower_bound(__k);}
+        -: 2162:#if _LIBCPP_STD_VER > 11
+        -: 2163:    template <typename _K2>
+        -: 2164:    _LIBCPP_INLINE_VISIBILITY
+        -: 2165:    __enable_if_t<__is_transparent<_Compare, _K2>::value, iterator>
+        -: 2166:    lower_bound(const _K2& __k)       {return __tree_.lower_bound(__k);}
+        -: 2167:
+        -: 2168:    template <typename _K2>
+        -: 2169:    _LIBCPP_INLINE_VISIBILITY
+        -: 2170:    __enable_if_t<__is_transparent<_Compare, _K2>::value, const_iterator>
+        -: 2171:    lower_bound(const _K2& __k) const {return __tree_.lower_bound(__k);}
+        -: 2172:#endif
+        -: 2173:
+        -: 2174:    _LIBCPP_INLINE_VISIBILITY
+        -: 2175:    iterator upper_bound(const key_type& __k)
+        -: 2176:            {return __tree_.upper_bound(__k);}
+        -: 2177:    _LIBCPP_INLINE_VISIBILITY
+        -: 2178:    const_iterator upper_bound(const key_type& __k) const
+        -: 2179:            {return __tree_.upper_bound(__k);}
+        -: 2180:#if _LIBCPP_STD_VER > 11
+        -: 2181:    template <typename _K2>
+        -: 2182:    _LIBCPP_INLINE_VISIBILITY
+        -: 2183:    __enable_if_t<__is_transparent<_Compare, _K2>::value, iterator>
+        -: 2184:    upper_bound(const _K2& __k)       {return __tree_.upper_bound(__k);}
+        -: 2185:    template <typename _K2>
+        -: 2186:    _LIBCPP_INLINE_VISIBILITY
+        -: 2187:    __enable_if_t<__is_transparent<_Compare, _K2>::value, const_iterator>
+        -: 2188:    upper_bound(const _K2& __k) const {return __tree_.upper_bound(__k);}
+        -: 2189:#endif
+        -: 2190:
+        -: 2191:    _LIBCPP_INLINE_VISIBILITY
+        -: 2192:    pair<iterator,iterator>             equal_range(const key_type& __k)
+        -: 2193:            {return __tree_.__equal_range_multi(__k);}
+        -: 2194:    _LIBCPP_INLINE_VISIBILITY
+        -: 2195:    pair<const_iterator,const_iterator> equal_range(const key_type& __k) const
+        -: 2196:            {return __tree_.__equal_range_multi(__k);}
+        -: 2197:#if _LIBCPP_STD_VER > 11
+        -: 2198:    template <typename _K2>
+        -: 2199:    _LIBCPP_INLINE_VISIBILITY
+        -: 2200:    __enable_if_t<__is_transparent<_Compare, _K2>::value, pair<iterator,iterator>>
+        -: 2201:    equal_range(const _K2& __k)       {return __tree_.__equal_range_multi(__k);}
+        -: 2202:    template <typename _K2>
+        -: 2203:    _LIBCPP_INLINE_VISIBILITY
+        -: 2204:    __enable_if_t<__is_transparent<_Compare, _K2>::value, pair<const_iterator,const_iterator>>
+        -: 2205:    equal_range(const _K2& __k) const {return __tree_.__equal_range_multi(__k);}
+        -: 2206:#endif
+        -: 2207:
+        -: 2208:private:
+        -: 2209:    typedef typename __base::__node                    __node;
+        -: 2210:    typedef typename __base::__node_allocator          __node_allocator;
+        -: 2211:    typedef typename __base::__node_pointer            __node_pointer;
+        -: 2212:
+        -: 2213:    typedef __map_node_destructor<__node_allocator> _Dp;
+        -: 2214:    typedef unique_ptr<__node, _Dp> __node_holder;
+        -: 2215:};
+        -: 2216:
+        -: 2217:#if _LIBCPP_STD_VER >= 17
+        -: 2218:template<class _InputIterator, class _Compare = less<__iter_key_type<_InputIterator>>,
+        -: 2219:         class _Allocator = allocator<__iter_to_alloc_type<_InputIterator>>,
+        -: 2220:         class = enable_if_t<__is_cpp17_input_iterator<_InputIterator>::value, void>,
+        -: 2221:         class = enable_if_t<!__is_allocator<_Compare>::value, void>,
+        -: 2222:         class = enable_if_t<__is_allocator<_Allocator>::value, void>>
+        -: 2223:multimap(_InputIterator, _InputIterator, _Compare = _Compare(), _Allocator = _Allocator())
+        -: 2224:  -> multimap<__iter_key_type<_InputIterator>, __iter_mapped_type<_InputIterator>, _Compare, _Allocator>;
+        -: 2225:
+        -: 2226:template<class _Key, class _Tp, class _Compare = less<remove_const_t<_Key>>,
+        -: 2227:         class _Allocator = allocator<pair<const _Key, _Tp>>,
+        -: 2228:         class = enable_if_t<!__is_allocator<_Compare>::value, void>,
+        -: 2229:         class = enable_if_t<__is_allocator<_Allocator>::value, void>>
+        -: 2230:multimap(initializer_list<pair<_Key, _Tp>>, _Compare = _Compare(), _Allocator = _Allocator())
+        -: 2231:  -> multimap<remove_const_t<_Key>, _Tp, _Compare, _Allocator>;
+        -: 2232:
+        -: 2233:template<class _InputIterator, class _Allocator,
+        -: 2234:         class = enable_if_t<__is_cpp17_input_iterator<_InputIterator>::value, void>,
+        -: 2235:         class = enable_if_t<__is_allocator<_Allocator>::value, void>>
+        -: 2236:multimap(_InputIterator, _InputIterator, _Allocator)
+        -: 2237:  -> multimap<__iter_key_type<_InputIterator>, __iter_mapped_type<_InputIterator>,
+        -: 2238:         less<__iter_key_type<_InputIterator>>, _Allocator>;
+        -: 2239:
+        -: 2240:template<class _Key, class _Tp, class _Allocator,
+        -: 2241:         class = enable_if_t<__is_allocator<_Allocator>::value, void>>
+        -: 2242:multimap(initializer_list<pair<_Key, _Tp>>, _Allocator)
+        -: 2243:  -> multimap<remove_const_t<_Key>, _Tp, less<remove_const_t<_Key>>, _Allocator>;
+        -: 2244:#endif
+        -: 2245:
+        -: 2246:#ifndef _LIBCPP_CXX03_LANG
+        -: 2247:template <class _Key, class _Tp, class _Compare, class _Allocator>
+        -: 2248:multimap<_Key, _Tp, _Compare, _Allocator>::multimap(multimap&& __m, const allocator_type& __a)
+        -: 2249:    : __tree_(_VSTD::move(__m.__tree_), typename __base::allocator_type(__a))
+        -: 2250:{
+        -: 2251:    if (__a != __m.get_allocator())
+        -: 2252:    {
+        -: 2253:        const_iterator __e = cend();
+        -: 2254:        while (!__m.empty())
+        -: 2255:            __tree_.__insert_multi(__e.__i_,
+        -: 2256:                    _VSTD::move(__m.__tree_.remove(__m.begin().__i_)->__value_.__move()));
+        -: 2257:    }
+        -: 2258:}
+        -: 2259:#endif
+        -: 2260:
+        -: 2261:template <class _Key, class _Tp, class _Compare, class _Allocator>
+        -: 2262:inline _LIBCPP_INLINE_VISIBILITY
+        -: 2263:bool
+        -: 2264:operator==(const multimap<_Key, _Tp, _Compare, _Allocator>& __x,
+        -: 2265:           const multimap<_Key, _Tp, _Compare, _Allocator>& __y)
+        -: 2266:{
+        -: 2267:    return __x.size() == __y.size() && _VSTD::equal(__x.begin(), __x.end(), __y.begin());
+        -: 2268:}
+        -: 2269:
+        -: 2270:template <class _Key, class _Tp, class _Compare, class _Allocator>
+        -: 2271:inline _LIBCPP_INLINE_VISIBILITY
+        -: 2272:bool
+        -: 2273:operator< (const multimap<_Key, _Tp, _Compare, _Allocator>& __x,
+        -: 2274:           const multimap<_Key, _Tp, _Compare, _Allocator>& __y)
+        -: 2275:{
+        -: 2276:    return _VSTD::lexicographical_compare(__x.begin(), __x.end(), __y.begin(), __y.end());
+        -: 2277:}
+        -: 2278:
+        -: 2279:template <class _Key, class _Tp, class _Compare, class _Allocator>
+        -: 2280:inline _LIBCPP_INLINE_VISIBILITY
+        -: 2281:bool
+        -: 2282:operator!=(const multimap<_Key, _Tp, _Compare, _Allocator>& __x,
+        -: 2283:           const multimap<_Key, _Tp, _Compare, _Allocator>& __y)
+        -: 2284:{
+        -: 2285:    return !(__x == __y);
+        -: 2286:}
+        -: 2287:
+        -: 2288:template <class _Key, class _Tp, class _Compare, class _Allocator>
+        -: 2289:inline _LIBCPP_INLINE_VISIBILITY
+        -: 2290:bool
+        -: 2291:operator> (const multimap<_Key, _Tp, _Compare, _Allocator>& __x,
+        -: 2292:           const multimap<_Key, _Tp, _Compare, _Allocator>& __y)
+        -: 2293:{
+        -: 2294:    return __y < __x;
+        -: 2295:}
+        -: 2296:
+        -: 2297:template <class _Key, class _Tp, class _Compare, class _Allocator>
+        -: 2298:inline _LIBCPP_INLINE_VISIBILITY
+        -: 2299:bool
+        -: 2300:operator>=(const multimap<_Key, _Tp, _Compare, _Allocator>& __x,
+        -: 2301:           const multimap<_Key, _Tp, _Compare, _Allocator>& __y)
+        -: 2302:{
+        -: 2303:    return !(__x < __y);
+        -: 2304:}
+        -: 2305:
+        -: 2306:template <class _Key, class _Tp, class _Compare, class _Allocator>
+        -: 2307:inline _LIBCPP_INLINE_VISIBILITY
+        -: 2308:bool
+        -: 2309:operator<=(const multimap<_Key, _Tp, _Compare, _Allocator>& __x,
+        -: 2310:           const multimap<_Key, _Tp, _Compare, _Allocator>& __y)
+        -: 2311:{
+        -: 2312:    return !(__y < __x);
+        -: 2313:}
+        -: 2314:
+        -: 2315:template <class _Key, class _Tp, class _Compare, class _Allocator>
+        -: 2316:inline _LIBCPP_INLINE_VISIBILITY
+        -: 2317:void
+        -: 2318:swap(multimap<_Key, _Tp, _Compare, _Allocator>& __x,
+        -: 2319:     multimap<_Key, _Tp, _Compare, _Allocator>& __y)
+        -: 2320:    _NOEXCEPT_(_NOEXCEPT_(__x.swap(__y)))
+        -: 2321:{
+        -: 2322:    __x.swap(__y);
+        -: 2323:}
+        -: 2324:
+        -: 2325:#if _LIBCPP_STD_VER > 17
+        -: 2326:template <class _Key, class _Tp, class _Compare, class _Allocator,
+        -: 2327:          class _Predicate>
+        -: 2328:inline _LIBCPP_INLINE_VISIBILITY
+        -: 2329:    typename multimap<_Key, _Tp, _Compare, _Allocator>::size_type
+        -: 2330:    erase_if(multimap<_Key, _Tp, _Compare, _Allocator>& __c,
+        -: 2331:             _Predicate __pred) {
+        -: 2332:  return _VSTD::__libcpp_erase_if_container(__c, __pred);
+        -: 2333:}
+        -: 2334:#endif
+        -: 2335:
+        -: 2336:_LIBCPP_END_NAMESPACE_STD
+        -: 2337:
+        -: 2338:#endif // _LIBCPP_MAP

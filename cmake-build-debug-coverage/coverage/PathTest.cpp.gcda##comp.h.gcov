@@ -1,0 +1,103 @@
+        -:    0:Source:/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__algorithm/comp.h
+        -:    0:Graph:/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/PathTest.dir/UnitTesting/PathTest.cpp.gcno
+        -:    0:Data:/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/PathTest.dir/UnitTesting/PathTest.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://===----------------------------------------------------------------------===//
+        -:    2://
+        -:    3:// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
+        -:    4:// See https://llvm.org/LICENSE.txt for license information.
+        -:    5:// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+        -:    6://
+        -:    7://===----------------------------------------------------------------------===//
+        -:    8:
+        -:    9:#ifndef _LIBCPP___ALGORITHM_COMP_H
+        -:   10:#define _LIBCPP___ALGORITHM_COMP_H
+        -:   11:
+        -:   12:#include <__config>
+        -:   13:
+        -:   14:#if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
+        -:   15:#  pragma GCC system_header
+        -:   16:#endif
+        -:   17:
+        -:   18:_LIBCPP_BEGIN_NAMESPACE_STD
+        -:   19:
+        -:   20:// I'd like to replace these with _VSTD::equal_to<void>, but can't because:
+        -:   21://   * That only works with C++14 and later, and
+        -:   22://   * We haven't included <functional> here.
+        -:   23:template <class _T1, class _T2 = _T1>
+        -:   24:struct __equal_to
+        -:   25:{
+        -:   26:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11 bool operator()(const _T1& __x, const _T1& __y) const {return __x == __y;}
+        -:   27:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11 bool operator()(const _T1& __x, const _T2& __y) const {return __x == __y;}
+        -:   28:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11 bool operator()(const _T2& __x, const _T1& __y) const {return __x == __y;}
+        -:   29:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11 bool operator()(const _T2& __x, const _T2& __y) const {return __x == __y;}
+        -:   30:};
+        -:   31:
+        -:   32:template <class _T1>
+        -:   33:struct __equal_to<_T1, _T1>
+        -:   34:{
+        -:   35:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
+        -:   36:    bool operator()(const _T1& __x, const _T1& __y) const {return __x == __y;}
+        -:   37:};
+        -:   38:
+        -:   39:template <class _T1>
+        -:   40:struct __equal_to<const _T1, _T1>
+        -:   41:{
+        -:   42:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
+        -:   43:    bool operator()(const _T1& __x, const _T1& __y) const {return __x == __y;}
+        -:   44:};
+        -:   45:
+        -:   46:template <class _T1>
+        -:   47:struct __equal_to<_T1, const _T1>
+        -:   48:{
+        -:   49:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
+        -:   50:    bool operator()(const _T1& __x, const _T1& __y) const {return __x == __y;}
+        -:   51:};
+        -:   52:
+        -:   53:template <class _T1, class _T2 = _T1>
+        -:   54:struct __less
+        -:   55:{
+        -:   56:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
+        -:   57:    bool operator()(const _T1& __x, const _T1& __y) const {return __x < __y;}
+        -:   58:
+        -:   59:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
+        -:   60:    bool operator()(const _T1& __x, const _T2& __y) const {return __x < __y;}
+        -:   61:
+        -:   62:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
+        -:   63:    bool operator()(const _T2& __x, const _T1& __y) const {return __x < __y;}
+        -:   64:
+        -:   65:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
+        -:   66:    bool operator()(const _T2& __x, const _T2& __y) const {return __x < __y;}
+        -:   67:};
+        -:   68:
+        -:   69:template <class _T1>
+        -:   70:struct __less<_T1, _T1>
+        -:   71:{
+        -:   72:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
+function _ZNKSt3__16__lessImmEclB6v15006ERKmS3_ called 25 returned 100% blocks executed 100%
+function _ZNKSt3__16__lessIjjEclB6v15006ERKjS3_ called 3 returned 100% blocks executed 100%
+function _ZNKSt3__16__lessIddEclB6v15006ERKdS3_ called 1 returned 100% blocks executed 100%
+       29:   73:    bool operator()(const _T1& __x, const _T1& __y) const {return __x < __y;}
+       25:   73-block  0
+        3:   73-block  1
+        1:   73-block  2
+        -:   74:};
+        -:   75:
+        -:   76:template <class _T1>
+        -:   77:struct __less<const _T1, _T1>
+        -:   78:{
+        -:   79:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
+        -:   80:    bool operator()(const _T1& __x, const _T1& __y) const {return __x < __y;}
+        -:   81:};
+        -:   82:
+        -:   83:template <class _T1>
+        -:   84:struct __less<_T1, const _T1>
+        -:   85:{
+        -:   86:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
+        -:   87:    bool operator()(const _T1& __x, const _T1& __y) const {return __x < __y;}
+        -:   88:};
+        -:   89:
+        -:   90:_LIBCPP_END_NAMESPACE_STD
+        -:   91:
+        -:   92:#endif // _LIBCPP___ALGORITHM_COMP_H

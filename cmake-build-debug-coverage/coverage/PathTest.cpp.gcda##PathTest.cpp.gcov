@@ -1,0 +1,658 @@
+        -:    0:Source:/Users/mihaildobroslavski/CLionProjects/CityMapProject/UnitTesting/PathTest.cpp
+        -:    0:Graph:/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/PathTest.dir/UnitTesting/PathTest.cpp.gcno
+        -:    0:Data:/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/PathTest.dir/UnitTesting/PathTest.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://
+        -:    2:// Created by Mihail Dobroslavski on 30.12.23.
+        -:    3://
+        -:    4:
+        -:    5:#define DOCTEST_CONFIG_IMPLEMENT
+        -:    6:
+        -:    7:#include "doctest.h"
+        -:    8:#include "../Structure/Path.h"
+        -:    9:#include "../Structure/Graph.h"
+        -:   10:
+function _ZL20DOCTEST_ANON_FUNC_14v called 4 returned 100% blocks executed 49%
+        5:   11:TEST_CASE("Path Test") {
+        1:   11-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   11-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   11-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:   11-block  3
+    $$$$$:   11-block  4
+    $$$$$:   11-block  5
+    $$$$$:   11-block  6
+    $$$$$:   11-block  7
+        5:   12:    SUBCASE("Cost Test") {
+        4:   12-block  0
+branch  0 taken 4
+branch  1 taken 0
+        4:   12-block  1
+branch  2 taken 3
+branch  3 taken 1
+    $$$$$:   12-block  2
+    $$$$$:   12-block  3
+    $$$$$:   12-block  4
+        1:   13:        Path path;
+        1:   14:        REQUIRE(path.cost == 0.0);
+        1:   14-block  0
+        1:   14-block  1
+branch  0 taken 1
+branch  1 taken 0
+        1:   14-block  2
+branch  2 taken 1
+branch  3 taken 0
+        1:   14-block  3
+branch  4 taken 1
+branch  5 taken 0
+        1:   14-block  4
+branch  6 taken 1
+branch  7 taken 0
+        1:   14-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:   14-block  6
+    $$$$$:   14-block  7
+    $$$$$:   14-block  8
+    $$$$$:   14-block  9
+    $$$$$:   14-block 10
+branch 10 never executed
+branch 11 never executed
+    $$$$$:   14-block 11
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   14-block 12
+        1:   14-block 13
+branch 14 taken 1
+branch 15 taken 0
+        1:   14-block 14
+branch 16 taken 0
+branch 17 taken 1
+    $$$$$:   14-block 15
+branch 18 never executed
+branch 19 never executed
+    $$$$$:   14-block 16
+    $$$$$:   14-block 17
+branch 20 never executed
+branch 21 never executed
+    $$$$$:   14-block 18
+        1:   14-block 19
+branch 22 taken 1
+branch 23 taken 0
+        1:   14-block 20
+        1:   14-block 21
+    $$$$$:   14-block 22
+    $$$$$:   14-block 23
+        -:   15:
+        1:   16:        path.cost = 100.0;
+        1:   17:        REQUIRE(path.cost == 100.0);
+        1:   17-block  0
+        1:   17-block  1
+branch  0 taken 1
+branch  1 taken 0
+        1:   17-block  2
+branch  2 taken 1
+branch  3 taken 0
+        1:   17-block  3
+branch  4 taken 1
+branch  5 taken 0
+        1:   17-block  4
+branch  6 taken 1
+branch  7 taken 0
+        1:   17-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:   17-block  6
+    $$$$$:   17-block  7
+    $$$$$:   17-block  8
+    $$$$$:   17-block  9
+branch 10 never executed
+branch 11 never executed
+    $$$$$:   17-block 10
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   17-block 11
+        1:   17-block 12
+branch 14 taken 1
+branch 15 taken 0
+        1:   17-block 13
+branch 16 taken 0
+branch 17 taken 1
+    $$$$$:   17-block 14
+branch 18 never executed
+branch 19 never executed
+    $$$$$:   17-block 15
+    $$$$$:   17-block 16
+branch 20 never executed
+branch 21 never executed
+    $$$$$:   17-block 17
+        1:   17-block 18
+branch 22 taken 1
+branch 23 taken 0
+        1:   17-block 19
+        1:   17-block 20
+    $$$$$:   17-block 21
+        1:   18:    }
+        1:   18-block  0
+        -:   19:
+        5:   20:    SUBCASE("Node Test") {
+        4:   20-block  0
+branch  0 taken 4
+branch  1 taken 0
+        4:   20-block  1
+branch  2 taken 3
+branch  3 taken 1
+    $$$$$:   20-block  2
+    $$$$$:   20-block  3
+        1:   21:        Path path;
+        1:   22:        Graph graphA("1");
+        1:   22-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   22-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:   22-block  2
+        1:   23:        Graph graphB("2");
+        1:   23-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   23-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:   23-block  2
+        -:   24:
+        1:   25:        REQUIRE(path.nodes.empty());
+        1:   25-block  0
+        1:   25-block  1
+branch  0 taken 1
+branch  1 taken 0
+        1:   25-block  2
+branch  2 taken 1
+branch  3 taken 0
+        1:   25-block  3
+branch  4 taken 1
+branch  5 taken 0
+        1:   25-block  4
+branch  6 taken 1
+branch  7 taken 0
+        1:   25-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:   25-block  6
+    $$$$$:   25-block  7
+    $$$$$:   25-block  8
+    $$$$$:   25-block  9
+    $$$$$:   25-block 10
+branch 10 never executed
+branch 11 never executed
+    $$$$$:   25-block 11
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   25-block 12
+        1:   25-block 13
+branch 14 taken 1
+branch 15 taken 0
+        1:   25-block 14
+branch 16 taken 0
+branch 17 taken 1
+    $$$$$:   25-block 15
+branch 18 never executed
+branch 19 never executed
+    $$$$$:   25-block 16
+    $$$$$:   25-block 17
+branch 20 never executed
+branch 21 never executed
+    $$$$$:   25-block 18
+        1:   25-block 19
+branch 22 taken 1
+branch 23 taken 0
+        1:   25-block 20
+        1:   25-block 21
+    $$$$$:   25-block 22
+        -:   26:
+        1:   27:        path.nodes.push_back(&graphA);
+        1:   27-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   28:        path.nodes.push_back(&graphB);
+        1:   28-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:   29:
+        1:   30:        REQUIRE(path.nodes.size() == 2);
+        1:   30-block  0
+        1:   30-block  1
+branch  0 taken 1
+branch  1 taken 0
+        1:   30-block  2
+branch  2 taken 1
+branch  3 taken 0
+        1:   30-block  3
+branch  4 taken 1
+branch  5 taken 0
+        1:   30-block  4
+branch  6 taken 1
+branch  7 taken 0
+        1:   30-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:   30-block  6
+    $$$$$:   30-block  7
+    $$$$$:   30-block  8
+    $$$$$:   30-block  9
+branch 10 never executed
+branch 11 never executed
+    $$$$$:   30-block 10
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   30-block 11
+        1:   30-block 12
+branch 14 taken 1
+branch 15 taken 0
+        1:   30-block 13
+branch 16 taken 0
+branch 17 taken 1
+    $$$$$:   30-block 14
+branch 18 never executed
+branch 19 never executed
+    $$$$$:   30-block 15
+    $$$$$:   30-block 16
+branch 20 never executed
+branch 21 never executed
+    $$$$$:   30-block 17
+        1:   30-block 18
+branch 22 taken 1
+branch 23 taken 0
+        1:   30-block 19
+        1:   30-block 20
+    $$$$$:   30-block 21
+        1:   31:        REQUIRE(path.nodes[0]->getName() == "1");
+        1:   31-block  0
+        1:   31-block  1
+branch  0 taken 1
+branch  1 taken 0
+        1:   31-block  2
+branch  2 taken 1
+branch  3 taken 0
+        1:   31-block  3
+branch  4 taken 1
+branch  5 taken 0
+        1:   31-block  4
+branch  6 taken 1
+branch  7 taken 0
+        1:   31-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:   31-block  6
+branch 10 taken 1
+branch 11 taken 0
+        1:   31-block  7
+    $$$$$:   31-block  8
+    $$$$$:   31-block  9
+    $$$$$:   31-block 10
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   31-block 11
+branch 14 never executed
+branch 15 never executed
+    $$$$$:   31-block 12
+        1:   31-block 13
+branch 16 taken 1
+branch 17 taken 0
+        1:   31-block 14
+branch 18 taken 0
+branch 19 taken 1
+    $$$$$:   31-block 15
+branch 20 never executed
+branch 21 never executed
+    $$$$$:   31-block 16
+    $$$$$:   31-block 17
+branch 22 never executed
+branch 23 never executed
+    $$$$$:   31-block 18
+        1:   31-block 19
+branch 24 taken 1
+branch 25 taken 0
+        1:   31-block 20
+        1:   31-block 21
+    $$$$$:   31-block 22
+        1:   32:        REQUIRE(path.nodes[1]->getName() == "2");
+        1:   32-block  0
+        1:   32-block  1
+branch  0 taken 1
+branch  1 taken 0
+        1:   32-block  2
+branch  2 taken 1
+branch  3 taken 0
+        1:   32-block  3
+branch  4 taken 1
+branch  5 taken 0
+        1:   32-block  4
+branch  6 taken 1
+branch  7 taken 0
+        1:   32-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:   32-block  6
+branch 10 taken 1
+branch 11 taken 0
+        1:   32-block  7
+    $$$$$:   32-block  8
+    $$$$$:   32-block  9
+    $$$$$:   32-block 10
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   32-block 11
+branch 14 never executed
+branch 15 never executed
+    $$$$$:   32-block 12
+        1:   32-block 13
+branch 16 taken 1
+branch 17 taken 0
+        1:   32-block 14
+branch 18 taken 0
+branch 19 taken 1
+    $$$$$:   32-block 15
+branch 20 never executed
+branch 21 never executed
+    $$$$$:   32-block 16
+    $$$$$:   32-block 17
+branch 22 never executed
+branch 23 never executed
+    $$$$$:   32-block 18
+        1:   32-block 19
+branch 24 taken 1
+branch 25 taken 0
+        1:   32-block 20
+        1:   32-block 21
+    $$$$$:   32-block 22
+        1:   33:    }
+        1:   33-block  0
+    $$$$$:   33-block  1
+    $$$$$:   33-block  2
+        -:   34:
+        5:   35:    SUBCASE("Print Test - Contains") {
+        4:   35-block  0
+branch  0 taken 4
+branch  1 taken 0
+        4:   35-block  1
+branch  2 taken 3
+branch  3 taken 1
+    $$$$$:   35-block  2
+    $$$$$:   35-block  3
+        1:   36:        Path path;
+        1:   37:        Graph graphA("1");
+        1:   37-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   37-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:   37-block  2
+        1:   38:        Graph graphB("2");
+        1:   38-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   38-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:   38-block  2
+        -:   39:
+        1:   40:        path.nodes.push_back(&graphA);
+        1:   40-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   41:        path.nodes.push_back(&graphB);
+        1:   41-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   42:        path.cost = 50.0;
+        -:   43:
+        1:   44:        std::ostringstream oss;
+        1:   44-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:   45:
+        1:   46:        doctest::Context context;
+        1:   46-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   47:        context.setOption("no-breaks", true);
+        1:   47-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:   48:
+        1:   49:        auto cout_redirect = std::cout.rdbuf(oss.rdbuf());
+        1:   49-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   49-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   50:        path.print();
+        1:   50-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   51:        std::cout.rdbuf(cout_redirect);
+        1:   51-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:   52:
+        1:   53:        std::string expectedOutput = "1 -> 2 ->  length = 50\n";
+        1:   53-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   54:        REQUIRE(oss.str() == expectedOutput);
+        1:   54-block  0
+        1:   54-block  1
+branch  0 taken 1
+branch  1 taken 0
+        1:   54-block  2
+branch  2 taken 1
+branch  3 taken 0
+        1:   54-block  3
+branch  4 taken 1
+branch  5 taken 0
+        1:   54-block  4
+branch  6 taken 1
+branch  7 taken 0
+        1:   54-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:   54-block  6
+branch 10 taken 1
+branch 11 taken 0
+        1:   54-block  7
+    $$$$$:   54-block  8
+    $$$$$:   54-block  9
+    $$$$$:   54-block 10
+    $$$$$:   54-block 11
+    $$$$$:   54-block 12
+    $$$$$:   54-block 13
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   54-block 14
+branch 14 never executed
+branch 15 never executed
+    $$$$$:   54-block 15
+        1:   54-block 16
+branch 16 taken 1
+branch 17 taken 0
+        1:   54-block 17
+branch 18 taken 0
+branch 19 taken 1
+    $$$$$:   54-block 18
+branch 20 never executed
+branch 21 never executed
+    $$$$$:   54-block 19
+    $$$$$:   54-block 20
+branch 22 never executed
+branch 23 never executed
+    $$$$$:   54-block 21
+        1:   54-block 22
+branch 24 taken 1
+branch 25 taken 0
+        1:   54-block 23
+        1:   54-block 24
+    $$$$$:   54-block 25
+        1:   55:    }
+        1:   55-block  0
+    $$$$$:   55-block  1
+    $$$$$:   55-block  2
+    $$$$$:   55-block  3
+    $$$$$:   55-block  4
+    $$$$$:   55-block  5
+        -:   56:
+        5:   57:    SUBCASE("Print Test - Empty") {
+        4:   57-block  0
+branch  0 taken 4
+branch  1 taken 0
+        4:   57-block  1
+branch  2 taken 3
+branch  3 taken 1
+    $$$$$:   57-block  2
+    $$$$$:   57-block  3
+        1:   58:        Path path;
+        1:   59:        std::ostringstream oss;
+        1:   59-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:   60:
+        1:   61:        doctest::Context context;
+        1:   61-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   62:        context.setOption("no-breaks", true);
+        1:   62-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:   63:
+        1:   64:        auto cout_redirect = std::cout.rdbuf(oss.rdbuf());
+        1:   64-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   64-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   65:        path.print();
+        1:   65-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   66:        std::cout.rdbuf(cout_redirect);
+        1:   66-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:   67:
+        1:   68:        std::string expectedOutput = "No items in path\n";
+        1:   68-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   69:        REQUIRE(oss.str() == expectedOutput);
+        1:   69-block  0
+        1:   69-block  1
+branch  0 taken 1
+branch  1 taken 0
+        1:   69-block  2
+branch  2 taken 1
+branch  3 taken 0
+        1:   69-block  3
+branch  4 taken 1
+branch  5 taken 0
+        1:   69-block  4
+branch  6 taken 1
+branch  7 taken 0
+        1:   69-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:   69-block  6
+branch 10 taken 1
+branch 11 taken 0
+        1:   69-block  7
+    $$$$$:   69-block  8
+    $$$$$:   69-block  9
+    $$$$$:   69-block 10
+    $$$$$:   69-block 11
+    $$$$$:   69-block 12
+    $$$$$:   69-block 13
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   69-block 14
+branch 14 never executed
+branch 15 never executed
+    $$$$$:   69-block 15
+        1:   69-block 16
+branch 16 taken 1
+branch 17 taken 0
+        1:   69-block 17
+branch 18 taken 0
+branch 19 taken 1
+    $$$$$:   69-block 18
+branch 20 never executed
+branch 21 never executed
+    $$$$$:   69-block 19
+    $$$$$:   69-block 20
+branch 22 never executed
+branch 23 never executed
+    $$$$$:   69-block 21
+        1:   69-block 22
+branch 24 taken 1
+branch 25 taken 0
+        1:   69-block 23
+        1:   69-block 24
+    $$$$$:   69-block 25
+        1:   70:    }
+        1:   70-block  0
+    $$$$$:   70-block  1
+    $$$$$:   70-block  2
+    $$$$$:   70-block  3
+        4:   71:}
+    $$$$$:   71-block  0
+    $$$$$:   71-block  1
+    $$$$$:   71-block  2
+    $$$$$:   71-block  3
+    $$$$$:   71-block  4
+    $$$$$:   71-block  5
+    $$$$$:   71-block  6
+    $$$$$:   71-block  7
+    $$$$$:   71-block  8
+    $$$$$:   71-block  9
+    $$$$$:   71-block 10
+    $$$$$:   71-block 11
+    $$$$$:   71-block 12
+    $$$$$:   71-block 13
+    $$$$$:   71-block 14
+    $$$$$:   71-block 15
+    $$$$$:   71-block 16
+    $$$$$:   71-block 17
+    $$$$$:   71-block 18
+    $$$$$:   71-block 19
+    $$$$$:   71-block 20
+    $$$$$:   71-block 21
+    $$$$$:   71-block 22
+    $$$$$:   71-block 23
+    $$$$$:   71-block 24
+    $$$$$:   71-block 25
+    $$$$$:   71-block 26
+    $$$$$:   71-block 27
+    $$$$$:   71-block 28
+    $$$$$:   71-block 29
+        4:   71-block 30
+        -:   72:
+function main called 1 returned 100% blocks executed 50%
+        1:   73:int main(int argc, char *argv[]) {
+        1:   74:    doctest::Context context(argc, argv);
+        1:   75:    return context.run();
+        1:   75-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   76:}
+        1:   76-block  0
+    $$$$$:   76-block  1
+    $$$$$:   76-block  2

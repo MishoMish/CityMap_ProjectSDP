@@ -1,0 +1,30 @@
+digraph G {
+  graph [rankdir=LR];
+  node [shape="box", color = "black", style="filled"];
+  "0x600000ba0280" [label="CityD", fillcolor="green"];
+  "0x600000ba0240" [label="CityC", fillcolor="red"];
+  "0x600000ba0200" [label="CityB", fillcolor="green"];
+  "0x600000ba0200" -> "0x600000ba0280" [label="15", color="green"];
+  "0x600000ba0200" -> "0x600000ba0240" [label="5", color="red"];
+  "0x600000ba01c0" [label="CityA", fillcolor="orange"];
+  "0x600000ba01c0" -> "0x600000ba0240" [label="20", color="red"];
+  "0x600000ba01c0" -> "0x600000ba0200" [label="10", color="green"];
+  rankdir=LR
+  node [shape=plaintext]
+  subgraph cluster_01 { 
+    label = "Legend";
+    key [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+      <tr><td align="right" port="i1">Closed</td></tr>
+      <tr><td align="right" port="i2">Opened</td></tr>
+      <tr><td align="right" port="i3">Current</td></tr>
+      </table>>, color=white]
+    key2 [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+      <tr><td port="i1">&nbsp;</td></tr>
+      <tr><td port="i2">&nbsp;</td></tr>
+      <tr><td port="i3">&nbsp;</td></tr>
+      </table>>, color=white]
+    key:i1:e -> key2:i1:w [color=red]
+    key:i2:e -> key2:i2:w [color=green]
+    key:i3:e -> key2:i3:w [color=orange]
+  }
+}

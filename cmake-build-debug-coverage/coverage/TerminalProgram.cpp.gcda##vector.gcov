@@ -1,0 +1,3501 @@
+        -:    0:Source:/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/vector
+        -:    0:Graph:/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/CityMapLibrary.dir/Interfaces/TerminalProgram.cpp.gcno
+        -:    0:Data:/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/CityMapLibrary.dir/Interfaces/TerminalProgram.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:// -*- C++ -*-
+        -:    2://===----------------------------------------------------------------------===//
+        -:    3://
+        -:    4:// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
+        -:    5:// See https://llvm.org/LICENSE.txt for license information.
+        -:    6:// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+        -:    7://
+        -:    8://===----------------------------------------------------------------------===//
+        -:    9:
+        -:   10:#ifndef _LIBCPP_VECTOR
+        -:   11:#define _LIBCPP_VECTOR
+        -:   12:
+        -:   13:/*
+        -:   14:    vector synopsis
+        -:   15:
+        -:   16:namespace std
+        -:   17:{
+        -:   18:
+        -:   19:template <class T, class Allocator = allocator<T> >
+        -:   20:class vector
+        -:   21:{
+        -:   22:public:
+        -:   23:    typedef T                                        value_type;
+        -:   24:    typedef Allocator                                allocator_type;
+        -:   25:    typedef typename allocator_type::reference       reference;
+        -:   26:    typedef typename allocator_type::const_reference const_reference;
+        -:   27:    typedef implementation-defined                   iterator;
+        -:   28:    typedef implementation-defined                   const_iterator;
+        -:   29:    typedef typename allocator_type::size_type       size_type;
+        -:   30:    typedef typename allocator_type::difference_type difference_type;
+        -:   31:    typedef typename allocator_type::pointer         pointer;
+        -:   32:    typedef typename allocator_type::const_pointer   const_pointer;
+        -:   33:    typedef std::reverse_iterator<iterator>          reverse_iterator;
+        -:   34:    typedef std::reverse_iterator<const_iterator>    const_reverse_iterator;
+        -:   35:
+        -:   36:    vector()
+        -:   37:        noexcept(is_nothrow_default_constructible<allocator_type>::value);
+        -:   38:    explicit vector(const allocator_type&);
+        -:   39:    explicit vector(size_type n);
+        -:   40:    explicit vector(size_type n, const allocator_type&); // C++14
+        -:   41:    vector(size_type n, const value_type& value, const allocator_type& = allocator_type());
+        -:   42:    template <class InputIterator>
+        -:   43:        vector(InputIterator first, InputIterator last, const allocator_type& = allocator_type());
+        -:   44:    vector(const vector& x);
+        -:   45:    vector(vector&& x)
+        -:   46:        noexcept(is_nothrow_move_constructible<allocator_type>::value);
+        -:   47:    vector(initializer_list<value_type> il);
+        -:   48:    vector(initializer_list<value_type> il, const allocator_type& a);
+        -:   49:    ~vector();
+        -:   50:    vector& operator=(const vector& x);
+        -:   51:    vector& operator=(vector&& x)
+        -:   52:        noexcept(
+        -:   53:             allocator_type::propagate_on_container_move_assignment::value ||
+        -:   54:             allocator_type::is_always_equal::value); // C++17
+        -:   55:    vector& operator=(initializer_list<value_type> il);
+        -:   56:    template <class InputIterator>
+        -:   57:        void assign(InputIterator first, InputIterator last);
+        -:   58:    void assign(size_type n, const value_type& u);
+        -:   59:    void assign(initializer_list<value_type> il);
+        -:   60:
+        -:   61:    allocator_type get_allocator() const noexcept;
+        -:   62:
+        -:   63:    iterator               begin() noexcept;
+        -:   64:    const_iterator         begin()   const noexcept;
+        -:   65:    iterator               end() noexcept;
+        -:   66:    const_iterator         end()     const noexcept;
+        -:   67:
+        -:   68:    reverse_iterator       rbegin() noexcept;
+        -:   69:    const_reverse_iterator rbegin()  const noexcept;
+        -:   70:    reverse_iterator       rend() noexcept;
+        -:   71:    const_reverse_iterator rend()    const noexcept;
+        -:   72:
+        -:   73:    const_iterator         cbegin()  const noexcept;
+        -:   74:    const_iterator         cend()    const noexcept;
+        -:   75:    const_reverse_iterator crbegin() const noexcept;
+        -:   76:    const_reverse_iterator crend()   const noexcept;
+        -:   77:
+        -:   78:    size_type size() const noexcept;
+        -:   79:    size_type max_size() const noexcept;
+        -:   80:    size_type capacity() const noexcept;
+        -:   81:    bool empty() const noexcept;
+        -:   82:    void reserve(size_type n);
+        -:   83:    void shrink_to_fit() noexcept;
+        -:   84:
+        -:   85:    reference       operator[](size_type n);
+        -:   86:    const_reference operator[](size_type n) const;
+        -:   87:    reference       at(size_type n);
+        -:   88:    const_reference at(size_type n) const;
+        -:   89:
+        -:   90:    reference       front();
+        -:   91:    const_reference front() const;
+        -:   92:    reference       back();
+        -:   93:    const_reference back() const;
+        -:   94:
+        -:   95:    value_type*       data() noexcept;
+        -:   96:    const value_type* data() const noexcept;
+        -:   97:
+        -:   98:    void push_back(const value_type& x);
+        -:   99:    void push_back(value_type&& x);
+        -:  100:    template <class... Args>
+        -:  101:        reference emplace_back(Args&&... args); // reference in C++17
+        -:  102:    void pop_back();
+        -:  103:
+        -:  104:    template <class... Args> iterator emplace(const_iterator position, Args&&... args);
+        -:  105:    iterator insert(const_iterator position, const value_type& x);
+        -:  106:    iterator insert(const_iterator position, value_type&& x);
+        -:  107:    iterator insert(const_iterator position, size_type n, const value_type& x);
+        -:  108:    template <class InputIterator>
+        -:  109:        iterator insert(const_iterator position, InputIterator first, InputIterator last);
+        -:  110:    iterator insert(const_iterator position, initializer_list<value_type> il);
+        -:  111:
+        -:  112:    iterator erase(const_iterator position);
+        -:  113:    iterator erase(const_iterator first, const_iterator last);
+        -:  114:
+        -:  115:    void clear() noexcept;
+        -:  116:
+        -:  117:    void resize(size_type sz);
+        -:  118:    void resize(size_type sz, const value_type& c);
+        -:  119:
+        -:  120:    void swap(vector&)
+        -:  121:        noexcept(allocator_traits<allocator_type>::propagate_on_container_swap::value ||
+        -:  122:                 allocator_traits<allocator_type>::is_always_equal::value);  // C++17
+        -:  123:
+        -:  124:    bool __invariants() const;
+        -:  125:};
+        -:  126:
+        -:  127:template <class Allocator = allocator<T> >
+        -:  128:class vector<bool, Allocator>
+        -:  129:{
+        -:  130:public:
+        -:  131:    typedef bool                                     value_type;
+        -:  132:    typedef Allocator                                allocator_type;
+        -:  133:    typedef implementation-defined                   iterator;
+        -:  134:    typedef implementation-defined                   const_iterator;
+        -:  135:    typedef typename allocator_type::size_type       size_type;
+        -:  136:    typedef typename allocator_type::difference_type difference_type;
+        -:  137:    typedef iterator                                 pointer;
+        -:  138:    typedef const_iterator                           const_pointer;
+        -:  139:    typedef std::reverse_iterator<iterator>          reverse_iterator;
+        -:  140:    typedef std::reverse_iterator<const_iterator>    const_reverse_iterator;
+        -:  141:
+        -:  142:    class reference
+        -:  143:    {
+        -:  144:    public:
+        -:  145:        reference(const reference&) noexcept;
+        -:  146:        operator bool() const noexcept;
+        -:  147:        reference& operator=(bool x) noexcept;
+        -:  148:        reference& operator=(const reference& x) noexcept;
+        -:  149:        iterator operator&() const noexcept;
+        -:  150:        void flip() noexcept;
+        -:  151:    };
+        -:  152:
+        -:  153:    class const_reference
+        -:  154:    {
+        -:  155:    public:
+        -:  156:        const_reference(const reference&) noexcept;
+        -:  157:        operator bool() const noexcept;
+        -:  158:        const_iterator operator&() const noexcept;
+        -:  159:    };
+        -:  160:
+        -:  161:    vector()
+        -:  162:        noexcept(is_nothrow_default_constructible<allocator_type>::value);
+        -:  163:    explicit vector(const allocator_type&);
+        -:  164:    explicit vector(size_type n, const allocator_type& a = allocator_type()); // C++14
+        -:  165:    vector(size_type n, const value_type& value, const allocator_type& = allocator_type());
+        -:  166:    template <class InputIterator>
+        -:  167:        vector(InputIterator first, InputIterator last, const allocator_type& = allocator_type());
+        -:  168:    vector(const vector& x);
+        -:  169:    vector(vector&& x)
+        -:  170:        noexcept(is_nothrow_move_constructible<allocator_type>::value);
+        -:  171:    vector(initializer_list<value_type> il);
+        -:  172:    vector(initializer_list<value_type> il, const allocator_type& a);
+        -:  173:    ~vector();
+        -:  174:    vector& operator=(const vector& x);
+        -:  175:    vector& operator=(vector&& x)
+        -:  176:        noexcept(
+        -:  177:             allocator_type::propagate_on_container_move_assignment::value ||
+        -:  178:             allocator_type::is_always_equal::value); // C++17
+        -:  179:    vector& operator=(initializer_list<value_type> il);
+        -:  180:    template <class InputIterator>
+        -:  181:        void assign(InputIterator first, InputIterator last);
+        -:  182:    void assign(size_type n, const value_type& u);
+        -:  183:    void assign(initializer_list<value_type> il);
+        -:  184:
+        -:  185:    allocator_type get_allocator() const noexcept;
+        -:  186:
+        -:  187:    iterator               begin() noexcept;
+        -:  188:    const_iterator         begin()   const noexcept;
+        -:  189:    iterator               end() noexcept;
+        -:  190:    const_iterator         end()     const noexcept;
+        -:  191:
+        -:  192:    reverse_iterator       rbegin() noexcept;
+        -:  193:    const_reverse_iterator rbegin()  const noexcept;
+        -:  194:    reverse_iterator       rend() noexcept;
+        -:  195:    const_reverse_iterator rend()    const noexcept;
+        -:  196:
+        -:  197:    const_iterator         cbegin()  const noexcept;
+        -:  198:    const_iterator         cend()    const noexcept;
+        -:  199:    const_reverse_iterator crbegin() const noexcept;
+        -:  200:    const_reverse_iterator crend()   const noexcept;
+        -:  201:
+        -:  202:    size_type size() const noexcept;
+        -:  203:    size_type max_size() const noexcept;
+        -:  204:    size_type capacity() const noexcept;
+        -:  205:    bool empty() const noexcept;
+        -:  206:    void reserve(size_type n);
+        -:  207:    void shrink_to_fit() noexcept;
+        -:  208:
+        -:  209:    reference       operator[](size_type n);
+        -:  210:    const_reference operator[](size_type n) const;
+        -:  211:    reference       at(size_type n);
+        -:  212:    const_reference at(size_type n) const;
+        -:  213:
+        -:  214:    reference       front();
+        -:  215:    const_reference front() const;
+        -:  216:    reference       back();
+        -:  217:    const_reference back() const;
+        -:  218:
+        -:  219:    void push_back(const value_type& x);
+        -:  220:    template <class... Args> reference emplace_back(Args&&... args);  // C++14; reference in C++17
+        -:  221:    void pop_back();
+        -:  222:
+        -:  223:    template <class... Args> iterator emplace(const_iterator position, Args&&... args);  // C++14
+        -:  224:    iterator insert(const_iterator position, const value_type& x);
+        -:  225:    iterator insert(const_iterator position, size_type n, const value_type& x);
+        -:  226:    template <class InputIterator>
+        -:  227:        iterator insert(const_iterator position, InputIterator first, InputIterator last);
+        -:  228:    iterator insert(const_iterator position, initializer_list<value_type> il);
+        -:  229:
+        -:  230:    iterator erase(const_iterator position);
+        -:  231:    iterator erase(const_iterator first, const_iterator last);
+        -:  232:
+        -:  233:    void clear() noexcept;
+        -:  234:
+        -:  235:    void resize(size_type sz);
+        -:  236:    void resize(size_type sz, value_type x);
+        -:  237:
+        -:  238:    void swap(vector&)
+        -:  239:        noexcept(allocator_traits<allocator_type>::propagate_on_container_swap::value ||
+        -:  240:                 allocator_traits<allocator_type>::is_always_equal::value);  // C++17
+        -:  241:    void flip() noexcept;
+        -:  242:
+        -:  243:    bool __invariants() const;
+        -:  244:};
+        -:  245:
+        -:  246:template <class InputIterator, class Allocator = allocator<typename iterator_traits<InputIterator>::value_type>>
+        -:  247:   vector(InputIterator, InputIterator, Allocator = Allocator())
+        -:  248:   -> vector<typename iterator_traits<InputIterator>::value_type, Allocator>; // C++17
+        -:  249:
+        -:  250:template <class Allocator> struct hash<std::vector<bool, Allocator>>;
+        -:  251:
+        -:  252:template <class T, class Allocator> bool operator==(const vector<T,Allocator>& x, const vector<T,Allocator>& y);
+        -:  253:template <class T, class Allocator> bool operator< (const vector<T,Allocator>& x, const vector<T,Allocator>& y);
+        -:  254:template <class T, class Allocator> bool operator!=(const vector<T,Allocator>& x, const vector<T,Allocator>& y);
+        -:  255:template <class T, class Allocator> bool operator> (const vector<T,Allocator>& x, const vector<T,Allocator>& y);
+        -:  256:template <class T, class Allocator> bool operator>=(const vector<T,Allocator>& x, const vector<T,Allocator>& y);
+        -:  257:template <class T, class Allocator> bool operator<=(const vector<T,Allocator>& x, const vector<T,Allocator>& y);
+        -:  258:
+        -:  259:template <class T, class Allocator>
+        -:  260:void swap(vector<T,Allocator>& x, vector<T,Allocator>& y)
+        -:  261:    noexcept(noexcept(x.swap(y)));
+        -:  262:
+        -:  263:template <class T, class Allocator, class U>
+        -:  264:typename vector<T, Allocator>::size_type
+        -:  265:erase(vector<T, Allocator>& c, const U& value);       // C++20
+        -:  266:template <class T, class Allocator, class Predicate>
+        -:  267:typename vector<T, Allocator>::size_type
+        -:  268:erase_if(vector<T, Allocator>& c, Predicate pred);    // C++20
+        -:  269:
+        -:  270:}  // std
+        -:  271:
+        -:  272:*/
+        -:  273:
+        -:  274:#include <__algorithm/copy.h>
+        -:  275:#include <__algorithm/equal.h>
+        -:  276:#include <__algorithm/fill_n.h>
+        -:  277:#include <__algorithm/lexicographical_compare.h>
+        -:  278:#include <__algorithm/remove.h>
+        -:  279:#include <__algorithm/remove_if.h>
+        -:  280:#include <__algorithm/rotate.h>
+        -:  281:#include <__algorithm/unwrap_iter.h>
+        -:  282:#include <__assert> // all public C++ headers provide the assertion handler
+        -:  283:#include <__bit_reference>
+        -:  284:#include <__config>
+        -:  285:#include <__debug>
+        -:  286:#include <__format/enable_insertable.h>
+        -:  287:#include <__functional/hash.h>
+        -:  288:#include <__functional/unary_function.h>
+        -:  289:#include <__iterator/advance.h>
+        -:  290:#include <__iterator/iterator_traits.h>
+        -:  291:#include <__iterator/reverse_iterator.h>
+        -:  292:#include <__iterator/wrap_iter.h>
+        -:  293:#include <__memory/allocate_at_least.h>
+        -:  294:#include <__memory/pointer_traits.h>
+        -:  295:#include <__memory/swap_allocator.h>
+        -:  296:#include <__split_buffer>
+        -:  297:#include <__utility/forward.h>
+        -:  298:#include <__utility/move.h>
+        -:  299:#include <__utility/swap.h>
+        -:  300:#include <climits>
+        -:  301:#include <cstdlib>
+        -:  302:#include <cstring>
+        -:  303:#include <iosfwd> // for forward declaration of vector
+        -:  304:#include <limits>
+        -:  305:#include <memory>
+        -:  306:#include <stdexcept>
+        -:  307:#include <type_traits>
+        -:  308:#include <version>
+        -:  309:
+        -:  310:#ifndef _LIBCPP_REMOVE_TRANSITIVE_INCLUDES
+        -:  311:#  include <algorithm>
+        -:  312:#  include <typeinfo>
+        -:  313:#  include <utility>
+        -:  314:#endif
+        -:  315:
+        -:  316:// standard-mandated includes
+        -:  317:
+        -:  318:// [iterator.range]
+        -:  319:#include <__iterator/access.h>
+        -:  320:#include <__iterator/data.h>
+        -:  321:#include <__iterator/empty.h>
+        -:  322:#include <__iterator/reverse_access.h>
+        -:  323:#include <__iterator/size.h>
+        -:  324:
+        -:  325:// [vector.syn]
+        -:  326:#include <compare>
+        -:  327:#include <initializer_list>
+        -:  328:
+        -:  329:#if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
+        -:  330:#  pragma GCC system_header
+        -:  331:#endif
+        -:  332:
+        -:  333:_LIBCPP_PUSH_MACROS
+        -:  334:#include <__undef_macros>
+        -:  335:
+        -:  336:
+        -:  337:_LIBCPP_BEGIN_NAMESPACE_STD
+        -:  338:
+        -:  339:template <class _Tp, class _Allocator /* = allocator<_Tp> */>
+        -:  340:class _LIBCPP_TEMPLATE_VIS vector
+        -:  341:{
+        -:  342:private:
+        -:  343:    typedef allocator<_Tp>                                  __default_allocator_type;
+        -:  344:public:
+        -:  345:    typedef vector                                          __self;
+        -:  346:    typedef _Tp                                             value_type;
+        -:  347:    typedef _Allocator                                      allocator_type;
+        -:  348:    typedef allocator_traits<allocator_type>                __alloc_traits;
+        -:  349:    typedef value_type&                                     reference;
+        -:  350:    typedef const value_type&                               const_reference;
+        -:  351:    typedef typename __alloc_traits::size_type              size_type;
+        -:  352:    typedef typename __alloc_traits::difference_type        difference_type;
+        -:  353:    typedef typename __alloc_traits::pointer                pointer;
+        -:  354:    typedef typename __alloc_traits::const_pointer          const_pointer;
+        -:  355:    typedef __wrap_iter<pointer>                            iterator;
+        -:  356:    typedef __wrap_iter<const_pointer>                      const_iterator;
+        -:  357:    typedef _VSTD::reverse_iterator<iterator>               reverse_iterator;
+        -:  358:    typedef _VSTD::reverse_iterator<const_iterator>         const_reverse_iterator;
+        -:  359:
+        -:  360:    static_assert((is_same<typename allocator_type::value_type, value_type>::value),
+        -:  361:                  "Allocator::value_type must be same type as value_type");
+        -:  362:
+        -:  363:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  364:    vector() _NOEXCEPT_(is_nothrow_default_constructible<allocator_type>::value)
+        -:  365:    {
+        -:  366:        _VSTD::__debug_db_insert_c(this);
+        -:  367:    }
+        -:  368:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY explicit vector(const allocator_type& __a)
+        -:  369:#if _LIBCPP_STD_VER <= 14
+        -:  370:        _NOEXCEPT_(is_nothrow_copy_constructible<allocator_type>::value)
+        -:  371:#else
+        -:  372:        _NOEXCEPT
+        -:  373:#endif
+        -:  374:        : __end_cap_(nullptr, __a)
+        -:  375:    {
+        -:  376:        _VSTD::__debug_db_insert_c(this);
+        -:  377:    }
+        -:  378:    _LIBCPP_CONSTEXPR_AFTER_CXX17 explicit vector(size_type __n);
+        -:  379:#if _LIBCPP_STD_VER > 11
+        -:  380:    _LIBCPP_CONSTEXPR_AFTER_CXX17 explicit vector(size_type __n, const allocator_type& __a);
+        -:  381:#endif
+        -:  382:    _LIBCPP_CONSTEXPR_AFTER_CXX17 vector(size_type __n, const value_type& __x);
+        -:  383:
+        -:  384:    template <class = __enable_if_t<__is_allocator<_Allocator>::value> >
+        -:  385:    _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:  386:    vector(size_type __n, const value_type& __x, const allocator_type& __a)
+        -:  387:        : __end_cap_(nullptr, __a)
+        -:  388:    {
+        -:  389:      _VSTD::__debug_db_insert_c(this);
+        -:  390:      if (__n > 0)
+        -:  391:      {
+        -:  392:          __vallocate(__n);
+        -:  393:          __construct_at_end(__n, __x);
+        -:  394:      }
+        -:  395:    }
+        -:  396:
+        -:  397:    template <class _InputIterator>
+        -:  398:        _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:  399:        vector(_InputIterator __first,
+        -:  400:               typename enable_if<__is_exactly_cpp17_input_iterator<_InputIterator>::value &&
+        -:  401:                                 is_constructible<
+        -:  402:                                    value_type,
+        -:  403:                                    typename iterator_traits<_InputIterator>::reference>::value,
+        -:  404:                                 _InputIterator>::type __last);
+        -:  405:    template <class _InputIterator>
+        -:  406:        _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:  407:        vector(_InputIterator __first, _InputIterator __last, const allocator_type& __a,
+        -:  408:               typename enable_if<__is_exactly_cpp17_input_iterator<_InputIterator>::value &&
+        -:  409:                                 is_constructible<
+        -:  410:                                    value_type,
+        -:  411:                                    typename iterator_traits<_InputIterator>::reference>::value>::type* = 0);
+        -:  412:    template <class _ForwardIterator>
+        -:  413:        _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:  414:        vector(_ForwardIterator __first,
+        -:  415:               typename enable_if<__is_cpp17_forward_iterator<_ForwardIterator>::value &&
+        -:  416:                                 is_constructible<
+        -:  417:                                    value_type,
+        -:  418:                                    typename iterator_traits<_ForwardIterator>::reference>::value,
+        -:  419:                                 _ForwardIterator>::type __last);
+        -:  420:    template <class _ForwardIterator>
+        -:  421:        _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:  422:        vector(_ForwardIterator __first, _ForwardIterator __last, const allocator_type& __a,
+        -:  423:               typename enable_if<__is_cpp17_forward_iterator<_ForwardIterator>::value &&
+        -:  424:                                 is_constructible<
+        -:  425:                                    value_type,
+        -:  426:                                    typename iterator_traits<_ForwardIterator>::reference>::value>::type* = 0);
+        -:  427:
+        -:  428:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__16vectorI4PathNS_9allocatorIS1_EEED1B6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNSt3__16vectorINS_4pairIP5GraphS3_EENS_9allocatorIS4_EEED1B6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNSt3__16vectorI4PathNS_9allocatorIS1_EEED2B6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNSt3__16vectorIP5GraphNS_9allocatorIS2_EEED1B6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNSt3__16vectorIP5GraphNS_9allocatorIS2_EEED2B6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNSt3__16vectorINS_4pairIP5GraphS3_EENS_9allocatorIS4_EEED2B6v15006Ev called 0 returned 0% blocks executed 0%
+    #####:  429:    ~vector()
+    #####:  430:    {
+    #####:  431:      __annotate_delete();
+    #####:  432:      std::__debug_db_erase_c(this);
+    $$$$$:  432-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  432-block  1
+    $$$$$:  432-block  2
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  432-block  3
+    $$$$$:  432-block  4
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  432-block  5
+        -:  433:
+    #####:  434:      if (this->__begin_ != nullptr)
+    $$$$$:  434-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  434-block  1
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  434-block  2
+branch  4 never executed
+branch  5 never executed
+        -:  435:      {
+    #####:  436:        __clear();
+    #####:  437:        __alloc_traits::deallocate(__alloc(), this->__begin_, capacity());
+    #####:  438:      }
+    $$$$$:  438-block  0
+    $$$$$:  438-block  1
+    $$$$$:  438-block  2
+    #####:  439:    }
+    $$$$$:  439-block  0
+    $$$$$:  439-block  1
+    $$$$$:  439-block  2
+    $$$$$:  439-block  3
+    $$$$$:  439-block  4
+    $$$$$:  439-block  5
+        -:  440:
+        -:  441:    _LIBCPP_CONSTEXPR_AFTER_CXX17 vector(const vector& __x);
+        -:  442:    _LIBCPP_CONSTEXPR_AFTER_CXX17 vector(const vector& __x, const __type_identity_t<allocator_type>& __a);
+        -:  443:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  444:    vector& operator=(const vector& __x);
+        -:  445:
+        -:  446:#ifndef _LIBCPP_CXX03_LANG
+        -:  447:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  448:    vector(initializer_list<value_type> __il);
+        -:  449:
+        -:  450:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  451:    vector(initializer_list<value_type> __il, const allocator_type& __a);
+        -:  452:
+        -:  453:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  454:    vector& operator=(initializer_list<value_type> __il)
+        -:  455:        {assign(__il.begin(), __il.end()); return *this;}
+        -:  456:#endif // !_LIBCPP_CXX03_LANG
+        -:  457:
+        -:  458:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  459:    vector(vector&& __x)
+        -:  460:#if _LIBCPP_STD_VER > 14
+        -:  461:        noexcept;
+        -:  462:#else
+        -:  463:        _NOEXCEPT_(is_nothrow_move_constructible<allocator_type>::value);
+        -:  464:#endif
+        -:  465:
+        -:  466:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  467:    vector(vector&& __x, const __type_identity_t<allocator_type>& __a);
+        -:  468:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  469:    vector& operator=(vector&& __x)
+        -:  470:        _NOEXCEPT_((__noexcept_move_assign_container<_Allocator, __alloc_traits>::value));
+        -:  471:
+        -:  472:    template <class _InputIterator>
+        -:  473:        _LIBCPP_CONSTEXPR_AFTER_CXX17 typename enable_if <__is_exactly_cpp17_input_iterator<_InputIterator>::value &&
+        -:  474:            is_constructible<
+        -:  475:                 value_type,
+        -:  476:                 typename iterator_traits<_InputIterator>::reference>::value,
+        -:  477:            void
+        -:  478:        >::type
+        -:  479:        assign(_InputIterator __first, _InputIterator __last);
+        -:  480:    template <class _ForwardIterator>
+        -:  481:        _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:  482:        typename enable_if
+        -:  483:        <
+        -:  484:            __is_cpp17_forward_iterator<_ForwardIterator>::value &&
+        -:  485:            is_constructible<
+        -:  486:                 value_type,
+        -:  487:                 typename iterator_traits<_ForwardIterator>::reference>::value,
+        -:  488:            void
+        -:  489:        >::type
+        -:  490:        assign(_ForwardIterator __first, _ForwardIterator __last);
+        -:  491:
+        -:  492:    _LIBCPP_CONSTEXPR_AFTER_CXX17 void assign(size_type __n, const_reference __u);
+        -:  493:
+        -:  494:#ifndef _LIBCPP_CXX03_LANG
+        -:  495:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  496:    void assign(initializer_list<value_type> __il)
+        -:  497:        {assign(__il.begin(), __il.end());}
+        -:  498:#endif
+        -:  499:
+        -:  500:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  501:    allocator_type get_allocator() const _NOEXCEPT
+        -:  502:        {return this->__alloc();}
+        -:  503:
+        -:  504:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY iterator               begin() _NOEXCEPT;
+        -:  505:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY const_iterator         begin()   const _NOEXCEPT;
+        -:  506:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY iterator               end() _NOEXCEPT;
+        -:  507:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY const_iterator         end()     const _NOEXCEPT;
+        -:  508:
+        -:  509:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  510:    reverse_iterator       rbegin() _NOEXCEPT
+        -:  511:        {return       reverse_iterator(end());}
+        -:  512:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  513:    const_reverse_iterator rbegin()  const _NOEXCEPT
+        -:  514:        {return const_reverse_iterator(end());}
+        -:  515:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  516:    reverse_iterator       rend() _NOEXCEPT
+        -:  517:        {return       reverse_iterator(begin());}
+        -:  518:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  519:    const_reverse_iterator rend()    const _NOEXCEPT
+        -:  520:        {return const_reverse_iterator(begin());}
+        -:  521:
+        -:  522:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  523:    const_iterator         cbegin()  const _NOEXCEPT
+        -:  524:        {return begin();}
+        -:  525:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  526:    const_iterator         cend()    const _NOEXCEPT
+        -:  527:        {return end();}
+        -:  528:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  529:    const_reverse_iterator crbegin() const _NOEXCEPT
+        -:  530:        {return rbegin();}
+        -:  531:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  532:    const_reverse_iterator crend()   const _NOEXCEPT
+        -:  533:        {return rend();}
+        -:  534:
+        -:  535:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+function _ZNKSt3__16vectorI4PathNS_9allocatorIS1_EEE4sizeB6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNKSt3__16vectorINS_4pairIP5GraphS3_EENS_9allocatorIS4_EEE4sizeB6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNKSt3__16vectorIP5GraphNS_9allocatorIS2_EEE4sizeB6v15006Ev called 0 returned 0% blocks executed 0%
+    #####:  536:    size_type size() const _NOEXCEPT
+    #####:  537:        {return static_cast<size_type>(this->__end_ - this->__begin_);}
+    $$$$$:  537-block  0
+    $$$$$:  537-block  1
+    $$$$$:  537-block  2
+        -:  538:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+function _ZNKSt3__16vectorI4PathNS_9allocatorIS1_EEE8capacityB6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNKSt3__16vectorIP5GraphNS_9allocatorIS2_EEE8capacityB6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNKSt3__16vectorINS_4pairIP5GraphS3_EENS_9allocatorIS4_EEE8capacityB6v15006Ev called 0 returned 0% blocks executed 0%
+    #####:  539:    size_type capacity() const _NOEXCEPT
+    #####:  540:        {return static_cast<size_type>(__end_cap() - this->__begin_);}
+    $$$$$:  540-block  0
+    $$$$$:  540-block  1
+    $$$$$:  540-block  2
+        -:  541:    _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  542:    bool empty() const _NOEXCEPT
+        -:  543:        {return this->__begin_ == this->__end_;}
+        -:  544:    _LIBCPP_CONSTEXPR_AFTER_CXX17 size_type max_size() const _NOEXCEPT;
+        -:  545:    _LIBCPP_CONSTEXPR_AFTER_CXX17 void reserve(size_type __n);
+        -:  546:    _LIBCPP_CONSTEXPR_AFTER_CXX17 void shrink_to_fit() _NOEXCEPT;
+        -:  547:
+        -:  548:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY reference       operator[](size_type __n) _NOEXCEPT;
+        -:  549:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY const_reference operator[](size_type __n) const _NOEXCEPT;
+        -:  550:    _LIBCPP_CONSTEXPR_AFTER_CXX17 reference       at(size_type __n);
+        -:  551:    _LIBCPP_CONSTEXPR_AFTER_CXX17 const_reference at(size_type __n) const;
+        -:  552:
+        -:  553:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY reference       front() _NOEXCEPT
+        -:  554:    {
+        -:  555:        _LIBCPP_ASSERT(!empty(), "front() called on an empty vector");
+        -:  556:        return *this->__begin_;
+        -:  557:    }
+        -:  558:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY const_reference front() const _NOEXCEPT
+        -:  559:    {
+        -:  560:        _LIBCPP_ASSERT(!empty(), "front() called on an empty vector");
+        -:  561:        return *this->__begin_;
+        -:  562:    }
+        -:  563:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY reference       back() _NOEXCEPT
+        -:  564:    {
+        -:  565:        _LIBCPP_ASSERT(!empty(), "back() called on an empty vector");
+        -:  566:        return *(this->__end_ - 1);
+        -:  567:    }
+        -:  568:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY const_reference back()  const _NOEXCEPT
+        -:  569:    {
+        -:  570:        _LIBCPP_ASSERT(!empty(), "back() called on an empty vector");
+        -:  571:        return *(this->__end_ - 1);
+        -:  572:    }
+        -:  573:
+        -:  574:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  575:    value_type*       data() _NOEXCEPT
+        -:  576:        {return _VSTD::__to_address(this->__begin_);}
+        -:  577:
+        -:  578:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+function _ZNKSt3__16vectorI4PathNS_9allocatorIS1_EEE4dataB6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNKSt3__16vectorIP5GraphNS_9allocatorIS2_EEE4dataB6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNKSt3__16vectorINS_4pairIP5GraphS3_EENS_9allocatorIS4_EEE4dataB6v15006Ev called 0 returned 0% blocks executed 0%
+    #####:  579:    const value_type* data() const _NOEXCEPT
+    #####:  580:        {return _VSTD::__to_address(this->__begin_);}
+    $$$$$:  580-block  0
+    $$$$$:  580-block  1
+    $$$$$:  580-block  2
+        -:  581:
+        -:  582:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY void push_back(const_reference __x);
+        -:  583:
+        -:  584:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY void push_back(value_type&& __x);
+        -:  585:
+        -:  586:    template <class... _Args>
+        -:  587:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  588:#if _LIBCPP_STD_VER > 14
+        -:  589:        reference emplace_back(_Args&&... __args);
+        -:  590:#else
+        -:  591:        void      emplace_back(_Args&&... __args);
+        -:  592:#endif
+        -:  593:
+        -:  594:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  595:    void pop_back();
+        -:  596:
+        -:  597:    _LIBCPP_CONSTEXPR_AFTER_CXX17 iterator insert(const_iterator __position, const_reference __x);
+        -:  598:
+        -:  599:    _LIBCPP_CONSTEXPR_AFTER_CXX17 iterator insert(const_iterator __position, value_type&& __x);
+        -:  600:    template <class... _Args>
+        -:  601:    _LIBCPP_CONSTEXPR_AFTER_CXX17 iterator emplace(const_iterator __position, _Args&&... __args);
+        -:  602:
+        -:  603:    _LIBCPP_CONSTEXPR_AFTER_CXX17 iterator insert(const_iterator __position, size_type __n, const_reference __x);
+        -:  604:    template <class _InputIterator>
+        -:  605:        _LIBCPP_CONSTEXPR_AFTER_CXX17 typename enable_if <__is_exactly_cpp17_input_iterator<_InputIterator>::value &&
+        -:  606:            is_constructible<
+        -:  607:                 value_type,
+        -:  608:                 typename iterator_traits<_InputIterator>::reference>::value,
+        -:  609:            iterator
+        -:  610:        >::type
+        -:  611:        insert(const_iterator __position, _InputIterator __first, _InputIterator __last);
+        -:  612:    template <class _ForwardIterator>
+        -:  613:        _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:  614:        typename enable_if
+        -:  615:        <
+        -:  616:            __is_cpp17_forward_iterator<_ForwardIterator>::value &&
+        -:  617:            is_constructible<
+        -:  618:                 value_type,
+        -:  619:                 typename iterator_traits<_ForwardIterator>::reference>::value,
+        -:  620:            iterator
+        -:  621:        >::type
+        -:  622:        insert(const_iterator __position, _ForwardIterator __first, _ForwardIterator __last);
+        -:  623:
+        -:  624:#ifndef _LIBCPP_CXX03_LANG
+        -:  625:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  626:    iterator insert(const_iterator __position, initializer_list<value_type> __il)
+        -:  627:        {return insert(__position, __il.begin(), __il.end());}
+        -:  628:#endif
+        -:  629:
+        -:  630:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY iterator erase(const_iterator __position);
+        -:  631:    _LIBCPP_CONSTEXPR_AFTER_CXX17 iterator erase(const_iterator __first, const_iterator __last);
+        -:  632:
+        -:  633:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  634:    void clear() _NOEXCEPT
+        -:  635:    {
+        -:  636:        size_type __old_size = size();
+        -:  637:        __clear();
+        -:  638:        __annotate_shrink(__old_size);
+        -:  639:        std::__debug_db_invalidate_all(this);
+        -:  640:    }
+        -:  641:
+        -:  642:    _LIBCPP_CONSTEXPR_AFTER_CXX17 void resize(size_type __sz);
+        -:  643:    _LIBCPP_CONSTEXPR_AFTER_CXX17 void resize(size_type __sz, const_reference __x);
+        -:  644:
+        -:  645:    _LIBCPP_CONSTEXPR_AFTER_CXX17 void swap(vector&)
+        -:  646:#if _LIBCPP_STD_VER >= 14
+        -:  647:        _NOEXCEPT;
+        -:  648:#else
+        -:  649:        _NOEXCEPT_(!__alloc_traits::propagate_on_container_swap::value ||
+        -:  650:                    __is_nothrow_swappable<allocator_type>::value);
+        -:  651:#endif
+        -:  652:
+        -:  653:    _LIBCPP_CONSTEXPR_AFTER_CXX17 bool __invariants() const;
+        -:  654:
+        -:  655:#ifdef _LIBCPP_ENABLE_DEBUG_MODE
+        -:  656:
+        -:  657:    bool __dereferenceable(const const_iterator* __i) const;
+        -:  658:    bool __decrementable(const const_iterator* __i) const;
+        -:  659:    bool __addable(const const_iterator* __i, ptrdiff_t __n) const;
+        -:  660:    bool __subscriptable(const const_iterator* __i, ptrdiff_t __n) const;
+        -:  661:
+        -:  662:#endif // _LIBCPP_ENABLE_DEBUG_MODE
+        -:  663:
+        -:  664:private:
+    #####:  665:    pointer __begin_ = nullptr;
+    #####:  666:    pointer __end_ = nullptr;
+        -:  667:    __compressed_pair<pointer, allocator_type> __end_cap_ =
+        -:  668:        __compressed_pair<pointer, allocator_type>(nullptr, __default_init_tag());
+        -:  669:
+        -:  670:    _LIBCPP_INLINE_VISIBILITY void __invalidate_iterators_past(pointer __new_last);
+        -:  671:
+        -:  672:    //  Allocate space for __n objects
+        -:  673:    //  throws length_error if __n > max_size()
+        -:  674:    //  throws (probably bad_alloc) if memory run out
+        -:  675:    //  Precondition:  __begin_ == __end_ == __end_cap() == 0
+        -:  676:    //  Precondition:  __n > 0
+        -:  677:    //  Postcondition:  capacity() >= __n
+        -:  678:    //  Postcondition:  size() == 0
+function _ZNSt3__16vectorIP5GraphNS_9allocatorIS2_EEE11__vallocateB6v15006Em called 0 returned 0% blocks executed 0%
+    #####:  679:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_HIDE_FROM_ABI void __vallocate(size_type __n) {
+    #####:  680:        if (__n > max_size())
+    $$$$$:  680-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  681:            __throw_length_error();
+    $$$$$:  681-block  0
+    #####:  682:        auto __allocation = std::__allocate_at_least(__alloc(), __n);
+    #####:  683:        __begin_ = __allocation.ptr;
+    #####:  684:        __end_ = __allocation.ptr;
+    #####:  685:        __end_cap() = __begin_ + __allocation.count;
+    #####:  686:        __annotate_new(0);
+    #####:  687:    }
+    $$$$$:  687-block  0
+        -:  688:
+        -:  689:    _LIBCPP_CONSTEXPR_AFTER_CXX17 void __vdeallocate() _NOEXCEPT;
+        -:  690:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY size_type __recommend(size_type __new_size) const;
+        -:  691:    _LIBCPP_CONSTEXPR_AFTER_CXX17 void __construct_at_end(size_type __n);
+        -:  692:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  693:    void __construct_at_end(size_type __n, const_reference __x);
+        -:  694:    template <class _ForwardIterator>
+        -:  695:        _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:  696:        typename enable_if
+        -:  697:        <
+        -:  698:            __is_cpp17_forward_iterator<_ForwardIterator>::value,
+        -:  699:            void
+        -:  700:        >::type
+        -:  701:        __construct_at_end(_ForwardIterator __first, _ForwardIterator __last, size_type __n);
+        -:  702:    _LIBCPP_CONSTEXPR_AFTER_CXX17 void __append(size_type __n);
+        -:  703:    _LIBCPP_CONSTEXPR_AFTER_CXX17 void __append(size_type __n, const_reference __x);
+        -:  704:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  705:    iterator       __make_iter(pointer __p) _NOEXCEPT;
+        -:  706:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  707:    const_iterator __make_iter(const_pointer __p) const _NOEXCEPT;
+        -:  708:    _LIBCPP_CONSTEXPR_AFTER_CXX17 void __swap_out_circular_buffer(__split_buffer<value_type, allocator_type&>& __v);
+        -:  709:    _LIBCPP_CONSTEXPR_AFTER_CXX17 pointer __swap_out_circular_buffer(__split_buffer<value_type, allocator_type&>& __v, pointer __p);
+        -:  710:    _LIBCPP_CONSTEXPR_AFTER_CXX17 void __move_range(pointer __from_s, pointer __from_e, pointer __to);
+        -:  711:    _LIBCPP_CONSTEXPR_AFTER_CXX17 void __move_assign(vector& __c, true_type)
+        -:  712:        _NOEXCEPT_(is_nothrow_move_assignable<allocator_type>::value);
+        -:  713:    _LIBCPP_CONSTEXPR_AFTER_CXX17 void __move_assign(vector& __c, false_type)
+        -:  714:        _NOEXCEPT_(__alloc_traits::is_always_equal::value);
+        -:  715:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  716:    void __destruct_at_end(pointer __new_last) _NOEXCEPT
+        -:  717:    {
+        -:  718:        if (!__libcpp_is_constant_evaluated())
+        -:  719:            __invalidate_iterators_past(__new_last);
+        -:  720:        size_type __old_size = size();
+        -:  721:        __base_destruct_at_end(__new_last);
+        -:  722:        __annotate_shrink(__old_size);
+        -:  723:    }
+        -:  724:
+        -:  725:    template <class _Up>
+        -:  726:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  727:    inline void __push_back_slow_path(_Up&& __x);
+        -:  728:
+        -:  729:    template <class... _Args>
+        -:  730:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  731:    inline void __emplace_back_slow_path(_Args&&... __args);
+        -:  732:
+        -:  733:    // The following functions are no-ops outside of AddressSanitizer mode.
+        -:  734:    // We call annotatations only for the default Allocator because other allocators
+        -:  735:    // may not meet the AddressSanitizer alignment constraints.
+        -:  736:    // See the documentation for __sanitizer_annotate_contiguous_container for more details.
+        -:  737:#ifndef _LIBCPP_HAS_NO_ASAN
+        -:  738:    _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:  739:    void __annotate_contiguous_container(const void *__beg, const void *__end,
+        -:  740:                                         const void *__old_mid,
+        -:  741:                                         const void *__new_mid) const
+        -:  742:    {
+        -:  743:
+        -:  744:      if (!__libcpp_is_constant_evaluated() && __beg && is_same<allocator_type, __default_allocator_type>::value)
+        -:  745:        __sanitizer_annotate_contiguous_container(__beg, __end, __old_mid, __new_mid);
+        -:  746:    }
+        -:  747:#else
+        -:  748:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+function _ZNKSt3__16vectorI4PathNS_9allocatorIS1_EEE31__annotate_contiguous_containerB6v15006EPKvS6_S6_S6_ called 0 returned 0% blocks executed 0%
+function _ZNKSt3__16vectorIP5GraphNS_9allocatorIS2_EEE31__annotate_contiguous_containerB6v15006EPKvS7_S7_S7_ called 0 returned 0% blocks executed 0%
+function _ZNKSt3__16vectorINS_4pairIP5GraphS3_EENS_9allocatorIS4_EEE31__annotate_contiguous_containerB6v15006EPKvS9_S9_S9_ called 0 returned 0% blocks executed 0%
+    #####:  749:    void __annotate_contiguous_container(const void*, const void*, const void*,
+    #####:  750:                                         const void*) const _NOEXCEPT {}
+    $$$$$:  750-block  0
+    $$$$$:  750-block  1
+    $$$$$:  750-block  2
+        -:  751:#endif
+        -:  752:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+function _ZNKSt3__16vectorIP5GraphNS_9allocatorIS2_EEE14__annotate_newB6v15006Em called 0 returned 0% blocks executed 0%
+    #####:  753:    void __annotate_new(size_type __current_size) const _NOEXCEPT {
+    #####:  754:      __annotate_contiguous_container(data(), data() + capacity(),
+    #####:  755:                                      data() + capacity(), data() + __current_size);
+    #####:  756:    }
+    $$$$$:  756-block  0
+        -:  757:
+        -:  758:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+function _ZNKSt3__16vectorI4PathNS_9allocatorIS1_EEE17__annotate_deleteB6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNKSt3__16vectorIP5GraphNS_9allocatorIS2_EEE17__annotate_deleteB6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNKSt3__16vectorINS_4pairIP5GraphS3_EENS_9allocatorIS4_EEE17__annotate_deleteB6v15006Ev called 0 returned 0% blocks executed 0%
+    #####:  759:    void __annotate_delete() const _NOEXCEPT {
+    #####:  760:      __annotate_contiguous_container(data(), data() + capacity(),
+    #####:  761:                                      data() + size(), data() + capacity());
+    #####:  762:    }
+    $$$$$:  762-block  0
+    $$$$$:  762-block  1
+    $$$$$:  762-block  2
+        -:  763:
+        -:  764:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  765:    void __annotate_increase(size_type __n) const _NOEXCEPT
+        -:  766:    {
+        -:  767:      __annotate_contiguous_container(data(), data() + capacity(),
+        -:  768:                                      data() + size(), data() + size() + __n);
+        -:  769:    }
+        -:  770:
+        -:  771:    _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  772:    void __annotate_shrink(size_type __old_size) const _NOEXCEPT
+        -:  773:    {
+        -:  774:      __annotate_contiguous_container(data(), data() + capacity(),
+        -:  775:                                      data() + __old_size, data() + size());
+        -:  776:    }
+        -:  777:
+        -:  778:  struct _ConstructTransaction {
+        -:  779:    _LIBCPP_CONSTEXPR_AFTER_CXX17
+function _ZNSt3__16vectorIP5GraphNS_9allocatorIS2_EEE21_ConstructTransactionC1ERS5_m called 0 returned 0% blocks executed 0%
+function _ZNSt3__16vectorIP5GraphNS_9allocatorIS2_EEE21_ConstructTransactionC2ERS5_m called 0 returned 0% blocks executed 0%
+    #####:  780:    explicit _ConstructTransaction(vector &__v, size_type __n)
+    #####:  781:      : __v_(__v), __pos_(__v.__end_), __new_end_(__v.__end_ + __n) {
+        -:  782:#ifndef _LIBCPP_HAS_NO_ASAN
+        -:  783:      __v_.__annotate_increase(__n);
+        -:  784:#endif
+    #####:  785:    }
+    $$$$$:  785-block  0
+    $$$$$:  785-block  1
+function _ZNSt3__16vectorIP5GraphNS_9allocatorIS2_EEE21_ConstructTransactionD1Ev called 0 returned 0% blocks executed 0%
+function _ZNSt3__16vectorIP5GraphNS_9allocatorIS2_EEE21_ConstructTransactionD2Ev called 0 returned 0% blocks executed 0%
+    #####:  786:    _LIBCPP_CONSTEXPR_AFTER_CXX17 ~_ConstructTransaction() {
+    #####:  787:      __v_.__end_ = __pos_;
+        -:  788:#ifndef _LIBCPP_HAS_NO_ASAN
+        -:  789:      if (__pos_ != __new_end_) {
+        -:  790:        __v_.__annotate_shrink(__new_end_ - __v_.__begin_);
+        -:  791:      }
+        -:  792:#endif
+    #####:  793:    }
+    $$$$$:  793-block  0
+    $$$$$:  793-block  1
+        -:  794:
+        -:  795:    vector &__v_;
+        -:  796:    pointer __pos_;
+        -:  797:    const_pointer const __new_end_;
+        -:  798:
+        -:  799:  private:
+        -:  800:    _ConstructTransaction(_ConstructTransaction const&) = delete;
+        -:  801:    _ConstructTransaction& operator=(_ConstructTransaction const&) = delete;
+        -:  802:  };
+        -:  803:
+        -:  804:  template <class ..._Args>
+        -:  805:  _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  806:  void __construct_one_at_end(_Args&& ...__args) {
+        -:  807:    _ConstructTransaction __tx(*this, 1);
+        -:  808:    __alloc_traits::construct(this->__alloc(), _VSTD::__to_address(__tx.__pos_),
+        -:  809:        _VSTD::forward<_Args>(__args)...);
+        -:  810:    ++__tx.__pos_;
+        -:  811:  }
+        -:  812:
+        -:  813:  _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__16vectorI4PathNS_9allocatorIS1_EEE7__allocB6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNSt3__16vectorIP5GraphNS_9allocatorIS2_EEE7__allocB6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNSt3__16vectorINS_4pairIP5GraphS3_EENS_9allocatorIS4_EEE7__allocB6v15006Ev called 0 returned 0% blocks executed 0%
+    #####:  814:  allocator_type& __alloc() _NOEXCEPT
+    #####:  815:      {return this->__end_cap_.second();}
+    $$$$$:  815-block  0
+    $$$$$:  815-block  1
+    $$$$$:  815-block  2
+        -:  816:  _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+function _ZNKSt3__16vectorIP5GraphNS_9allocatorIS2_EEE7__allocB6v15006Ev called 0 returned 0% blocks executed 0%
+    #####:  817:  const allocator_type& __alloc() const _NOEXCEPT
+    #####:  818:      {return this->__end_cap_.second();}
+    $$$$$:  818-block  0
+        -:  819:  _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__16vectorIP5GraphNS_9allocatorIS2_EEE9__end_capB6v15006Ev called 0 returned 0% blocks executed 0%
+    #####:  820:  pointer& __end_cap() _NOEXCEPT
+    #####:  821:      {return this->__end_cap_.first();}
+    $$$$$:  821-block  0
+        -:  822:  _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+function _ZNKSt3__16vectorI4PathNS_9allocatorIS1_EEE9__end_capB6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNKSt3__16vectorIP5GraphNS_9allocatorIS2_EEE9__end_capB6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNKSt3__16vectorINS_4pairIP5GraphS3_EENS_9allocatorIS4_EEE9__end_capB6v15006Ev called 0 returned 0% blocks executed 0%
+    #####:  823:  const pointer& __end_cap() const _NOEXCEPT
+    #####:  824:      {return this->__end_cap_.first();}
+    $$$$$:  824-block  0
+    $$$$$:  824-block  1
+    $$$$$:  824-block  2
+        -:  825:
+        -:  826:  _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__16vectorI4PathNS_9allocatorIS1_EEE7__clearB6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNSt3__16vectorIP5GraphNS_9allocatorIS2_EEE7__clearB6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNSt3__16vectorINS_4pairIP5GraphS3_EENS_9allocatorIS4_EEE7__clearB6v15006Ev called 0 returned 0% blocks executed 0%
+    #####:  827:  void __clear() _NOEXCEPT {__base_destruct_at_end(this->__begin_);}
+    $$$$$:  827-block  0
+    $$$$$:  827-block  1
+    $$$$$:  827-block  2
+        -:  828:
+        -:  829:  _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__16vectorI4PathNS_9allocatorIS1_EEE22__base_destruct_at_endB6v15006EPS1_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__16vectorIP5GraphNS_9allocatorIS2_EEE22__base_destruct_at_endB6v15006EPS2_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__16vectorINS_4pairIP5GraphS3_EENS_9allocatorIS4_EEE22__base_destruct_at_endB6v15006EPS4_ called 0 returned 0% blocks executed 0%
+    #####:  830:  void __base_destruct_at_end(pointer __new_last) _NOEXCEPT {
+    #####:  831:    pointer __soon_to_be_end = this->__end_;
+    #####:  832:    while (__new_last != __soon_to_be_end)
+    $$$$$:  832-block  0
+    $$$$$:  832-block  1
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  832-block  2
+    $$$$$:  832-block  3
+    $$$$$:  832-block  4
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  832-block  5
+    $$$$$:  832-block  6
+    $$$$$:  832-block  7
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  832-block  8
+    #####:  833:        __alloc_traits::destroy(__alloc(), _VSTD::__to_address(--__soon_to_be_end));
+    $$$$$:  833-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  833-block  1
+    $$$$$:  833-block  2
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  833-block  3
+    $$$$$:  833-block  4
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  833-block  5
+    #####:  834:    this->__end_ = __new_last;
+    #####:  835:  }
+    $$$$$:  835-block  0
+    $$$$$:  835-block  1
+    $$$$$:  835-block  2
+        -:  836:
+        -:  837:  _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  838:  void __copy_assign_alloc(const vector& __c)
+        -:  839:      {__copy_assign_alloc(__c, integral_constant<bool,
+        -:  840:                    __alloc_traits::propagate_on_container_copy_assignment::value>());}
+        -:  841:
+        -:  842:  _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  843:  void __move_assign_alloc(vector& __c)
+        -:  844:      _NOEXCEPT_(
+        -:  845:          !__alloc_traits::propagate_on_container_move_assignment::value ||
+        -:  846:          is_nothrow_move_assignable<allocator_type>::value)
+        -:  847:      {__move_assign_alloc(__c, integral_constant<bool,
+        -:  848:                    __alloc_traits::propagate_on_container_move_assignment::value>());}
+        -:  849:
+        -:  850:  _LIBCPP_NORETURN _LIBCPP_HIDE_FROM_ABI
+function _ZNKSt3__16vectorIP5GraphNS_9allocatorIS2_EEE20__throw_length_errorB6v15006Ev called 0 returned 0% blocks executed 0%
+    #####:  851:  void __throw_length_error() const {
+    #####:  852:      _VSTD::__throw_length_error("vector");
+    $$$$$:  852-block  0
+        -:  853:  }
+        -:  854:
+        -:  855:  _LIBCPP_NORETURN _LIBCPP_HIDE_FROM_ABI
+        -:  856:  void __throw_out_of_range() const {
+        -:  857:      _VSTD::__throw_out_of_range("vector");
+        -:  858:  }
+        -:  859:
+        -:  860:  _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  861:  void __copy_assign_alloc(const vector& __c, true_type)
+        -:  862:  {
+        -:  863:    if (__alloc() != __c.__alloc())
+        -:  864:    {
+        -:  865:      __clear();
+        -:  866:      __alloc_traits::deallocate(__alloc(), this->__begin_, capacity());
+        -:  867:      this->__begin_ = this->__end_ = __end_cap() = nullptr;
+        -:  868:    }
+        -:  869:    __alloc() = __c.__alloc();
+        -:  870:  }
+        -:  871:
+        -:  872:  _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  873:  void __copy_assign_alloc(const vector&, false_type)
+        -:  874:  {}
+        -:  875:
+        -:  876:  _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  877:  void __move_assign_alloc(vector& __c, true_type)
+        -:  878:      _NOEXCEPT_(is_nothrow_move_assignable<allocator_type>::value)
+        -:  879:  {
+        -:  880:    __alloc() = _VSTD::move(__c.__alloc());
+        -:  881:  }
+        -:  882:
+        -:  883:  _LIBCPP_CONSTEXPR_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
+        -:  884:  void __move_assign_alloc(vector&, false_type)
+        -:  885:      _NOEXCEPT
+        -:  886:  {}
+        -:  887:};
+        -:  888:
+        -:  889:#if _LIBCPP_STD_VER >= 17
+        -:  890:template<class _InputIterator,
+        -:  891:         class _Alloc = allocator<__iter_value_type<_InputIterator>>,
+        -:  892:         class = enable_if_t<__is_cpp17_input_iterator<_InputIterator>::value>,
+        -:  893:         class = enable_if_t<__is_allocator<_Alloc>::value>
+        -:  894:         >
+        -:  895:vector(_InputIterator, _InputIterator)
+        -:  896:  -> vector<__iter_value_type<_InputIterator>, _Alloc>;
+        -:  897:
+        -:  898:template<class _InputIterator,
+        -:  899:         class _Alloc,
+        -:  900:         class = enable_if_t<__is_cpp17_input_iterator<_InputIterator>::value>,
+        -:  901:         class = enable_if_t<__is_allocator<_Alloc>::value>
+        -:  902:         >
+        -:  903:vector(_InputIterator, _InputIterator, _Alloc)
+        -:  904:  -> vector<__iter_value_type<_InputIterator>, _Alloc>;
+        -:  905:#endif
+        -:  906:
+        -:  907:template <class _Tp, class _Allocator>
+        -:  908:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:  909:void
+        -:  910:vector<_Tp, _Allocator>::__swap_out_circular_buffer(__split_buffer<value_type, allocator_type&>& __v)
+        -:  911:{
+        -:  912:    __annotate_delete();
+        -:  913:    using _RevIter = std::reverse_iterator<pointer>;
+        -:  914:    __v.__begin_   = std::__uninitialized_allocator_move_if_noexcept(
+        -:  915:                       __alloc(), _RevIter(__end_), _RevIter(__begin_), _RevIter(__v.__begin_))
+        -:  916:                       .base();
+        -:  917:    _VSTD::swap(this->__begin_, __v.__begin_);
+        -:  918:    _VSTD::swap(this->__end_, __v.__end_);
+        -:  919:    _VSTD::swap(this->__end_cap(), __v.__end_cap());
+        -:  920:    __v.__first_ = __v.__begin_;
+        -:  921:    __annotate_new(size());
+        -:  922:    std::__debug_db_invalidate_all(this);
+        -:  923:}
+        -:  924:
+        -:  925:template <class _Tp, class _Allocator>
+        -:  926:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:  927:typename vector<_Tp, _Allocator>::pointer
+        -:  928:vector<_Tp, _Allocator>::__swap_out_circular_buffer(__split_buffer<value_type, allocator_type&>& __v, pointer __p)
+        -:  929:{
+        -:  930:    __annotate_delete();
+        -:  931:    pointer __r = __v.__begin_;
+        -:  932:    using _RevIter = std::reverse_iterator<pointer>;
+        -:  933:    __v.__begin_   = std::__uninitialized_allocator_move_if_noexcept(
+        -:  934:                       __alloc(), _RevIter(__p), _RevIter(__begin_), _RevIter(__v.__begin_))
+        -:  935:                       .base();
+        -:  936:    __v.__end_ = std::__uninitialized_allocator_move_if_noexcept(__alloc(), __p, __end_, __v.__end_);
+        -:  937:    _VSTD::swap(this->__begin_, __v.__begin_);
+        -:  938:    _VSTD::swap(this->__end_, __v.__end_);
+        -:  939:    _VSTD::swap(this->__end_cap(), __v.__end_cap());
+        -:  940:    __v.__first_ = __v.__begin_;
+        -:  941:    __annotate_new(size());
+        -:  942:    std::__debug_db_invalidate_all(this);
+        -:  943:    return __r;
+        -:  944:}
+        -:  945:
+        -:  946:template <class _Tp, class _Allocator>
+        -:  947:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:  948:void
+        -:  949:vector<_Tp, _Allocator>::__vdeallocate() _NOEXCEPT
+        -:  950:{
+        -:  951:    if (this->__begin_ != nullptr)
+        -:  952:    {
+        -:  953:        clear();
+        -:  954:        __alloc_traits::deallocate(this->__alloc(), this->__begin_, capacity());
+        -:  955:        this->__begin_ = this->__end_ = this->__end_cap() = nullptr;
+        -:  956:    }
+        -:  957:}
+        -:  958:
+        -:  959:template <class _Tp, class _Allocator>
+        -:  960:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:  961:typename vector<_Tp, _Allocator>::size_type
+function _ZNKSt3__16vectorIP5GraphNS_9allocatorIS2_EEE8max_sizeEv called 0 returned 0% blocks executed 0%
+    #####:  962:vector<_Tp, _Allocator>::max_size() const _NOEXCEPT
+        -:  963:{
+    #####:  964:    return _VSTD::min<size_type>(__alloc_traits::max_size(this->__alloc()),
+    $$$$$:  964-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  964-block  1
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  964-block  2
+    $$$$$:  964-block  3
+    #####:  965:                                 numeric_limits<difference_type>::max());
+        -:  966:}
+        -:  967:
+        -:  968://  Precondition:  __new_size > capacity()
+        -:  969:template <class _Tp, class _Allocator>
+        -:  970:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:  971:inline _LIBCPP_INLINE_VISIBILITY
+        -:  972:typename vector<_Tp, _Allocator>::size_type
+        -:  973:vector<_Tp, _Allocator>::__recommend(size_type __new_size) const
+        -:  974:{
+        -:  975:    const size_type __ms = max_size();
+        -:  976:    if (__new_size > __ms)
+        -:  977:        this->__throw_length_error();
+        -:  978:    const size_type __cap = capacity();
+        -:  979:    if (__cap >= __ms / 2)
+        -:  980:        return __ms;
+        -:  981:    return _VSTD::max<size_type>(2 * __cap, __new_size);
+        -:  982:}
+        -:  983:
+        -:  984://  Default constructs __n objects starting at __end_
+        -:  985://  throws if construction throws
+        -:  986://  Precondition:  __n > 0
+        -:  987://  Precondition:  size() + __n <= capacity()
+        -:  988://  Postcondition:  size() == size() + __n
+        -:  989:template <class _Tp, class _Allocator>
+        -:  990:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:  991:void
+        -:  992:vector<_Tp, _Allocator>::__construct_at_end(size_type __n)
+        -:  993:{
+        -:  994:    _ConstructTransaction __tx(*this, __n);
+        -:  995:    const_pointer __new_end = __tx.__new_end_;
+        -:  996:    for (pointer __pos = __tx.__pos_; __pos != __new_end; __tx.__pos_ = ++__pos) {
+        -:  997:        __alloc_traits::construct(this->__alloc(), _VSTD::__to_address(__pos));
+        -:  998:    }
+        -:  999:}
+        -: 1000:
+        -: 1001://  Copy constructs __n objects starting at __end_ from __x
+        -: 1002://  throws if construction throws
+        -: 1003://  Precondition:  __n > 0
+        -: 1004://  Precondition:  size() + __n <= capacity()
+        -: 1005://  Postcondition:  size() == old size() + __n
+        -: 1006://  Postcondition:  [i] == __x for all i in [size() - __n, __n)
+        -: 1007:template <class _Tp, class _Allocator>
+        -: 1008:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1009:inline
+        -: 1010:void
+        -: 1011:vector<_Tp, _Allocator>::__construct_at_end(size_type __n, const_reference __x)
+        -: 1012:{
+        -: 1013:    _ConstructTransaction __tx(*this, __n);
+        -: 1014:    const_pointer __new_end = __tx.__new_end_;
+        -: 1015:    for (pointer __pos = __tx.__pos_; __pos != __new_end; __tx.__pos_ = ++__pos) {
+        -: 1016:        __alloc_traits::construct(this->__alloc(), _VSTD::__to_address(__pos), __x);
+        -: 1017:    }
+        -: 1018:}
+        -: 1019:
+        -: 1020:template <class _Tp, class _Allocator>
+        -: 1021:template <class _ForwardIterator>
+        -: 1022:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1023:typename enable_if
+        -: 1024:<
+        -: 1025:    __is_cpp17_forward_iterator<_ForwardIterator>::value,
+        -: 1026:    void
+        -: 1027:>::type
+function _ZNSt3__16vectorIP5GraphNS_9allocatorIS2_EEE18__construct_at_endIPS2_EENS_9enable_ifIXsr27__is_cpp17_forward_iteratorIT_EE5valueEvE4typeES9_S9_m called 0 returned 0% blocks executed 0%
+    #####: 1028:vector<_Tp, _Allocator>::__construct_at_end(_ForwardIterator __first, _ForwardIterator __last, size_type __n)
+        -: 1029:{
+    #####: 1030:  _ConstructTransaction __tx(*this, __n);
+    #####: 1031:  __tx.__pos_ = std::__uninitialized_allocator_copy(__alloc(), __first, __last, __tx.__pos_);
+    $$$$$: 1031-block  0
+branch  0 never executed
+branch  1 never executed
+    #####: 1032:}
+    $$$$$: 1032-block  0
+    $$$$$: 1032-block  1
+    $$$$$: 1032-block  2
+        -: 1033:
+        -: 1034://  Default constructs __n objects starting at __end_
+        -: 1035://  throws if construction throws
+        -: 1036://  Postcondition:  size() == size() + __n
+        -: 1037://  Exception safety: strong.
+        -: 1038:template <class _Tp, class _Allocator>
+        -: 1039:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1040:void
+        -: 1041:vector<_Tp, _Allocator>::__append(size_type __n)
+        -: 1042:{
+        -: 1043:    if (static_cast<size_type>(this->__end_cap() - this->__end_) >= __n)
+        -: 1044:        this->__construct_at_end(__n);
+        -: 1045:    else
+        -: 1046:    {
+        -: 1047:        allocator_type& __a = this->__alloc();
+        -: 1048:        __split_buffer<value_type, allocator_type&> __v(__recommend(size() + __n), size(), __a);
+        -: 1049:        __v.__construct_at_end(__n);
+        -: 1050:        __swap_out_circular_buffer(__v);
+        -: 1051:    }
+        -: 1052:}
+        -: 1053:
+        -: 1054://  Default constructs __n objects starting at __end_
+        -: 1055://  throws if construction throws
+        -: 1056://  Postcondition:  size() == size() + __n
+        -: 1057://  Exception safety: strong.
+        -: 1058:template <class _Tp, class _Allocator>
+        -: 1059:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1060:void
+        -: 1061:vector<_Tp, _Allocator>::__append(size_type __n, const_reference __x)
+        -: 1062:{
+        -: 1063:    if (static_cast<size_type>(this->__end_cap() - this->__end_) >= __n)
+        -: 1064:        this->__construct_at_end(__n, __x);
+        -: 1065:    else
+        -: 1066:    {
+        -: 1067:        allocator_type& __a = this->__alloc();
+        -: 1068:        __split_buffer<value_type, allocator_type&> __v(__recommend(size() + __n), size(), __a);
+        -: 1069:        __v.__construct_at_end(__n, __x);
+        -: 1070:        __swap_out_circular_buffer(__v);
+        -: 1071:    }
+        -: 1072:}
+        -: 1073:
+        -: 1074:template <class _Tp, class _Allocator>
+        -: 1075:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1076:vector<_Tp, _Allocator>::vector(size_type __n)
+        -: 1077:{
+        -: 1078:    _VSTD::__debug_db_insert_c(this);
+        -: 1079:    if (__n > 0)
+        -: 1080:    {
+        -: 1081:        __vallocate(__n);
+        -: 1082:        __construct_at_end(__n);
+        -: 1083:    }
+        -: 1084:}
+        -: 1085:
+        -: 1086:#if _LIBCPP_STD_VER > 11
+        -: 1087:template <class _Tp, class _Allocator>
+        -: 1088:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1089:vector<_Tp, _Allocator>::vector(size_type __n, const allocator_type& __a)
+        -: 1090:    : __end_cap_(nullptr, __a)
+        -: 1091:{
+        -: 1092:    _VSTD::__debug_db_insert_c(this);
+        -: 1093:    if (__n > 0)
+        -: 1094:    {
+        -: 1095:        __vallocate(__n);
+        -: 1096:        __construct_at_end(__n);
+        -: 1097:    }
+        -: 1098:}
+        -: 1099:#endif
+        -: 1100:
+        -: 1101:template <class _Tp, class _Allocator>
+        -: 1102:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1103:vector<_Tp, _Allocator>::vector(size_type __n, const value_type& __x)
+        -: 1104:{
+        -: 1105:    _VSTD::__debug_db_insert_c(this);
+        -: 1106:    if (__n > 0)
+        -: 1107:    {
+        -: 1108:        __vallocate(__n);
+        -: 1109:        __construct_at_end(__n, __x);
+        -: 1110:    }
+        -: 1111:}
+        -: 1112:
+        -: 1113:template <class _Tp, class _Allocator>
+        -: 1114:template <class _InputIterator>
+        -: 1115:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1116:vector<_Tp, _Allocator>::vector(_InputIterator __first,
+        -: 1117:       typename enable_if<__is_exactly_cpp17_input_iterator<_InputIterator>::value &&
+        -: 1118:                         is_constructible<
+        -: 1119:                            value_type,
+        -: 1120:                            typename iterator_traits<_InputIterator>::reference>::value,
+        -: 1121:                          _InputIterator>::type __last)
+        -: 1122:{
+        -: 1123:    _VSTD::__debug_db_insert_c(this);
+        -: 1124:    for (; __first != __last; ++__first)
+        -: 1125:        emplace_back(*__first);
+        -: 1126:}
+        -: 1127:
+        -: 1128:template <class _Tp, class _Allocator>
+        -: 1129:template <class _InputIterator>
+        -: 1130:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1131:vector<_Tp, _Allocator>::vector(_InputIterator __first, _InputIterator __last, const allocator_type& __a,
+        -: 1132:       typename enable_if<__is_exactly_cpp17_input_iterator<_InputIterator>::value &&
+        -: 1133:                         is_constructible<
+        -: 1134:                            value_type,
+        -: 1135:                            typename iterator_traits<_InputIterator>::reference>::value>::type*)
+        -: 1136:    : __end_cap_(nullptr, __a)
+        -: 1137:{
+        -: 1138:    _VSTD::__debug_db_insert_c(this);
+        -: 1139:    for (; __first != __last; ++__first)
+        -: 1140:        emplace_back(*__first);
+        -: 1141:}
+        -: 1142:
+        -: 1143:template <class _Tp, class _Allocator>
+        -: 1144:template <class _ForwardIterator>
+        -: 1145:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1146:vector<_Tp, _Allocator>::vector(_ForwardIterator __first,
+        -: 1147:                                typename enable_if<__is_cpp17_forward_iterator<_ForwardIterator>::value &&
+        -: 1148:                                is_constructible<
+        -: 1149:                                   value_type,
+        -: 1150:                                   typename iterator_traits<_ForwardIterator>::reference>::value,
+        -: 1151:                                                   _ForwardIterator>::type __last)
+        -: 1152:{
+        -: 1153:    _VSTD::__debug_db_insert_c(this);
+        -: 1154:    size_type __n = static_cast<size_type>(_VSTD::distance(__first, __last));
+        -: 1155:    if (__n > 0)
+        -: 1156:    {
+        -: 1157:        __vallocate(__n);
+        -: 1158:        __construct_at_end(__first, __last, __n);
+        -: 1159:    }
+        -: 1160:}
+        -: 1161:
+        -: 1162:template <class _Tp, class _Allocator>
+        -: 1163:template <class _ForwardIterator>
+        -: 1164:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1165:vector<_Tp, _Allocator>::vector(_ForwardIterator __first, _ForwardIterator __last, const allocator_type& __a,
+        -: 1166:                                typename enable_if<__is_cpp17_forward_iterator<_ForwardIterator>::value &&
+        -: 1167:                                is_constructible<
+        -: 1168:                                   value_type,
+        -: 1169:                                   typename iterator_traits<_ForwardIterator>::reference>::value>::type*)
+        -: 1170:    : __end_cap_(nullptr, __a)
+        -: 1171:{
+        -: 1172:    _VSTD::__debug_db_insert_c(this);
+        -: 1173:    size_type __n = static_cast<size_type>(_VSTD::distance(__first, __last));
+        -: 1174:    if (__n > 0)
+        -: 1175:    {
+        -: 1176:        __vallocate(__n);
+        -: 1177:        __construct_at_end(__first, __last, __n);
+        -: 1178:    }
+        -: 1179:}
+        -: 1180:
+        -: 1181:template <class _Tp, class _Allocator>
+        -: 1182:_LIBCPP_CONSTEXPR_AFTER_CXX17
+function _ZNSt3__16vectorIP5GraphNS_9allocatorIS2_EEEC1ERKS5_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__16vectorIP5GraphNS_9allocatorIS2_EEEC2ERKS5_ called 0 returned 0% blocks executed 0%
+    #####: 1183:vector<_Tp, _Allocator>::vector(const vector& __x)
+    #####: 1184:    : __end_cap_(nullptr, __alloc_traits::select_on_container_copy_construction(__x.__alloc()))
+    #####: 1185:{
+    #####: 1186:    _VSTD::__debug_db_insert_c(this);
+    #####: 1187:    size_type __n = __x.size();
+    #####: 1188:    if (__n > 0)
+    $$$$$: 1188-block  0
+branch  0 never executed
+branch  1 never executed
+        -: 1189:    {
+    #####: 1190:        __vallocate(__n);
+    #####: 1191:        __construct_at_end(__x.__begin_, __x.__end_, __n);
+    #####: 1192:    }
+    $$$$$: 1192-block  0
+    #####: 1193:}
+    $$$$$: 1193-block  0
+    $$$$$: 1193-block  1
+        -: 1194:
+        -: 1195:template <class _Tp, class _Allocator>
+        -: 1196:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1197:vector<_Tp, _Allocator>::vector(const vector& __x, const __type_identity_t<allocator_type>& __a)
+        -: 1198:    : __end_cap_(nullptr, __a)
+        -: 1199:{
+        -: 1200:    _VSTD::__debug_db_insert_c(this);
+        -: 1201:    size_type __n = __x.size();
+        -: 1202:    if (__n > 0)
+        -: 1203:    {
+        -: 1204:        __vallocate(__n);
+        -: 1205:        __construct_at_end(__x.__begin_, __x.__end_, __n);
+        -: 1206:    }
+        -: 1207:}
+        -: 1208:
+        -: 1209:template <class _Tp, class _Allocator>
+        -: 1210:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1211:inline _LIBCPP_INLINE_VISIBILITY
+        -: 1212:vector<_Tp, _Allocator>::vector(vector&& __x)
+        -: 1213:#if _LIBCPP_STD_VER > 14
+        -: 1214:        noexcept
+        -: 1215:#else
+        -: 1216:        _NOEXCEPT_(is_nothrow_move_constructible<allocator_type>::value)
+        -: 1217:#endif
+        -: 1218:    : __end_cap_(nullptr, _VSTD::move(__x.__alloc()))
+        -: 1219:{
+        -: 1220:    _VSTD::__debug_db_insert_c(this);
+        -: 1221:    std::__debug_db_swap(this, std::addressof(__x));
+        -: 1222:    this->__begin_ = __x.__begin_;
+        -: 1223:    this->__end_ = __x.__end_;
+        -: 1224:    this->__end_cap() = __x.__end_cap();
+        -: 1225:    __x.__begin_ = __x.__end_ = __x.__end_cap() = nullptr;
+        -: 1226:}
+        -: 1227:
+        -: 1228:template <class _Tp, class _Allocator>
+        -: 1229:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1230:inline _LIBCPP_INLINE_VISIBILITY
+        -: 1231:vector<_Tp, _Allocator>::vector(vector&& __x, const __type_identity_t<allocator_type>& __a)
+        -: 1232:    : __end_cap_(nullptr, __a)
+        -: 1233:{
+        -: 1234:    _VSTD::__debug_db_insert_c(this);
+        -: 1235:    if (__a == __x.__alloc())
+        -: 1236:    {
+        -: 1237:        this->__begin_ = __x.__begin_;
+        -: 1238:        this->__end_ = __x.__end_;
+        -: 1239:        this->__end_cap() = __x.__end_cap();
+        -: 1240:        __x.__begin_ = __x.__end_ = __x.__end_cap() = nullptr;
+        -: 1241:        std::__debug_db_swap(this, std::addressof(__x));
+        -: 1242:    }
+        -: 1243:    else
+        -: 1244:    {
+        -: 1245:        typedef move_iterator<iterator> _Ip;
+        -: 1246:        assign(_Ip(__x.begin()), _Ip(__x.end()));
+        -: 1247:    }
+        -: 1248:}
+        -: 1249:
+        -: 1250:#ifndef _LIBCPP_CXX03_LANG
+        -: 1251:
+        -: 1252:template <class _Tp, class _Allocator>
+        -: 1253:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1254:inline _LIBCPP_INLINE_VISIBILITY
+        -: 1255:vector<_Tp, _Allocator>::vector(initializer_list<value_type> __il)
+        -: 1256:{
+        -: 1257:    _VSTD::__debug_db_insert_c(this);
+        -: 1258:    if (__il.size() > 0)
+        -: 1259:    {
+        -: 1260:        __vallocate(__il.size());
+        -: 1261:        __construct_at_end(__il.begin(), __il.end(), __il.size());
+        -: 1262:    }
+        -: 1263:}
+        -: 1264:
+        -: 1265:template <class _Tp, class _Allocator>
+        -: 1266:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1267:inline _LIBCPP_INLINE_VISIBILITY
+        -: 1268:vector<_Tp, _Allocator>::vector(initializer_list<value_type> __il, const allocator_type& __a)
+        -: 1269:    : __end_cap_(nullptr, __a)
+        -: 1270:{
+        -: 1271:    _VSTD::__debug_db_insert_c(this);
+        -: 1272:    if (__il.size() > 0)
+        -: 1273:    {
+        -: 1274:        __vallocate(__il.size());
+        -: 1275:        __construct_at_end(__il.begin(), __il.end(), __il.size());
+        -: 1276:    }
+        -: 1277:}
+        -: 1278:
+        -: 1279:#endif // _LIBCPP_CXX03_LANG
+        -: 1280:
+        -: 1281:template <class _Tp, class _Allocator>
+        -: 1282:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1283:inline _LIBCPP_INLINE_VISIBILITY
+        -: 1284:vector<_Tp, _Allocator>&
+        -: 1285:vector<_Tp, _Allocator>::operator=(vector&& __x)
+        -: 1286:    _NOEXCEPT_((__noexcept_move_assign_container<_Allocator, __alloc_traits>::value))
+        -: 1287:{
+        -: 1288:    __move_assign(__x, integral_constant<bool,
+        -: 1289:          __alloc_traits::propagate_on_container_move_assignment::value>());
+        -: 1290:    return *this;
+        -: 1291:}
+        -: 1292:
+        -: 1293:template <class _Tp, class _Allocator>
+        -: 1294:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1295:void
+        -: 1296:vector<_Tp, _Allocator>::__move_assign(vector& __c, false_type)
+        -: 1297:    _NOEXCEPT_(__alloc_traits::is_always_equal::value)
+        -: 1298:{
+        -: 1299:    if (__alloc() != __c.__alloc())
+        -: 1300:    {
+        -: 1301:        typedef move_iterator<iterator> _Ip;
+        -: 1302:        assign(_Ip(__c.begin()), _Ip(__c.end()));
+        -: 1303:    }
+        -: 1304:    else
+        -: 1305:        __move_assign(__c, true_type());
+        -: 1306:}
+        -: 1307:
+        -: 1308:template <class _Tp, class _Allocator>
+        -: 1309:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1310:void
+        -: 1311:vector<_Tp, _Allocator>::__move_assign(vector& __c, true_type)
+        -: 1312:    _NOEXCEPT_(is_nothrow_move_assignable<allocator_type>::value)
+        -: 1313:{
+        -: 1314:    __vdeallocate();
+        -: 1315:    __move_assign_alloc(__c); // this can throw
+        -: 1316:    this->__begin_ = __c.__begin_;
+        -: 1317:    this->__end_ = __c.__end_;
+        -: 1318:    this->__end_cap() = __c.__end_cap();
+        -: 1319:    __c.__begin_ = __c.__end_ = __c.__end_cap() = nullptr;
+        -: 1320:    std::__debug_db_swap(this, std::addressof(__c));
+        -: 1321:}
+        -: 1322:
+        -: 1323:template <class _Tp, class _Allocator>
+        -: 1324:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1325:inline _LIBCPP_INLINE_VISIBILITY
+        -: 1326:vector<_Tp, _Allocator>&
+        -: 1327:vector<_Tp, _Allocator>::operator=(const vector& __x)
+        -: 1328:{
+        -: 1329:    if (this != _VSTD::addressof(__x))
+        -: 1330:    {
+        -: 1331:        __copy_assign_alloc(__x);
+        -: 1332:        assign(__x.__begin_, __x.__end_);
+        -: 1333:    }
+        -: 1334:    return *this;
+        -: 1335:}
+        -: 1336:
+        -: 1337:template <class _Tp, class _Allocator>
+        -: 1338:template <class _InputIterator>
+        -: 1339:_LIBCPP_CONSTEXPR_AFTER_CXX17 typename enable_if <__is_exactly_cpp17_input_iterator<_InputIterator>::value &&
+        -: 1340:    is_constructible<
+        -: 1341:       _Tp,
+        -: 1342:       typename iterator_traits<_InputIterator>::reference>::value,
+        -: 1343:    void
+        -: 1344:>::type
+        -: 1345:vector<_Tp, _Allocator>::assign(_InputIterator __first, _InputIterator __last)
+        -: 1346:{
+        -: 1347:    clear();
+        -: 1348:    for (; __first != __last; ++__first)
+        -: 1349:        emplace_back(*__first);
+        -: 1350:}
+        -: 1351:
+        -: 1352:template <class _Tp, class _Allocator>
+        -: 1353:template <class _ForwardIterator>
+        -: 1354:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1355:typename enable_if
+        -: 1356:<
+        -: 1357:    __is_cpp17_forward_iterator<_ForwardIterator>::value &&
+        -: 1358:    is_constructible<
+        -: 1359:       _Tp,
+        -: 1360:       typename iterator_traits<_ForwardIterator>::reference>::value,
+        -: 1361:    void
+        -: 1362:>::type
+        -: 1363:vector<_Tp, _Allocator>::assign(_ForwardIterator __first, _ForwardIterator __last)
+        -: 1364:{
+        -: 1365:    size_type __new_size = static_cast<size_type>(_VSTD::distance(__first, __last));
+        -: 1366:    if (__new_size <= capacity())
+        -: 1367:    {
+        -: 1368:        _ForwardIterator __mid = __last;
+        -: 1369:        bool __growing = false;
+        -: 1370:        if (__new_size > size())
+        -: 1371:        {
+        -: 1372:            __growing = true;
+        -: 1373:            __mid =  __first;
+        -: 1374:            _VSTD::advance(__mid, size());
+        -: 1375:        }
+        -: 1376:        pointer __m = _VSTD::copy(__first, __mid, this->__begin_);
+        -: 1377:        if (__growing)
+        -: 1378:            __construct_at_end(__mid, __last, __new_size - size());
+        -: 1379:        else
+        -: 1380:            this->__destruct_at_end(__m);
+        -: 1381:    }
+        -: 1382:    else
+        -: 1383:    {
+        -: 1384:        __vdeallocate();
+        -: 1385:        __vallocate(__recommend(__new_size));
+        -: 1386:        __construct_at_end(__first, __last, __new_size);
+        -: 1387:    }
+        -: 1388:    std::__debug_db_invalidate_all(this);
+        -: 1389:}
+        -: 1390:
+        -: 1391:template <class _Tp, class _Allocator>
+        -: 1392:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1393:void
+        -: 1394:vector<_Tp, _Allocator>::assign(size_type __n, const_reference __u)
+        -: 1395:{
+        -: 1396:    if (__n <= capacity())
+        -: 1397:    {
+        -: 1398:        size_type __s = size();
+        -: 1399:        _VSTD::fill_n(this->__begin_, _VSTD::min(__n, __s), __u);
+        -: 1400:        if (__n > __s)
+        -: 1401:            __construct_at_end(__n - __s, __u);
+        -: 1402:        else
+        -: 1403:            this->__destruct_at_end(this->__begin_ + __n);
+        -: 1404:    }
+        -: 1405:    else
+        -: 1406:    {
+        -: 1407:        __vdeallocate();
+        -: 1408:        __vallocate(__recommend(static_cast<size_type>(__n)));
+        -: 1409:        __construct_at_end(__n, __u);
+        -: 1410:    }
+        -: 1411:    std::__debug_db_invalidate_all(this);
+        -: 1412:}
+        -: 1413:
+        -: 1414:template <class _Tp, class _Allocator>
+        -: 1415:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1416:inline _LIBCPP_INLINE_VISIBILITY
+        -: 1417:typename vector<_Tp, _Allocator>::iterator
+function _ZNSt3__16vectorI4PathNS_9allocatorIS1_EEE5beginB6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNSt3__16vectorINS_4pairIP5GraphS3_EENS_9allocatorIS4_EEE5beginB6v15006Ev called 0 returned 0% blocks executed 0%
+    #####: 1418:vector<_Tp, _Allocator>::begin() _NOEXCEPT
+        -: 1419:{
+    #####: 1420:    return iterator(this, this->__begin_);
+    $$$$$: 1420-block  0
+    $$$$$: 1420-block  1
+        -: 1421:}
+        -: 1422:
+        -: 1423:template <class _Tp, class _Allocator>
+        -: 1424:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1425:inline _LIBCPP_INLINE_VISIBILITY
+        -: 1426:typename vector<_Tp, _Allocator>::const_iterator
+        -: 1427:vector<_Tp, _Allocator>::begin() const _NOEXCEPT
+        -: 1428:{
+        -: 1429:    return const_iterator(this, this->__begin_);
+        -: 1430:}
+        -: 1431:
+        -: 1432:template <class _Tp, class _Allocator>
+        -: 1433:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1434:inline _LIBCPP_INLINE_VISIBILITY
+        -: 1435:typename vector<_Tp, _Allocator>::iterator
+function _ZNSt3__16vectorI4PathNS_9allocatorIS1_EEE3endB6v15006Ev called 0 returned 0% blocks executed 0%
+function _ZNSt3__16vectorINS_4pairIP5GraphS3_EENS_9allocatorIS4_EEE3endB6v15006Ev called 0 returned 0% blocks executed 0%
+    #####: 1436:vector<_Tp, _Allocator>::end() _NOEXCEPT
+        -: 1437:{
+    #####: 1438:    return iterator(this, this->__end_);
+    $$$$$: 1438-block  0
+    $$$$$: 1438-block  1
+        -: 1439:}
+        -: 1440:
+        -: 1441:template <class _Tp, class _Allocator>
+        -: 1442:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1443:inline _LIBCPP_INLINE_VISIBILITY
+        -: 1444:typename vector<_Tp, _Allocator>::const_iterator
+        -: 1445:vector<_Tp, _Allocator>::end() const _NOEXCEPT
+        -: 1446:{
+        -: 1447:    return const_iterator(this, this->__end_);
+        -: 1448:}
+        -: 1449:
+        -: 1450:template <class _Tp, class _Allocator>
+        -: 1451:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1452:inline _LIBCPP_INLINE_VISIBILITY
+        -: 1453:typename vector<_Tp, _Allocator>::reference
+function _ZNSt3__16vectorI4PathNS_9allocatorIS1_EEEixB6v15006Em called 0 returned 0% blocks executed 0%
+    #####: 1454:vector<_Tp, _Allocator>::operator[](size_type __n) _NOEXCEPT
+        -: 1455:{
+        -: 1456:    _LIBCPP_ASSERT(__n < size(), "vector[] index out of bounds");
+    #####: 1457:    return this->__begin_[__n];
+    $$$$$: 1457-block  0
+        -: 1458:}
+        -: 1459:
+        -: 1460:template <class _Tp, class _Allocator>
+        -: 1461:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1462:inline _LIBCPP_INLINE_VISIBILITY
+        -: 1463:typename vector<_Tp, _Allocator>::const_reference
+        -: 1464:vector<_Tp, _Allocator>::operator[](size_type __n) const _NOEXCEPT
+        -: 1465:{
+        -: 1466:    _LIBCPP_ASSERT(__n < size(), "vector[] index out of bounds");
+        -: 1467:    return this->__begin_[__n];
+        -: 1468:}
+        -: 1469:
+        -: 1470:template <class _Tp, class _Allocator>
+        -: 1471:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1472:typename vector<_Tp, _Allocator>::reference
+        -: 1473:vector<_Tp, _Allocator>::at(size_type __n)
+        -: 1474:{
+        -: 1475:    if (__n >= size())
+        -: 1476:        this->__throw_out_of_range();
+        -: 1477:    return this->__begin_[__n];
+        -: 1478:}
+        -: 1479:
+        -: 1480:template <class _Tp, class _Allocator>
+        -: 1481:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1482:typename vector<_Tp, _Allocator>::const_reference
+        -: 1483:vector<_Tp, _Allocator>::at(size_type __n) const
+        -: 1484:{
+        -: 1485:    if (__n >= size())
+        -: 1486:        this->__throw_out_of_range();
+        -: 1487:    return this->__begin_[__n];
+        -: 1488:}
+        -: 1489:
+        -: 1490:template <class _Tp, class _Allocator>
+        -: 1491:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1492:void
+        -: 1493:vector<_Tp, _Allocator>::reserve(size_type __n)
+        -: 1494:{
+        -: 1495:    if (__n > capacity())
+        -: 1496:    {
+        -: 1497:        if (__n > max_size())
+        -: 1498:            this->__throw_length_error();
+        -: 1499:        allocator_type& __a = this->__alloc();
+        -: 1500:        __split_buffer<value_type, allocator_type&> __v(__n, size(), __a);
+        -: 1501:        __swap_out_circular_buffer(__v);
+        -: 1502:    }
+        -: 1503:}
+        -: 1504:
+        -: 1505:template <class _Tp, class _Allocator>
+        -: 1506:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1507:void
+        -: 1508:vector<_Tp, _Allocator>::shrink_to_fit() _NOEXCEPT
+        -: 1509:{
+        -: 1510:    if (capacity() > size())
+        -: 1511:    {
+        -: 1512:#ifndef _LIBCPP_NO_EXCEPTIONS
+        -: 1513:        try
+        -: 1514:        {
+        -: 1515:#endif // _LIBCPP_NO_EXCEPTIONS
+        -: 1516:            allocator_type& __a = this->__alloc();
+        -: 1517:            __split_buffer<value_type, allocator_type&> __v(size(), size(), __a);
+        -: 1518:            __swap_out_circular_buffer(__v);
+        -: 1519:#ifndef _LIBCPP_NO_EXCEPTIONS
+        -: 1520:        }
+        -: 1521:        catch (...)
+        -: 1522:        {
+        -: 1523:        }
+        -: 1524:#endif // _LIBCPP_NO_EXCEPTIONS
+        -: 1525:    }
+        -: 1526:}
+        -: 1527:
+        -: 1528:template <class _Tp, class _Allocator>
+        -: 1529:template <class _Up>
+        -: 1530:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1531:void
+        -: 1532:vector<_Tp, _Allocator>::__push_back_slow_path(_Up&& __x)
+        -: 1533:{
+        -: 1534:    allocator_type& __a = this->__alloc();
+        -: 1535:    __split_buffer<value_type, allocator_type&> __v(__recommend(size() + 1), size(), __a);
+        -: 1536:    // __v.push_back(_VSTD::forward<_Up>(__x));
+        -: 1537:    __alloc_traits::construct(__a, _VSTD::__to_address(__v.__end_), _VSTD::forward<_Up>(__x));
+        -: 1538:    __v.__end_++;
+        -: 1539:    __swap_out_circular_buffer(__v);
+        -: 1540:}
+        -: 1541:
+        -: 1542:template <class _Tp, class _Allocator>
+        -: 1543:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1544:inline _LIBCPP_INLINE_VISIBILITY
+        -: 1545:void
+        -: 1546:vector<_Tp, _Allocator>::push_back(const_reference __x)
+        -: 1547:{
+        -: 1548:    if (this->__end_ != this->__end_cap())
+        -: 1549:    {
+        -: 1550:        __construct_one_at_end(__x);
+        -: 1551:    }
+        -: 1552:    else
+        -: 1553:        __push_back_slow_path(__x);
+        -: 1554:}
+        -: 1555:
+        -: 1556:template <class _Tp, class _Allocator>
+        -: 1557:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1558:inline _LIBCPP_INLINE_VISIBILITY
+        -: 1559:void
+        -: 1560:vector<_Tp, _Allocator>::push_back(value_type&& __x)
+        -: 1561:{
+        -: 1562:    if (this->__end_ < this->__end_cap())
+        -: 1563:    {
+        -: 1564:        __construct_one_at_end(_VSTD::move(__x));
+        -: 1565:    }
+        -: 1566:    else
+        -: 1567:        __push_back_slow_path(_VSTD::move(__x));
+        -: 1568:}
+        -: 1569:
+        -: 1570:template <class _Tp, class _Allocator>
+        -: 1571:template <class... _Args>
+        -: 1572:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1573:void
+        -: 1574:vector<_Tp, _Allocator>::__emplace_back_slow_path(_Args&&... __args)
+        -: 1575:{
+        -: 1576:    allocator_type& __a = this->__alloc();
+        -: 1577:    __split_buffer<value_type, allocator_type&> __v(__recommend(size() + 1), size(), __a);
+        -: 1578://    __v.emplace_back(_VSTD::forward<_Args>(__args)...);
+        -: 1579:    __alloc_traits::construct(__a, _VSTD::__to_address(__v.__end_), _VSTD::forward<_Args>(__args)...);
+        -: 1580:    __v.__end_++;
+        -: 1581:    __swap_out_circular_buffer(__v);
+        -: 1582:}
+        -: 1583:
+        -: 1584:template <class _Tp, class _Allocator>
+        -: 1585:template <class... _Args>
+        -: 1586:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1587:inline
+        -: 1588:#if _LIBCPP_STD_VER > 14
+        -: 1589:typename vector<_Tp, _Allocator>::reference
+        -: 1590:#else
+        -: 1591:void
+        -: 1592:#endif
+        -: 1593:vector<_Tp, _Allocator>::emplace_back(_Args&&... __args)
+        -: 1594:{
+        -: 1595:    if (this->__end_ < this->__end_cap())
+        -: 1596:    {
+        -: 1597:        __construct_one_at_end(_VSTD::forward<_Args>(__args)...);
+        -: 1598:    }
+        -: 1599:    else
+        -: 1600:        __emplace_back_slow_path(_VSTD::forward<_Args>(__args)...);
+        -: 1601:#if _LIBCPP_STD_VER > 14
+        -: 1602:    return this->back();
+        -: 1603:#endif
+        -: 1604:}
+        -: 1605:
+        -: 1606:template <class _Tp, class _Allocator>
+        -: 1607:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1608:inline
+        -: 1609:void
+        -: 1610:vector<_Tp, _Allocator>::pop_back()
+        -: 1611:{
+        -: 1612:    _LIBCPP_ASSERT(!empty(), "vector::pop_back called on an empty vector");
+        -: 1613:    this->__destruct_at_end(this->__end_ - 1);
+        -: 1614:}
+        -: 1615:
+        -: 1616:template <class _Tp, class _Allocator>
+        -: 1617:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1618:inline _LIBCPP_INLINE_VISIBILITY
+        -: 1619:typename vector<_Tp, _Allocator>::iterator
+        -: 1620:vector<_Tp, _Allocator>::erase(const_iterator __position)
+        -: 1621:{
+        -: 1622:    _LIBCPP_DEBUG_ASSERT(__get_const_db()->__find_c_from_i(_VSTD::addressof(__position)) == this,
+        -: 1623:                         "vector::erase(iterator) called with an iterator not referring to this vector");
+        -: 1624:    _LIBCPP_ASSERT(__position != end(),
+        -: 1625:        "vector::erase(iterator) called with a non-dereferenceable iterator");
+        -: 1626:    difference_type __ps = __position - cbegin();
+        -: 1627:    pointer __p = this->__begin_ + __ps;
+        -: 1628:    this->__destruct_at_end(_VSTD::move(__p + 1, this->__end_, __p));
+        -: 1629:    if (!__libcpp_is_constant_evaluated())
+        -: 1630:        this->__invalidate_iterators_past(__p - 1);
+        -: 1631:    iterator __r = iterator(this, __p);
+        -: 1632:    return __r;
+        -: 1633:}
+        -: 1634:
+        -: 1635:template <class _Tp, class _Allocator>
+        -: 1636:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1637:typename vector<_Tp, _Allocator>::iterator
+        -: 1638:vector<_Tp, _Allocator>::erase(const_iterator __first, const_iterator __last)
+        -: 1639:{
+        -: 1640:    _LIBCPP_DEBUG_ASSERT(__get_const_db()->__find_c_from_i(_VSTD::addressof(__first)) == this,
+        -: 1641:                         "vector::erase(iterator, iterator) called with an iterator not referring to this vector");
+        -: 1642:    _LIBCPP_DEBUG_ASSERT(__get_const_db()->__find_c_from_i(_VSTD::addressof(__last)) == this,
+        -: 1643:                         "vector::erase(iterator, iterator) called with an iterator not referring to this vector");
+        -: 1644:
+        -: 1645:    _LIBCPP_ASSERT(__first <= __last, "vector::erase(first, last) called with invalid range");
+        -: 1646:    pointer __p = this->__begin_ + (__first - begin());
+        -: 1647:    if (__first != __last) {
+        -: 1648:        this->__destruct_at_end(_VSTD::move(__p + (__last - __first), this->__end_, __p));
+        -: 1649:        if (!__libcpp_is_constant_evaluated())
+        -: 1650:            this->__invalidate_iterators_past(__p - 1);
+        -: 1651:    }
+        -: 1652:    iterator __r = iterator(this, __p);
+        -: 1653:    return __r;
+        -: 1654:}
+        -: 1655:
+        -: 1656:template <class _Tp, class _Allocator>
+        -: 1657:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1658:void
+        -: 1659:vector<_Tp, _Allocator>::__move_range(pointer __from_s, pointer __from_e, pointer __to)
+        -: 1660:{
+        -: 1661:    pointer __old_last = this->__end_;
+        -: 1662:    difference_type __n = __old_last - __to;
+        -: 1663:    {
+        -: 1664:      pointer __i = __from_s + __n;
+        -: 1665:      _ConstructTransaction __tx(*this, __from_e - __i);
+        -: 1666:      for (pointer __pos = __tx.__pos_; __i < __from_e;
+        -: 1667:           ++__i, (void) ++__pos, __tx.__pos_ = __pos) {
+        -: 1668:          __alloc_traits::construct(this->__alloc(),
+        -: 1669:                                    _VSTD::__to_address(__pos),
+        -: 1670:                                    _VSTD::move(*__i));
+        -: 1671:      }
+        -: 1672:    }
+        -: 1673:    _VSTD::move_backward(__from_s, __from_s + __n, __old_last);
+        -: 1674:}
+        -: 1675:
+        -: 1676:template <class _Tp, class _Allocator>
+        -: 1677:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1678:typename vector<_Tp, _Allocator>::iterator
+        -: 1679:vector<_Tp, _Allocator>::insert(const_iterator __position, const_reference __x)
+        -: 1680:{
+        -: 1681:    _LIBCPP_DEBUG_ASSERT(__get_const_db()->__find_c_from_i(_VSTD::addressof(__position)) == this,
+        -: 1682:                         "vector::insert(iterator, x) called with an iterator not referring to this vector");
+        -: 1683:    pointer __p = this->__begin_ + (__position - begin());
+        -: 1684:    // We can't compare unrelated pointers inside constant expressions
+        -: 1685:    if (!__libcpp_is_constant_evaluated() && this->__end_ < this->__end_cap())
+        -: 1686:    {
+        -: 1687:        if (__p == this->__end_)
+        -: 1688:        {
+        -: 1689:            __construct_one_at_end(__x);
+        -: 1690:        }
+        -: 1691:        else
+        -: 1692:        {
+        -: 1693:            __move_range(__p, this->__end_, __p + 1);
+        -: 1694:            const_pointer __xr = pointer_traits<const_pointer>::pointer_to(__x);
+        -: 1695:            if (__p <= __xr && __xr < this->__end_)
+        -: 1696:                ++__xr;
+        -: 1697:            *__p = *__xr;
+        -: 1698:        }
+        -: 1699:    }
+        -: 1700:    else
+        -: 1701:    {
+        -: 1702:        allocator_type& __a = this->__alloc();
+        -: 1703:        __split_buffer<value_type, allocator_type&> __v(__recommend(size() + 1), __p - this->__begin_, __a);
+        -: 1704:        __v.push_back(__x);
+        -: 1705:        __p = __swap_out_circular_buffer(__v, __p);
+        -: 1706:    }
+        -: 1707:    return iterator(this, __p);
+        -: 1708:}
+        -: 1709:
+        -: 1710:template <class _Tp, class _Allocator>
+        -: 1711:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1712:typename vector<_Tp, _Allocator>::iterator
+        -: 1713:vector<_Tp, _Allocator>::insert(const_iterator __position, value_type&& __x)
+        -: 1714:{
+        -: 1715:    _LIBCPP_DEBUG_ASSERT(__get_const_db()->__find_c_from_i(_VSTD::addressof(__position)) == this,
+        -: 1716:                         "vector::insert(iterator, x) called with an iterator not referring to this vector");
+        -: 1717:    pointer __p = this->__begin_ + (__position - begin());
+        -: 1718:    if (this->__end_ < this->__end_cap())
+        -: 1719:    {
+        -: 1720:        if (__p == this->__end_)
+        -: 1721:        {
+        -: 1722:            __construct_one_at_end(_VSTD::move(__x));
+        -: 1723:        }
+        -: 1724:        else
+        -: 1725:        {
+        -: 1726:            __move_range(__p, this->__end_, __p + 1);
+        -: 1727:            *__p = _VSTD::move(__x);
+        -: 1728:        }
+        -: 1729:    }
+        -: 1730:    else
+        -: 1731:    {
+        -: 1732:        allocator_type& __a = this->__alloc();
+        -: 1733:        __split_buffer<value_type, allocator_type&> __v(__recommend(size() + 1), __p - this->__begin_, __a);
+        -: 1734:        __v.push_back(_VSTD::move(__x));
+        -: 1735:        __p = __swap_out_circular_buffer(__v, __p);
+        -: 1736:    }
+        -: 1737:    return iterator(this, __p);
+        -: 1738:}
+        -: 1739:
+        -: 1740:template <class _Tp, class _Allocator>
+        -: 1741:template <class... _Args>
+        -: 1742:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1743:typename vector<_Tp, _Allocator>::iterator
+        -: 1744:vector<_Tp, _Allocator>::emplace(const_iterator __position, _Args&&... __args)
+        -: 1745:{
+        -: 1746:    _LIBCPP_DEBUG_ASSERT(__get_const_db()->__find_c_from_i(_VSTD::addressof(__position)) == this,
+        -: 1747:                         "vector::emplace(iterator, x) called with an iterator not referring to this vector");
+        -: 1748:    pointer __p = this->__begin_ + (__position - begin());
+        -: 1749:    if (this->__end_ < this->__end_cap())
+        -: 1750:    {
+        -: 1751:        if (__p == this->__end_)
+        -: 1752:        {
+        -: 1753:            __construct_one_at_end(_VSTD::forward<_Args>(__args)...);
+        -: 1754:        }
+        -: 1755:        else
+        -: 1756:        {
+        -: 1757:            __temp_value<value_type, _Allocator> __tmp(this->__alloc(), _VSTD::forward<_Args>(__args)...);
+        -: 1758:            __move_range(__p, this->__end_, __p + 1);
+        -: 1759:            *__p = _VSTD::move(__tmp.get());
+        -: 1760:        }
+        -: 1761:    }
+        -: 1762:    else
+        -: 1763:    {
+        -: 1764:        allocator_type& __a = this->__alloc();
+        -: 1765:        __split_buffer<value_type, allocator_type&> __v(__recommend(size() + 1), __p - this->__begin_, __a);
+        -: 1766:        __v.emplace_back(_VSTD::forward<_Args>(__args)...);
+        -: 1767:        __p = __swap_out_circular_buffer(__v, __p);
+        -: 1768:    }
+        -: 1769:    return iterator(this, __p);
+        -: 1770:}
+        -: 1771:
+        -: 1772:template <class _Tp, class _Allocator>
+        -: 1773:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1774:typename vector<_Tp, _Allocator>::iterator
+        -: 1775:vector<_Tp, _Allocator>::insert(const_iterator __position, size_type __n, const_reference __x)
+        -: 1776:{
+        -: 1777:    _LIBCPP_DEBUG_ASSERT(__get_const_db()->__find_c_from_i(_VSTD::addressof(__position)) == this,
+        -: 1778:                         "vector::insert(iterator, n, x) called with an iterator not referring to this vector");
+        -: 1779:    pointer __p = this->__begin_ + (__position - begin());
+        -: 1780:    if (__n > 0)
+        -: 1781:    {
+        -: 1782:        // We can't compare unrelated pointers inside constant expressions
+        -: 1783:        if (!__libcpp_is_constant_evaluated() && __n <= static_cast<size_type>(this->__end_cap() - this->__end_))
+        -: 1784:        {
+        -: 1785:            size_type __old_n = __n;
+        -: 1786:            pointer __old_last = this->__end_;
+        -: 1787:            if (__n > static_cast<size_type>(this->__end_ - __p))
+        -: 1788:            {
+        -: 1789:                size_type __cx = __n - (this->__end_ - __p);
+        -: 1790:                __construct_at_end(__cx, __x);
+        -: 1791:                __n -= __cx;
+        -: 1792:            }
+        -: 1793:            if (__n > 0)
+        -: 1794:            {
+        -: 1795:                __move_range(__p, __old_last, __p + __old_n);
+        -: 1796:                const_pointer __xr = pointer_traits<const_pointer>::pointer_to(__x);
+        -: 1797:                if (__p <= __xr && __xr < this->__end_)
+        -: 1798:                    __xr += __old_n;
+        -: 1799:                _VSTD::fill_n(__p, __n, *__xr);
+        -: 1800:            }
+        -: 1801:        }
+        -: 1802:        else
+        -: 1803:        {
+        -: 1804:            allocator_type& __a = this->__alloc();
+        -: 1805:            __split_buffer<value_type, allocator_type&> __v(__recommend(size() + __n), __p - this->__begin_, __a);
+        -: 1806:            __v.__construct_at_end(__n, __x);
+        -: 1807:            __p = __swap_out_circular_buffer(__v, __p);
+        -: 1808:        }
+        -: 1809:    }
+        -: 1810:    return iterator(this, __p);
+        -: 1811:}
+        -: 1812:
+        -: 1813:template <class _Tp, class _Allocator>
+        -: 1814:template <class _InputIterator>
+        -: 1815:_LIBCPP_CONSTEXPR_AFTER_CXX17 typename enable_if <__is_exactly_cpp17_input_iterator<_InputIterator>::value &&
+        -: 1816:    is_constructible<
+        -: 1817:       _Tp,
+        -: 1818:       typename iterator_traits<_InputIterator>::reference>::value,
+        -: 1819:    typename vector<_Tp, _Allocator>::iterator
+        -: 1820:>::type
+        -: 1821:vector<_Tp, _Allocator>::insert(const_iterator __position, _InputIterator __first, _InputIterator __last)
+        -: 1822:{
+        -: 1823:    _LIBCPP_DEBUG_ASSERT(__get_const_db()->__find_c_from_i(_VSTD::addressof(__position)) == this,
+        -: 1824:                         "vector::insert(iterator, range) called with an iterator not referring to this vector");
+        -: 1825:    difference_type __off = __position - begin();
+        -: 1826:    pointer __p = this->__begin_ + __off;
+        -: 1827:    allocator_type& __a = this->__alloc();
+        -: 1828:    pointer __old_last = this->__end_;
+        -: 1829:    for (; this->__end_ != this->__end_cap() && __first != __last; ++__first)
+        -: 1830:    {
+        -: 1831:        __construct_one_at_end(*__first);
+        -: 1832:    }
+        -: 1833:    __split_buffer<value_type, allocator_type&> __v(__a);
+        -: 1834:    if (__first != __last)
+        -: 1835:    {
+        -: 1836:#ifndef _LIBCPP_NO_EXCEPTIONS
+        -: 1837:        try
+        -: 1838:        {
+        -: 1839:#endif // _LIBCPP_NO_EXCEPTIONS
+        -: 1840:            __v.__construct_at_end(__first, __last);
+        -: 1841:            difference_type __old_size = __old_last - this->__begin_;
+        -: 1842:            difference_type __old_p = __p - this->__begin_;
+        -: 1843:            reserve(__recommend(size() + __v.size()));
+        -: 1844:            __p = this->__begin_ + __old_p;
+        -: 1845:            __old_last = this->__begin_ + __old_size;
+        -: 1846:#ifndef _LIBCPP_NO_EXCEPTIONS
+        -: 1847:        }
+        -: 1848:        catch (...)
+        -: 1849:        {
+        -: 1850:            erase(iterator(this, __old_last), end());
+        -: 1851:            throw;
+        -: 1852:        }
+        -: 1853:#endif // _LIBCPP_NO_EXCEPTIONS
+        -: 1854:    }
+        -: 1855:    __p = _VSTD::rotate(__p, __old_last, this->__end_);
+        -: 1856:    insert(iterator(this, __p), _VSTD::make_move_iterator(__v.begin()),
+        -: 1857:                                _VSTD::make_move_iterator(__v.end()));
+        -: 1858:    return begin() + __off;
+        -: 1859:}
+        -: 1860:
+        -: 1861:template <class _Tp, class _Allocator>
+        -: 1862:template <class _ForwardIterator>
+        -: 1863:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1864:typename enable_if
+        -: 1865:<
+        -: 1866:    __is_cpp17_forward_iterator<_ForwardIterator>::value &&
+        -: 1867:    is_constructible<
+        -: 1868:       _Tp,
+        -: 1869:       typename iterator_traits<_ForwardIterator>::reference>::value,
+        -: 1870:    typename vector<_Tp, _Allocator>::iterator
+        -: 1871:>::type
+        -: 1872:vector<_Tp, _Allocator>::insert(const_iterator __position, _ForwardIterator __first, _ForwardIterator __last)
+        -: 1873:{
+        -: 1874:    _LIBCPP_DEBUG_ASSERT(__get_const_db()->__find_c_from_i(_VSTD::addressof(__position)) == this,
+        -: 1875:                         "vector::insert(iterator, range) called with an iterator not referring to this vector");
+        -: 1876:    pointer __p = this->__begin_ + (__position - begin());
+        -: 1877:    difference_type __n = _VSTD::distance(__first, __last);
+        -: 1878:    if (__n > 0)
+        -: 1879:    {
+        -: 1880:        if (__n <= this->__end_cap() - this->__end_)
+        -: 1881:        {
+        -: 1882:            size_type __old_n = __n;
+        -: 1883:            pointer __old_last = this->__end_;
+        -: 1884:            _ForwardIterator __m = __last;
+        -: 1885:            difference_type __dx = this->__end_ - __p;
+        -: 1886:            if (__n > __dx)
+        -: 1887:            {
+        -: 1888:                __m = __first;
+        -: 1889:                difference_type __diff = this->__end_ - __p;
+        -: 1890:                _VSTD::advance(__m, __diff);
+        -: 1891:                __construct_at_end(__m, __last, __n - __diff);
+        -: 1892:                __n = __dx;
+        -: 1893:            }
+        -: 1894:            if (__n > 0)
+        -: 1895:            {
+        -: 1896:                __move_range(__p, __old_last, __p + __old_n);
+        -: 1897:                _VSTD::copy(__first, __m, __p);
+        -: 1898:            }
+        -: 1899:        }
+        -: 1900:        else
+        -: 1901:        {
+        -: 1902:            allocator_type& __a = this->__alloc();
+        -: 1903:            __split_buffer<value_type, allocator_type&> __v(__recommend(size() + __n), __p - this->__begin_, __a);
+        -: 1904:            __v.__construct_at_end(__first, __last);
+        -: 1905:            __p = __swap_out_circular_buffer(__v, __p);
+        -: 1906:        }
+        -: 1907:    }
+        -: 1908:    return iterator(this, __p);
+        -: 1909:}
+        -: 1910:
+        -: 1911:template <class _Tp, class _Allocator>
+        -: 1912:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1913:void
+        -: 1914:vector<_Tp, _Allocator>::resize(size_type __sz)
+        -: 1915:{
+        -: 1916:    size_type __cs = size();
+        -: 1917:    if (__cs < __sz)
+        -: 1918:        this->__append(__sz - __cs);
+        -: 1919:    else if (__cs > __sz)
+        -: 1920:        this->__destruct_at_end(this->__begin_ + __sz);
+        -: 1921:}
+        -: 1922:
+        -: 1923:template <class _Tp, class _Allocator>
+        -: 1924:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1925:void
+        -: 1926:vector<_Tp, _Allocator>::resize(size_type __sz, const_reference __x)
+        -: 1927:{
+        -: 1928:    size_type __cs = size();
+        -: 1929:    if (__cs < __sz)
+        -: 1930:        this->__append(__sz - __cs, __x);
+        -: 1931:    else if (__cs > __sz)
+        -: 1932:        this->__destruct_at_end(this->__begin_ + __sz);
+        -: 1933:}
+        -: 1934:
+        -: 1935:template <class _Tp, class _Allocator>
+        -: 1936:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1937:void
+        -: 1938:vector<_Tp, _Allocator>::swap(vector& __x)
+        -: 1939:#if _LIBCPP_STD_VER >= 14
+        -: 1940:    _NOEXCEPT
+        -: 1941:#else
+        -: 1942:    _NOEXCEPT_(!__alloc_traits::propagate_on_container_swap::value ||
+        -: 1943:                __is_nothrow_swappable<allocator_type>::value)
+        -: 1944:#endif
+        -: 1945:{
+        -: 1946:    _LIBCPP_ASSERT(__alloc_traits::propagate_on_container_swap::value ||
+        -: 1947:                   this->__alloc() == __x.__alloc(),
+        -: 1948:                   "vector::swap: Either propagate_on_container_swap must be true"
+        -: 1949:                   " or the allocators must compare equal");
+        -: 1950:    _VSTD::swap(this->__begin_, __x.__begin_);
+        -: 1951:    _VSTD::swap(this->__end_, __x.__end_);
+        -: 1952:    _VSTD::swap(this->__end_cap(), __x.__end_cap());
+        -: 1953:    _VSTD::__swap_allocator(this->__alloc(), __x.__alloc(),
+        -: 1954:        integral_constant<bool,__alloc_traits::propagate_on_container_swap::value>());
+        -: 1955:    std::__debug_db_swap(this, std::addressof(__x));
+        -: 1956:}
+        -: 1957:
+        -: 1958:template <class _Tp, class _Allocator>
+        -: 1959:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 1960:bool
+        -: 1961:vector<_Tp, _Allocator>::__invariants() const
+        -: 1962:{
+        -: 1963:    if (this->__begin_ == nullptr)
+        -: 1964:    {
+        -: 1965:        if (this->__end_ != nullptr || this->__end_cap() != nullptr)
+        -: 1966:            return false;
+        -: 1967:    }
+        -: 1968:    else
+        -: 1969:    {
+        -: 1970:        if (this->__begin_ > this->__end_)
+        -: 1971:            return false;
+        -: 1972:        if (this->__begin_ == this->__end_cap())
+        -: 1973:            return false;
+        -: 1974:        if (this->__end_ > this->__end_cap())
+        -: 1975:            return false;
+        -: 1976:    }
+        -: 1977:    return true;
+        -: 1978:}
+        -: 1979:
+        -: 1980:#ifdef _LIBCPP_ENABLE_DEBUG_MODE
+        -: 1981:
+        -: 1982:template <class _Tp, class _Allocator>
+        -: 1983:bool
+        -: 1984:vector<_Tp, _Allocator>::__dereferenceable(const const_iterator* __i) const
+        -: 1985:{
+        -: 1986:    return this->__begin_ <= __i->base() && __i->base() < this->__end_;
+        -: 1987:}
+        -: 1988:
+        -: 1989:template <class _Tp, class _Allocator>
+        -: 1990:bool
+        -: 1991:vector<_Tp, _Allocator>::__decrementable(const const_iterator* __i) const
+        -: 1992:{
+        -: 1993:    return this->__begin_ < __i->base() && __i->base() <= this->__end_;
+        -: 1994:}
+        -: 1995:
+        -: 1996:template <class _Tp, class _Allocator>
+        -: 1997:bool
+        -: 1998:vector<_Tp, _Allocator>::__addable(const const_iterator* __i, ptrdiff_t __n) const
+        -: 1999:{
+        -: 2000:    const_pointer __p = __i->base() + __n;
+        -: 2001:    return this->__begin_ <= __p && __p <= this->__end_;
+        -: 2002:}
+        -: 2003:
+        -: 2004:template <class _Tp, class _Allocator>
+        -: 2005:bool
+        -: 2006:vector<_Tp, _Allocator>::__subscriptable(const const_iterator* __i, ptrdiff_t __n) const
+        -: 2007:{
+        -: 2008:    const_pointer __p = __i->base() + __n;
+        -: 2009:    return this->__begin_ <= __p && __p < this->__end_;
+        -: 2010:}
+        -: 2011:
+        -: 2012:#endif // _LIBCPP_ENABLE_DEBUG_MODE
+        -: 2013:
+        -: 2014:template <class _Tp, class _Allocator>
+        -: 2015:inline _LIBCPP_INLINE_VISIBILITY
+        -: 2016:void
+        -: 2017:vector<_Tp, _Allocator>::__invalidate_iterators_past(pointer __new_last) {
+        -: 2018:#ifdef _LIBCPP_ENABLE_DEBUG_MODE
+        -: 2019:  __c_node* __c = __get_db()->__find_c_and_lock(this);
+        -: 2020:  for (__i_node** __p = __c->end_; __p != __c->beg_; ) {
+        -: 2021:    --__p;
+        -: 2022:    const_iterator* __i = static_cast<const_iterator*>((*__p)->__i_);
+        -: 2023:    if (__i->base() > __new_last) {
+        -: 2024:      (*__p)->__c_ = nullptr;
+        -: 2025:      if (--__c->end_ != __p)
+        -: 2026:        _VSTD::memmove(__p, __p+1, (__c->end_ - __p)*sizeof(__i_node*));
+        -: 2027:    }
+        -: 2028:  }
+        -: 2029:  __get_db()->unlock();
+        -: 2030:#else
+        -: 2031:  ((void)__new_last);
+        -: 2032:#endif
+        -: 2033:}
+        -: 2034:
+        -: 2035:// vector<bool>
+        -: 2036:
+        -: 2037:template <class _Allocator> class vector<bool, _Allocator>;
+        -: 2038:
+        -: 2039:template <class _Allocator> struct hash<vector<bool, _Allocator> >;
+        -: 2040:
+        -: 2041:template <class _Allocator>
+        -: 2042:struct __has_storage_type<vector<bool, _Allocator> >
+        -: 2043:{
+        -: 2044:    static const bool value = true;
+        -: 2045:};
+        -: 2046:
+        -: 2047:template <class _Allocator>
+        -: 2048:class _LIBCPP_TEMPLATE_VIS vector<bool, _Allocator>
+        -: 2049:{
+        -: 2050:public:
+        -: 2051:    typedef vector                                   __self;
+        -: 2052:    typedef bool                                     value_type;
+        -: 2053:    typedef _Allocator                               allocator_type;
+        -: 2054:    typedef allocator_traits<allocator_type>         __alloc_traits;
+        -: 2055:    typedef typename __alloc_traits::size_type       size_type;
+        -: 2056:    typedef typename __alloc_traits::difference_type difference_type;
+        -: 2057:    typedef size_type __storage_type;
+        -: 2058:    typedef __bit_iterator<vector, false>            pointer;
+        -: 2059:    typedef __bit_iterator<vector, true>             const_pointer;
+        -: 2060:    typedef pointer                                  iterator;
+        -: 2061:    typedef const_pointer                            const_iterator;
+        -: 2062:    typedef _VSTD::reverse_iterator<iterator>         reverse_iterator;
+        -: 2063:    typedef _VSTD::reverse_iterator<const_iterator>   const_reverse_iterator;
+        -: 2064:
+        -: 2065:private:
+        -: 2066:    typedef typename __rebind_alloc_helper<__alloc_traits, __storage_type>::type __storage_allocator;
+        -: 2067:    typedef allocator_traits<__storage_allocator>    __storage_traits;
+        -: 2068:    typedef typename __storage_traits::pointer       __storage_pointer;
+        -: 2069:    typedef typename __storage_traits::const_pointer __const_storage_pointer;
+        -: 2070:
+        -: 2071:    __storage_pointer                                      __begin_;
+        -: 2072:    size_type                                              __size_;
+        -: 2073:    __compressed_pair<size_type, __storage_allocator> __cap_alloc_;
+        -: 2074:public:
+        -: 2075:    typedef __bit_reference<vector>                  reference;
+        -: 2076:#ifdef _LIBCPP_ABI_BITSET_VECTOR_BOOL_CONST_SUBSCRIPT_RETURN_BOOL
+        -: 2077:    using const_reference = bool;
+        -: 2078:#else
+        -: 2079:    typedef __bit_const_reference<vector>            const_reference;
+        -: 2080:#endif
+        -: 2081:private:
+        -: 2082:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2083:    size_type& __cap() _NOEXCEPT
+        -: 2084:        {return __cap_alloc_.first();}
+        -: 2085:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2086:    const size_type& __cap() const _NOEXCEPT
+        -: 2087:        {return __cap_alloc_.first();}
+        -: 2088:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2089:    __storage_allocator& __alloc() _NOEXCEPT
+        -: 2090:        {return __cap_alloc_.second();}
+        -: 2091:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2092:    const __storage_allocator& __alloc() const _NOEXCEPT
+        -: 2093:        {return __cap_alloc_.second();}
+        -: 2094:
+        -: 2095:    static const unsigned __bits_per_word = static_cast<unsigned>(sizeof(__storage_type) * CHAR_BIT);
+        -: 2096:
+        -: 2097:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2098:    static size_type __internal_cap_to_external(size_type __n) _NOEXCEPT
+        -: 2099:        {return __n * __bits_per_word;}
+        -: 2100:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2101:    static size_type __external_cap_to_internal(size_type __n) _NOEXCEPT
+        -: 2102:        {return (__n - 1) / __bits_per_word + 1;}
+        -: 2103:
+        -: 2104:public:
+        -: 2105:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2106:    vector() _NOEXCEPT_(is_nothrow_default_constructible<allocator_type>::value);
+        -: 2107:
+        -: 2108:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17 explicit vector(const allocator_type& __a)
+        -: 2109:#if _LIBCPP_STD_VER <= 14
+        -: 2110:        _NOEXCEPT_(is_nothrow_copy_constructible<allocator_type>::value);
+        -: 2111:#else
+        -: 2112:        _NOEXCEPT;
+        -: 2113:#endif
+        -: 2114:    _LIBCPP_CONSTEXPR_AFTER_CXX17 ~vector();
+        -: 2115:    _LIBCPP_CONSTEXPR_AFTER_CXX17 explicit vector(size_type __n);
+        -: 2116:#if _LIBCPP_STD_VER > 11
+        -: 2117:    _LIBCPP_CONSTEXPR_AFTER_CXX17 explicit vector(size_type __n, const allocator_type& __a);
+        -: 2118:#endif
+        -: 2119:    _LIBCPP_CONSTEXPR_AFTER_CXX17 vector(size_type __n, const value_type& __v);
+        -: 2120:    _LIBCPP_CONSTEXPR_AFTER_CXX17 vector(size_type __n, const value_type& __v, const allocator_type& __a);
+        -: 2121:    template <class _InputIterator>
+        -: 2122:    _LIBCPP_CONSTEXPR_AFTER_CXX17 vector(_InputIterator __first, _InputIterator __last,
+        -: 2123:               typename enable_if<__is_exactly_cpp17_input_iterator<_InputIterator>::value>::type* = 0);
+        -: 2124:    template <class _InputIterator>
+        -: 2125:    _LIBCPP_CONSTEXPR_AFTER_CXX17 vector(_InputIterator __first, _InputIterator __last, const allocator_type& __a,
+        -: 2126:               typename enable_if<__is_exactly_cpp17_input_iterator<_InputIterator>::value>::type* = 0);
+        -: 2127:    template <class _ForwardIterator>
+        -: 2128:    _LIBCPP_CONSTEXPR_AFTER_CXX17 vector(_ForwardIterator __first, _ForwardIterator __last,
+        -: 2129:               typename enable_if<__is_cpp17_forward_iterator<_ForwardIterator>::value>::type* = 0);
+        -: 2130:    template <class _ForwardIterator>
+        -: 2131:    _LIBCPP_CONSTEXPR_AFTER_CXX17 vector(_ForwardIterator __first, _ForwardIterator __last, const allocator_type& __a,
+        -: 2132:               typename enable_if<__is_cpp17_forward_iterator<_ForwardIterator>::value>::type* = 0);
+        -: 2133:
+        -: 2134:    _LIBCPP_CONSTEXPR_AFTER_CXX17 vector(const vector& __v);
+        -: 2135:    _LIBCPP_CONSTEXPR_AFTER_CXX17 vector(const vector& __v, const allocator_type& __a);
+        -: 2136:    _LIBCPP_CONSTEXPR_AFTER_CXX17 vector& operator=(const vector& __v);
+        -: 2137:
+        -: 2138:#ifndef _LIBCPP_CXX03_LANG
+        -: 2139:    _LIBCPP_CONSTEXPR_AFTER_CXX17 vector(initializer_list<value_type> __il);
+        -: 2140:    _LIBCPP_CONSTEXPR_AFTER_CXX17 vector(initializer_list<value_type> __il, const allocator_type& __a);
+        -: 2141:
+        -: 2142:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2143:    vector& operator=(initializer_list<value_type> __il)
+        -: 2144:        {assign(__il.begin(), __il.end()); return *this;}
+        -: 2145:
+        -: 2146:#endif // !_LIBCPP_CXX03_LANG
+        -: 2147:
+        -: 2148:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2149:    vector(vector&& __v)
+        -: 2150:#if _LIBCPP_STD_VER > 14
+        -: 2151:        noexcept;
+        -: 2152:#else
+        -: 2153:        _NOEXCEPT_(is_nothrow_move_constructible<allocator_type>::value);
+        -: 2154:#endif
+        -: 2155:    _LIBCPP_CONSTEXPR_AFTER_CXX17 vector(vector&& __v, const __type_identity_t<allocator_type>& __a);
+        -: 2156:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2157:    vector& operator=(vector&& __v)
+        -: 2158:        _NOEXCEPT_((__noexcept_move_assign_container<_Allocator, __alloc_traits>::value));
+        -: 2159:
+        -: 2160:    template <class _InputIterator>
+        -: 2161:        typename enable_if <__is_exactly_cpp17_input_iterator<_InputIterator>::value,
+        -: 2162:           void
+        -: 2163:        >::type
+        -: 2164:    _LIBCPP_CONSTEXPR_AFTER_CXX17 assign(_InputIterator __first, _InputIterator __last);
+        -: 2165:    template <class _ForwardIterator>
+        -: 2166:        typename enable_if
+        -: 2167:        <
+        -: 2168:            __is_cpp17_forward_iterator<_ForwardIterator>::value,
+        -: 2169:           void
+        -: 2170:        >::type
+        -: 2171:    _LIBCPP_CONSTEXPR_AFTER_CXX17 assign(_ForwardIterator __first, _ForwardIterator __last);
+        -: 2172:
+        -: 2173:    _LIBCPP_CONSTEXPR_AFTER_CXX17 void assign(size_type __n, const value_type& __x);
+        -: 2174:
+        -: 2175:#ifndef _LIBCPP_CXX03_LANG
+        -: 2176:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2177:    void assign(initializer_list<value_type> __il)
+        -: 2178:        {assign(__il.begin(), __il.end());}
+        -: 2179:#endif
+        -: 2180:
+        -: 2181:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17 allocator_type get_allocator() const _NOEXCEPT
+        -: 2182:        {return allocator_type(this->__alloc());}
+        -: 2183:
+        -: 2184:    _LIBCPP_CONSTEXPR_AFTER_CXX17 size_type max_size() const _NOEXCEPT;
+        -: 2185:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2186:    size_type capacity() const _NOEXCEPT
+        -: 2187:        {return __internal_cap_to_external(__cap());}
+        -: 2188:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2189:    size_type size() const _NOEXCEPT
+        -: 2190:        {return __size_;}
+        -: 2191:    _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2192:    bool empty() const _NOEXCEPT
+        -: 2193:        {return __size_ == 0;}
+        -: 2194:    _LIBCPP_CONSTEXPR_AFTER_CXX17 void reserve(size_type __n);
+        -: 2195:    _LIBCPP_CONSTEXPR_AFTER_CXX17 void shrink_to_fit() _NOEXCEPT;
+        -: 2196:
+        -: 2197:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2198:    iterator begin() _NOEXCEPT
+        -: 2199:        {return __make_iter(0);}
+        -: 2200:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2201:    const_iterator begin() const _NOEXCEPT
+        -: 2202:        {return __make_iter(0);}
+        -: 2203:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2204:    iterator end() _NOEXCEPT
+        -: 2205:        {return __make_iter(__size_);}
+        -: 2206:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2207:    const_iterator end()   const _NOEXCEPT
+        -: 2208:        {return __make_iter(__size_);}
+        -: 2209:
+        -: 2210:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2211:    reverse_iterator rbegin() _NOEXCEPT
+        -: 2212:        {return       reverse_iterator(end());}
+        -: 2213:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2214:    const_reverse_iterator rbegin() const _NOEXCEPT
+        -: 2215:        {return const_reverse_iterator(end());}
+        -: 2216:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2217:    reverse_iterator rend() _NOEXCEPT
+        -: 2218:        {return       reverse_iterator(begin());}
+        -: 2219:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2220:    const_reverse_iterator rend()   const _NOEXCEPT
+        -: 2221:        {return const_reverse_iterator(begin());}
+        -: 2222:
+        -: 2223:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2224:    const_iterator         cbegin()  const _NOEXCEPT
+        -: 2225:        {return __make_iter(0);}
+        -: 2226:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2227:    const_iterator         cend()    const _NOEXCEPT
+        -: 2228:        {return __make_iter(__size_);}
+        -: 2229:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2230:    const_reverse_iterator crbegin() const _NOEXCEPT
+        -: 2231:        {return rbegin();}
+        -: 2232:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2233:    const_reverse_iterator crend()   const _NOEXCEPT
+        -: 2234:        {return rend();}
+        -: 2235:
+        -: 2236:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17 reference       operator[](size_type __n)       {return __make_ref(__n);}
+        -: 2237:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17 const_reference operator[](size_type __n) const {return __make_ref(__n);}
+        -: 2238:    reference       at(size_type __n);
+        -: 2239:    const_reference at(size_type __n) const;
+        -: 2240:
+        -: 2241:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17 reference       front()       {return __make_ref(0);}
+        -: 2242:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17 const_reference front() const {return __make_ref(0);}
+        -: 2243:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17 reference       back()        {return __make_ref(__size_ - 1);}
+        -: 2244:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17 const_reference back()  const {return __make_ref(__size_ - 1);}
+        -: 2245:
+        -: 2246:    _LIBCPP_CONSTEXPR_AFTER_CXX17 void push_back(const value_type& __x);
+        -: 2247:#if _LIBCPP_STD_VER > 11
+        -: 2248:    template <class... _Args>
+        -: 2249:#if _LIBCPP_STD_VER > 14
+        -: 2250:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17 reference emplace_back(_Args&&... __args)
+        -: 2251:#else
+        -: 2252:    _LIBCPP_INLINE_VISIBILITY void      emplace_back(_Args&&... __args)
+        -: 2253:#endif
+        -: 2254:    {
+        -: 2255:        push_back ( value_type ( _VSTD::forward<_Args>(__args)... ));
+        -: 2256:#if _LIBCPP_STD_VER > 14
+        -: 2257:        return this->back();
+        -: 2258:#endif
+        -: 2259:    }
+        -: 2260:#endif
+        -: 2261:
+        -: 2262:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17 void pop_back() {--__size_;}
+        -: 2263:
+        -: 2264:#if _LIBCPP_STD_VER > 11
+        -: 2265:    template <class... _Args>
+        -: 2266:   _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17 iterator emplace(const_iterator __position, _Args&&... __args)
+        -: 2267:        { return insert ( __position, value_type ( _VSTD::forward<_Args>(__args)... )); }
+        -: 2268:#endif
+        -: 2269:
+        -: 2270:    _LIBCPP_CONSTEXPR_AFTER_CXX17 iterator insert(const_iterator __position, const value_type& __x);
+        -: 2271:    _LIBCPP_CONSTEXPR_AFTER_CXX17 iterator insert(const_iterator __position, size_type __n, const value_type& __x);
+        -: 2272:    template <class _InputIterator>
+        -: 2273:        typename enable_if <__is_exactly_cpp17_input_iterator<_InputIterator>::value,
+        -: 2274:            iterator
+        -: 2275:        >::type
+        -: 2276:        _LIBCPP_CONSTEXPR_AFTER_CXX17 insert(const_iterator __position, _InputIterator __first, _InputIterator __last);
+        -: 2277:    template <class _ForwardIterator>
+        -: 2278:        typename enable_if
+        -: 2279:        <
+        -: 2280:            __is_cpp17_forward_iterator<_ForwardIterator>::value,
+        -: 2281:            iterator
+        -: 2282:        >::type
+        -: 2283:        _LIBCPP_CONSTEXPR_AFTER_CXX17 insert(const_iterator __position, _ForwardIterator __first, _ForwardIterator __last);
+        -: 2284:
+        -: 2285:#ifndef _LIBCPP_CXX03_LANG
+        -: 2286:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2287:    iterator insert(const_iterator __position, initializer_list<value_type> __il)
+        -: 2288:        {return insert(__position, __il.begin(), __il.end());}
+        -: 2289:#endif
+        -: 2290:
+        -: 2291:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17 iterator erase(const_iterator __position);
+        -: 2292:    _LIBCPP_CONSTEXPR_AFTER_CXX17 iterator erase(const_iterator __first, const_iterator __last);
+        -: 2293:
+        -: 2294:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2295:    void clear() _NOEXCEPT {__size_ = 0;}
+        -: 2296:
+        -: 2297:    _LIBCPP_CONSTEXPR_AFTER_CXX17 void swap(vector&)
+        -: 2298:#if _LIBCPP_STD_VER >= 14
+        -: 2299:        _NOEXCEPT;
+        -: 2300:#else
+        -: 2301:        _NOEXCEPT_(!__alloc_traits::propagate_on_container_swap::value ||
+        -: 2302:                    __is_nothrow_swappable<allocator_type>::value);
+        -: 2303:#endif
+        -: 2304:    _LIBCPP_CONSTEXPR_AFTER_CXX17 static void swap(reference __x, reference __y) _NOEXCEPT { _VSTD::swap(__x, __y); }
+        -: 2305:
+        -: 2306:    _LIBCPP_CONSTEXPR_AFTER_CXX17 void resize(size_type __sz, value_type __x = false);
+        -: 2307:    _LIBCPP_CONSTEXPR_AFTER_CXX17 void flip() _NOEXCEPT;
+        -: 2308:
+        -: 2309:    _LIBCPP_CONSTEXPR_AFTER_CXX17 bool __invariants() const;
+        -: 2310:
+        -: 2311:private:
+        -: 2312:    _LIBCPP_NORETURN _LIBCPP_HIDE_FROM_ABI
+        -: 2313:    void __throw_length_error() const {
+        -: 2314:        _VSTD::__throw_length_error("vector");
+        -: 2315:    }
+        -: 2316:
+        -: 2317:    _LIBCPP_NORETURN _LIBCPP_HIDE_FROM_ABI
+        -: 2318:    void __throw_out_of_range() const {
+        -: 2319:        _VSTD::__throw_out_of_range("vector");
+        -: 2320:    }
+        -: 2321:
+        -: 2322:    //  Allocate space for __n objects
+        -: 2323:    //  throws length_error if __n > max_size()
+        -: 2324:    //  throws (probably bad_alloc) if memory run out
+        -: 2325:    //  Precondition:  __begin_ == __end_ == __cap() == 0
+        -: 2326:    //  Precondition:  __n > 0
+        -: 2327:    //  Postcondition:  capacity() >= __n
+        -: 2328:    //  Postcondition:  size() == 0
+        -: 2329:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17 void __vallocate(size_type __n) {
+        -: 2330:        if (__n > max_size())
+        -: 2331:            __throw_length_error();
+        -: 2332:        auto __allocation = std::__allocate_at_least(__alloc(), __external_cap_to_internal(__n));
+        -: 2333:        __begin_ = __allocation.ptr;
+        -: 2334:        __size_ = 0;
+        -: 2335:        __cap() = __allocation.count;
+        -: 2336:        if (__libcpp_is_constant_evaluated()) {
+        -: 2337:            for (size_type __i = 0; __i != __cap(); ++__i)
+        -: 2338:                std::__construct_at(std::__to_address(__begin_) + __i);
+        -: 2339:        }
+        -: 2340:    }
+        -: 2341:
+        -: 2342:    _LIBCPP_CONSTEXPR_AFTER_CXX17 void __vdeallocate() _NOEXCEPT;
+        -: 2343:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2344:    static size_type __align_it(size_type __new_size) _NOEXCEPT
+        -: 2345:        {return (__new_size + (__bits_per_word-1)) & ~((size_type)__bits_per_word-1);}
+        -: 2346:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17  size_type __recommend(size_type __new_size) const;
+        -: 2347:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17 void __construct_at_end(size_type __n, bool __x);
+        -: 2348:    template <class _ForwardIterator>
+        -: 2349:        typename enable_if
+        -: 2350:        <
+        -: 2351:            __is_cpp17_forward_iterator<_ForwardIterator>::value,
+        -: 2352:            void
+        -: 2353:        >::type
+        -: 2354:        _LIBCPP_CONSTEXPR_AFTER_CXX17 __construct_at_end(_ForwardIterator __first, _ForwardIterator __last);
+        -: 2355:    _LIBCPP_CONSTEXPR_AFTER_CXX17 void __append(size_type __n, const_reference __x);
+        -: 2356:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2357:    reference __make_ref(size_type __pos) _NOEXCEPT
+        -: 2358:        {return reference(__begin_ + __pos / __bits_per_word, __storage_type(1) << __pos % __bits_per_word);}
+        -: 2359:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2360:    const_reference __make_ref(size_type __pos) const _NOEXCEPT {
+        -: 2361:        return __bit_const_reference<vector>(__begin_ + __pos / __bits_per_word,
+        -: 2362:                                             __storage_type(1) << __pos % __bits_per_word);
+        -: 2363:    }
+        -: 2364:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2365:    iterator __make_iter(size_type __pos) _NOEXCEPT
+        -: 2366:        {return iterator(__begin_ + __pos / __bits_per_word, static_cast<unsigned>(__pos % __bits_per_word));}
+        -: 2367:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2368:    const_iterator __make_iter(size_type __pos) const _NOEXCEPT
+        -: 2369:        {return const_iterator(__begin_ + __pos / __bits_per_word, static_cast<unsigned>(__pos % __bits_per_word));}
+        -: 2370:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2371:    iterator __const_iterator_cast(const_iterator __p) _NOEXCEPT
+        -: 2372:        {return begin() + (__p - cbegin());}
+        -: 2373:
+        -: 2374:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2375:    void __copy_assign_alloc(const vector& __v)
+        -: 2376:        {__copy_assign_alloc(__v, integral_constant<bool,
+        -: 2377:                      __storage_traits::propagate_on_container_copy_assignment::value>());}
+        -: 2378:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2379:    void __copy_assign_alloc(const vector& __c, true_type)
+        -: 2380:        {
+        -: 2381:            if (__alloc() != __c.__alloc())
+        -: 2382:                __vdeallocate();
+        -: 2383:            __alloc() = __c.__alloc();
+        -: 2384:        }
+        -: 2385:
+        -: 2386:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2387:    void __copy_assign_alloc(const vector&, false_type)
+        -: 2388:        {}
+        -: 2389:
+        -: 2390:    _LIBCPP_CONSTEXPR_AFTER_CXX17 void __move_assign(vector& __c, false_type);
+        -: 2391:    _LIBCPP_CONSTEXPR_AFTER_CXX17 void __move_assign(vector& __c, true_type)
+        -: 2392:        _NOEXCEPT_(is_nothrow_move_assignable<allocator_type>::value);
+        -: 2393:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2394:    void __move_assign_alloc(vector& __c)
+        -: 2395:        _NOEXCEPT_(
+        -: 2396:            !__storage_traits::propagate_on_container_move_assignment::value ||
+        -: 2397:            is_nothrow_move_assignable<allocator_type>::value)
+        -: 2398:        {__move_assign_alloc(__c, integral_constant<bool,
+        -: 2399:                      __storage_traits::propagate_on_container_move_assignment::value>());}
+        -: 2400:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2401:    void __move_assign_alloc(vector& __c, true_type)
+        -: 2402:        _NOEXCEPT_(is_nothrow_move_assignable<allocator_type>::value)
+        -: 2403:        {
+        -: 2404:            __alloc() = _VSTD::move(__c.__alloc());
+        -: 2405:        }
+        -: 2406:
+        -: 2407:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2408:    void __move_assign_alloc(vector&, false_type)
+        -: 2409:        _NOEXCEPT
+        -: 2410:        {}
+        -: 2411:
+        -: 2412:    _LIBCPP_CONSTEXPR_AFTER_CXX17 size_t __hash_code() const _NOEXCEPT;
+        -: 2413:
+        -: 2414:    friend class __bit_reference<vector>;
+        -: 2415:    friend class __bit_const_reference<vector>;
+        -: 2416:    friend class __bit_iterator<vector, false>;
+        -: 2417:    friend class __bit_iterator<vector, true>;
+        -: 2418:    friend struct __bit_array<vector>;
+        -: 2419:    friend struct _LIBCPP_TEMPLATE_VIS hash<vector>;
+        -: 2420:};
+        -: 2421:
+        -: 2422:template <class _Allocator>
+        -: 2423:_LIBCPP_CONSTEXPR_AFTER_CXX17 void
+        -: 2424:vector<bool, _Allocator>::__vdeallocate() _NOEXCEPT
+        -: 2425:{
+        -: 2426:    if (this->__begin_ != nullptr)
+        -: 2427:    {
+        -: 2428:        __storage_traits::deallocate(this->__alloc(), this->__begin_, __cap());
+        -: 2429:        std::__debug_db_invalidate_all(this);
+        -: 2430:        this->__begin_ = nullptr;
+        -: 2431:        this->__size_ = this->__cap() = 0;
+        -: 2432:    }
+        -: 2433:}
+        -: 2434:
+        -: 2435:template <class _Allocator>
+        -: 2436:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2437:typename vector<bool, _Allocator>::size_type
+        -: 2438:vector<bool, _Allocator>::max_size() const _NOEXCEPT
+        -: 2439:{
+        -: 2440:    size_type __amax = __storage_traits::max_size(__alloc());
+        -: 2441:    size_type __nmax = numeric_limits<size_type>::max() / 2;  // end() >= begin(), always
+        -: 2442:    if (__nmax / __bits_per_word <= __amax)
+        -: 2443:        return __nmax;
+        -: 2444:    return __internal_cap_to_external(__amax);
+        -: 2445:}
+        -: 2446:
+        -: 2447://  Precondition:  __new_size > capacity()
+        -: 2448:template <class _Allocator>
+        -: 2449:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2450:typename vector<bool, _Allocator>::size_type
+        -: 2451:vector<bool, _Allocator>::__recommend(size_type __new_size) const
+        -: 2452:{
+        -: 2453:    const size_type __ms = max_size();
+        -: 2454:    if (__new_size > __ms)
+        -: 2455:        this->__throw_length_error();
+        -: 2456:    const size_type __cap = capacity();
+        -: 2457:    if (__cap >= __ms / 2)
+        -: 2458:        return __ms;
+        -: 2459:    return _VSTD::max(2 * __cap, __align_it(__new_size));
+        -: 2460:}
+        -: 2461:
+        -: 2462://  Default constructs __n objects starting at __end_
+        -: 2463://  Precondition:  __n > 0
+        -: 2464://  Precondition:  size() + __n <= capacity()
+        -: 2465://  Postcondition:  size() == size() + __n
+        -: 2466:template <class _Allocator>
+        -: 2467:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2468:void
+        -: 2469:vector<bool, _Allocator>::__construct_at_end(size_type __n, bool __x)
+        -: 2470:{
+        -: 2471:    size_type __old_size = this->__size_;
+        -: 2472:    this->__size_ += __n;
+        -: 2473:    if (__old_size == 0 || ((__old_size - 1) / __bits_per_word) != ((this->__size_ - 1) / __bits_per_word))
+        -: 2474:    {
+        -: 2475:        if (this->__size_ <= __bits_per_word)
+        -: 2476:            this->__begin_[0] = __storage_type(0);
+        -: 2477:        else
+        -: 2478:            this->__begin_[(this->__size_ - 1) / __bits_per_word] = __storage_type(0);
+        -: 2479:    }
+        -: 2480:    _VSTD::fill_n(__make_iter(__old_size), __n, __x);
+        -: 2481:}
+        -: 2482:
+        -: 2483:template <class _Allocator>
+        -: 2484:template <class _ForwardIterator>
+        -: 2485:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2486:typename enable_if
+        -: 2487:<
+        -: 2488:    __is_cpp17_forward_iterator<_ForwardIterator>::value,
+        -: 2489:    void
+        -: 2490:>::type
+        -: 2491:vector<bool, _Allocator>::__construct_at_end(_ForwardIterator __first, _ForwardIterator __last)
+        -: 2492:{
+        -: 2493:    size_type __old_size = this->__size_;
+        -: 2494:    this->__size_ += _VSTD::distance(__first, __last);
+        -: 2495:    if (__old_size == 0 || ((__old_size - 1) / __bits_per_word) != ((this->__size_ - 1) / __bits_per_word))
+        -: 2496:    {
+        -: 2497:        if (this->__size_ <= __bits_per_word)
+        -: 2498:            this->__begin_[0] = __storage_type(0);
+        -: 2499:        else
+        -: 2500:            this->__begin_[(this->__size_ - 1) / __bits_per_word] = __storage_type(0);
+        -: 2501:    }
+        -: 2502:    _VSTD::copy(__first, __last, __make_iter(__old_size));
+        -: 2503:}
+        -: 2504:
+        -: 2505:template <class _Allocator>
+        -: 2506:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2507:vector<bool, _Allocator>::vector()
+        -: 2508:    _NOEXCEPT_(is_nothrow_default_constructible<allocator_type>::value)
+        -: 2509:    : __begin_(nullptr),
+        -: 2510:      __size_(0),
+        -: 2511:      __cap_alloc_(0, __default_init_tag())
+        -: 2512:{
+        -: 2513:}
+        -: 2514:
+        -: 2515:template <class _Allocator>
+        -: 2516:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2517:vector<bool, _Allocator>::vector(const allocator_type& __a)
+        -: 2518:#if _LIBCPP_STD_VER <= 14
+        -: 2519:        _NOEXCEPT_(is_nothrow_copy_constructible<allocator_type>::value)
+        -: 2520:#else
+        -: 2521:        _NOEXCEPT
+        -: 2522:#endif
+        -: 2523:    : __begin_(nullptr),
+        -: 2524:      __size_(0),
+        -: 2525:      __cap_alloc_(0, static_cast<__storage_allocator>(__a))
+        -: 2526:{
+        -: 2527:}
+        -: 2528:
+        -: 2529:template <class _Allocator>
+        -: 2530:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2531:vector<bool, _Allocator>::vector(size_type __n)
+        -: 2532:    : __begin_(nullptr),
+        -: 2533:      __size_(0),
+        -: 2534:      __cap_alloc_(0, __default_init_tag())
+        -: 2535:{
+        -: 2536:    if (__n > 0)
+        -: 2537:    {
+        -: 2538:        __vallocate(__n);
+        -: 2539:        __construct_at_end(__n, false);
+        -: 2540:    }
+        -: 2541:}
+        -: 2542:
+        -: 2543:#if _LIBCPP_STD_VER > 11
+        -: 2544:template <class _Allocator>
+        -: 2545:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2546:vector<bool, _Allocator>::vector(size_type __n, const allocator_type& __a)
+        -: 2547:    : __begin_(nullptr),
+        -: 2548:      __size_(0),
+        -: 2549:      __cap_alloc_(0, static_cast<__storage_allocator>(__a))
+        -: 2550:{
+        -: 2551:    if (__n > 0)
+        -: 2552:    {
+        -: 2553:        __vallocate(__n);
+        -: 2554:        __construct_at_end(__n, false);
+        -: 2555:    }
+        -: 2556:}
+        -: 2557:#endif
+        -: 2558:
+        -: 2559:template <class _Allocator>
+        -: 2560:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2561:vector<bool, _Allocator>::vector(size_type __n, const value_type& __x)
+        -: 2562:    : __begin_(nullptr),
+        -: 2563:      __size_(0),
+        -: 2564:      __cap_alloc_(0, __default_init_tag())
+        -: 2565:{
+        -: 2566:    if (__n > 0)
+        -: 2567:    {
+        -: 2568:        __vallocate(__n);
+        -: 2569:        __construct_at_end(__n, __x);
+        -: 2570:    }
+        -: 2571:}
+        -: 2572:
+        -: 2573:template <class _Allocator>
+        -: 2574:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2575:vector<bool, _Allocator>::vector(size_type __n, const value_type& __x, const allocator_type& __a)
+        -: 2576:    : __begin_(nullptr),
+        -: 2577:      __size_(0),
+        -: 2578:      __cap_alloc_(0, static_cast<__storage_allocator>(__a))
+        -: 2579:{
+        -: 2580:    if (__n > 0)
+        -: 2581:    {
+        -: 2582:        __vallocate(__n);
+        -: 2583:        __construct_at_end(__n, __x);
+        -: 2584:    }
+        -: 2585:}
+        -: 2586:
+        -: 2587:template <class _Allocator>
+        -: 2588:template <class _InputIterator>
+        -: 2589:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2590:vector<bool, _Allocator>::vector(_InputIterator __first, _InputIterator __last,
+        -: 2591:       typename enable_if<__is_exactly_cpp17_input_iterator<_InputIterator>::value>::type*)
+        -: 2592:    : __begin_(nullptr),
+        -: 2593:      __size_(0),
+        -: 2594:      __cap_alloc_(0, __default_init_tag())
+        -: 2595:{
+        -: 2596:#ifndef _LIBCPP_NO_EXCEPTIONS
+        -: 2597:    try
+        -: 2598:    {
+        -: 2599:#endif // _LIBCPP_NO_EXCEPTIONS
+        -: 2600:        for (; __first != __last; ++__first)
+        -: 2601:            push_back(*__first);
+        -: 2602:#ifndef _LIBCPP_NO_EXCEPTIONS
+        -: 2603:    }
+        -: 2604:    catch (...)
+        -: 2605:    {
+        -: 2606:        if (__begin_ != nullptr)
+        -: 2607:            __storage_traits::deallocate(__alloc(), __begin_, __cap());
+        -: 2608:        std::__debug_db_invalidate_all(this);
+        -: 2609:        throw;
+        -: 2610:    }
+        -: 2611:#endif // _LIBCPP_NO_EXCEPTIONS
+        -: 2612:}
+        -: 2613:
+        -: 2614:template <class _Allocator>
+        -: 2615:template <class _InputIterator>
+        -: 2616:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2617:vector<bool, _Allocator>::vector(_InputIterator __first, _InputIterator __last, const allocator_type& __a,
+        -: 2618:       typename enable_if<__is_exactly_cpp17_input_iterator<_InputIterator>::value>::type*)
+        -: 2619:    : __begin_(nullptr),
+        -: 2620:      __size_(0),
+        -: 2621:      __cap_alloc_(0, static_cast<__storage_allocator>(__a))
+        -: 2622:{
+        -: 2623:#ifndef _LIBCPP_NO_EXCEPTIONS
+        -: 2624:    try
+        -: 2625:    {
+        -: 2626:#endif // _LIBCPP_NO_EXCEPTIONS
+        -: 2627:        for (; __first != __last; ++__first)
+        -: 2628:            push_back(*__first);
+        -: 2629:#ifndef _LIBCPP_NO_EXCEPTIONS
+        -: 2630:    }
+        -: 2631:    catch (...)
+        -: 2632:    {
+        -: 2633:        if (__begin_ != nullptr)
+        -: 2634:            __storage_traits::deallocate(__alloc(), __begin_, __cap());
+        -: 2635:        std::__debug_db_invalidate_all(this);
+        -: 2636:        throw;
+        -: 2637:    }
+        -: 2638:#endif // _LIBCPP_NO_EXCEPTIONS
+        -: 2639:}
+        -: 2640:
+        -: 2641:template <class _Allocator>
+        -: 2642:template <class _ForwardIterator>
+        -: 2643:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2644:vector<bool, _Allocator>::vector(_ForwardIterator __first, _ForwardIterator __last,
+        -: 2645:                                typename enable_if<__is_cpp17_forward_iterator<_ForwardIterator>::value>::type*)
+        -: 2646:    : __begin_(nullptr),
+        -: 2647:      __size_(0),
+        -: 2648:      __cap_alloc_(0, __default_init_tag())
+        -: 2649:{
+        -: 2650:    size_type __n = static_cast<size_type>(_VSTD::distance(__first, __last));
+        -: 2651:    if (__n > 0)
+        -: 2652:    {
+        -: 2653:        __vallocate(__n);
+        -: 2654:        __construct_at_end(__first, __last);
+        -: 2655:    }
+        -: 2656:}
+        -: 2657:
+        -: 2658:template <class _Allocator>
+        -: 2659:template <class _ForwardIterator>
+        -: 2660:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2661:vector<bool, _Allocator>::vector(_ForwardIterator __first, _ForwardIterator __last, const allocator_type& __a,
+        -: 2662:                                typename enable_if<__is_cpp17_forward_iterator<_ForwardIterator>::value>::type*)
+        -: 2663:    : __begin_(nullptr),
+        -: 2664:      __size_(0),
+        -: 2665:      __cap_alloc_(0, static_cast<__storage_allocator>(__a))
+        -: 2666:{
+        -: 2667:    size_type __n = static_cast<size_type>(_VSTD::distance(__first, __last));
+        -: 2668:    if (__n > 0)
+        -: 2669:    {
+        -: 2670:        __vallocate(__n);
+        -: 2671:        __construct_at_end(__first, __last);
+        -: 2672:    }
+        -: 2673:}
+        -: 2674:
+        -: 2675:#ifndef _LIBCPP_CXX03_LANG
+        -: 2676:
+        -: 2677:template <class _Allocator>
+        -: 2678:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2679:vector<bool, _Allocator>::vector(initializer_list<value_type> __il)
+        -: 2680:    : __begin_(nullptr),
+        -: 2681:      __size_(0),
+        -: 2682:      __cap_alloc_(0, __default_init_tag())
+        -: 2683:{
+        -: 2684:    size_type __n = static_cast<size_type>(__il.size());
+        -: 2685:    if (__n > 0)
+        -: 2686:    {
+        -: 2687:        __vallocate(__n);
+        -: 2688:        __construct_at_end(__il.begin(), __il.end());
+        -: 2689:    }
+        -: 2690:}
+        -: 2691:
+        -: 2692:template <class _Allocator>
+        -: 2693:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2694:vector<bool, _Allocator>::vector(initializer_list<value_type> __il, const allocator_type& __a)
+        -: 2695:    : __begin_(nullptr),
+        -: 2696:      __size_(0),
+        -: 2697:      __cap_alloc_(0, static_cast<__storage_allocator>(__a))
+        -: 2698:{
+        -: 2699:    size_type __n = static_cast<size_type>(__il.size());
+        -: 2700:    if (__n > 0)
+        -: 2701:    {
+        -: 2702:        __vallocate(__n);
+        -: 2703:        __construct_at_end(__il.begin(), __il.end());
+        -: 2704:    }
+        -: 2705:}
+        -: 2706:
+        -: 2707:#endif // _LIBCPP_CXX03_LANG
+        -: 2708:
+        -: 2709:template <class _Allocator>
+        -: 2710:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2711:vector<bool, _Allocator>::~vector()
+        -: 2712:{
+        -: 2713:    if (__begin_ != nullptr)
+        -: 2714:        __storage_traits::deallocate(__alloc(), __begin_, __cap());
+        -: 2715:    std::__debug_db_invalidate_all(this);
+        -: 2716:}
+        -: 2717:
+        -: 2718:template <class _Allocator>
+        -: 2719:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2720:vector<bool, _Allocator>::vector(const vector& __v)
+        -: 2721:    : __begin_(nullptr),
+        -: 2722:      __size_(0),
+        -: 2723:      __cap_alloc_(0, __storage_traits::select_on_container_copy_construction(__v.__alloc()))
+        -: 2724:{
+        -: 2725:    if (__v.size() > 0)
+        -: 2726:    {
+        -: 2727:        __vallocate(__v.size());
+        -: 2728:        __construct_at_end(__v.begin(), __v.end());
+        -: 2729:    }
+        -: 2730:}
+        -: 2731:
+        -: 2732:template <class _Allocator>
+        -: 2733:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2734:vector<bool, _Allocator>::vector(const vector& __v, const allocator_type& __a)
+        -: 2735:    : __begin_(nullptr),
+        -: 2736:      __size_(0),
+        -: 2737:      __cap_alloc_(0, __a)
+        -: 2738:{
+        -: 2739:    if (__v.size() > 0)
+        -: 2740:    {
+        -: 2741:        __vallocate(__v.size());
+        -: 2742:        __construct_at_end(__v.begin(), __v.end());
+        -: 2743:    }
+        -: 2744:}
+        -: 2745:
+        -: 2746:template <class _Allocator>
+        -: 2747:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2748:vector<bool, _Allocator>&
+        -: 2749:vector<bool, _Allocator>::operator=(const vector& __v)
+        -: 2750:{
+        -: 2751:    if (this != _VSTD::addressof(__v))
+        -: 2752:    {
+        -: 2753:        __copy_assign_alloc(__v);
+        -: 2754:        if (__v.__size_)
+        -: 2755:        {
+        -: 2756:            if (__v.__size_ > capacity())
+        -: 2757:            {
+        -: 2758:                __vdeallocate();
+        -: 2759:                __vallocate(__v.__size_);
+        -: 2760:            }
+        -: 2761:            _VSTD::copy(__v.__begin_, __v.__begin_ + __external_cap_to_internal(__v.__size_), __begin_);
+        -: 2762:        }
+        -: 2763:        __size_ = __v.__size_;
+        -: 2764:    }
+        -: 2765:    return *this;
+        -: 2766:}
+        -: 2767:
+        -: 2768:template <class _Allocator>
+        -: 2769:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17 vector<bool, _Allocator>::vector(vector&& __v)
+        -: 2770:#if _LIBCPP_STD_VER > 14
+        -: 2771:    _NOEXCEPT
+        -: 2772:#else
+        -: 2773:    _NOEXCEPT_(is_nothrow_move_constructible<allocator_type>::value)
+        -: 2774:#endif
+        -: 2775:    : __begin_(__v.__begin_),
+        -: 2776:      __size_(__v.__size_),
+        -: 2777:      __cap_alloc_(_VSTD::move(__v.__cap_alloc_)) {
+        -: 2778:    __v.__begin_ = nullptr;
+        -: 2779:    __v.__size_ = 0;
+        -: 2780:    __v.__cap() = 0;
+        -: 2781:}
+        -: 2782:
+        -: 2783:template <class _Allocator>
+        -: 2784:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2785:vector<bool, _Allocator>::vector(vector&& __v, const __type_identity_t<allocator_type>& __a)
+        -: 2786:    : __begin_(nullptr),
+        -: 2787:      __size_(0),
+        -: 2788:      __cap_alloc_(0, __a)
+        -: 2789:{
+        -: 2790:    if (__a == allocator_type(__v.__alloc()))
+        -: 2791:    {
+        -: 2792:        this->__begin_ = __v.__begin_;
+        -: 2793:        this->__size_ = __v.__size_;
+        -: 2794:        this->__cap() = __v.__cap();
+        -: 2795:        __v.__begin_ = nullptr;
+        -: 2796:        __v.__cap() = __v.__size_ = 0;
+        -: 2797:    }
+        -: 2798:    else if (__v.size() > 0)
+        -: 2799:    {
+        -: 2800:        __vallocate(__v.size());
+        -: 2801:        __construct_at_end(__v.begin(), __v.end());
+        -: 2802:    }
+        -: 2803:}
+        -: 2804:
+        -: 2805:template <class _Allocator>
+        -: 2806:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2807:vector<bool, _Allocator>&
+        -: 2808:vector<bool, _Allocator>::operator=(vector&& __v)
+        -: 2809:    _NOEXCEPT_((__noexcept_move_assign_container<_Allocator, __alloc_traits>::value))
+        -: 2810:{
+        -: 2811:    __move_assign(__v, integral_constant<bool,
+        -: 2812:          __storage_traits::propagate_on_container_move_assignment::value>());
+        -: 2813:    return *this;
+        -: 2814:}
+        -: 2815:
+        -: 2816:template <class _Allocator>
+        -: 2817:_LIBCPP_CONSTEXPR_AFTER_CXX17 void
+        -: 2818:vector<bool, _Allocator>::__move_assign(vector& __c, false_type)
+        -: 2819:{
+        -: 2820:    if (__alloc() != __c.__alloc())
+        -: 2821:        assign(__c.begin(), __c.end());
+        -: 2822:    else
+        -: 2823:        __move_assign(__c, true_type());
+        -: 2824:}
+        -: 2825:
+        -: 2826:template <class _Allocator>
+        -: 2827:_LIBCPP_CONSTEXPR_AFTER_CXX17 void
+        -: 2828:vector<bool, _Allocator>::__move_assign(vector& __c, true_type)
+        -: 2829:    _NOEXCEPT_(is_nothrow_move_assignable<allocator_type>::value)
+        -: 2830:{
+        -: 2831:    __vdeallocate();
+        -: 2832:    __move_assign_alloc(__c);
+        -: 2833:    this->__begin_ = __c.__begin_;
+        -: 2834:    this->__size_ = __c.__size_;
+        -: 2835:    this->__cap() = __c.__cap();
+        -: 2836:    __c.__begin_ = nullptr;
+        -: 2837:    __c.__cap() = __c.__size_ = 0;
+        -: 2838:}
+        -: 2839:
+        -: 2840:template <class _Allocator>
+        -: 2841:_LIBCPP_CONSTEXPR_AFTER_CXX17 void
+        -: 2842:vector<bool, _Allocator>::assign(size_type __n, const value_type& __x)
+        -: 2843:{
+        -: 2844:    __size_ = 0;
+        -: 2845:    if (__n > 0)
+        -: 2846:    {
+        -: 2847:        size_type __c = capacity();
+        -: 2848:        if (__n <= __c)
+        -: 2849:            __size_ = __n;
+        -: 2850:        else
+        -: 2851:        {
+        -: 2852:            vector __v(get_allocator());
+        -: 2853:            __v.reserve(__recommend(__n));
+        -: 2854:            __v.__size_ = __n;
+        -: 2855:            swap(__v);
+        -: 2856:        }
+        -: 2857:        _VSTD::fill_n(begin(), __n, __x);
+        -: 2858:    }
+        -: 2859:    std::__debug_db_invalidate_all(this);
+        -: 2860:}
+        -: 2861:
+        -: 2862:template <class _Allocator>
+        -: 2863:template <class _InputIterator>
+        -: 2864:_LIBCPP_CONSTEXPR_AFTER_CXX17 typename enable_if <__is_exactly_cpp17_input_iterator<_InputIterator>::value,
+        -: 2865:   void
+        -: 2866:>::type
+        -: 2867:vector<bool, _Allocator>::assign(_InputIterator __first, _InputIterator __last)
+        -: 2868:{
+        -: 2869:    clear();
+        -: 2870:    for (; __first != __last; ++__first)
+        -: 2871:        push_back(*__first);
+        -: 2872:}
+        -: 2873:
+        -: 2874:template <class _Allocator>
+        -: 2875:template <class _ForwardIterator>
+        -: 2876:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 2877:typename enable_if
+        -: 2878:<
+        -: 2879:    __is_cpp17_forward_iterator<_ForwardIterator>::value,
+        -: 2880:   void
+        -: 2881:>::type
+        -: 2882:vector<bool, _Allocator>::assign(_ForwardIterator __first, _ForwardIterator __last)
+        -: 2883:{
+        -: 2884:    clear();
+        -: 2885:    difference_type __ns = _VSTD::distance(__first, __last);
+        -: 2886:    _LIBCPP_ASSERT(__ns >= 0, "invalid range specified");
+        -: 2887:    const size_t __n = static_cast<size_type>(__ns);
+        -: 2888:    if (__n)
+        -: 2889:    {
+        -: 2890:        if (__n > capacity())
+        -: 2891:        {
+        -: 2892:            __vdeallocate();
+        -: 2893:            __vallocate(__n);
+        -: 2894:        }
+        -: 2895:        __construct_at_end(__first, __last);
+        -: 2896:    }
+        -: 2897:}
+        -: 2898:
+        -: 2899:template <class _Allocator>
+        -: 2900:_LIBCPP_CONSTEXPR_AFTER_CXX17 void
+        -: 2901:vector<bool, _Allocator>::reserve(size_type __n)
+        -: 2902:{
+        -: 2903:    if (__n > capacity())
+        -: 2904:    {
+        -: 2905:        if (__n > max_size())
+        -: 2906:            this->__throw_length_error();
+        -: 2907:        vector __v(this->get_allocator());
+        -: 2908:        __v.__vallocate(__n);
+        -: 2909:        __v.__construct_at_end(this->begin(), this->end());
+        -: 2910:        swap(__v);
+        -: 2911:        std::__debug_db_invalidate_all(this);
+        -: 2912:    }
+        -: 2913:}
+        -: 2914:
+        -: 2915:template <class _Allocator>
+        -: 2916:_LIBCPP_CONSTEXPR_AFTER_CXX17 void
+        -: 2917:vector<bool, _Allocator>::shrink_to_fit() _NOEXCEPT
+        -: 2918:{
+        -: 2919:    if (__external_cap_to_internal(size()) > __cap())
+        -: 2920:    {
+        -: 2921:#ifndef _LIBCPP_NO_EXCEPTIONS
+        -: 2922:        try
+        -: 2923:        {
+        -: 2924:#endif // _LIBCPP_NO_EXCEPTIONS
+        -: 2925:            vector(*this, allocator_type(__alloc())).swap(*this);
+        -: 2926:#ifndef _LIBCPP_NO_EXCEPTIONS
+        -: 2927:        }
+        -: 2928:        catch (...)
+        -: 2929:        {
+        -: 2930:        }
+        -: 2931:#endif // _LIBCPP_NO_EXCEPTIONS
+        -: 2932:    }
+        -: 2933:}
+        -: 2934:
+        -: 2935:template <class _Allocator>
+        -: 2936:typename vector<bool, _Allocator>::reference
+        -: 2937:vector<bool, _Allocator>::at(size_type __n)
+        -: 2938:{
+        -: 2939:    if (__n >= size())
+        -: 2940:        this->__throw_out_of_range();
+        -: 2941:    return (*this)[__n];
+        -: 2942:}
+        -: 2943:
+        -: 2944:template <class _Allocator>
+        -: 2945:typename vector<bool, _Allocator>::const_reference
+        -: 2946:vector<bool, _Allocator>::at(size_type __n) const
+        -: 2947:{
+        -: 2948:    if (__n >= size())
+        -: 2949:        this->__throw_out_of_range();
+        -: 2950:    return (*this)[__n];
+        -: 2951:}
+        -: 2952:
+        -: 2953:template <class _Allocator>
+        -: 2954:_LIBCPP_CONSTEXPR_AFTER_CXX17 void
+        -: 2955:vector<bool, _Allocator>::push_back(const value_type& __x)
+        -: 2956:{
+        -: 2957:    if (this->__size_ == this->capacity())
+        -: 2958:        reserve(__recommend(this->__size_ + 1));
+        -: 2959:    ++this->__size_;
+        -: 2960:    back() = __x;
+        -: 2961:}
+        -: 2962:
+        -: 2963:template <class _Allocator>
+        -: 2964:_LIBCPP_CONSTEXPR_AFTER_CXX17 typename vector<bool, _Allocator>::iterator
+        -: 2965:vector<bool, _Allocator>::insert(const_iterator __position, const value_type& __x)
+        -: 2966:{
+        -: 2967:    iterator __r;
+        -: 2968:    if (size() < capacity())
+        -: 2969:    {
+        -: 2970:        const_iterator __old_end = end();
+        -: 2971:        ++__size_;
+        -: 2972:        _VSTD::copy_backward(__position, __old_end, end());
+        -: 2973:        __r = __const_iterator_cast(__position);
+        -: 2974:    }
+        -: 2975:    else
+        -: 2976:    {
+        -: 2977:        vector __v(get_allocator());
+        -: 2978:        __v.reserve(__recommend(__size_ + 1));
+        -: 2979:        __v.__size_ = __size_ + 1;
+        -: 2980:        __r = _VSTD::copy(cbegin(), __position, __v.begin());
+        -: 2981:        _VSTD::copy_backward(__position, cend(), __v.end());
+        -: 2982:        swap(__v);
+        -: 2983:    }
+        -: 2984:    *__r = __x;
+        -: 2985:    return __r;
+        -: 2986:}
+        -: 2987:
+        -: 2988:template <class _Allocator>
+        -: 2989:_LIBCPP_CONSTEXPR_AFTER_CXX17 typename vector<bool, _Allocator>::iterator
+        -: 2990:vector<bool, _Allocator>::insert(const_iterator __position, size_type __n, const value_type& __x)
+        -: 2991:{
+        -: 2992:    iterator __r;
+        -: 2993:    size_type __c = capacity();
+        -: 2994:    if (__n <= __c && size() <= __c - __n)
+        -: 2995:    {
+        -: 2996:        const_iterator __old_end = end();
+        -: 2997:        __size_ += __n;
+        -: 2998:        _VSTD::copy_backward(__position, __old_end, end());
+        -: 2999:        __r = __const_iterator_cast(__position);
+        -: 3000:    }
+        -: 3001:    else
+        -: 3002:    {
+        -: 3003:        vector __v(get_allocator());
+        -: 3004:        __v.reserve(__recommend(__size_ + __n));
+        -: 3005:        __v.__size_ = __size_ + __n;
+        -: 3006:        __r = _VSTD::copy(cbegin(), __position, __v.begin());
+        -: 3007:        _VSTD::copy_backward(__position, cend(), __v.end());
+        -: 3008:        swap(__v);
+        -: 3009:    }
+        -: 3010:    _VSTD::fill_n(__r, __n, __x);
+        -: 3011:    return __r;
+        -: 3012:}
+        -: 3013:
+        -: 3014:template <class _Allocator>
+        -: 3015:template <class _InputIterator>
+        -: 3016:_LIBCPP_CONSTEXPR_AFTER_CXX17 typename enable_if <__is_exactly_cpp17_input_iterator<_InputIterator>::value,
+        -: 3017:    typename vector<bool, _Allocator>::iterator
+        -: 3018:>::type
+        -: 3019:vector<bool, _Allocator>::insert(const_iterator __position, _InputIterator __first, _InputIterator __last)
+        -: 3020:{
+        -: 3021:    difference_type __off = __position - begin();
+        -: 3022:    iterator __p = __const_iterator_cast(__position);
+        -: 3023:    iterator __old_end = end();
+        -: 3024:    for (; size() != capacity() && __first != __last; ++__first)
+        -: 3025:    {
+        -: 3026:        ++this->__size_;
+        -: 3027:        back() = *__first;
+        -: 3028:    }
+        -: 3029:    vector __v(get_allocator());
+        -: 3030:    if (__first != __last)
+        -: 3031:    {
+        -: 3032:#ifndef _LIBCPP_NO_EXCEPTIONS
+        -: 3033:        try
+        -: 3034:        {
+        -: 3035:#endif // _LIBCPP_NO_EXCEPTIONS
+        -: 3036:            __v.assign(__first, __last);
+        -: 3037:            difference_type __old_size = static_cast<difference_type>(__old_end - begin());
+        -: 3038:            difference_type __old_p = __p - begin();
+        -: 3039:            reserve(__recommend(size() + __v.size()));
+        -: 3040:            __p = begin() + __old_p;
+        -: 3041:            __old_end = begin() + __old_size;
+        -: 3042:#ifndef _LIBCPP_NO_EXCEPTIONS
+        -: 3043:        }
+        -: 3044:        catch (...)
+        -: 3045:        {
+        -: 3046:            erase(__old_end, end());
+        -: 3047:            throw;
+        -: 3048:        }
+        -: 3049:#endif // _LIBCPP_NO_EXCEPTIONS
+        -: 3050:    }
+        -: 3051:    __p = _VSTD::rotate(__p, __old_end, end());
+        -: 3052:    insert(__p, __v.begin(), __v.end());
+        -: 3053:    return begin() + __off;
+        -: 3054:}
+        -: 3055:
+        -: 3056:template <class _Allocator>
+        -: 3057:template <class _ForwardIterator>
+        -: 3058:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 3059:typename enable_if
+        -: 3060:<
+        -: 3061:    __is_cpp17_forward_iterator<_ForwardIterator>::value,
+        -: 3062:    typename vector<bool, _Allocator>::iterator
+        -: 3063:>::type
+        -: 3064:vector<bool, _Allocator>::insert(const_iterator __position, _ForwardIterator __first, _ForwardIterator __last)
+        -: 3065:{
+        -: 3066:    const difference_type __n_signed = _VSTD::distance(__first, __last);
+        -: 3067:    _LIBCPP_ASSERT(__n_signed >= 0, "invalid range specified");
+        -: 3068:    const size_type __n = static_cast<size_type>(__n_signed);
+        -: 3069:    iterator __r;
+        -: 3070:    size_type __c = capacity();
+        -: 3071:    if (__n <= __c && size() <= __c - __n)
+        -: 3072:    {
+        -: 3073:        const_iterator __old_end = end();
+        -: 3074:        __size_ += __n;
+        -: 3075:        _VSTD::copy_backward(__position, __old_end, end());
+        -: 3076:        __r = __const_iterator_cast(__position);
+        -: 3077:    }
+        -: 3078:    else
+        -: 3079:    {
+        -: 3080:        vector __v(get_allocator());
+        -: 3081:        __v.reserve(__recommend(__size_ + __n));
+        -: 3082:        __v.__size_ = __size_ + __n;
+        -: 3083:        __r = _VSTD::copy(cbegin(), __position, __v.begin());
+        -: 3084:        _VSTD::copy_backward(__position, cend(), __v.end());
+        -: 3085:        swap(__v);
+        -: 3086:    }
+        -: 3087:    _VSTD::copy(__first, __last, __r);
+        -: 3088:    return __r;
+        -: 3089:}
+        -: 3090:
+        -: 3091:template <class _Allocator>
+        -: 3092:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 3093:typename vector<bool, _Allocator>::iterator
+        -: 3094:vector<bool, _Allocator>::erase(const_iterator __position)
+        -: 3095:{
+        -: 3096:    iterator __r = __const_iterator_cast(__position);
+        -: 3097:    _VSTD::copy(__position + 1, this->cend(), __r);
+        -: 3098:    --__size_;
+        -: 3099:    return __r;
+        -: 3100:}
+        -: 3101:
+        -: 3102:template <class _Allocator>
+        -: 3103:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 3104:typename vector<bool, _Allocator>::iterator
+        -: 3105:vector<bool, _Allocator>::erase(const_iterator __first, const_iterator __last)
+        -: 3106:{
+        -: 3107:    iterator __r = __const_iterator_cast(__first);
+        -: 3108:    difference_type __d = __last - __first;
+        -: 3109:    _VSTD::copy(__last, this->cend(), __r);
+        -: 3110:    __size_ -= __d;
+        -: 3111:    return __r;
+        -: 3112:}
+        -: 3113:
+        -: 3114:template <class _Allocator>
+        -: 3115:_LIBCPP_CONSTEXPR_AFTER_CXX17 void
+        -: 3116:vector<bool, _Allocator>::swap(vector& __x)
+        -: 3117:#if _LIBCPP_STD_VER >= 14
+        -: 3118:    _NOEXCEPT
+        -: 3119:#else
+        -: 3120:    _NOEXCEPT_(!__alloc_traits::propagate_on_container_swap::value ||
+        -: 3121:                __is_nothrow_swappable<allocator_type>::value)
+        -: 3122:#endif
+        -: 3123:{
+        -: 3124:    _VSTD::swap(this->__begin_, __x.__begin_);
+        -: 3125:    _VSTD::swap(this->__size_, __x.__size_);
+        -: 3126:    _VSTD::swap(this->__cap(), __x.__cap());
+        -: 3127:    _VSTD::__swap_allocator(this->__alloc(), __x.__alloc(),
+        -: 3128:        integral_constant<bool, __alloc_traits::propagate_on_container_swap::value>());
+        -: 3129:}
+        -: 3130:
+        -: 3131:template <class _Allocator>
+        -: 3132:_LIBCPP_CONSTEXPR_AFTER_CXX17 void
+        -: 3133:vector<bool, _Allocator>::resize(size_type __sz, value_type __x)
+        -: 3134:{
+        -: 3135:    size_type __cs = size();
+        -: 3136:    if (__cs < __sz)
+        -: 3137:    {
+        -: 3138:        iterator __r;
+        -: 3139:        size_type __c = capacity();
+        -: 3140:        size_type __n = __sz - __cs;
+        -: 3141:        if (__n <= __c && __cs <= __c - __n)
+        -: 3142:        {
+        -: 3143:            __r = end();
+        -: 3144:            __size_ += __n;
+        -: 3145:        }
+        -: 3146:        else
+        -: 3147:        {
+        -: 3148:            vector __v(get_allocator());
+        -: 3149:            __v.reserve(__recommend(__size_ + __n));
+        -: 3150:            __v.__size_ = __size_ + __n;
+        -: 3151:            __r = _VSTD::copy(cbegin(), cend(), __v.begin());
+        -: 3152:            swap(__v);
+        -: 3153:        }
+        -: 3154:        _VSTD::fill_n(__r, __n, __x);
+        -: 3155:    }
+        -: 3156:    else
+        -: 3157:        __size_ = __sz;
+        -: 3158:}
+        -: 3159:
+        -: 3160:template <class _Allocator>
+        -: 3161:_LIBCPP_CONSTEXPR_AFTER_CXX17 void
+        -: 3162:vector<bool, _Allocator>::flip() _NOEXCEPT
+        -: 3163:{
+        -: 3164:    // do middle whole words
+        -: 3165:    size_type __n = __size_;
+        -: 3166:    __storage_pointer __p = __begin_;
+        -: 3167:    for (; __n >= __bits_per_word; ++__p, __n -= __bits_per_word)
+        -: 3168:        *__p = ~*__p;
+        -: 3169:    // do last partial word
+        -: 3170:    if (__n > 0)
+        -: 3171:    {
+        -: 3172:        __storage_type __m = ~__storage_type(0) >> (__bits_per_word - __n);
+        -: 3173:        __storage_type __b = *__p & __m;
+        -: 3174:        *__p &= ~__m;
+        -: 3175:        *__p |= ~__b & __m;
+        -: 3176:    }
+        -: 3177:}
+        -: 3178:
+        -: 3179:template <class _Allocator>
+        -: 3180:_LIBCPP_CONSTEXPR_AFTER_CXX17 bool
+        -: 3181:vector<bool, _Allocator>::__invariants() const
+        -: 3182:{
+        -: 3183:    if (this->__begin_ == nullptr)
+        -: 3184:    {
+        -: 3185:        if (this->__size_ != 0 || this->__cap() != 0)
+        -: 3186:            return false;
+        -: 3187:    }
+        -: 3188:    else
+        -: 3189:    {
+        -: 3190:        if (this->__cap() == 0)
+        -: 3191:            return false;
+        -: 3192:        if (this->__size_ > this->capacity())
+        -: 3193:            return false;
+        -: 3194:    }
+        -: 3195:    return true;
+        -: 3196:}
+        -: 3197:
+        -: 3198:template <class _Allocator>
+        -: 3199:_LIBCPP_CONSTEXPR_AFTER_CXX17 size_t
+        -: 3200:vector<bool, _Allocator>::__hash_code() const _NOEXCEPT
+        -: 3201:{
+        -: 3202:    size_t __h = 0;
+        -: 3203:    // do middle whole words
+        -: 3204:    size_type __n = __size_;
+        -: 3205:    __storage_pointer __p = __begin_;
+        -: 3206:    for (; __n >= __bits_per_word; ++__p, __n -= __bits_per_word)
+        -: 3207:        __h ^= *__p;
+        -: 3208:    // do last partial word
+        -: 3209:    if (__n > 0)
+        -: 3210:    {
+        -: 3211:        const __storage_type __m = ~__storage_type(0) >> (__bits_per_word - __n);
+        -: 3212:        __h ^= *__p & __m;
+        -: 3213:    }
+        -: 3214:    return __h;
+        -: 3215:}
+        -: 3216:
+        -: 3217:template <class _Allocator>
+        -: 3218:struct _LIBCPP_TEMPLATE_VIS hash<vector<bool, _Allocator> >
+        -: 3219:    : public __unary_function<vector<bool, _Allocator>, size_t>
+        -: 3220:{
+        -: 3221:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 3222:    size_t operator()(const vector<bool, _Allocator>& __vec) const _NOEXCEPT
+        -: 3223:        {return __vec.__hash_code();}
+        -: 3224:};
+        -: 3225:
+        -: 3226:template <class _Tp, class _Allocator>
+        -: 3227:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 3228:inline _LIBCPP_INLINE_VISIBILITY
+        -: 3229:bool
+        -: 3230:operator==(const vector<_Tp, _Allocator>& __x, const vector<_Tp, _Allocator>& __y)
+        -: 3231:{
+        -: 3232:    const typename vector<_Tp, _Allocator>::size_type __sz = __x.size();
+        -: 3233:    return __sz == __y.size() && _VSTD::equal(__x.begin(), __x.end(), __y.begin());
+        -: 3234:}
+        -: 3235:
+        -: 3236:template <class _Tp, class _Allocator>
+        -: 3237:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 3238:inline _LIBCPP_INLINE_VISIBILITY
+        -: 3239:bool
+        -: 3240:operator!=(const vector<_Tp, _Allocator>& __x, const vector<_Tp, _Allocator>& __y)
+        -: 3241:{
+        -: 3242:    return !(__x == __y);
+        -: 3243:}
+        -: 3244:
+        -: 3245:template <class _Tp, class _Allocator>
+        -: 3246:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 3247:inline _LIBCPP_INLINE_VISIBILITY
+        -: 3248:bool
+        -: 3249:operator< (const vector<_Tp, _Allocator>& __x, const vector<_Tp, _Allocator>& __y)
+        -: 3250:{
+        -: 3251:    return _VSTD::lexicographical_compare(__x.begin(), __x.end(), __y.begin(), __y.end());
+        -: 3252:}
+        -: 3253:
+        -: 3254:template <class _Tp, class _Allocator>
+        -: 3255:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 3256:inline _LIBCPP_INLINE_VISIBILITY
+        -: 3257:bool
+        -: 3258:operator> (const vector<_Tp, _Allocator>& __x, const vector<_Tp, _Allocator>& __y)
+        -: 3259:{
+        -: 3260:    return __y < __x;
+        -: 3261:}
+        -: 3262:
+        -: 3263:template <class _Tp, class _Allocator>
+        -: 3264:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 3265:inline _LIBCPP_INLINE_VISIBILITY
+        -: 3266:bool
+        -: 3267:operator>=(const vector<_Tp, _Allocator>& __x, const vector<_Tp, _Allocator>& __y)
+        -: 3268:{
+        -: 3269:    return !(__x < __y);
+        -: 3270:}
+        -: 3271:
+        -: 3272:template <class _Tp, class _Allocator>
+        -: 3273:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 3274:inline _LIBCPP_INLINE_VISIBILITY
+        -: 3275:bool
+        -: 3276:operator<=(const vector<_Tp, _Allocator>& __x, const vector<_Tp, _Allocator>& __y)
+        -: 3277:{
+        -: 3278:    return !(__y < __x);
+        -: 3279:}
+        -: 3280:
+        -: 3281:template <class _Tp, class _Allocator>
+        -: 3282:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 3283:inline _LIBCPP_INLINE_VISIBILITY
+        -: 3284:void
+        -: 3285:swap(vector<_Tp, _Allocator>& __x, vector<_Tp, _Allocator>& __y)
+        -: 3286:    _NOEXCEPT_(_NOEXCEPT_(__x.swap(__y)))
+        -: 3287:{
+        -: 3288:    __x.swap(__y);
+        -: 3289:}
+        -: 3290:
+        -: 3291:#if _LIBCPP_STD_VER > 17
+        -: 3292:template <class _Tp, class _Allocator, class _Up>
+        -: 3293:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 3294:inline _LIBCPP_INLINE_VISIBILITY typename vector<_Tp, _Allocator>::size_type
+        -: 3295:erase(vector<_Tp, _Allocator>& __c, const _Up& __v) {
+        -: 3296:  auto __old_size = __c.size();
+        -: 3297:  __c.erase(_VSTD::remove(__c.begin(), __c.end(), __v), __c.end());
+        -: 3298:  return __old_size - __c.size();
+        -: 3299:}
+        -: 3300:
+        -: 3301:template <class _Tp, class _Allocator, class _Predicate>
+        -: 3302:_LIBCPP_CONSTEXPR_AFTER_CXX17
+        -: 3303:inline _LIBCPP_INLINE_VISIBILITY typename vector<_Tp, _Allocator>::size_type
+        -: 3304:erase_if(vector<_Tp, _Allocator>& __c, _Predicate __pred) {
+        -: 3305:  auto __old_size = __c.size();
+        -: 3306:  __c.erase(_VSTD::remove_if(__c.begin(), __c.end(), __pred), __c.end());
+        -: 3307:  return __old_size - __c.size();
+        -: 3308:}
+        -: 3309:
+        -: 3310:template <>
+        -: 3311:inline constexpr bool __format::__enable_insertable<std::vector<char>> = true;
+        -: 3312:#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
+        -: 3313:template <>
+        -: 3314:inline constexpr bool __format::__enable_insertable<std::vector<wchar_t>> = true;
+        -: 3315:#endif
+        -: 3316:
+        -: 3317:#endif // _LIBCPP_STD_VER > 17
+        -: 3318:
+        -: 3319:_LIBCPP_END_NAMESPACE_STD
+        -: 3320:
+        -: 3321:_LIBCPP_POP_MACROS
+        -: 3322:
+        -: 3323:#endif // _LIBCPP_VECTOR

@@ -1,0 +1,62 @@
+digraph G {
+  graph [rankdir=LR];
+  node [shape="box", color = "black", style="filled"];
+  "0x60000297c380" [label="15", fillcolor="green"];
+  "0x60000297c380" -> "0x60000297c300" [label="6", color="green"];
+  "0x60000297c300" [label="10", fillcolor="green"];
+  "0x60000297c300" -> "0x60000297c1c0" [label="4", color="green"];
+  "0x60000297c340" [label="13", fillcolor="green"];
+  "0x60000297c340" -> "0x60000297c280" [label="2", color="green"];
+  "0x60000297c340" -> "0x60000297c200" [label="4", color="green"];
+  "0x60000297c2c0" [label="12", fillcolor="green"];
+  "0x60000297c2c0" -> "0x60000297c1c0" [label="2", color="green"];
+  "0x60000297c040" [label="2", fillcolor="green"];
+  "0x60000297c040" -> "0x60000297c0c0" [label="4", color="green"];
+  "0x60000297c040" -> "0x60000297c000" [label="5", color="green"];
+  "0x60000297c1c0" [label="9", fillcolor="green"];
+  "0x60000297c1c0" -> "0x60000297c2c0" [label="2", color="green"];
+  "0x60000297c1c0" -> "0x60000297c240" [label="3", color="green"];
+  "0x60000297c280" [label="14", fillcolor="green"];
+  "0x60000297c280" -> "0x60000297c380" [label="7", color="green"];
+  "0x60000297c280" -> "0x60000297c340" [label="2", color="green"];
+  "0x60000297c240" [label="8", fillcolor="green"];
+  "0x60000297c240" -> "0x60000297c280" [label="6", color="green"];
+  "0x60000297c140" [label="4", fillcolor="green"];
+  "0x60000297c140" -> "0x60000297c180" [label="3", color="green"];
+  "0x60000297c200" [label="11", fillcolor="green"];
+  "0x60000297c200" -> "0x60000297c340" [label="4", color="green"];
+  "0x60000297c200" -> "0x60000297c080" [label="4", color="green"];
+  "0x60000297c100" [label="6", fillcolor="green"];
+  "0x60000297c100" -> "0x60000297c180" [label="4", color="green"];
+  "0x60000297c100" -> "0x60000297c0c0" [label="3", color="green"];
+  "0x60000297c0c0" [label="3", fillcolor="green"];
+  "0x60000297c0c0" -> "0x60000297c100" [label="3", color="green"];
+  "0x60000297c0c0" -> "0x60000297c040" [label="4", color="green"];
+  "0x60000297c000" [label="1", fillcolor="orange"];
+  "0x60000297c000" -> "0x60000297c080" [label="5", color="green"];
+  "0x60000297c000" -> "0x60000297c040" [label="5", color="green"];
+  "0x60000297c180" [label="5", fillcolor="green"];
+  "0x60000297c180" -> "0x60000297c1c0" [label="4", color="green"];
+  "0x60000297c180" -> "0x60000297c140" [label="3", color="green"];
+  "0x60000297c080" [label="7", fillcolor="green"];
+  "0x60000297c080" -> "0x60000297c200" [label="4", color="green"];
+  "0x60000297c080" -> "0x60000297c000" [label="5", color="green"];
+  rankdir=LR
+  node [shape=plaintext]
+  subgraph cluster_01 { 
+    label = "Legend";
+    key [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+      <tr><td align="right" port="i1">Closed</td></tr>
+      <tr><td align="right" port="i2">Opened</td></tr>
+      <tr><td align="right" port="i3">Current</td></tr>
+      </table>>, color=white]
+    key2 [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+      <tr><td port="i1">&nbsp;</td></tr>
+      <tr><td port="i2">&nbsp;</td></tr>
+      <tr><td port="i3">&nbsp;</td></tr>
+      </table>>, color=white]
+    key:i1:e -> key2:i1:w [color=red]
+    key:i2:e -> key2:i2:w [color=green]
+    key:i3:e -> key2:i3:w [color=orange]
+  }
+}

@@ -1,0 +1,234 @@
+        -:    0:Source:/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__memory/construct_at.h
+        -:    0:Graph:/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/TerminalProgramTest.dir/UnitTesting/TerminalProgramTest.cpp.gcno
+        -:    0:Data:/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/TerminalProgramTest.dir/UnitTesting/TerminalProgramTest.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:// -*- C++ -*-
+        -:    2://===----------------------------------------------------------------------===//
+        -:    3://
+        -:    4:// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
+        -:    5:// See https://llvm.org/LICENSE.txt for license information.
+        -:    6:// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+        -:    7://
+        -:    8://===----------------------------------------------------------------------===//
+        -:    9:
+        -:   10:#ifndef _LIBCPP___MEMORY_CONSTRUCT_AT_H
+        -:   11:#define _LIBCPP___MEMORY_CONSTRUCT_AT_H
+        -:   12:
+        -:   13:#include <__assert>
+        -:   14:#include <__config>
+        -:   15:#include <__iterator/access.h>
+        -:   16:#include <__memory/addressof.h>
+        -:   17:#include <__memory/voidify.h>
+        -:   18:#include <__utility/forward.h>
+        -:   19:#include <__utility/move.h>
+        -:   20:#include <type_traits>
+        -:   21:
+        -:   22:#if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
+        -:   23:#  pragma GCC system_header
+        -:   24:#endif
+        -:   25:
+        -:   26:_LIBCPP_BEGIN_NAMESPACE_STD
+        -:   27:
+        -:   28:// construct_at
+        -:   29:
+        -:   30:#if _LIBCPP_STD_VER > 17
+        -:   31:
+        -:   32:template <class _Tp, class... _Args, class = decltype(::new(declval<void*>()) _Tp(declval<_Args>()...))>
+function _ZNSt3__112construct_atB6v15006INS_4fposI11__mbstate_tEEJS3_EPS3_EEPT_S6_DpOT0_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__112construct_atB6v15006IN7doctest16SubcaseSignatureEJRKS2_EPS2_EEPT_S7_DpOT0_ called 14 returned 100% blocks executed 100%
+function _ZNSt3__112construct_atB6v15006IN7doctest16SubcaseSignatureEJS2_EPS2_EEPT_S5_DpOT0_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__112construct_atB6v15006IN7doctest16SubcaseSignatureEJRS2_EPS2_EEPT_S6_DpOT0_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__112construct_atB6v15006IPKN7doctest6detail20IExceptionTranslatorEJRKS5_EPS5_EEPT_SA_DpOT0_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__112construct_atB6v15006IPN7doctest13IContextScopeEJS3_EPS3_EEPT_S6_DpOT0_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__112construct_atB6v15006IN7doctest6StringEJS2_EPS2_EEPT_S5_DpOT0_ called 1 returned 100% blocks executed 100%
+function _ZNSt3__112construct_atB6v15006INS_6vectorIN7doctest6StringENS_9allocatorIS3_EEEEJEPS6_EEPT_S9_DpOT0_ called 9 returned 100% blocks executed 100%
+function _ZNSt3__112construct_atB6v15006IPN7doctest9IReporterEJS3_EPS3_EEPT_S6_DpOT0_ called 1 returned 100% blocks executed 100%
+function _ZNSt3__112construct_atB6v15006IPKN7doctest6detail8TestCaseEJS5_EPS5_EEPT_S8_DpOT0_ called 1 returned 100% blocks executed 100%
+function _ZNSt3__112construct_atB6v15006IPKN7doctest12TestCaseDataEJS4_EPS4_EEPT_S7_DpOT0_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__112construct_atB6v15006IP5GraphJS2_EPS2_EEPT_S5_DpOT0_ called 4 returned 100% blocks executed 100%
+function _ZNSt3__112construct_atB6v15006IyJyEPyEEPT_S3_DpOT0_ called 5 returned 100% blocks executed 100%
+function _ZNSt3__112construct_atB6v15006IN7doctest6detail8TestCaseEJRKS3_EPS3_EEPT_S8_DpOT0_ called 1 returned 100% blocks executed 100%
+function _ZNSt3__112construct_atB6v15006INS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEJRKS6_EPS6_EEPT_SB_DpOT0_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__112construct_atB6v15006INS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEJS6_EPS6_EEPT_S9_DpOT0_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__112construct_atB6v15006IN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseEJRKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEESD_EPS5_EEPT_SG_DpOT0_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__112construct_atB6v15006IN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseEJS5_EPS5_EEPT_S8_DpOT0_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__112construct_atB6v15006IN7doctest6StringEJRS2_EPS2_EEPT_S6_DpOT0_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__112construct_atB6v15006IN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEJRKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEESD_EPS5_EEPT_SG_DpOT0_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__112construct_atB6v15006IN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEJS5_EPS5_EEPT_S8_DpOT0_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__112construct_atB6v15006IN7doctest6StringEJRKS2_EPS2_EEPT_S7_DpOT0_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__112construct_atB6v15006IN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageEJRKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEESD_SD_EPS5_EEPT_SG_DpOT0_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__112construct_atB6v15006INS_4pairIKNS1_IiN7doctest6StringEEEPFPNS2_9IReporterERKNS2_14ContextOptionsEEEEJSD_EPSD_EEPT_SG_DpOT0_ called 3 returned 100% blocks executed 100%
+       39:   33:_LIBCPP_HIDE_FROM_ABI constexpr _Tp* construct_at(_Tp* __location, _Args&&... __args) {
+        -:   34:  _LIBCPP_ASSERT(__location != nullptr, "null pointer given to construct_at");
+       39:   35:  return ::new (_VSTD::__voidify(*__location)) _Tp(_VSTD::forward<_Args>(__args)...);
+    $$$$$:   35-block  0
+       14:   35-block  1
+    $$$$$:   35-block  2
+    $$$$$:   35-block  3
+    $$$$$:   35-block  4
+    $$$$$:   35-block  5
+        1:   35-block  6
+        9:   35-block  7
+        1:   35-block  8
+        1:   35-block  9
+    $$$$$:   35-block 10
+        4:   35-block 11
+        5:   35-block 12
+        1:   35-block 13
+    $$$$$:   35-block 14
+    $$$$$:   35-block 15
+    $$$$$:   35-block 16
+    $$$$$:   35-block 17
+    $$$$$:   35-block 18
+    $$$$$:   35-block 19
+    $$$$$:   35-block 20
+    $$$$$:   35-block 21
+    $$$$$:   35-block 22
+        3:   35-block 23
+        -:   36:}
+        -:   37:
+        -:   38:#endif
+        -:   39:
+        -:   40:template <class _Tp, class... _Args, class = decltype(::new(declval<void*>()) _Tp(declval<_Args>()...))>
+        -:   41:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR _Tp* __construct_at(_Tp* __location, _Args&&... __args) {
+        -:   42:#if _LIBCPP_STD_VER > 17
+        -:   43:  return std::construct_at(__location, std::forward<_Args>(__args)...);
+        -:   44:#else
+        -:   45:  return _LIBCPP_ASSERT(__location != nullptr, "null pointer given to construct_at"),
+        -:   46:         ::new (std::__voidify(*__location)) _Tp(std::forward<_Args>(__args)...);
+        -:   47:#endif
+        -:   48:}
+        -:   49:
+        -:   50:// destroy_at
+        -:   51:
+        -:   52:// The internal functions are available regardless of the language version (with the exception of the `__destroy_at`
+        -:   53:// taking an array).
+        -:   54:
+        -:   55:template <class _ForwardIterator>
+        -:   56:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:   57:_ForwardIterator __destroy(_ForwardIterator, _ForwardIterator);
+        -:   58:
+        -:   59:template <class _Tp, typename enable_if<!is_array<_Tp>::value, int>::type = 0>
+        -:   60:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17
+function _ZNSt3__112__destroy_atB6v15006INS_4fposI11__mbstate_tEELi0EEEvPT_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__112__destroy_atB6v15006IN7doctest16SubcaseSignatureELi0EEEvPT_ called 14 returned 100% blocks executed 100%
+function _ZNSt3__112__destroy_atB6v15006IPKN7doctest6detail20IExceptionTranslatorELi0EEEvPT_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__112__destroy_atB6v15006IPN7doctest13IContextScopeELi0EEEvPT_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__112__destroy_atB6v15006IN7doctest6StringELi0EEEvPT_ called 1 returned 100% blocks executed 100%
+function _ZNSt3__112__destroy_atB6v15006IyLi0EEEvPT_ called 5 returned 100% blocks executed 100%
+function _ZNSt3__112__destroy_atB6v15006IPN7doctest9IReporterELi0EEEvPT_ called 1 returned 100% blocks executed 100%
+function _ZNSt3__112__destroy_atB6v15006INS_6vectorIN7doctest6StringENS_9allocatorIS3_EEEELi0EEEvPT_ called 9 returned 100% blocks executed 100%
+function _ZNSt3__112__destroy_atB6v15006INS_4pairIKNS1_IiN7doctest6StringEEEPFPNS2_9IReporterERKNS2_14ContextOptionsEEEELi0EEEvPT_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__112__destroy_atB6v15006IPKN7doctest6detail8TestCaseELi0EEEvPT_ called 1 returned 100% blocks executed 100%
+function _ZNSt3__112__destroy_atB6v15006IPKN7doctest12TestCaseDataELi0EEEvPT_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__112__destroy_atB6v15006IP5GraphLi0EEEvPT_ called 5 returned 100% blocks executed 100%
+function _ZNSt3__112__destroy_atB6v15006IN7doctest6detail8TestCaseELi0EEEvPT_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__112__destroy_atB6v15006INS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEELi0EEEvPT_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__112__destroy_atB6v15006IN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseELi0EEEvPT_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__112__destroy_atB6v15006IN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageELi0EEEvPT_ called 0 returned 0% blocks executed 0%
+       36:   61:void __destroy_at(_Tp* __loc) {
+        -:   62:    _LIBCPP_ASSERT(__loc != nullptr, "null pointer given to destroy_at");
+       36:   63:    __loc->~_Tp();
+       36:   64:}
+    $$$$$:   64-block  0
+       14:   64-block  1
+    $$$$$:   64-block  2
+    $$$$$:   64-block  3
+        1:   64-block  4
+        5:   64-block  5
+        1:   64-block  6
+        9:   64-block  7
+    $$$$$:   64-block  8
+        1:   64-block  9
+    $$$$$:   64-block 10
+        5:   64-block 11
+    $$$$$:   64-block 12
+    $$$$$:   64-block 13
+    $$$$$:   64-block 14
+    $$$$$:   64-block 15
+        -:   65:
+        -:   66:#if _LIBCPP_STD_VER > 17
+        -:   67:template <class _Tp, typename enable_if<is_array<_Tp>::value, int>::type = 0>
+        -:   68:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:   69:void __destroy_at(_Tp* __loc) {
+        -:   70:    _LIBCPP_ASSERT(__loc != nullptr, "null pointer given to destroy_at");
+        -:   71:    _VSTD::__destroy(_VSTD::begin(*__loc), _VSTD::end(*__loc));
+        -:   72:}
+        -:   73:#endif
+        -:   74:
+        -:   75:template <class _ForwardIterator>
+        -:   76:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:   77:_ForwardIterator __destroy(_ForwardIterator __first, _ForwardIterator __last) {
+        -:   78:    for (; __first != __last; ++__first)
+        -:   79:        _VSTD::__destroy_at(_VSTD::addressof(*__first));
+        -:   80:    return __first;
+        -:   81:}
+        -:   82:
+        -:   83:#if _LIBCPP_STD_VER > 14
+        -:   84:
+        -:   85:template <class _Tp, enable_if_t<!is_array_v<_Tp>, int> = 0>
+        -:   86:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17
+function _ZNSt3__110destroy_atB6v15006INS_4fposI11__mbstate_tEELi0EEEvPT_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__110destroy_atB6v15006IN7doctest16SubcaseSignatureELi0EEEvPT_ called 14 returned 100% blocks executed 100%
+function _ZNSt3__110destroy_atB6v15006IPKN7doctest6detail20IExceptionTranslatorELi0EEEvPT_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__110destroy_atB6v15006IPN7doctest13IContextScopeELi0EEEvPT_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__110destroy_atB6v15006IN7doctest6StringELi0EEEvPT_ called 1 returned 100% blocks executed 100%
+function _ZNSt3__110destroy_atB6v15006IyLi0EEEvPT_ called 5 returned 100% blocks executed 100%
+function _ZNSt3__110destroy_atB6v15006IPN7doctest9IReporterELi0EEEvPT_ called 1 returned 100% blocks executed 100%
+function _ZNSt3__110destroy_atB6v15006INS_6vectorIN7doctest6StringENS_9allocatorIS3_EEEELi0EEEvPT_ called 9 returned 100% blocks executed 100%
+function _ZNSt3__110destroy_atB6v15006INS_4pairIKNS1_IiN7doctest6StringEEEPFPNS2_9IReporterERKNS2_14ContextOptionsEEEELi0EEEvPT_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__110destroy_atB6v15006IPKN7doctest6detail8TestCaseELi0EEEvPT_ called 1 returned 100% blocks executed 100%
+function _ZNSt3__110destroy_atB6v15006IPKN7doctest12TestCaseDataELi0EEEvPT_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__110destroy_atB6v15006IP5GraphLi0EEEvPT_ called 5 returned 100% blocks executed 100%
+function _ZNSt3__110destroy_atB6v15006IN7doctest6detail8TestCaseELi0EEEvPT_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__110destroy_atB6v15006INS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEELi0EEEvPT_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__110destroy_atB6v15006IN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData13JUnitTestCaseELi0EEEvPT_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__110destroy_atB6v15006IN7doctest12_GLOBAL__N_113JUnitReporter17JUnitTestCaseData16JUnitTestMessageELi0EEEvPT_ called 0 returned 0% blocks executed 0%
+       36:   87:void destroy_at(_Tp* __loc) {
+       36:   88:    _VSTD::__destroy_at(__loc);
+       36:   89:}
+    $$$$$:   89-block  0
+       14:   89-block  1
+    $$$$$:   89-block  2
+    $$$$$:   89-block  3
+        1:   89-block  4
+        5:   89-block  5
+        1:   89-block  6
+        9:   89-block  7
+    $$$$$:   89-block  8
+        1:   89-block  9
+    $$$$$:   89-block 10
+        5:   89-block 11
+    $$$$$:   89-block 12
+    $$$$$:   89-block 13
+    $$$$$:   89-block 14
+    $$$$$:   89-block 15
+        -:   90:
+        -:   91:#if _LIBCPP_STD_VER > 17
+        -:   92:template <class _Tp, enable_if_t<is_array_v<_Tp>, int> = 0>
+        -:   93:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:   94:void destroy_at(_Tp* __loc) {
+        -:   95:  _VSTD::__destroy_at(__loc);
+        -:   96:}
+        -:   97:#endif
+        -:   98:
+        -:   99:template <class _ForwardIterator>
+        -:  100:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:  101:void destroy(_ForwardIterator __first, _ForwardIterator __last) {
+        -:  102:  (void)_VSTD::__destroy(_VSTD::move(__first), _VSTD::move(__last));
+        -:  103:}
+        -:  104:
+        -:  105:template <class _ForwardIterator, class _Size>
+        -:  106:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:  107:_ForwardIterator destroy_n(_ForwardIterator __first, _Size __n) {
+        -:  108:    for (; __n > 0; (void)++__first, --__n)
+        -:  109:        _VSTD::__destroy_at(_VSTD::addressof(*__first));
+        -:  110:    return __first;
+        -:  111:}
+        -:  112:
+        -:  113:#endif // _LIBCPP_STD_VER > 14
+        -:  114:
+        -:  115:_LIBCPP_END_NAMESPACE_STD
+        -:  116:
+        -:  117:#endif // _LIBCPP___MEMORY_CONSTRUCT_AT_H

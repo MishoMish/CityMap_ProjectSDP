@@ -1,0 +1,69 @@
+        -:    0:Source:/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__algorithm/sort_heap.h
+        -:    0:Graph:/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/RouteCheckerTest.dir/UnitTesting/RouteCheckerTest.cpp.gcno
+        -:    0:Data:/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/RouteCheckerTest.dir/UnitTesting/RouteCheckerTest.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://===----------------------------------------------------------------------===//
+        -:    2://
+        -:    3:// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
+        -:    4:// See https://llvm.org/LICENSE.txt for license information.
+        -:    5:// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+        -:    6://
+        -:    7://===----------------------------------------------------------------------===//
+        -:    8:
+        -:    9:#ifndef _LIBCPP___ALGORITHM_SORT_HEAP_H
+        -:   10:#define _LIBCPP___ALGORITHM_SORT_HEAP_H
+        -:   11:
+        -:   12:#include <__algorithm/comp.h>
+        -:   13:#include <__algorithm/comp_ref_type.h>
+        -:   14:#include <__algorithm/iterator_operations.h>
+        -:   15:#include <__algorithm/pop_heap.h>
+        -:   16:#include <__config>
+        -:   17:#include <__iterator/iterator_traits.h>
+        -:   18:#include <__utility/move.h>
+        -:   19:#include <type_traits>
+        -:   20:
+        -:   21:#if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
+        -:   22:#  pragma GCC system_header
+        -:   23:#endif
+        -:   24:
+        -:   25:_LIBCPP_BEGIN_NAMESPACE_STD
+        -:   26:
+        -:   27:template <class _AlgPolicy, class _Compare, class _RandomAccessIterator>
+        -:   28:inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11
+function _ZNSt3__111__sort_heapB6v15006INS_17_ClassicAlgPolicyERPFbPKN7doctest6detail8TestCaseES6_EPS6_EEvT1_SB_OT0_ called 0 returned 0% blocks executed 0%
+    #####:   29:void __sort_heap(_RandomAccessIterator __first, _RandomAccessIterator __last, _Compare&& __comp) {
+        -:   30:  using _CompRef = typename __comp_ref_type<_Compare>::type;
+    #####:   31:  _CompRef __comp_ref = __comp;
+        -:   32:
+        -:   33:  using difference_type = typename iterator_traits<_RandomAccessIterator>::difference_type;
+    #####:   34:  for (difference_type __n = __last - __first; __n > 1; --__last, (void) --__n)
+    $$$$$:   34-block  0
+    $$$$$:   34-block  1
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   34-block  2
+    #####:   35:    std::__pop_heap<_AlgPolicy>(__first, __last, __comp_ref, __n);
+    $$$$$:   35-block  0
+    #####:   36:}
+    $$$$$:   36-block  0
+        -:   37:
+        -:   38:template <class _RandomAccessIterator, class _Compare>
+        -:   39:inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:   40:void sort_heap(_RandomAccessIterator __first, _RandomAccessIterator __last, _Compare __comp) {
+        -:   41:  static_assert(std::is_copy_constructible<_RandomAccessIterator>::value, "Iterators must be copy constructible.");
+        -:   42:  static_assert(std::is_copy_assignable<_RandomAccessIterator>::value, "Iterators must be copy assignable.");
+        -:   43:
+        -:   44:  std::__sort_heap<_ClassicAlgPolicy>(std::move(__first), std::move(__last), __comp);
+        -:   45:}
+        -:   46:
+        -:   47:template <class _RandomAccessIterator>
+        -:   48:inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:   49:void sort_heap(_RandomAccessIterator __first, _RandomAccessIterator __last) {
+        -:   50:  std::sort_heap(std::move(__first), std::move(__last),
+        -:   51:      __less<typename iterator_traits<_RandomAccessIterator>::value_type>());
+        -:   52:}
+        -:   53:
+        -:   54:_LIBCPP_END_NAMESPACE_STD
+        -:   55:
+        -:   56:#endif // _LIBCPP___ALGORITHM_SORT_HEAP_H

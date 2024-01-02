@@ -1,0 +1,106 @@
+        -:    0:Source:/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__iterator/iter_move.h
+        -:    0:Graph:/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/GraphTest.dir/UnitTesting/GraphTest.cpp.gcno
+        -:    0:Data:/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/GraphTest.dir/UnitTesting/GraphTest.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:// -*- C++ -*-
+        -:    2://===----------------------------------------------------------------------===//
+        -:    3://
+        -:    4:// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
+        -:    5:// See https://llvm.org/LICENSE.txt for license information.
+        -:    6:// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+        -:    7://
+        -:    8://===----------------------------------------------------------------------===//
+        -:    9:
+        -:   10:#ifndef _LIBCPP___ITERATOR_ITER_MOVE_H
+        -:   11:#define _LIBCPP___ITERATOR_ITER_MOVE_H
+        -:   12:
+        -:   13:#include <__concepts/class_or_enum.h>
+        -:   14:#include <__config>
+        -:   15:#include <__iterator/iterator_traits.h>
+        -:   16:#include <__utility/forward.h>
+        -:   17:#include <__utility/move.h>
+        -:   18:#include <type_traits>
+        -:   19:
+        -:   20:#if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
+        -:   21:#  pragma GCC system_header
+        -:   22:#endif
+        -:   23:
+        -:   24:_LIBCPP_BEGIN_NAMESPACE_STD
+        -:   25:
+        -:   26:#if _LIBCPP_STD_VER > 17
+        -:   27:
+        -:   28:// [iterator.cust.move]
+        -:   29:
+        -:   30:namespace ranges {
+        -:   31:namespace __iter_move {
+        -:   32:
+        -:   33:void iter_move();
+        -:   34:
+        -:   35:template <class _Tp>
+        -:   36:concept __unqualified_iter_move =
+        -:   37:  __class_or_enum<remove_cvref_t<_Tp>> &&
+        -:   38:  requires (_Tp&& __t) {
+        -:   39:    iter_move(std::forward<_Tp>(__t));
+        -:   40:  };
+        -:   41:
+        -:   42:template<class _Tp>
+        -:   43:concept __move_deref =
+        -:   44:  !__unqualified_iter_move<_Tp> &&
+        -:   45:  requires (_Tp&& __t) {
+        -:   46:    *__t;
+        -:   47:    requires is_lvalue_reference_v<decltype(*__t)>;
+        -:   48:  };
+        -:   49:
+        -:   50:template<class _Tp>
+        -:   51:concept __just_deref =
+        -:   52:  !__unqualified_iter_move<_Tp> &&
+        -:   53:  !__move_deref<_Tp> &&
+        -:   54:  requires (_Tp&& __t) {
+        -:   55:    *__t;
+        -:   56:    requires (!is_lvalue_reference_v<decltype(*__t)>);
+        -:   57:  };
+        -:   58:
+        -:   59:// [iterator.cust.move]
+        -:   60:
+        -:   61:struct __fn {
+        -:   62:  template<class _Ip>
+        -:   63:    requires __unqualified_iter_move<_Ip>
+        -:   64:  [[nodiscard]] _LIBCPP_HIDE_FROM_ABI constexpr decltype(auto) operator()(_Ip&& __i) const
+        -:   65:    noexcept(noexcept(iter_move(std::forward<_Ip>(__i))))
+        -:   66:  {
+        -:   67:    return iter_move(std::forward<_Ip>(__i));
+        -:   68:  }
+        -:   69:
+        -:   70:  template<class _Ip>
+        -:   71:    requires __move_deref<_Ip>
+function _ZNKSt3__16ranges11__iter_move4__fnclB6v15006IRKPPN7doctest9IReporterEEEDTclsr3stdE4movedeclsr3stdE7forwardIT_Efp_EEEOSA_ called 0 returned 0% blocks executed 0%
+    #####:   72:  [[nodiscard]] _LIBCPP_HIDE_FROM_ABI constexpr auto operator()(_Ip&& __i) const
+        -:   73:    noexcept(noexcept(std::move(*std::forward<_Ip>(__i))))
+        -:   74:    -> decltype(      std::move(*std::forward<_Ip>(__i)))
+    #####:   75:    { return          std::move(*std::forward<_Ip>(__i)); }
+    $$$$$:   75-block  0
+        -:   76:
+        -:   77:  template<class _Ip>
+        -:   78:    requires __just_deref<_Ip>
+        -:   79:  [[nodiscard]] _LIBCPP_HIDE_FROM_ABI constexpr auto operator()(_Ip&& __i) const
+        -:   80:    noexcept(noexcept(*std::forward<_Ip>(__i)))
+        -:   81:    -> decltype(      *std::forward<_Ip>(__i))
+        -:   82:    { return          *std::forward<_Ip>(__i); }
+        -:   83:};
+        -:   84:} // namespace __iter_move
+        -:   85:
+        -:   86:inline namespace __cpo {
+        -:   87:  inline constexpr auto iter_move = __iter_move::__fn{};
+        -:   88:} // namespace __cpo
+        -:   89:} // namespace ranges
+        -:   90:
+        -:   91:template<__dereferenceable _Tp>
+        -:   92:  requires requires(_Tp& __t) { { ranges::iter_move(__t) } -> __can_reference; }
+        -:   93:using iter_rvalue_reference_t = decltype(ranges::iter_move(declval<_Tp&>()));
+        -:   94:
+        -:   95:#endif // _LIBCPP_STD_VER > 17
+        -:   96:
+        -:   97:_LIBCPP_END_NAMESPACE_STD
+        -:   98:
+        -:   99:#endif // _LIBCPP___ITERATOR_ITER_MOVE_H

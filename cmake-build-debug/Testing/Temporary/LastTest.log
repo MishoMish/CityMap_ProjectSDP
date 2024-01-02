@@ -1,0 +1,134 @@
+Start testing: Jan 02 13:56 EET
+----------------------------------------------------------
+1/6 Testing: GraphContainerTest
+1/6 Test: GraphContainerTest
+Command: "/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug/GraphContainerTest"
+Directory: /Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug
+"GraphContainerTest" start time: Jan 02 13:56 EET
+Output:
+----------------------------------------------------------
+[doctest] doctest version is "2.4.11"
+[doctest] run with "--help" for options
+--- --- --- --- ---
+CityA 0x600000330200 : 
+ --- 
+===============================================================================
+[doctest] test cases:  1 |  1 passed | 0 failed | 0 skipped
+[doctest] assertions: 22 | 22 passed | 0 failed |
+[doctest] Status: SUCCESS!
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"GraphContainerTest" end time: Jan 02 13:56 EET
+"GraphContainerTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/6 Testing: GraphTest
+2/6 Test: GraphTest
+Command: "/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug/GraphTest"
+Directory: /Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug
+"GraphTest" start time: Jan 02 13:56 EET
+Output:
+----------------------------------------------------------
+[doctest] doctest version is "2.4.11"
+[doctest] run with "--help" for options
+===============================================================================
+[doctest] test cases: 1 | 1 passed | 0 failed | 0 skipped
+[doctest] assertions: 6 | 6 passed | 0 failed |
+[doctest] Status: SUCCESS!
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"GraphTest" end time: Jan 02 13:56 EET
+"GraphTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/6 Testing: GraphvizControllerTest
+3/6 Test: GraphvizControllerTest
+Command: "/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug/GraphvizControllerTest"
+Directory: /Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug
+"GraphvizControllerTest" start time: Jan 02 13:56 EET
+Output:
+----------------------------------------------------------
+[doctest] doctest version is "2.4.11"
+[doctest] run with "--help" for options
+===============================================================================
+[doctest] test cases: 1 | 1 passed | 0 failed | 0 skipped
+[doctest] assertions: 2 | 2 passed | 0 failed |
+[doctest] Status: SUCCESS!
+<end of output>
+Test time =   0.34 sec
+----------------------------------------------------------
+Test Passed.
+"GraphvizControllerTest" end time: Jan 02 13:56 EET
+"GraphvizControllerTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/6 Testing: PathTest
+4/6 Test: PathTest
+Command: "/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug/PathTest"
+Directory: /Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug
+"PathTest" start time: Jan 02 13:56 EET
+Output:
+----------------------------------------------------------
+[doctest] doctest version is "2.4.11"
+[doctest] run with "--help" for options
+===============================================================================
+[doctest] test cases: 1 | 1 passed | 0 failed | 0 skipped
+[doctest] assertions: 7 | 7 passed | 0 failed |
+[doctest] Status: SUCCESS!
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PathTest" end time: Jan 02 13:56 EET
+"PathTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/6 Testing: RouteCheckerTest
+5/6 Test: RouteCheckerTest
+Command: "/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug/RouteCheckerTest"
+Directory: /Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug
+"RouteCheckerTest" start time: Jan 02 13:56 EET
+Output:
+----------------------------------------------------------
+[doctest] doctest version is "2.4.11"
+[doctest] run with "--help" for options
+===============================================================================
+[doctest] test cases:  1 |  1 passed | 0 failed | 0 skipped
+[doctest] assertions: 25 | 25 passed | 0 failed |
+[doctest] Status: SUCCESS!
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"RouteCheckerTest" end time: Jan 02 13:56 EET
+"RouteCheckerTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/6 Testing: TerminalProgramTest
+6/6 Test: TerminalProgramTest
+Command: "/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug/TerminalProgramTest"
+Directory: /Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug
+"TerminalProgramTest" start time: Jan 02 13:56 EET
+Output:
+----------------------------------------------------------
+[doctest] doctest version is "2.4.11"
+[doctest] run with "--help" for options
+Closed location: CityB
+Closed location: CityC
+===============================================================================
+[doctest] test cases: 1 | 1 passed | 0 failed | 0 skipped
+[doctest] assertions: 9 | 9 passed | 0 failed |
+[doctest] Status: SUCCESS!
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"TerminalProgramTest" end time: Jan 02 13:56 EET
+"TerminalProgramTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jan 02 13:56 EET

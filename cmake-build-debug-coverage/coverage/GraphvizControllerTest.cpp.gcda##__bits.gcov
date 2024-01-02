@@ -1,0 +1,169 @@
+        -:    0:Source:/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__bits
+        -:    0:Graph:/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/GraphvizControllerTest.dir/UnitTesting/GraphvizControllerTest.cpp.gcno
+        -:    0:Data:/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/GraphvizControllerTest.dir/UnitTesting/GraphvizControllerTest.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:// -*- C++ -*-
+        -:    2://===----------------------------------------------------------------------===//
+        -:    3://
+        -:    4:// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
+        -:    5:// See https://llvm.org/LICENSE.txt for license information.
+        -:    6:// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+        -:    7://
+        -:    8://===----------------------------------------------------------------------===//
+        -:    9:
+        -:   10:#ifndef _LIBCPP___BITS
+        -:   11:#define _LIBCPP___BITS
+        -:   12:
+        -:   13:#include <__config>
+        -:   14:
+        -:   15:#if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
+        -:   16:#  pragma GCC system_header
+        -:   17:#endif
+        -:   18:
+        -:   19:_LIBCPP_PUSH_MACROS
+        -:   20:#include <__undef_macros>
+        -:   21:
+        -:   22:
+        -:   23:_LIBCPP_BEGIN_NAMESPACE_STD
+        -:   24:
+        -:   25:#ifndef _LIBCPP_COMPILER_MSVC
+        -:   26:
+        -:   27:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
+        -:   28:int __libcpp_ctz(unsigned __x)           _NOEXCEPT { return __builtin_ctz(__x); }
+        -:   29:
+        -:   30:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
+        -:   31:int __libcpp_ctz(unsigned long __x)      _NOEXCEPT { return __builtin_ctzl(__x); }
+        -:   32:
+        -:   33:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
+        -:   34:int __libcpp_ctz(unsigned long long __x) _NOEXCEPT { return __builtin_ctzll(__x); }
+        -:   35:
+        -:   36:
+        -:   37:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
+        -:   38:int __libcpp_clz(unsigned __x)           _NOEXCEPT { return __builtin_clz(__x); }
+        -:   39:
+        -:   40:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
+function _ZNSt3__112__libcpp_clzB6v15006Em called 1 returned 100% blocks executed 100%
+        1:   41:int __libcpp_clz(unsigned long __x)      _NOEXCEPT { return __builtin_clzl(__x); }
+        1:   41-block  0
+        -:   42:
+        -:   43:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
+        -:   44:int __libcpp_clz(unsigned long long __x) _NOEXCEPT { return __builtin_clzll(__x); }
+        -:   45:
+        -:   46:#  ifndef _LIBCPP_HAS_NO_INT128
+        -:   47:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
+        -:   48:int __libcpp_clz(__uint128_t __x) _NOEXCEPT {
+        -:   49:  // The function is written in this form due to C++ constexpr limitations.
+        -:   50:  // The algorithm:
+        -:   51:  // - Test whether any bit in the high 64-bits is set
+        -:   52:  // - No bits set:
+        -:   53:  //   - The high 64-bits contain 64 leading zeros,
+        -:   54:  //   - Add the result of the low 64-bits.
+        -:   55:  // - Any bits set:
+        -:   56:  //   - The number of leading zeros of the input is the number of leading
+        -:   57:  //     zeros in the high 64-bits.
+        -:   58:  return ((__x >> 64) == 0)
+        -:   59:           ? (64 + __builtin_clzll(static_cast<unsigned long long>(__x)))
+        -:   60:           : __builtin_clzll(static_cast<unsigned long long>(__x >> 64));
+        -:   61:}
+        -:   62:#  endif
+        -:   63:
+        -:   64:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
+        -:   65:int __libcpp_popcount(unsigned __x)           _NOEXCEPT { return __builtin_popcount(__x); }
+        -:   66:
+        -:   67:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
+        -:   68:int __libcpp_popcount(unsigned long __x)      _NOEXCEPT { return __builtin_popcountl(__x); }
+        -:   69:
+        -:   70:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
+        -:   71:int __libcpp_popcount(unsigned long long __x) _NOEXCEPT { return __builtin_popcountll(__x); }
+        -:   72:
+        -:   73:#else  // _LIBCPP_COMPILER_MSVC
+        -:   74:
+        -:   75:// Precondition:  __x != 0
+        -:   76:inline _LIBCPP_INLINE_VISIBILITY
+        -:   77:int __libcpp_ctz(unsigned __x) {
+        -:   78:  static_assert(sizeof(unsigned) == sizeof(unsigned long), "");
+        -:   79:  static_assert(sizeof(unsigned long) == 4, "");
+        -:   80:  unsigned long __where;
+        -:   81:  if (_BitScanForward(&__where, __x))
+        -:   82:    return static_cast<int>(__where);
+        -:   83:  return 32;
+        -:   84:}
+        -:   85:
+        -:   86:inline _LIBCPP_INLINE_VISIBILITY
+        -:   87:int __libcpp_ctz(unsigned long __x) {
+        -:   88:    static_assert(sizeof(unsigned long) == sizeof(unsigned), "");
+        -:   89:    return __ctz(static_cast<unsigned>(__x));
+        -:   90:}
+        -:   91:
+        -:   92:inline _LIBCPP_INLINE_VISIBILITY
+        -:   93:int __libcpp_ctz(unsigned long long __x) {
+        -:   94:    unsigned long __where;
+        -:   95:#if defined(_LIBCPP_HAS_BITSCAN64)
+        -:   96:  if (_BitScanForward64(&__where, __x))
+        -:   97:    return static_cast<int>(__where);
+        -:   98:#else
+        -:   99:  // Win32 doesn't have _BitScanForward64 so emulate it with two 32 bit calls.
+        -:  100:  if (_BitScanForward(&__where, static_cast<unsigned long>(__x)))
+        -:  101:    return static_cast<int>(__where);
+        -:  102:  if (_BitScanForward(&__where, static_cast<unsigned long>(__x >> 32)))
+        -:  103:    return static_cast<int>(__where + 32);
+        -:  104:#endif
+        -:  105:  return 64;
+        -:  106:}
+        -:  107:
+        -:  108:// Precondition:  __x != 0
+        -:  109:inline _LIBCPP_INLINE_VISIBILITY
+        -:  110:int __libcpp_clz(unsigned __x) {
+        -:  111:  static_assert(sizeof(unsigned) == sizeof(unsigned long), "");
+        -:  112:  static_assert(sizeof(unsigned long) == 4, "");
+        -:  113:  unsigned long __where;
+        -:  114:  if (_BitScanReverse(&__where, __x))
+        -:  115:    return static_cast<int>(31 - __where);
+        -:  116:  return 32; // Undefined Behavior.
+        -:  117:}
+        -:  118:
+        -:  119:inline _LIBCPP_INLINE_VISIBILITY
+        -:  120:int __libcpp_clz(unsigned long __x) {
+        -:  121:    static_assert(sizeof(unsigned) == sizeof(unsigned long), "");
+        -:  122:    return __libcpp_clz(static_cast<unsigned>(__x));
+        -:  123:}
+        -:  124:
+        -:  125:inline _LIBCPP_INLINE_VISIBILITY
+        -:  126:int __libcpp_clz(unsigned long long __x) {
+        -:  127:  unsigned long __where;
+        -:  128:#if defined(_LIBCPP_HAS_BITSCAN64)
+        -:  129:  if (_BitScanReverse64(&__where, __x))
+        -:  130:    return static_cast<int>(63 - __where);
+        -:  131:#else
+        -:  132:  // Win32 doesn't have _BitScanReverse64 so emulate it with two 32 bit calls.
+        -:  133:  if (_BitScanReverse(&__where, static_cast<unsigned long>(__x >> 32)))
+        -:  134:    return static_cast<int>(63 - (__where + 32));
+        -:  135:  if (_BitScanReverse(&__where, static_cast<unsigned long>(__x)))
+        -:  136:    return static_cast<int>(63 - __where);
+        -:  137:#endif
+        -:  138:  return 64; // Undefined Behavior.
+        -:  139:}
+        -:  140:
+        -:  141:inline _LIBCPP_INLINE_VISIBILITY int __libcpp_popcount(unsigned __x) {
+        -:  142:  static_assert(sizeof(unsigned) == 4, "");
+        -:  143:  return __popcnt(__x);
+        -:  144:}
+        -:  145:
+        -:  146:inline _LIBCPP_INLINE_VISIBILITY int __libcpp_popcount(unsigned long __x) {
+        -:  147:  static_assert(sizeof(unsigned long) == 4, "");
+        -:  148:  return __popcnt(__x);
+        -:  149:}
+        -:  150:
+        -:  151:inline _LIBCPP_INLINE_VISIBILITY int __libcpp_popcount(unsigned long long __x) {
+        -:  152:  static_assert(sizeof(unsigned long long) == 8, "");
+        -:  153:  return __popcnt64(__x);
+        -:  154:}
+        -:  155:
+        -:  156:#endif // _LIBCPP_COMPILER_MSVC
+        -:  157:
+        -:  158:_LIBCPP_END_NAMESPACE_STD
+        -:  159:
+        -:  160:_LIBCPP_POP_MACROS
+        -:  161:
+        -:  162:#endif // _LIBCPP___BITS

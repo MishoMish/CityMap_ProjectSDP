@@ -1,0 +1,90 @@
+        -:    0:Source:/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__algorithm/pop_heap.h
+        -:    0:Graph:/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/GraphTest.dir/UnitTesting/GraphTest.cpp.gcno
+        -:    0:Data:/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/GraphTest.dir/UnitTesting/GraphTest.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://===----------------------------------------------------------------------===//
+        -:    2://
+        -:    3:// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
+        -:    4:// See https://llvm.org/LICENSE.txt for license information.
+        -:    5:// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+        -:    6://
+        -:    7://===----------------------------------------------------------------------===//
+        -:    8:
+        -:    9:#ifndef _LIBCPP___ALGORITHM_POP_HEAP_H
+        -:   10:#define _LIBCPP___ALGORITHM_POP_HEAP_H
+        -:   11:
+        -:   12:#include <__algorithm/comp.h>
+        -:   13:#include <__algorithm/comp_ref_type.h>
+        -:   14:#include <__algorithm/iterator_operations.h>
+        -:   15:#include <__algorithm/push_heap.h>
+        -:   16:#include <__algorithm/sift_down.h>
+        -:   17:#include <__assert>
+        -:   18:#include <__config>
+        -:   19:#include <__iterator/iterator_traits.h>
+        -:   20:#include <__utility/move.h>
+        -:   21:#include <type_traits>
+        -:   22:
+        -:   23:#if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
+        -:   24:#  pragma GCC system_header
+        -:   25:#endif
+        -:   26:
+        -:   27:_LIBCPP_BEGIN_NAMESPACE_STD
+        -:   28:
+        -:   29:template <class _AlgPolicy, class _Compare, class _RandomAccessIterator>
+        -:   30:inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11
+function _ZNSt3__110__pop_heapB6v15006INS_17_ClassicAlgPolicyEPFbPKN7doctest6detail8TestCaseES6_EPS6_EEvT1_SA_RT0_NS_15iterator_traitsISA_E15difference_typeE called 0 returned 0% blocks executed 0%
+    #####:   31:void __pop_heap(_RandomAccessIterator __first, _RandomAccessIterator __last, _Compare& __comp,
+        -:   32:    typename iterator_traits<_RandomAccessIterator>::difference_type __len) {
+        -:   33:  _LIBCPP_ASSERT(__len > 0, "The heap given to pop_heap must be non-empty");
+        -:   34:
+        -:   35:  using _CompRef = typename __comp_ref_type<_Compare>::type;
+    #####:   36:  _CompRef __comp_ref = __comp;
+        -:   37:
+        -:   38:  using value_type = typename iterator_traits<_RandomAccessIterator>::value_type;
+    #####:   39:  if (__len > 1) {
+    $$$$$:   39-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   40:    value_type __top = _IterOps<_AlgPolicy>::__iter_move(__first);  // create a hole at __first
+    #####:   41:    _RandomAccessIterator __hole = std::__floyd_sift_down<_AlgPolicy>(__first, __comp_ref, __len);
+    #####:   42:    --__last;
+        -:   43:
+    #####:   44:    if (__hole == __last) {
+    $$$$$:   44-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   45:      *__hole = std::move(__top);
+    #####:   46:    } else {
+    $$$$$:   46-block  0
+    #####:   47:      *__hole = _IterOps<_AlgPolicy>::__iter_move(__last);
+    #####:   48:      ++__hole;
+    #####:   49:      *__last = std::move(__top);
+    #####:   50:      std::__sift_up<_AlgPolicy>(__first, __hole, __comp_ref, __hole - __first);
+    $$$$$:   50-block  0
+        -:   51:    }
+    #####:   52:  }
+    $$$$$:   52-block  0
+    #####:   53:}
+    $$$$$:   53-block  0
+        -:   54:
+        -:   55:template <class _RandomAccessIterator, class _Compare>
+        -:   56:inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:   57:void pop_heap(_RandomAccessIterator __first, _RandomAccessIterator __last, _Compare __comp) {
+        -:   58:  static_assert(std::is_copy_constructible<_RandomAccessIterator>::value, "Iterators must be copy constructible.");
+        -:   59:  static_assert(std::is_copy_assignable<_RandomAccessIterator>::value, "Iterators must be copy assignable.");
+        -:   60:
+        -:   61:  typename iterator_traits<_RandomAccessIterator>::difference_type __len = __last - __first;
+        -:   62:  std::__pop_heap<_ClassicAlgPolicy>(std::move(__first), std::move(__last), __comp, __len);
+        -:   63:}
+        -:   64:
+        -:   65:template <class _RandomAccessIterator>
+        -:   66:inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:   67:void pop_heap(_RandomAccessIterator __first, _RandomAccessIterator __last) {
+        -:   68:  std::pop_heap(std::move(__first), std::move(__last),
+        -:   69:      __less<typename iterator_traits<_RandomAccessIterator>::value_type>());
+        -:   70:}
+        -:   71:
+        -:   72:_LIBCPP_END_NAMESPACE_STD
+        -:   73:
+        -:   74:#endif // _LIBCPP___ALGORITHM_POP_HEAP_H

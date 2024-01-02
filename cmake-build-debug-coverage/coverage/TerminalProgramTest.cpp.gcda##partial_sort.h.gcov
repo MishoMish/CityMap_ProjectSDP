@@ -1,0 +1,126 @@
+        -:    0:Source:/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__algorithm/partial_sort.h
+        -:    0:Graph:/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/TerminalProgramTest.dir/UnitTesting/TerminalProgramTest.cpp.gcno
+        -:    0:Data:/Users/mihaildobroslavski/CLionProjects/CityMapProject/cmake-build-debug-coverage/CMakeFiles/TerminalProgramTest.dir/UnitTesting/TerminalProgramTest.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://===----------------------------------------------------------------------===//
+        -:    2://
+        -:    3:// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
+        -:    4:// See https://llvm.org/LICENSE.txt for license information.
+        -:    5:// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+        -:    6://
+        -:    7://===----------------------------------------------------------------------===//
+        -:    8:
+        -:    9:#ifndef _LIBCPP___ALGORITHM_PARTIAL_SORT_H
+        -:   10:#define _LIBCPP___ALGORITHM_PARTIAL_SORT_H
+        -:   11:
+        -:   12:#include <__algorithm/comp.h>
+        -:   13:#include <__algorithm/comp_ref_type.h>
+        -:   14:#include <__algorithm/iterator_operations.h>
+        -:   15:#include <__algorithm/make_heap.h>
+        -:   16:#include <__algorithm/sift_down.h>
+        -:   17:#include <__algorithm/sort_heap.h>
+        -:   18:#include <__config>
+        -:   19:#include <__debug>
+        -:   20:#include <__debug_utils/randomize_range.h>
+        -:   21:#include <__iterator/iterator_traits.h>
+        -:   22:#include <__utility/move.h>
+        -:   23:#include <type_traits>
+        -:   24:
+        -:   25:#if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
+        -:   26:#  pragma GCC system_header
+        -:   27:#endif
+        -:   28:
+        -:   29:_LIBCPP_BEGIN_NAMESPACE_STD
+        -:   30:
+        -:   31:template <class _AlgPolicy, class _Compare, class _RandomAccessIterator, class _Sentinel>
+        -:   32:_LIBCPP_CONSTEXPR_AFTER_CXX17
+function _ZNSt3__119__partial_sort_implINS_17_ClassicAlgPolicyERPFbPKN7doctest6detail8TestCaseES6_EPS6_SA_EET1_SB_SB_T2_OT0_ called 0 returned 0% blocks executed 0%
+    #####:   33:_RandomAccessIterator __partial_sort_impl(
+        -:   34:    _RandomAccessIterator __first, _RandomAccessIterator __middle, _Sentinel __last, _Compare&& __comp) {
+    #####:   35:  if (__first == __middle) {
+    $$$$$:   35-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   36:    return _IterOps<_AlgPolicy>::next(__middle, __last);
+    $$$$$:   36-block  0
+        -:   37:  }
+        -:   38:
+    #####:   39:  std::__make_heap<_AlgPolicy>(__first, __middle, __comp);
+        -:   40:
+    #####:   41:  typename iterator_traits<_RandomAccessIterator>::difference_type __len = __middle - __first;
+    #####:   42:  _RandomAccessIterator __i = __middle;
+    #####:   43:  for (; __i != __last; ++__i)
+    $$$$$:   43-block  0
+    $$$$$:   43-block  1
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   43-block  2
+        -:   44:  {
+    #####:   45:      if (__comp(*__i, *__first))
+    $$$$$:   45-block  0
+branch  0 never executed
+branch  1 never executed
+        -:   46:      {
+    #####:   47:          _IterOps<_AlgPolicy>::iter_swap(__i, __first);
+    #####:   48:          std::__sift_down<_AlgPolicy>(__first, __comp, __len, __first);
+    #####:   49:      }
+    $$$$$:   49-block  0
+        -:   50:
+    #####:   51:  }
+    $$$$$:   51-block  0
+    #####:   52:  std::__sort_heap<_AlgPolicy>(std::move(__first), std::move(__middle), __comp);
+        -:   53:
+    #####:   54:  return __i;
+    $$$$$:   54-block  0
+    #####:   55:}
+    $$$$$:   55-block  0
+        -:   56:
+        -:   57:template <class _AlgPolicy, class _Compare, class _RandomAccessIterator, class _Sentinel>
+        -:   58:_LIBCPP_CONSTEXPR_AFTER_CXX17
+function _ZNSt3__114__partial_sortINS_17_ClassicAlgPolicyERPFbPKN7doctest6detail8TestCaseES6_EPS6_SA_EET1_SB_SB_T2_RT0_ called 0 returned 0% blocks executed 0%
+    #####:   59:_RandomAccessIterator __partial_sort(_RandomAccessIterator __first, _RandomAccessIterator __middle, _Sentinel __last,
+        -:   60:                                     _Compare& __comp) {
+    #####:   61:  if (__first == __middle)
+    $$$$$:   61-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   62:      return _IterOps<_AlgPolicy>::next(__middle, __last);
+    $$$$$:   62-block  0
+        -:   63:
+    #####:   64:  std::__debug_randomize_range<_AlgPolicy>(__first, __last);
+        -:   65:
+        -:   66:  using _Comp_ref = typename __comp_ref_type<_Compare>::type;
+    #####:   67:  auto __last_iter = std::__partial_sort_impl<_AlgPolicy>(__first, __middle, __last, static_cast<_Comp_ref>(__comp));
+        -:   68:
+    #####:   69:  std::__debug_randomize_range<_AlgPolicy>(__middle, __last);
+        -:   70:
+    #####:   71:  return __last_iter;
+    $$$$$:   71-block  0
+    #####:   72:}
+    $$$$$:   72-block  0
+        -:   73:
+        -:   74:template <class _RandomAccessIterator, class _Compare>
+        -:   75:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:   76:void
+        -:   77:partial_sort(_RandomAccessIterator __first, _RandomAccessIterator __middle, _RandomAccessIterator __last,
+        -:   78:             _Compare __comp)
+        -:   79:{
+        -:   80:  static_assert(std::is_copy_constructible<_RandomAccessIterator>::value, "Iterators must be copy constructible.");
+        -:   81:  static_assert(std::is_copy_assignable<_RandomAccessIterator>::value, "Iterators must be copy assignable.");
+        -:   82:
+        -:   83:  (void)std::__partial_sort<_ClassicAlgPolicy>(std::move(__first), std::move(__middle), std::move(__last), __comp);
+        -:   84:}
+        -:   85:
+        -:   86:template <class _RandomAccessIterator>
+        -:   87:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
+        -:   88:void
+        -:   89:partial_sort(_RandomAccessIterator __first, _RandomAccessIterator __middle, _RandomAccessIterator __last)
+        -:   90:{
+        -:   91:    _VSTD::partial_sort(__first, __middle, __last,
+        -:   92:                        __less<typename iterator_traits<_RandomAccessIterator>::value_type>());
+        -:   93:}
+        -:   94:
+        -:   95:_LIBCPP_END_NAMESPACE_STD
+        -:   96:
+        -:   97:#endif // _LIBCPP___ALGORITHM_PARTIAL_SORT_H
