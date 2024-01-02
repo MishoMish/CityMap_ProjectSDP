@@ -142,94 +142,61 @@ The `RouteChecker` class provides static methods for various route and connectiv
 - `canReachAllNodes(GraphContainer *, Graph *)`: Checks if it's possible to reach all nodes from a given starting graph.
 - `findAllDeadEnded(GraphContainer *)`: Finds all dead-ended streets in the city map.
 
-### 2.3 Upgrade Paths <a name="upgrade-paths"></a>
+## 2.3 Project Design (Continued) <a name="project-design-continued"></a>
 
-As the City Map Project evolves, several upgrade paths can be considered to enhance its functionality and usability:
-
-#### 2.3.1 User Interface Improvement <a name="user-interface-improvement"></a>
-
-Develop a graphical user interface (GUI) to provide a more user-friendly experience for interacting with the city map.
-
-#### 2.3.2 Real-Time Data Integration <a name="real-time-data-integration"></a>
-
-Integrate real-time data sources to dynamically update the city map, reflecting changes in infrastructure or road conditions.
-
-#### 2.3.3 Advanced Algorithms <a name="advanced-algorithms"></a>
-
-Implement advanced graph algorithms for more sophisticated analysis, such as A* for pathfinding or algorithms for network flow analysis.
-
-#### 2.3.4 Geospatial Integration <a name="geospatial-integration"></a>
-
-Incorporate geospatial data to enhance the accuracy of the city map representation, allowing for more precise distance calculations and spatial analysis.
-
-#### 2.3.5 Mobile Application <a name="mobile-application"></a>
-
-Develop a mobile application to enable users to access and interact with the city map on the go, providing a portable solution for urban planning and navigation.
-
-
-## 3. Project Design (Continued) <a name="project-design-continued"></a>
-
-### 3.1 Design and Architecture <a name="design-and-architecture"></a>
-
-#### 3.1.1 Object-Oriented Design <a name="object-oriented-design"></a>
+#### 2.3.1 Object-Oriented Design <a name="object-oriented-design"></a>
 
 The City Map Project adopts an object-oriented design (OOD) approach to ensure modularity, flexibility, and maintainability. Key principles include encapsulation, inheritance, and polymorphism.
 
-#### 3.1.2 Class Diagrams <a name="class-diagrams"></a>
+## 3. Implementation and Testing <a name="implementation-and-testing"></a>
 
-The class diagrams illustrate the relationships between classes, highlighting the essential attributes and methods. The diagrams provide a high-level view of the project's architecture.
-
----
-
-## 4. Implementation and Testing <a name="implementation-and-testing"></a>
-
-### 4.1 Implementation of Classes <a name="implementation-of-classes"></a>
+### 3.1 Implementation of Classes <a name="implementation-of-classes"></a>
 
 The implementation of each class adheres to best coding practices, promoting readability, efficiency, and maintainability. Significant aspects of the implementation are outlined below.
 
-#### 4.1.1 GraphvizController <a name="implementation-of-graphviz-controller"></a>
+#### 3.1.1 GraphvizController <a name="implementation-of-graphviz-controller"></a>
 
 - The `generateDotFile` method constructs a Dot file by utilizing information from the provided `GraphContainer`, current graph, and a set of closed intersections.
 - The `runGraphvizAndOpenImage` method executes the Graphviz tool to generate a visual representation of the city map.
 
-#### 4.1.2 TerminalProgram <a name="implementation-of-terminal-program"></a>
+#### 3.1.2 TerminalProgram <a name="implementation-of-terminal-program"></a>
 
 - The constructor initializes the program with a map and starting graph, facilitating seamless execution.
 - Methods like `handleLocationCommand`, `handleChangeCommand`, `handleNeighboursCommand`, and others handle various user commands, ensuring interactive program behavior.
 
-#### 4.1.3 Graph <a name="implementation-of-graph"></a>
+#### 3.1.3 Graph <a name="implementation-of-graph"></a>
 
 - The `print` method outputs relevant information about the graph, aiding in debugging and user understanding.
 - The `addEdge` method allows the addition of edges between graphs, contributing to the overall connectivity.
 
-#### 4.1.4 GraphContainer <a name="implementation-of-graph-container"></a>
+#### 3.1.4 GraphContainer <a name="implementation-of-graph-container"></a>
 
 - The `parseFile` method reads a file to populate the city map with graphs and roads, promoting ease of data input.
 - The `addRoad` method facilitates the addition of roads between specified graphs, enhancing the overall connectivity.
 
-#### 4.1.5 Path <a name="implementation-of-path"></a>
+#### 3.1.5 Path <a name="implementation-of-path"></a>
 
 - The `print` method displays details about the path, contributing to user understanding and debugging.
 
-#### 4.1.6 RouteChecker <a name="implementation-of-route-checker"></a>
+#### 3.1.6 RouteChecker <a name="implementation-of-route-checker"></a>
 
 - Static methods like `exists`, `getPaths`, `canReturnToStart`, `hasHamiltonianPath`, `canReachAllNodes`, and `findAllDeadEnded` implement various route and connectivity analyses.
 
-### 4.2 Memory Management, Algorithms, and Optimizations <a name="memory-management-algorithms-and-optimizations"></a>
+### 3.2 Memory Management, Algorithms, and Optimizations <a name="memory-management-algorithms-and-optimizations"></a>
 
 The project incorporates efficient memory management practices, algorithms for various functionalities, and optimizations to ensure optimal performance. The choice of data structures and algorithms is aligned with the principles of scalability and code efficiency.
 
-### 4.3 Test Scenario Planning and Execution <a name="test-scenario-planning-and-execution"></a>
+### 3.3 Test Scenario Planning and Execution <a name="test-scenario-planning-and-execution"></a>
 
 Thorough testing has been conducted to identify and rectify any bugs or issues. Test scenarios cover a range of functionalities, ensuring the reliability and stability of the project. This includes positive and negative test cases for route planning, connectivity analysis, and graph visualization.
 
-## 5. Conclusion <a name="conclusion"></a>
+## 4. Conclusion <a name="conclusion"></a>
 
-### 5.1 Summary of Initial Goals <a name="summary-of-initial-goals"></a>
+### 4.1 Summary of Initial Goals <a name="summary-of-initial-goals"></a>
 
 The City Map Project has successfully achieved its initial goals, providing a versatile tool for city map exploration, route planning, and connectivity analysis. The use of graph-based representations and efficient algorithms contributes to the project's success in meeting its objectives.
 
-### 5.2 Directions for Future Development and Improvement <a name="directions-for-future-development-and-improvement"></a>
+### 4.2 Directions for Future Development and Improvement <a name="directions-for-future-development-and-improvement"></a>
 
 As the City Map Project evolves, several paths for improvement are considered:
 
@@ -239,7 +206,7 @@ As the City Map Project evolves, several paths for improvement are considered:
 - **Geospatial Integration:** Incorporate geospatial data for precise distance calculations and spatial analysis.
 - **Mobile Application:** Develop a mobile application for on-the-go city map exploration.
 
-## 6. References <a name="references"></a>
+## 5. References <a name="references"></a>
 
 All references to external sources, literature, and frameworks used during the development of the City Map Project are listed here.
 
