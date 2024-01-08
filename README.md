@@ -32,7 +32,7 @@ The City Map Project is developed with the following key objectives:
 
 - **Graph-Based Representation:** Utilizes graph theory to model city infrastructure, allowing for an efficient representation of junctions, roads, and connections.
 - **Route Planning:** Enables users to plan and analyze routes between different junctions, considering factors like distance, cost, and connectivity.
-- **Connectivity Analysis:** Offers tools for analyzing the connectivity of the city map, identifying dead ends, checking for Hamiltonian paths, and ensuring accessibility to all areas.
+- **Connectivity Analysis:** Offers tools for analyzing the connectivity of the city map, identifying dead ends, checking for Euler paths, and ensuring accessibility to all areas.
 - **Graph Visualization:** Integrates Graphviz to generate visual representations of the city map, aiding in the interpretation and understanding of the spatial relationships within the infrastructure.
 
 ### 1.3 Benefits <a name="benefits"></a>
@@ -135,7 +135,7 @@ The `RouteChecker` class provides static methods for various route and connectiv
 - `exists(Graph *, Graph *)`: Checks if a path exists between two graphs.
 - `getPaths(Graph *, Graph *, const std::unordered_set<Graph *> &)`: Gets paths between two graphs considering closed intersections.
 - `canReturnToStart(Graph *)`: Checks if it's possible to return to the starting graph.
-- `hasHamiltonianPath(GraphContainer *)`: Finds a Hamiltonian path in the city map.
+- `findEulerPath(GraphContainer *)`: Finds an Euler path in the city map.
 - `canReachAllNodes(GraphContainer *, Graph *)`: Checks if it's possible to reach all nodes from a given starting graph.
 - `findAllDeadEnded(GraphContainer *)`: Finds all dead-ended streets in the city map.
 
@@ -175,7 +175,7 @@ The implementation of each class adheres to best coding practices, promoting rea
 
 #### 3.1.6 RouteChecker
 
-- Static methods like `exists`, `getPaths`, `canReturnToStart`, `hasHamiltonianPath`, `canReachAllNodes`, and `findAllDeadEnded` implement various route and connectivity analyses.
+- Static methods like `exists`, `getPaths`, `canReturnToStart`, `findEulerPath`, `hasPathAllGraph`, `canReachAllNodes`, and `findAllDeadEnded` implement various route and connectivity analyses.
 
 ### 3.2 Memory Management, Algorithms, and Optimizations 
 
