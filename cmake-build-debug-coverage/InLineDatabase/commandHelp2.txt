@@ -7,7 +7,7 @@
 +---+--------------------+-----------------------------------------------------------------------------------------+
 | 3 | canReturnTo        | Checks if it's possible to return to the starting graph after going out.                |
 +---+--------------------+-----------------------------------------------------------------------------------------+
-| 4 | hamiltonianPath    | (SAME AS "tour")                                                                        |
+| 4 | hamiltonianPath    | Finds a path that contains each Node only once                                          |
 +---+--------------------+-----------------------------------------------------------------------------------------+
 | 5 | canReachAllNodes   | Checks if it's possible to reach all nodes from a given starting graph.                 |
 +---+--------------------+-----------------------------------------------------------------------------------------+

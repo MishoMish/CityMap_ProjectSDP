@@ -106,23 +106,23 @@ bool RouteChecker::canReturnToStartHelper(Graph *current, Graph *start, std::uno
     return false;
 }
 
-// Finds a Hamiltonian path in the given container, starting from any graph
-Path *RouteChecker::hasHamiltonianPath(GraphContainer *container) {
+// Finds a full path in the given container, starting from any graph
+Path *RouteChecker::hasPathAllGraph(GraphContainer *container) {
     Path *returnPath = nullptr;
     for (auto temp: container->getGraphs()) {
-        returnPath = hasHamiltonianPath(container, temp.second);
+        returnPath = hasPathAllGraph(container, temp.second);
         if (returnPath != nullptr)
             break;
     }
     return returnPath;
 }
 
-// Finds a Hamiltonian path starting from the specified graph
-Path *RouteChecker::hasHamiltonianPath(GraphContainer *container, Graph *start) {
+// Finds a full path starting from the specified graph
+Path *RouteChecker::hasPathAllGraph(GraphContainer *container, Graph *start) {
     Path *path = new Path();
     std::set < std::pair<Graph *, Graph *> > visitedEdges;
     bool found = false;
-    hamiltonianPathUtil(container, start, start, path, visitedEdges, found);
+    pathAllGraphUtil(container, start, start, path, visitedEdges, found);
 
     if (found) {
         return path;
@@ -132,9 +132,9 @@ Path *RouteChecker::hasHamiltonianPath(GraphContainer *container, Graph *start) 
     }
 }
 
-// Helper function for finding Hamiltonian path
-void RouteChecker::hamiltonianPathUtil(GraphContainer *container, Graph *current, Graph *start, Path *path,
-                                       std::set<std::pair<Graph *, Graph *> > &visitedEdges, bool &found) {
+// Helper function for finding full path
+void RouteChecker::pathAllGraphUtil(GraphContainer *container, Graph *current, Graph *start, Path *path,
+                                    std::set<std::pair<Graph *, Graph *> > &visitedEdges, bool &found) {
     path->nodes.push_back(current);
     if (std::all_of(container->getGraphs().begin(), container->getGraphs().end(), [&path](const auto &nodePair) {
         return std::find(path->nodes.begin(), path->nodes.end(), nodePair.second) != path->nodes.end();
@@ -157,7 +157,7 @@ void RouteChecker::hamiltonianPathUtil(GraphContainer *container, Graph *current
         if (!visitedEdges.contains({current, next})) {
             visitedEdges.insert({current, next});
             path->cost += neighbor.second;
-            hamiltonianPathUtil(container, next, start, path, visitedEdges, found);
+            pathAllGraphUtil(container, next, start, path, visitedEdges, found);
             if (found) {
                 return;
             }
@@ -167,6 +167,65 @@ void RouteChecker::hamiltonianPathUtil(GraphContainer *container, Graph *current
     }
     path->nodes.pop_back();
 }
+
+Path *RouteChecker::findEulerPath(GraphContainer *container) {
+    Path *returnPath = nullptr;
+    for (auto temp: container->getGraphs()) {
+        returnPath = findEulerPath(container, temp.second);
+        if (returnPath != nullptr)
+            break;
+    }
+    return returnPath;
+}
+
+Path *RouteChecker::findEulerPath(GraphContainer *container, Graph *start) {
+    Path *eulerPath = new Path();
+    std::set<std::pair<Graph *, Graph *>> visitedEdges;
+    bool found = false;
+    findEulerPathUtil(container, start, start, eulerPath, visitedEdges, found);
+
+    if (found) {
+        return eulerPath;
+    } else {
+        delete eulerPath;
+        return nullptr;
+    }
+}
+
+void RouteChecker::findEulerPathUtil(GraphContainer *container, Graph *current, Graph *start, Path *path,
+                                     std::set<std::pair<Graph *, Graph *>> &visitedEdges, bool &found) {
+    path->nodes.push_back(current);
+    if (std::all_of(container->getGraphs().begin(), container->getGraphs().end(), [&visitedEdges](const auto &nodePair) {
+        Graph *currentNode = nodePair.second;
+        for (const auto &neighbor : currentNode->getAdjacencyList()) {
+            Graph *nextNode = neighbor.first;
+            if (!visitedEdges.count({currentNode, nextNode})) {
+                return false;  // Not all edges are covered
+            }
+        }
+        return true;  // All edges from currentNode are covered
+    })) {
+        found = true;
+        return;
+    }
+
+
+    for (const auto &neighbor: current->getAdjacencyList()) {
+        Graph *next = neighbor.first;
+        if (!visitedEdges.contains({current, next})) {
+            visitedEdges.insert({current, next});
+            path->cost += neighbor.second;
+            findEulerPathUtil(container, next, start, path, visitedEdges, found);
+            if (found) {
+                return;
+            }
+            visitedEdges.erase({current, next});
+            path->cost -= neighbor.second;
+        }
+    }
+    path->nodes.pop_back();
+}
+
 
 // Checks if it is possible to reach all nodes from a given start node
 bool RouteChecker::canReachAllNodes(GraphContainer *container, Graph *start) {

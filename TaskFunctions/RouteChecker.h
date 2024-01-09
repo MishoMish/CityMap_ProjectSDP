@@ -26,17 +26,22 @@ public:
 
     static bool canReturnToStart(Graph *);
 
-    static Path *hasHamiltonianPath(GraphContainer *container);
+    static Path *hasPathAllGraph(GraphContainer *container);
+    static Path *hasPathAllGraph(GraphContainer *container, Graph *start);
 
-    static Path *hasHamiltonianPath(GraphContainer *container, Graph *start);
+    static Path *findEulerPath(GraphContainer *container);
+    static Path *findEulerPath(GraphContainer *container, Graph *start);
 
     static bool canReachAllNodes(GraphContainer *container, Graph *start);
 
-    static std::vector<std::pair<Graph *, Graph *>> findAllDeadEnded(GraphContainer *container);
+    static std::vector<std::pair<Graph *, Graph *> > findAllDeadEnded(GraphContainer *container);
 
 private:
-    static void hamiltonianPathUtil(GraphContainer *container, Graph *current, Graph *start, Path *path,
-                                    std::set<std::pair<Graph *, Graph *> > &visitedEdges, bool &found);
+    static void pathAllGraphUtil(GraphContainer *container, Graph *current, Graph *start, Path *path,
+                                 std::set<std::pair<Graph *, Graph *> > &visitedEdges, bool &found);
+
+    static void findEulerPathUtil(GraphContainer *container, Graph *current, Graph *start, Path *path,
+                                  std::set<std::pair<Graph *, Graph *> > &visitedEdges, bool &found);
 
     static bool existsHelper(Graph *current, Graph *end, std::unordered_set<Graph *> &checked);
 

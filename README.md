@@ -3,18 +3,18 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
-   - [Project Overview](#project-overview)
-   - [Project Purpose](#project-purpose)
-   - [Benefits](#benefits)
-   - [Development Timeline](#development-timeline)
+  - [Project Overview](#project-overview)
+  - [Project Purpose](#project-purpose)
+  - [Benefits](#benefits)
+  - [Development Timeline](#development-timeline)
 
 - [Project Design](#project-design)
-   - [Folder and Class Structure](#folder-and-class-structure)
-   - [Key Classes and Functions](#key-classes-and-functions)
+  - [Folder and Class Structure](#folder-and-class-structure)
+  - [Key Classes and Functions](#key-classes-and-functions)
 
 - [Conclusion](#conclusion)
-   - [Initial Goals](#summary-of-initial-goals)
-   - [Upgrade Paths](#directions-for-future-development-and-improvement)
+  - [Initial Goals](#summary-of-initial-goals)
+  - [Upgrade Paths](#directions-for-future-development-and-improvement)
 
 - [References](#references)
 
@@ -32,7 +32,7 @@ The City Map Project is developed with the following key objectives:
 
 - **Graph-Based Representation:** Utilizes graph theory to model city infrastructure, allowing for an efficient representation of junctions, roads, and connections.
 - **Route Planning:** Enables users to plan and analyze routes between different junctions, considering factors like distance, cost, and connectivity.
-- **Connectivity Analysis:** Offers tools for analyzing the connectivity of the city map, identifying dead ends, checking for Hamiltonian paths, and ensuring accessibility to all areas.
+- **Connectivity Analysis:** Offers tools for analyzing the connectivity of the city map, identifying dead ends, checking for Euler paths, and ensuring accessibility to all areas.
 - **Graph Visualization:** Integrates Graphviz to generate visual representations of the city map, aiding in the interpretation and understanding of the spatial relationships within the infrastructure.
 
 ### 1.3 Benefits <a name="benefits"></a>
@@ -73,7 +73,7 @@ The `GraphvizController` class is responsible for generating Dot files represent
 - `generateDotFile(GraphContainer *graphContainer, Graph *current, std::unordered_set<Graph *> closed)`: Generates a Dot file based on the given parameters.
 - `runGraphvizAndOpenImage()`: Executes Graphviz and opens the generated image.
 
-#### 2.2.2 TerminalProgram 
+#### 2.2.2 TerminalProgram
 
 The `TerminalProgram` class handles the execution of the program in a terminal-based environment.
 
@@ -118,7 +118,7 @@ The `GraphContainer` class holds and manages multiple graphs in the city map.
 - `addRoad(const std::string &, const std::string &, double)`: Adds a road between two graphs.
 - `print()`: Prints information about the graphs.
 
-#### 2.2.5 Path 
+#### 2.2.5 Path
 
 The `Path` class represents a path between junctions in the city map.
 
@@ -126,7 +126,7 @@ The `Path` class represents a path between junctions in the city map.
 
 - `print()`: Prints information about the path.
 
-#### 2.2.6 RouteChecker 
+#### 2.2.6 RouteChecker
 
 The `RouteChecker` class provides static methods for various route and connectivity analyses.
 
@@ -135,7 +135,7 @@ The `RouteChecker` class provides static methods for various route and connectiv
 - `exists(Graph *, Graph *)`: Checks if a path exists between two graphs.
 - `getPaths(Graph *, Graph *, const std::unordered_set<Graph *> &)`: Gets paths between two graphs considering closed intersections.
 - `canReturnToStart(Graph *)`: Checks if it's possible to return to the starting graph.
-- `hasHamiltonianPath(GraphContainer *)`: Finds a Hamiltonian path in the city map.
+- `findEulerPath(GraphContainer *)`: Finds an Euler path in the city map.
 - `canReachAllNodes(GraphContainer *, Graph *)`: Checks if it's possible to reach all nodes from a given starting graph.
 - `findAllDeadEnded(GraphContainer *)`: Finds all dead-ended streets in the city map.
 
@@ -143,18 +143,18 @@ The `RouteChecker` class provides static methods for various route and connectiv
 
 The City Map Project adopts an object-oriented design (OOD) approach to ensure modularity, flexibility, and maintainability. Key principles include encapsulation, inheritance, and polymorphism.
 
-## 3. Implementation and Testing 
+## 3. Implementation and Testing
 
 ### 3.1 Implementation of Classes
 
 The implementation of each class adheres to best coding practices, promoting readability, efficiency, and maintainability. Significant aspects of the implementation are outlined below.
 
-#### 3.1.1 GraphvizController 
+#### 3.1.1 GraphvizController
 
 - The `generateDotFile` method constructs a Dot file by utilizing information from the provided `GraphContainer`, current graph, and a set of closed intersections.
 - The `runGraphvizAndOpenImage` method executes the Graphviz tool to generate a visual representation of the city map.
 
-#### 3.1.2 TerminalProgram 
+#### 3.1.2 TerminalProgram
 
 - The constructor initializes the program with a map and starting graph, facilitating seamless execution.
 - Methods like `handleLocationCommand`, `handleChangeCommand`, `handleNeighboursCommand`, and others handle various user commands, ensuring interactive program behavior.
@@ -164,24 +164,24 @@ The implementation of each class adheres to best coding practices, promoting rea
 - The `print` method outputs relevant information about the graph, aiding in debugging and user understanding.
 - The `addEdge` method allows the addition of edges between graphs, contributing to the overall connectivity.
 
-#### 3.1.4 GraphContainer 
+#### 3.1.4 GraphContainer
 
 - The `parseFile` method reads a file to populate the city map with graphs and roads, promoting ease of data input.
 - The `addRoad` method facilitates the addition of roads between specified graphs, enhancing the overall connectivity.
 
-#### 3.1.5 Path 
+#### 3.1.5 Path
 
 - The `print` method displays details about the path, contributing to user understanding and debugging.
 
 #### 3.1.6 RouteChecker
 
-- Static methods like `exists`, `getPaths`, `canReturnToStart`, `hasHamiltonianPath`, `canReachAllNodes`, and `findAllDeadEnded` implement various route and connectivity analyses.
+- Static methods like `exists`, `getPaths`, `canReturnToStart`, `findEulerPath`, `hasPathAllGraph`, `canReachAllNodes`, and `findAllDeadEnded` implement various route and connectivity analyses.
 
-### 3.2 Memory Management, Algorithms, and Optimizations 
+### 3.2 Memory Management, Algorithms, and Optimizations
 
 The project incorporates efficient memory management practices, algorithms for various functionalities, and optimizations to ensure optimal performance. The choice of data structures and algorithms is aligned with the principles of scalability and code efficiency.
 
-### 3.3 Test Scenario Planning and Execution 
+### 3.3 Test Scenario Planning and Execution
 
 Thorough testing has been conducted to identify and rectify any bugs or issues. Test scenarios cover a range of functionalities, ensuring the reliability and stability of the project. This includes positive and negative test cases for route planning, connectivity analysis, and graph visualization.
 

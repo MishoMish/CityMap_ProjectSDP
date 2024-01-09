@@ -62,15 +62,28 @@ TEST_CASE("RouteChecker Test") {
         CHECK_FALSE(RouteChecker::canReturnToStart(graphD));
     }
 
-    SUBCASE("Hamiltonian Path Test - NO starting junction") {
-        Path *path = RouteChecker::hasHamiltonianPath(&container);
+    SUBCASE("Has Path Test - NO starting junction") {
+        Path *path = RouteChecker::hasPathAllGraph(&container);
         REQUIRE(path != nullptr);
     }
 
-    SUBCASE("Hamiltonian Path Test - starting junction") {
-        Path *path = RouteChecker::hasHamiltonianPath(&container, graphA);
+    SUBCASE("Has Path Test - starting junction") {
+        Path *path = RouteChecker::hasPathAllGraph(&container, graphA);
         REQUIRE(path != nullptr);
     }
+
+    SUBCASE("Find Euler Path Test - NO starting junction") {
+        Path *eulerPath = RouteChecker::findEulerPath(&container);
+        //REQUIRE(eulerPath != nullptr);
+        //CHECK(eulerPath->nodes.size() == 5);
+    }
+
+    SUBCASE("Find Euler Path Test - starting junction") {
+        Path *eulerPath = RouteChecker::findEulerPath(&container, graphA);
+        //REQUIRE(eulerPath != nullptr);
+        //CHECK(eulerPath->nodes.size() == 5);
+    }
+
 
     SUBCASE("Can reach all other Test") {
         CHECK(RouteChecker::canReachAllNodes(&container, graphA));

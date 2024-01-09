@@ -11,13 +11,14 @@
 
 TEST_CASE("TerminalProgram Test") {
     auto *container = new GraphContainer();
-    container->addGraph("1");
-    Graph *cityA = container->getGraph("1");
+    container->addRoad("1", "2", 1);
 
-    container->addGraph("2");
-    Graph *cityB = container->getGraph("2");
+    Graph *graph1 = container->getGraph("1");
+    Graph *graph2 = container->getGraph("2");
 
-    Graph *start = cityA;
+    container->addGraph("3");
+
+    Graph *start = graph1;
 
     TerminalProgram terminalProgram = TerminalProgram(container, start);
 
@@ -136,6 +137,96 @@ TEST_CASE("TerminalProgram Test") {
         std::string expectedOutput2 = "Closed locations: 3 2 \n";
 
         REQUIRE((outputBuffer.str() == expectedOutput1 || outputBuffer.str() == expectedOutput2));
+    }
+
+    SUBCASE("Move Test - Valid Destination") {
+        std::stringstream input("2");
+        std::stringstream outputBuffer;
+        std::streambuf *oldCoutBuffer = std::cout.rdbuf(outputBuffer.rdbuf());
+
+        terminalProgram.handleMoveCommand(input);
+
+        std::cout.rdbuf(oldCoutBuffer);
+
+        std::string expectedOutput = "1 -> 2 ->  length = 1\n"
+                                     "Success!\n";
+        REQUIRE(outputBuffer.str() == expectedOutput);
+        REQUIRE(terminalProgram.getCurrent() == graph2);
+    }
+
+    SUBCASE("Move Test - Invalid Destination") {
+        std::stringstream input("InvalidDestination");
+        std::stringstream outputBuffer;
+        std::streambuf *oldCoutBuffer = std::cout.rdbuf(outputBuffer.rdbuf());
+
+        terminalProgram.handleMoveCommand(input);
+
+        std::cout.rdbuf(oldCoutBuffer);
+
+        std::string expectedOutput = "Not a valid destination!!!\n";
+        REQUIRE(outputBuffer.str() == expectedOutput);
+        REQUIRE(terminalProgram.getCurrent() == graph1);
+    }
+
+    SUBCASE("Tour Test") {
+        std::stringstream outputBuffer;
+        std::streambuf *oldCoutBuffer = std::cout.rdbuf(outputBuffer.rdbuf());
+
+        terminalProgram.handleTourCommand();
+
+        std::cout.rdbuf(oldCoutBuffer);
+
+        REQUIRE(outputBuffer.str().find("An example tour (Euler path): ") != std::string::npos);
+    }
+
+    SUBCASE("Exists Test") {
+        std::stringstream input("1 2");
+        std::stringstream outputBuffer;
+        std::streambuf *oldCoutBuffer = std::cout.rdbuf(outputBuffer.rdbuf());
+
+        terminalProgram.handleExistsCommand(input);
+
+        std::cout.rdbuf(oldCoutBuffer);
+
+        REQUIRE(outputBuffer.str().find("Path exists between 1 and 2: Yes") != std::string::npos);
+    }
+
+    SUBCASE("Run Command Test - Invalid Command") {
+        // Ensure that the "run" function handles an invalid command correctly
+        std::stringstream inputBuffer;
+        inputBuffer << "invalid_command\nexit\n";  // Simulate user input with an invalid command
+        std::streambuf *oldCinBuffer = std::cin.rdbuf(inputBuffer.rdbuf());
+
+        std::stringstream outputBuffer;
+        std::streambuf *oldCoutBuffer = std::cout.rdbuf(outputBuffer.rdbuf());
+
+        terminalProgram.run();
+
+        std::cout.rdbuf(oldCoutBuffer);
+        std::cin.rdbuf(oldCinBuffer);
+
+        // Add more specific checks if needed
+        std::string expectedOutput = "Invalid command.";
+        REQUIRE(outputBuffer.str().find(expectedOutput) != std::string::npos);
+    }
+
+    SUBCASE("Run Command Test - Exit") {
+        // Ensure that the "run" function handles the exit command correctly
+        std::stringstream inputBuffer;
+        inputBuffer << "exit\n";  // Simulate user input
+        std::streambuf *oldCinBuffer = std::cin.rdbuf(inputBuffer.rdbuf());
+
+        std::stringstream outputBuffer;
+        std::streambuf *oldCoutBuffer = std::cout.rdbuf(outputBuffer.rdbuf());
+
+        terminalProgram.run();
+
+        std::cout.rdbuf(oldCoutBuffer);
+        std::cin.rdbuf(oldCinBuffer);
+
+        // Add more specific checks if needed
+        std::string expectedOutput = "Enter command: ";
+        REQUIRE(outputBuffer.str().find(expectedOutput) != std::string::npos);
     }
 }
 

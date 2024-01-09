@@ -137,8 +137,8 @@ void TerminalProgram::handleClosedCommand() {
 
 // Function to handle the "tour" command
 void TerminalProgram::handleTourCommand() {
-    Path *tourPath = RouteChecker::hasHamiltonianPath(map);
-    std::cout << "An example tour (Hamiltonian road): ";
+    Path *tourPath = RouteChecker::findEulerPath(map);
+    std::cout << "An example tour (Euler path): ";
     tourPath->print();
 
     if (tourPath != nullptr)
@@ -189,7 +189,7 @@ void TerminalProgram::handleCanReturnToCommand() {
 
 // Function to handle the "hamiltonianPath" command
 void TerminalProgram::handleHamiltonianPathCommand() {
-    Path *tourPath = RouteChecker::hasHamiltonianPath(map, current);
+    Path *tourPath = RouteChecker::hasPathAllGraph(map, current);
     std::cout << "An example tour (Hamiltonian road): ";
     tourPath->print();
 
